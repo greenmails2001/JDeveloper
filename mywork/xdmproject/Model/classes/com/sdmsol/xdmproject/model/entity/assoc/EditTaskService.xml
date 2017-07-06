@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="EditTaskService"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  ClearCacheOnRollback="true">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="com.sdmsol.xdmproject.model.entity.assoc.EditTaskService_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewUsage
+    Name="AllTasksVO1"
+    ViewObjectName="com.sdmsol.xdmproject.model.view.AllTasksVO"/>
+  <ViewUsage
+    Name="PersonVO1"
+    ViewObjectName="com.sdmsol.xdmproject.model.view.PersonVO"/>
+  <ViewUsage
+    Name="ProgrammeLOV1"
+    ViewObjectName="com.sdmsol.xdmproject.model.view.ProgrammeLOV"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.sdmsol.xdmproject.model.ModelBundle"/>
+  </ResourceBundle>
+</AppModule>

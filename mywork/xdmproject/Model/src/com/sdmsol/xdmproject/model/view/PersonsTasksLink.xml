@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="PersonsTasksLink"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  EntityAssociation="com.sdmsol.xdmproject.model.entity.assoc.XdmPersTaskFkAssoc">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="com.sdmsol.xdmproject.model.view.PersonsTasksLink_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <ViewLinkDefEnd
+    Name="PersonVO"
+    Cardinality="1"
+    Source="true"
+    Owner="com.sdmsol.xdmproject.model.view.PersonVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="PersonVO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.sdmsol.xdmproject.model.view.PersonVO.PersId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="ScheduleTasksVO"
+    Cardinality="-1"
+    Owner="com.sdmsol.xdmproject.model.view.ScheduleTasksVO">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="ScheduleTasksVO"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </ViewLinkDefEnd>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.sdmsol.xdmproject.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewLink>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="XdmProgPersFkAssoc"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Person"
+    Cardinality="1"
+    Source="true"
+    Owner="com.sdmsol.xdmproject.model.entity.Person">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Person"/>
+      <Attr Name="_foreignKey" Value="com.sdmsol.xdmproject.model.entity.Person.XdmPersonsPk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.sdmsol.xdmproject.model.entity.Person.PersId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Programme"
+    Cardinality="-1"
+    Owner="com.sdmsol.xdmproject.model.entity.Programme">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Programme"/>
+      <Attr Name="_foreignKey" Value="com.sdmsol.xdmproject.model.entity.Programme.XdmProgPersFk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.sdmsol.xdmproject.model.entity.Programme.Owner"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

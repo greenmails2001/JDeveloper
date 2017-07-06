@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ScheduleTasksVO"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  SelectList="Task.START_DATE, 
+       Task.END_DATE, 
+       Task.TASK_ID"
+  FromList="XDM_TASKS Task"
+  Where="start_date is not null and end_date is not null"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="com.sdmsol.xdmproject.model.view.ScheduleTasksVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <EntityUsage
+    Name="Task"
+    Entity="com.sdmsol.xdmproject.model.entity.Task"
+    ReadOnly="true"
+    DeleteParticipant="false"/>
+  <ViewAttribute
+    Name="StartDate"
+    IsUpdateable="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="StartDate"
+    EntityUsage="Task"
+    AliasName="START_DATE"/>
+  <ViewAttribute
+    Name="EndDate"
+    PrecisionRule="true"
+    EntityAttrName="EndDate"
+    EntityUsage="Task"
+    AliasName="END_DATE"/>
+  <ViewAttribute
+    Name="TaskId"
+    IsUpdateable="while_insert"
+    PrecisionRule="true"
+    EntityAttrName="TaskId"
+    EntityUsage="Task"
+    AliasName="TASK_ID"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.sdmsol.xdmproject.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>
