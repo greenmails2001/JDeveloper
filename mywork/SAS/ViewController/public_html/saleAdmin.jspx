@@ -1,0 +1,290 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_saleAdmin-->
+  <f:view>
+    <af:document binding="#{backing_saleAdmin.document1}" id="document1"
+                 title="Software And Service : Sale Admin">
+      <af:messages binding="#{backing_saleAdmin.messages1}" id="messages1"/>
+      <af:pageTemplate viewId="/templates/sasTemplate.jspx" id="pt1">
+        <f:attribute name="topFacetHeight" value="90"/>
+        <f:facet name="leftFacet">
+          <af:panelStretchLayout binding="#{backing_saleAdmin.panelStretchLayout1}" id="panelStretchLayout1"
+                                 topHeight="230px">
+            <f:facet name="center">
+              <af:panelCollection binding="#{backing_saleAdmin.panelCollection2}" id="panelCollection2">
+                <f:facet name="menus"/>
+                <f:facet name="toolbar"/>
+                <f:facet name="statusbar"/>
+                <af:table partialTriggers="::panelCollection1:masterDetail1"
+                          rows="#{bindings.subscriptionsList.rangeSize}"
+                          fetchSize="#{bindings.subscriptionsList.rangeSize}"
+                          emptyText="#{bindings.subscriptionsList.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                          var="row" value="#{bindings.subscriptionsList.collectionModel}"
+                          selectedRowKeys="#{bindings.subscriptionsList.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.subscriptionsList.collectionModel.makeCurrent}"
+                          rowSelection="single" binding="#{backing_saleAdmin.table2}" id="table2"
+                          columnStretching="last">
+                  <af:column headerText="#{viewcontrollerBundle['field.servicePackages.packageCode']}" sortProperty="subscribeDate"
+                             sortable="false" id="c1">
+                    <af:outputText value="#{row.servicePackages.bindings.packageCode.inputValue}" id="ot1">
+                      <af:convertDateTime pattern="#{bindings.subscriptionsList.hints.subscribeDate.format}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column headerText="#{viewcontrollerBundle['field.servicePackages.packageName']}" sortProperty="subscribeDate"
+                             sortable="false" id="c2">
+                    <af:outputText value="#{row.servicePackages.bindings.packageName.inputValue}" id="ot2">
+                      <af:convertDateTime pattern="#{bindings.subscriptionsList.hints.subscribeDate.format}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column headerText="#{viewcontrollerBundle['field.subscriptions.subscribeDate']}" sortProperty="subscribeDate"
+                             sortable="false" id="c3">
+                    <af:outputText value="#{row.subscribeDate}" id="ot3">
+                      <af:convertDateTime pattern="#{bindings.subscriptionsList.hints.subscribeDate.format}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column headerText="#{viewcontrollerBundle['field.subscriptions.startDate']}" sortProperty="startDate"
+                             sortable="false" id="c4">
+                    <af:outputText value="#{row.startDate}" id="ot4">
+                      <af:convertDateTime pattern="#{bindings.subscriptionsList.hints.startDate.format}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column headerText="#{viewcontrollerBundle['field.subscriptions.endDate']}" sortProperty="endDate"
+                             sortable="false" id="c5">
+                    <af:outputText value="#{row.endDate}" id="ot5">
+                      <af:convertDateTime pattern="#{bindings.subscriptionsList.hints.endDate.format}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column headerText="#{viewcontrollerBundle['field.subscriptions.quantity']}" sortProperty="quantity"
+                             sortable="false" id="c6">
+                    <af:outputText value="#{row.quantity}" id="ot6">
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.subscriptionsList.hints.quantity.format}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column headerText="#{viewcontrollerBundle['field.subscriptions.status']}" sortProperty="status"
+                             sortable="false" id="c7">
+                    <af:outputText value="#{row.status}" id="ot7"/>
+                  </af:column>
+                  <af:column headerText="#{viewcontrollerBundle['field.subscriptions.url']}" sortProperty="appUrl" sortable="false"
+                             id="c8">
+                    <af:outputText value="#{row.appUrl}" id="ot8"/>
+                  </af:column>
+                </af:table>
+              </af:panelCollection>
+            </f:facet>
+            <f:facet name="top">
+              <af:panelSplitter binding="#{backing_saleAdmin.panelSplitter1}" id="panelSplitter1" orientation="vertical"
+                                splitterPosition="154">
+                <f:facet name="first">
+                  <af:panelCollection binding="#{backing_saleAdmin.panelCollection1}" id="panelCollection1">
+                    <f:facet name="menus"/>
+                    <f:facet name="toolbar"/>
+                    <f:facet name="statusbar"/>
+                    <af:table id="masterDetail1" rows="#{bindings.Accounts.rangeSize}"
+                              fetchSize="#{bindings.Accounts.rangeSize}"
+                              emptyText="#{bindings.Accounts.viewable ? 'No rows yet.' : 'Access Denied.'}" var="row"
+                              value="#{bindings.Accounts.collectionModel}"
+                              selectedRowKeys="#{bindings.Accounts.collectionModel.selectedRow}"
+                              selectionListener="#{bindings.Accounts.collectionModel.makeCurrent}" rowSelection="single"
+                              binding="#{backing_saleAdmin.masterDetail1}" columnStretching="last">
+                      <af:column headerText="#{viewcontrollerBundle['field.industries.name']}" sortProperty="organizationName"
+                                 sortable="false" width="157" id="c9">
+                        <af:outputText value="#{row.industries.bindings.name.inputValue}" id="ot9"/>
+                      </af:column>
+                      <af:column headerText="#{viewcontrollerBundle['field.accounts.organizationName']}"
+                                 sortProperty="organizationName" sortable="false" width="153" id="c10">
+                        <af:outputText value="#{row.organizationName}" id="ot10"/>
+                      </af:column>
+                      <af:column headerText="#{viewcontrollerBundle['field.accounts.adress']}" sortProperty="address" sortable="false"
+                                 width="122" id="c11">
+                        <af:outputText value="#{row.address}" id="ot11"/>
+                      </af:column>
+                      <af:column headerText="#{viewcontrollerBundle['field.accounts.fullName']}" sortProperty="fullName"
+                                 sortable="false" width="118" id="c12">
+                        <af:outputText value="#{row.fullName}" id="ot12"/>
+                      </af:column>
+                      <af:column headerText="#{viewcontrollerBundle['field.accounts.numberOfEmployee']}"
+                                 sortProperty="numberOfEmployee" sortable="false" width="91" id="c13">
+                        <af:outputText value="#{row.numberOfEmployee}" id="ot13">
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.Accounts.hints.numberOfEmployee.format}"/>
+                        </af:outputText>
+                      </af:column>
+                      <af:column headerText="#{viewcontrollerBundle['field.accounts.userName']}" sortProperty="userName"
+                                 sortable="false" width="101" id="c14">
+                        <af:outputText value="#{row.userName}" id="ot14"/>
+                      </af:column>
+                      <af:column headerText="#{viewcontrollerBundle['field.subscriptions.status']}" sortProperty="status"
+                                 sortable="false" width="89" id="c15">
+                        <af:outputText value="#{row.status}" id="ot15"/>
+                      </af:column>
+                      <af:column headerText="#{viewcontrollerBundle['field.accounts.taxCode']}" sortProperty="taxCode"
+                                 sortable="false" width="79" id="c16">
+                        <af:outputText value="#{row.taxCode}" id="ot16"/>
+                      </af:column>
+                    </af:table>
+                  </af:panelCollection>
+                </f:facet>
+                <f:facet name="second">
+                  <af:panelFormLayout binding="#{backing_saleAdmin.panelFormLayout1}" id="panelFormLayout1">
+                    <f:facet name="footer"/>
+                  </af:panelFormLayout>
+                </f:facet>
+              </af:panelSplitter>
+            </f:facet>
+          </af:panelStretchLayout>
+        </f:facet>
+        <f:facet name="rightFacet">
+          <af:decorativeBox binding="#{backing_saleAdmin.decorativeBox1}" id="decorativeBox1">
+            <f:facet name="center">
+              <af:panelStretchLayout binding="#{backing_saleAdmin.panelStretchLayout2}" id="panelStretchLayout2"
+                                     topHeight="507px">
+                <f:facet name="center"/>
+                <f:facet name="top">
+                  <af:panelGroupLayout binding="#{backing_saleAdmin.panelGroupLayout1}" id="panelGroupLayout1"
+                                       layout="vertical">
+                    <af:outputLabel value="Thong tin cong ty (to chuc) :"
+                                    binding="#{backing_saleAdmin.outputLabel2}"
+                                    id="outputLabel2" inlineStyle="font-weight:bold;"/>
+                    <af:panelFormLayout binding="#{backing_saleAdmin.panelFormLayout3}" id="panelFormLayout3">
+                      <af:panelLabelAndMessage label="Cong ty"
+                                               binding="#{backing_saleAdmin.panelLabelAndMessage11}"
+                                               id="panelLabelAndMessage11">
+                        <af:outputText binding="#{backing_saleAdmin.orgName}" id="orgName"
+                                       value="#{bindings.queryAccountsFindCustomeIterator.currentRow.dataProvider.organizationName}"
+                                       partialTriggers="panelCollection1:masterDetail1"/>
+                      </af:panelLabelAndMessage>
+                      <af:panelLabelAndMessage label="Nganh nghe"
+                                               binding="#{backing_saleAdmin.panelLabelAndMessage41}"
+                                               id="panelLabelAndMessage41">
+                        <af:outputText binding="#{backing_saleAdmin.industry}" id="industry"
+                                       value="#{bindings.queryAccountsFindCustomeIterator.currentRow.dataProvider.industries.name}"
+                                       partialTriggers="panelCollection1:masterDetail1"/>
+                      </af:panelLabelAndMessage>
+                      <af:panelLabelAndMessage label="Ma so thue"
+                                               binding="#{backing_saleAdmin.panelLabelAndMessage21}"
+                                               id="panelLabelAndMessage21">
+                        <af:outputText binding="#{backing_saleAdmin.taxName}" id="taxName"
+                                       value="#{bindings.queryAccountsFindCustomeIterator.currentRow.dataProvider.taxCode}"
+                                       partialTriggers="panelCollection1:masterDetail1"/>
+                      </af:panelLabelAndMessage>
+                      <af:panelLabelAndMessage label="So nhan vien"
+                                               binding="#{backing_saleAdmin.panelLabelAndMessage31}"
+                                               id="panelLabelAndMessage31">
+                        <af:outputText binding="#{backing_saleAdmin.outputText4}" id="outputText4"
+                                       value="#{bindings.queryAccountsFindCustomeIterator.currentRow.dataProvider.numberOfEmployee}"
+                                       partialTriggers="panelCollection1:masterDetail1"/>
+                      </af:panelLabelAndMessage>
+                    </af:panelFormLayout>
+                    <af:outputLabel value="Thong tin nguoi lien he :"
+                                    binding="#{backing_saleAdmin.outputLabel1}"
+                                    id="outputLabel1" inlineStyle="font-weight:bold;"/>
+                    <af:panelFormLayout binding="#{backing_saleAdmin.panelFormLayout4}" id="panelFormLayout4">
+                      <af:panelLabelAndMessage label="Ho ten"
+                                               binding="#{backing_saleAdmin.panelLabelAndMessage5}"
+                                               id="panelLabelAndMessage5">
+                        <af:outputText binding="#{backing_saleAdmin.fullName}" id="fullName"
+                                       value="#{bindings.queryAccountsFindCustomeIterator.currentRow.dataProvider.fullName}"
+                                       partialTriggers="panelCollection1:masterDetail1"/>
+                      </af:panelLabelAndMessage>
+                      <af:panelLabelAndMessage label="Email"
+                                               binding="#{backing_saleAdmin.panelLabelAndMessage6}"
+                                               id="panelLabelAndMessage6">
+                        <af:outputText binding="#{backing_saleAdmin.email}" id="email"
+                                       value="#{bindings.queryAccountsFindCustomeIterator.currentRow.dataProvider.email}"
+                                       partialTriggers="panelCollection1:masterDetail1"/>
+                      </af:panelLabelAndMessage>
+                      <af:panelLabelAndMessage label="Dien thoai lien lac"
+                                               binding="#{backing_saleAdmin.panelLabelAndMessage7}"
+                                               id="panelLabelAndMessage7">
+                        <af:outputText binding="#{backing_saleAdmin.contactTelephone}" id="contactTelephone"
+                                       value="#{bindings.queryAccountsFindCustomeIterator.currentRow.dataProvider.contactTelephone}"
+                                       partialTriggers="panelCollection1:masterDetail1"/>
+                      </af:panelLabelAndMessage>
+                    </af:panelFormLayout>
+                    <af:outputLabel value="Phan mem thue bao :"
+                                    binding="#{backing_saleAdmin.outputLabel3}"
+                                    id="outputLabel3" inlineStyle="font-weight:bold;"/>
+                    <af:panelFormLayout binding="#{backing_saleAdmin.panelFormLayout5}" id="panelFormLayout5">
+                      <af:panelLabelAndMessage label="Ngay mua hang"
+                                               binding="#{backing_saleAdmin.panelLabelAndMessage8}"
+                                               id="panelLabelAndMessage8">
+                        <af:outputText value="#{bindings.subscriptionsList.currentRow.dataProvider.subscribeDate}"
+                                       binding="#{backing_saleAdmin.outputText1}" id="outputText1"
+                                       partialTriggers="panelCollection2:table2"/>
+                      </af:panelLabelAndMessage>
+                      <af:panelLabelAndMessage label="Trang thai "
+                                               binding="#{backing_saleAdmin.panelLabelAndMessage9}"
+                                               id="panelLabelAndMessage9">
+                        <af:outputText value="#{bindings.subscriptionsList.currentRow.dataProvider.status}"
+                                       binding="#{backing_saleAdmin.outputText2}" id="outputText2"
+                                       partialTriggers="panelCollection2:table2"/>
+                      </af:panelLabelAndMessage>
+                      <af:panelLabelAndMessage label="Duyet"
+                                               binding="#{backing_saleAdmin.panelLabelAndMessage10}"
+                                               id="panelLabelAndMessage10"/>
+                      <af:panelLabelAndMessage label="Note :"
+                                               binding="#{backing_saleAdmin.panelLabelAndMessage12}"
+                                               id="panelLabelAndMessage12"/>
+                    </af:panelFormLayout>
+                    <af:panelGroupLayout binding="#{backing_saleAdmin.panelGroupLayout2}" id="panelGroupLayout2"
+                                         layout="horizontal" halign="right">
+                      <af:inputText binding="#{backing_saleAdmin.inputText1}" id="inputText1" rows="7"
+                                    inlineStyle="width:100%;" columns="40"/>
+                    </af:panelGroupLayout>
+                  </af:panelGroupLayout>
+                </f:facet>
+              </af:panelStretchLayout>
+            </f:facet>
+          </af:decorativeBox>
+        </f:facet>
+        <f:facet name="topFacet">
+          <af:decorativeBox binding="#{backing_saleAdmin.decorativeBox2}" id="decorativeBox2">
+            <f:facet name="center">
+              <af:panelFormLayout binding="#{backing_saleAdmin.panelFormLayout2}" id="panelFormLayout2" maxColumns="4"
+                                  rows="2" fieldWidth="110">
+                <af:selectOneChoice label="#{viewcontrollerBundle['field.industries.name']}"
+                                    shortDesc="#{bindings.indId.hints.tooltip}"
+                                    binding="#{backing_saleAdmin.selectOneChoice1}" id="selectOneChoice1">
+                  <f:selectItems
+                                 binding="#{backing_saleAdmin.selectItems1}"
+                                 id="selectItems1"/>
+                </af:selectOneChoice>
+                <af:selectOneChoice label="#{viewcontrollerBundle['field.countries.name']}"
+                                    shortDesc="#{bindings.couId.hints.tooltip}"
+                                    binding="#{backing_saleAdmin.selectOneChoice2}" id="selectOneChoice2">
+                  <f:selectItems
+                                 binding="#{backing_saleAdmin.selectItems2}"
+                                 id="selectItems2"/>
+                </af:selectOneChoice>
+                <af:selectOneChoice label="#{viewcontrollerBundle['field.provinces.name']}"
+                                    shortDesc="#{bindings.proId.hints.tooltip}"
+                                    binding="#{backing_saleAdmin.selectOneChoice3}" id="selectOneChoice3">
+                  <f:selectItems
+                                 binding="#{backing_saleAdmin.selectItems3}"
+                                 id="selectItems3"/>
+                </af:selectOneChoice>
+                <af:inputText value="#{bindings.empCount.inputValue}"
+                              label="#{viewcontrollerBundle['field.accounts.numberOfEmployee']}"
+                              required="#{bindings.empCount.hints.mandatory}"
+                              columns="#{bindings.empCount.hints.displayWidth}"
+                              maximumLength="#{bindings.empCount.hints.precision}"
+                              shortDesc="#{bindings.empCount.hints.tooltip}"
+                              binding="#{backing_saleAdmin.inputText4}"
+                              id="inputText4">
+                  <f:validator binding="#{bindings.empCount.validator}"/>
+                  <af:convertNumber groupingUsed="false" pattern="#{bindings.empCount.format}"/>
+                </af:inputText>
+                <af:commandButton actionListener="#{bindings.queryAccountsFindCustome.execute}" text="Loc du lieu"
+                                  disabled="#{!bindings.queryAccountsFindCustome.enabled}"
+                                  binding="#{backing_saleAdmin.commandButton1}" id="commandButton1"/>
+              </af:panelFormLayout>
+            </f:facet>
+          </af:decorativeBox>
+        </f:facet>
+      </af:pageTemplate>
+    </af:document>
+  </f:view>
+</jsp:root>

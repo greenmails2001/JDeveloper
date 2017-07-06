@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.12.24" id="menuPageDef"
+                Package="test.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="MenuView1" RangeSize="25" DataControl="AppModuleDataControl" id="MenuView1Iterator"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="MenuView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MenuView1Iterator" id="Name">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MenuView1Iterator" id="DisplaySequence">
+      <AttrNames>
+        <Item Value="DisplaySequence"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MenuView1Iterator" id="Shortcut">
+      <AttrNames>
+        <Item Value="Shortcut"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MenuView1Iterator" id="Icon">
+      <AttrNames>
+        <Item Value="Icon"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="MenuView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="MenuView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="MenuView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="MenuView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+  </bindings>
+</pageDefinition>

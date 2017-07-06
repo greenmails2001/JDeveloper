@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <af:pageTemplateDef var="attrs">
+    <af:panelSplitter id="pt_ps1" orientation="vertical" splitterPosition="25"
+                      firstBorder="none" secondBorder="none" disabled="true">
+      <f:facet name="first">
+        <af:panelGroupLayout id="pt_pgl1" layout="vertical">
+          <af:panelBorderLayout id="pt_pbl1" styleClass="AFBrandingBar">
+            <f:facet name="start">
+              <af:panelGroupLayout id="pt_brLogo" styleClass="AFBrandingBarItem"
+                                   inlineStyle="background-color: white;"
+                                   layout="horizontal">
+                <af:spacer id="pt_spLogo" shortDesc="Branding Logo"
+                           styleClass="AFBrandingBarLogo"
+                           rendered="#{attrs.logoImagePath == null}"/>
+                <af:image source="#{attrs.logoImagePath}"
+                          rendered="#{attrs.logoImagePath != null}" id="pt_i1"/>
+              </af:panelGroupLayout>
+            </f:facet>
+            <f:facet name="end">
+              <af:panelGroupLayout id="pt_statWrp" layout="horizontal"
+                                   styleClass="AFBrandingBarItem">
+                <af:statusIndicator id="pt_statInd"/>
+              </af:panelGroupLayout>
+            </f:facet>
+            <f:facet name="innerStart">
+              <af:panelGroupLayout id="pt_titleWrp"
+                                   styleClass="AFBrandingBarItem"
+                                   inlineStyle="background-color: white;">
+                <af:outputText value="#{attrs.brandingTitle}"
+                               styleClass="AFBrandingBarTitle" id="pt_ot1"/>
+              </af:panelGroupLayout>
+            </f:facet>
+            <af:panelBorderLayout id="pt_sepWrp">
+              <!-- WARNING: hard-coding means no support for other skins -->
+              <af:image id="brSep" source="#{requestContext.rightToLeft?
+                                             '/afr/gradient-none-white.png':
+                                             '/afr/gradient-white-none.png'}"
+                        inlineStyle="max-width: 100%"
+                        styleClass="AFBrandingBarItem AFStretchWidth"
+                        shortDesc=""/>
+              <f:facet name="end">
+                <af:panelGroupLayout id="pt_statPgl" layout="horizontal"
+                                     styleClass="AFBrandingBarItem"
+                                     valign="middle">
+                  <af:facetRef facetName="globalLinks"/>
+                  <af:panelGroupLayout layout="horizontal"
+                                       inlineStyle="width: #{attrs.statusWidth}"
+                                       id="panelGroupLayout1">
+                    <af:facetRef facetName="status"/>
+                  </af:panelGroupLayout>
+                  <f:facet name="separator">
+                    <af:spacer width="20" id="pt_brEndSp2"/>
+                  </f:facet>
+                </af:panelGroupLayout>
+              </f:facet>
+            </af:panelBorderLayout>
+          </af:panelBorderLayout>
+        </af:panelGroupLayout>
+      </f:facet>
+      <f:facet name="second">
+        <af:panelStretchLayout id="pt_psl1" startWidth="50px"
+                               bottomHeight="20px">
+          <f:facet name="bottom">
+            <af:panelStretchLayout id="pt_psl2" startWidth="auto"
+                                   endWidth="auto"
+                                   inlineStyle="margin: 0px 5px">
+              <f:facet name="start">
+                <af:panelGroupLayout layout="scroll"
+                                     xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                                     id="pt_pgl2">
+                  <af:facetRef facetName="copyright"/>
+                </af:panelGroupLayout>
+              </f:facet>
+              <f:facet name="end">
+                <af:facetRef facetName="about"/>
+              </f:facet>
+            </af:panelStretchLayout>
+          </f:facet>
+          <f:facet name="center">
+            <af:decorativeBox id="pt_db1" theme="contentBody">
+              <f:facet name="center">
+                <af:panelSplitter id="pt_ps2" orientation="vertical"
+                                  splitterPosition="23" disabled="true">
+                  <f:facet name="first">
+                    <af:panelStretchLayout id="panelStretchLayout1"
+                                           startWidth="auto" endWidth="auto"
+                                           >
+                      <f:facet name="start">
+                        <af:facetRef facetName="globalToolbar"/>
+                      </f:facet>
+                      <f:facet name="end">
+                        <af:facetRef facetName="globalSearch"/>
+                      </f:facet>
+                    </af:panelStretchLayout>
+                  </f:facet>
+                  <f:facet name="second">
+                    <af:decorativeBox id="pt_db2"
+                                      topHeight="25px" theme="light">
+                      <f:facet name="center">
+                        <af:facetRef facetName="center"/>
+                      </f:facet>
+                      <f:facet name="top">
+                        <af:panelStretchLayout endWidth="auto" id="ptpsl2"
+                                               centerLandmark="navigation"
+                                               endLandmark="search">
+                          <f:facet name="center">
+                            <af:facetRef facetName="globalTabs"/>
+                          </f:facet>
+                        </af:panelStretchLayout>
+                      </f:facet>
+                    </af:decorativeBox>
+                  </f:facet>
+                </af:panelSplitter>
+              </f:facet>
+            </af:decorativeBox>
+          </f:facet>
+        </af:panelStretchLayout>
+      </f:facet>
+    </af:panelSplitter>
+    <af:xmlContent>
+      <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+        <display-name>sasrTemplate2</display-name>
+        <facet>
+          <facet-name>
+            status
+          </facet-name>
+        </facet>
+        <facet>
+          <facet-name>
+            globalLinks
+          </facet-name>
+        </facet>
+        <facet>
+          <facet-name>
+            about
+          </facet-name>
+        </facet>
+        <facet>
+          <facet-name>
+            copyright
+          </facet-name>
+        </facet>
+        <facet>
+          <facet-name>
+            globalSearch
+          </facet-name>
+        </facet>
+        <facet>
+          <facet-name>
+            globalToolbar
+          </facet-name>
+        </facet>
+        <facet>
+          <facet-name>
+            center
+          </facet-name>
+        </facet>
+        <facet>
+          <facet-name>
+            globalTabs
+          </facet-name>
+        </facet>
+        <attribute>
+          <attribute-name>
+            brandingTitle
+          </attribute-name>
+          <attribute-class>
+            java.lang.String
+          </attribute-class>
+          <default-value>
+            Perp System
+          </default-value>
+        </attribute>
+        <attribute>
+          <attribute-name>
+            logoImagePath
+          </attribute-name>
+          <attribute-class>
+            java.lang.String
+          </attribute-class>
+        </attribute>
+      </component>
+    </af:xmlContent>
+  </af:pageTemplateDef>
+</jsp:root>

@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"         
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1" title="Đăng ký tài khoản">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:pageTemplate viewId="/templates/sasrTemplate2.jspx" id="pt1">
+          <f:facet name="center">
+            <af:panelStretchLayout endWidth="301px" topHeight="60px" id="psl1">
+              <f:facet name="center">
+                <af:region value="#{bindings.sasr0011.regionModel}"
+                           id="sasr01"/>
+              </f:facet>
+            </af:panelStretchLayout>
+          </f:facet>
+          <f:facet name="copyright"/>
+          <f:facet name="about"/>
+          <f:facet name="globalTabs">
+            <af:navigationPane id="np1">
+              <af:commandNavigationItem text="Thông tin đăng ký"
+                                        id="cni1" partialSubmit="true"/>
+            </af:navigationPane>
+          </f:facet>
+          <f:facet name="globalSearch">
+            <af:inputText label="Search" id="it1"/>
+          </f:facet>
+          <f:facet name="globalLinks">
+            <af:navigationPane hint="buttons" id="pt_np1">
+              <af:commandNavigationItem text="Home" id="pt_cni1" immediate="true" destination="http://www.vbiscloud.com/sasn/faces/index"/>
+              <af:commandNavigationItem text="Login" action="login"
+                                        id="pt_cni2" immediate="true"/>
+              <af:commandNavigationItem text="Help"
+                                        id="pt_cni3" immediate="true" visible="false"/>
+            </af:navigationPane>
+          </f:facet>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

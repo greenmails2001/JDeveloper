@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.49.49"
+          id="SASFacadeLocal" Package="com.vc.web.ejb.sas"
+          BeanClass="com.vc.web.ejb.sas.SASFacadeLocal" isJavaBased="true">
+  <Attribute Name="nextValueAccId" IsUpdateable="0" Type="java.lang.Long"/>
+  <MethodAccessor IsCollection="false" Type="java.lang.Object" id="mergeEntity"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="entity" Type="java.lang.Object" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Object"
+                  id="persistEntity" ReturnNodeName="Return">
+    <ParameterInfo id="entity" Type="java.lang.Object" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true"
+                  Type="com.vc.web.ejb.sas.entities.Provinces"
+                  BeanClass="com.vc.web.ejb.sas.entities.Provinces"
+                  id="queryProvincesFindAll" ReturnNodeName="Provinces"
+                  CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="true"
+                  Type="com.vc.web.ejb.sas.entities.Provinces"
+                  BeanClass="com.vc.web.ejb.sas.entities.Provinces"
+                  id="queryProvincesFindAllByRange" ReturnNodeName="Provinces"
+                  CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="firstResult" Type="int" isStructured="false"/>
+    <ParameterInfo id="maxResults" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Number"
+                  id="queryProvincesFindAllSize" ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="void" id="removeProvinces"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="provinces" Type="com.vc.web.ejb.sas.entities.Provinces"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true"
+                  Type="com.vc.web.ejb.sas.entities.ServicePackages"
+                  BeanClass="com.vc.web.ejb.sas.entities.ServicePackages"
+                  id="queryServicePackagesFindAll"
+                  ReturnNodeName="ServicePackages"
+                  CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="true"
+                  Type="com.vc.web.ejb.sas.entities.ServicePackages"
+                  BeanClass="com.vc.web.ejb.sas.entities.ServicePackages"
+                  id="queryServicePackagesFindAllByRange"
+                  ReturnNodeName="ServicePackages"
+                  CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="firstResult" Type="int" isStructured="false"/>
+    <ParameterInfo id="maxResults" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Number"
+                  id="queryServicePackagesFindAllSize" ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="void" id="removeServicePackages"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="servicePackages"
+                   Type="com.vc.web.ejb.sas.entities.ServicePackages"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.Roles"
+                  BeanClass="com.vc.web.ejb.sas.entities.Roles"
+                  id="queryRolesFindAll" ReturnNodeName="Roles"
+                  CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.Roles"
+                  BeanClass="com.vc.web.ejb.sas.entities.Roles"
+                  id="queryRolesFindAllByRange" ReturnNodeName="Roles"
+                  CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="firstResult" Type="int" isStructured="false"/>
+    <ParameterInfo id="maxResults" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Number"
+                  id="queryRolesFindAllSize" ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="void" id="removeRoles"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="roles" Type="com.vc.web.ejb.sas.entities.Roles"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true"
+                  Type="com.vc.web.ejb.sas.entities.Countries"
+                  BeanClass="com.vc.web.ejb.sas.entities.Countries"
+                  id="queryCountriesFindAll" ReturnNodeName="Countries"
+                  CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="true"
+                  Type="com.vc.web.ejb.sas.entities.Countries"
+                  BeanClass="com.vc.web.ejb.sas.entities.Countries"
+                  id="queryCountriesFindAllByRange" ReturnNodeName="Countries"
+                  CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="firstResult" Type="int" isStructured="false"/>
+    <ParameterInfo id="maxResults" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Number"
+                  id="queryCountriesFindAllSize" ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="void" id="removeCountries"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="countries" Type="com.vc.web.ejb.sas.entities.Countries"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true"
+                  Type="com.vc.web.ejb.sas.entities.Subscriptions"
+                  BeanClass="com.vc.web.ejb.sas.entities.Subscriptions"
+                  id="querySubscriptionsFindAll" ReturnNodeName="Subscriptions"
+                  CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="true"
+                  Type="com.vc.web.ejb.sas.entities.Subscriptions"
+                  BeanClass="com.vc.web.ejb.sas.entities.Subscriptions"
+                  id="querySubscriptionsFindAllByRange"
+                  ReturnNodeName="Subscriptions"
+                  CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="firstResult" Type="int" isStructured="false"/>
+    <ParameterInfo id="maxResults" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Number"
+                  id="querySubscriptionsFindAllSize" ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="void" id="removeSubscriptions"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="subscriptions"
+                   Type="com.vc.web.ejb.sas.entities.Subscriptions"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true"
+                  Type="com.vc.web.ejb.sas.entities.Accounts"
+                  BeanClass="com.vc.web.ejb.sas.entities.Accounts"
+                  id="queryAccountsFindAll" ReturnNodeName="Accounts"
+                  CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="true"
+                  Type="com.vc.web.ejb.sas.entities.Accounts"
+                  BeanClass="com.vc.web.ejb.sas.entities.Accounts"
+                  id="queryAccountsFindAllByRange" ReturnNodeName="Accounts"
+                  CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="firstResult" Type="int" isStructured="false"/>
+    <ParameterInfo id="maxResults" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Number"
+                  id="queryAccountsFindAllSize" ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="void" id="removeAccounts"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="accounts" Type="com.vc.web.ejb.sas.entities.Accounts"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true"
+                  Type="com.vc.web.ejb.sas.entities.Industries"
+                  BeanClass="com.vc.web.ejb.sas.entities.Industries"
+                  id="queryIndustriesFindAll" ReturnNodeName="Industries"
+                  CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="true"
+                  Type="com.vc.web.ejb.sas.entities.Industries"
+                  BeanClass="com.vc.web.ejb.sas.entities.Industries"
+                  id="queryIndustriesFindAllByRange" ReturnNodeName="Industries"
+                  CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="firstResult" Type="int" isStructured="false"/>
+    <ParameterInfo id="maxResults" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Number"
+                  id="queryIndustriesFindAllSize" ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="void" id="removeIndustries"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="industries" Type="com.vc.web.ejb.sas.entities.Industries"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true"
+                  Type="com.vc.web.ejb.sas.entities.Subscriptions"
+                  BeanClass="com.vc.web.ejb.sas.entities.Subscriptions"
+                  id="querySubscriptionsFindByAccId"
+                  ReturnNodeName="Subscriptions"
+                  CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="accId" Type="java.lang.Long" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="com.vc.web.ejb.sas.entities.Accounts"
+                  BeanClass="com.vc.web.ejb.sas.entities.Accounts"
+                  id="queryAccountsFindByAccId" ReturnNodeName="Accounts">
+    <ParameterInfo id="accId" Type="java.lang.Long" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="com.vc.web.ejb.sas.entities.Accounts"
+                  BeanClass="com.vc.web.ejb.sas.entities.Accounts"
+                  id="queryAccountsFindByUserNamePassowrd"
+                  ReturnNodeName="Accounts">
+    <ParameterInfo id="userName" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="password" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true"
+                  Type="com.vc.web.ejb.sas.entities.ServicePackages"
+                  BeanClass="com.vc.web.ejb.sas.entities.ServicePackages"
+                  id="queryServicePackagesFindToOrder"
+                  ReturnNodeName="ServicePackages"
+                  CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="accId" Type="java.lang.Long" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="com.vc.web.ejb.sas.entities.Accounts"
+                  BeanClass="com.vc.web.ejb.sas.entities.Accounts"
+                  id="queryAccountsFindByUserName" ReturnNodeName="Accounts">
+    <ParameterInfo id="userName" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="com.vc.web.ejb.sas.entities.ServicePackages"
+                  BeanClass="com.vc.web.ejb.sas.entities.ServicePackages"
+                  id="queryServicePackagesFindByPackageCode"
+                  ReturnNodeName="ServicePackages">
+    <ParameterInfo id="packageCode" Type="java.lang.String"
+                   isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="com.vc.web.ejb.sas.entities.ServicePackages"
+                  BeanClass="com.vc.web.ejb.sas.entities.ServicePackages"
+                  id="queryServicePackagesFindBySpaId"
+                  ReturnNodeName="ServicePackages">
+    <ParameterInfo id="spaId" Type="java.lang.Long" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="com.vc.web.PerpSystemInfo"
+                  BeanClass="com.vc.web.PerpSystemInfo" id="getPerpSystemInfo"
+                  ReturnNodeName="PerpSystemInfo">
+    <ParameterInfo id="sasAccId" Type="java.lang.Long" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="com.vc.web.ejb.sas.entities.Subscriptions"
+                  BeanClass="com.vc.web.ejb.sas.entities.Subscriptions"
+                  id="querySubscriptionsFindByActivatedCode"
+                  ReturnNodeName="Subscriptions">
+    <ParameterInfo id="activatedCode" Type="java.lang.String"
+                   isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.String" id="generateActivatedCode" ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="com.vc.web.ejb.sas.entities.Accounts"
+                  BeanClass="com.vc.web.ejb.sas.entities.Accounts" id="queryAccountsFindByEmail"
+                  ReturnNodeName="Accounts">
+    <ParameterInfo id="email" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="com.vc.web.ejb.sas.entities.Subscriptions"
+                  BeanClass="com.vc.web.ejb.sas.entities.Subscriptions" id="createDefaultSubscriptions"
+                  ReturnNodeName="Subscriptions">
+    <ParameterInfo id="accId" Type="java.lang.Long" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="com.vc.web.ejb.sas.entities.Subscriptions"
+                  BeanClass="com.vc.web.ejb.sas.entities.Subscriptions"
+                  id="querySubscriptionsFindBySubId"
+                  ReturnNodeName="Subscriptions">
+    <ParameterInfo id="subId" Type="java.lang.Long" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true"
+                  Type="com.vc.web.ejb.sas.entities.SecurityQuestions"
+                  BeanClass="com.vc.web.ejb.sas.entities.SecurityQuestions"
+                  id="querySecurityQuestionsFindAll"
+                  ReturnNodeName="SecurityQuestions"
+                  CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="false"
+                  Type="com.vc.web.ejb.sas.entities.Subscriptions"
+                  BeanClass="com.vc.web.ejb.sas.entities.Subscriptions"
+                  id="createSubscriptions" ReturnNodeName="Subscriptions">
+    <ParameterInfo id="accId" Type="java.lang.Long" isStructured="false"/>
+    <ParameterInfo id="spaId" Type="java.lang.Long" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="sendEmailCreatedAccount"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="email" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="fullName" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="userName" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="password" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="url" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="sendEmailCreateSub"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="accId" Type="java.lang.Long" isStructured="false"/>
+    <ParameterInfo id="subId" Type="java.lang.Long" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="sendEmailForgotPassword"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="email" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true"
+                  Type="com.vc.web.ejb.sas.entities.Accounts"
+                  BeanClass="com.vc.web.ejb.sas.entities.Accounts"
+                  id="queryAccountsFindCustome" ReturnNodeName="Accounts"
+                  CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="indId" Type="java.lang.Long" isStructured="false"/>
+    <ParameterInfo id="couId" Type="java.lang.Long" isStructured="false"/>
+    <ParameterInfo id="proId" Type="java.lang.Long" isStructured="false"/>
+    <ParameterInfo id="empCount" Type="java.lang.Integer" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.HelpDeskRelations"
+                  BeanClass="com.vc.web.ejb.sas.entities.HelpDeskRelations" id="queryHelpDeskRelationsFindAll"
+                  ReturnNodeName="HelpDeskRelations" CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.HelpDeskRelations"
+                  BeanClass="com.vc.web.ejb.sas.entities.HelpDeskRelations" id="queryHelpDeskRelationsFindAllByRange"
+                  ReturnNodeName="HelpDeskRelations" CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="firstResult" Type="int" isStructured="false"/>
+    <ParameterInfo id="maxResults" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Number" id="queryHelpDeskRelationsFindAllSize" ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="void" id="removeHelpDeskRelations" ReturnNodeName="Return">
+    <ParameterInfo id="helpDeskRelations" Type="com.vc.web.ejb.sas.entities.HelpDeskRelations" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.HelpDesks" BeanClass="com.vc.web.ejb.sas.entities.HelpDesks"
+                  id="queryHelpDesksFindAll" ReturnNodeName="HelpDesks" CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.HelpDesks" BeanClass="com.vc.web.ejb.sas.entities.HelpDesks"
+                  id="queryHelpDesksFindAllByRange" ReturnNodeName="HelpDesks" CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="firstResult" Type="int" isStructured="false"/>
+    <ParameterInfo id="maxResults" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Number" id="queryHelpDesksFindAllSize" ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="void" id="removeHelpDesks" ReturnNodeName="Return">
+    <ParameterInfo id="helpDesks" Type="com.vc.web.ejb.sas.entities.HelpDesks" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="com.vc.web.ejb.sas.entities.HelpDesks" BeanClass="com.vc.web.ejb.sas.entities.HelpDesks"
+                  id="queryHelpDesksFindByCode" ReturnNodeName="HelpDesks">
+    <ParameterInfo id="helpCode" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.HelpDesks" BeanClass="com.vc.web.ejb.sas.entities.HelpDesks"
+                  id="queryHelpDesksFindByCode2" ReturnNodeName="HelpDesks" CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="helpCode" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="com.vc.web.ejb.sas.entities.HelpDesks" BeanClass="com.vc.web.ejb.sas.entities.HelpDesks"
+                  id="createDefaultChildHelpDesks" ReturnNodeName="HelpDesks">
+    <ParameterInfo id="parent" Type="com.vc.web.ejb.sas.entities.HelpDesks" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.NewsCategories"
+                  BeanClass="com.vc.web.ejb.sas.entities.NewsCategories" id="queryNewsCategoriesFindAll" ReturnNodeName="NewsCategories"
+                  CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.NewsCategories"
+                  BeanClass="com.vc.web.ejb.sas.entities.NewsCategories" id="queryNewsCategoriesFindAllByRange"
+                  ReturnNodeName="NewsCategories" CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="firstResult" Type="int" isStructured="false"/>
+    <ParameterInfo id="maxResults" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Number" id="queryNewsCategoriesFindAllSize" ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="void" id="removeNewsCategories" ReturnNodeName="Return">
+    <ParameterInfo id="newsCategories" Type="com.vc.web.ejb.sas.entities.NewsCategories" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.News" BeanClass="com.vc.web.ejb.sas.entities.News"
+                  id="queryNewsFindAll" ReturnNodeName="News" CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.News" BeanClass="com.vc.web.ejb.sas.entities.News"
+                  id="queryNewsFindAllByRange" ReturnNodeName="News" CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="firstResult" Type="int" isStructured="false"/>
+    <ParameterInfo id="maxResults" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Number" id="queryNewsFindAllSize" ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="void" id="removeNews" ReturnNodeName="Return">
+    <ParameterInfo id="news" Type="com.vc.web.ejb.sas.entities.News" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.NewsRelations" BeanClass="com.vc.web.ejb.sas.entities.NewsRelations"
+                  id="queryNewsRelationsFindAll" ReturnNodeName="NewsRelations" CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.NewsRelations" BeanClass="com.vc.web.ejb.sas.entities.NewsRelations"
+                  id="queryNewsRelationsFindAllByRange" ReturnNodeName="NewsRelations" CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="firstResult" Type="int" isStructured="false"/>
+    <ParameterInfo id="maxResults" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Number" id="queryNewsRelationsFindAllSize" ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="void" id="removeNewsRelations" ReturnNodeName="Return">
+    <ParameterInfo id="newsRelations" Type="com.vc.web.ejb.sas.entities.NewsRelations" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.NewsCategories"
+                  BeanClass="com.vc.web.ejb.sas.entities.NewsCategories" id="queryNewsCategoriesFindAllRoot" ReturnNodeName="NewsCategories"
+                  CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.News" BeanClass="com.vc.web.ejb.sas.entities.News"
+                  id="queryNewsFindByNcaId" ReturnNodeName="News" CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="ncaId" Type="java.lang.Long" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="com.vc.web.ejb.sas.entities.News" BeanClass="com.vc.web.ejb.sas.entities.News"
+                  id="queryNewsFindByNewsId" ReturnNodeName="News">
+    <ParameterInfo id="newsId" Type="java.lang.Long" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="com.vc.web.ejb.sas.entities.NewsCategories"
+                  BeanClass="com.vc.web.ejb.sas.entities.NewsCategories" id="queryNewsCategoriesFindByNcaId"
+                  ReturnNodeName="NewsCategories">
+    <ParameterInfo id="ncaId" Type="java.lang.Long" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.NewsCategories"
+                  BeanClass="com.vc.web.ejb.sas.entities.NewsCategories" id="queryNewsCategoriesFindByNcaIdParent"
+                  ReturnNodeName="NewsCategories" CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="ncaIdParent" Type="java.lang.Long" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.News" BeanClass="com.vc.web.ejb.sas.entities.News"
+                  id="queryNewsFindByNcaIdOrderByPriorityLevel" ReturnNodeName="News" CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="ncaId" Type="java.lang.Long" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.HelpDesks" BeanClass="com.vc.web.ejb.sas.entities.HelpDesks"
+                  id="queryHelpDesksFindAllRoot" ReturnNodeName="HelpDesks" CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.HelpDesks" BeanClass="com.vc.web.ejb.sas.entities.HelpDesks"
+                  id="queryHelpDesksFindAllRootByCode" ReturnNodeName="HelpDesks" CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="helpCode" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="com.vc.web.ejb.sas.entities.News" BeanClass="com.vc.web.ejb.sas.entities.News"
+                  id="queryNewsFindFirstByNcaIdOrderByPriorityLevel" ReturnNodeName="News">
+    <ParameterInfo id="ncaId" Type="java.lang.Long" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.Forums" BeanClass="com.vc.web.ejb.sas.entities.Forums"
+                  id="queryForumsFindAll" ReturnNodeName="Forums" CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.Forums" BeanClass="com.vc.web.ejb.sas.entities.Forums"
+                  id="queryForumsFindAllByRange" ReturnNodeName="Forums" CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="firstResult" Type="int" isStructured="false"/>
+    <ParameterInfo id="maxResults" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Number" id="queryForumsFindAllSize" ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="void" id="removeForums" ReturnNodeName="Return">
+    <ParameterInfo id="forums" Type="com.vc.web.ejb.sas.entities.Forums" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.ForumOwners" BeanClass="com.vc.web.ejb.sas.entities.ForumOwners"
+                  id="queryForumOwnersFindAll" ReturnNodeName="ForumOwners" CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.ForumOwners" BeanClass="com.vc.web.ejb.sas.entities.ForumOwners"
+                  id="queryForumOwnersFindAllByRange" ReturnNodeName="ForumOwners" CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="firstResult" Type="int" isStructured="false"/>
+    <ParameterInfo id="maxResults" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Number" id="queryForumOwnersFindAllSize" ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="void" id="removeForumOwners" ReturnNodeName="Return">
+    <ParameterInfo id="forumOwners" Type="com.vc.web.ejb.sas.entities.ForumOwners" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.ForumCategories"
+                  BeanClass="com.vc.web.ejb.sas.entities.ForumCategories" id="queryForumCategoriesFindAll" ReturnNodeName="ForumCategories"
+                  CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.ForumCategories"
+                  BeanClass="com.vc.web.ejb.sas.entities.ForumCategories" id="queryForumCategoriesFindAllByRange"
+                  ReturnNodeName="ForumCategories" CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="firstResult" Type="int" isStructured="false"/>
+    <ParameterInfo id="maxResults" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Number" id="queryForumCategoriesFindAllSize" ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="void" id="removeForumCategories" ReturnNodeName="Return">
+    <ParameterInfo id="forumCategories" Type="com.vc.web.ejb.sas.entities.ForumCategories" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.ForumMessages" BeanClass="com.vc.web.ejb.sas.entities.ForumMessages"
+                  id="queryForumMessagesFindAll" ReturnNodeName="ForumMessages" CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.ForumMessages" BeanClass="com.vc.web.ejb.sas.entities.ForumMessages"
+                  id="queryForumMessagesFindAllByRange" ReturnNodeName="ForumMessages" CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="firstResult" Type="int" isStructured="false"/>
+    <ParameterInfo id="maxResults" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Number" id="queryForumMessagesFindAllSize" ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="void" id="removeForumMessages" ReturnNodeName="Return">
+    <ParameterInfo id="forumMessages" Type="com.vc.web.ejb.sas.entities.ForumMessages" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.ForumMembers" BeanClass="com.vc.web.ejb.sas.entities.ForumMembers"
+                  id="queryForumMembersFindAll" ReturnNodeName="ForumMembers" CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.ForumMembers" BeanClass="com.vc.web.ejb.sas.entities.ForumMembers"
+                  id="queryForumMembersFindAllByRange" ReturnNodeName="ForumMembers" CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="firstResult" Type="int" isStructured="false"/>
+    <ParameterInfo id="maxResults" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Number" id="queryForumMembersFindAllSize" ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="void" id="removeForumMembers" ReturnNodeName="Return">
+    <ParameterInfo id="forumMembers" Type="com.vc.web.ejb.sas.entities.ForumMembers" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.Forums" BeanClass="com.vc.web.ejb.sas.entities.Forums"
+                  id="queryForumsFindByOwnerCode" ReturnNodeName="Forums" CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="forumOwnerCode" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.ForumMessages" BeanClass="com.vc.web.ejb.sas.entities.ForumMessages"
+                  id="queryForumMessagesFindAllRootByFcaId" ReturnNodeName="ForumMessages" CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="fcaId" Type="java.lang.Long" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.News" BeanClass="com.vc.web.ejb.sas.entities.News"
+                  id="queryNewsFindByNcaId" ReturnNodeName="News" CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="ncaId" Type="java.lang.Long" isStructured="false"/>
+    <ParameterInfo id="resultCount" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.NewsCategories"
+                  BeanClass="com.vc.web.ejb.sas.entities.NewsCategories" id="queryNewsCategoriesFindByCategoryCodeParent"
+                  ReturnNodeName="NewsCategories" CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="categoryCode" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.News" BeanClass="com.vc.web.ejb.sas.entities.News"
+                  id="queryNewsFindByCategoryCodeAndBookmarkCode" ReturnNodeName="News" CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="categoryCode" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="bookmarkCode" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.NewsBookmarks" BeanClass="com.vc.web.ejb.sas.entities.NewsBookmarks"
+                  id="queryNewsBookmarksFindAll" ReturnNodeName="NewsBookmarks" CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.sas.entities.NewsBookmarks" BeanClass="com.vc.web.ejb.sas.entities.NewsBookmarks"
+                  id="queryNewsBookmarksFindAllByRange" ReturnNodeName="NewsBookmarks" CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="firstResult" Type="int" isStructured="false"/>
+    <ParameterInfo id="maxResults" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Number" id="queryNewsBookmarksFindAllSize" ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="void" id="removeNewsBookmarks" ReturnNodeName="Return">
+    <ParameterInfo id="newsBookmarks" Type="com.vc.web.ejb.sas.entities.NewsBookmarks" isStructured="true"/>
+  </MethodAccessor>
+</JavaBean>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.49.49"
+          id="SpaOun" Package="com.vc.web" BeanClass="com.vc.web.SpaOun"
+          isJavaBased="true">
+  <Attribute Name="ounId" Type="java.lang.Long"/>
+  <Attribute Name="coName" Type="java.lang.String"/>
+  <Attribute Name="coLogo" Type="java.lang.String"/>
+  <Attribute Name="coAddress" Type="java.lang.String"/>
+  <Attribute Name="coTaxNo" Type="java.lang.String"/>
+  <Attribute Name="coTaxForm" Type="java.lang.String"/>
+  <Attribute Name="coTelNo" Type="java.lang.String"/>
+  <Attribute Name="coFaxNo" Type="java.lang.String"/>
+  <Attribute Name="coNameDesc" Type="java.lang.String"/>
+  <Attribute Name="coLogoDesc" Type="java.lang.String"/>
+  <Attribute Name="coAddressDesc" Type="java.lang.String"/>
+  <Attribute Name="coTaxNoDesc" Type="java.lang.String"/>
+  <Attribute Name="coTaxFormDesc" Type="java.lang.String"/>
+  <Attribute Name="coTelNoDesc" Type="java.lang.String"/>
+  <Attribute Name="coFaxNoDesc" Type="java.lang.String"/>
+  <Attribute Name="spaIdCoName" Type="java.lang.Long"/>
+  <Attribute Name="spaIdCoLogo" Type="java.lang.Long"/>
+  <Attribute Name="spaIdCoAddress" Type="java.lang.Long"/>
+  <Attribute Name="spaIdTaxNo" Type="java.lang.Long"/>
+  <Attribute Name="spaIdTaxForm" Type="java.lang.Long"/>
+  <Attribute Name="spaIdTelNo" Type="java.lang.Long"/>
+  <Attribute Name="spaIdFaxNo" Type="java.lang.Long"/>
+  <Attribute Name="ounOunId" Type="java.lang.Long"/>
+  <Attribute Name="ounOunName" Type="java.lang.String"/>
+  <Attribute Name="ounOunNumber" Type="java.lang.String"/>
+  <Attribute Name="rootOun" Type="boolean"/>
+  <ConstructorMethod IsCollection="true" Type="com.vc.web.SpaOun"
+                     BeanClass="com.vc.web.SpaOun" id="SpaOun"/>
+</JavaBean>

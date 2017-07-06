@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.1.51.56" id="reviewAccountPageDef"
+                Package="pages.fragments.sasAccount">
+  <parameters/>
+  <executables>
+    <methodIterator Binds="queryAccountsFindByAccId.result" DataControl="SASFacadeLocal" RangeSize="25"
+                    BeanClass="com.vc.web.ejb.sas.entities.Accounts" id="queryAccountsFindByAccIdIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="queryAccountsFindByAccId" RequiresUpdateModel="true" Action="invokeMethod" MethodName="queryAccountsFindByAccId"
+                  IsViewObjectMethod="false" DataControl="SASFacadeLocal" InstanceName="SASFacadeLocal.dataProvider"
+                  ReturnName="SASFacadeLocal.methodResults.queryAccountsFindByAccId_SASFacadeLocal_dataProvider_queryAccountsFindByAccId_result">
+      <NamedData NDName="accId" NDValue="#{backing_sasSessionLogin.newAccId}" NDType="java.lang.Long"/>
+    </methodAction>
+    <attributeValues IterBinding="queryAccountsFindByAccIdIterator" id="address">
+      <AttrNames>
+        <Item Value="address"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryAccountsFindByAccIdIterator" id="contactTelephone">
+      <AttrNames>
+        <Item Value="contactTelephone"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryAccountsFindByAccIdIterator" id="customerApproach">
+      <AttrNames>
+        <Item Value="customerApproach"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryAccountsFindByAccIdIterator" id="email">
+      <AttrNames>
+        <Item Value="email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryAccountsFindByAccIdIterator" id="fullName">
+      <AttrNames>
+        <Item Value="fullName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryAccountsFindByAccIdIterator" id="numberOfEmployee">
+      <AttrNames>
+        <Item Value="numberOfEmployee"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryAccountsFindByAccIdIterator" id="organizationName">
+      <AttrNames>
+        <Item Value="organizationName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryAccountsFindByAccIdIterator" id="taxCode">
+      <AttrNames>
+        <Item Value="taxCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryAccountsFindByAccIdIterator" id="userName">
+      <AttrNames>
+        <Item Value="userName"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

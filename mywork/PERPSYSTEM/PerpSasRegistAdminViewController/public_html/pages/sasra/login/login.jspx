@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:pageTemplate viewId="/templates/sasraTemplate001.jspx" id="pt1">
+          <f:facet name="center">
+           <af:panelStretchLayout styleClass="AFVisualRoot" startWidth="212px"
+                                   topHeight="150px" id="psl1">
+              <f:facet name="center">
+                <af:panelStretchLayout topHeight="207px" id="psl2">
+                  <f:facet name="center">
+                    <af:panelGroupLayout layout="vertical" halign="center"
+                                         id="pgl1">
+                      <af:image shortDesc="image"
+                                source="/images/login/erp_setup.gif" id="i1"/>
+                    </af:panelGroupLayout>
+                  </f:facet>
+                </af:panelStretchLayout>
+              </f:facet>
+              <f:facet name="start">
+                <af:panelHeader text="Navigation" id="ph1">
+                  <af:navigationPane hint="list" id="np1">
+                    <af:commandNavigationItem text="Admin Setting" id="cni1"/>
+                    <af:commandNavigationItem text="Subscription List"
+                                              id="cni2"/>
+                    <af:commandNavigationItem text="Database Setting"
+                                              id="cni3"/>
+                  </af:navigationPane>
+                </af:panelHeader>
+              </f:facet>
+              <f:facet name="top">
+                <af:panelSplitter splitterPosition="670" disabled="true"
+                                  id="ps1">
+                  <f:facet name="first">
+                    <af:image source="/images/login/login.png"
+                              shortDesc="image" id="i2"/>
+                  </f:facet>
+                  <f:facet name="second">
+                    <af:panelStretchLayout endWidth="286px" id="psl3">
+                      <f:facet name="center"/>
+                      <f:facet name="end">
+                        <af:panelHeader text="Login Admin System"
+                                        id="panelheader1">
+                          <af:panelFormLayout id="pfl1">
+                            <af:inputText value="#{bindings.userName.inputValue}"
+                                          label="Username"
+                                          required="#{bindings.userName.hints.mandatory}"
+                                          columns="#{bindings.userName.hints.displayWidth}"
+                                          maximumLength="#{bindings.userName.hints.precision}"
+                                          shortDesc="#{bindings.userName.hints.tooltip}"
+                                          id="it1">
+                              <f:validator binding="#{bindings.userName.validator}"/>
+                            </af:inputText>
+                            <af:inputText value="#{bindings.password.inputValue}"
+                                          label="Password"
+                                          required="#{bindings.password.hints.mandatory}"
+                                          columns="#{bindings.password.hints.displayWidth}"
+                                          maximumLength="#{bindings.password.hints.precision}"
+                                          shortDesc="#{bindings.password.hints.tooltip}"
+                                          id="it2">
+                              <f:validator binding="#{bindings.password.validator}"/>
+                            </af:inputText>
+                            <af:commandButton actionListener="#{bindings.doPerpRegistAdminChecking.execute}"
+                                              text="Login"
+                                              disabled="#{!bindings.doPerpRegistAdminChecking.enabled}"
+                                              action="sasra001"
+                                              partialSubmit="true" id="cb1"/>
+                          </af:panelFormLayout>
+                        </af:panelHeader>
+                      </f:facet>
+                    </af:panelStretchLayout>
+                  </f:facet>
+                </af:panelSplitter>
+              </f:facet>
+            </af:panelStretchLayout>
+          </f:facet>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

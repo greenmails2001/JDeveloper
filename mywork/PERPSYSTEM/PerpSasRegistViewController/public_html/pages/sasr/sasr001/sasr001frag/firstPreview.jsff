@@ -1,0 +1,235 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:trh="http://myfaces.apache.org/trinidad/html"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="perpsasregistviewcontrollerBundle"
+         value="#{adfBundle['com.perp.sasregistviewcontroller.PerpSasRegistViewControllerBundle']}"/>
+  <af:panelBox text="PanelBox1" id="pb1" showHeader="never">
+    <f:facet name="toolbar"/>
+    <af:panelStretchLayout topHeight="65px" id="wnppsl1"
+                           styleClass="AFStretchWidth" bottomHeight="5px">
+      <f:facet name="center">
+        <af:panelStretchLayout topHeight="124px" id="wnppsl2">
+          <f:facet name="center">
+            <af:panelGroupLayout layout="vertical" inlineStyle="padding:10px;"
+                                 id="wnppgl1">
+              <af:outputLabel value="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.organizationUnitInfoTitle']}" id="ol2"/>
+              <af:panelFormLayout maxColumns="2" rows="2" labelWidth="170"
+                                  fieldWidth="170" id="wnppfl1">
+                <af:panelLabelAndMessage label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.orgName']}"
+                                         id="wnpplam1">
+                  <af:outputText value="#{bindings.OrganizationName.inputValue}"
+                                 id="wnpot1"/>
+                </af:panelLabelAndMessage>
+                <af:selectOneChoice value="#{bindings.CouId.inputValue}"
+                                    label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.country']}"
+                                    required="#{bindings.CouId.hints.mandatory}"
+                                    shortDesc="#{bindings.CouId.hints.tooltip}"
+                                    readOnly="true" id="wnpsoc1">
+                  <f:selectItems value="#{bindings.CouId.items}" id="wnpsi1"/>
+                </af:selectOneChoice>
+                <af:panelLabelAndMessage label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.address']}"
+                                         id="wnpplam2">
+                  <af:outputText value="#{bindings.Address.inputValue}"
+                                 id="wnpot2"/>
+                </af:panelLabelAndMessage>
+                <af:selectOneChoice value="#{bindings.IndId.inputValue}"
+                                    label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.industry']}"
+                                    required="#{bindings.IndId.hints.mandatory}"
+                                    shortDesc="#{bindings.IndId.hints.tooltip}"
+                                    readOnly="true" id="wnpsoc3">
+                  <f:selectItems value="#{bindings.IndId.items}" id="wnpsi3"/>
+                </af:selectOneChoice>
+                <af:panelLabelAndMessage label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.taxCode']}"
+                                         id="wnpplam3">
+                  <af:outputText value="#{bindings.TaxCode.inputValue}"
+                                 id="wnpot3"/>
+                </af:panelLabelAndMessage>
+                <af:selectOneChoice value="#{bindings.LabId.inputValue}"
+                                    label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.labor']}"
+                                    required="#{bindings.LabId.hints.mandatory}"
+                                    shortDesc="#{bindings.LabId.hints.tooltip}"
+                                    readOnly="true" id="wnpsoc2">
+                  <f:selectItems value="#{bindings.LabId.items}" id="wnpsi2"/>
+                </af:selectOneChoice>
+              </af:panelFormLayout>
+              <af:outputLabel value="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.personalInfoTitle']}"
+                              id="outputLabel3"/>
+              <af:panelFormLayout maxColumns="2" rows="3" fieldWidth="170"
+                                  labelWidth="170" id="wnppfl2">
+                <af:panelLabelAndMessage label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.userName']}"
+                                         id="wnpplam4">
+                  <af:outputText value="#{bindings.UserName.inputValue}"
+                                 id="wnpot4"/>
+                </af:panelLabelAndMessage>
+                <af:panelLabelAndMessage label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.fullName']}"
+                                         id="wnpplam5">
+                  <af:outputText value="#{bindings.FullName.inputValue}"
+                                 id="wnpot5"/>
+                </af:panelLabelAndMessage>
+                <af:panelLabelAndMessage label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.contactTelephone']}"
+                                         id="wnpplam6">
+                  <af:outputText value="#{bindings.ContactTelephone.inputValue}"
+                                 id="wnpot6"/>
+                </af:panelLabelAndMessage>
+                <af:selectOneChoice value="#{bindings.MmeId.inputValue}"
+                                    label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.knownUsFrom']}"
+                                    required="#{bindings.MmeId.hints.mandatory}"
+                                    shortDesc="#{bindings.MmeId.hints.tooltip}"
+                                    readOnly="true" id="wnpsoc5">
+                  <f:selectItems value="#{bindings.MmeId.items}" id="wnpsi5"/>
+                </af:selectOneChoice>
+                <af:panelLabelAndMessage label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.email']}"
+                                         id="wnpplam7">
+                  <af:outputText value="#{bindings.Email.inputValue}"
+                                 id="wnpot7"/>
+                </af:panelLabelAndMessage>
+                <af:selectOneChoice value="#{bindings.RolId.inputValue}"
+                                    label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.role']}"
+                                    required="#{bindings.RolId.hints.mandatory}"
+                                    shortDesc="#{bindings.RolId.hints.tooltip}"
+                                    readOnly="true" id="wnpsoc4">
+                  <f:selectItems value="#{bindings.RolId.items}" id="wnpsi4"/>
+                </af:selectOneChoice>
+              </af:panelFormLayout>
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="top">
+            <af:panelGroupLayout inlineStyle="padding:3px;" id="wnppgl2"
+                                 layout="vertical">
+              <trh:tableLayout width="1000" cellPadding="2" cellSpacing="2"
+                               id="wnptl1">
+                <trh:rowLayout id="wnprl1">
+                  <trh:cellFormat width="33%" id="wnpcf1">
+                    <af:panelGroupLayout id="pgl2" layout="vertical">
+                      <af:outputLabel value="#{perpsasregistviewcontrollerBundle['sasr.sasr001.firstPreview.supportTitle1']}" id="ol1"/>
+                      <af:panelBorderLayout inlineStyle="padding:4px; border-width:1px; outline-color:Aqua;"
+                                            id="wnppbl1">
+                        <f:facet name="innerStart">
+                          <af:navigationPane hint="list" id="wnpnp1">
+                            <af:commandNavigationItem text="#{perpsasregistviewcontrollerBundle['sasr.sasr001.firstPreview.editAccount']}"
+                                                      id="commandNavigationItem1"
+                                                      partialSubmit="true"/>
+                            <af:commandNavigationItem text="#{perpsasregistviewcontrollerBundle['sasr.sasr001.firstPreview.reSendEmail']}"
+                                                      id="wnpcni1"
+                                                      partialSubmit="true"
+                                                      actionListener="#{sasrFirstPreview.reSendEmailActionListener}"/>
+                            <af:commandNavigationItem text="#{perpsasregistviewcontrollerBundle['sasr.sasr001.firstPreview.activeAccount']}"
+                                                      id="commandNavigationItem2"
+                                                      partialSubmit="true"
+                                                      inlineStyle="color:Red; font-weight:bold;">
+                              <af:showPopupBehavior popupId="::activeDialog"
+                                                    triggerType="action"/>
+                            </af:commandNavigationItem>
+                          </af:navigationPane>
+                        </f:facet>
+                        <f:facet name="start">
+                          <af:image shortDesc="image"
+                                    source="/images/images13.jpeg" id="wnpi1"/>
+                        </f:facet>
+                      </af:panelBorderLayout>
+                    </af:panelGroupLayout>
+                  </trh:cellFormat>
+                  <trh:cellFormat width="33%" id="wnpcf2">
+                    <af:panelGroupLayout id="panelGroupLayout1"
+                                         layout="vertical">
+                      <af:outputLabel value="#{perpsasregistviewcontrollerBundle['sasr.sasr001.firstPreview.supportTitle2']}"
+                                      id="outputLabel1"/>
+                      <af:panelBorderLayout inlineStyle="padding:4px; border-width:1px; outline-color:Aqua;"
+                                            id="wnppbl2">
+                        <f:facet name="innerStart">
+                          <af:navigationPane hint="list" id="wnpnp2">
+                            <af:commandNavigationItem text="#{perpsasregistviewcontrollerBundle['sasr.sasr001.firstPreview.sendMailToAdmin']}"
+                                                      id="wnpcni3"
+                                                      partialSubmit="true"/>
+                            <af:commandNavigationItem text="#{sasrSessionLoginObject.perpSasrAccount.userName}"
+                                                      id="commandNavigationItem3"
+                                                      partialSubmit="true"/>
+                          </af:navigationPane>
+                        </f:facet>
+                        <f:facet name="start">
+                          <af:image shortDesc="image"
+                                    source="/images/images13.jpeg" id="wnpi2"/>
+                        </f:facet>
+                      </af:panelBorderLayout>
+                    </af:panelGroupLayout>
+                  </trh:cellFormat>
+                  <trh:cellFormat width="33%" id="wnpcf3">
+                    <af:panelGroupLayout id="panelGroupLayout2"
+                                         layout="vertical">
+                      <af:outputLabel value="#{perpsasregistviewcontrollerBundle['sasr.sasr001.firstPreview.supportTitle3']}"
+                                      id="outputLabel2"/>
+                      <af:panelBorderLayout inlineStyle="padding:4px; border-width:1px; outline-color:Aqua;"
+                                            id="panelBorderLayout1">
+                        <f:facet name="innerStart">
+                          <af:navigationPane hint="list" id="navigationPane1">
+                            <af:commandNavigationItem text="#{perpsasregistviewcontrollerBundle['sasr.sasr001.firstPreview.deleteAccount']}"
+                                                      id="commandNavigationItem4"
+                                                      partialSubmit="true"/>
+                          </af:navigationPane>
+                        </f:facet>
+                        <f:facet name="start">
+                          <af:image shortDesc="image"
+                                    source="/images/images13.jpeg" id="image1"/>
+                        </f:facet>
+                      </af:panelBorderLayout>
+                    </af:panelGroupLayout>
+                  </trh:cellFormat>
+                </trh:rowLayout>
+              </trh:tableLayout>
+            </af:panelGroupLayout>
+          </f:facet>
+        </af:panelStretchLayout>
+      </f:facet>
+      <f:facet name="top">
+        <af:panelGroupLayout id="pgl1" layout="vertical"
+                             inlineStyle="padding:5px;">
+          <af:panelHeader text="#{perpsasregistviewcontrollerBundle['sasr.sasr001.firstPreview.thankForRegistTitle']}"
+                          id="wnpph6">
+            <af:panelGroupLayout inlineStyle="width:700px;" id="wnppgl3">
+              <af:outputText value="#{perpsasregistviewcontrollerBundle['sasr.sasr001.firstPreview.thankForRegistContent']}"
+                             id="wnpot9"/>
+            </af:panelGroupLayout>
+          </af:panelHeader>
+        </af:panelGroupLayout>
+      </f:facet>
+      <f:facet name="bottom">
+        <af:panelGroupLayout layout="scroll"
+                             xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                             id="pgl3">
+          <af:popup id="activeDialog">
+            <af:dialog id="d1" type="none"
+                       title="#{perpsasregistviewcontrollerBundle['sasr.sasr001.firstPreview.activeDialogTitle']}"
+                       inlineStyle="width:400.0px;">
+              <af:panelFormLayout id="pfl1" rows="2" fieldWidth="200"
+                                  labelWidth="100" inlineStyle="padding:5px;"
+                                  maxColumns="1">
+                <af:inputText label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.firstPreview.activeCode']}"
+                              id="activeMessageId"
+                              value="#{sasrFirstPreview.activeCode}"
+                              binding="#{sasrFirstPreview.activeCodeInputText}"/>
+                <f:facet name="footer">
+                  <af:commandButton text="#{perpsasregistviewcontrollerBundle['sasr.sasr001.firstPreview.submitActive']}"
+                                    id="submitActiveId"
+                                    actionListener="#{sasrFirstPreview.activeAccountActionListener}" partialSubmit="true"/>
+                </f:facet>
+              </af:panelFormLayout>
+            </af:dialog>
+          </af:popup>
+          <af:popup id="p1" binding="#{sasrFirstPreview.sendMailPopupInfo}">
+            <af:dialog id="d2" type="ok" title="Info" modal="false"
+                       clientComponent="true">
+              <af:panelGroupLayout id="pgl4" layout="vertical"
+                                   inlineStyle="width:300px;">
+                <af:outputText value="Thong tin kich hoat tai khoan da duoc gui vao dia chi mail cua ban"
+                               id="ot1"/>
+              </af:panelGroupLayout>
+            </af:dialog>
+          </af:popup>
+        </af:panelGroupLayout>
+      </f:facet>
+    </af:panelStretchLayout>
+  </af:panelBox>
+</jsp:root>

@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">r</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">view - r&lt;/p>&lt;/html></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="rawDescription">view - r</property>
+      <property
+         name="y">136.0</property>
+      <property
+         name="x">147.0</property>
+      <property
+         name="pageFragment">true</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">podmReadyUsing</property>
+      <property
+         name="page">/pages/sasr/sasr002/sas002frag/podmFlow01Frag/podmReadyUsing.jsff</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">view - podmReadyUsing&lt;/p>&lt;/html></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="rawDescription">view - podmReadyUsing</property>
+      <property
+         name="y">339.0</property>
+      <property
+         name="x">186.0</property>
+      <property
+         name="pageFragment">true</property>
+   </View>
+   <View
+      id="View4">
+      <property
+         name="activityId">podmReadyRegist</property>
+      <property
+         name="page">/pages/sasr/sasr002/sas002frag/podmFlow01Frag/podmReadyRegist.jsff</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">view - podmReadyRegist&lt;/p>&lt;/html></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="rawDescription">view - podmReadyRegist</property>
+      <property
+         name="y">457.0</property>
+      <property
+         name="x">174.0</property>
+      <property
+         name="pageFragment">true</property>
+   </View>
+</SDM>

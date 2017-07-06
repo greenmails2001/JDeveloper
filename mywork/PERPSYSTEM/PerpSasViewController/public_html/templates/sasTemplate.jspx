@@ -1,0 +1,260 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <af:pageTemplateDef var="attrs">
+    <af:popup id="changePassword" clientComponent="true">
+      <af:dialog title="Thay đổi mật khẩu"
+                      id="pwchangePassword"
+                 inlineStyle="width:420px; height:180.0px;"  
+                 dialogListener="#{changePassword.changePasswordActionListener}">
+        <af:panelStretchLayout id="pt_psl3"
+                               inlineStyle="width:400px; height:120.0px;"
+                               centerLandmark="main">
+          <f:facet name="center">
+            <af:panelGroupLayout
+                                 xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                                 id="pt_pgl3" valign="middle"
+                                 layout="vertical" halign="center">
+              <af:panelFormLayout id="pt_pfl1">
+                <af:inputText label="Tên đăng nhập" id="pt_it1"
+                              value="#{sessionLoginObject.perpAccount.userName}"
+                              inlineStyle="color:Blue;" readOnly="true"/>
+                <af:inputText label="Mật khẩu cũ" id="pt_it2" secret="true"
+                              value="#{changePassword.oldPassword}"
+                              showRequired="true"/>
+                <af:inputText label="Mật khẩu mới" id="pt_it3" secret="true"
+                              value="#{changePassword.newPassword}"
+                              showRequired="true"/>
+                <af:inputText label="Xác nhận lại " id="pt_it4" secret="true"
+                              value="#{changePassword.confirmNewPassword}"
+                              showRequired="true"/>
+              </af:panelFormLayout>
+            </af:panelGroupLayout>
+          </f:facet>
+        </af:panelStretchLayout>
+      </af:dialog>
+    </af:popup>
+    <af:popup id="aboutSubscriptionPopup" clientComponent="true">
+      <af:resource type="javascript">
+        function showAboutSubscriptionPopup() {
+            var popup = AdfPage.PAGE.findComponent("pt1:aboutSubscriptionPopup");
+            popup.show();
+        }
+      </af:resource>
+      <af:panelWindow modal="true" inlineStyle="width:700px; height:250px;"
+                      title="About" id="lzipw1">
+        <af:panelBox text="PanelBox1" id="pb11" showHeader="never">
+          <f:facet name="toolbar"/>
+          <af:panelStretchLayout startWidth="289px" id="lzipsl1"
+                                 styleClass="AFStretchWidth">
+            <f:facet name="center">
+              <af:panelStretchLayout topHeight="153px" bottomHeight="30px"
+                                     id="lzipsl2">
+                <f:facet name="center">
+                  <af:panelHeader text="#{perpsasviewcontrollerBundle['perpsas.login.perpAccountChecking.serviceInfoTitle']}"
+                                  id="lziph2">
+                    <af:panelFormLayout labelWidth="140" id="lzipfl2">
+                      <af:inputText label="#{perpsasviewcontrollerBundle['perpsas.login.perpAccountChecking.companyLabel']}"
+                                    value="Vinhcuu" readOnly="true"
+                                    id="lziit4"/>
+                    </af:panelFormLayout>
+                  </af:panelHeader>
+                </f:facet>
+                <f:facet name="top">
+                  <af:panelHeader text="#{perpsasviewcontrollerBundle['perpsas.login.perpAccountChecking.subscriptionInfoTitle']}"
+                                  id="lziph3">
+                    <af:panelFormLayout labelWidth="140" id="lzipfl3">
+                      <af:inputText label="#{perpsasviewcontrollerBundle['perpsas.login.perpAccountChecking.companyLabel']}"
+                                    readOnly="true"
+                                    value="#{sessionLoginObject.envChecking.subscriptionInfo.organizationName}"
+                                    id="lziit5"/>
+                      <af:inputText label="#{perpsasviewcontrollerBundle['perpsas.login.perpAccountChecking.subscriptionCode']}"
+                                    readOnly="true"
+                                    value="#{ sessionLoginObject.envChecking.subscriptionInfo.subscriptionCode}"
+                                    id="lziit6"/>
+                      <af:inputText label="#{perpsasviewcontrollerBundle['perpsas.login.perpAccountChecking.setupDate']}"
+                                    value="#{sessionLoginObject.perpSasEnv.setupDate}"
+                                    readOnly="true" id="lziit7"/>
+                      <af:inputText label="#{perpsasviewcontrollerBundle['perpsas.login.perpAccountChecking.servicePackage']}"
+                                    readOnly="true"
+                                    value="#{sessionLoginObject.envChecking.subscriptionInfo.packageCode}"
+                                    id="lziit8"/>
+                    </af:panelFormLayout>
+                  </af:panelHeader>
+                </f:facet>
+                <f:facet name="bottom">
+                  <af:panelGroupLayout halign="center" layout="vertical"
+                                       id="lzipgl1">
+                    <af:commandButton text="OK" partialSubmit="true"
+                                      id="lzicb2"/>
+                  </af:panelGroupLayout>
+                </f:facet>
+              </af:panelStretchLayout>
+            </f:facet>
+            <f:facet name="start">
+              <af:image shortDesc="perp logo" source="/images/globals/erp.jpg"
+                        id="lzii1"/>
+            </f:facet>
+          </af:panelStretchLayout>
+        </af:panelBox>
+      </af:panelWindow>
+    </af:popup>
+    <af:panelSplitter id="pt_ps1" orientation="vertical" splitterPosition="25"
+                      firstBorder="none" secondBorder="none" disabled="true">
+      <f:facet name="first">
+        <af:panelGroupLayout id="pt_pgl1" layout="vertical">
+          <af:panelBorderLayout id="pt_pbl1" styleClass="AFBrandingBar">
+            <f:facet name="start">
+              <af:panelGroupLayout id="pt_brLogo" styleClass="AFBrandingBarItem"
+                                   inlineStyle="background-color: white;"
+                                   layout="horizontal">
+                <af:spacer id="pt_spLogo" shortDesc="Branding Logo"
+                           styleClass="AFBrandingBarLogo"
+                           rendered="#{attrs.logoImagePath == null}"/>
+                <af:image source="#{attrs.logoImagePath}"
+                          rendered="#{attrs.logoImagePath != null}" id="pt_i1"/>
+              </af:panelGroupLayout>
+            </f:facet>
+            <f:facet name="end">
+              <af:panelGroupLayout id="pt_statWrp" layout="horizontal"
+                                   styleClass="AFBrandingBarItem">
+                <af:statusIndicator id="pt_statInd"/>
+              </af:panelGroupLayout>
+            </f:facet>
+            <f:facet name="innerStart">
+              <af:panelGroupLayout id="pt_titleWrp"
+                                   styleClass="AFBrandingBarItem"
+                                   inlineStyle="background-color: white;">
+                <af:outputText value="#{attrs.brandingTitle}"
+                               styleClass="AFBrandingBarTitle" id="pt_ot1"/>
+              </af:panelGroupLayout>
+            </f:facet>
+            <af:panelBorderLayout id="pt_sepWrp">
+              <!-- WARNING: hard-coding means no support for other skins -->
+              <af:image id="brSep" source="#{requestContext.rightToLeft?
+                                             '/afr/gradient-none-white.png':
+                                             '/afr/gradient-white-none.png'}"
+                        inlineStyle="max-width: 100%"
+                        styleClass="AFBrandingBarItem AFStretchWidth"
+                        shortDesc=""/>
+              <f:facet name="end">
+                <af:panelGroupLayout id="pt_statPgl" layout="horizontal"
+                                     styleClass="AFBrandingBarItem"
+                                     valign="middle">
+                  <af:facetRef facetName="globalLinks"/>
+                  <af:panelGroupLayout layout="horizontal"
+                                       inlineStyle="width: #{attrs.statusWidth}"
+                                       id="panelGroupLayout1">
+                    <af:facetRef facetName="status"/>
+                  </af:panelGroupLayout>
+                  <f:facet name="separator">
+                    <af:spacer width="20" id="pt_brEndSp2"/>
+                  </f:facet>
+                </af:panelGroupLayout>
+              </f:facet>
+            </af:panelBorderLayout>
+          </af:panelBorderLayout>
+        </af:panelGroupLayout>
+      </f:facet>
+      <f:facet name="second">
+        <af:panelStretchLayout id="pt_psl1" startWidth="50px"
+                               bottomHeight="20px">
+          <f:facet name="bottom">
+            <af:panelStretchLayout id="pt_psl2" startWidth="auto"
+                                   endWidth="auto"
+                                   inlineStyle="margin: 0px 5px">
+              <f:facet name="start">
+                <af:panelGroupLayout layout="scroll"
+                                     xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                                     id="pt_pgl2">
+                  <af:facetRef facetName="copyright"/>
+                </af:panelGroupLayout>
+              </f:facet>
+              <f:facet name="end">
+                <af:facetRef facetName="about"/>
+              </f:facet>
+            </af:panelStretchLayout>
+          </f:facet>
+          <f:facet name="center">
+            <af:decorativeBox id="pt_db1" theme="contentBody">
+              <f:facet name="center">
+                <af:panelSplitter id="pt_ps2" orientation="vertical"
+                                  splitterPosition="20" disabled="true">
+                  <f:facet name="first">
+                    <af:panelStretchLayout id="panelStretchLayout1"
+                                           startWidth="auto" endWidth="auto">
+                      <f:facet name="start">
+                        <af:facetRef facetName="globalToolbar"/>
+                      </f:facet>
+                      <f:facet name="end">
+                        <af:facetRef facetName="globalSearch"/>
+                      </f:facet>
+                    </af:panelStretchLayout>
+                  </f:facet>
+                  <f:facet name="second">
+                    <af:decorativeBox id="pt_db2" topHeight="25px"
+                                      theme="light">
+                      <f:facet name="center">
+                        <af:facetRef facetName="center"/>
+                      </f:facet>
+                      <f:facet name="top">
+                        <af:panelStretchLayout endWidth="auto" id="ptpsl2"
+                                               centerLandmark="navigation"
+                                               endLandmark="search">
+                          <f:facet name="center">
+                            <af:facetRef facetName="globalTabs"/>
+                          </f:facet>
+                        </af:panelStretchLayout>
+                      </f:facet>
+                    </af:decorativeBox>
+                  </f:facet>
+                </af:panelSplitter>
+              </f:facet>
+            </af:decorativeBox>
+          </f:facet>
+        </af:panelStretchLayout>
+      </f:facet>
+    </af:panelSplitter>
+    <af:xmlContent>
+      <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+        <display-name>sasTemplate</display-name>
+        <facet>
+          <facet-name>status</facet-name>
+        </facet>
+        <facet>
+          <facet-name>globalLinks</facet-name>
+        </facet>
+        <facet>
+          <facet-name>about</facet-name>
+        </facet>
+        <facet>
+          <facet-name>copyright</facet-name>
+        </facet>
+        <facet>
+          <facet-name>globalSearch</facet-name>
+        </facet>
+        <facet>
+          <facet-name>globalToolbar</facet-name>
+        </facet>
+        <facet>
+          <facet-name>center</facet-name>
+        </facet>
+        <facet>
+          <facet-name>globalTabs</facet-name>
+        </facet>
+        <attribute>
+          <attribute-name>brandingTitle</attribute-name>
+          <attribute-class>java.lang.String</attribute-class>
+          <default-value>Perp System</default-value>
+        </attribute>
+        <attribute>
+          <attribute-name>logoImagePath</attribute-name>
+          <attribute-class>java.lang.String</attribute-class>
+        </attribute>
+      </component>
+    </af:xmlContent>
+  </af:pageTemplateDef>
+</jsp:root>

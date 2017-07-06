@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelGroupLayout layout="scroll" inlineStyle="padding:3px;" id="oaopgl1">
+    <af:panelGroupLayout layout="vertical" id="oaopgl2">
+      <af:menuBar id="oaomb1">
+        <af:menu text="Action" id="oaom1">
+          <af:commandMenuItem text="Tao moi" action="create" id="oaocmi1"/>
+        </af:menu>
+      </af:menuBar>
+    </af:panelGroupLayout>
+    <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="oaopgl3">
+      <af:panelFormLayout maxColumns="2" rows="2" fieldWidth="150" labelWidth="120" id="oaopfl1">
+        <af:inputText value="#{bindings.createdBy.inputValue}" label="#{viewcontrollerBundle['field.news.createdBy']}"
+                      required="#{bindings.createdBy.hints.mandatory}" columns="#{bindings.createdBy.hints.displayWidth}"
+                      maximumLength="#{bindings.createdBy.hints.precision}" shortDesc="#{bindings.createdBy.hints.tooltip}" readOnly="true"
+                      id="oaoit1">
+          <f:validator binding="#{bindings.createdBy.validator}"/>
+        </af:inputText>
+        <af:inputDate value="#{bindings.createDate.inputValue}"
+                      label="#{viewcontrollerBundle['field.news.createDate']}"
+                      required="#{bindings.createDate.hints.mandatory}" shortDesc="#{bindings.createDate.hints.tooltip}" readOnly="true"
+                      id="oaoid1">
+          <f:validator binding="#{bindings.createDate.validator}"/>
+          <af:convertDateTime pattern="#{bindings.createDate.format}"/>
+        </af:inputDate>
+        <af:inputText value="#{bindings.modifiedBy.inputValue}" label="#{viewcontrollerBundle['field.news.modifiedBy']}"
+                      required="#{bindings.modifiedBy.hints.mandatory}" columns="#{bindings.modifiedBy.hints.displayWidth}"
+                      maximumLength="#{bindings.modifiedBy.hints.precision}" shortDesc="#{bindings.modifiedBy.hints.tooltip}"
+                      readOnly="true" id="oaoit2">
+          <f:validator binding="#{bindings.modifiedBy.validator}"/>
+        </af:inputText>
+        <af:inputDate value="#{bindings.modifyDate.inputValue}" label="#{viewcontrollerBundle['field.news.modifyDate']}"
+                      required="#{bindings.modifyDate.hints.mandatory}" shortDesc="#{bindings.modifyDate.hints.tooltip}" readOnly="true"
+                      id="oaoid2">
+          <f:validator binding="#{bindings.modifyDate.validator}"/>
+          <af:convertDateTime pattern="#{bindings.modifyDate.format}"/>
+        </af:inputDate>
+      </af:panelFormLayout>
+    </af:panelGroupLayout>
+    <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="oaopgl4">
+      <af:panelGroupLayout layout="horizontal" id="oaopgl5">
+        <af:commandButton actionListener="#{bindings.First.execute}" text="First" disabled="#{!bindings.First.enabled}"
+                          id="oaocb1"/>
+        <af:spacer width="10" height="10" id="oaos1"/>
+        <af:commandButton actionListener="#{bindings.Previous.execute}" text="Previous" disabled="#{!bindings.Previous.enabled}"
+                          id="oaocb2"/>
+        <af:spacer width="10" height="10" id="oaos2"/>
+        <af:commandButton actionListener="#{bindings.Next.execute}" text="Next" disabled="#{!bindings.Next.enabled}"
+                          id="oaocb3"/>
+        <af:spacer width="10" height="10" id="oaos3"/>
+        <af:commandButton actionListener="#{bindings.Last.execute}" text="Last" disabled="#{!bindings.Last.enabled}"
+                          id="oaocb4"/>
+        <af:spacer width="10" height="10" id="oaos4"/>
+        <af:commandButton text="Hieu chinh" partialSubmit="true" action="#{backing_newsAdmin_newsAdminManager.goEditNewsAction}"
+                          id="oaocb5"/>
+      </af:panelGroupLayout>
+    </af:panelGroupLayout>
+    <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="oaopgl6">
+      <af:panelFormLayout fieldWidth="150" rows="1" labelWidth="120" id="oaopfl2">
+        <af:inputText value="#{bindings.newsId.inputValue}" label="#{viewcontrollerBundle['field.news.newsId']}" required="#{bindings.newsId.hints.mandatory}"
+                      columns="#{bindings.newsId.hints.displayWidth}" maximumLength="#{bindings.newsId.hints.precision}"
+                      shortDesc="#{bindings.newsId.hints.tooltip}" readOnly="true" id="oaoit3">
+          <f:validator binding="#{bindings.newsId.validator}"/>
+          <af:convertNumber groupingUsed="false" pattern="#{bindings.newsId.format}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.priorityLevel.inputValue}"
+                      label="#{viewcontrollerBundle['field.news.priorityLevel']}"
+                      required="#{bindings.priorityLevel.hints.mandatory}" columns="#{bindings.priorityLevel.hints.displayWidth}"
+                      maximumLength="#{bindings.priorityLevel.hints.precision}" shortDesc="#{bindings.priorityLevel.hints.tooltip}"
+                      readOnly="true" id="oaoit4">
+          <f:validator binding="#{bindings.priorityLevel.validator}"/>
+          <af:convertNumber groupingUsed="false" pattern="#{bindings.priorityLevel.format}"/>
+        </af:inputText>
+      </af:panelFormLayout>
+    </af:panelGroupLayout>
+    <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="oaopgl7">
+      <af:activeOutputText value="#{bindings.title.inputValue}" inlineStyle="font-size:medium; color:Navy;"
+                           id="oaoaot1"/>
+    </af:panelGroupLayout>
+    <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="oaopgl8">
+      <af:richTextEditor value="#{bindings.content.inputValue}" readOnly="true" id="oaorte1"/>
+    </af:panelGroupLayout>
+  </af:panelGroupLayout>
+</jsp:root>

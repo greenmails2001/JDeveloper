@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelGroupLayout layout="scroll" id="sbupgl1">
+    <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="sbupgl2">
+      <af:panelFormLayout maxColumns="2" rows="2" labelWidth="150" id="sbupfl1">
+        <af:panelLabelAndMessage label="#{viewcontrollerBundle['field.news.createdBy']}" id="sbuplam1">
+          <af:outputText value="#{bindings.createdBy.inputValue}" id="sbuot1"/>
+        </af:panelLabelAndMessage>
+        <af:panelLabelAndMessage label="#{viewcontrollerBundle['field.news.createDate']}" id="sbuplam2">
+          <af:outputFormatted value="#{bindings.createDate.inputValue}" id="sbuof1">
+            <af:convertDateTime pattern="#{bindings.createDate.format}"/>
+          </af:outputFormatted>
+        </af:panelLabelAndMessage>
+        <af:panelLabelAndMessage label="#{viewcontrollerBundle['field.news.modifiedBy']}" id="sbuplam3">
+          <af:outputText value="#{bindings.modifiedBy.inputValue}" id="sbuot2"/>
+        </af:panelLabelAndMessage>
+        <af:panelLabelAndMessage label="#{viewcontrollerBundle['field.news.modifyDate']}" id="sbuplam4">
+          <af:outputFormatted value="#{bindings.modifyDate.inputValue}" id="sbuof2">
+            <af:convertDateTime pattern="#{bindings.modifyDate.format}"/>
+          </af:outputFormatted>
+        </af:panelLabelAndMessage>
+        <f:facet name="footer">
+          <af:commandButton text="Submit" actionListener="#{bindings.mergeEntity.execute}" disabled="#{!bindings.mergeEntity.enabled}"
+                            partialSubmit="true" action="save" id="sbucb1"/>
+        </f:facet>
+      </af:panelFormLayout>
+    </af:panelGroupLayout>
+    <af:panelGroupLayout inlineStyle="padding:3px;" layout="vertical" id="sbupgl3">
+      <af:panelFormLayout maxColumns="2" rows="1" labelWidth="150" id="sbupfl2">
+        <af:inputText value="#{bindings.newsId.inputValue}" label="#{viewcontrollerBundle['field.news.newsId']}"
+                      required="#{bindings.newsId.hints.mandatory}" columns="#{bindings.newsId.hints.displayWidth}"
+                      maximumLength="#{bindings.newsId.hints.precision}" shortDesc="#{bindings.newsId.hints.tooltip}" readOnly="true"
+                      id="sbuit1">
+          <f:validator binding="#{bindings.newsId.validator}"/>
+          <af:convertNumber groupingUsed="false" pattern="#{bindings.newsId.format}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.priorityLevel.inputValue}" label="#{viewcontrollerBundle['field.news.priorityLevel']}"
+                      required="#{bindings.priorityLevel.hints.mandatory}" columns="#{bindings.priorityLevel.hints.displayWidth}"
+                      maximumLength="#{bindings.priorityLevel.hints.precision}" shortDesc="#{bindings.priorityLevel.hints.tooltip}"
+                      id="sbuit2">
+          <f:validator binding="#{bindings.priorityLevel.validator}"/>
+          <af:convertNumber groupingUsed="false" pattern="#{bindings.priorityLevel.format}"/>
+        </af:inputText>
+      </af:panelFormLayout>
+    </af:panelGroupLayout>
+    <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="sbupgl4">
+      <af:outputLabel value="#{bindings.title1.inputValue}" inlineStyle="font-size:medium;" id="sbuol1"/>
+    </af:panelGroupLayout>
+    <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="sbupgl5">
+      <af:panelFormLayout labelAlignment="top" id="sbupfl3">
+        <af:inputText value="#{bindings.title.inputValue}" label="#{viewcontrollerBundle['field.news.title']}" required="#{bindings.title.hints.mandatory}"
+                      columns="90" maximumLength="#{bindings.title.hints.precision}" shortDesc="#{bindings.title.hints.tooltip}"
+                      id="sbuit3">
+          <f:validator binding="#{bindings.title.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.shortContent.inputValue}"
+                      required="#{bindings.title.hints.mandatory}" columns="90" maximumLength="#{bindings.title.hints.precision}"
+                      shortDesc="#{bindings.title.hints.tooltip}" rows="3" id="sbuit4">
+          <f:validator binding="#{bindings.title.validator}"/>
+        </af:inputText>
+      </af:panelFormLayout>
+    </af:panelGroupLayout>
+    <af:panelGroupLayout layout="vertical" id="sbupgl6">
+      <af:richTextEditor value="#{bindings.content.inputValue}" rows="15" columns="140" id="sburte1"/>
+    </af:panelGroupLayout>
+  </af:panelGroupLayout>
+</jsp:root>

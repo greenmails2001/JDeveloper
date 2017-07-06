@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.49.49"
+          id="SecurityQuestions" Package="com.vc.web.ejb.sas.entities"
+          BeanClass="com.vc.web.ejb.sas.entities.SecurityQuestions"
+          isJavaBased="true">
+  <Attribute Name="question" Type="java.lang.String"/>
+  <Attribute Name="squId" Type="java.lang.Long"/>
+  <ConstructorMethod IsCollection="true"
+                     Type="com.vc.web.ejb.sas.entities.SecurityQuestions"
+                     BeanClass="com.vc.web.ejb.sas.entities.SecurityQuestions"
+                     id="SecurityQuestions"/>
+</JavaBean>

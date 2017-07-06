@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.49.49"
+          id="DynamicPERPFacadeLocal" Package="com.vc.web.ejb.perp"
+          BeanClass="com.vc.web.ejb.perp.DynamicPERPFacadeLocal"
+          isJavaBased="true">
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.perp.entities.AppUsers"
+                  BeanClass="com.vc.web.ejb.perp.entities.AppUsers" id="queryAppUsersFindAll" ReturnNodeName="AppUsers"
+                  CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="psi" Type="com.vc.web.PerpSystemInfo" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.SpaOun" BeanClass="com.vc.web.SpaOun" id="getSpaOunList"
+                  ReturnNodeName="SpaOun" CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="psi" Type="com.vc.web.PerpSystemInfo" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="saveSpaOun" ReturnNodeName="Return">
+    <ParameterInfo id="psi" Type="com.vc.web.PerpSystemInfo" isStructured="true"/>
+    <ParameterInfo id="spaOun" Type="com.vc.web.SpaOun" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="setupAccPerior" ReturnNodeName="Return">
+    <ParameterInfo id="psi" Type="com.vc.web.PerpSystemInfo" isStructured="true"/>
+    <ParameterInfo id="startUseDate" Type="java.sql.Timestamp" isStructured="false"/>
+    <ParameterInfo id="startDate" Type="java.sql.Timestamp" isStructured="false"/>
+    <ParameterInfo id="endDate" Type="java.sql.Timestamp" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="mergeEntity" ReturnNodeName="Return">
+    <ParameterInfo id="psi" Type="com.vc.web.PerpSystemInfo" isStructured="true"/>
+    <ParameterInfo id="obj" Type="java.lang.Object" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="mergeSystemPara" ReturnNodeName="Return">
+    <ParameterInfo id="psi" Type="com.vc.web.PerpSystemInfo" isStructured="true"/>
+    <ParameterInfo id="spaId" Type="java.lang.Long" isStructured="false"/>
+    <ParameterInfo id="value" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.perp.entities.SystemParas"
+                  BeanClass="com.vc.web.ejb.perp.entities.SystemParas" id="querySystemParasFindByUserPrivilegeChangable"
+                  ReturnNodeName="SystemParas" CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="psi" Type="com.vc.web.PerpSystemInfo" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.perp.ModuleInfo" BeanClass="com.vc.web.perp.ModuleInfo"
+                  id="getModuleInfoList" ReturnNodeName="ModuleInfo" CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="psi" Type="com.vc.web.PerpSystemInfo" isStructured="true"/>
+    <ParameterInfo id="packageCode" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="gusId" Type="java.lang.Long" isStructured="false"/>
+    <ParameterInfo id="ausId" Type="java.lang.Long" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.perp.GusInfo" BeanClass="com.vc.web.perp.GusInfo"
+                  id="getGusInfoList" ReturnNodeName="GusInfo" CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="psi" Type="com.vc.web.PerpSystemInfo" isStructured="true"/>
+    <ParameterInfo id="ausId" Type="java.lang.Long" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="com.vc.web.ejb.perp.entities.AppUsers" BeanClass="com.vc.web.ejb.perp.entities.AppUsers"
+                  id="queryAppUsersFindByUserNamePassword" ReturnNodeName="AppUsers">
+    <ParameterInfo id="psi" Type="com.vc.web.PerpSystemInfo" isStructured="true"/>
+    <ParameterInfo id="userName" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="password" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.perp.ModuleInfo" BeanClass="com.vc.web.perp.ModuleInfo"
+                  id="getModuleInfoListSearchResult" ReturnNodeName="ModuleInfo" CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="psi" Type="com.vc.web.PerpSystemInfo" isStructured="true"/>
+    <ParameterInfo id="ausId" Type="java.lang.Long" isStructured="false"/>
+    <ParameterInfo id="gusId" Type="java.lang.Long" isStructured="false"/>
+    <ParameterInfo id="searchText" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="com.vc.web.perp.Spa4Oun" BeanClass="com.vc.web.perp.Spa4Oun" id="getSpa4Oun"
+                  ReturnNodeName="Spa4Oun">
+    <ParameterInfo id="psi" Type="com.vc.web.PerpSystemInfo" isStructured="true"/>
+    <ParameterInfo id="ounId" Type="java.lang.Long" isStructured="false"/>
+    <ParameterInfo id="root" Type="boolean" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.perp.OunShortInfo" BeanClass="com.vc.web.perp.OunShortInfo" id="getOunShortInfoList"
+                  ReturnNodeName="OunShortInfo" CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="psi" Type="com.vc.web.PerpSystemInfo" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="saveSpa4Oun" ReturnNodeName="Return">
+    <ParameterInfo id="psi" Type="com.vc.web.PerpSystemInfo" isStructured="true"/>
+    <ParameterInfo id="spa4Oun" Type="com.vc.web.perp.Spa4Oun" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.perp.OunInfo" BeanClass="com.vc.web.perp.OunInfo" id="getOunInfoList"
+                  ReturnNodeName="OunInfo" CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="psi" Type="com.vc.web.PerpSystemInfo" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="createDefaultChildOranizationUnit" ReturnNodeName="Return">
+    <ParameterInfo id="psi" Type="com.vc.web.PerpSystemInfo" isStructured="true"/>
+    <ParameterInfo id="parentOunId" Type="java.lang.Long" isStructured="false"/>
+    <ParameterInfo id="userName" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="removeOrganizationUnit" ReturnNodeName="Return">
+    <ParameterInfo id="psi" Type="com.vc.web.PerpSystemInfo" isStructured="true"/>
+    <ParameterInfo id="ounInfo" Type="com.vc.web.perp.OunInfo" isStructured="true"/>
+  </MethodAccessor>
+</JavaBean>

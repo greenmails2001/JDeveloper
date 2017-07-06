@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="sasr002">
+    <default-activity>router1</default-activity>
+    <input-parameter-definition id="__30">
+      <name id="__29">rowKey</name>
+      <value>#{pageFlowScope.rowKey}</value>
+    </input-parameter-definition>
+    <managed-bean id="__5">
+      <managed-bean-name id="__7">sasrFirstPreview</managed-bean-name>
+      <managed-bean-class id="__6">pages.sasr.sasr001.sasr001frag.SasrFirstPreview</managed-bean-class>
+      <managed-bean-scope id="__8">request</managed-bean-scope>
+    </managed-bean>
+    <router id="router1">
+      <case>
+        <expression>#{sasr002FlowManager.caseFlow== 'firstPreview'}</expression>
+        <outcome>firstPreview</outcome>
+      </case>
+      <case>
+        <expression>#{sasr002FlowManager.caseFlow== 'podm'}</expression>
+        <outcome id="__4">podm</outcome>
+      </case>
+      <case>
+        <expression>#{sasr002FlowManager.caseFlow== 'otherServices'}</expression>
+        <outcome id="__9">otherServices</outcome>
+      </case>
+      <case>
+        <expression>#{sasr002FlowManager.caseFlow== 'accountInfo'}</expression>
+        <outcome id="__13">accountInfo</outcome>
+      </case>
+      <case>
+        <expression>#{sasr002FlowManager.caseFlow== 'vbisuser'}</expression>
+        <outcome id="__17">vbisuser</outcome>
+      </case>
+      <case>
+        <expression>#{sasr002FlowManager.caseFlow== 'sasrAdmin'}</expression>
+        <outcome id="__28">sasrAdmin</outcome>
+      </case>
+      <default-outcome>podm</default-outcome>
+    </router>
+    <view id="podm">
+      <page>/pages/sasr/sasr002/sas002frag/podm.jsff</page>
+    </view>
+    <view id="otherServices">
+      <page>/pages/sasr/sasr002/sas002frag/otherServices.jsff</page>
+    </view>
+    <view id="firstPreview">
+      <page>/pages/sasr/acc/firstPreview.jsff</page>
+    </view>
+    <view id="accountInfo">
+      <page>/pages/sasr/acc/accountInfo.jsff</page>
+    </view>
+    <view id="vbisusers">
+      <page>/pages/sasr/sasr002/sas002frag/vbisusers.jsff</page>
+    </view>
+    <task-flow-call id="vbis-user">
+      <task-flow-reference>
+        <document>/WEB-INF/vbis-user.xml</document>
+        <id>vbis-user</id>
+      </task-flow-reference>
+      <input-parameter id="__23">
+        <name>rowKeyStr</name>
+        <value>-#{pageFlowScope.rowKeyStr}</value>
+      </input-parameter>
+      <input-parameter id="__24">
+        <name>rowKey</name>
+        <value></value>
+      </input-parameter>
+    </task-flow-call>
+    <view id="sasrAdmin">
+      <page>/pages/sasr/sasr002/sas002frag/sasrAdmin.jsff</page>
+    </view>
+    <control-flow-rule>
+      <from-activity-id>router1</from-activity-id>
+      <control-flow-case>
+        <from-outcome>podm</from-outcome>
+        <to-activity-id>podm</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>otherServices</from-outcome>
+        <to-activity-id>otherServices</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__2">
+        <from-outcome id="__3">firstPreview</from-outcome>
+        <to-activity-id id="__1">firstPreview</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__12">
+        <from-outcome id="__10">accountInfo</from-outcome>
+        <to-activity-id id="__11">accountInfo</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__16">
+        <from-outcome id="__15">vbisuser</from-outcome>
+        <to-activity-id id="__14">vbisusers</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__27">
+        <from-outcome id="__26">sasrAdmin</from-outcome>
+        <to-activity-id id="__25">sasrAdmin</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__18">
+      <from-activity-id id="__19">vbisusers</from-activity-id>
+      <control-flow-case id="__20">
+        <from-outcome id="__22">editVbisUser</from-outcome>
+        <to-activity-id id="__21">vbis-user</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

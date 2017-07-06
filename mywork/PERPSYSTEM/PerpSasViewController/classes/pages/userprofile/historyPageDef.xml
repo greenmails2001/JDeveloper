@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="historyPageDef"
+                Package="pages.userprofile">
+  <parameters/>
+  <executables>
+    <invokeAction id="invokeShowAppLogin" Binds="prepareToShowAppLogins"
+                  Refresh="renderModel"/>
+    <variableIterator id="variables"/>
+    <iterator Binds="AppLogins1" RangeSize="25"
+              DataControl="PerpSasAppModuleDataControl"
+              id="AppLogins1Iterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="prepareToShowAppLogins" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="prepareToShowAppLogins"
+                  IsViewObjectMethod="false"
+                  DataControl="PerpSasAppModuleDataControl"
+                  InstanceName="PerpSasAppModuleDataControl.dataProvider"/>
+    <tree IterBinding="AppLogins1Iterator" id="AppLogins1">
+      <nodeDefinition DefName="com.perp.sasmodel.views.sas.AppLogins"
+                      Name="AppLogins10">
+        <AttrNames>
+          <Item Value="AloId"/>
+          <Item Value="Browser"/>
+          <Item Value="Country"/>
+          <Item Value="EnvId"/>
+          <Item Value="IpAddress"/>
+          <Item Value="LoginAt"/>
+          <Item Value="UserName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

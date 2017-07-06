@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="ounviewerPageDef"
+                Package="pages.webperp">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Adv01OrganizationUnitsRoot" RangeSize="25"
+              DataControl="PerpSasAppModuleDataControl"
+              id="Adv01OrganizationUnitsRootIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="Adv01OrganizationUnitsRootIterator"
+          id="Adv01OrganizationUnitsRoot">
+      <nodeDefinition DefName="com.perp.sasmodel.views.adv.OrganizationUnitsRoot"
+                      Name="Adv01OrganizationUnitsRoot0">
+        <AttrNames>
+          <Item Value="OunId"/>
+          <Item Value="Name"/>
+          <Item Value="OunNumber"/>
+          <Item Value="OunType"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="Adv01OrganizationUnits"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="com.perp.sasmodel.views.adv.Adv01OrganizationUnits"
+                      Name="Adv01OrganizationUnitsRoot1">
+        <AttrNames>
+          <Item Value="OunId"/>
+          <Item Value="Name"/>
+          <Item Value="OunNumber"/>
+          <Item Value="OunType"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="Adv01OrganizationUnits_2"/>
+        </Accessors>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

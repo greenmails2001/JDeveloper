@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Sasu001SendEmailLists"
+  Version="11.1.1.51.88"
+  SelectList="SendEmailLists.SEL_ID, 
+       SendEmailLists.SENDER, 
+       SendEmailLists.RECEIVER, 
+       SendEmailLists.SUBJECT, 
+       SendEmailLists.CONTENT, 
+       SendEmailLists.CREATE_DATE, 
+       SendEmailLists.CREATED_BY, 
+       SendEmailLists.SEND_DATE, 
+       SendEmailLists.SENT_FLAG"
+  FromList="SEND_EMAIL_LISTS SendEmailLists"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="SendEmailLists"
+    Entity="com.perp.sasutilsmodel.entities.SendEmailLists"/>
+  <ViewAttribute
+    Name="SelId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="SelId"
+    EntityUsage="SendEmailLists"
+    AliasName="SEL_ID"/>
+  <ViewAttribute
+    Name="Sender"
+    PrecisionRule="true"
+    EntityAttrName="Sender"
+    EntityUsage="SendEmailLists"
+    AliasName="SENDER"/>
+  <ViewAttribute
+    Name="Receiver"
+    PrecisionRule="true"
+    EntityAttrName="Receiver"
+    EntityUsage="SendEmailLists"
+    AliasName="RECEIVER"/>
+  <ViewAttribute
+    Name="Subject"
+    PrecisionRule="true"
+    EntityAttrName="Subject"
+    EntityUsage="SendEmailLists"
+    AliasName="SUBJECT"/>
+  <ViewAttribute
+    Name="Content"
+    IsQueriable="false"
+    PrecisionRule="true"
+    EntityAttrName="Content"
+    EntityUsage="SendEmailLists"
+    AliasName="CONTENT"/>
+  <ViewAttribute
+    Name="CreateDate"
+    PrecisionRule="true"
+    EntityAttrName="CreateDate"
+    EntityUsage="SendEmailLists"
+    AliasName="CREATE_DATE"/>
+  <ViewAttribute
+    Name="CreatedBy"
+    PrecisionRule="true"
+    EntityAttrName="CreatedBy"
+    EntityUsage="SendEmailLists"
+    AliasName="CREATED_BY"/>
+  <ViewAttribute
+    Name="SendDate"
+    PrecisionRule="true"
+    EntityAttrName="SendDate"
+    EntityUsage="SendEmailLists"
+    AliasName="SEND_DATE"/>
+  <ViewAttribute
+    Name="SentFlag"
+    PrecisionRule="true"
+    EntityAttrName="SentFlag"
+    EntityUsage="SendEmailLists"
+    AliasName="SENT_FLAG"/>
+</ViewObject>

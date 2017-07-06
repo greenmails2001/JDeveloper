@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.1.51.56" id="createAccountPageDef"
+                Package="pages.fragments.sasAccount">
+  <parameters/>
+  <executables>
+    <invokeAction Binds="Create" id="callCreate" Refresh="always"/>
+    <methodIterator Binds="queryAccountsFindAll.result" DataControl="SASFacadeLocal" RangeSize="25"
+                    BeanClass="com.vc.web.ejb.sas.entities.Accounts" id="queryAccountsFindAllIterator"/>
+    <methodIterator Binds="queryProvincesFindAll.result" DataControl="SASFacadeLocal" RangeSize="-1"
+                    BeanClass="com.vc.web.ejb.sas.entities.Provinces" id="queryProvincesFindAllIterator"/>
+    <accessorIterator MasterBinding="queryAccountsFindAllIterator" Binds="industries" RangeSize="25" DataControl="SASFacadeLocal"
+                      BeanClass="com.vc.web.ejb.sas.entities.Industries" id="industriesIterator"/>
+    <methodIterator Binds="queryIndustriesFindAll.result" DataControl="SASFacadeLocal" RangeSize="-1"
+                    BeanClass="com.vc.web.ejb.sas.entities.Industries" id="queryIndustriesFindAllIter"/>
+    <accessorIterator MasterBinding="queryAccountsFindAllIterator" Binds="provinces" RangeSize="25" DataControl="SASFacadeLocal"
+                      BeanClass="com.vc.web.ejb.sas.entities.Provinces" id="provincesIterator"/>
+    <accessorIterator MasterBinding="queryAccountsFindAllIterator" Binds="countries" RangeSize="25" DataControl="SASFacadeLocal"
+                      BeanClass="com.vc.web.ejb.sas.entities.Countries" id="countriesIterator"/>
+    <methodIterator Binds="queryCountriesFindAll.result" DataControl="SASFacadeLocal" RangeSize="-1"
+                    BeanClass="com.vc.web.ejb.sas.entities.Countries" id="queryCountriesFindAllIter"/>
+    <accessorIterator MasterBinding="queryAccountsFindAllIterator" Binds="roles" RangeSize="25" DataControl="SASFacadeLocal"
+                      BeanClass="com.vc.web.ejb.sas.entities.Roles" id="rolesIterator"/>
+    <methodIterator Binds="queryRolesFindAll.result" DataControl="SASFacadeLocal" RangeSize="-1"
+                    BeanClass="com.vc.web.ejb.sas.entities.Roles" id="queryRolesFindAllIter"/>
+    <accessorIterator MasterBinding="queryAccountsFindAllIterator" Binds="securityQuestions" RangeSize="25" DataControl="SASFacadeLocal"
+                      BeanClass="com.vc.web.ejb.sas.entities.SecurityQuestions" id="securityQuestionsIterator"/>
+    <methodIterator Binds="querySecurityQuestionsFindAll.result" DataControl="SASFacadeLocal" RangeSize="-1"
+                    BeanClass="com.vc.web.ejb.sas.entities.SecurityQuestions" id="querySecurityQuestionsFindAllIter"/>
+  </executables>
+  <bindings>
+    <action IterBinding="queryAccountsFindAllIterator" id="Create" RequiresUpdateModel="true" Action="createRow"/>
+    <methodAction id="queryAccountsFindAll" RequiresUpdateModel="true" Action="invokeMethod" MethodName="queryAccountsFindAll"
+                  IsViewObjectMethod="false" DataControl="SASFacadeLocal" InstanceName="SASFacadeLocal.dataProvider"
+                  ReturnName="SASFacadeLocal.methodResults.queryAccountsFindAll_SASFacadeLocal_dataProvider_queryAccountsFindAll_result"/>
+    <attributeValues IterBinding="queryAccountsFindAllIterator" id="address">
+      <AttrNames>
+        <Item Value="address"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryAccountsFindAllIterator" id="contactTelephone">
+      <AttrNames>
+        <Item Value="contactTelephone"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryAccountsFindAllIterator" id="customerApproach">
+      <AttrNames>
+        <Item Value="customerApproach"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryAccountsFindAllIterator" id="email">
+      <AttrNames>
+        <Item Value="email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryAccountsFindAllIterator" id="fullName">
+      <AttrNames>
+        <Item Value="fullName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryAccountsFindAllIterator" id="numberOfEmployee">
+      <AttrNames>
+        <Item Value="numberOfEmployee"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryAccountsFindAllIterator" id="organizationName">
+      <AttrNames>
+        <Item Value="organizationName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryAccountsFindAllIterator" id="password">
+      <AttrNames>
+        <Item Value="password"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryAccountsFindAllIterator" id="taxCode">
+      <AttrNames>
+        <Item Value="taxCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryAccountsFindAllIterator" id="userName">
+      <AttrNames>
+        <Item Value="userName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryAccountsFindAllIterator" id="confirmPassword">
+      <AttrNames>
+        <Item Value="confirmPassword"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryAccountsFindAllIterator" id="securityAnswer">
+      <AttrNames>
+        <Item Value="securityAnswer"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="queryRolesFindAll" RequiresUpdateModel="true" Action="invokeMethod" MethodName="queryRolesFindAll"
+                  IsViewObjectMethod="false" DataControl="SASFacadeLocal" InstanceName="SASFacadeLocal.dataProvider"
+                  ReturnName="SASFacadeLocal.methodResults.queryRolesFindAll_SASFacadeLocal_dataProvider_queryRolesFindAll_result"/>
+    <methodAction id="queryProvincesFindAll" RequiresUpdateModel="true" Action="invokeMethod" MethodName="queryProvincesFindAll"
+                  IsViewObjectMethod="false" DataControl="SASFacadeLocal" InstanceName="SASFacadeLocal.dataProvider"
+                  ReturnName="SASFacadeLocal.methodResults.queryProvincesFindAll_SASFacadeLocal_dataProvider_queryProvincesFindAll_result"/>
+    <methodAction id="queryIndustriesFindAll" RequiresUpdateModel="true" Action="invokeMethod" MethodName="queryIndustriesFindAll"
+                  IsViewObjectMethod="false" DataControl="SASFacadeLocal" InstanceName="SASFacadeLocal.dataProvider"
+                  ReturnName="SASFacadeLocal.methodResults.queryIndustriesFindAll_SASFacadeLocal_dataProvider_queryIndustriesFindAll_result"/>
+    <methodAction id="queryCountriesFindAll" RequiresUpdateModel="true" Action="invokeMethod" MethodName="queryCountriesFindAll"
+                  IsViewObjectMethod="false" DataControl="SASFacadeLocal" InstanceName="SASFacadeLocal.dataProvider"
+                  ReturnName="SASFacadeLocal.methodResults.queryCountriesFindAll_SASFacadeLocal_dataProvider_queryCountriesFindAll_result"/>
+    <methodAction id="querySecurityQuestionsFindAll" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="querySecurityQuestionsFindAll" IsViewObjectMethod="false" DataControl="SASFacadeLocal"
+                  InstanceName="SASFacadeLocal.dataProvider"
+                  ReturnName="SASFacadeLocal.methodResults.querySecurityQuestionsFindAll_SASFacadeLocal_dataProvider_querySecurityQuestionsFindAll_result"/>
+    <list IterBinding="queryAccountsFindAllIterator" id="industries" DTSupportsMRU="true" StaticList="false"
+          ListIter="queryIndustriesFindAllIter" NullValueFlag="start" NullValueId="industries_null">
+      <AttrNames>
+        <Item Value="industries"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="dataProvider"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="name"/>
+      </ListDisplayAttrNames>
+    </list>
+    <list IterBinding="queryAccountsFindAllIterator" id="provinces" DTSupportsMRU="true" StaticList="false"
+          ListIter="queryProvincesFindAllIterator" NullValueFlag="start" NullValueId="provinces_null">
+      <AttrNames>
+        <Item Value="provinces"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="dataProvider"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="name"/>
+      </ListDisplayAttrNames>
+    </list>
+    <list IterBinding="queryAccountsFindAllIterator" id="countries" DTSupportsMRU="true" StaticList="false"
+          ListIter="queryCountriesFindAllIter" NullValueFlag="start" NullValueId="countries_null">
+      <AttrNames>
+        <Item Value="countries"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="dataProvider"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="name"/>
+      </ListDisplayAttrNames>
+    </list>
+    <list IterBinding="queryAccountsFindAllIterator" id="roles" DTSupportsMRU="true" StaticList="false" ListIter="queryRolesFindAllIter"
+          NullValueFlag="start" NullValueId="roles_null">
+      <AttrNames>
+        <Item Value="roles"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="dataProvider"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="name"/>
+      </ListDisplayAttrNames>
+    </list>
+    <list IterBinding="queryAccountsFindAllIterator" id="securityQuestions" DTSupportsMRU="true" StaticList="false"
+          ListIter="querySecurityQuestionsFindAllIter" NullValueFlag="start" NullValueId="securityQuestions_null">
+      <AttrNames>
+        <Item Value="securityQuestions"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="dataProvider"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="question"/>
+      </ListDisplayAttrNames>
+    </list>
+  </bindings>
+  <ResourceBundle>
+    <PropertiesBundle xmlns="http://xmlns.oracle.com/adfm/resourcebundle" PropertiesFile="com.vc.web.ViewControllerBundle"/>
+  </ResourceBundle>
+</pageDefinition>

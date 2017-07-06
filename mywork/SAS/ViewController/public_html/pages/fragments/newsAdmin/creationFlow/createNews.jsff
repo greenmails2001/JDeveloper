@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelGroupLayout layout="scroll" inlineStyle="padding:3px;" id="zdtpgl1">
+    <af:panelFormLayout id="zdtpfl1">
+      <af:inputText value="#{bindings.priorityLevel.inputValue}" label="#{viewcontrollerBundle['field.news.priorityLevel']}"
+                    required="#{bindings.priorityLevel.hints.mandatory}" columns="#{bindings.priorityLevel.hints.displayWidth}"
+                    maximumLength="#{bindings.priorityLevel.hints.precision}" shortDesc="#{bindings.priorityLevel.hints.tooltip}"
+                    id="zdtit1">
+        <f:validator binding="#{bindings.priorityLevel.validator}"/>
+        <af:convertNumber groupingUsed="false" pattern="#{bindings.priorityLevel.format}"/>
+      </af:inputText>
+    </af:panelFormLayout>
+    <af:panelGroupLayout layout="horizontal" inlineStyle="padding:3px;" id="zdtpgl2">
+      <af:commandButton text="Submit" partialSubmit="true" action="#{backing_newsAdmin_newsAdminManager.saveNewsCreationAction}"
+                        id="zdtcb1"/>
+      <af:spacer width="10" height="10" id="zdts1"/>
+      <af:commandButton text="Tro lai" partialSubmit="true" action="home" id="zdtcb2"/>
+    </af:panelGroupLayout>
+    <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="zdtpgl3">
+      <af:panelFormLayout labelAlignment="top" maxColumns="1" rows="3" id="zdtpfl2">
+        <af:inputText value="#{bindings.title.inputValue}"
+                      label="#{viewcontrollerBundle['field.news.title']}"
+                      required="#{bindings.title.hints.mandatory}" columns="85"
+                      maximumLength="#{bindings.title.hints.precision}" shortDesc="#{bindings.title.hints.tooltip}"
+                      id="zdtit2">
+          <f:validator binding="#{bindings.title.validator}"/>
+        </af:inputText>
+        <af:inputText value="#{bindings.shortContent.inputValue}"
+                      required="#{bindings.title.hints.mandatory}" columns="85" maximumLength="#{bindings.title.hints.precision}"
+                      shortDesc="#{bindings.title.hints.tooltip}" rows="4" id="zdtit3">
+          <f:validator binding="#{bindings.title.validator}"/>
+        </af:inputText>
+      </af:panelFormLayout>
+    </af:panelGroupLayout>
+    <af:panelGroupLayout layout="vertical" id="zdtpgl4">
+      <af:richTextEditor value="#{bindings.content.inputValue}" rows="12" columns="130" id="zdtrte1"/>
+    </af:panelGroupLayout>
+  </af:panelGroupLayout>
+</jsp:root>

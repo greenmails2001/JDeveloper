@@ -1,0 +1,105 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout id="psl1">
+    <f:facet name="bottom">
+      <af:spacer width="10" height="10" id="s4"/>
+    </f:facet>
+    <f:facet name="center">
+      <af:panelGroupLayout layout="scroll" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="pgl1">
+        
+        <af:panelBox text="Chi tiết" id="pb1" showDisclosure="false">
+          <f:facet name="toolbar"/>
+          <af:group id="g4">
+            <af:panelGroupLayout id="pgl3" inlineStyle="height:18px;">
+              <af:spacer width="50" height="10" id="s14"/>
+              <af:commandButton actionListener="#{bindings.First.execute}" disabled="#{!bindings.First.enabled}" partialSubmit="true"
+                                id="cb5" icon="/images/go_first.png" text="Đầu"/>
+              <af:spacer width="10" height="10" id="s9"/>
+              <af:commandButton id="cb3" actionListener="#{bindings.Previous.execute}" disabled="#{!bindings.Previous.enabled}"
+                                partialSubmit="true" icon="/images/go_previous.png" text="Trước"/>
+              <af:spacer width="10" height="10" id="s8"/>
+              <af:commandButton id="cb4" actionListener="#{bindings.Next.execute}" disabled="#{!bindings.Next.enabled}" partialSubmit="true"
+                                icon="/images/go_next.png" text="Tiếp"/>
+              <af:spacer width="10" height="10" id="s10"/>
+              <af:commandButton actionListener="#{bindings.Last.execute}" disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="cb6"
+                                icon="/images/go_last.png" text="Cuối"/>
+              <af:spacer width="10" height="10" id="s12"/>
+              <af:commandButton text="Trở về" id="cb2" action="cancel" shortDesc="Hoàn lại tất cả các thay đổi"
+                                icon="/images/arrow_turn_left.png" immediate="true">
+                <af:resetActionListener/>
+              </af:commandButton>
+            </af:panelGroupLayout>
+          </af:group>
+          <af:panelFormLayout id="pfl1">
+            <af:spacer width="10" height="10" id="s13"/>
+            <af:inputText value="#{bindings.UserName.inputValue}" label="#{bindings.UserName.hints.label}" columns="50"
+                          maximumLength="#{bindings.UserName.hints.precision}" shortDesc="#{bindings.UserName.hints.tooltip}" id="it4"
+                          required="#{bindings.UserName.hints.mandatory}">
+              <f:validator binding="#{vbisUserNameValidator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.Password.inputValue}" label="#{bindings.Password.hints.label}"
+                          maximumLength="#{bindings.Password.hints.precision}" shortDesc="#{bindings.Password.hints.tooltip}" id="it8"
+                          secret="true" columns="50" required="#{bindings.Password.hints.mandatory}">
+              <f:validator binding="#{bindings.Password.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.FullName.inputValue}" label="#{bindings.FullName.hints.label}"
+                          required="#{bindings.FullName.hints.mandatory}" columns="50" maximumLength="#{bindings.FullName.hints.precision}"
+                          shortDesc="#{bindings.FullName.hints.tooltip}" id="it6">
+              <f:validator binding="#{bindings.FullName.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.ContactTelephone.inputValue}" label="#{bindings.ContactTelephone.hints.label}"
+                          required="#{bindings.ContactTelephone.hints.mandatory}" columns="50"
+                          maximumLength="#{bindings.ContactTelephone.hints.precision}"
+                          shortDesc="#{bindings.ContactTelephone.hints.tooltip}" id="it3">
+              <f:validator binding="#{bindings.ContactTelephone.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.Email.inputValue}" label="#{bindings.Email.hints.label}"
+                          required="#{bindings.Email.hints.mandatory}" columns="50" maximumLength="#{bindings.Email.hints.precision}"
+                          shortDesc="#{bindings.Email.hints.tooltip}" id="it5">
+              <af:validateRegExp pattern=".+@.+\\.[a-z]+" messageDetailNoMatch="Errorx : Định dạnh email không chính xác"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.OrganizationName.inputValue}" label="#{bindings.OrganizationName.hints.label}"
+                          required="#{bindings.OrganizationName.hints.mandatory}" columns="50"
+                          maximumLength="#{bindings.OrganizationName.hints.precision}"
+                          shortDesc="#{bindings.OrganizationName.hints.tooltip}" id="it2">
+              <f:validator binding="#{bindings.OrganizationName.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.Address.inputValue}" label="#{bindings.Address.hints.label}"
+                          required="#{bindings.Address.hints.mandatory}" maximumLength="#{bindings.Address.hints.precision}"
+                          shortDesc="#{bindings.Address.hints.tooltip}" id="it7" columns="50">
+              <f:validator binding="#{bindings.Address.validator}"/>
+            </af:inputText>
+            <af:inputText value="#{bindings.TaxCode.inputValue}" label="#{bindings.TaxCode.hints.label}"
+                          required="#{bindings.TaxCode.hints.mandatory}" columns="50" maximumLength="#{bindings.TaxCode.hints.precision}"
+                          shortDesc="#{bindings.TaxCode.hints.tooltip}" id="it1">
+              <f:validator binding="#{bindings.TaxCode.validator}"/>
+            </af:inputText>
+            <f:facet name="footer">
+              <af:group id="g1">
+                <af:spacer width="10" height="10" id="s6"/>
+                <af:panelGroupLayout id="pgl2" styleClass="AFStrecthWidth">
+                  <af:group id="g2">
+                    <af:spacer width="40" height="10" id="s15"/>
+                    <af:commandButton text="Lưu &amp; Thêm" disabled="#{!bindings.CreateInsert.enabled}" id="cb7" action="create2"
+                                      actionListener="#{vbisUserBackingBean.saveAndCreateActionListener}"
+                                      icon="/images/save_labled_add.png"/>
+                    <af:spacer width="10" height="10" id="s11"/>
+                    <af:commandButton text="Lưu &amp; Đóng" id="cb1" action="save" shortDesc="Lưu lại các thay đổi"
+                                      icon="/images/save_labled.png"/>
+                    <af:spacer width="10" height="10" id="s5"/>
+                    <af:commandButton actionListener="#{bindings.Rollback.execute}" text="Hủy bỏ" immediate="true" id="cb8"
+                                      icon="/images/dialog_cancel.png">
+                      <af:resetActionListener/>
+                    </af:commandButton>
+                    <af:spacer width="10" height="10" id="s7"/>
+                  </af:group>
+                </af:panelGroupLayout>
+              </af:group>
+            </f:facet>
+          </af:panelFormLayout>
+        </af:panelBox>
+      </af:panelGroupLayout>
+    </f:facet>
+  </af:panelStretchLayout>
+</jsp:root>

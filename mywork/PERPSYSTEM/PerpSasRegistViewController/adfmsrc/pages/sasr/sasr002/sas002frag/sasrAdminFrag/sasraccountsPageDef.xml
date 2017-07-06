@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.1.56.60" id="sasraccountsPageDef"
+                Package="pages.sasr.sasr002.sas002frag.sasrAdminFrag">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Sasa002Acounts" RangeSize="25" DataControl="PerpSasRegistAppModuleDataControl" id="Sasa002AcountsIterator"/>
+    <searchRegion Binds="Sasa002AcountsIterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="Sasa002AcountsQuery"/>
+    <iterator Binds="Sasa002LoginHistories" RangeSize="25" DataControl="PerpSasRegistAppModuleDataControl"
+              id="Sasa002LoginHistoriesIterator"/>
+    <searchRegion Binds="Sasa002LoginHistoriesIterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="Sasa002LoginHistoriesQuery"/>
+    <iterator Binds="Sasa002VbisUsers" RangeSize="25" DataControl="PerpSasRegistAppModuleDataControl" id="Sasa002VbisUsersIterator"/>
+    <searchRegion Binds="Sasa002VbisUsersIterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="Sasa002VbisUsersQuery"/>
+    <iterator Binds="Sasa002SpaSubs" RangeSize="25" DataControl="PerpSasRegistAppModuleDataControl" id="Sasa002SpaSubsIterator"/>
+    <iterator Binds="PerpSasLoginHistories" RangeSize="25" DataControl="PerpSasRegistAppModuleDataControl"
+              id="PerpSasLoginHistoriesIterator"/>
+    <searchRegion Binds="PerpSasLoginHistoriesIterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="PerpSasLoginHistoriesQuery"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="Sasa002AcountsIterator" id="Sasa002Acounts">
+      <nodeDefinition DefName="com.perp.sasregistmodel.views.sasra002.Sasa002Acounts" Name="Sasa002Acounts0">
+        <AttrNames>
+          <Item Value="ActivatedFlag"/>
+          <Item Value="ActivedCode"/>
+          <Item Value="Address"/>
+          <Item Value="ContactTelephone"/>
+          <Item Value="Email"/>
+          <Item Value="FullName"/>
+          <Item Value="NumberOfEmployee"/>
+          <Item Value="OrganizationName"/>
+          <Item Value="SecurityAnswer"/>
+          <Item Value="Status"/>
+          <Item Value="TaxCode"/>
+          <Item Value="UserName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="Sasa002LoginHistoriesIterator" id="Sasa002LoginHistories" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="com.perp.sasregistmodel.views.sasra002.Sasa002LoginHistories" Name="Sasa002LoginHistories0">
+        <AttrNames>
+          <Item Value="Country"/>
+          <Item Value="IpAddress"/>
+          <Item Value="LoginAt"/>
+          <Item Value="LogoutAt"/>
+          <Item Value="Platform"/>
+          <Item Value="UserAgent"/>
+          <Item Value="UserName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="Sasa002AcountsIterator" id="setCurrentRowWithKey" InstanceName="PerpSasRegistAppModuleDataControl.Sasa002Acounts"
+            DataControl="PerpSasRegistAppModuleDataControl" RequiresUpdateModel="false" Action="setCurrentRowWithKey">
+      <NamedData NDName="rowKey" NDValue="#{row.rowKeyStr}" NDType="java.lang.String"/>
+    </action>
+    <tree IterBinding="Sasa002VbisUsersIterator" id="Sasa002VbisUsers" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="com.perp.sasregistmodel.views.sasra002.Sasa002VbisUsers" Name="Sasa002VbisUsers0">
+        <AttrNames>
+          <Item Value="UserName"/>
+          <Item Value="FullName"/>
+          <Item Value="OrganizationName"/>
+          <Item Value="Address"/>
+          <Item Value="ContactTelephone"/>
+          <Item Value="Email"/>
+          <Item Value="Status"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="Sasa002SpaSubsIterator" id="Sasa002SpaSubs" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="com.perp.sasregistmodel.views.sasra002.Sasa002SpaSubs" Name="Sasa002SpaSubs0">
+        <AttrNames>
+          <Item Value="PackageCode"/>
+          <Item Value="PackageName"/>
+          <Item Value="UnitPrice"/>
+          <Item Value="ActivatedCode"/>
+          <Item Value="SubscribeDate"/>
+          <Item Value="Status"/>
+          <Item Value="StartDate"/>
+          <Item Value="EndDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="PerpSasLoginHistoriesIterator" id="PerpSasLoginHistories" ChangeEventPolicy="ppr">
+      <nodeDefinition DefName="com.perp.sasregistmodel.views.sasra002.PerpSasLoginHistories" Name="PerpSasLoginHistories0">
+        <AttrNames>
+          <Item Value="UserName"/>
+          <Item Value="LoginAt"/>
+          <Item Value="LogoutAt"/>
+          <Item Value="IpAddress"/>
+          <Item Value="Platform"/>
+          <Item Value="Country"/>
+          <Item Value="UserAgent"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

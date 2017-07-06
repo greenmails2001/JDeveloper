@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.1.51.56" id="subscriptionListPageDef"
+                Package="pages.fragments.shoppingSas">
+  <parameters/>
+  <executables>
+    <methodIterator Binds="querySubscriptionsFindByAccId.result" DataControl="SASFacadeLocal" RangeSize="25"
+                    BeanClass="com.vc.web.ejb.sas.entities.Subscriptions" id="querySubscriptionsFindByAccIdIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="queryAccountsFindByAccId" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="queryAccountsFindByAccId"
+                  IsViewObjectMethod="false" DataControl="SASFacadeLocal"
+                  InstanceName="SASFacadeLocal.dataProvider"
+                  ReturnName="SASFacadeLocal.methodResults.queryAccountsFindByAccId_SASFacadeLocal_dataProvider_queryAccountsFindByAccId_result">
+      <NamedData NDName="accId"
+                 NDValue="#{backing_sasSessionLogin.accId}" NDType="java.lang.Long"/>
+    </methodAction>
+    <methodAction id="querySubscriptionsFindByAccId" RequiresUpdateModel="true"
+                  Action="invokeMethod"
+                  MethodName="querySubscriptionsFindByAccId"
+                  IsViewObjectMethod="false" DataControl="SASFacadeLocal"
+                  InstanceName="SASFacadeLocal.dataProvider"
+                  ReturnName="SASFacadeLocal.methodResults.querySubscriptionsFindByAccId_SASFacadeLocal_dataProvider_querySubscriptionsFindByAccId_result">
+      <NamedData NDName="accId"
+                 NDValue="${backing_sasSessionLogin.accId}"
+                 NDType="java.lang.Long"/>
+    </methodAction>
+    <methodAction id="querySubscriptionsFindAll" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="querySubscriptionsFindAll"
+                  IsViewObjectMethod="false" DataControl="SASFacadeLocal"
+                  InstanceName="SASFacadeLocal.dataProvider"
+                  ReturnName="SASFacadeLocal.methodResults.querySubscriptionsFindAll_SASFacadeLocal_dataProvider_querySubscriptionsFindAll_result"/>
+    <attributeValues IterBinding="querySubscriptionsFindByAccIdIterator" id="appUrl">
+      <AttrNames>
+        <Item Value="appUrl"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="querySubscriptionsFindByAccIdIterator" id="endDate">
+      <AttrNames>
+        <Item Value="endDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="querySubscriptionsFindByAccIdIterator" id="startDate">
+      <AttrNames>
+        <Item Value="startDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="querySubscriptionsFindByAccIdIterator" id="status">
+      <AttrNames>
+        <Item Value="status"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="querySubscriptionsFindByAccIdIterator" id="subscribeDate">
+      <AttrNames>
+        <Item Value="subscribeDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="querySubscriptionsFindByAccIdIterator" id="activatedCode">
+      <AttrNames>
+        <Item Value="activatedCode"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="querySubscriptionsFindByAccIdIterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="querySubscriptionsFindByAccIdIterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="querySubscriptionsFindByAccIdIterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="querySubscriptionsFindByAccIdIterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+  </bindings>
+</pageDefinition>

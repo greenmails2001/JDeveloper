@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+        <af:document title="menu.jspx" id="d1">
+            <af:messages id="m1"/>
+            <af:form id="f1">
+                <af:panelFormLayout id="pfl1">
+                    <af:inputText value="#{bindings.Id.inputValue}" label="#{bindings.Id.hints.label}"
+                                  required="#{bindings.Id.hints.mandatory}" columns="#{bindings.Id.hints.displayWidth}"
+                                  maximumLength="#{bindings.Id.hints.precision}"
+                                  shortDesc="#{bindings.Id.hints.tooltip}" id="it1">
+                        <f:validator binding="#{bindings.Id.validator}"/>
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.Id.format}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.Name.inputValue}" label="#{bindings.Name.hints.label}"
+                                  required="#{bindings.Name.hints.mandatory}"
+                                  columns="#{bindings.Name.hints.displayWidth}"
+                                  maximumLength="#{bindings.Name.hints.precision}"
+                                  shortDesc="#{bindings.Name.hints.tooltip}" id="it2">
+                        <f:validator binding="#{bindings.Name.validator}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.DisplaySequence.inputValue}"
+                                  label="#{bindings.DisplaySequence.hints.label}"
+                                  required="#{bindings.DisplaySequence.hints.mandatory}"
+                                  columns="#{bindings.DisplaySequence.hints.displayWidth}"
+                                  maximumLength="#{bindings.DisplaySequence.hints.precision}"
+                                  shortDesc="#{bindings.DisplaySequence.hints.tooltip}" id="it3">
+                        <f:validator binding="#{bindings.DisplaySequence.validator}"/>
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.DisplaySequence.format}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.Shortcut.inputValue}" label="#{bindings.Shortcut.hints.label}"
+                                  required="#{bindings.Shortcut.hints.mandatory}"
+                                  columns="#{bindings.Shortcut.hints.displayWidth}"
+                                  maximumLength="#{bindings.Shortcut.hints.precision}"
+                                  shortDesc="#{bindings.Shortcut.hints.tooltip}" id="it4">
+                        <f:validator binding="#{bindings.Shortcut.validator}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.Icon.inputValue}" label="#{bindings.Icon.hints.label}"
+                                  required="#{bindings.Icon.hints.mandatory}"
+                                  columns="#{bindings.Icon.hints.displayWidth}"
+                                  maximumLength="#{bindings.Icon.hints.precision}"
+                                  shortDesc="#{bindings.Icon.hints.tooltip}" id="it5">
+                        <f:validator binding="#{bindings.Icon.validator}"/>
+                    </af:inputText>
+                    <f:facet name="footer">
+                        <af:panelGroupLayout layout="vertical" id="pgl1">
+                            <af:panelGroupLayout layout="horizontal" id="pgl2">
+                                <af:button actionListener="#{bindings.First.execute}" text="First"
+                                           disabled="#{!bindings.First.enabled}" partialSubmit="true" id="b1"/>
+                                <af:button actionListener="#{bindings.Previous.execute}" text="Previous"
+                                           disabled="#{!bindings.Previous.enabled}" partialSubmit="true" id="b2"/>
+                                <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                           disabled="#{!bindings.Next.enabled}" partialSubmit="true" id="b3"/>
+                                <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                           disabled="#{!bindings.Last.enabled}" partialSubmit="true" id="b4"/>
+                            </af:panelGroupLayout>
+                            <af:button text="Submit" id="b5"/>
+                        </af:panelGroupLayout>
+                    </f:facet>
+                </af:panelFormLayout>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.51.88" id="DataBindings" SeparateXMLFiles="false"
+             Package="com.perp.sasviewcontroller" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/pages/login/login.jspx"
+          usageId="com_perp_sasviewcontroller_loginPageDef"/>        
+    <page path="/pages/testting/treetable.jspx"
+          usageId="com_perp_sasviewcontroller_treetablePageDef"/>
+    <page path="/pages/testting/menutree.jspx"
+          usageId="com_perp_sasviewcontroller_menutreePageDef"/>
+    <page path="/pages/testting/test.jspx"
+          usageId="com_perp_sasviewcontroller_testPageDef"/>
+    <page path="/pages/login/embedparts/perpEnvChecking.jsff"
+          usageId="com_perp_sasviewcontroller_perpEnvCheckingPageDef1"/>
+    <page path="/pages/login/embedparts/perpAccountChecking.jsff"
+          usageId="com_perp_sasviewcontroller_perpAccountCheckingPageDef1"/>
+    <page path="/pages/perpviewer.jspx"
+          usageId="com_perp_sasviewcontroller_perpviewerPageDef1"/>   
+    <page path="/pages/perpviewer/index.jsff"
+          usageId="com_perp_sasviewcontroller_indexPageDef"/>
+    <page path="/pages/sas001/perpviewer_.jspx"
+          usageId="com_perp_sasviewcontroller_perpviewer_PageDef"/>
+    <page path="/pages/perpviewer/webperp/ounviewer.jsff"
+          usageId="com_perp_sasviewcontroller_ounviewerPageDef1"/>
+    <page path="/pages/perpviewer/webperp.jsff"
+          usageId="com_perp_sasviewcontroller_webperpPageDef1"/>
+    <page path="/pages/perpviewer/webperp/cceviewer.jsff"
+          usageId="com_perp_sasviewcontroller_cceviewerPageDef"/>
+    <page path="/pages/userprofile.jspx"
+          usageId="com_perp_sasviewcontroller_userprofilePageDef"/>
+    <page path="/pages/userprofile/history.jsff"
+          usageId="com_perp_sasviewcontroller_historyPageDef"/>
+    <page path="/pages/userprofile/index.jsff"
+          usageId="com_perp_sasviewcontroller_indexPageDef1"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_perp_sasviewcontroller_loginPageDef"
+          path="pages.login.loginPageDef"/>
+    <page id="com_perp_sasviewcontroller_perpviewerPageDef"
+          path="pages.sas001.perpviewerPageDef"/>
+    <page id="com_perp_sasviewcontroller_treetablePageDef"
+          path="pages.testting.treetablePageDef"/>
+    <page id="com_perp_sasviewcontroller_menutreePageDef"
+          path="pages.testting.menutreePageDef"/>
+    <page id="com_perp_sasviewcontroller_testPageDef"
+          path="pages.testting.testPageDef"/>
+    <page id="com_perp_sasviewcontroller_perpEnvCheckingPageDef1"
+          path="pages.login.embedparts.perpEnvCheckingPageDef"/>
+    <page id="com_perp_sasviewcontroller_perpAccountCheckingPageDef1"
+          path="pages.login.embedparts.perpAccountCheckingPageDef"/>
+    <page id="com_perp_sasviewcontroller_perpviewerPageDef1"
+          path="pages.perpviewerPageDef"/>
+    <page id="com_perp_sasviewcontroller_indexPageDef"
+          path="pages.perpviewer.indexPageDef"/>
+    <page id="com_perp_sasviewcontroller_perpviewer_PageDef"
+          path="pages.sas001.perpviewer_PageDef"/>
+    <page id="com_perp_sasviewcontroller_webperpPageDef"
+          path="pages.webperp.webperpPageDef"/>
+    <page id="com_perp_sasviewcontroller_ounviewerPageDef"
+          path="pages.webperp.ounviewerPageDef"/>
+    <page id="com_perp_sasviewcontroller_ounviewerPageDef1"
+          path="pages.perpviewer.webperp.ounviewerPageDef"/>
+    <page id="com_perp_sasviewcontroller_webperpPageDef1"
+          path="pages.perpviewer.webperpPageDef"/>
+    <page id="com_perp_sasviewcontroller_cceviewerPageDef"
+          path="pages.perpviewer.webperp.cceviewerPageDef"/>
+    <page id="com_perp_sasviewcontroller_userprofilePageDef"
+          path="pages.userprofilePageDef"/>
+    <page id="com_perp_sasviewcontroller_user_profile_user_profile_gatePageDef"
+          path="com.perp.sasviewcontroller.pageDefs.user_profile_user_profile_gatePageDef"/>
+    <page id="com_perp_sasviewcontroller_historyPageDef"
+          path="pages.userprofile.historyPageDef"/>
+    <page id="com_perp_sasviewcontroller_indexPageDef1"
+          path="pages.userprofile.indexPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="PerpSasAppModuleDataControl"
+                     Package="com.perp.sasmodel"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="PerpSasAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="PerpSasRegistAppModuleDataControl"
+                     Package="com.perp.sasregistmodel"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="PerpSasRegistAppModuleLocal"
+                     syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

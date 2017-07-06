@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="app-view-flow">
+     <default-activity>appViewRouter</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <managed-bean>
+      <managed-bean-name>backing_appView_perpLoginHandler</managed-bean-name>
+      <managed-bean-class>com.vc.web.backing.appView.PerpLoginHandler</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+      <managed-bean-name>backing_appView_appViewManager</managed-bean-name>
+      <managed-bean-class>com.vc.web.backing.appView.AppViewManager</managed-bean-class>
+      <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <view id="perpLogin">
+      <page>/pages/fragments/appView/perpLogin.jsff</page>
+    </view>
+    <view id="appView">
+      <page>/pages/fragments/appView/appView.jsff</page>
+    </view>
+    <router id="appViewRouter">
+      <case>
+        <expression>#{backing_perpSessionHandler.flowCaseOfAppViewFlow=="login"}</expression>
+        <outcome>login</outcome>
+      </case>
+      <case>
+        <expression>#{backing_perpSessionHandler.flowCaseOfAppViewFlow=="appView"}</expression>
+        <outcome>appView</outcome>
+      </case>
+      <case>
+        <expression>#{backing_perpSessionHandler.flowCaseOfAppViewFlow=="initialSetting"}</expression>
+        <outcome>initialSetting</outcome>
+      </case>
+      <default-outcome>login</default-outcome>
+    </router>
+    <parent-action id="intial-setting-flow">
+      <parent-outcome>initialSetting</parent-outcome>
+    </parent-action>
+    <control-flow-rule>
+      <from-activity-id>perpLogin</from-activity-id>
+      <control-flow-case>
+        <from-outcome>appView</from-outcome>
+        <to-activity-id>appViewRouter</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule>
+      <from-activity-id>appView</from-activity-id>
+      <control-flow-case>
+        <from-outcome>login</from-outcome>
+        <to-activity-id>perpLogin</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>initialSetting</from-outcome>
+        <to-activity-id>intial-setting-flow</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule>
+      <from-activity-id>appViewRouter</from-activity-id>
+      <control-flow-case>
+        <from-outcome>login</from-outcome>
+        <to-activity-id>perpLogin</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>appView</from-outcome>
+        <to-activity-id>appView</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>initialSetting</from-outcome>
+        <to-activity-id>intial-setting-flow</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+  </adfc-config>

@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="perpsasregistviewcontrollerBundle"
+         value="#{adfBundle['com.perp.sasregistviewcontroller.PerpSasRegistViewControllerBundle']}"/>
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1" title="Vertical Business Information System on Cloud" clientComponent="true">
+      <af:messages id="m1"/>
+      <af:resource type="javascript">
+        window.addEventListener('beforeunload', function () {
+            performUnloadEvent()
+        },false);
+        function performUnloadEvent(e) {              
+          //note that af:document must have clientComponent="true" set 
+          //for JavaScript to access the component object 
+          var eventSource = AdfPage.PAGE.findComponentByAbsoluteId('d1');
+          //var x and y are dummy variables obviously needed to keep the page 
+          //alive for as long it takes to send the custom event to the server
+          var x = AdfCustomEvent.queue(eventSource, 'handleOnUnload', {args : 'noargs'},false);   
+          //replace args:'noargs' with key:value pairs if your event needs to 
+          //pass arguments and values to the server side managed bean.
+          var y = 0;                                  
+        }
+      </af:resource>
+      <af:serverListener type="handleOnUnload" method="#{sasrLogout.onUnloadHander}"/>
+      <!--
+      <af:resource type="javascript">
+        var dont_confirm_leave = 0;
+        var leave_message = 'You sure you want to leave?';
+        function goodbye(e) {
+            if (dont_confirm_leave !== 1) {
+                if (!e)
+                    e = window.event;
+                e.cancelBubble = true;
+                e.returnValue = leave_message;
+                if (e.stopPropagation) {
+                    e.stopPropagation();
+                    e.preventDefault();
+                }
+            }
+        }        
+        window.onbeforeunload = goodbye;
+      </af:resource>       
+      -->
+      <af:form id="form1">
+        <af:pageTemplate viewId="/templates/sasrTemplate2.jspx" id="pt1">
+          <f:facet name="center">
+            <af:region value="#{bindings.sasr0021.regionModel}" id="r1" binding="#{sasr002FlowManager.region}"/>
+          </f:facet>
+          <f:facet name="globalTabs">
+            <af:navigationPane id="np1">
+              <af:commandNavigationItem text="Kích hoạt tài khoản" id="commandNavigationItem1" partialSubmit="true"
+                                        rendered="#{!sasrSessionLoginObject.perpSasrAccountChecking.accountActivated}"
+                                        actionListener="#{sasr002FlowManager.setCaseFlow2FirstPreview}"/>
+              <af:commandNavigationItem text="Sản phẩm dịch vụ" id="cni1" partialSubmit="true"
+                                        actionListener="#{sasr002FlowManager.setCaseFlow2Podm}"/>
+              <af:commandNavigationItem text="Thông tin tài khoản" id="cni2" partialSubmit="true"
+                                        actionListener="#{sasr002FlowManager.setCaseFlow2AccountInfo}"/>
+              <af:commandNavigationItem text="Khai báo người dùng VBIS" id="cni3"
+                                        actionListener="#{sasr002FlowManager.setCaseFlow2VBISUser}" partialSubmit="true"/>
+              <af:commandNavigationItem text="Quản trị hệ thống" id="cni4"
+                                        rendered="#{sasrSessionLoginObject.perpSasrAccountChecking.isAdmin}" partialSubmit="true"
+                                        actionListener="#{sasr002FlowManager.setCaseFlow2AccountLog}"/>
+            </af:navigationPane>
+          </f:facet>
+          <f:facet name="globalSearch">
+            <af:inputText label="Search" id="it1" rendered="false"/>
+          </f:facet>
+          <f:facet name="globalLinks">
+            <af:panelGroupLayout id="pgl1" layout="vertical">
+              <af:spacer width="10" height="5" id="s2"/>
+              <af:group id="g1">
+                <af:outputText value="Người dùng: " id="ot1" inlineStyle="font-size:13.0px;"/>
+                <af:commandLink text="#{sasrSessionLoginObject.perpSasrAccount.userName !=null? sasrSessionLoginObject.perpSasrAccount.userName: 'Guest'}"
+                                id="cl2" actionListener="#{sasr002FlowManager.setCaseFlow2AccountInfo}" partialSubmit="true"
+                                inlineStyle="font-size:13.0px;"/>
+                <af:spacer width="10" height="5" id="s1"/>
+                <af:outputText value="|" id="ot6"/>
+                <af:spacer width="5" height="5" id="s5"/>
+                <af:commandLink text="Sign Out" id="cl1" inlineStyle="font-size:13.0px;" 
+                                action="login"/>
+              </af:group>
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="status"></f:facet>
+          <f:facet name="copyright">
+            <af:outputText value="Vinh Cuu 2014, All rights reserved." id="ot2"/>
+          </f:facet>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="perpviewer_PageDef"
+                Package="pages.sas001">
+   <parameters/>
+  <executables>
+    <invokeAction id="prepareToShowSasUserRoles_exe"
+                  Binds="prepareToShowSasUserRoles" Refresh="ifNeeded"
+                  RefreshCondition="${!adfFacesContext.postback}"/>
+    <iterator Binds="SasUserRoles" RangeSize="-1"
+              DataControl="PerpSasAppModuleDataControl"
+              id="SasUserRolesIterator"/>
+    <iterator Binds="SasMenusRootX1" RangeSize="25"
+              DataControl="PerpSasAppModuleDataControl"
+              id="SasMenusRootX1Iterator" Refresh="default"/>
+  </executables>
+  <bindings>
+    <methodAction id="prepareToShowSasUserRoles" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="prepareToShowSasUserRoles"
+                  IsViewObjectMethod="false"
+                  DataControl="PerpSasAppModuleDataControl"
+                  InstanceName="PerpSasAppModuleDataControl.dataProvider">
+      <NamedData NDName="appCode"
+                 NDValue="#{sessionLoginObject.subscriptionInfo.packageCode}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="ausId"
+                 NDValue="#{sessionLoginObject.perpAccount.ausId}"
+                 NDType="java.lang.Long"/>
+    </methodAction>
+    <tree IterBinding="SasUserRolesIterator" id="SasUserRoles">
+      <nodeDefinition DefName="com.perp.sasmodel.views.sas.SasUserRoles"
+                      Name="SasUserRoles0">
+        <AttrNames>
+          <Item Value="GusId"/>
+          <Item Value="AusId"/>
+          <Item Value="Name"/>
+          <Item Value="Description"/>
+          <Item Value="AppCode"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="SasMenusRootX1Iterator" id="SasMenusRootX1">
+      <nodeDefinition DefName="com.perp.sasmodel.views.sas.SasMenusRoot"
+                      Name="SasMenusRootX10">
+        <AttrNames>
+          <Item Value="MenId"/>
+          <Item Value="MenuLable"/>
+          <Item Value="MenuName"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="SasMenus"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="com.perp.sasmodel.views.sas.SasMenus"
+                      Name="SasMenusRootX11">
+        <AttrNames>
+          <Item Value="MenId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

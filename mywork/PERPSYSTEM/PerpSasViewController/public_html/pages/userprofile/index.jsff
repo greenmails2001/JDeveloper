@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout id="psl1">
+    <f:facet name="center">
+      <af:panelDashboard id="pd1" columns="2" rowHeight="100%">
+        <af:panelBox text="Thông tin đơn vị" id="pb1">
+          <f:facet name="toolbar"/>
+        </af:panelBox>
+        <af:panelBox text="Thông tin tài khoản" id="pb2">
+          <f:facet name="toolbar"/>
+        </af:panelBox>
+      </af:panelDashboard>
+    </f:facet>
+  </af:panelStretchLayout>
+</jsp:root>

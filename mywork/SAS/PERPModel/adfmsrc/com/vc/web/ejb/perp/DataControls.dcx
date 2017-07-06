@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DataControlConfigs xmlns="http://xmlns.oracle.com/adfm/configuration"
+                    version="11.1.1.49.49" id="DataControls"
+                    Package="com.vc.web.ejb.perp">
+  <AdapterDataControl id="PERPFacadeLocal"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adfinternal.model.adapter.ejb.EjbDefinition"
+                      SupportsTransactions="false" SupportsSortCollection="true"
+                      SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="com.vc.web.ejb.perp.PERPFacadeLocal"
+                      BeanClass="com.vc.web.ejb.perp.PERPFacadeLocal"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="com.vc.web.ejb.perp.entities.AppUsers"/>
+      <TypeInfo FullName="com.vc.web.ejb.perp.entities.Groups"/>
+      <TypeInfo FullName="com.vc.web.ejb.perp.entities.Employees"/>
+      <TypeInfo FullName="com.vc.web.ejb.perp.entities.CostCenters"/>
+      <TypeInfo FullName="com.vc.web.ejb.perp.entities.OrganizationUnits"/>
+      <TypeInfo FullName="com.vc.web.ejb.perp.entities.SystemParas"/>
+      <TypeInfo FullName="com.vc.web.perp.ModuleInfo"/>
+      <TypeInfo FullName="com.vc.web.perp.AppInfo"/>
+    </CreatableTypes>
+    <Source>
+      <ejb-definition ejb-version="3.0" ejb-name="PERPFacade" ejb-type="Session" ejb-interface-type="local"
+                      ejb-business-interface="com.vc.web.ejb.perp.PERPFacadeLocal"
+                      xmlns="http://xmlns.oracle.com/adfm/adapter/ejb"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="DynamicPERPFacadeLocal"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.adfinternal.model.adapter.ejb.EjbDefinition"
+                      SupportsTransactions="false" SupportsSortCollection="true"
+                      SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="true"
+                      Definition="com.vc.web.ejb.perp.DynamicPERPFacadeLocal"
+                      BeanClass="com.vc.web.ejb.perp.DynamicPERPFacadeLocal"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <CreatableTypes>
+      <TypeInfo FullName="com.vc.web.SpaOun"/>
+      <TypeInfo FullName="com.vc.web.PerpSystemInfo"/>
+      <TypeInfo FullName="com.vc.web.ejb.perp.entities.SystemParas"/>
+      <TypeInfo FullName="com.vc.web.ejb.perp.entities.CostCenters"/>
+      <TypeInfo FullName="com.vc.web.ejb.perp.entities.OrganizationUnits"/>
+      <TypeInfo FullName="com.vc.web.ejb.perp.entities.Groups"/>
+      <TypeInfo FullName="com.vc.web.ejb.perp.entities.Employees"/>
+      <TypeInfo FullName="com.vc.web.ejb.perp.entities.AppUsers"/>
+      <TypeInfo FullName="com.vc.web.perp.ModuleInfo"/>
+      <TypeInfo FullName="com.vc.web.perp.GusInfo"/>
+      <TypeInfo FullName="com.vc.web.perp.Spa4Oun"/>
+      <TypeInfo FullName="com.vc.web.perp.OunShortInfo"/>
+      <TypeInfo FullName="com.vc.web.perp.OunInfo"/>
+    </CreatableTypes>
+    <Source>
+      <ejb-definition ejb-version="3.0" ejb-name="DynamicPERPFacade" ejb-type="Session" ejb-interface-type="local"
+                      ejb-business-interface="com.vc.web.ejb.perp.DynamicPERPFacadeLocal" xmlns="http://xmlns.oracle.com/adfm/adapter/ejb"/>
+    </Source>
+  </AdapterDataControl>
+</DataControlConfigs>

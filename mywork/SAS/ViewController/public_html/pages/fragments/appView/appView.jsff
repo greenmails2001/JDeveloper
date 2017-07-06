@@ -1,0 +1,163 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core"
+          xmlns:trh="http://myfaces.apache.org/trinidad/html">
+
+
+   <c:set var="viewcontrollerBundle" value="#{adfBundle['com.vc.web.ViewControllerBundle']}"/>
+   
+   <af:panelStretchLayout topHeight="95px" styleClass="AFVisualRoot" id="lenpsl1">
+    <f:facet name="center">
+      <af:panelSplitter inlineStyle="width:100%;" id="lenps1">
+        <f:facet name="first">
+          <af:panelAccordion id="lenpa1">
+            <af:showDetailItem text="#{viewcontrollerBundle['perp.app.selectRole']}" id="lensdi1">
+              <af:panelCollection id="lenpc1">
+                <f:facet name="menus"/>
+                <f:facet name="toolbar"/>
+                <f:facet name="statusbar"/>
+                <af:table value="#{backing_appView_appViewManager.gusInfoList}" var="row"
+                          rows="#{bindings.GusInfo.rangeSize}" fetchSize="#{bindings.GusInfo.rangeSize}"
+                          selectedRowKeys="#{bindings.GusInfo.collectionModel.selectedRow}"
+                          selectionListener="#{backing_appView_appViewManager.gusSelectionListener}"
+                          rowSelection="single" columnStretching="last" id="gusTable">
+                  <af:column sortProperty="gusName" sortable="true" id="lenc1">
+                    <af:outputText value="#{row.gusName}" id="lenot1"/>
+                  </af:column>
+                </af:table>
+              </af:panelCollection>
+            </af:showDetailItem>
+          </af:panelAccordion>
+        </f:facet>
+        <f:facet name="second">
+          <af:panelTabbed binding="#{backing_appView_appViewManager.tabPane}" id="lenpt1">
+            <af:showDetailItem text="#{viewcontrollerBundle['perp.app.formList']}" binding="#{backing_appView_appViewManager.tabItemForms}"
+                               id="lensdi2">
+              <af:panelCollection inlineStyle="width:100%; height:100%;" id="lenpc2">
+                <f:facet name="menus"/>
+                <f:facet name="toolbar"/>
+                <f:facet name="statusbar"/>
+                <af:treeTable value="#{backing_appView_appViewManager.moduleDataModel}"
+                              binding="#{backing_appView_appViewManager.moduleTreeTable}" var="row"
+                              columnStretching="last" id="moduleTreeTable" rowSelection="single" immediate="true"
+                              width="100%">
+                  <f:facet name="nodeStamp">
+                    <af:column sortable="false" headerText="#{viewcontrollerBundle['perp.app.moduleName']}" width="200"
+                               id="lenc2">
+                      <af:outputText value="#{row.moduleName}" id="lenot2"/>
+                    </af:column>
+                  </f:facet>
+                  <af:column sortable="false" headerText="#{viewcontrollerBundle['perp.app.moduleLabel']}" width="250"
+                             id="lenc3">
+                    <af:outputText value="#{row.moduleLabel}" id="lenot3">
+                      <af:clientAttribute name="moduleId" value="#{row.moduleName}"/>
+                      <af:clientAttribute name="sasUserName"
+                                          value="#{backing_perpSessionLogin.appUserInfo.activatedCode}"/>
+                      <af:clientAttribute name="ausId" value="#{backing_perpSessionLogin.appUserInfo.ausId}"/>
+                      <af:clientAttribute value="#{backing_perpSessionLogin.appUserInfo.packageCode}"
+                                          name="packageCode"/>
+                      <af:clientAttribute name="gusId" value="#{row.gusId}"/>
+                      <af:clientListener type="click" method="Perp01Script.moduleSelection"/>
+                      <af:clientListener method="Perp01Script.dbclickOpenModule" type="dblClick"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column sortable="false" headerText="#{viewcontrollerBundle['perp.app.moduleDescription']}"
+                             id="lenc4">
+                    <af:outputText value="#{row.moduleDescription}" id="lenot4"/>
+                  </af:column>
+                </af:treeTable>
+              </af:panelCollection>
+            </af:showDetailItem>
+            <af:showDetailItem text="#{viewcontrollerBundle['perp.app.favoritesForms']}"
+                               binding="#{backing_appView_appViewManager.tabItemFavorites}" id="lensdi3">
+              <af:panelCollection inlineStyle="width:100%; height:100%;" id="lenpc3">
+                <f:facet name="menus"/>
+                <f:facet name="toolbar"/>
+                <f:facet name="statusbar"/>
+              </af:panelCollection>
+            </af:showDetailItem>
+            <af:showDetailItem text="#{viewcontrollerBundle['perp.app.searchFormResult']}"
+                               binding="#{backing_appView_appViewManager.tabItemSearchResult}" id="lensdi4">
+              <af:panelCollection inlineStyle="width:100%; height:100%;" id="lenpc4">
+                <f:facet name="menus"/>
+                <f:facet name="toolbar"/>
+                <f:facet name="statusbar"/>
+                <af:table value="#{backing_appView_appViewManager.searchResult}" var="row" columnStretching="last"
+                          binding="#{backing_appView_appViewManager.searchTable}" id="lent1">
+                  <af:column sortable="false" headerText="#{viewcontrollerBundle['perp.app.moduleName']}" width="198"
+                             id="lenc5">
+                    <af:outputText value="#{row.moduleName}" id="lenot5"/>
+                  </af:column>
+                  <af:column sortable="false" headerText="#{viewcontrollerBundle['perp.app.moduleLabel']}" width="396"
+                             id="lenc6">
+                    <af:outputText value="#{row.moduleLabel}" id="lenot6">
+                      <af:clientAttribute name="moduleId" value="#{row.moduleName}"/>
+                      <af:clientAttribute name="sasUserName"
+                                          value="#{backing_perpSessionLogin.appUserInfo.activatedCode}"/>
+                      <af:clientAttribute name="ausId" value="#{backing_perpSessionLogin.appUserInfo.ausId}"/>
+                      <af:clientAttribute value="#{backing_perpSessionLogin.appUserInfo.packageCode}"
+                                          name="packageCode"/>
+                      <af:clientAttribute name="gusId" value="#{row.gusId}"/>
+                      <af:clientListener type="click" method="Perp01Script.moduleSelection"/>
+                      <af:clientListener method="Perp01Script.dbclickOpenModule" type="dblClick"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column sortable="false" headerText="#{viewcontrollerBundle['perp.app.moduleDescription']}" width="311"
+                             id="lenc7">
+                    <af:outputText value="#{row.moduleDescription}" id="lenot7"/>
+                  </af:column>
+                </af:table>
+              </af:panelCollection>
+            </af:showDetailItem>
+          </af:panelTabbed>
+        </f:facet>
+      </af:panelSplitter>
+    </f:facet>
+    <f:facet name="top">
+      <af:toolbox id="header2ToolBox" inlineStyle="padding:2px;">
+        <trh:tableLayout width="100%" id="lentl1">
+          <trh:rowLayout id="lenrl1">
+            <trh:cellFormat halign="left" id="lencf1">
+              <af:panelGroupLayout layout="horizontal" id="lenpgl1"/>
+            </trh:cellFormat>
+            <trh:cellFormat halign="right" id="lencf2">
+              <af:panelGroupLayout halign="right" layout="horizontal" id="lenpgl2">
+                <af:navigationPane hint="bar" id="lennp1">
+                  <af:commandNavigationItem text="Login" action="login" id="lencni1"/>
+                  <af:commandNavigationItem text="Set dat ban dau" action="initialSetting" id="lencni2"/>
+                </af:navigationPane>
+              </af:panelGroupLayout>
+            </trh:cellFormat>
+          </trh:rowLayout>
+        </trh:tableLayout>
+        <af:menuBar id="lenmb1">
+          <af:menu text="File" id="lenm1"/>
+          <af:menu text="Tool" id="lenm2"/>
+          <af:menu text="Help" id="lenm3">
+            <af:commandMenuItem text="About" id="lencmi1"/>
+          </af:menu>
+        </af:menuBar>
+        <af:toolbar id="header2ToolBar1">
+          <af:panelGroupLayout layout="horizontal" id="lenpgl3">
+            <af:selectOneChoice label="#{viewcontrollerBundle['perp.app.moduleType']}" id="selectOneChoice1">
+              <af:selectItem label="Form" id="selectItem1"/>
+              <af:selectItem label="Report" id="selectItem2"/>
+            </af:selectOneChoice>
+            <af:spacer width="10" height="10" id="lens1"/>
+            <af:commandButton text="Refresh" id="commandButton1" partialSubmit="true"/>
+            <af:spacer width="10" height="10" id="lens2"/>
+            <af:separator id="separator1"/>
+            <af:inputText label="#{viewcontrollerBundle['perp.app.searchText']}" id="inputText1"
+                          value="#{backing_appView_appViewManager.searchText}"/>
+            <af:commandButton text="#{viewcontrollerBundle['perp.app.searchButton']}" id="commandButton2"
+                              action="#{backing_appView_appViewManager.searchMuduleAction}" partialSubmit="true"/>
+            <af:spacer width="10" height="10" id="lens3"/>
+            <af:commandButton text="#{viewcontrollerBundle['perp.app.openModule']}" id="openModule" partialSubmit="true">
+              <af:clientListener method="Perp01Script.openModule" type="action"/>
+            </af:commandButton>
+          </af:panelGroupLayout>
+        </af:toolbar>
+      </af:toolbox>
+    </f:facet>
+  </af:panelStretchLayout>
+</jsp:root>

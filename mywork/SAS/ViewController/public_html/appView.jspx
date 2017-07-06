@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:trh="http://myfaces.apache.org/trinidad/html">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document binding="#{backing_appView.document2}" id="document2"
+                 title="Software And Service : App View">
+         <!-- Start Script -->
+    <f:facet name="metaContainer">
+       <af:group id="g1">        
+          <trh:script source="resources/js/perp01.js" id="script1"/>
+        </af:group>
+    </f:facet>
+    <!-- End Script -->
+      <af:pageTemplate viewId="/templates/appTemplate.jspx" id="pt1">
+        <f:facet name="center">
+          <af:region value="#{bindings.appviewflow1.regionModel}" id="appvi1"
+                     binding="#{backing_appView.appvi1}"/>
+        </f:facet>
+      </af:pageTemplate>
+    </af:document>
+  </f:view>
+  <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_appView-->
+</jsp:root>

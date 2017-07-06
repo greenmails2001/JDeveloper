@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:form id="f1">
+        <af:pageTemplate viewId="/templates/sasrTemplate1.jspx" id="pt1">
+          <f:facet name="center">
+            <af:panelStretchLayout endWidth="334px" startWidth="222px"
+                                   id="psl1">
+              <f:facet name="center"/>
+              <f:facet name="end">
+                <af:panelGroupLayout layout="vertical"
+                                     inlineStyle="padding:10px;" id="pgl1">
+                  <af:panelBox text="LASTEST PRODUCT" id="pb1">
+                    <f:facet name="toolbar"/>
+                    <af:panelGroupLayout
+                                         layout="vertical" id="pgl2">
+                      <af:panelGroupLayout layout="vertical"
+                                           inlineStyle="padding:3px;" id="pgl3">
+                        <af:outputText value="SAS continues The Premier Business Leadership Series, Oct. 27-29 in Las Vegas, that addresses key business topics facing global leaders today"
+                                       id="ot1"/>
+                      </af:panelGroupLayout>
+                      <af:panelGroupLayout layout="vertical"
+                                           inlineStyle="padding:3px;" id="pgl4">
+                        <af:navigationPane hint="list" id="np1">
+                          <af:commandNavigationItem text="commandNavigationItem 1"
+                                                    id="cni1"/>
+                          <af:commandNavigationItem text="commandNavigationItem 2"
+                                                    id="cni2"/>
+                        </af:navigationPane>
+                      </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                  </af:panelBox>
+                </af:panelGroupLayout>
+              </f:facet>
+              <f:facet name="start">
+                <af:panelGroupLayout layout="vertical"
+                                     inlineStyle="padding:3px;" id="pgl5">
+                  <af:panelHeader text="ABOUT SAS" inlineStyle="padding:3px;"
+                                  id="ph1">
+                    <af:panelGroupLayout layout="vertical" id="pgl6">
+                      <af:image shortDesc="about sas image"
+                                source="/images/about_sas_image.jpg" id="i1"/>
+                      <af:panelGroupLayout layout="vertical"
+                                           inlineStyle="padding:3px; text-align:justify;"
+                                           id="pgl7">
+                        <af:outputText value="SAS is the leader in business analytics software and services, and the largest independent vendor in the business intelligence market. Through innovative solutions, SAS helps customers improve performance and deliver value by making better decisions faster. SAS gives you THE POWER TO KNOW®."
+                                       id="ot2"/>
+                      </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                  </af:panelHeader>
+                </af:panelGroupLayout>
+              </f:facet>
+            </af:panelStretchLayout>
+          </f:facet>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

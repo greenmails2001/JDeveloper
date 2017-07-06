@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:trh="http://myfaces.apache.org/trinidad/html">
+  <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="ponpgl1">
+    <af:goButton text="goButton 1#{backing_newsManager.caseFlow}" id="pongb1"/>
+    <trh:tableLayout width="100%" id="pontl1"/>
+  </af:panelGroupLayout>
+</jsp:root>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.1.56.60" id="servicepackagesPageDef"
+                Package="pages.sasr.sasr002.sas002frag.sasrAdminFrag">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Sasr002A4ServicePackages" RangeSize="25" DataControl="PerpSasRegistAppModuleDataControl"
+              id="Sasr002A4ServicePackagesIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="Sasr002A4ServicePackagesIterator" id="Sasr002A4ServicePackages">
+      <nodeDefinition DefName="com.perp.sasregistmodel.views.sasr002.Sasr002A4ServicePackages" Name="Sasr002A4ServicePackages0">
+        <AttrNames>
+          <Item Value="PackageCode"/>
+          <Item Value="PackageName"/>
+          <Item Value="UnitPrice"/>
+          <Item Value="NumOfServers"/>
+          <Item Value="SeriveTime"/>
+          <Item Value="ServiceType"/>
+          <Item Value="Description"/>
+          <Item Value="Enabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="Sasr002A4ServicePackagesIterator" id="PackageCode">
+      <AttrNames>
+        <Item Value="PackageCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Sasr002A4ServicePackagesIterator" id="PackageName">
+      <AttrNames>
+        <Item Value="PackageName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Sasr002A4ServicePackagesIterator" id="ServiceType">
+      <AttrNames>
+        <Item Value="ServiceType"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Sasr002A4ServicePackagesIterator" id="UnitPrice">
+      <AttrNames>
+        <Item Value="UnitPrice"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="Sasr002A4ServicePackagesIterator" StaticList="false" Uses="LOV_Enabled" id="Enabled" DTSupportsMRU="false"/>
+    <attributeValues IterBinding="Sasr002A4ServicePackagesIterator" id="NumOfServers">
+      <AttrNames>
+        <Item Value="NumOfServers"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Sasr002A4ServicePackagesIterator" id="SeriveTime">
+      <AttrNames>
+        <Item Value="SeriveTime"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Sasr002A4ServicePackagesIterator" id="Description">
+      <AttrNames>
+        <Item Value="Description"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="PerpSasRegistAppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="PerpSasRegistAppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:trh="http://myfaces.apache.org/trinidad/html">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <af:pageTemplateDef var="attrs">
+    <af:xmlContent>
+      <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+        <display-name>commonNewsTemplate</display-name>
+      </component>
+    </af:xmlContent>
+    <af:form id="pt_f1">
+      <af:panelGroupLayout layout="vertical" halign="center" id="pt_pgl1">
+        <trh:tableLayout width="1000" styleClass="default-table" id="pt_tl1">
+          <trh:rowLayout id="pt_rl1">
+            <trh:cellFormat id="pt_cf1">
+              <af:panelGroupLayout layout="vertical" id="pt_pgl2">
+                <trh:tableLayout width="100%" id="pt_tl2">
+                  <trh:rowLayout id="pt_rl2">
+                    <trh:cellFormat rowSpan="3" valign="bottom" id="pt_cf2">
+                      <af:panelGroupLayout halign="left" valign="bottom" id="pt_pgl3">
+                        <af:image source="/resources/images/top1.gif" id="pt_i1"/>
+                      </af:panelGroupLayout>
+                    </trh:cellFormat>
+                    <trh:cellFormat columnSpan="2" valign="top" halign="right" id="pt_cf3">
+                      <af:panelGroupLayout layout="vertical" halign="right" inlineStyle="padding:2px;" id="pt_pgl4">
+                        <af:navigationPane hint="buttons" id="pt_np1">
+                          <af:commandNavigationItem text="#{viewcontrollerBundle['sas.global.navigator.home']}" action="home"
+                                                    id="pt_cni1"/>
+                          <af:commandNavigationItem text="#{viewcontrollerBundle['sas.global.navigator.helpCenter']}" action="helpCenter"
+                                                    id="pt_cni2"/>
+                          <af:commandNavigationItem text="#{viewcontrollerBundle['sas.global.navigator.download']}" action="download"
+                                                    id="pt_cni3"/>
+                          <af:commandNavigationItem text="#{viewcontrollerBundle['sas.global.navigator.forum']}" action="forum"
+                                                    id="pt_cni4"/>
+                          <af:commandNavigationItem text="#{viewcontrollerBundle['sas.global.navigator.contact']}" action="contact"
+                                                    id="pt_cni5"/>
+                          <af:commandNavigationItem text="#{viewcontrollerBundle['sas.global.navigator.admin']}" action="admin"
+                                                    id="pt_cni6"/>
+                        </af:navigationPane>
+                      </af:panelGroupLayout>
+                    </trh:cellFormat>
+                  </trh:rowLayout>
+                  <trh:rowLayout id="pt_rl3">
+                    <trh:cellFormat columnSpan="2" halign="right" valign="bottom" id="pt_cf4">
+                      <af:panelGroupLayout layout="vertical" halign="right" valign="bottom" inlineStyle="padding:2px;"
+                                           id="pt_pgl5">
+                        <af:navigationPane hint="buttons" inlineStyle="font-size:medium;" id="pt_np2">
+                          <af:commandNavigationItem text="#{viewcontrollerBundle['sas.home.navigator.introduction']}" partialSubmit="true"
+                                                    action="introduction" id="ncaId_4"
+                                                    actionListener="#{backing_commonNewsHandler.viewNewsCategoriesActionListener}"/>
+                          <af:commandNavigationItem text="#{viewcontrollerBundle['sas.home.navigator.product']}" partialSubmit="true"
+                                                    action="product" id="ncaId_2"
+                                                    actionListener="#{backing_commonNewsHandler.viewNewsCategoriesActionListener}"/>
+                          <af:commandNavigationItem text="#{viewcontrollerBundle['sas.home.navigator.service']}" action="service"
+                                                    id="ncaId_3"
+                                                    actionListener="#{backing_commonNewsHandler.viewNewsCategoriesActionListener}"/>
+                          <af:commandNavigationItem text="#{viewcontrollerBundle['sas.home.navigator.partner']}" action="partner"
+                                                    id="ncaId_5"
+                                                    actionListener="#{backing_commonNewsHandler.viewNewsCategoriesActionListener}"/>
+                          <af:commandNavigationItem text="#{viewcontrollerBundle['sas.home.navigator.customer']}" partialSubmit="true"
+                                                    action="customer" id="pt_cni7"/>
+                          <af:commandNavigationItem text="#{viewcontrollerBundle['sas.home.navigator.news']}" action="news" id="ncaId_0"
+                                                    actionListener="#{backing_commonNewsHandler.viewNewsCategoriesActionListener}"
+                                                    partialSubmit="true"/>
+                          <af:commandNavigationItem text="#{viewcontrollerBundle['sas.home.navigator.consultant']}" action="consultant"
+                                                    id="ncaId_21"
+                                                    actionListener="#{backing_commonNewsHandler.viewNewsCategoriesActionListener}"
+                                                    partialSubmit="true"/>
+                        </af:navigationPane>
+                      </af:panelGroupLayout>
+                    </trh:cellFormat>
+                  </trh:rowLayout>
+                  <trh:rowLayout id="pt_rl4">
+                    <trh:cellFormat width="90%" inlineStyle='background-image:url("../resources/images/top2.gif");'
+                                    id="pt_cf5">
+                      <af:spacer width="10" height="10" id="pt_s1"/>
+                    </trh:cellFormat>
+                    <trh:cellFormat id="pt_cf6">
+                      <af:panelGroupLayout layout="vertical" id="pt_pgl6">
+                        <af:image source="/resources/images/top3.gif" id="pt_i2"/>
+                      </af:panelGroupLayout>
+                    </trh:cellFormat>
+                  </trh:rowLayout>
+                </trh:tableLayout>
+              </af:panelGroupLayout>
+            </trh:cellFormat>
+          </trh:rowLayout>
+          <trh:rowLayout id="pt_rl5">
+            <trh:tableLayout width="100%" id="pt_tl3">
+              <trh:rowLayout id="pt_rl6">
+                <trh:cellFormat valign="top" id="pt_cf7">
+                  <trh:tableLayout width="220" id="pt_tl4">
+                    <trh:rowLayout id="pt_rl7">
+                      <trh:cellFormat id="pt_cf8">
+                        <af:facetRef facetName="left"/>
+                      </trh:cellFormat>
+                    </trh:rowLayout>
+                  </trh:tableLayout>
+                </trh:cellFormat>
+                <trh:cellFormat width="99%" valign="top" id="pt_cf9">
+                  <af:panelGroupLayout layout="vertical" id="pt_pgl7">
+                    <af:facetRef facetName="center"/>
+                  </af:panelGroupLayout>
+                </trh:cellFormat>
+                <trh:cellFormat width="250" valign="top" id="pt_cf10">
+                  <trh:tableLayout width="200" id="pt_tl5">
+                    <trh:rowLayout id="pt_rl8">
+                      <trh:cellFormat id="pt_cf11">
+                        <af:facetRef facetName="right"/>
+                      </trh:cellFormat>
+                    </trh:rowLayout>
+                  </trh:tableLayout>
+                </trh:cellFormat>
+              </trh:rowLayout>
+              <trh:rowLayout id="pt_rl9">
+                <trh:cellFormat width="250" valign="top" id="pt_cf12">
+                  <af:panelGroupLayout layout="vertical" id="pt_pgl8">
+                    <af:facetRef facetName="bottomLeft"/>
+                  </af:panelGroupLayout>
+                </trh:cellFormat>
+                <trh:cellFormat width="99%" valign="top" halign="right" id="pt_cf13">
+                  <af:panelGroupLayout layout="vertical" id="pt_pgl9">
+                    <af:facetRef facetName="bottomCenter"/>
+                  </af:panelGroupLayout>
+                </trh:cellFormat>
+                <trh:cellFormat width="250" valign="top" halign="right" id="pt_cf14">
+                  <af:panelGroupLayout layout="vertical" id="pt_pgl10">
+                    <af:facetRef facetName="bottomRight"/>
+                  </af:panelGroupLayout>
+                </trh:cellFormat>
+              </trh:rowLayout>
+            </trh:tableLayout>
+          </trh:rowLayout>
+          <trh:rowLayout id="pt_rl10">
+            <trh:cellFormat inlineStyle='background-image:url("../resources/images/product_bg_t10.gif");' id="pt_cf15">
+              <af:spacer width="10" height="10" id="pt_s2"/>
+            </trh:cellFormat>
+          </trh:rowLayout>
+          <trh:rowLayout id="pt_rl11">
+            <trh:cellFormat id="pt_cf16">
+              <af:spacer width="10" height="10" id="pt_s3"/>
+            </trh:cellFormat>
+          </trh:rowLayout>
+          <trh:rowLayout id="pt_rl12">
+            <trh:cellFormat id="pt_cf17">
+              <af:panelGroupLayout layout="vertical" inlineStyle="padding:2px;" id="pt_pgl11">
+                <trh:tableLayout width="100%" id="pt_tl6">
+                  <trh:rowLayout id="pt_rl13">
+                    <trh:cellFormat valign="top" id="pt_cf18">
+                      <af:panelGroupLayout layout="vertical" id="pt_pgl12">
+                        <af:outputText value="@Copyright VinhCuu (PERP SJC)" id="pt_ot1"/>
+                      </af:panelGroupLayout>
+                    </trh:cellFormat>
+                    <trh:cellFormat styleClass="PanelPagePrivacy" width="550" valign="top" id="pt_cf19">
+                      <af:panelGroupLayout layout="vertical" halign="right" id="pt_pgl13">
+                        <af:panelGroupLayout layout="vertical" id="pt_pgl14">
+                          <af:activeOutputText value="@ 2008 PerpOndemand.com.vn - CONG TY CP GIAI PHAP CONG NGHE VINH CUU (PERP JSC)"
+                                               noWrap="true" id="pt_aot1"/>
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout layout="vertical" id="pt_pgl15">
+                          <af:activeOutputText value="391 A Nam Ky Khoi Nghia , Quan 3 , TP.HCM - Email: tuantt@pythis.com"
+                                               id="pt_aot2"/>
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout layout="vertical" id="pt_pgl16">
+                          <af:activeOutputText value="Tel : +84(8) 384.81.882. Fax: +84(8) 384.81.8827" id="pt_aot3"/>
+                        </af:panelGroupLayout>
+                      </af:panelGroupLayout>
+                    </trh:cellFormat>
+                  </trh:rowLayout>
+                </trh:tableLayout>
+              </af:panelGroupLayout>
+            </trh:cellFormat>
+          </trh:rowLayout>
+        </trh:tableLayout>
+      </af:panelGroupLayout>
+    </af:form>
+  </af:pageTemplateDef>
+</jsp:root>

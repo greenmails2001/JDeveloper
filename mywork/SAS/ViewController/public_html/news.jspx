@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:trh="http://myfaces.apache.org/trinidad/html">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:pageTemplate viewId="/templates/commonNewsTemplate.jspx" value="#{bindings.pageTemplateBinding}" id="pt1">
+        <f:facet name="left">
+          <af:panelGroupLayout layout="vertical" id="pgl1">
+            <trh:tableLayout width="100%" id="tl1">
+              <trh:rowLayout id="rl1">
+                <trh:cellFormat id="cf1">
+                  <af:navigationPane hint="list" id="np1">
+                    <af:commandNavigationItem text="Tin tuc su kien" partialSubmit="true"
+                                              actionListener="#{backing_newsManager.selectNewsCategoriesActionListener}" id="ncaId_1"/>
+                    <af:commandNavigationItem text="Hoat dong cua cong ty" partialSubmit="true"
+                                              actionListener="#{backing_newsManager.selectNewsCategoriesActionListener}" id="ncaId_2"/>
+                  </af:navigationPane>
+                </trh:cellFormat>
+              </trh:rowLayout>
+            </trh:tableLayout>
+            <trh:rowLayout id="rl2">
+              <trh:cellFormat id="cf2">
+                <af:spacer width="10" height="10" id="s1"/>
+              </trh:cellFormat>
+            </trh:rowLayout>
+            <trh:rowLayout id="rl3">
+              <trh:cellFormat id="cf3">
+                <af:image source="/resources/images/accounting.jpeg" id="i1"/>
+              </trh:cellFormat>
+            </trh:rowLayout>
+          </af:panelGroupLayout>
+        </f:facet>
+        <f:facet name="center">
+          <af:panelGroupLayout layout="vertical" binding="#{backing_newsManager.afNewsPanelGroup}" id="pgl2">
+            <af:region value="#{bindings.newsflow1.regionModel}" id="newsflow1"/>
+          </af:panelGroupLayout>
+        </f:facet>
+        <f:facet name="right">
+          <af:panelGroupLayout layout="vertical" id="pgl3">
+            <trh:tableLayout width="100%" id="tl2">
+              <trh:rowLayout id="rl4">
+                <trh:cellFormat id="cf4">
+                  <af:spacer width="10" height="10" id="s2"/>
+                </trh:cellFormat>
+              </trh:rowLayout>
+              <trh:rowLayout id="rl5">
+                <trh:cellFormat id="cf5">
+                  <trh:tableLayout width="100%"
+                                   inlineStyle="padding : 1px;font-size:11px;border-width : 1px 1px 1px 1px;border-style : solid;border-color : #cccccc;"
+                                   id="tl3">
+                    <trh:rowLayout id="rl6">
+                      <trh:cellFormat width="1%" halign="left" valign="top" columnSpan="0" id="cf6">
+                        <af:image source="/resources/images/logo_vinhcuu.gif" id="i2"/>
+                      </trh:cellFormat>
+                    </trh:rowLayout>
+                  </trh:tableLayout>
+                </trh:cellFormat>
+              </trh:rowLayout>
+              <trh:rowLayout id="rl7">
+                <trh:cellFormat id="cf7">
+                  <af:spacer width="10" height="10" id="s3"/>
+                </trh:cellFormat>
+              </trh:rowLayout>
+              <trh:rowLayout id="rl8">
+                <trh:cellFormat id="cf8">
+                  <trh:tableLayout width="100%"
+                                   inlineStyle="padding : 1px;font-size:11px;border-width : 1px 1px 1px 1px;border-style : solid;border-color : #cccccc;"
+                                   id="tl4">
+                    <trh:rowLayout id="rl9">
+                      <trh:cellFormat width="1%" halign="left" valign="top" columnSpan="2"
+                                      inlineStyle='background-image:url("../resources/images/bg_tieudiem.gif");'
+                                      id="cf9">
+                        <af:panelGroupLayout layout="horizontal" id="pgl4">
+                          <af:spacer width="10" height="25" id="s4"/>
+                          <af:outputLabel value="TIEU DIEM" inlineStyle="font-size:medium; color:Scrollbar;" id="ol1"/>
+                        </af:panelGroupLayout>
+                      </trh:cellFormat>
+                    </trh:rowLayout>
+                    <af:forEach items="#{backing_newsManager.newsForRightPage}" var="row">
+                      <trh:rowLayout id="rl10">
+                        <trh:cellFormat width="1%" halign="left" valign="top"
+                                        inlineStyle="padding : 1px;font-size:11px;border-width : 0px 1px 1px 0px;border-style : solid;border-color : #cccccc;"
+                                        id="cf10">
+                          <af:image source="/resources/images/sas-account.jpeg" id="i3"/>
+                        </trh:cellFormat>
+                        <trh:cellFormat width="99%" halign="left" valign="middle"
+                                        inlineStyle="padding : 1px;font-size:11px;border-width : 0px 1px 1px 0px;border-style : solid;border-color : #cccccc;"
+                                        id="cf11">
+                          <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="pgl5">
+                            <af:commandLink text="#{row.title}" id="cl1"/>
+                          </af:panelGroupLayout>
+                        </trh:cellFormat>
+                      </trh:rowLayout>
+                    </af:forEach>
+                  </trh:tableLayout>
+                </trh:cellFormat>
+              </trh:rowLayout>
+            </trh:tableLayout>
+          </af:panelGroupLayout>
+        </f:facet>
+        <f:facet name="popupFacet"/>
+      </af:pageTemplate>
+    </af:document>
+  </f:view>
+</jsp:root>

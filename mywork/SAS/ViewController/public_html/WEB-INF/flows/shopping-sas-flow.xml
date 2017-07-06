@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="shopping-sas-flow">
+    <default-activity>router</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <managed-bean>
+      <managed-bean-name>backing_shoppingSas_shoppingSasHandler</managed-bean-name>
+      <managed-bean-class>com.vc.web.backing.shoppingSas.ShoppingSasHandler</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+      <managed-bean-name>backing_shoppingSas_shoppingCartHandler</managed-bean-name>
+      <managed-bean-class>com.vc.web.backing.shoppingSas.ShoppingCartHandler</managed-bean-class>
+      <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <view id="subscriptionList">
+      <page>/pages/fragments/shoppingSas/subscriptionList.jsff</page>
+    </view>
+    <view id="createSubscription">
+      <page>/pages/fragments/shoppingSas/createSubscription.jsff</page>
+    </view>
+    <view id="editSubscription">
+      <page>/pages/fragments/shoppingSas/editSubscription.jsff</page>
+    </view>
+    <router id="router">
+      <case>
+        <expression>#{backing_shoppingSas_shoppingSasHandler.flowCaseOfShoppingSasFlow=="subscriptionList"}</expression>
+        <outcome>subscriptionList</outcome>
+      </case>
+      <case>
+        <expression>#{backing_shoppingSas_shoppingSasHandler.flowCaseOfShoppingSasFlow=="login"}</expression>
+        <outcome>login</outcome>
+      </case>
+      <default-outcome>home</default-outcome>
+    </router>
+    <parent-action id="sas-account-flow">
+      <parent-outcome>login</parent-outcome>
+      <outcome>login</outcome>
+    </parent-action>
+    <control-flow-rule>
+      <from-activity-id>subscriptionList</from-activity-id>
+      <control-flow-case>
+        <from-outcome>create</from-outcome>
+        <to-activity-id>createSubscription</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>edit</from-outcome>
+        <to-activity-id>editSubscription</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>login</from-outcome>
+        <to-activity-id>sas-account-flow</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule>
+      <from-activity-id>createSubscription</from-activity-id>
+      <control-flow-case>
+        <from-outcome>save</from-outcome>
+        <to-activity-id>subscriptionList</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>cancel</from-outcome>
+        <to-activity-id>subscriptionList</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>subscriptionList</from-outcome>
+        <to-activity-id>subscriptionList</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule>
+      <from-activity-id>editSubscription</from-activity-id>
+      <control-flow-case>
+        <from-outcome>save</from-outcome>
+        <to-activity-id>subscriptionList</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>cancel</from-outcome>
+        <to-activity-id>subscriptionList</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule>
+      <from-activity-id>router</from-activity-id>
+      <control-flow-case>
+        <from-outcome>subscriptionList</from-outcome>
+        <to-activity-id>subscriptionList</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>login</from-outcome>
+        <to-activity-id>sas-account-flow</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

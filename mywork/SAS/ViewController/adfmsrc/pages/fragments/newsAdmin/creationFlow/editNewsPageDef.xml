@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.1.49.49" id="editNewsPageDef"
+                Package="pages.fragments.newsAdmin.creationFlow">
+  <parameters/>
+  <executables>
+    <methodIterator Binds="queryNewsFindByNewsId.result" DataControl="SASFacadeLocal" RangeSize="25"
+                    BeanClass="com.vc.web.ejb.sas.entities.News" id="queryNewsFindByNewsIdIterator"/>
+    <accessorIterator MasterBinding="queryNewsFindByNewsIdIterator" Binds="newsCategories" RangeSize="25" DataControl="SASFacadeLocal"
+                      BeanClass="com.vc.web.ejb.sas.entities.NewsCategories" id="newsCategoriesIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="queryNewsFindByNewsId" RequiresUpdateModel="true" Action="invokeMethod" MethodName="queryNewsFindByNewsId"
+                  IsViewObjectMethod="false" DataControl="SASFacadeLocal" InstanceName="SASFacadeLocal.dataProvider"
+                  ReturnName="SASFacadeLocal.methodResults.queryNewsFindByNewsId_SASFacadeLocal_dataProvider_queryNewsFindByNewsId_result">
+      <NamedData NDName="newsId" NDValue="#{backing_newsAdmin_newsAdminManager.editNewsId}" NDType="java.lang.Long"/>
+    </methodAction>
+    <attributeValues IterBinding="queryNewsFindByNewsIdIterator" id="createdBy">
+      <AttrNames>
+        <Item Value="createdBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryNewsFindByNewsIdIterator" id="createDate">
+      <AttrNames>
+        <Item Value="createDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryNewsFindByNewsIdIterator" id="modifiedBy">
+      <AttrNames>
+        <Item Value="modifiedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryNewsFindByNewsIdIterator" id="modifyDate">
+      <AttrNames>
+        <Item Value="modifyDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryNewsFindByNewsIdIterator" id="newsId">
+      <AttrNames>
+        <Item Value="newsId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryNewsFindByNewsIdIterator" id="priorityLevel">
+      <AttrNames>
+        <Item Value="priorityLevel"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryNewsFindByNewsIdIterator" id="title">
+      <AttrNames>
+        <Item Value="title"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryNewsFindByNewsIdIterator" id="content">
+      <AttrNames>
+        <Item Value="content"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="newsCategoriesIterator" id="title1">
+      <AttrNames>
+        <Item Value="title"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction id="mergeEntity" RequiresUpdateModel="true" Action="invokeMethod" MethodName="mergeEntity" IsViewObjectMethod="false"
+                  DataControl="SASFacadeLocal" InstanceName="SASFacadeLocal.dataProvider"
+                  ReturnName="SASFacadeLocal.methodResults.mergeEntity_SASFacadeLocal_dataProvider_mergeEntity_result">
+      <NamedData NDName="entity" NDValue="${bindings.queryNewsFindByNewsIdIterator.currentRow.dataProvider}" NDType="java.lang.Object"/>
+    </methodAction>
+    <attributeValues IterBinding="queryNewsFindByNewsIdIterator" id="shortContent">
+      <AttrNames>
+        <Item Value="shortContent"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

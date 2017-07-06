@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="MitMenFkAssoc"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Menu"
+    Cardinality="1"
+    Source="true"
+    Owner="test.model.Menu">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Menu"/>
+      <Attr Name="_foreignKey" Value="test.model.Menu.MenPk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="test.model.Menu.Id"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="MenuItems"
+    Cardinality="-1"
+    Owner="test.model.MenuItems">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="MenuItems"/>
+      <Attr Name="_foreignKey" Value="test.model.MenuItems.MitMenFk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="test.model.MenuItems.MenId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

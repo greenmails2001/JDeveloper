@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.1.51.56" id="view1PageDef"
+                Package="pages.fragments.test">
+  <parameters/>
+  <executables>
+    <methodIterator Binds="queryAccountsFindAll.result" DataControl="SASFacadeLocal" RangeSize="25"
+                    BeanClass="com.vc.web.ejb.sas.entities.Accounts" id="queryAccountsFindAllIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="queryAccountsFindAll" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="queryAccountsFindAll" IsViewObjectMethod="false" DataControl="SASFacadeLocal"
+                  InstanceName="SASFacadeLocal.dataProvider"
+                  ReturnName="SASFacadeLocal.methodResults.queryAccountsFindAll_SASFacadeLocal_dataProvider_queryAccountsFindAll_result"/>
+    <action IterBinding="queryAccountsFindAllIterator" id="Create" RequiresUpdateModel="true" Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

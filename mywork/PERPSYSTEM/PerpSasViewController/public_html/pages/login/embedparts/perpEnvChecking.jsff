@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="perpsasviewcontrollerBundle"
+         value="#{adfBundle['com.perp.sasviewcontroller.PerpSasViewControllerBundle']}"/>
+  <af:panelHeader text="#{perpsasviewcontrollerBundle['perpsas.login.perpAccountChecking.loginTitle']}"
+                  id="ph1" inlineStyle="padding-right:15px; width:257px;">
+    <f:facet name="menuBar">
+      <af:menuBar id="lzimb1">
+        <af:commandMenuItem text="Change environment" action="changeEnv"
+                            partialSubmit="false" id="lzicmi1" visible="false"/>
+        <af:commandMenuItem text="Help" id="lzicmi2" visible="false"/>
+      </af:menuBar>
+    </f:facet>
+    <af:panelFormLayout id="pfl1" inlineStyle="padding-right:35.0px;">
+      <af:inputText label="Username" id="it1" value="#{perpSasSignOn.userName}"></af:inputText>
+      <af:inputText label="Password" id="it3" secret="true"
+                    value="#{perpSasSignOn.password}"></af:inputText>
+      <af:inputText id="it4" wrap="off"
+                    value="#{perpSasSignOn.subscriptionCode}"
+                    label="Số thuê bao"></af:inputText>
+      <af:image source="/captchaservlet" id="i1" shortDesc="CAPTCHA"
+                inlineStyle="width:180px; height:60px;" partialTriggers="cb2"/>
+      <af:panelGroupLayout id="pgl1" inlineStyle="height:31px;">
+        <af:outputText value="Không thể đọc?" id="ot1"/>
+        <af:commandButton id="cb2" partialSubmit="true"
+                          shortDesc="Refresh Captcha"
+                          icon="/images/globals/captcha_refresh_icon.gif" iconPosition="leading"/>
+      </af:panelGroupLayout>
+      <af:inputText label="Captcha" id="it2"
+                    value="#{perpSasSignOn.captchaText}"></af:inputText>
+      <af:commandButton text="Đăng nhập"
+                        id="cb1"
+                        actionListener="#{perpSasSignOn.perpSasSignOnActionListener}"
+                        action="#{perpSasSignOn.getOutCome}"
+                        partialSubmit="true"/>
+    </af:panelFormLayout>
+    <f:facet name="toolbar"/>
+  </af:panelHeader>
+</jsp:root>

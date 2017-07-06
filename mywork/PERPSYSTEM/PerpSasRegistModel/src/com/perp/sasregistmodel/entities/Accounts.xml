@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Accounts"
+  Version="11.1.1.56.60"
+  DBObjectType="table"
+  DBObjectName="ACCOUNTS"
+  AliasName="Accounts"
+  BindingStyle="OracleName"
+  UseGlueCode="false"
+  RowClass="com.perp.sasregistmodel.entities.AccountsImpl"
+  xmlns:validation="http://xmlns.oracle.com/adfm/validation">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|DML"/>
+    <AttrArray Name="_publishEvents"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="AccId"
+    IsUpdateable="while_insert"
+    DefaultValue="0"
+    ColumnName="ACC_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="ACCOUNTS"
+    PrimaryKey="true"
+    RetrievedOnUpdate="true"
+    RetrievedOnInsert="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="FullName"
+    IsNotNull="true"
+    Precision="100"
+    ColumnName="FULL_NAME"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ContactTelephone"
+    IsNotNull="true"
+    Precision="50"
+    ColumnName="CONTACT_TELEPHONE"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Email"
+    IsUnique="true"
+    IsNotNull="true"
+    Precision="50"
+    ColumnName="EMAIL"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="OrganizationName"
+    IsNotNull="true"
+    Precision="100"
+    ColumnName="ORGANIZATION_NAME"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ProId"
+    ColumnName="PRO_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Address"
+    IsNotNull="true"
+    Precision="200"
+    ColumnName="ADDRESS"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="TaxCode"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="TAX_CODE"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RolId"
+    IsNotNull="true"
+    ColumnName="ROL_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="NumberOfEmployee"
+    Precision="3"
+    Scale="0"
+    ColumnName="NUMBER_OF_EMPLOYEE"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CustomerApproach"
+    Precision="50"
+    ColumnName="CUSTOMER_APPROACH"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="50"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="UserName"
+    IsUnique="true"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="USER_NAME"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Password"
+    IsNotNull="true"
+    Precision="100"
+    ColumnName="PASSWORD"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ActivedCode"
+    Precision="100"
+    ColumnName="ACTIVED_CODE"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CouId"
+    IsNotNull="true"
+    ColumnName="COU_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="IndId"
+    IsNotNull="true"
+    ColumnName="IND_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Status"
+    Precision="1"
+    ColumnName="STATUS"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SquId"
+    ColumnName="SQU_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SecurityAnswer"
+    Precision="100"
+    ColumnName="SECURITY_ANSWER"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="MmeId"
+    IsNotNull="true"
+    ColumnName="MME_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LabId"
+    ColumnName="LAB_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ActivatedFlag"
+    Precision="1"
+    ColumnName="ACTIVATED_FLAG"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ACCOUNTS"/>
+  <Attribute
+    Name="IsAdmin"
+    Precision="1"
+    ColumnName="IS_ADMIN"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ACCOUNTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Countries"
+    Association="com.perp.sasregistmodel.entities.AccCouFkAssoc"
+    AssociationEnd="com.perp.sasregistmodel.entities.AccCouFkAssoc.Countries"
+    AssociationOtherEnd="com.perp.sasregistmodel.entities.AccCouFkAssoc.Accounts"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Industries"
+    Association="com.perp.sasregistmodel.entities.AccIndFkAssoc"
+    AssociationEnd="com.perp.sasregistmodel.entities.AccIndFkAssoc.Industries"
+    AssociationOtherEnd="com.perp.sasregistmodel.entities.AccIndFkAssoc.Accounts"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Labors"
+    Association="com.perp.sasregistmodel.entities.AccLabFkAssoc"
+    AssociationEnd="com.perp.sasregistmodel.entities.AccLabFkAssoc.Labors"
+    AssociationOtherEnd="com.perp.sasregistmodel.entities.AccLabFkAssoc.Accounts"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="MarketingMedia"
+    Association="com.perp.sasregistmodel.entities.AccMmeFkAssoc"
+    AssociationEnd="com.perp.sasregistmodel.entities.AccMmeFkAssoc.MarketingMedia"
+    AssociationOtherEnd="com.perp.sasregistmodel.entities.AccMmeFkAssoc.Accounts"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Provinces"
+    Association="com.perp.sasregistmodel.entities.AccProFkAssoc"
+    AssociationEnd="com.perp.sasregistmodel.entities.AccProFkAssoc.Provinces"
+    AssociationOtherEnd="com.perp.sasregistmodel.entities.AccProFkAssoc.Accounts"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Roles"
+    Association="com.perp.sasregistmodel.entities.AccRolFkAssoc"
+    AssociationEnd="com.perp.sasregistmodel.entities.AccRolFkAssoc.Roles"
+    AssociationOtherEnd="com.perp.sasregistmodel.entities.AccRolFkAssoc.Accounts"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="SecurityQuestions"
+    Association="com.perp.sasregistmodel.entities.AccSquFkAssoc"
+    AssociationEnd="com.perp.sasregistmodel.entities.AccSquFkAssoc.SecurityQuestions"
+    AssociationOtherEnd="com.perp.sasregistmodel.entities.AccSquFkAssoc.Accounts"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Subscriptions"
+    Association="com.perp.sasregistmodel.entities.SubAccFkAssoc"
+    AssociationEnd="com.perp.sasregistmodel.entities.SubAccFkAssoc.Subscriptions"
+    AssociationOtherEnd="com.perp.sasregistmodel.entities.SubAccFkAssoc.Accounts"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="VbisUserLoginHistories"
+    Association="com.perp.sasregistmodel.entities.VulAccFkAssoc"
+    AssociationEnd="com.perp.sasregistmodel.entities.VulAccFkAssoc.VbisUserLoginHistories"
+    AssociationOtherEnd="com.perp.sasregistmodel.entities.VulAccFkAssoc.Accounts"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="AccEmailUk">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="ACC_EMAIL_UK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.perp.sasregistmodel.entities.Accounts.Email"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="AccPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="ACC_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.perp.sasregistmodel.entities.Accounts.AccId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="AccUserNameUk">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="ACC_USER_NAME_UK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.perp.sasregistmodel.entities.Accounts.UserName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="AccountsContactTelephoneCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_DBObjectName" Value="ACCOUNTS_CONTACT_TELEPHONE_CHE"/>
+      <Attr Name="_checkCondition" Value='"CONTACT_TELEPHONE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.perp.sasregistmodel.entities.Accounts.ContactTelephone"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="AccountsMmeIdCheck">
+    <DesignTime>
+      <Attr Name="_isNotNull" Value="true"/>
+      <Attr Name="_DBObjectName" Value="ACCOUNTS_MME_ID_CHECK"/>
+      <Attr Name="_checkCondition" Value='"MME_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.perp.sasregistmodel.entities.Accounts.MmeId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0051265">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0051265"/>
+      <Attr Name="_checkCondition" Value='"ACC_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="SysC0051266">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0051266"/>
+      <Attr Name="_checkCondition" Value='"EMAIL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.perp.sasregistmodel.entities.Accounts.Email"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0051267">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0051267"/>
+      <Attr Name="_checkCondition" Value='"USER_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.perp.sasregistmodel.entities.Accounts.UserName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="AccCouFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="COU_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="ACC_COU_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.perp.sasregistmodel.entities.Accounts.CouId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="AccIndFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="IND_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="ACC_IND_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.perp.sasregistmodel.entities.Accounts.IndId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="AccLabFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="LAB_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="ACC_LAB_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.perp.sasregistmodel.entities.Accounts.LabId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="AccMmeFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="MME_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="ACC_MME_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.perp.sasregistmodel.entities.Accounts.MmeId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="AccProFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PRO_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="ACC_PRO_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.perp.sasregistmodel.entities.Accounts.ProId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="AccRolFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="ROL_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="ACC_ROL_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.perp.sasregistmodel.entities.Accounts.RolId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="AccSquFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SQU_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="ACC_SQU_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.perp.sasregistmodel.entities.Accounts.SquId"/>
+    </AttrArray>
+  </Key>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.perp.sasregistmodel.PerpSasRegistModelBundle"/>
+  </ResourceBundle>
+</Entity>

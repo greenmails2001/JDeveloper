@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AccLabFkAssoc"
+  Version="11.1.1.51.88">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Labors"
+    Cardinality="1"
+    Source="true"
+    Owner="com.perp.sasregistmodel.entities.Labors">
+    <AttrArray Name="Attributes">
+      <Item Value="com.perp.sasregistmodel.entities.Labors.LabId"/>
+    </AttrArray>
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Labors"/>
+      <Attr Name="_foreignKey"
+        Value="com.perp.sasregistmodel.entities.Labors.LabPk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Accounts"
+    Cardinality="-1"
+    Owner="com.perp.sasregistmodel.entities.Accounts">
+    <AttrArray Name="Attributes">
+      <Item Value="com.perp.sasregistmodel.entities.Accounts.LabId"/>
+    </AttrArray>
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Accounts"/>
+      <Attr Name="_foreignKey"
+        Value="com.perp.sasregistmodel.entities.Accounts.AccLabFk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+  </AssociationEnd>
+</Association>

@@ -1,0 +1,249 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core"
+          xmlns:trh="http://myfaces.apache.org/trinidad/html">
+ 
+  <c:set var="viewcontrollerBundle" value="#{adfBundle['com.vc.web.ViewControllerBundle']}"/>
+  <af:panelStretchLayout styleClass="AFVisualRoot" endWidth="339px" topHeight="35px" id="zycpsl1">
+    <f:facet name="center">
+      <af:panelStretchLayout topHeight="23px" id="zycpsl2">
+        <f:facet name="center">
+          <af:decorativeBox id="zycdb1">
+            <f:facet name="center">
+              <af:panelSplitter positionedFromEnd="true" splitterPosition="223" disabled="true" id="zycps1">
+                <f:facet name="first">
+                  <af:panelGroupLayout layout="scroll" id="zycpgl1">
+                    <af:panelBorderLayout id="zycpbl1">
+                      <f:facet name="top">
+                        <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="zycpgl2">
+                          <af:outputLabel value="#{viewcontrollerBundle['pages.fragments.sasAccount.createAccount.title1']}" inlineStyle="font-size:large;"
+                                          id="zycol1"/>
+                          <af:panelGroupLayout layout="horizontal" inlineStyle="width:100%; padding:3px;" halign="left" valign="top"
+                                               id="zycpgl3">
+                            <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="zycpgl4">
+                              <af:image source="/resources/images/sas-account.gif" shortDesc="sas" id="zyci1"/>
+                            </af:panelGroupLayout>
+                            <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="zycpgl5">
+                              <af:outputText value="#{viewcontrollerBundle['pages.fragments.sasAccount.createAccount.content1']}"
+                                             id="zycot1"/>
+                            </af:panelGroupLayout>
+                          </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                      </f:facet>
+                      <f:facet name="bottom">
+                        <af:panelGroupLayout layout="vertical" id="zycpgl6">
+                          <af:outputLabel value="#{viewcontrollerBundle['sas.createAccount.orgInfo']}" inlineStyle="font-size:large; "
+                                          id="zycol2"/>
+                          <af:panelGroupLayout layout="vertical" id="zycpgl7">
+                            <af:panelFormLayout fieldWidth="190" labelWidth="170" maxColumns="2" rows="3" id="zycpfl1">
+                              <af:inputText value="#{bindings.organizationName.inputValue}"
+                                            label="#{viewcontrollerBundle['field.accounts.organizationName']}"
+                                            required="#{bindings.organizationName.hints.mandatory}"
+                                            columns="#{bindings.organizationName.hints.displayWidth}"
+                                            maximumLength="#{bindings.organizationName.hints.precision}"
+                                            shortDesc="#{bindings.organizationName.hints.tooltip}" showRequired="true"
+                                            id="zycit1">
+                                <f:validator binding="#{bindings.organizationName.validator}"/>
+                              </af:inputText>
+                              <af:selectOneChoice value="#{bindings.industries.inputValue}"
+                                                  label="#{viewcontrollerBundle['field.industries.name']}"
+                                                  shortDesc="#{bindings.industries.hints.tooltip}" required="true"
+                                                  id="zycsoc1">
+                                <f:selectItems value="#{bindings.industries.items}" id="zycsi1"/>
+                              </af:selectOneChoice>
+                              <af:inputText value="#{bindings.taxCode.inputValue}" label="#{viewcontrollerBundle['field.accounts.taxCode']}"
+                                            required="#{bindings.taxCode.hints.mandatory}" columns="#{bindings.taxCode.hints.displayWidth}"
+                                            maximumLength="#{bindings.taxCode.hints.precision}"
+                                            shortDesc="#{bindings.taxCode.hints.tooltip}" showRequired="true"
+                                            id="zycit2">
+                                <f:validator binding="#{bindings.taxCode.validator}"/>
+                              </af:inputText>
+                              <af:inputText value="#{bindings.numberOfEmployee.inputValue}"
+                                            label="#{viewcontrollerBundle['field.accounts.numberOfEmployee']}"
+                                            columns="#{bindings.numberOfEmployee.hints.displayWidth}"
+                                            maximumLength="#{bindings.numberOfEmployee.hints.precision}"
+                                            shortDesc="#{bindings.numberOfEmployee.hints.tooltip}" required="true"
+                                            id="zycit3">
+                                <f:validator binding="#{bindings.numberOfEmployee.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.numberOfEmployee.format}"/>
+                              </af:inputText>
+                              <af:selectOneChoice value="#{bindings.countries.inputValue}"
+                                                  label="#{viewcontrollerBundle['field.countries.name']}"
+                                                  shortDesc="#{bindings.countries.hints.tooltip}" required="true"
+                                                  id="zycsoc2">
+                                <f:selectItems value="#{bindings.countries.items}" id="zycsi2"/>
+                              </af:selectOneChoice>
+                              <af:selectOneChoice value="#{bindings.provinces.inputValue}"
+                                                  label="#{viewcontrollerBundle['field.provinces.name']}"
+                                                  shortDesc="#{bindings.provinces.hints.tooltip}" id="zycsoc3">
+                                <f:selectItems value="#{bindings.provinces.items}" id="zycsi3"/>
+                              </af:selectOneChoice>
+                              <af:inputText value="#{bindings.address.inputValue}" label="#{viewcontrollerBundle['field.accounts.adress']}" columns="#{bindings.address.hints.displayWidth}"
+                                            maximumLength="#{bindings.address.hints.precision}"
+                                            shortDesc="#{bindings.address.hints.tooltip}" required="true" id="zycit4">
+                                <f:validator binding="#{bindings.address.validator}"/>
+                              </af:inputText>
+                            </af:panelFormLayout>
+                          </af:panelGroupLayout>
+                          <af:outputLabel value="#{viewcontrollerBundle['sas.createAccount.userInfo']}" inlineStyle="font-size:large;"
+                                          id="zycol3"/>
+                          <af:panelGroupLayout layout="vertical" id="zycpgl8">
+                            <af:panelFormLayout maxColumns="2" rows="3" fieldWidth="190" labelWidth="170" id="zycpfl2">
+                              <af:inputText value="#{bindings.fullName.inputValue}"
+                                            label="#{viewcontrollerBundle['field.accounts.fullName']}"
+                                            columns="#{bindings.fullName.hints.displayWidth}"
+                                            maximumLength="#{bindings.fullName.hints.precision}"
+                                            shortDesc="#{bindings.fullName.hints.tooltip}" required="true" id="zycit5">
+                                <f:validator binding="#{bindings.fullName.validator}"/>
+                              </af:inputText>
+                              <af:selectOneChoice value="#{bindings.roles.inputValue}" label="#{viewcontrollerBundle['field.roles.name']}"
+                                                  shortDesc="#{bindings.roles.hints.tooltip}" id="zycsoc4">
+                                <f:selectItems value="#{bindings.roles.items}" id="zycsi4"/>
+                              </af:selectOneChoice>
+                              <af:inputText value="#{bindings.contactTelephone.inputValue}"
+                                            label="#{viewcontrollerBundle['field.accounts.contactTelephone']}"
+                                            columns="#{bindings.contactTelephone.hints.displayWidth}"
+                                            maximumLength="#{bindings.contactTelephone.hints.precision}"
+                                            shortDesc="#{bindings.contactTelephone.hints.tooltip}" required="true"
+                                            id="zycit6">
+                                <f:validator binding="#{bindings.contactTelephone.validator}"/>
+                              </af:inputText>
+                              <af:inputText value="#{bindings.email.inputValue}" label="#{viewcontrollerBundle['field.accounts.email']}"
+                                            columns="#{bindings.email.hints.displayWidth}" maximumLength="#{bindings.email.hints.precision}"
+                                            shortDesc="#{bindings.email.hints.tooltip}" required="true" id="zycit7">
+                                <f:validator binding="#{bindings.email.validator}"/>
+                                <af:validateLength minimum="5" maximum="80"/>
+                                <af:validateRegExp pattern=".+@.+\\.[a-z]+"
+                                                   messageDetailNoMatch="#{viewcontrollerBundle['sas.validation.emailInvalid']}"/>
+                                <f:validator binding="#{backing_sasAccount_emailExistsValidator}"/>
+                              </af:inputText>
+                              <af:inputText value="#{bindings.customerApproach.inputValue}"
+                                            label="#{viewcontrollerBundle['field.accounts.customerApproach']}"
+                                            required="#{bindings.customerApproach.hints.mandatory}"
+                                            columns="#{bindings.customerApproach.hints.displayWidth}"
+                                            maximumLength="#{bindings.customerApproach.hints.precision}"
+                                            shortDesc="#{bindings.customerApproach.hints.tooltip}" id="zycit8">
+                                <f:validator binding="#{bindings.customerApproach.validator}"/>
+                              </af:inputText>
+                            </af:panelFormLayout>
+                          </af:panelGroupLayout>
+                          <af:outputLabel value="#{viewcontrollerBundle['sas.createAccount.secretInfo']}" inlineStyle="font-size:large; "
+                                          id="zycol4"/>
+                          <af:panelGroupLayout layout="vertical" id="zycpgl9">
+                            <af:panelFormLayout maxColumns="2" rows="2" fieldWidth="190" labelWidth="170" id="zycpfl3">
+                              <af:inputText value="#{bindings.userName.inputValue}"
+                                            label="#{viewcontrollerBundle['field.accounts.userName']}"
+                                            columns="#{bindings.userName.hints.displayWidth}"
+                                            maximumLength="#{bindings.userName.hints.precision}"
+                                            shortDesc="#{bindings.userName.hints.tooltip}" required="true" id="zycit9">
+                                <f:validator binding="#{bindings.userName.validator}"/>
+                                <af:validateLength minimum="1" maximum="20"/>
+                                <f:validator binding="#{backing_sasAccount_accountExistsValidator}"/>
+                              </af:inputText>
+                              <af:inputText value="#{bindings.password.inputValue}"
+                                            label="#{viewcontrollerBundle['field.accounts.password']}"
+                                            required="#{bindings.password.hints.mandatory}"
+                                            columns="#{bindings.password.hints.displayWidth}"
+                                            maximumLength="#{bindings.password.hints.precision}"
+                                            shortDesc="#{bindings.password.hints.tooltip}" secret="true" showRequired="true"
+                                            id="zycit10">
+                                <f:validator binding="#{bindings.password.validator}"/>
+                              </af:inputText>
+                              <af:inputText value="#{bindings.confirmPassword.inputValue}"
+                                            label="#{viewcontrollerBundle['field.accounts.confirm']}"
+                                            required="#{bindings.confirmPassword.hints.mandatory}"
+                                            columns="#{bindings.confirmPassword.hints.displayWidth}"
+                                            maximumLength="#{bindings.confirmPassword.hints.precision}"
+                                            shortDesc="#{bindings.confirmPassword.hints.tooltip}" secret="true" showRequired="true"
+                                            id="zycit11">
+                                <f:validator binding="#{bindings.confirmPassword.validator}"/>
+                              </af:inputText>
+                              <af:selectOneChoice value="#{bindings.securityQuestions.inputValue}"
+                                                  label="#{viewcontrollerBundle['field.accounts.secretQuestion']}"
+                                                  shortDesc="#{bindings.securityQuestions.hints.tooltip}" id="zycsoc5">
+                                <f:selectItems value="#{bindings.securityQuestions.items}" id="zycsi5"/>
+                              </af:selectOneChoice>
+                              <af:inputText value="#{bindings.securityAnswer.inputValue}"
+                                            label="#{viewcontrollerBundle['field.accounts.secretAsnwer']}"
+                                            required="#{bindings.securityAnswer.hints.mandatory}"
+                                            columns="#{bindings.securityAnswer.hints.displayWidth}"
+                                            maximumLength="#{bindings.securityAnswer.hints.precision}"
+                                            shortDesc="#{bindings.securityAnswer.hints.tooltip}" id="zycit12">
+                                <f:validator binding="#{bindings.securityAnswer.validator}"/>
+                              </af:inputText>
+                            </af:panelFormLayout>
+                          </af:panelGroupLayout>
+                          <af:panelGroupLayout layout="vertical" id="zycpgl10">
+                            <af:panelGroupLayout layout="horizontal" inlineStyle="padding:1%;" id="zycpgl11">
+                              <af:spacer width="350" height="10" id="zycs1"/>
+                              <af:commandButton text="#{viewcontrollerBundle['adf.action.save']}"
+                                                action="#{backing_sasAccount_accountCreationHandler.createAccountAction}"
+                                                partialSubmit="true" id="zyccb1"/>
+                              <af:spacer width="10" height="10" id="zycs2"/>
+                              <af:commandButton text="#{viewcontrollerBundle['adf.action.cancel']}" action="cancel" partialSubmit="true"
+                                                id="zyccb2"/>
+                            </af:panelGroupLayout>
+                          </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                      </f:facet>
+                    </af:panelBorderLayout>
+                  </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="second">
+                  <af:panelGroupLayout layout="vertical" inlineStyle="padding:2%;" id="zycpgl12">
+                    <af:image source="/resources/images/help1.jpg" shortDesc="help image" id="zyci2"/>
+                    <af:spacer width="10" height="10" id="zycs3"/>
+                    <af:panelGroupLayout layout="vertical" inlineStyle="padding:1%;" id="zycpgl13">
+                      <af:outputLabel value="Huong dan dang ky tai khoan" inlineStyle="font-weight:bold;" id="zycol5"/>
+                      <af:spacer width="10" height="10" id="zycs4"/>
+                      <af:outputText value="De dang ky tai khoan sas ban lam theo huong dan duoi day . Hoac co the vao xem chi tiet hon "
+                                     id="zycot2"/>
+                      <af:commandLink text="Tai day ..." id="zyccl1"/>
+                      <af:spacer width="10" height="10" id="zycs5"/>
+                      <af:outputLabel value="Giup do nhanh" inlineStyle="font-weight:bold;" id="zycol6"/>
+                      <af:spacer width="10" height="10" id="zycs6"/>
+                      <af:panelList id="zycpl1">
+                        <af:outputText value="Thong tin cong ty to chuc cua ban" id="zycot3"/>
+                        <af:outputText value="Thong tin ca nhan nguoi dung ra lien he , mua san pham PERP ."
+                                       id="zycot4"/>
+                        <af:outputText value="Cac thong tin bao mat , trong truong hop ban quen tai khoan truy nhap"
+                                       id="zycot5"/>
+                      </af:panelList>
+                    </af:panelGroupLayout>
+                  </af:panelGroupLayout>
+                </f:facet>
+              </af:panelSplitter>
+            </f:facet>
+          </af:decorativeBox>
+        </f:facet>
+        <f:facet name="top">
+          <af:panelGroupLayout layout="vertical" id="zycpgl14">
+            <af:outputLabel value="SOFTWARE AND SERVICE (SAS)" inlineStyle="font-size:medium;" id="zycol7"/>
+          </af:panelGroupLayout>
+        </f:facet>
+      </af:panelStretchLayout>
+    </f:facet>
+    <f:facet name="top">
+      <af:toolbox id="zyct1">
+        <trh:tableLayout width="100%" id="zyctl1">
+          <trh:rowLayout id="zycrl1">
+            <trh:cellFormat halign="left" id="zyccf1">
+              <af:panelGroupLayout layout="horizontal" id="zycpgl15">
+                <af:image source="/resources/images/saslogo.gif" id="zyci3"/>
+                <af:image source="/resources/images/mission.gif" id="zyci4"/>
+              </af:panelGroupLayout>
+            </trh:cellFormat>
+            <trh:cellFormat halign="right" id="zyccf2">
+              <af:panelGroupLayout halign="right" layout="horizontal" id="zycpgl16">
+                <af:navigationPane hint="bar" id="zycnp1">
+                  <af:commandNavigationItem text="#{viewcontrollerBundle['pages.fragments.sasAccount.nav.signin']}" action="login"
+                                            id="zyccni1"/>
+                </af:navigationPane>
+              </af:panelGroupLayout>
+            </trh:cellFormat>
+          </trh:rowLayout>
+        </trh:tableLayout>
+      </af:toolbox>
+    </f:facet>
+  </af:panelStretchLayout>
+</jsp:root>

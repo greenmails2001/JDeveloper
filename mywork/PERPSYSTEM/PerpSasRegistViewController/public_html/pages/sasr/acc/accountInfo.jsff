@@ -1,0 +1,143 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="perpsasregistviewcontrollerBundle"
+         value="#{adfBundle['com.perp.sasregistviewcontroller.PerpSasRegistViewControllerBundle']}"/>
+  <af:panelBox id="pb2" showHeader="always" showDisclosure="false" text=" " inlineStyle="width:850.0px;">
+    <af:popup id="changePassword" contentDelivery="lazyUncached">
+      <af:dialog id="d1" inlineStyle="width:350px; height:200.0px;" title="Thay đổi mật khẩu"
+                 dialogListener="#{changePassword.changePasswordActionListener}">
+        <af:panelGroupLayout id="pgl1" halign="center">
+          <af:panelFormLayout id="pfl1">
+            <f:facet name="footer">
+              <af:spacer width="10" height="10" id="s1"/>
+            </f:facet>
+            <af:inputText label="Tài khoản" id="it1" readOnly="true" value="#{sasrSessionLoginObject.perpSasrAccount.userName}"/>
+            <af:spacer id="s2" height="2"/>
+            <af:inputText label="Mật khẩu cũ" id="it2" showRequired="true" value="#{changePassword.oldPassword}" secret="true"/>
+            <af:inputText label="Mật khẩu mới" id="it3" showRequired="true" value="#{changePassword.newPassword}" secret="true">
+              <f:validator binding="#{changeNewPasswordValidator}"/>
+            </af:inputText>
+            <af:inputText label="Xác nhận lại" id="it4" showRequired="true" value="#{changePassword.confirmNewPassword}" secret="true"/>
+          </af:panelFormLayout>
+        </af:panelGroupLayout>
+      </af:dialog>
+    </af:popup>
+    <af:panelGroupLayout layout="vertical" inlineStyle="padding:10px;" id="wnppgl1">
+      <af:outputLabel value="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.organizationUnitInfoTitle']}" id="ol2"
+                      inlineStyle="font-weight:bold;"/>
+      <af:panelFormLayout maxColumns="2" rows="2" labelWidth="170" fieldWidth="170" id="wnppfl1">
+        <af:panelLabelAndMessage label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.orgName']}" id="wnpplam1">
+          <af:outputText value="#{bindings.OrganizationName.inputValue}" id="wnpot1"/>
+        </af:panelLabelAndMessage>
+        <af:selectOneChoice value="#{bindings.CouId.inputValue}"
+                            label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.country']}"
+                            required="#{bindings.CouId.hints.mandatory}" shortDesc="#{bindings.CouId.hints.tooltip}" readOnly="true"
+                            id="wnpsoc1">
+          <f:selectItems value="#{bindings.CouId.items}" id="wnpsi1"/>
+        </af:selectOneChoice>
+        <af:panelLabelAndMessage label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.address']}" id="wnpplam2">
+          <af:outputText value="#{bindings.Address.inputValue}" id="wnpot2"/>
+        </af:panelLabelAndMessage>
+        <af:selectOneChoice value="#{bindings.IndId.inputValue}"
+                            label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.industry']}"
+                            required="#{bindings.IndId.hints.mandatory}" shortDesc="#{bindings.IndId.hints.tooltip}" readOnly="true"
+                            id="wnpsoc3">
+          <f:selectItems value="#{bindings.IndId.items}" id="wnpsi3"/>
+        </af:selectOneChoice>
+        <af:panelLabelAndMessage label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.taxCode']}" id="wnpplam3">
+          <af:outputText value="#{bindings.TaxCode.inputValue}" id="wnpot3"/>
+        </af:panelLabelAndMessage>
+        <af:selectOneChoice value="#{bindings.LabId.inputValue}"
+                            label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.labor']}"
+                            required="#{bindings.LabId.hints.mandatory}" shortDesc="#{bindings.LabId.hints.tooltip}" readOnly="true"
+                            id="wnpsoc2">
+          <f:selectItems value="#{bindings.LabId.items}" id="wnpsi2"/>
+        </af:selectOneChoice>
+      </af:panelFormLayout>
+      <af:spacer width="10" height="10" id="s4"/>
+      <af:outputLabel value="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.personalInfoTitle']}" id="outputLabel3"
+                      inlineStyle="font-weight:bold;"/>
+      <af:panelFormLayout maxColumns="2" rows="3" fieldWidth="170" labelWidth="170" id="wnppfl2">
+        <af:panelLabelAndMessage label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.userName']}" id="wnpplam4">
+          <af:outputText value="#{bindings.UserName.inputValue}" id="wnpot4"/>
+        </af:panelLabelAndMessage>
+        <af:commandLink text="Thay đổi mật khẩu" id="cl1">
+          <af:showPopupBehavior popupId="changePassword" triggerType="action"/>
+        </af:commandLink>
+        <af:panelLabelAndMessage label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.fullName']}" id="wnpplam5">
+          <af:outputText value="#{bindings.FullName.inputValue}" id="wnpot5"/>
+        </af:panelLabelAndMessage>
+        <af:panelLabelAndMessage label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.contactTelephone']}" id="wnpplam6">
+          <af:outputText value="#{bindings.ContactTelephone.inputValue}" id="wnpot6"/>
+        </af:panelLabelAndMessage>
+        <af:selectOneChoice value="#{bindings.MmeId.inputValue}"
+                            label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.knownUsFrom']}"
+                            required="#{bindings.MmeId.hints.mandatory}" shortDesc="#{bindings.MmeId.hints.tooltip}" readOnly="true"
+                            id="wnpsoc5">
+          <f:selectItems value="#{bindings.MmeId.items}" id="wnpsi5"/>
+        </af:selectOneChoice>
+        <af:panelLabelAndMessage label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.email']}" id="wnpplam7">
+          <af:outputText value="#{bindings.Email.inputValue}" id="wnpot7"/>
+        </af:panelLabelAndMessage>
+        <af:selectOneChoice value="#{bindings.RolId.inputValue}"
+                            label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.role']}"
+                            required="#{bindings.RolId.hints.mandatory}" shortDesc="#{bindings.RolId.hints.tooltip}" readOnly="true"
+                            id="wnpsoc4">
+          <f:selectItems value="#{bindings.RolId.items}" id="wnpsi4"/>
+        </af:selectOneChoice>
+      </af:panelFormLayout>
+      <af:spacer width="10" height="10" id="s3"/>
+      <af:outputLabel value="#{perpsasregistviewcontrollerBundle['sasr.sasr002.accountInfo.loginHostoryTitle']}" id="outputLabel4"
+                      inlineStyle="font-weight:bold;"/>
+    </af:panelGroupLayout>
+    <af:panelStretchLayout id="psl1" styleClass="AFStretchWidth">
+      <f:facet name="center">
+        <af:panelCollection id="pc1">
+          <f:facet name="menus"/>
+          <f:facet name="toolbar"/>
+          <f:facet name="statusbar"/>
+          <af:table value="#{bindings.LoginHistoriesView1.collectionModel}" var="row" rows="#{bindings.LoginHistoriesView1.rangeSize}"
+                    emptyText="#{bindings.LoginHistoriesView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                    fetchSize="#{bindings.LoginHistoriesView1.rangeSize}" rowBandingInterval="0"
+                    selectedRowKeys="#{bindings.LoginHistoriesView1.collectionModel.selectedRow}"
+                    selectionListener="#{bindings.LoginHistoriesView1.collectionModel.makeCurrent}" rowSelection="single" id="t1"
+                    columnStretching="last" autoHeightRows="0" styleClass="AFStretchWidth">
+            <af:column sortProperty="LoginAt" sortable="true" headerText="#{bindings.LoginHistoriesView1.hints.LoginAt.label}" id="c5"
+                       width="144">
+              <af:outputText value="#{row.LoginAt}" id="ot3">
+                <af:convertDateTime pattern="#{bindings.LoginHistoriesView1.hints.LoginAt.format}"/>
+              </af:outputText>
+            </af:column>
+             <af:column sortProperty="LogoutAt" sortable="false" headerText="#{bindings.LoginHistoriesView1.hints.LogoutAt.label}" id="c16"
+                        width="144">
+               <af:outputText value="#{row.LogoutAt}" id="ot7">
+                <af:convertDateTime pattern="#{bindings.LoginHistoriesView1.hints.LogoutAt.format}"/>
+              </af:outputText>
+            </af:column>
+            <af:column sortProperty="UserName" sortable="true" headerText="#{bindings.LoginHistoriesView1.hints.UserName.label}" id="c4"
+                       width="137">
+              <af:outputText value="#{row.UserName}" id="ot2"/>
+            </af:column>
+            <af:column sortProperty="IpAddress" sortable="true" headerText="#{bindings.LoginHistoriesView1.hints.IpAddress.label}" id="c2"
+                       width="135">
+              <af:outputText value="#{row.IpAddress}" id="ot4"/>
+            </af:column>
+            <af:column sortProperty="Platform" sortable="true" headerText="#{bindings.LoginHistoriesView1.hints.Platform.label}" id="c3"
+                       width="137">
+              <af:outputText value="#{row.Platform}" id="ot5"/>
+            </af:column>
+            <af:column sortProperty="Country" sortable="true" headerText="#{bindings.LoginHistoriesView1.hints.Country.label}" id="c6"
+                       width="94">
+              <af:outputText value="#{row.Country}" id="ot6"/>
+            </af:column>
+            <af:column sortProperty="UserAgent" sortable="true" headerText="#{bindings.LoginHistoriesView1.hints.UserAgent.label}" id="c1"
+                       width="94">
+              <af:outputText value="#{row.UserAgent}" id="ot1"/>
+            </af:column>           
+          </af:table>
+        </af:panelCollection>
+      </f:facet>
+    </af:panelStretchLayout>
+  </af:panelBox>
+</jsp:root>

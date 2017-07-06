@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.54.7" id="perpviewerPageDef"
+                Package="pages.sas001">
+  <parameters/>
+  <executables>
+    <invokeAction Binds="prepareToShowSasUserRoles"
+                  id="prepareToShowSasUserRoles_execute" Refresh="ifNeeded"
+                  RefreshCondition="${!adfFacesContext.postback} "/>
+    <iterator Binds="SasUserRoles" RangeSize="25"
+              DataControl="PerpSasAppModuleDataControl"
+              id="SasUserRolesIterator"/>
+    <iterator Binds="SasMenusRootX1" RangeSize="25"
+              DataControl="PerpSasAppModuleDataControl"
+              id="SasMenusRootX1Iterator"/>
+    <iterator Binds="SasMenusSearch" RangeSize="25"
+              DataControl="PerpSasAppModuleDataControl"
+              id="SasMenusSearchIterator"/>
+    <variableIterator id="variables">
+      <variable Type="java.lang.String"
+                Name="prepareToShowSasMenusSearch_searchText"
+                IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="prepareToShowSasMenusSearch_findIn"
+                IsQueriable="false" DefaultValue="all"/>
+      <variable Type="java.lang.String"
+                Name="prepareToShowSasMenusSearch_appCode" IsQueriable="false"
+                DefaultValue="#{ sessionLoginObject.subscriptionInfo.packageCode}"/>
+      <variable Type="java.lang.Long" Name="prepareToShowSasMenusSearch_ausId"
+                IsQueriable="false"
+                DefaultValue="#{sessionLoginObject.perpAccount.ausId}"/>
+      <variable Name="prepareToShowSasUserRoles_appCode"
+                Type="java.lang.String"
+                DefaultValue="#{sessionLoginObject.subscriptionInfo.packageCode}"/>
+      <variable Name="prepareToShowSasUserRoles_ausId" Type="java.lang.Long"
+                DefaultValue="#{sessionLoginObject.perpAccount.ausId}"/>
+    </variableIterator>
+  </executables>
+  <bindings>
+    <tree IterBinding="SasUserRolesIterator" id="SasUserRoles">
+      <nodeDefinition DefName="com.perp.sasmodel.views.sas.SasUserRoles"
+                      Name="SasUserRoles0">
+        <AttrNames>
+          <Item Value="Name"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="prepareToShowSasUserRoles" RequiresUpdateModel="true"
+                  Action="invokeMethod"
+                  MethodName="prepareToShowSasUserRoles"
+                  IsViewObjectMethod="false"
+                  DataControl="PerpSasAppModuleDataControl"
+                  InstanceName="PerpSasAppModuleDataControl.dataProvider">
+      <NamedData NDName="appCode"
+                 NDValue="${bindings.prepareToShowSasUserRoles_appCode}"
+                 NDType="java.lang.String"/>
+      <NamedData NDName="ausId"
+                 NDValue="${bindings.prepareToShowSasUserRoles_ausId}"
+                 NDType="java.lang.Long"/>
+    </methodAction>
+    <tree IterBinding="SasMenusRootX1Iterator" id="SasMenusRootX1">
+      <nodeDefinition DefName="com.perp.sasmodel.views.sas.SasMenus"
+                      Name="SasMenusRootX10">
+        <AttrNames>
+          <Item Value="MenId"/>
+          <Item Value="MenuName"/>
+          <Item Value="MenuLable"/>
+          <Item Value="GusId"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="SasMenus"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="com.perp.sasmodel.views.sas.SasMenus"
+                      Name="SasMenusRootX11">
+        <AttrNames>
+          <Item Value="MenId"/>
+          <Item Value="MenuName"/>
+          <Item Value="MenuLable"/>
+          <Item Value="GusId"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="SasMenus_2"/>
+        </Accessors>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="SasMenusSearchIterator" id="SasMenusSearch">
+      <nodeDefinition DefName="com.perp.sasmodel.views.sas.SasMenusSearch"
+                      Name="SasMenusSearch0">
+        <AttrNames>
+          <Item Value="GusName"/>
+          <Item Value="MenuName"/>
+          <Item Value="MenuLable"/>
+          <Item Value="MenuDescription"/>
+          <Item Value="ModuleName"/>
+          <Item Value="AppCode"/>
+          <Item Value="GusId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="prepareToShowSasMenusSearch" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="prepareToShowSasMenusSearch"
+                  IsViewObjectMethod="false"
+                  DataControl="PerpSasAppModuleDataControl"
+                  InstanceName="PerpSasAppModuleDataControl.dataProvider">
+      <NamedData NDName="appCode" NDType="java.lang.String"
+                 NDValue="${bindings.prepareToShowSasMenusSearch_appCode}"/>
+      <NamedData NDName="ausId" NDType="java.lang.Long"
+                 NDValue="${bindings.prepareToShowSasMenusSearch_ausId}"/>
+      <NamedData NDName="searchText" NDType="java.lang.String"
+                 NDValue="${bindings.prepareToShowSasMenusSearch_searchText}"/>
+      <NamedData NDName="findIn" NDType="java.lang.String"
+                 NDValue="${bindings.prepareToShowSasMenusSearch_findIn}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="searchText">
+      <AttrNames>
+        <Item Value="prepareToShowSasMenusSearch_searchText"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="findIn">
+      <AttrNames>
+        <Item Value="prepareToShowSasMenusSearch_findIn"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

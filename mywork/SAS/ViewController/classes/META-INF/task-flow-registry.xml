@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<task-flow-registry xmlns="http://xmlns.oracle.com/adf/controller/rc">
+   <task-flow-descriptor path="WEB-INF/flows/app-view-flow.xml" id="app-view-flow" type="task-flow-definition" uses-page-fragments="true" train="false"/>
+   <task-flow-descriptor path="WEB-INF/flows/customer-flow.xml" id="customer-flow" type="task-flow-definition" uses-page-fragments="true" train="false"/>
+   <task-flow-descriptor path="WEB-INF/flows/initial-setting-flow.xml" id="initial-setting-flow" type="task-flow-definition" uses-page-fragments="true" train="false"/>
+   <task-flow-descriptor path="WEB-INF/flows/sas-account-flow.xml" id="sas-account-flow" type="task-flow-definition" uses-page-fragments="true" train="false"/>
+   <task-flow-descriptor path="WEB-INF/flows/test-flow.xml" id="test-flow" type="task-flow-definition" uses-page-fragments="true" train="false"/>
+   <task-flow-descriptor path="WEB-INF/flows/news-admin-create-flow.xml" id="news-admin-create-flow" type="task-flow-definition" uses-page-fragments="true" train="false"/>
+   <task-flow-descriptor path="WEB-INF/flows/news-admin-flow.xml" id="news-admin-flow" type="task-flow-definition" uses-page-fragments="true" train="false"/>
+   <task-flow-descriptor path="WEB-INF/flows/product-flow.xml" id="product-flow" type="task-flow-definition" uses-page-fragments="true" train="false"/>
+   <task-flow-descriptor path="WEB-INF/flows/common-news-flow.xml" id="common-news-flow" type="task-flow-definition" uses-page-fragments="true" train="false"/>
+   <task-flow-descriptor path="WEB-INF/flows/instroduction-flow.xml" id="instroduction-flow" type="task-flow-definition" uses-page-fragments="true" train="false"/>
+   <task-flow-descriptor path="WEB-INF/flows/help-admin-flow.xml" id="help-admin-flow" type="task-flow-definition" uses-page-fragments="true" train="false"/>
+   <task-flow-descriptor path="WEB-INF/flows/help-center-flow.xml" id="help-center-flow" type="task-flow-definition" uses-page-fragments="true" train="false"/>
+   <task-flow-descriptor path="WEB-INF/flows/forum-flow.xml" id="forum-flow" type="task-flow-definition" uses-page-fragments="true" train="false"/>
+   <task-flow-descriptor path="WEB-INF/flows/shopping-sas-flow.xml" id="shopping-sas-flow" type="task-flow-definition" uses-page-fragments="true" train="false"/>
+   <task-flow-descriptor path="META-INF/adfc-config.xml" id="" type="" uses-page-fragments="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/flows/news-flow.xml" id="news-flow" type="task-flow-definition" uses-page-fragments="true" train="false"/>
+</task-flow-registry>

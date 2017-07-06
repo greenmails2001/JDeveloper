@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Countries"
+  Version="11.1.1.51.88"
+  DBObjectType="table"
+  DBObjectName="COUNTRIES"
+  AliasName="Countries"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="CouId"
+    IsNotNull="true"
+    ColumnName="COU_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="COUNTRIES"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CountryCode"
+    Precision="20"
+    ColumnName="COUNTRY_CODE"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="COUNTRIES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Name"
+    Precision="100"
+    ColumnName="NAME"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="COUNTRIES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Accounts"
+    Association="com.perp.sasregistmodel.entities.AccCouFkAssoc"
+    AssociationEnd="com.perp.sasregistmodel.entities.AccCouFkAssoc.Accounts"
+    AssociationOtherEnd="com.perp.sasregistmodel.entities.AccCouFkAssoc.Countries"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="Provinces"
+    Association="com.perp.sasregistmodel.entities.ProCouFkAssoc"
+    AssociationEnd="com.perp.sasregistmodel.entities.ProCouFkAssoc.Provinces"
+    AssociationOtherEnd="com.perp.sasregistmodel.entities.ProCouFkAssoc.Countries"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="CouPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="COU_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.perp.sasregistmodel.entities.Countries.CouId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0051271">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0051271"/>
+      <Attr Name="_checkCondition" Value='"COU_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.perp.sasregistmodel.entities.Countries.CouId"/>
+    </AttrArray>
+  </Key>
+</Entity>

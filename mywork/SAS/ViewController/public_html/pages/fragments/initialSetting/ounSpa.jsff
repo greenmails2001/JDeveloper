@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:pageTemplate viewId="/templates/initialSettingTemplate.jspx" id="qilpt1">
+  <f:facet name="popupFacet"/>
+  <f:facet name="center">
+   <af:panelGroupLayout layout="scroll" id="qilpgl1">
+    <af:popup id="logoPopup">
+     <af:dialog title="Chinh sua logo cong ty (chi nhanh)" type="none" id="qild1">
+      <af:panelGroupLayout layout="vertical" id="qilpgl2">
+       <af:panelGroupLayout layout="horizontal" inlineStyle="width:100%;" halign="left" valign="top" id="qilpgl3">
+        <af:panelGroupLayout layout="vertical" halign="left" valign="top" id="qilpgl4">
+         <af:image source="/resources/images/vclogo.gif" binding="#{backing_initialSetting_ounSpaManager.logoImage}"
+                   id="qili1"/>
+        </af:panelGroupLayout>
+        <af:panelGroupLayout layout="vertical" inlineStyle="width:370px;" id="qilpgl5">
+         <af:panelFormLayout labelWidth="100" id="qilpfl1">
+          <af:inputText value="#{backing_initialSetting_ounSpaManager.spa4Oun.coLogo}"
+                        binding="#{backing_initialSetting_ounSpaManager.coLogoTf}" label="Ten file logo" readOnly="true"
+                        id="qilit1"/>
+          <af:inputFile label="Upload logo " binding="#{backing_initialSetting_ounSpaManager.upploadLogo}"
+                        valueChangeListener="#{backing_initialSetting_ounSpaManager.saveUploadFileListener}" autoSubmit="true"
+                        id="qilif1"/>
+         </af:panelFormLayout>
+        </af:panelGroupLayout>
+       </af:panelGroupLayout>
+       <af:panelGroupLayout layout="vertical" halign="right" id="qilpgl6">
+        <af:panelGroupLayout layout="horizontal" id="qilpgl7">
+         <af:commandButton text="Delete Logo" partialSubmit="true" id="qilcb1"/>
+         <af:spacer width="10" height="10" id="qils1"/>
+         <af:commandButton text="OK" partialSubmit="true" id="qilcb2"/>
+         <af:spacer width="10" height="10" id="qils2"/>
+         <af:commandButton text="Close" partialSubmit="true" id="qilcb3"/>
+        </af:panelGroupLayout>
+       </af:panelGroupLayout>
+      </af:panelGroupLayout>
+     </af:dialog>
+    </af:popup>
+    <af:panelStretchLayout startWidth="274px" endWidth="225px" styleClass="AFVisualRoot" id="qilpsl1">
+     <f:facet name="center">
+      <af:panelStretchLayout startWidth="264px" topHeight="110px" id="qilpsl2">
+       <f:facet name="center">
+        <af:panelGroupLayout layout="vertical" inlineStyle="padding:4px;" id="qilpgl8">
+         <af:panelGroupLayout layout="vertical"
+                              inlineStyle="padding:3px; border-color:Gray; border-width:1px; border-style:outset; height:30px;"
+                              id="qilpgl9">
+          <af:outputLabel value="#{viewcontrollerBundle['sas.page.initialSetting.ounSpa.systemParaInReport']}" inlineStyle="font-weight:bold;"
+                          id="qilol1"/>
+         </af:panelGroupLayout>
+         <af:spacer width="10" height="10" id="qils3"/>
+         <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" halign="left" id="qilpgl10">
+          <af:panelFormLayout maxColumns="1" rows="20" labelAlignment="start" inlineStyle="padding-left:20px;" labelWidth="150"
+                              id="qilpfl2">
+           <af:panelLabelAndMessage label="Ten cong ty (chi nhanh)" id="qilplam1">
+            <af:inputText id="coName" value="#{backing_initialSetting_ounSpaManager.spa4Oun.coName}"
+                          binding="#{backing_initialSetting_ounSpaManager.coNameTf}"/>
+           </af:panelLabelAndMessage>
+           <af:panelLabelAndMessage label="Logo" id="qilplam2">
+            <af:spacer width="20" height="10" id="qils4"/>
+            <af:commandLink id="coLogo" 
+                            text="#{backing_initialSetting_ounSpaManager.spa4Oun.coLogo}" partialSubmit="true"
+                            binding="#{backing_initialSetting_ounSpaManager.coLogoLink}"
+                            action="#{backing_initialSetting_ounSpaManager.displayLogoPopupAction}">
+             <af:showPopupBehavior popupId="logoPopup"/>
+            </af:commandLink>
+            <af:spacer width="20" height="10" id="qils5"/>
+            <af:commandLink text="view/change" partialSubmit="true" action="#{backing_initialSetting_ounSpaManager.displayLogoPopupAction}"
+                            id="qilcl1">
+             <af:showPopupBehavior popupId="logoPopup"/>
+            </af:commandLink>
+           </af:panelLabelAndMessage>
+           <af:panelLabelAndMessage label="Dia chi" id="qilplam3">
+            <af:inputText id="coAddress" value="#{backing_initialSetting_ounSpaManager.spa4Oun.coAddress}"
+                          binding="#{backing_initialSetting_ounSpaManager.coAddressTf}"/>
+           </af:panelLabelAndMessage>
+           <af:panelLabelAndMessage label="So dien thoai" id="qilplam4">
+            <af:inputText id="coTelNo" value="#{backing_initialSetting_ounSpaManager.spa4Oun.coTelNo}"
+                          binding="#{backing_initialSetting_ounSpaManager.coTelNoTf}"/>
+           </af:panelLabelAndMessage>
+           <af:panelLabelAndMessage label="Fax" id="qilplam5">
+            <af:inputText id="coFaxNo" value="#{backing_initialSetting_ounSpaManager.spa4Oun.coFaxNo}"
+                          binding="#{backing_initialSetting_ounSpaManager.coFaxNoTf}"/>
+           </af:panelLabelAndMessage>
+           <af:panelLabelAndMessage label="Bieu mau thue" id="qilplam6">
+            <af:inputText id="coTaxForm" value="#{backing_initialSetting_ounSpaManager.spa4Oun.coTaxForm}"
+                          binding="#{backing_initialSetting_ounSpaManager.coTaxFormTf}"/>
+           </af:panelLabelAndMessage>
+           <af:panelLabelAndMessage label="Ma so thue" id="qilplam7">
+            <af:inputText id="coTaxNo" value="#{backing_initialSetting_ounSpaManager.spa4Oun.coTaxNo}"
+                          binding="#{backing_initialSetting_ounSpaManager.coTaxNoTf}"/>
+           </af:panelLabelAndMessage>
+          </af:panelFormLayout>
+         </af:panelGroupLayout>
+         <af:panelGroupLayout layout="vertical" id="qilpgl11">
+          <af:panelGroupLayout layout="horizontal" inlineStyle="padding-left:20px;" id="qilpgl12">
+           <af:spacer width="200" height="10" id="qils6"/>
+           <af:commandButton text="Save" partialSubmit="true" action="#{backing_initialSetting_ounSpaManager.saveSpa4OunAction}"
+                             id="qilcb4"/>
+           <af:spacer width="10" height="10" id="qils7"/>
+           <af:commandButton text="Cancel" partialSubmit="true" id="qilcb5"/>
+          </af:panelGroupLayout>
+         </af:panelGroupLayout>
+        </af:panelGroupLayout>
+       </f:facet>
+       <f:facet name="top">
+        <af:panelStretchLayout startWidth="131px" id="qilpsl3">
+         <f:facet name="center">
+          <af:panelGroupLayout layout="vertical" id="qilpgl13">
+           <af:outputLabel value="TRO GIUP" inlineStyle="font-size:large; " id="qilol2"/>
+           <af:panelGroupLayout inlineStyle="padding:4px; height:50px;" layout="vertical" id="qilpgl14">
+            <af:outputText value="#{viewcontrollerBundle['sas.page.initialSetting.ounSpa.introduction.content']}"
+                           id="qilot1"/>
+           </af:panelGroupLayout>
+          </af:panelGroupLayout>
+         </f:facet>
+         <f:facet name="start">
+          <af:panelGroupLayout layout="vertical" halign="left" inlineStyle="padding:2px;" id="qilpgl15">
+           <af:image source="/resources/images/com-struct.jpeg" shortDesc="Company Structure" id="qili2"/>
+          </af:panelGroupLayout>
+         </f:facet>
+        </af:panelStretchLayout>
+       </f:facet>
+       <f:facet name="start">
+        <af:panelSplitter orientation="vertical" splitterPosition="46" inlineStyle="padding:3px;" id="qilps1">
+         <f:facet name="first">
+          <af:panelGroupLayout layout="vertical"
+                               inlineStyle="padding:3px; border-width:1px; border-color:Gray; border-style:outset;"
+                               id="qilpgl16">
+           <af:outputLabel value="#{viewcontrollerBundle['sas.initialSetting.ounStructure']}" inlineStyle="font-size:large;"
+                           id="qilol3"/>
+          </af:panelGroupLayout>
+         </f:facet>
+         <f:facet name="second">
+          <af:panelCollection id="qilpc1">
+           <f:facet name="menus"/>
+           <f:facet name="toolbar">
+            <af:toolbar id="qilt1">
+             <af:commandButton text="Refresh" partialSubmit="true" action="#{backing_initialSetting_ounSpaManager.refreshTreeTableAction}"
+                               id="qilcb6"/>
+            </af:toolbar>
+           </f:facet>
+           <f:facet name="statusbar"/>
+           <af:treeTable value="#{backing_initialSetting_ounSpaManager.treeTableModel}" var="row" rowSelection="single"
+                         columnStretching="last" contentDelivery="immediate"
+                         selectionListener="#{backing_initialSetting_ounSpaManager.treeTableSelectionListener}"
+                         binding="#{backing_initialSetting_ounSpaManager.treeTable}" id="treeTable">
+            <f:facet name="nodeStamp">
+             <af:column sortable="false" headerText="Ma cty chi nhanh" width="70" id="qilc1">
+              <af:outputText value="#{row.ounNumber}" id="qilot2"/>
+             </af:column>
+            </f:facet>
+            <af:column sortable="false" headerText="Ten chi nhanh" id="qilc2">
+             <af:outputText value="#{row.ounName}" id="qilot3"/>
+            </af:column>
+           </af:treeTable>
+          </af:panelCollection>
+         </f:facet>
+        </af:panelSplitter>
+       </f:facet>
+      </af:panelStretchLayout>
+     </f:facet>
+     <f:facet name="end">
+      <af:panelGroupLayout layout="vertical" id="qilpgl17">
+       <af:panelGroupLayout layout="vertical" halign="left" inlineStyle="padding:2px;" id="qilpgl18">
+        <af:image source="/resources/images/help2.jpg" shortDesc="help" id="qili3"/>
+       </af:panelGroupLayout>
+       <af:spacer width="10" height="10" id="qils8"/>
+       <af:panelGroupLayout layout="vertical" id="qilpgl19">
+        <af:outputLabel value="TRO GIUP NHANH" inlineStyle="font-weight:bold;" id="qilol4"/>
+        <af:spacer width="10" height="10" id="qils9"/>
+        <af:navigationPane hint="list" id="qilnp1">
+         <af:commandNavigationItem text="Xem vi du su dung" id="qilcni1">
+        
+         </af:commandNavigationItem>
+         <af:commandNavigationItem text="Huong dan thiet lap" id="qilcni2"/>
+        </af:navigationPane>
+        <af:commandLink text="commandLink 5" partialSubmit="true" id="qilcl2">
+         <af:showPopupBehavior popupId="quickHelpPopup"/>
+        </af:commandLink>
+       </af:panelGroupLayout>
+      </af:panelGroupLayout>
+     </f:facet>
+    </af:panelStretchLayout>
+   </af:panelGroupLayout>
+  </f:facet>
+</af:pageTemplate>
+</jsp:root>

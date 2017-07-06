@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AccIndFkAssoc"
+  Version="11.1.1.51.88">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Industries"
+    Cardinality="1"
+    Source="true"
+    Owner="com.perp.sasregistmodel.entities.Industries">
+    <AttrArray Name="Attributes">
+      <Item Value="com.perp.sasregistmodel.entities.Industries.IndId"/>
+    </AttrArray>
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Industries"/>
+      <Attr Name="_foreignKey"
+        Value="com.perp.sasregistmodel.entities.Industries.IndPk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Accounts"
+    Cardinality="-1"
+    Owner="com.perp.sasregistmodel.entities.Accounts">
+    <AttrArray Name="Attributes">
+      <Item Value="com.perp.sasregistmodel.entities.Accounts.IndId"/>
+    </AttrArray>
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Accounts"/>
+      <Attr Name="_foreignKey"
+        Value="com.perp.sasregistmodel.entities.Accounts.AccIndFk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+  </AssociationEnd>
+</Association>

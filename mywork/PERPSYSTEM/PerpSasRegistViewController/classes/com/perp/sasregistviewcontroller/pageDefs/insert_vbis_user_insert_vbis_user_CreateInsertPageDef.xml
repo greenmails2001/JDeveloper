@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.1.56.60"
+                id="insert_vbis_user_insert_vbis_user_CreateInsertPageDef" Package="com.perp.sasregistviewcontroller.pageDefs"
+                SkipValidation="true">
+  <parameters/>
+  <executables>
+    <iterator Binds="VbisUsersView1" RangeSize="25" DataControl="PerpSasRegistAppModuleDataControl" id="VbisUsersView1Iterator"/>
+  </executables>
+  <bindings>
+    <action IterBinding="VbisUsersView1Iterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="news-admin-create-flow">
+    <default-activity>index</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+
+    <view id="index">
+      <page>/pages/fragments/newsAdmin/creationFlow/index.jsff</page>
+    </view>
+    <view id="createNews">
+      <page>/pages/fragments/newsAdmin/creationFlow/createNews.jsff</page>
+    </view>
+    <view id="editNews">
+      <page>/pages/fragments/newsAdmin/creationFlow/editNews.jsff</page>
+    </view>
+    <control-flow-rule>
+      <from-activity-id>index</from-activity-id>
+      <control-flow-case>
+        <from-outcome>create</from-outcome>
+        <to-activity-id>createNews</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>edit</from-outcome>
+        <to-activity-id>editNews</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule>
+      <from-activity-id>createNews</from-activity-id>
+      <control-flow-case>
+        <from-outcome>home</from-outcome>
+        <to-activity-id>index</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>save</from-outcome>
+        <to-activity-id>index</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule>
+      <from-activity-id>editNews</from-activity-id>
+      <control-flow-case>
+        <from-outcome>home</from-outcome>
+        <to-activity-id>index</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>save</from-outcome>
+        <to-activity-id>index</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.55.36" id="perpAccountCheckingPageDef"
+                Package="pages.login.embedparts">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Type="java.lang.String" Name="doPerpAccountChecking_userName"
+                IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="doPerpAccountChecking_password"
+                IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="doPerpAccountChecking_captchaText"
+                IsQueriable="false"/>
+    </variableIterator>
+    <methodIterator Binds="doPerpAccountChecking.result"
+                    DataControl="PerpSasAppModuleDataControl" RangeSize="25"
+                    id="doPerpAccountCheckingIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="doPerpAccountChecking" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="doPerpAccountChecking"
+                  IsViewObjectMethod="false"
+                  DataControl="PerpSasAppModuleDataControl"
+                  InstanceName="PerpSasAppModuleDataControl.dataProvider"
+                  ReturnName="PerpSasAppModuleDataControl.methodResults.doPerpAccountChecking_PerpSasAppModuleDataControl_dataProvider_doPerpAccountChecking_result">
+      <NamedData NDName="userName" NDType="java.lang.String"
+                 NDValue="${bindings.doPerpAccountChecking_userName}"/>
+      <NamedData NDName="password" NDType="java.lang.String"
+                 NDValue="${bindings.doPerpAccountChecking_password}"/>
+      <NamedData NDName="captchaText" NDType="java.lang.String"
+                 NDValue="${bindings.doPerpAccountChecking_captchaText}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="userName">
+      <AttrNames>
+        <Item Value="doPerpAccountChecking_userName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="password">
+      <AttrNames>
+        <Item Value="doPerpAccountChecking_password"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="captchaText">
+      <AttrNames>
+        <Item Value="doPerpAccountChecking_captchaText"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

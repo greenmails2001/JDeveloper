@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AppModule"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  ClearCacheOnRollback="true">
+  <ViewUsage
+    Name="MenuItemsView1"
+    ViewObjectName="test.model.MenuItemsView"/>
+  <ViewUsage
+    Name="MenuView1"
+    ViewObjectName="test.model.MenuView"/>
+  <ViewUsage
+    Name="RoleMenuItemsView1"
+    ViewObjectName="test.model.RoleMenuItemsView"/>
+  <ViewUsage
+    Name="RolesView1"
+    ViewObjectName="test.model.RolesView"/>
+  <ViewUsage
+    Name="MenuItemsView2"
+    ViewObjectName="test.model.MenuItemsView"/>
+  <ViewUsage
+    Name="RoleMenuItemsView2"
+    ViewObjectName="test.model.RoleMenuItemsView"/>
+  <ViewUsage
+    Name="RoleMenuItemsView3"
+    ViewObjectName="test.model.RoleMenuItemsView"/>
+  <ViewLinkUsage
+    Name="MitMenFkLink1"
+    ViewLinkObjectName="test.model.MitMenFkLink"
+    SrcViewUsageName="test.model.AppModule.MenuView1"
+    DstViewUsageName="test.model.AppModule.MenuItemsView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="RmiMitFkLink1"
+    ViewLinkObjectName="test.model.RmiMitFkLink"
+    SrcViewUsageName="test.model.AppModule.MenuItemsView1"
+    DstViewUsageName="test.model.AppModule.RoleMenuItemsView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="RmiRolFkLink1"
+    ViewLinkObjectName="test.model.RmiRolFkLink"
+    SrcViewUsageName="test.model.AppModule.RolesView1"
+    DstViewUsageName="test.model.AppModule.RoleMenuItemsView3"
+    Reversed="false"/>
+</AppModule>

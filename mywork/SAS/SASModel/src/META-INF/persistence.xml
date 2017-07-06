@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<persistence xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_1_0.xsd"
+             version="1.0" xmlns="http://java.sun.com/xml/ns/persistence">
+  <persistence-unit name="SASPersistence">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <jta-data-source>
+      jdbc/SASConnectionDS
+    </jta-data-source>
+    <class>
+      com.vc.web.ejb.sas.entities.Accounts
+    </class>
+    <class>
+      com.vc.web.ejb.sas.entities.Countries
+    </class>
+    <class>
+      com.vc.web.ejb.sas.entities.Industries
+    </class>
+    <class>
+      com.vc.web.ejb.sas.entities.Provinces
+    </class>
+    <class>
+      com.vc.web.ejb.sas.entities.Roles
+    </class>
+    <class>
+      com.vc.web.ejb.sas.entities.ServicePackages
+    </class>
+    <class>
+      com.vc.web.ejb.sas.entities.Subscriptions
+    </class>
+    <class>
+      com.vc.web.ejb.sas.entities.SecurityQuestions
+    </class>
+    <class>
+      com.vc.web.ejb.sas.entities.HelpDesks
+    </class>
+    <class>
+      com.vc.web.ejb.sas.entities.HelpDeskRelations
+    </class>
+    <class>
+      com.vc.web.ejb.sas.entities.News
+    </class>
+    <class>
+      com.vc.web.ejb.sas.entities.NewsCategories
+    </class>
+    <class>
+      com.vc.web.ejb.sas.entities.NewsRelations
+    </class>
+    <class>
+      com.vc.web.ejb.sas.entities.Forums
+    </class>
+    <class>
+      com.vc.web.ejb.sas.entities.ForumCategories
+    </class>
+    <class>
+      com.vc.web.ejb.sas.entities.ForumMembers
+    </class>
+    <class>
+      com.vc.web.ejb.sas.entities.ForumMessages
+    </class>
+    <class>
+      com.vc.web.ejb.sas.entities.ForumOwners
+    </class>
+    <class>
+      com.vc.web.ejb.sas.entities.NewsBookmarks
+    </class>
+    <properties>
+      <property name="javax.persistence.jtaDataSource" value="
+      jdbc/SASConnectionDS
+    "/>
+      <property name="eclipselink.target-server" value="WebLogic_10"/>
+    </properties>
+  </persistence-unit>
+</persistence>

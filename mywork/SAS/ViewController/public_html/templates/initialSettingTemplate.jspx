@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:trh="http://myfaces.apache.org/trinidad/html">
+  <c:set var="viewcontrollerBundle" value="#{adfBundle['com.vc.web.ViewControllerBundle']}"/>
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <af:pageTemplateDef var="attrs">
+    <af:panelStretchLayout styleClass="AFVisualRoot" endWidth="339px" topHeight="42px" id="pt_psl1">
+      <f:facet name="center">
+        <af:panelStretchLayout topHeight="26px" id="pt_psl2">
+          <f:facet name="center">
+            <af:decorativeBox theme="light" id="pt_db1">
+              <f:facet name="center">
+                <af:facetRef facetName="center"/>
+              </f:facet>
+            </af:decorativeBox>
+          </f:facet>
+          <f:facet name="top">
+            <af:panelGroupLayout layout="vertical" id="pt_pgl1">
+              <af:outputLabel value="#{viewcontrollerBundle['sas.initialSetting']}" inlineStyle="font-size:medium;"
+                              id="pt_ol1"/>
+            </af:panelGroupLayout>
+          </f:facet>
+        </af:panelStretchLayout>
+      </f:facet>
+      <f:facet name="top">
+        <af:toolbox id="header2ToolBox" inlineStyle="padding:2px;">
+          <trh:tableLayout width="100%" id="pt_tl1">
+            <trh:rowLayout id="pt_rl1">
+              <trh:cellFormat halign="left" valign="top" id="pt_cf1">
+                <af:panelGroupLayout layout="horizontal" id="pt_pgl2">
+                  <af:image source="/resources/images/setting.gif" id="pt_i1"/>
+                </af:panelGroupLayout>
+              </trh:cellFormat>
+              <trh:cellFormat halign="right" valign="top" id="pt_cf2">
+                <af:panelGroupLayout halign="right" layout="horizontal" id="pt_pgl3">
+                  <af:navigationPane hint="bar" id="afNavInititalSetting"
+                                     binding="#{backing_initialSetting_initialSettingHandler.afNavInititalSetting}">
+                    <af:commandNavigationItem text="#{viewcontrollerBundle['sas.setting.navigation.userStatus']}" selected="true"
+                                              action="checkUserStatus" id="afNavHome"
+                                              binding="#{backing_initialSetting_initialSettingHandler.afNavHome}"
+                                              actionListener="#{backing_initialSetting_initialSettingHandler.navigationActionListener}"/>
+                    <af:commandNavigationItem text="#{viewcontrollerBundle['sas.setting.navigation.ounStructure']}" selected="true"
+                                              action="ounStructure" id="afNavOunStructure"
+                                              binding="#{backing_initialSetting_initialSettingHandler.afNavOunStructure}"
+                                              actionListener="#{backing_initialSetting_initialSettingHandler.navigationActionListener}"/>
+                    <af:commandNavigationItem text="#{viewcontrollerBundle['sas.setting.navigation.spaOun']}" action="settingWithOun"
+                                              id="afNavSpa4Oun" binding="#{backing_initialSetting_initialSettingHandler.afNavSpa4Oun}"
+                                              actionListener="#{backing_initialSetting_initialSettingHandler.navigationActionListener}"/>
+                    <af:commandNavigationItem text="#{viewcontrollerBundle['sas.setting.navigation.systemPara']}" action="systemParaList"
+                                              id="afNavSystemPara"
+                                              binding="#{backing_initialSetting_initialSettingHandler.afNavSystemPara}"
+                                              actionListener="#{backing_initialSetting_initialSettingHandler.navigationActionListener}"/>
+                    <af:commandNavigationItem text="#{viewcontrollerBundle['sas.setting.navigation.bankAccount']}"
+                                              action="settingBankAccount" id="afNavBankAccount"
+                                              binding="#{backing_initialSetting_initialSettingHandler.afNavBankAccount}"
+                                              actionListener="#{backing_initialSetting_initialSettingHandler.navigationActionListener}"
+                                              disabled="true"/>
+                    <af:commandNavigationItem text="#{viewcontrollerBundle['sas.setting.navigation.accPerior']}" action="settingAccPeriod"
+                                              id="afNavAccPeriod" binding="#{backing_initialSetting_initialSettingHandler.afNavAccPeriod}"
+                                              actionListener="#{backing_initialSetting_initialSettingHandler.navigationActionListener}"/>
+                    <af:commandNavigationItem text="#{viewcontrollerBundle['sas.setting.navigation.endSetting']}" action="endOfSetting"
+                                              id="afNavEndSetting"
+                                              binding="#{backing_initialSetting_initialSettingHandler.afNavEndSetting}"
+                                              actionListener="#{backing_initialSetting_initialSettingHandler.navigationActionListener}"/>
+                  </af:navigationPane>
+                </af:panelGroupLayout>
+              </trh:cellFormat>
+            </trh:rowLayout>
+          </trh:tableLayout>
+        </af:toolbox>
+      </f:facet>
+    </af:panelStretchLayout>
+  </af:pageTemplateDef>
+</jsp:root>

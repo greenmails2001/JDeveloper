@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.54.7" id="treetablePageDef"
+                Package="pages.testting">
+  <parameters/>
+  <executables>
+    <invokeAction Binds="prepareToShowSasUserRoles" id="aa"
+                  Refresh="prepareModel"/>
+    <iterator Binds="SasUserRoles" RangeSize="25"
+              DataControl="PerpSasAppModuleDataControl"
+              id="SasUserRolesIterator"/>
+    <iterator Binds="SasMenusRootX1" RangeSize="25"
+              DataControl="PerpSasAppModuleDataControl"
+              id="SasMenusRootX1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="SasUserRolesIterator" id="SasUserRoles">
+      <nodeDefinition DefName="com.perp.sasmodel.views.sas.SasUserRoles"
+                      Name="SasUserRoles0">
+        <AttrNames>
+          <Item Value="GusId"/>
+          <Item Value="AusId"/>
+          <Item Value="Name"/>
+          <Item Value="Description"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="SasMenusRootX1Iterator" id="SasMenusRootX1">
+      <nodeDefinition DefName="com.perp.sasmodel.views.sas.SasMenusRoot"
+                      Name="SasMenusRootX10">
+        <AttrNames>
+          <Item Value="MenId"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="SasMenus"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="com.perp.sasmodel.views.sas.SasMenus"
+                      Name="SasMenusRootX11">
+        <AttrNames>
+          <Item Value="MenId"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="SasMenus_2"/>
+        </Accessors>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="prepareToShowSasUserRoles" RequiresUpdateModel="true"
+                  Action="invokeMethod"
+                  MethodName="prepareToShowSasUserRoles"
+                  IsViewObjectMethod="false"
+                  DataControl="PerpSasAppModuleDataControl"
+                  InstanceName="PerpSasAppModuleDataControl.dataProvider">
+      <NamedData NDName="ausId" NDValue="1" NDType="java.lang.Long"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="initial-setting-flow">
+    <default-activity>router</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <managed-bean>
+      <managed-bean-name>backing_initialSetting_systemParaHandler</managed-bean-name>
+      <managed-bean-class>com.vc.web.backing.initialSetting.SystemParaHandler</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+
+    <managed-bean>
+      <managed-bean-name>backing_initialSetting_ounSpaManager</managed-bean-name>
+      <managed-bean-class>com.vc.web.backing.initialSetting.beans.OunSpaManager</managed-bean-class>
+      <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+      <managed-bean-name>backing_initialSetting_ounStructureManager</managed-bean-name>
+      <managed-bean-class>com.vc.web.backing.initialSetting.OunStructureManager</managed-bean-class>
+      <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    <view id="home">
+      <page>/pages/fragments/initialSetting/home.jsff</page>
+    </view>
+    <view id="systemParaList">
+      <page>/pages/fragments/initialSetting/systemParaList.jsff</page>
+    </view>
+    <view id="editSystemPara">
+      <page>/pages/fragments/initialSetting/editSystemPara.jsff</page>
+    </view>
+    <view id="createSystemPara">
+      <page>/pages/fragments/initialSetting/createSystemPara.jsff</page>
+    </view>
+    <view id="bankAccount">
+      <page>/pages/fragments/initialSetting/bankAccount.jsff</page>
+    </view>
+    <view id="accPeriod">
+      <page>/pages/fragments/initialSetting/accPeriod.jsff</page>
+    </view>
+    <view id="endOfSetting">
+      <page>/pages/fragments/initialSetting/endOfSetting.jsff</page>
+    </view>
+    <view id="helpNav1">
+      <page>/pages/fragments/initialSetting/helpNav1.jsff</page>
+    </view>
+    <router id="router">
+      <case>
+        <expression>#{backing_initialSetting_initialSettingHandler.caseFlowOfInitialSettingFlow=="login"}</expression>
+        <outcome>login</outcome>
+      </case>
+      <case>
+        <expression>#{backing_initialSetting_initialSettingHandler.caseFlowOfInitialSettingFlow=="home"}</expression>
+        <outcome>home</outcome>
+      </case>
+      <default-outcome>login</default-outcome>
+    </router>
+    <parent-action id="app-view-flow">
+      <parent-outcome>appView</parent-outcome>
+    </parent-action>
+    <view id="ounSpa">
+      <page>/pages/fragments/initialSetting/ounSpa.jsff</page>
+    </view>
+    <view id="ounStructure">
+      <page>/pages/fragments/initialSetting/ounStructure.jsff</page>
+    </view>
+    <control-flow-rule>
+      <from-activity-id>systemParaList</from-activity-id>
+      <control-flow-case>
+        <from-outcome>edit</from-outcome>
+        <to-activity-id>editSystemPara</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>create</from-outcome>
+        <to-activity-id>createSystemPara</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule>
+      <from-activity-id>editSystemPara</from-activity-id>
+      <control-flow-case>
+        <from-outcome>save</from-outcome>
+        <to-activity-id>systemParaList</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>cancel</from-outcome>
+        <to-activity-id>systemParaList</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule>
+      <from-activity-id>createSystemPara</from-activity-id>
+      <control-flow-case>
+        <from-outcome>save</from-outcome>
+        <to-activity-id>systemParaList</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>cancel</from-outcome>
+        <to-activity-id>systemParaList</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule>
+      <from-activity-id>router</from-activity-id>
+      <control-flow-case>
+        <from-outcome>login</from-outcome>
+        <to-activity-id>app-view-flow</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>home</from-outcome>
+        <to-activity-id>home</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule>
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case>
+        <from-outcome>checkUserStatus</from-outcome>
+        <to-activity-id>home</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule>
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case>
+        <from-outcome>systemParaList</from-outcome>
+        <to-activity-id>systemParaList</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>endOfSetting</from-outcome>
+        <to-activity-id>endOfSetting</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule>
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case>
+        <from-outcome>settingAccPeriod</from-outcome>
+        <to-activity-id>accPeriod</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule>
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case>
+        <from-outcome>settingBankAccount</from-outcome>
+        <to-activity-id>bankAccount</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule>
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case>
+        <from-outcome>appView</from-outcome>
+        <to-activity-id>app-view-flow</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule>
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case>
+        <from-outcome>settingWithOun</from-outcome>
+        <to-activity-id>ounSpa</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule>
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case>
+        <from-outcome>ounStructure</from-outcome>
+        <to-activity-id>ounStructure</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+  </adfc-config>

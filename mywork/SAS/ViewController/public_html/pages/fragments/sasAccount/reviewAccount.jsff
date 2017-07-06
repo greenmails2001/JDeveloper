@@ -1,0 +1,172 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core"
+          xmlns:trh="http://myfaces.apache.org/trinidad/html">
+ 
+ <c:set var="viewcontrollerBundle" value="#{adfBundle['com.vc.web.ViewControllerBundle']}"/>
+  <af:panelStretchLayout styleClass="AFVisualRoot" endWidth="339px" topHeight="36px" id="njvpsl1">
+    <f:facet name="center">
+      <af:panelStretchLayout topHeight="34px" id="njvpsl2">
+        <f:facet name="center">
+          <af:decorativeBox id="njvdb1">
+            <f:facet name="center">
+              <af:panelStretchLayout startWidth="213px" id="njvpsl3">
+                <f:facet name="center">
+                  <af:panelGroupLayout layout="vertical" id="njvpgl1">
+                    <af:outputLabel value="#{viewcontrollerBundle['pages.fragments.sasAccount.reviewAccount.title1']}" inlineStyle="font-size:large;"
+                                    id="njvol1"/>
+                    <af:spacer width="10" height="10" id="njvs1"/>
+                    <af:activeOutputText value="#{viewcontrollerBundle['pages.fragments.sasAccount.reviewAccount.content1']}"
+                                         id="njvaot1"/>
+                    <af:spacer width="10" height="10" id="njvs2"/>
+                    <af:panelGroupLayout layout="vertical" inlineStyle="vertical-align:2px;" id="njvpgl2">
+                      <trh:tableLayout width="100%" id="njvtl1">
+                        <trh:rowLayout id="njvrl1">
+                          <trh:cellFormat width="33%" id="njvcf1">
+                            <af:panelGroupLayout layout="vertical" valign="top" inlineStyle="padding:4%;" id="njvpgl3">
+                              <af:outputLabel value="Lien lac voi he thong" inlineStyle="font-weight:bold;"
+                                              id="njvol2"/>
+                              <af:panelGroupLayout layout="horizontal" valign="top" inlineStyle="width:100%;"
+                                                   id="njvpgl4">
+                                <af:panelGroupLayout layout="vertical" id="njvpgl5">
+                                  <af:navigationPane hint="list" id="njvnp1">
+                                    <af:commandNavigationItem text="aa" id="njvcni1"/>
+                                    <af:commandNavigationItem text="cdfad" id="njvcni2"/>
+                                  </af:navigationPane>
+                                </af:panelGroupLayout>
+                                <af:panelGroupLayout layout="vertical" halign="right" valign="bottom" id="njvpgl6">
+                                  <af:image source="/resources/images/images13.jpeg" id="njvi1"/>
+                                </af:panelGroupLayout>
+                              </af:panelGroupLayout>
+                            </af:panelGroupLayout>
+                          </trh:cellFormat>
+                          <trh:cellFormat width="33%" id="njvcf2">
+                            <af:panelGroupLayout layout="vertical" inlineStyle="padding:4%;" id="njvpgl7">
+                              <af:outputLabel value="Thanh cong cung ERP" inlineStyle="font-weight:bold;" id="njvol3"/>
+                              <af:panelGroupLayout layout="horizontal" valign="top" inlineStyle="width:100%;"
+                                                   id="njvpgl8">
+                                <af:panelGroupLayout layout="vertical" id="njvpgl9">
+                                  <af:navigationPane hint="list" id="njvnp2">
+                                    <af:commandNavigationItem text="Link2" id="njvcni3"/>
+                                    <af:commandNavigationItem text="Link" id="njvcni4"/>
+                                  </af:navigationPane>
+                                </af:panelGroupLayout>
+                                <af:panelGroupLayout layout="vertical" halign="right" valign="bottom" id="njvpgl10">
+                                  <af:image source="/resources/images/images13.jpeg" id="njvi2"/>
+                                </af:panelGroupLayout>
+                              </af:panelGroupLayout>
+                            </af:panelGroupLayout>
+                          </trh:cellFormat>
+                          <trh:cellFormat width="33%" id="njvcf3">
+                            <af:panelGroupLayout layout="vertical" inlineStyle="padding:4%;" id="njvpgl11">
+                              <af:outputLabel value="Tro thanh doi tac" inlineStyle="font-weight:bold;" id="njvol4"/>
+                              <af:panelGroupLayout layout="horizontal" valign="top" inlineStyle="width:100%;"
+                                                   id="njvpgl12">
+                                <af:panelGroupLayout layout="vertical" id="njvpgl13">
+                                  <af:navigationPane hint="list" id="njvnp3">
+                                    <af:commandNavigationItem text="Link" id="njvcni5"/>
+                                    <af:commandNavigationItem text="Link" id="njvcni6"/>
+                                  </af:navigationPane>
+                                </af:panelGroupLayout>
+                                <af:panelGroupLayout layout="vertical" halign="right" valign="bottom" id="njvpgl14">
+                                  <af:image source="/resources/images/images13.jpeg" id="njvi3"/>
+                                </af:panelGroupLayout>
+                              </af:panelGroupLayout>
+                            </af:panelGroupLayout>
+                          </trh:cellFormat>
+                        </trh:rowLayout>
+                      </trh:tableLayout>
+                    </af:panelGroupLayout>
+                    <af:panelGroupLayout layout="vertical" id="njvpgl15">
+                      <af:outputLabel value="#{viewcontrollerBundle['pages.fragments.sasAccount.reviewAccount.accountInfo']}" inlineStyle="font-size:large;"
+                                      id="njvol5"/>
+                      <af:panelFormLayout maxColumns="2" rows="2" fieldWidth="270" labelWidth="180"
+                                          inlineStyle="padding:2px;" id="njvpfl1">
+                        <af:panelLabelAndMessage label="#{viewcontrollerBundle['field.accounts.userName']}"
+                                                 id="njvplam1">
+                          <af:outputText value="#{bindings.userName.inputValue}" id="njvot1"/>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="#{viewcontrollerBundle['field.accounts.email']}" id="njvplam2">
+                          <af:outputText value="#{bindings.email.inputValue}" id="njvot2"/>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="#{viewcontrollerBundle['field.accounts.contactTelephone']}"
+                                                 id="njvplam3">
+                          <af:outputText value="#{bindings.contactTelephone.inputValue}" id="njvot3"/>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="#{viewcontrollerBundle['field.accounts.customerApproach']}"
+                                                 id="njvplam4">
+                          <af:outputText value="#{bindings.customerApproach.inputValue}" id="njvot4"/>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="#{viewcontrollerBundle['field.perp.organizationUnits.name']}"
+                                                 id="njvplam5">
+                          <af:outputText value="#{bindings.organizationName.inputValue}" id="njvot5"/>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="#{viewcontrollerBundle['field.accounts.adress']}" id="njvplam6">
+                          <af:outputText value="#{bindings.address.inputValue}" id="njvot6"/>
+                          <af:panelLabelAndMessage label="#{viewcontrollerBundle['field.accounts.fullName']}"
+                                                   id="njvplam7">
+                            <af:outputText value="#{bindings.fullName.inputValue}" id="njvot7"/>
+                          </af:panelLabelAndMessage>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="#{viewcontrollerBundle['field.accounts.numberOfEmployee']}"
+                                                 id="njvplam8">
+                          <af:outputText value="#{bindings.numberOfEmployee.inputValue}" id="njvot8">
+                            <af:convertNumber groupingUsed="false" pattern="#{bindings.numberOfEmployee.format}"/>
+                          </af:outputText>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="#{viewcontrollerBundle['field.accounts.taxCode']}"
+                                                 id="njvplam9">
+                          <af:outputText value="#{bindings.taxCode.inputValue}" id="njvot9"/>
+                        </af:panelLabelAndMessage>
+                      </af:panelFormLayout>
+                      <af:panelGroupLayout layout="horizontal" inlineStyle="padding:2px;" id="njvpgl16">
+                        <af:spacer width="150" height="10" id="njvs3"/>
+                        <af:commandButton text="#{viewcontrollerBundle['pages.fragments.sasAccount.reviewAccount.signin']}" partialSubmit="true" action="login"
+                                          id="njvcb1"/>
+                        <af:spacer width="10" height="10" id="njvs4"/>
+                        <af:commandButton text="#{viewcontrollerBundle['pages.fragments.sasAccount.reviewAccount.sendEmail']}" action="edit"
+                                          id="njvcb2"/>
+                        <af:spacer width="10" height="10" id="njvs5"/>
+                        <af:commandButton text="#{viewcontrollerBundle['pages.fragments.sasAccount.reviewAccount.edit']}" action="edit"
+                                          id="njvcb3"/>
+                      </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                  </af:panelGroupLayout>
+                </f:facet>
+              </af:panelStretchLayout>
+            </f:facet>
+          </af:decorativeBox>
+        </f:facet>
+        <f:facet name="top">
+          <af:panelGroupLayout layout="vertical" id="njvpgl17">
+            <af:outputLabel value="HE THONG QUAN TRI DOANH NGHIEP PERP" inlineStyle="font-size:medium;" id="njvol6"/>
+          </af:panelGroupLayout>
+        </f:facet>
+      </af:panelStretchLayout>
+    </f:facet>
+    <f:facet name="top">
+      <af:toolbox id="njvt1">
+        <trh:tableLayout width="100%" id="njvtl2">
+          <trh:rowLayout id="njvrl2">
+            <trh:cellFormat halign="left" id="njvcf4">
+              <af:panelGroupLayout halign="left" layout="horizontal" id="njvpgl18"/>
+            </trh:cellFormat>
+            <trh:cellFormat halign="right" id="njvcf5">
+              <af:panelGroupLayout halign="right" layout="horizontal" id="njvpgl19">
+                <af:navigationPane hint="bar" id="njvnp4">
+                  <af:commandNavigationItem text="#{viewcontrollerBundle['pages.fragments.sasAccount.nav.signin']}" action="login"
+                                            id="njvcni7"/>
+                  <af:commandNavigationItem text="#{viewcontrollerBundle['pages.fragments.sasAccount.nav.accountInfo']}" disabled="#{!backing_sasAccount_sasAccountFlowHandler.sasLogin}"
+                                            action="reviewAccount" id="njvcni8"/>
+                  <af:commandNavigationItem text="#{viewcontrollerBundle['pages.fragments.sasAccount.nav.shoppingSas']}" action="shoppingSas"
+                                            disabled="#{!backing_sasAccount_sasAccountFlowHandler.sasLogin}"
+                                            id="njvcni9"/>
+                </af:navigationPane>
+              </af:panelGroupLayout>
+            </trh:cellFormat>
+          </trh:rowLayout>
+        </trh:tableLayout>
+      </af:toolbox>
+    </f:facet>
+  </af:panelStretchLayout>
+</jsp:root>

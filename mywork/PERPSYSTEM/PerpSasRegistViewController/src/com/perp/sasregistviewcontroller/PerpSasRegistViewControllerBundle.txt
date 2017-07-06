@@ -1,0 +1,17 @@
+sasr.login.welcomeSasContent=In the previous section, you saw how the page definition is used to define the binding objects that are created in the binding container at runtime. To display data from the data model, web page UI components, are bound to binding objects using JSF Expression Language (EL) expressions. These EL expressions reference a specific binding object in a binding container. At runtime, the JSF runtime evaluates EL expression and pulls the value from the binding object to populate the component with data when the page is displayed. If the user updates data in the UI component
+sasr.login.submit=Login
+sasr.login.forgotPassword=Forgot Password
+sasr.login.signup=Sign Up
+sasr.login.password=Password
+sasr.login.username=Username
+#Tieu de khung nhap username , password
+sasr.login.loginTitle=Login to sas
+sasr.login.suggest=Nhap thong tin username va password de dang nhap vao he thong SAS . Neu chua co thong tin account ban co the dang ky mien phi duoi day
+sasr.login.welcomeSasTitle=DANG NHAP HE THONG SAS
+sasr.login.aboutSasTitle=SAS LA GI
+sasr.login.aboutSasContent=SAS is the leader in business analytics software and services, and the largest independent vendor in the business intelligence market. Through innovative solutions, SAS helps customers improve performance and deliver value by making better decisions faster. SAS gives you THE POWER TO KNOW\u00AE.
+sasr.sasr001.createAccount.welcomeTitle=DANG KY TAI KHOAN SAS
+sasr.sasr001.createAccount.welcomeContent=Tai khoan sas cho phep ban dung ra nhu mot dai dien cua mot cong ty , to chuc de dang ky su dung phan mem duoc chung toi cung cap. De dang ky mot tai khoan ban hay nhap cac thong tin ve to chuc cua ban, cac thong tin ca nhan, thong tin bao mat cho tai khoan. Cac thong tin co dau * la thong tin bat buoc phai nhap
+sasr.sasr001.createAccount.organizationUnitInfoTitle=THONG TIN CONG TY (TO CHUC) CUA BAN
+sasr.sasr001.createAccount.personalInfoTitle=THONG TIN CA NHAN CUA BAN
+sasr.sasr001.createAccount.securityInfoTitle=TAI KHOAN VA BAO MAT

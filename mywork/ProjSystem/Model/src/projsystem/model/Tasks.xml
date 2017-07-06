@@ -1,0 +1,1265 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Tasks"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="TASKS"
+  AliasName="Tasks"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="TasId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="TAS_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="TASKS"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="TaskNumber"
+    IsUnique="true"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="TASK_NUMBER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="TaskName"
+    IsNotNull="true"
+    Precision="500"
+    ColumnName="TASK_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ProjectPhase"
+    Precision="1"
+    ColumnName="PROJECT_PHASE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="TaskType"
+    Precision="1"
+    ColumnName="TASK_TYPE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="OverBudget"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="OVER_BUDGET"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ServiceType"
+    Precision="1"
+    ColumnName="SERVICE_TYPE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="BudgetFlag"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="BUDGET_FLAG"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="InProgressFlag"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="IN_PROGRESS_FLAG"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="TopTaskNumber"
+    Precision="20"
+    ColumnName="TOP_TASK_NUMBER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="WbsLevel"
+    IsNotNull="true"
+    Precision="3"
+    Scale="0"
+    ColumnName="WBS_LEVEL"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="TASKS"/>
+  <Attribute
+    Name="TaskProperty"
+    Precision="5"
+    ColumnName="TASK_PROPERTY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="5"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CcoId"
+    Precision="15"
+    Scale="0"
+    ColumnName="CCO_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="TASKS"/>
+  <Attribute
+    Name="RplId"
+    Precision="15"
+    Scale="0"
+    ColumnName="RPL_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="TASKS"/>
+  <Attribute
+    Name="CpsId"
+    Precision="15"
+    Scale="0"
+    ColumnName="CPS_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="TASKS"/>
+  <Attribute
+    Name="Description"
+    Precision="1000"
+    ColumnName="DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1000"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CarryingOutOrganization"
+    Precision="100"
+    ColumnName="CARRYING_OUT_ORGANIZATION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CarryingOutAddress"
+    Precision="100"
+    ColumnName="CARRYING_OUT_ADDRESS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Status"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="STATUS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="TaskManager"
+    Precision="30"
+    ColumnName="TASK_MANAGER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="TaskQuantity"
+    Precision="21"
+    Scale="3"
+    ColumnName="TASK_QUANTITY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TASKS"/>
+  <Attribute
+    Name="TaskCapacity"
+    Precision="21"
+    Scale="3"
+    ColumnName="TASK_CAPACITY"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TASKS"/>
+  <Attribute
+    Name="PercentPerformed"
+    Precision="5"
+    Scale="2"
+    ColumnName="PERCENT_PERFORMED"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TASKS"/>
+  <Attribute
+    Name="Taxable"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="TAXABLE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="TaxName"
+    Precision="30"
+    ColumnName="TAX_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="TaxRate"
+    Precision="8"
+    Scale="2"
+    ColumnName="TAX_RATE"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TASKS"/>
+  <Attribute
+    Name="TxnControlFlag"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="TXN_CONTROL_FLAG"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ExchangeRateType"
+    Precision="1"
+    ColumnName="EXCHANGE_RATE_TYPE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ExchangeDate"
+    ColumnName="EXCHANGE_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TASKS"/>
+  <Attribute
+    Name="ExchangeRate"
+    Precision="8"
+    Scale="2"
+    ColumnName="EXCHANGE_RATE"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TASKS"/>
+  <Attribute
+    Name="ScheduledStartDate"
+    ColumnName="SCHEDULED_START_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TASKS"/>
+  <Attribute
+    Name="ScheduledFinishDate"
+    ColumnName="SCHEDULED_FINISH_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TASKS"/>
+  <Attribute
+    Name="ActualStartDate"
+    ColumnName="ACTUAL_START_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TASKS"/>
+  <Attribute
+    Name="ActualFinishDate"
+    ColumnName="ACTUAL_FINISH_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TASKS"/>
+  <Attribute
+    Name="AcceptedDate"
+    ColumnName="ACCEPTED_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TASKS"/>
+  <Attribute
+    Name="Capitalizable"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="CAPITALIZABLE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CapitalizedCost"
+    Precision="21"
+    Scale="3"
+    ColumnName="CAPITALIZED_COST"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="TASKS"/>
+  <Attribute
+    Name="CapitalizedDate"
+    ColumnName="CAPITALIZED_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TASKS"/>
+  <Attribute
+    Name="AccidentQuantityAllowed"
+    Precision="3"
+    Scale="0"
+    ColumnName="ACCIDENT_QUANTITY_ALLOWED"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="TASKS"/>
+  <Attribute
+    Name="AccidentMinuteAllowed"
+    Precision="3"
+    Scale="0"
+    ColumnName="ACCIDENT_MINUTE_ALLOWED"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="TASKS"/>
+  <Attribute
+    Name="TotalHours"
+    Precision="5"
+    Scale="0"
+    ColumnName="TOTAL_HOURS"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="TASKS"/>
+  <Attribute
+    Name="ProductName"
+    Precision="30"
+    ColumnName="PRODUCT_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreateDate"
+    IsNotNull="true"
+    ColumnName="CREATE_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TASKS"/>
+  <Attribute
+    Name="CreatedBy"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ModifyDate"
+    ColumnName="MODIFY_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="TASKS"/>
+  <Attribute
+    Name="ModifiedBy"
+    Precision="30"
+    ColumnName="MODIFIED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="TasIdPartOf"
+    Precision="15"
+    Scale="0"
+    ColumnName="TAS_ID_PART_OF"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="TASKS"/>
+  <Attribute
+    Name="TplId"
+    Precision="15"
+    Scale="0"
+    ColumnName="TPL_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="TASKS"/>
+  <Attribute
+    Name="TenId"
+    Precision="15"
+    Scale="0"
+    ColumnName="TEN_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="TASKS"/>
+  <Attribute
+    Name="ProjId"
+    IsUnique="true"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="PROJ_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="TASKS"/>
+  <Attribute
+    Name="TteId"
+    Precision="15"
+    Scale="0"
+    ColumnName="TTE_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="TASKS"/>
+  <Attribute
+    Name="UomCode"
+    Precision="10"
+    ColumnName="UOM_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="IsParent"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="IS_PARENT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DisplayedGanntchart"
+    Precision="1"
+    ColumnName="DISPLAYED_GANNTCHART"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="InTending"
+    Precision="1"
+    ColumnName="IN_TENDING"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="EclId"
+    Precision="15"
+    Scale="0"
+    ColumnName="ECL_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="TASKS"/>
+  <Attribute
+    Name="CurCode"
+    Precision="3"
+    ColumnName="CUR_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PerformanceTestFlag"
+    Precision="1"
+    ColumnName="PERFORMANCE_TEST_FLAG"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="IitId"
+    Precision="15"
+    Scale="0"
+    ColumnName="IIT_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="TASKS"/>
+  <Attribute
+    Name="PtpId"
+    Precision="15"
+    Scale="0"
+    ColumnName="PTP_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="TASKS"/>
+  <Attribute
+    Name="CapitalizedFlag"
+    Precision="1"
+    ColumnName="CAPITALIZED_FLAG"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="BilledOtFOb"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="BILLED_OT_F_OB"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ExpertFlag"
+    Precision="1"
+    ColumnName="EXPERT_FLAG"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="IitIdProductOf"
+    Precision="15"
+    Scale="0"
+    ColumnName="IIT_ID_PRODUCT_OF"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="TASKS"/>
+  <Attribute
+    Name="Attribute1"
+    Precision="240"
+    ColumnName="ATTRIBUTE1"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute2"
+    Precision="500"
+    ColumnName="ATTRIBUTE2"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute3"
+    Precision="240"
+    ColumnName="ATTRIBUTE3"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute4"
+    Precision="240"
+    ColumnName="ATTRIBUTE4"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute5"
+    Precision="240"
+    ColumnName="ATTRIBUTE5"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute6"
+    Precision="240"
+    ColumnName="ATTRIBUTE6"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute7"
+    Precision="240"
+    ColumnName="ATTRIBUTE7"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute8"
+    Precision="240"
+    ColumnName="ATTRIBUTE8"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute9"
+    Precision="240"
+    ColumnName="ATTRIBUTE9"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute10"
+    Precision="240"
+    ColumnName="ATTRIBUTE10"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RevOrg"
+    Precision="100"
+    ColumnName="REV_ORG"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="InBidFlag"
+    Precision="1"
+    ColumnName="IN_BID_FLAG"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="FinancialControl"
+    Precision="10"
+    ColumnName="FINANCIAL_CONTROL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="BillableFlag"
+    Precision="1"
+    ColumnName="BILLABLE_FLAG"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PtgId"
+    Precision="20"
+    ColumnName="PTG_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="TaskCode"
+    IsUnique="true"
+    Precision="30"
+    ColumnName="TASK_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SupplementalFlag"
+    Precision="1"
+    ColumnName="SUPPLEMENTAL_FLAG"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="InterfaceTransfered"
+    Precision="1"
+    ColumnName="INTERFACE_TRANSFERED"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="TransferError"
+    Precision="4000"
+    ColumnName="TRANSFER_ERROR"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="4000"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="TasIdTransferFrom"
+    Precision="15"
+    Scale="0"
+    ColumnName="TAS_ID_TRANSFER_FROM"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="TASKS"/>
+  <Attribute
+    Name="CsiId"
+    Precision="15"
+    Scale="0"
+    ColumnName="CSI_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="TASKS"/>
+  <Attribute
+    Name="CsiExt"
+    Precision="30"
+    ColumnName="CSI_EXT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CsiName"
+    Precision="100"
+    ColumnName="CSI_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="TASKS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Tasks"
+    Association="projsystem.model.TasTasFkAssoc"
+    AssociationEnd="projsystem.model.TasTasFkAssoc.Tasks"
+    AssociationOtherEnd="projsystem.model.TasTasFkAssoc.TasIdPartOfTasks"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="TasIdPartOfTasks"
+    Association="projsystem.model.TasTasFkAssoc"
+    AssociationEnd="projsystem.model.TasTasFkAssoc.TasIdPartOfTasks"
+    AssociationOtherEnd="projsystem.model.TasTasFkAssoc.Tasks"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Projects"
+    Association="projsystem.model.TasProjFkAssoc"
+    AssociationEnd="projsystem.model.TasProjFkAssoc.Projects"
+    AssociationOtherEnd="projsystem.model.TasProjFkAssoc.Tasks"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="Avcon351190Budge000">
+    <DesignTime>
+      <Attr Name="_checkCondition" Value="BUDGET_FLAG IN ('Y', 'N')"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="AVCON_351190_BUDGE_000"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="Avcon351190Capit000">
+    <DesignTime>
+      <Attr Name="_checkCondition" Value="CAPITALIZABLE IN ('Y', 'N')"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="AVCON_351190_CAPIT_000"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="Avcon351190Displ000">
+    <DesignTime>
+      <Attr Name="_checkCondition" Value="DISPLAYED_GANNTCHART IN ('Y', 'N')"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="AVCON_351190_DISPL_000"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="Avcon351190InPr000">
+    <DesignTime>
+      <Attr Name="_checkCondition" Value="IN_PROGRESS_FLAG IN ('Y', 'N')"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="AVCON_351190_IN_PR_000"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="Avcon351190IsPa000">
+    <DesignTime>
+      <Attr Name="_checkCondition" Value="IS_PARENT IN ('Y', 'N')"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="AVCON_351190_IS_PA_000"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="Avcon351190Over000">
+    <DesignTime>
+      <Attr Name="_checkCondition" Value="OVER_BUDGET IN ('Y', 'N')"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="AVCON_351190_OVER__000"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="Avcon351190Servi000">
+    <DesignTime>
+      <Attr Name="_checkCondition" Value="SERVICE_TYPE IN ('L', 'G', 'S')"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="AVCON_351190_SERVI_000"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="Avcon351190Taxab000">
+    <DesignTime>
+      <Attr Name="_checkCondition" Value="TAXABLE IN ('Y', 'N')"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="AVCON_351190_TAXAB_000"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="Avcon351190TxnC000">
+    <DesignTime>
+      <Attr Name="_checkCondition" Value="TXN_CONTROL_FLAG IN ('Y', 'N')"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="AVCON_351190_TXN_C_000"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="TasBilledOtFObChk">
+    <DesignTime>
+      <Attr Name="_checkCondition" Value="BILLED_OT_F_OB in ('Y','N')"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="TAS_BILLED_OT_F_OB_CHK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="TasPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="TAS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="projsystem.model.Tasks.TasId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="TasTasUk">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="TAS_TAS_UK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="projsystem.model.Tasks.ProjId"/>
+      <Item Value="projsystem.model.Tasks.TaskNumber"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="TasUk2">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="TAS_UK_2"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="projsystem.model.Tasks.ProjId"/>
+      <Item Value="projsystem.model.Tasks.TaskCode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="TasCcoFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="CCO_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="TAS_CCO_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="projsystem.model.Tasks.CcoId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="TasCpsFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="CPS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="TAS_CPS_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="projsystem.model.Tasks.CpsId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="TasEclFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="ECL_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="TAS_ECL_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="projsystem.model.Tasks.EclId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="TasIitFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="IIT_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="TAS_IIT_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="projsystem.model.Tasks.IitId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="TasIitProductOfFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="IIT_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="TAS_IIT_PRODUCT_OF_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="projsystem.model.Tasks.IitIdProductOf"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="TasProjFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PROJ_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="TAS_PROJ_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="projsystem.model.Tasks.ProjId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="TasPtgFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PTG_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="TAS_PTG_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="projsystem.model.Tasks.PtgId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="TasPtpFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PTP_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="TAS_PTP_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="projsystem.model.Tasks.PtpId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="TasRplFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="RPL_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="TAS_RPL_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="projsystem.model.Tasks.RplId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="TasTasFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="TAS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="TAS_TAS_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="projsystem.model.Tasks.TasIdPartOf"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="TasTenFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="TEN_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="TAS_TEN_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="projsystem.model.Tasks.TenId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="TasTnaFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="TNA_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="TAS_TNA_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="projsystem.model.Tasks.TaxName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="TasTplFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="TPL_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="TAS_TPL_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="projsystem.model.Tasks.TplId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="TasTteFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="TTE_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="TAS_TTE_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="projsystem.model.Tasks.TteId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="TasUomFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="UOM_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="TAS_UOM_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="projsystem.model.Tasks.UomCode"/>
+    </AttrArray>
+  </Key>
+</Entity>

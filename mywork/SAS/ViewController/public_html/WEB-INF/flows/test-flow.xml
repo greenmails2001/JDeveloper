@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="test-flow">
+    <default-activity>view1</default-activity>
+    <view id="view1">
+      <page>/pages/fragments/test/view1.jsff</page>
+    </view>
+    <view id="view2">
+      <page>/pages/fragments/test/view2.jsff</page>
+    </view>
+    <control-flow-rule>
+      <from-activity-id>view1</from-activity-id>
+      <control-flow-case>
+        <from-outcome>aa</from-outcome>
+        <to-activity-id>view2</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<af:pageTemplateDef xmlns:af="http://xmlns.oracle.com/adf/faces/rich" var="attrs" definition="private"
+                    xmlns:afc="http://xmlns.oracle.com/adf/faces/rich/component" xmlns:f="http://java.sun.com/jsf/core">
+    <af:decorativeBox id="pt_db1" theme="light">
+        <f:facet name="top">
+            <af:panelGridLayout id="pt_pgl1">
+                <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="pt_gr1">
+                    <af:gridCell marginStart="5px" width="250px" id="pt_gc1">
+                        <af:image source="images/background1.png" id="pt_i1"/>
+                    </af:gridCell>
+                    <af:gridCell marginStart="5px" width="400px" marginEnd="5px" id="pt_gc2">
+                        <af:outputText value="#{attrs.title}" id="pt_ot1" inlineStyle="color:Orange; font-size:large;"/>
+                    </af:gridCell>
+                    <af:gridCell id="pt_gc3" width="auto">
+                        <af:toolbox id="pt_t1">
+                            <af:menuBar id="pt_mb1">
+                                <af:menu text="menu 1" id="pt_m1" detachable="true">
+                                    <af:commandMenuItem text="commandMenuItem 2" id="pt_cmi2"/>
+                                    <af:commandMenuItem text="commandMenuItem 1" id="pt_cmi1"/>
+                                    <af:goMenuItem text="goMenuItem 1" id="pt_gmi1"/>
+                                    <af:goMenuItem text="goMenuItem 2" id="pt_gmi2"/>
+                                    <af:goMenuItem text="goMenuItem 3" id="pt_gmi3"/>
+                                    <af:goMenuItem text="goMenuItem 4" id="pt_gmi4"/>
+                                    <af:goMenuItem text="goMenuItem 5" id="pt_gmi5"/>
+                                    <af:goMenuItem text="goMenuItem 1" id="pt_gmi6"/>
+                                    <af:goMenuItem text="goMenuItem 1" id="pt_gmi7"/>
+                                    <af:goMenuItem text="goMenuItem 1" id="pt_gmi8"/>
+                                    <af:goMenuItem text="goMenuItem 1" id="pt_gmi9"/>
+                                    <af:goMenuItem text="goMenuItem 1" id="pt_gmi10"/>
+                                    <af:goMenuItem text="goMenuItem 1" id="pt_gmi11"/>
+                                    <af:goMenuItem text="goMenuItem 1" id="pt_gmi12"/>
+                                    <af:goMenuItem text="goMenuItem 1" id="pt_gmi13"/>
+                                    <af:goMenuItem text="goMenuItem 1" id="pt_gmi14"/>
+                                    <af:goMenuItem text="goMenuItem 1" id="pt_gmi15"/>
+                                    <af:goMenuItem text="goMenuItem 1" id="pt_gmi16"/>
+                                    <af:goMenuItem text="goMenuItem 1" id="pt_gmi17"/>
+                                    <af:goMenuItem text="goMenuItem 1" id="pt_gmi18"/>
+                                    <af:goMenuItem text="goMenuItem 1" id="pt_gmi19"/>
+                                    <af:goMenuItem text="goMenuItem 1" id="pt_gmi20"/>
+                                    <af:goMenuItem text="goMenuItem 1" id="pt_gmi21"/>
+                                    <af:goMenuItem text="goMenuItem 1" id="pt_gmi22"/>
+                                    <af:goMenuItem text="goMenuItem 1" id="pt_gmi23"/>
+                                    <af:goMenuItem text="goMenuItem 1" id="pt_gmi24"/>
+                                    <af:group>
+                                        <af:commandMenuItem type="check" text="Folders"/>
+                                        <af:commandMenuItem type="check" text="Search"/>
+                                    </af:group>
+                                    <af:group>
+                                        <af:commandMenuItem type="antonym" text="Table"/>
+                                        <af:commandMenuItem type="radio" text="Table"/>
+                                        <af:commandMenuItem type="radio" text="Tree Table"/>
+                                        <af:commandMenuItem type="radio" text="List"/>
+                                    </af:group>
+                                    <af:commandMenuItem text="Refresh"/>
+                                </af:menu>
+                                <af:menu text="menu 3" id="pt_m3" icon="/images/proj/test.jpg">
+                                    <af:commandMenuItem text="commandMenuItem 4" id="pt_cmi4"/>
+                                </af:menu>
+                            </af:menuBar>
+                        </af:toolbox>
+                    </af:gridCell>
+                    <af:gridCell id="pt_gc4">
+                        <af:toolbar id="pt_t2">
+                            <af:button text="button 1" id="pt_b1"/>
+                            
+                            
+                            <af:button text="button 2" id="pt_b2"/>
+                            <af:menuBar id="pt_mb2">
+                                <af:menu text="menu 2" id="pt_m2">
+                                    <af:commandMenuItem text="commandMenuItem 3" id="pt_cmi3"/>
+                                </af:menu>
+                            </af:menuBar>
+                        </af:toolbar>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </f:facet>
+        <f:facet name="center">
+            <af:facetRef facetName="center"/>
+        </f:facet>
+    </af:decorativeBox>
+    <af:xmlContent>
+        <afc:component>
+            <afc:description/>
+            <afc:display-name>projtemplate</afc:display-name>
+            <afc:facet>
+                <afc:facet-name>center</afc:facet-name>
+            </afc:facet>
+            <afc:attribute>
+                <afc:attribute-name>title</afc:attribute-name>
+                <afc:attribute-class>java.lang.String</afc:attribute-class>
+                <afc:default-value>Default Title</afc:default-value>
+            </afc:attribute>
+        </afc:component>
+    </af:xmlContent>
+</af:pageTemplateDef>

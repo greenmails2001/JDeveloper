@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Sasra002aCountries"
+  Version="11.1.1.51.88"
+  SelectList="Countries.COU_ID, 
+       Countries.COUNTRY_CODE, 
+       Countries.NAME"
+  FromList="COUNTRIES Countries"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false"
+  OrderBy="Countries.COUNTRY_CODE">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="Countries"
+    Entity="com.perp.sasregistmodel.entities.Countries"/>
+  <ViewAttribute
+    Name="CouId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CouId"
+    EntityUsage="Countries"
+    AliasName="COU_ID"/>
+  <ViewAttribute
+    Name="CountryCode"
+    PrecisionRule="true"
+    EntityAttrName="CountryCode"
+    EntityUsage="Countries"
+    AliasName="COUNTRY_CODE"/>
+  <ViewAttribute
+    Name="Name"
+    PrecisionRule="true"
+    EntityAttrName="Name"
+    EntityUsage="Countries"
+    AliasName="NAME"/>
+  <ViewLinkAccessor
+    Name="Sasra002aProvinces"
+    ViewLink="com.perp.sasregistmodel.views.sasra002.Sasra002aProvinces_Sasra002aCountries"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

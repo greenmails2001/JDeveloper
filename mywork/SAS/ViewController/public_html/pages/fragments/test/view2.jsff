@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelFormLayout id="lfppfl1">
+    <af:inputText value="#{bindings.accId.inputValue}" label="#{bindings.accId.hints.label}"
+                  required="#{bindings.accId.hints.mandatory}" columns="#{bindings.accId.hints.displayWidth}"
+                  maximumLength="#{bindings.accId.hints.precision}" shortDesc="#{bindings.accId.hints.tooltip}"
+                  id="lfpit1">
+      <f:validator binding="#{bindings.accId.validator}"/>
+      <af:convertNumber groupingUsed="false" pattern="#{bindings.accId.format}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.activedCode.inputValue}" label="#{bindings.activedCode.hints.label}"
+                  required="#{bindings.activedCode.hints.mandatory}"
+                  columns="#{bindings.activedCode.hints.displayWidth}"
+                  maximumLength="#{bindings.activedCode.hints.precision}"
+                  shortDesc="#{bindings.activedCode.hints.tooltip}" id="lfpit2">
+      <f:validator binding="#{bindings.activedCode.validator}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.address.inputValue}" label="#{bindings.address.hints.label}"
+                  required="#{bindings.address.hints.mandatory}" columns="#{bindings.address.hints.displayWidth}"
+                  maximumLength="#{bindings.address.hints.precision}" shortDesc="#{bindings.address.hints.tooltip}"
+                  id="lfpit3">
+      <f:validator binding="#{bindings.address.validator}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.contactTelephone.inputValue}" label="#{bindings.contactTelephone.hints.label}"
+                  required="#{bindings.contactTelephone.hints.mandatory}"
+                  columns="#{bindings.contactTelephone.hints.displayWidth}"
+                  maximumLength="#{bindings.contactTelephone.hints.precision}"
+                  shortDesc="#{bindings.contactTelephone.hints.tooltip}" id="lfpit4">
+      <f:validator binding="#{bindings.contactTelephone.validator}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.customerApproach.inputValue}" label="#{bindings.customerApproach.hints.label}"
+                  required="#{bindings.customerApproach.hints.mandatory}"
+                  columns="#{bindings.customerApproach.hints.displayWidth}"
+                  maximumLength="#{bindings.customerApproach.hints.precision}"
+                  shortDesc="#{bindings.customerApproach.hints.tooltip}" id="lfpit5">
+      <f:validator binding="#{bindings.customerApproach.validator}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.email.inputValue}" label="#{bindings.email.hints.label}"
+                  required="#{bindings.email.hints.mandatory}" columns="#{bindings.email.hints.displayWidth}"
+                  maximumLength="#{bindings.email.hints.precision}" shortDesc="#{bindings.email.hints.tooltip}"
+                  id="lfpit6">
+      <f:validator binding="#{bindings.email.validator}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.fullName.inputValue}" label="#{bindings.fullName.hints.label}"
+                  required="#{bindings.fullName.hints.mandatory}" columns="#{bindings.fullName.hints.displayWidth}"
+                  maximumLength="#{bindings.fullName.hints.precision}" shortDesc="#{bindings.fullName.hints.tooltip}"
+                  id="lfpit7">
+      <f:validator binding="#{bindings.fullName.validator}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.numberOfEmployee.inputValue}" label="#{bindings.numberOfEmployee.hints.label}"
+                  required="#{bindings.numberOfEmployee.hints.mandatory}"
+                  columns="#{bindings.numberOfEmployee.hints.displayWidth}"
+                  maximumLength="#{bindings.numberOfEmployee.hints.precision}"
+                  shortDesc="#{bindings.numberOfEmployee.hints.tooltip}" id="lfpit8">
+      <f:validator binding="#{bindings.numberOfEmployee.validator}"/>
+      <af:convertNumber groupingUsed="false" pattern="#{bindings.numberOfEmployee.format}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.organizationName.inputValue}" label="#{bindings.organizationName.hints.label}"
+                  required="#{bindings.organizationName.hints.mandatory}"
+                  columns="#{bindings.organizationName.hints.displayWidth}"
+                  maximumLength="#{bindings.organizationName.hints.precision}"
+                  shortDesc="#{bindings.organizationName.hints.tooltip}" id="lfpit9">
+      <f:validator binding="#{bindings.organizationName.validator}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.password.inputValue}" label="#{bindings.password.hints.label}"
+                  required="#{bindings.password.hints.mandatory}" columns="#{bindings.password.hints.displayWidth}"
+                  maximumLength="#{bindings.password.hints.precision}" shortDesc="#{bindings.password.hints.tooltip}"
+                  id="lfpit10">
+      <f:validator binding="#{bindings.password.validator}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.securityAnswer.inputValue}" label="#{bindings.securityAnswer.hints.label}"
+                  required="#{bindings.securityAnswer.hints.mandatory}"
+                  columns="#{bindings.securityAnswer.hints.displayWidth}"
+                  maximumLength="#{bindings.securityAnswer.hints.precision}"
+                  shortDesc="#{bindings.securityAnswer.hints.tooltip}" id="lfpit11">
+      <f:validator binding="#{bindings.securityAnswer.validator}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.status.inputValue}" label="#{bindings.status.hints.label}"
+                  required="#{bindings.status.hints.mandatory}" columns="#{bindings.status.hints.displayWidth}"
+                  maximumLength="#{bindings.status.hints.precision}" shortDesc="#{bindings.status.hints.tooltip}"
+                  id="lfpit12">
+      <f:validator binding="#{bindings.status.validator}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.taxCode.inputValue}" label="#{bindings.taxCode.hints.label}"
+                  required="#{bindings.taxCode.hints.mandatory}" columns="#{bindings.taxCode.hints.displayWidth}"
+                  maximumLength="#{bindings.taxCode.hints.precision}" shortDesc="#{bindings.taxCode.hints.tooltip}"
+                  id="lfpit13">
+      <f:validator binding="#{bindings.taxCode.validator}"/>
+    </af:inputText>
+    <af:inputText value="#{bindings.userName.inputValue}" label="#{bindings.userName.hints.label}"
+                  required="#{bindings.userName.hints.mandatory}" columns="#{bindings.userName.hints.displayWidth}"
+                  maximumLength="#{bindings.userName.hints.precision}" shortDesc="#{bindings.userName.hints.tooltip}"
+                  id="lfpit14">
+      <f:validator binding="#{bindings.userName.validator}"/>
+    </af:inputText>
+    <f:facet name="footer">
+      <af:commandButton text="Submit" id="lfpcb1"/>
+    </f:facet>
+  </af:panelFormLayout>
+</jsp:root>

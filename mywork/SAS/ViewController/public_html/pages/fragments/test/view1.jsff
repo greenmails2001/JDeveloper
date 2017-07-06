@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:panelGroupLayout layout="vertical" halign="end" id="vcupgl1">
+    <af:commandButton text="commandButton 1" partialSubmit="true" actionListener="#{bindings.Create.execute}"
+                      disabled="#{!bindings.Create.enabled}" action="aa" id="vcucb1"/>
+  </af:panelGroupLayout>
+</jsp:root>

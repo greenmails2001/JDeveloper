@@ -1,0 +1,22 @@
+.default-table {
+     width : 100%;    
+}
+
+.default-table TD {
+    font-size:11px;
+}
+
+
+.jive-table {
+    width : 100%;    
+}
+.jive-table TD, .jive-table TH {
+    padding : 1px;
+}
+.jive-table TD {
+    padding : 1px;
+    font-size:11px;
+    border-width : 0px 1px 1px 0px;
+    border-style : solid;
+    border-color : #cccccc;
+}

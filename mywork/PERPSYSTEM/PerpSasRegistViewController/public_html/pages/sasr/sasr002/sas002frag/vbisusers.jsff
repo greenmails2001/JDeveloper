@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout id="psl1">
+    <f:facet name="bottom"></f:facet>
+    <f:facet name="center">
+      <af:panelCollection id="pc1">
+        <f:facet name="menus"/>
+        <f:facet name="toolbar">
+          <af:toolbar id="t2">
+            <af:commandButton text="Thêm" id="cb4" actionListener="#{vbisUserBackingBean.createUserActionListener}" action="editVbisUser"
+                              icon="/images/bullet_add.png">
+              <af:setActionListener from="#{''}" to="#{pageFlowScope.rowKey}"/>
+            </af:commandButton>
+            <af:spacer width="10" height="10" id="s1"/>
+            <af:commandButton actionListener="#{bindings.Commit.execute}" text="Lưu" disabled="#{!bindings.Commit.enabled}" id="cb1"
+                              icon="/images/save_labled.png"/>
+            <af:spacer width="10" height="10" id="s2"/>
+            <af:commandButton actionListener="#{bindings.Rollback.execute}" text="Hủy bỏ" disabled="#{!bindings.Rollback.enabled}"
+                              immediate="true" id="cb2" icon="/images/dialog_cancel.png">
+              <af:resetActionListener/>
+            </af:commandButton>
+          </af:toolbar>
+        </f:facet>
+        <f:facet name="statusbar"/>
+        <af:table value="#{bindings.VbisUsersView1.collectionModel}" var="row" rows="#{bindings.VbisUsersView1.rangeSize}"
+                  emptyText="#{bindings.VbisUsersView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                  fetchSize="#{bindings.VbisUsersView1.rangeSize}" rowBandingInterval="0"
+                  filterModel="#{bindings.VbisUsersView1Query.queryDescriptor}" queryListener="#{bindings.VbisUsersView1Query.processQuery}"
+                  filterVisible="true" varStatus="vs" selectedRowKeys="#{bindings.VbisUsersView1.collectionModel.selectedRow}"
+                  selectionListener="#{bindings.VbisUsersView1.collectionModel.makeCurrent}" rowSelection="single" id="t1"
+                  columnStretching="column:c8" displayRow="selected">
+          <af:column headerText="Sửa" width="50" id="c9" align="center">
+            <af:commandImageLink immediate="true" id="cl1" icon="/images/edit.png" partialSubmit="true" action="editVbisUser"
+                                 actionListener="#{vbisUserBackingBean.editUserActionListener}">
+              <f:attribute name="rowKey" value="#{row.rowKey}"/>
+              <af:setActionListener from="#{row.rowKey}" to="#{pageFlowScope.rowKey}"/>
+            </af:commandImageLink>
+          </af:column>
+          <af:column headerText="Xóa" width="50" id="c10" align="center">
+            <af:commandImageLink immediate="true" actionListener="#{bindings.removeRowWithKey.execute}" id="cl2"
+                                 icon="/images/deletered.png"/>
+          </af:column>
+          <af:column sortProperty="UserName" filterable="true" sortable="true" headerText="#{bindings.VbisUsersView1.hints.UserName.label}"
+                     id="c5" width="125">
+            <af:inputText value="#{row.bindings.UserName.inputValue}" label="#{bindings.VbisUsersView1.hints.UserName.label}"
+                          required="#{bindings.VbisUsersView1.hints.UserName.mandatory}"
+                          columns="#{bindings.VbisUsersView1.hints.UserName.displayWidth}"
+                          maximumLength="#{bindings.VbisUsersView1.hints.UserName.precision}"
+                          shortDesc="#{bindings.VbisUsersView1.hints.UserName.tooltip}" id="it8" readOnly="true">
+              <f:validator binding="#{row.bindings.UserName.validator}"/>
+            </af:inputText>
+          </af:column>
+          <af:column sortProperty="Password" filterable="true" sortable="true" headerText="#{bindings.VbisUsersView1.hints.Password.label}"
+                     id="c6" rendered="false">
+            <af:inputText value="#{row.bindings.Password.inputValue}" label="#{bindings.VbisUsersView1.hints.Password.label}"
+                          required="#{bindings.VbisUsersView1.hints.Password.mandatory}"
+                          columns="#{bindings.VbisUsersView1.hints.Password.displayWidth}"
+                          maximumLength="#{bindings.VbisUsersView1.hints.Password.precision}"
+                          shortDesc="#{bindings.VbisUsersView1.hints.Password.tooltip}" id="it4" secret="true" readOnly="true">
+              <f:validator binding="#{row.bindings.Password.validator}"/>
+            </af:inputText>
+          </af:column>
+          <af:column sortProperty="FullName" filterable="true" sortable="true" headerText="#{bindings.VbisUsersView1.hints.FullName.label}"
+                     id="c1" width="133">
+            <af:inputText value="#{row.bindings.FullName.inputValue}" label="#{bindings.VbisUsersView1.hints.FullName.label}"
+                          required="#{bindings.VbisUsersView1.hints.FullName.mandatory}"
+                          columns="#{bindings.VbisUsersView1.hints.FullName.displayWidth}"
+                          maximumLength="#{bindings.VbisUsersView1.hints.FullName.precision}"
+                          shortDesc="#{bindings.VbisUsersView1.hints.FullName.tooltip}" id="it1" readOnly="true">
+              <f:validator binding="#{row.bindings.FullName.validator}"/>
+            </af:inputText>
+          </af:column>
+          <af:column sortProperty="ContactTelephone" filterable="true" sortable="true"
+                     headerText="#{bindings.VbisUsersView1.hints.ContactTelephone.label}" id="c4" width="117">
+            <af:inputText value="#{row.bindings.ContactTelephone.inputValue}"
+                          label="#{bindings.VbisUsersView1.hints.ContactTelephone.label}"
+                          required="#{bindings.VbisUsersView1.hints.ContactTelephone.mandatory}"
+                          columns="#{bindings.VbisUsersView1.hints.ContactTelephone.displayWidth}"
+                          maximumLength="#{bindings.VbisUsersView1.hints.ContactTelephone.precision}"
+                          shortDesc="#{bindings.VbisUsersView1.hints.ContactTelephone.tooltip}" id="it2" readOnly="true">
+              <f:validator binding="#{row.bindings.ContactTelephone.validator}"/>
+            </af:inputText>
+          </af:column>
+          <af:column sortProperty="Email" filterable="true" sortable="true" headerText="#{bindings.VbisUsersView1.hints.Email.label}"
+                     id="c7" width="156">
+            <af:inputText value="#{row.bindings.Email.inputValue}" label="#{bindings.VbisUsersView1.hints.Email.label}"
+                          required="#{bindings.VbisUsersView1.hints.Email.mandatory}"
+                          columns="#{bindings.VbisUsersView1.hints.Email.displayWidth}"
+                          maximumLength="#{bindings.VbisUsersView1.hints.Email.precision}"
+                          shortDesc="#{bindings.VbisUsersView1.hints.Email.tooltip}" id="it5" readOnly="true">
+              <f:validator binding="#{row.bindings.Email.validator}"/>
+            </af:inputText>
+          </af:column>
+          <af:column sortProperty="OrganizationName" filterable="true" sortable="true"
+                     headerText="#{bindings.VbisUsersView1.hints.OrganizationName.label}" id="c3" width="210">
+            <af:inputText value="#{row.bindings.OrganizationName.inputValue}"
+                          label="#{bindings.VbisUsersView1.hints.OrganizationName.label}"
+                          required="#{bindings.VbisUsersView1.hints.OrganizationName.mandatory}"
+                          columns="#{bindings.VbisUsersView1.hints.OrganizationName.displayWidth}"
+                          maximumLength="#{bindings.VbisUsersView1.hints.OrganizationName.precision}"
+                          shortDesc="#{bindings.VbisUsersView1.hints.OrganizationName.tooltip}" id="it6" readOnly="true">
+              <f:validator binding="#{row.bindings.OrganizationName.validator}"/>
+            </af:inputText>
+          </af:column>
+          <af:column sortProperty="TaxCode" filterable="true" sortable="true" headerText="#{bindings.VbisUsersView1.hints.TaxCode.label}"
+                     id="c2" width="104">
+            <af:inputText value="#{row.bindings.TaxCode.inputValue}" label="#{bindings.VbisUsersView1.hints.TaxCode.label}"
+                          required="#{bindings.VbisUsersView1.hints.TaxCode.mandatory}"
+                          columns="#{bindings.VbisUsersView1.hints.TaxCode.displayWidth}"
+                          maximumLength="#{bindings.VbisUsersView1.hints.TaxCode.precision}"
+                          shortDesc="#{bindings.VbisUsersView1.hints.TaxCode.tooltip}" id="it7" readOnly="true">
+              <f:validator binding="#{row.bindings.TaxCode.validator}"/>
+            </af:inputText>
+          </af:column>
+          <af:column sortProperty="Address" filterable="true" sortable="true" headerText="#{bindings.VbisUsersView1.hints.Address.label}"
+                     id="c8" width="100">
+            <af:inputText value="#{row.bindings.Address.inputValue}" label="#{bindings.VbisUsersView1.hints.Address.label}"
+                          required="#{bindings.VbisUsersView1.hints.Address.mandatory}"
+                          columns="#{bindings.VbisUsersView1.hints.Address.displayWidth}"
+                          maximumLength="#{bindings.VbisUsersView1.hints.Address.precision}"
+                          shortDesc="#{bindings.VbisUsersView1.hints.Address.tooltip}" id="it3" readOnly="true">
+              <f:validator binding="#{row.bindings.Address.validator}"/>
+            </af:inputText>
+          </af:column>
+          <af:column sortProperty="VusId" sortable="false" headerText="#{bindings.VbisUsersView1.hints.VusId.label}" id="c11"
+                     rendered="false">
+            <af:inputText value="#{row.bindings.VusId.inputValue}" label="#{bindings.VbisUsersView1.hints.VusId.label}"
+                          required="#{bindings.VbisUsersView1.hints.VusId.mandatory}"
+                          columns="#{bindings.VbisUsersView1.hints.VusId.displayWidth}"
+                          maximumLength="#{bindings.VbisUsersView1.hints.VusId.precision}"
+                          shortDesc="#{bindings.VbisUsersView1.hints.VusId.tooltip}" id="it9">
+              <f:validator binding="#{row.bindings.VusId.validator}"/>
+              <af:convertNumber groupingUsed="false" pattern="#{bindings.VbisUsersView1.hints.VusId.format}"/>
+            </af:inputText>
+          </af:column>
+        </af:table>
+      </af:panelCollection>
+    </f:facet>
+    <f:facet name="top"/>
+  </af:panelStretchLayout>
+</jsp:root>

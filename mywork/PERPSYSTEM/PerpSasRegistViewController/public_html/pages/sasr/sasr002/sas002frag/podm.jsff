@@ -1,0 +1,417 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="perpsasregistviewcontrollerBundle"
+         value="#{adfBundle['com.perp.sasregistviewcontroller.PerpSasRegistViewControllerBundle']}"/>
+  <af:panelStretchLayout id="psl1" topHeight="0px" bottomHeight="0px"
+                         styleClass="AFVisualRoot" startWidth="280px">
+    <f:facet name="center">
+      <af:panelTabbed id="pt1">
+        <af:showDetailItem text="#{perpsasregistviewcontrollerBundle['sasr.sasr002.podm.podmListTitle']}"
+                           id="sdi1" stretchChildren="first">
+          <af:panelStretchLayout id="psl2" topHeight="26px">
+            <f:facet name="center">
+              <af:panelBox text="PanelBox2" id="pb2" showHeader="never">
+                <af:panelCollection id="pc1" featuresOff="statusBar">
+                  <af:table value="#{bindings.Sasr002A1ServicePackages.collectionModel}"
+                            var="row"
+                            rows="#{bindings.Sasr002A1ServicePackages.rangeSize}"
+                            emptyText="#{bindings.Sasr002A1ServicePackages.viewable ? 'No data to display.' : 'Access Denied.'}"
+                            fetchSize="#{bindings.Sasr002A1ServicePackages.rangeSize}"
+                            rowBandingInterval="0"
+                            selectedRowKeys="#{bindings.Sasr002A1ServicePackages.collectionModel.selectedRow}"
+                            selectionListener="#{bindings.Sasr002A1ServicePackages.collectionModel.makeCurrent}"
+                            rowSelection="single" id="t1"
+                            columnStretching="last">
+                    <af:column sortProperty="SpaId" sortable="true"
+                               headerText="#{perpsasregistviewcontrollerBundle['sasr.sasr002.podm.packageCode']}"
+                               id="c4" width="208" align="left">
+                      <af:panelGroupLayout id="pgl1" layout="horizontal"
+                                           halign="left" valign="top">
+                        <af:outputText value="#{row.PackageCode}" id="ot4"
+                                       inlineStyle="color:#FFFFFF;font-size: 16px;padding: 2px 5px;background-color:#0D4988;font-weight: bold;">
+                          <af:convertNumber groupingUsed="false"
+                                            pattern="#{bindings.Sasr002A1ServicePackages.hints.SpaId.format}"/>
+                        </af:outputText>
+                        <af:spacer width="10" height="10" id="s1"/>
+                        <af:panelGroupLayout id="pgl2" layout="vertical">
+                          <af:image source="/images/PODM_#{row.PackageCode}.png"
+                                    shortDesc="image" id="i1"/>
+                          <af:panelGroupLayout id="pgl3" layout="vertical">
+                            <af:commandLink text="#{perpsasregistviewcontrollerBundle['sasr.sasr002.podm.zoomPicture']} "
+                                            id="cl1" partialSubmit="true">
+                              <af:image source="/images/zoom.gif"
+                                        shortDesc="zoom" id="i2"/>
+                            </af:commandLink>
+                            <af:commandLink actionListener="#{bindings.setCurrentRowWithKey.execute}"
+                                            disabled="#{!bindings.setCurrentRowWithKey.enabled}"
+                                            id="cl4" partialTriggers="::t1"
+                                            partialSubmit="true">
+                              <af:image source="/images/selectbutton.gif"
+                                        shortDesc="select" id="i3"/>
+                              <f:actionListener binding="#{sasr002Podm.buyServicePackageActionListener}"/>
+                            </af:commandLink>
+                          </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                      </af:panelGroupLayout>
+                    </af:column>
+                    <af:column sortProperty="Description" sortable="true"
+                               headerText="#{perpsasregistviewcontrollerBundle['sasr.sasr002.podm.servicePackageDescription']}"
+                               id="column1" noWrap="false">
+                      <af:showDetail disclosed="true" id="showDetail1"
+                                     inlineStyle="text-align:justify">
+                        <af:outputText value="#{row.Description}"
+                                       id="outputText3" noWrap="false"
+                                       truncateAt="800"
+                                       inlineStyle="text-align:justify"/>
+                      </af:showDetail>
+                      <af:panelGroupLayout id="panelGroupLayout5"
+                                           layout="horizontal"
+                                           inlineStyle="padding:5px; ">
+                        <af:spacer width="40" height="10" id="spacer1"/>
+                        <af:commandLink text="#{perpsasregistviewcontrollerBundle['sasr.sasr002.podm.quickShow']}"
+                                        id="commandLink2" partialSubmit="true">
+                          <af:showPopupBehavior popupId="quickShowPopup"
+                                                align="endBefore"/>
+                        </af:commandLink>
+                        <af:spacer width="10" height="10" id="spacer2"/>
+                        <af:commandLink text="#{perpsasregistviewcontrollerBundle['sasr.sasr002.podm.detailShow']}"
+                                        id="commandLink3" partialSubmit="true">
+                          <af:showPopupBehavior popupId="showDetailsPopupId"/>
+                          <af:clientListener method="showPopup" type="action"/>
+                        </af:commandLink>
+                      </af:panelGroupLayout>
+                      <af:popup id="quickShowPopup">
+                        <af:panelGroupLayout layout="vertical"
+                                             inlineStyle="width:150px;"
+                                             id="panelGroupLayout4">
+                          <af:panelFormLayout id="pfl1">
+                            <af:panelLabelAndMessage label="#{perpsasregistviewcontrollerBundle['sasr.sasr002.podm.servicePackageCode']}"
+                                                     id="plam2">
+                              <af:outputText value="#{row.PackageCode}"
+                                             id="ot7"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{perpsasregistviewcontrollerBundle['sasr.sasr002.podm.servicePackageName']}"
+                                                     id="panelLabelAndMessage2">
+                              <af:outputText value="#{row.PackageName}"
+                                             id="ot12"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{perpsasregistviewcontrollerBundle['sasr.sasr002.podm.unitPrice']}"
+                                                     id="plam4">
+                              <af:outputText value="#{row.UnitPrice}" id="ot6"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{perpsasregistviewcontrollerBundle['sasr.sasr002.podm.serviceTime']}"
+                                                     id="plam1">
+                              <af:outputText value="#{row.ServiceTime}"
+                                             id="ot10"/>
+                            </af:panelLabelAndMessage>
+                          </af:panelFormLayout>
+                        </af:panelGroupLayout>
+                      </af:popup>
+                      <af:popup id="showDetailsPopupId"
+                                contentDelivery="lazyUncached"
+                                binding="#{testting.showDetailsPopup}">
+                        <af:dialog inlineStyle="width:500px;height:500px;"
+                                   modal="true" title="Details" type="ok"
+                                   id="d3">
+                          <af:panelTabbed position="below"
+                                          inlineStyle="width:700px;height:400px;"
+                                          id="panelTabbed1">
+                            <af:showDetailItem text="#{perpsasregistviewcontrollerBundle['sasr.sasr002.podm.detailShow']}"
+                                               id="showDetailItem1"
+                                               stretchChildren="first">
+                              <af:panelBox text="PanelBox3" id="pb3"
+                                           showHeader="never"
+                                           showDisclosure="false">
+                                <af:panelGroupLayout layout="scroll"
+                                                     id="panelGroupLayout6">
+                                  <af:panelGroupLayout layout="horizontal"
+                                                       id="panelGroupLayout7">
+                                    <af:image source="/images/PODM_#{row.PackageCode}.png"
+                                              shortDesc="image" id="image4"/>
+                                    <af:spacer width="30px" id="s6"/>
+                                    <af:panelFormLayout id="pfl3">
+                                      <af:panelLabelAndMessage inlineStyle="color:blue;"
+                                                               label="#{perpsasregistviewcontrollerBundle['sasr.sasr002.podm.servicePackageCode']}"
+                                                               id="plam5">
+                                        <af:outputText value="#{row.PackageCode}"
+                                                       id="ot13"/>
+                                      </af:panelLabelAndMessage>
+                                      <af:panelLabelAndMessage label="#{perpsasregistviewcontrollerBundle['sasr.sasr002.podm.servicePackageName']}"
+                                                               id="plam6">
+                                        <af:outputText value="#{row.PackageName}"
+                                                       id="ot14" noWrap="true"/>
+                                      </af:panelLabelAndMessage>
+                                      <af:panelLabelAndMessage label="#{perpsasregistviewcontrollerBundle['sasr.sasr002.podm.unitPrice']}"
+                                                               id="plam7">
+                                        <af:outputText value="#{row.UnitPrice}"
+                                                       id="ot16"/>
+                                      </af:panelLabelAndMessage>
+                                      <af:panelLabelAndMessage label="#{perpsasregistviewcontrollerBundle['sasr.sasr002.podm.serviceTime']}"
+                                                               id="plam8">
+                                        <af:outputText value="#{row.ServiceTime}"
+                                                       id="ot17"/>
+                                      </af:panelLabelAndMessage>
+                                    </af:panelFormLayout>
+                                  </af:panelGroupLayout>
+                                  <af:showDetail disclosed="true"
+                                                 inlineStyle="text-align:justify"
+                                                 id="sd5">
+                                    <af:outputText value="#{row.Description}"
+                                                   id="ot19"/>
+                                  </af:showDetail>
+                                  <af:showDetail disclosed="true"
+                                                 inlineStyle="text-align:justify"
+                                                 id="sd6">
+                                    <af:outputText value="More info..."
+                                                   id="ot20"/>
+                                  </af:showDetail>
+                                </af:panelGroupLayout>
+                              </af:panelBox>
+                            </af:showDetailItem>
+                            <af:showDetailItem text="Thong ke"
+                                               id="showDetailItem2"
+                                               stretchChildren="first"
+                                               rendered="false">
+                              <dvt:barGraph id="barGraph1"
+                                            value="#{bindings.ProductsByCategoriesToWarehouseStockLevels.graphModel}"
+                                            subType="BAR_VERT_CLUST"
+                                            threeDEffect="true"
+                                            imageHeight="450" imageWidth="500">
+                                <dvt:background>
+                                  <dvt:specialEffects/>
+                                </dvt:background>
+                                <dvt:graphPlotArea/>
+                                <dvt:seriesSet>
+                                  <dvt:series/>
+                                </dvt:seriesSet>
+                                <dvt:o1Axis/>
+                                <dvt:y1Axis/>
+                                <dvt:legendArea automaticPlacement="AP_NEVER"
+                                                position="LAP_BOTTOM"/>
+                              </dvt:barGraph>
+                            </af:showDetailItem>
+                          </af:panelTabbed>
+                        </af:dialog>
+                      </af:popup>
+                    </af:column>
+                  </af:table>
+                </af:panelCollection>
+              </af:panelBox>
+            </f:facet>
+          </af:panelStretchLayout>
+        </af:showDetailItem>
+        <af:showDetailItem text="#{perpsasregistviewcontrollerBundle['sasr.sasr002.podm.podmFeaturesTitle']}"
+                           id="sdi2" rendered="false">
+          <af:panelBox text="PanelBox1" id="pb1" showHeader="never">
+            <f:facet name="toolbar"/>
+          </af:panelBox>
+        </af:showDetailItem>
+      </af:panelTabbed>
+    </f:facet>
+    <f:facet name="bottom">
+      <af:panelGroupLayout id="pgl5">
+        <af:popup id="p1" binding="#{sasr002Podm.podmPopup01}"
+                  contentDelivery="lazyUncached" clientComponent="true">
+          <af:dialog id="d1" binding="#{sasr002Podm.podmDialog1}"
+                     title="#{perpsasregistviewcontrollerBundle['sasr.sasr002.readyUsingPodmDialogTitle']}"
+                     inlineStyle="width:550.0px; height:200px;">
+            <af:panelStretchLayout id="psl3" topHeight="77px"
+                                   inlineStyle="height:239px;"
+                                   startWidth="198px" bottomHeight="1px"
+                                   styleClass="AFStretchWidth">
+              <f:facet name="start">
+                <af:panelGroupLayout id="pgl7" layout="vertical">
+                  <af:panelGroupLayout id="pgl8" layout="vertical"
+                                       halign="center"/>
+                  <af:panelGroupLayout id="panelGroupLayout1" layout="vertical"
+                                       halign="center">
+                    <af:image source="/images/PODM_#{bindings.PackageCode.inputValue}.png"
+                              shortDesc="image" id="image2"/>
+                  </af:panelGroupLayout>
+                </af:panelGroupLayout>
+              </f:facet>
+              <f:facet name="top">
+                <af:panelGroupLayout id="pgl6" layout="vertical"
+                                     inlineStyle="padding:5.0px;">
+                  <af:outputLabel value="#{perpsasregistviewcontrollerBundle['sasr.sasr002.readyUsingPodm']}"
+                                  id="ol1" inlineStyle="font-size:large;"/>
+                </af:panelGroupLayout>
+              </f:facet>
+            </af:panelStretchLayout>
+          </af:dialog>
+        </af:popup>
+        <af:popup id="p2" binding="#{sasr002Podm.podmPopup02}"
+                  contentDelivery="lazyUncached"
+                  popupFetchListener="#{sasr002Podm.popupFeatchListener}"
+                  clientComponent="true">
+          <af:dialog id="d2" binding="#{sasr002Podm.podmDialog2}"
+                     title="#{perpsasregistviewcontrollerBundle['sasr.sasr002.confirmChangePackageServiceDialogTitle']}"
+                     inlineStyle="width:550.0px; height:200px;"
+                     dialogListener="#{sasr002Podm.podmDialog2DialogListener}"
+                     type="yesNo">
+            <af:panelStretchLayout id="psl4" startWidth="192px" endWidth="182px"
+                                   inlineStyle="height:244px; "
+                                   styleClass="AFStretchWidth">
+              <f:facet name="center">
+                <af:panelGroupLayout id="pgl15" layout="vertical"
+                                     halign="center" valign="top">
+                  <af:image source="/images/narow.gif" shortDesc="narow"
+                            id="i5"/>
+                </af:panelGroupLayout>
+              </f:facet>
+              <f:facet name="start">
+                <af:panelGroupLayout layout="vertical"
+                                     xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                                     id="pgl11">
+                  <af:panelGroupLayout id="pgl14" layout="vertical">
+                    <af:outputText value="#{bindings.SubscribeDate.inputValue}"
+                                   id="ot2" visible="false">
+                      <af:convertDateTime pattern="#{bindings.SubscribeDate.format}"/>
+                    </af:outputText>
+                  </af:panelGroupLayout>
+                  <af:panelGroupLayout id="pgl12" layout="vertical"
+                                       halign="center">
+                    <af:spacer width="10" height="10" id="s2"/>
+                    <af:image source="/images/PODM_#{bindings.PackageCode.inputValue}.png"
+                              id="image1" shortDesc="Image"/>
+                    <af:spacer width="10" height="10" id="s3"/>
+                  </af:panelGroupLayout>
+                  <af:panelGroupLayout id="pgl13" layout="vertical"
+                                       halign="center">
+                    <af:panelLabelAndMessage label="#{perpsasregistviewcontrollerBundle['sasr.sasr002.packageCode']}"
+                                             id="plam3">
+                      <af:outputText value="#{bindings.PackageCode.inputValue}"
+                                     id="ot5"/>
+                    </af:panelLabelAndMessage>
+                  </af:panelGroupLayout>
+                </af:panelGroupLayout>
+              </f:facet>
+              <f:facet name="end">
+                <af:panelGroupLayout layout="vertical"
+                                     xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                                     id="pgl10" halign="center">
+                  <af:panelGroupLayout id="panelGroupLayout2" layout="vertical">
+                    <af:outputText value="space and not display"
+                                   id="outputText1" visible="false">
+                      <af:convertDateTime pattern="#{bindings.SubscribeDate.format}"/>
+                    </af:outputText>
+                  </af:panelGroupLayout>
+                  <af:panelGroupLayout id="pgl16" layout="vertical">
+                    <af:spacer width="10" height="10" id="s5"/>
+                    <af:image source="/images/PODM_#{sasr002Podm.servicePackageToBuy.packageCode}.png"
+                              id="i4"
+                              shortDesc="#{sasr002Podm.servicePackageToBuy.packageCode}"/>
+                    <af:spacer width="10" height="10" id="s4"/>
+                  </af:panelGroupLayout>
+                  <af:panelGroupLayout id="panelGroupLayout3" layout="vertical"
+                                       halign="center">
+                    <af:panelLabelAndMessage label="#{perpsasregistviewcontrollerBundle['sasr.sasr002.packageCode']}"
+                                             id="panelLabelAndMessage1">
+                      <af:outputText value="#{sasr002Podm.servicePackageToBuy.packageCode}"
+                                     id="outputText2"/>
+                    </af:panelLabelAndMessage>
+                  </af:panelGroupLayout>
+                </af:panelGroupLayout>
+              </f:facet>
+              <f:facet name="top">
+                <af:panelGroupLayout id="pgl9" layout="vertical"
+                                     inlineStyle="padding:5px;">
+                  <af:outputLabel value="#{perpsasregistviewcontrollerBundle['sasr.sasr002.confirmChangePackageService']}"
+                                  id="ol2" inlineStyle="font-size:large;"/>
+                </af:panelGroupLayout>
+              </f:facet>
+            </af:panelStretchLayout>
+          </af:dialog>
+        </af:popup>
+        <af:resource type="javascript">
+          function showPopup(e) {
+              var im = e.getSource();
+              var popup = AdfPage.PAGE.findComponent("pt1:r1:0:showDetailsPopupId");
+              popup.show();
+          }
+
+          function showDetails(e) {
+              var im = e.getSource();
+              var popup = AdfPage.PAGE.findComponent("productDetail");
+              var title = popup.findComponent("hoverProductName");
+              if (title) {
+                  title.setValue(im.getProperty("ProductName"));
+              }
+              var desc = popup.findComponent("hoverDescription");
+              if (desc) {
+                  desc.setValue(im.getProperty("Description"));
+              }
+              var addInfo = popup.findComponent("hoverAdditionalInfo");
+              if (addInfo) {
+                  addInfo.setValue(im.getProperty("AdditionalInfo"));
+              }
+              popup.show();
+          }
+
+          function hidePopup(popupId) {
+              var popup = AdfPage.PAGE.findComponent(popupId);
+              popup.hide();
+          }
+        </af:resource>
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="start">
+      <af:decorativeBox id="db2">
+        <f:facet name="center">
+          <af:panelAccordion id="pa1">
+            <af:showDetailItem text="VBISCloud" id="perpOndemandId"
+                               stretchChildren="first">
+              <af:panelBox text="PanelBox1" id="panelBox1" showHeader="never">
+                <af:panelGroupLayout id="panelGroupLayout8" layout="scroll">
+                  <af:panelGroupLayout id="panelGroupLayout9" layout="vertical">
+                    <af:outputText value="#{bindings.SubscribeDate.inputValue}"
+                                   id="outputText4" rendered="false">
+                      <af:convertDateTime pattern="#{bindings.SubscribeDate.format}"/>
+                    </af:outputText>
+                    <af:spacer width="10" height="10" id="spacer3"/>
+                  </af:panelGroupLayout>
+                  <af:panelGroupLayout id="panelGroupLayout11" layout="vertical"
+                                       inlineStyle="padding:3px;">
+                    <af:outputText value="#{perpsasregistviewcontrollerBundle['sasr.sasr002.podmBuyNote']}"
+                                   id="ot1" inlineStyle="font-size:larger;"/>
+                  </af:panelGroupLayout>
+                  <af:spacer width="10" height="10" id="spacer4"/>
+                  <af:outputLabel id="outputLabel1"
+                                  value="#{perpsasregistviewcontrollerBundle['sasr.sasr002.registedServicePackage']}"
+                                  inlineStyle="font-weight:bold;"/>
+                  <af:spacer width="10" height="10" id="spacer5"/>
+                  <af:panelBox text="#{bindings.PackageCode.inputValue}:#{bindings.PackageName.inputValue}"
+                               titleHalign="center" id="panelBox2"
+                               binding="#{sasr002Podm.podmRegistedPanelBox}"
+                               showDisclosure="false" showHeader="always">
+                    <af:panelGroupLayout layout="vertical" halign="center"
+                                         id="pgl38">
+                      <af:spacer width="10" height="10" id="s17"/>
+                      <af:image source="/images/#{bindings.PackageCode.inputValue}2.png"
+                                id="i14"/>
+                      <af:spacer width="10" height="10" id="s18"/>
+                      <af:panelLabelAndMessage label="#{perpsasregistviewcontrollerBundle['sasr.sasr002.subscribeDate']}"
+                                               id="plam20">
+                        <af:outputText value="#{bindings.SubscribeDate.inputValue}"
+                                       id="ot49"/>
+                      </af:panelLabelAndMessage>
+                      <af:panelLabelAndMessage label="#{perpsasregistviewcontrollerBundle['sasr.sasr002.packageCode']}"
+                                               id="panelLabelAndMessage3">
+                        <af:outputText value="#{bindings.PackageCode.inputValue}"
+                                       id="outputText5"/>
+                      </af:panelLabelAndMessage>
+                    </af:panelGroupLayout>
+                  </af:panelBox>
+                </af:panelGroupLayout>
+              </af:panelBox>
+            </af:showDetailItem>
+          </af:panelAccordion>
+        </f:facet>
+      </af:decorativeBox>
+    </f:facet>
+  </af:panelStretchLayout>
+</jsp:root>

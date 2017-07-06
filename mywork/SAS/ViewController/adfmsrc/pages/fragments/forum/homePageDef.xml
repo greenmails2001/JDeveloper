@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.1.49.49" id="homePageDef" Package="pages.fragments.forum">
+  <parameters/>
+  <executables>
+    <methodIterator Binds="queryForumsFindByOwnerCode.result" DataControl="SASFacadeLocal" RangeSize="25"
+                    BeanClass="com.vc.web.ejb.sas.entities.Forums" id="queryForumsFindByOwnerCodeIterator"/>
+    <accessorIterator MasterBinding="queryForumsFindByOwnerCodeIterator" Binds="forumOwners" RangeSize="25" DataControl="SASFacadeLocal"
+                      BeanClass="com.vc.web.ejb.sas.entities.ForumOwners" id="forumOwnersIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="queryForumsFindByOwnerCode" RequiresUpdateModel="true" Action="invokeMethod" MethodName="queryForumsFindByOwnerCode"
+                  IsViewObjectMethod="false" DataControl="SASFacadeLocal" InstanceName="SASFacadeLocal.dataProvider"
+                  ReturnName="SASFacadeLocal.methodResults.queryForumsFindByOwnerCode_SASFacadeLocal_dataProvider_queryForumsFindByOwnerCode_result">
+      <NamedData NDName="forumOwnerCode" NDValue="PUBLIC" NDType="java.lang.String"/>
+    </methodAction>
+    <attributeValues IterBinding="forumOwnersIterator" id="name">
+      <AttrNames>
+        <Item Value="name"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

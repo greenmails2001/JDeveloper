@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.49.49" id="News" Package="com.vc.web.ejb.sas.entities"
+          BeanClass="com.vc.web.ejb.sas.entities.News" isJavaBased="true">
+  <Attribute Name="createdBy" Type="java.lang.String"/>
+  <Attribute Name="createDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="modifiedBy" Type="java.lang.String"/>
+  <Attribute Name="modifyDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="newsId" Type="java.lang.Long"/>
+  <Attribute Name="priorityLevel" Type="java.lang.Long"/>
+  <Attribute Name="title" Type="java.lang.String"/>
+  <Attribute Name="content" Type="java.lang.String"/>
+  <Attribute Name="shortContent" Type="java.lang.String"/>
+  <AccessorAttribute id="newsCategories" IsCollection="false" BeanClass="com.vc.web.ejb.sas.entities.NewsCategories"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="newsRelationsList" IsCollection="true" RemoveMethod="removeNewsRelations" AddMethod="addNewsRelations"
+                     BeanClass="com.vc.web.ejb.sas.entities.NewsRelations" CollectionBeanClass="UpdateableCollection">
+    <Properties>
+      <Property Name="RemoveMethod" Value="removeNewsRelations"/>
+      <Property Name="AddMethod" Value="addNewsRelations"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="newsRelationsList1" IsCollection="true" RemoveMethod="removeNewsRelations" AddMethod="addNewsRelations"
+                     BeanClass="com.vc.web.ejb.sas.entities.NewsRelations" CollectionBeanClass="UpdateableCollection">
+    <Properties>
+      <Property Name="RemoveMethod" Value="removeNewsRelations"/>
+      <Property Name="AddMethod" Value="addNewsRelations"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="newsBookmarks" IsCollection="false" BeanClass="com.vc.web.ejb.sas.entities.NewsBookmarks"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <MethodAccessor IsCollection="false" Type="com.vc.web.ejb.sas.entities.NewsRelations"
+                  BeanClass="com.vc.web.ejb.sas.entities.NewsRelations" id="addNewsRelations" ReturnNodeName="NewsRelations">
+    <ParameterInfo id="newsRelations" Type="com.vc.web.ejb.sas.entities.NewsRelations" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="com.vc.web.ejb.sas.entities.NewsRelations"
+                  BeanClass="com.vc.web.ejb.sas.entities.NewsRelations" id="removeNewsRelations" ReturnNodeName="NewsRelations">
+    <ParameterInfo id="newsRelations" Type="com.vc.web.ejb.sas.entities.NewsRelations" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="com.vc.web.ejb.sas.entities.NewsRelations"
+                  BeanClass="com.vc.web.ejb.sas.entities.NewsRelations" id="addNewsRelations1" ReturnNodeName="NewsRelations">
+    <ParameterInfo id="newsRelations" Type="com.vc.web.ejb.sas.entities.NewsRelations" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="com.vc.web.ejb.sas.entities.NewsRelations"
+                  BeanClass="com.vc.web.ejb.sas.entities.NewsRelations" id="removeNewsRelations1" ReturnNodeName="NewsRelations">
+    <ParameterInfo id="newsRelations" Type="com.vc.web.ejb.sas.entities.NewsRelations" isStructured="true"/>
+  </MethodAccessor>
+  <ConstructorMethod IsCollection="true" Type="com.vc.web.ejb.sas.entities.News" BeanClass="com.vc.web.ejb.sas.entities.News" id="News"/>
+</JavaBean>

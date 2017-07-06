@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:c="http://java.sun.com/jsp/jstl/core"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:off="http://commit-consulting.com/OraFormsFaces/tags">
+  <c:set var="perpsasviewcontrollerBundle"
+         value="#{adfBundle['com.perp.sasviewcontroller.PerpSasViewControllerBundle']}"/>
+  <af:popup id="oraformsfaces" binding="#{perpviewer.oraformsfacesPopup}">
+    <af:dialog id="d2" type="none"
+               title="Ora Form Faces Viewer : #{perpviewer.currentMenuName}">
+      <off:form id="f2" autoSize="true"
+                formModuleName="#{perpviewer.currentMenuName}"
+                binding="#{perpviewer.oraformsfaces}"/>
+    </af:dialog>
+  </af:popup>
+  <af:panelStretchLayout id="psl1" topHeight="29px" styleClass="AFVisualRoot">
+    <f:facet name="center">
+      <af:panelSplitter id="ps1" splitterPosition="277">
+        <f:facet name="first">
+          <af:panelBox text="#{perpsasviewcontrollerBundle['perpsas.sas001.perpviewer.selectRoleTitle']}"
+                       id="pb1" showDisclosure="false">
+            <f:facet name="toolbar"/>
+            <af:panelCollection id="pc1">
+              <f:facet name="menus"/>
+              <f:facet name="toolbar"/>
+              <f:facet name="statusbar"/>
+              <af:table value="#{bindings.SasUserRoles.collectionModel}"
+                        var="row" rows="#{bindings.SasUserRoles.rangeSize}"
+                        emptyText="#{bindings.SasUserRoles.viewable ? 'No data to display.' : 'Access Denied.'}"
+                        fetchSize="#{bindings.SasUserRoles.rangeSize}"
+                        columnStretching="last" rowBandingInterval="0" id="t2"
+                        rowSelection="single"
+                        selectionListener="#{bindings.SasUserRoles.collectionModel.makeCurrent}">
+                <af:column sortProperty="Name" sortable="true"
+                           headerText="#{perpsasviewcontrollerBundle['perpsas.sas001.perpviewer.role']}"
+                           id="c4">
+                  <af:outputText value="#{row.Name}" id="ot4"/>
+                </af:column>
+              </af:table>
+            </af:panelCollection>
+          </af:panelBox>
+        </f:facet>
+        <f:facet name="second">
+          <af:panelTabbed id="panelTab1">
+            <af:showDetailItem text="#{perpsasviewcontrollerBundle['perpsas.sas001.perpviewer.menuListTitle']}"
+                               id="tab1" stretchChildren="first">
+              <af:panelCollection id="pcl2">
+                <f:facet name="menus">
+                  <af:menu text="#{bindings.SasUserRolesIterator.currentRow.gusId}"
+                           id="m2" partialTriggers="::pc1:t2"/>
+                </f:facet>             
+                <af:treeTable value="#{bindings.SasMenusRootX1.treeModel}"
+                              var="node" columnStretching="last"
+                              rowSelection="single" id="tt1"
+                              partialTriggers=":::pc1:t2">
+                  <f:facet name="nodeStamp">
+                    <af:column id="c5" width="350">
+                      <!--  <af:commandLink text="#{node.MenuLable}" id="cl1"
+                                      partialSubmit="true"
+                                      actionListener="#{perpviewer.openOraFormsFacesActionListener}">
+                        <f:attribute name="gusId" value="#{bindings.SasUserRolesIterator.currentRow.gusId}"/>
+                        <f:attribute name="menuName" value="#{node.MenuName}"/>
+                      </af:commandLink>
+                       -->
+                      <af:activeOutputText value="#{node.MenuLable}" id="aot1"/>
+                    </af:column>
+                  </f:facet>
+                  <f:facet name="pathStamp">
+                    <af:outputText value="#{node}" id="ot5"/>
+                  </f:facet>
+                  <af:column id="column2">
+                    <!-- <af:commandLink text="#{node.MenuLable}" id="cl2"
+                                    actionListener="#{perpviewer.openOraFormsFacesActionListener}"
+                                    partialSubmit="true">
+                      <f:attribute name="menuName" value="#{node.MenuName}"/>
+                    </af:commandLink>-->
+                    <af:goLink text="Open" id="gl1" targetFrame="_blank"
+                               destination="/faces/perpLauchServlet?gusId=#{bindings.SasUserRolesIterator.currentRow.gusId}&amp;menuName=#{node.MenuName}&amp;menId=#{node.MenId}"
+                               rendered="true"/>
+                  </af:column>
+                </af:treeTable>
+              </af:panelCollection>
+            </af:showDetailItem>
+            <af:showDetailItem text="Danh sách quy trình" id="sdi1"
+                               stretchChildren="first">
+              <af:panelStretchLayout id="psl2"
+                                     inlineStyle="width:669px; height:476px;">
+                <f:facet name="center">
+                  <af:panelSplitter id="ps2" orientation="vertical"
+                                    splitterPosition="166">
+                    <f:facet name="first">
+                      <af:panelSplitter id="ps3" splitterPosition="282">
+                        <f:facet name="first">
+                          <af:table value="#{bindings.DiagramProcessView1.collectionModel}"
+                                    var="row"
+                                    rows="#{bindings.DiagramProcessView1.rangeSize}"
+                                    emptyText="#{bindings.DiagramProcessView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                    fetchSize="#{bindings.DiagramProcessView1.rangeSize}"
+                                    rowBandingInterval="0"
+                                    selectedRowKeys="#{bindings.DiagramProcessView1.collectionModel.selectedRow}"
+                                    selectionListener="#{bindings.DiagramProcessView1.collectionModel.makeCurrent}"
+                                    rowSelection="single" id="t3"
+                                    columnStretching="last">
+                            <af:column sortProperty="Name" sortable="true"
+                                       headerText="#{bindings.DiagramProcessView1.hints.Name.label}"
+                                       id="c1">
+                              <af:outputText value="#{row.Name}" id="ot1"/>
+                            </af:column>
+                          </af:table>
+                        </f:facet>
+                        <f:facet name="second">
+                          <af:showDetailHeader text="#{bindings.Name.inputValue}"
+                                               disclosed="true" id="sdh1"
+                                               partialTriggers="t3">
+                            <f:facet name="context"/>
+                            <f:facet name="menuBar"/>
+                            <f:facet name="toolbar"/>
+                            <f:facet name="legend">
+                              <af:outputText value="#{bindings.Description.inputValue}"
+                                             id="ot2"
+                                             inlineStyle="font-size:small;"/>
+                            </f:facet>
+                            <f:facet name="info"/>
+                          </af:showDetailHeader>
+                        </f:facet>
+                      </af:panelSplitter>
+                    </f:facet>
+                    <f:facet name="second">
+                      <af:panelGroupLayout layout="scroll"
+                                           xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                                           id="pgl2">
+                        <af:separator id="s1"/>
+                        <af:showDetailHeader text="#{bindings.ShortDesc.inputValue}"
+                                             disclosed="true" id="sdh2"
+                                             partialTriggers="t3">
+                          <f:facet name="context"/>
+                          <f:facet name="menuBar"/>
+                          <f:facet name="toolbar"/>
+                          <f:facet name="legend">
+                            <af:image id="i1"
+                                      source="#{bindings.ImagePath.inputValue}"
+                                      shortDesc="Flow Process"/>
+                          </f:facet>
+                          <f:facet name="info"/>
+                        </af:showDetailHeader>
+                      </af:panelGroupLayout>
+                    </f:facet>
+                  </af:panelSplitter>
+                </f:facet>
+              </af:panelStretchLayout>
+            </af:showDetailItem>
+            <af:showDetailItem text="#{perpsasviewcontrollerBundle['perpsas.sas001.perpviewer.bookmark']}"
+                               id="sdi2" stretchChildren="first"
+                               rendered="false">
+              <af:panelBox text="PanelBox1" id="panelBox1" showHeader="never">
+                <f:facet name="toolbar"/>
+              </af:panelBox>
+            </af:showDetailItem>
+          </af:panelTabbed>
+        </f:facet>
+      </af:panelSplitter>
+    </f:facet>
+    <f:facet name="top">
+      <af:panelGroupLayout layout="vertical"
+                           xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                           id="pgl1">
+        <af:toolbar id="t1">
+          <af:selectOneChoice label="#{perpsasviewcontrollerBundle['perpsas.sas001.perpviewer.moduleType']}"
+                              id="soc2" value="#{perpviewer.findIn}">
+            <af:selectItem label="All" value="all" id="si1"/>
+            <af:selectItem label="Name" value="name" id="si2"/>
+            <af:selectItem label="Label" value="label" id="si3"/>
+            <af:selectItem label="Description" value="description" id="si4"/>
+          </af:selectOneChoice>
+          <af:inputText label="#{perpsasviewcontrollerBundle['perpsas.sas001.perpviewer.searchText']}"
+                        id="it8" value="#{perpviewer.searchText}"/>
+          <af:commandButton text="#{perpsasviewcontrollerBundle['perpsas.sas001.perpviewer.searchButton']}"
+                            partialSubmit="true" disabled="false" id="cb1"
+                            actionListener="#{perpviewer.callParentViewPopupFindForm}"/>
+          <af:commandButton text="Open Form" id="cb2"                      
+                       visible="false"></af:commandButton>
+        </af:toolbar>
+      </af:panelGroupLayout>
+    </f:facet>
+  </af:panelStretchLayout>
+</jsp:root>

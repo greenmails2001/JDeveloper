@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:trh="http://myfaces.apache.org/trinidad/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:panelGroupLayout layout="vertical" id="xcppgl1">
+    <af:outputText value="#{bindings.title.inputValue}" id="xcpot1"/>
+    <trh:tableLayout width="100%" id="xcptl1">
+      <trh:rowLayout id="xcprl1">
+        <trh:cellFormat id="xcpcf1"/>
+      </trh:rowLayout>
+      <af:forEach items="#{bindings.queryForumMessagesFindAllRootByFcaIdIterator.allRowsInRange}" var="row">
+      <trh:rowLayout id="xcprl2">
+        <trh:cellFormat id="xcpcf2">
+            <af:activeOutputText value="#{row.dataProvider.title}" id="xcpaot1"/>
+          </trh:cellFormat>
+      </trh:rowLayout>
+     </af:forEach>
+    </trh:tableLayout>
+  </af:panelGroupLayout>
+</jsp:root>

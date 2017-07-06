@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core" xmlns:trh="http://myfaces.apache.org/trinidad/html">
+  <af:panelSplitter styleClass="AFVisualRoot" orientation="vertical" splitterPosition="47" id="bmkps1">
+    <f:facet name="first">
+      <af:panelGroupLayout layout="vertical" id="bmkpgl1">
+        <af:panelGroupLayout layout="vertical" id="bmkpgl2">
+          <trh:tableLayout width="100%" id="bmktl1">
+            <trh:rowLayout id="bmkrl1">
+              <trh:cellFormat id="bmkcf1"/>
+              <trh:cellFormat halign="right" id="bmkcf2">
+                <af:panelGroupLayout halign="right" layout="horizontal" id="bmkpgl3">
+                  <af:navigationPane hint="bar" id="bmknp1">
+                    <af:commandNavigationItem text="Tai lieu huong dan" id="bmkcni1"/>
+                    <af:commandNavigationItem text="Huong dan bang hinh anh" id="bmkcni2"/>
+                  </af:navigationPane>
+                </af:panelGroupLayout>
+              </trh:cellFormat>
+            </trh:rowLayout>
+          </trh:tableLayout>
+        </af:panelGroupLayout>
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="second">
+      <af:panelSplitter splitterPosition="262" id="bmkps2">
+        <f:facet name="first">
+          <af:panelAccordion id="bmkpa1">
+            <af:showDetailItem text="Help Center" stretchChildren="first" disclosed="true" id="bmksdi1">
+              <af:panelCollection id="bmkpc1">
+                <f:facet name="menus">
+                  <af:menu text="Action" id="bmkm1">
+                    <af:commandMenuItem text="Refresh"
+                                        actionListener="#{backing_helpCenter_helpCenterManager.helpTreeRefreshActionListener}"
+                                        id="bmkcmi1"/>
+                  </af:menu>
+                </f:facet>
+                <f:facet name="toolbar"/>
+                <f:facet name="statusbar"/>
+                <af:tree value="#{backing_helpCenter_helpCenterManager.helpTreeModel}" var="node"
+                         selectionListener="#{backing_helpCenter_helpCenterManager.treeHelpSelectionListener}" rowSelection="single"
+                         binding="#{backing_helpCenter_helpCenterManager.helpTree}" id="bmkt1">
+                  <f:facet name="nodeStamp">
+                    <af:outputText value="#{node.title}" id="bmkot1"/>
+                  </f:facet>
+                </af:tree>
+              </af:panelCollection>
+            </af:showDetailItem>
+            <af:showDetailItem text="Search Help" id="bmksdi2"/>
+          </af:panelAccordion>
+        </f:facet>
+        <f:facet name="second">
+          <af:decorativeBox theme="none" id="bmkdb1">
+            <f:facet name="center">
+              <af:panelGroupLayout layout="scroll" id="bmkpgl4">
+                <af:panelBorderLayout id="bmkpbl1">
+                  <f:facet name="top">
+                    <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="bmkpgl5">
+                      <af:activeOutputText value="#{backing_helpCenter_helpCenterManager.currentHelp.title}"
+                                           inlineStyle="font-size:medium; color:Navy;"
+                                           binding="#{backing_helpCenter_helpCenterManager.afHelpTitle}" id="bmkaot1"/>
+                    </af:panelGroupLayout>
+                  </f:facet>
+                  <f:facet name="bottom">
+                    <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="bmkpgl6">
+                      <af:richTextEditor value="#{backing_helpCenter_helpCenterManager.currentHelp.content}" readOnly="true"
+                                         binding="#{backing_helpCenter_helpCenterManager.afHelpContent}" id="bmkrte1"/>
+                    </af:panelGroupLayout>
+                  </f:facet>
+                </af:panelBorderLayout>
+              </af:panelGroupLayout>
+            </f:facet>
+          </af:decorativeBox>
+        </f:facet>
+      </af:panelSplitter>
+    </f:facet>
+  </af:panelSplitter>
+</jsp:root>

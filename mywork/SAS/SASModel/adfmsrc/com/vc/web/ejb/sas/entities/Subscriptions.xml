@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.49.49"
+          id="Subscriptions" Package="com.vc.web.ejb.sas.entities"
+          BeanClass="com.vc.web.ejb.sas.entities.Subscriptions"
+          isJavaBased="true">
+  <Attribute Name="appUrl" Type="java.lang.String"/>
+  <Attribute Name="endDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="quantity" Type="java.lang.Double"/>
+  <Attribute Name="startDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="status" Type="java.lang.String"/>
+  <Attribute Name="subscribeDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="subId" Type="java.lang.Long"/>
+  <Attribute Name="activatedCode" Type="java.lang.String"/>
+  <AccessorAttribute id="accounts" IsCollection="false"
+                     BeanClass="com.vc.web.ejb.sas.entities.Accounts"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="servicePackages" IsCollection="false"
+                     BeanClass="com.vc.web.ejb.sas.entities.ServicePackages"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <ConstructorMethod IsCollection="true"
+                     Type="com.vc.web.ejb.sas.entities.Subscriptions"
+                     BeanClass="com.vc.web.ejb.sas.entities.Subscriptions"
+                     id="Subscriptions"/>
+</JavaBean>

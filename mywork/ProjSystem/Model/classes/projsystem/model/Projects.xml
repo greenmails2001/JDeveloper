@@ -1,0 +1,1406 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Projects"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="PROJECTS"
+  AliasName="Projects"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="ProjId"
+    IsNotNull="true"
+    Precision="15"
+    Scale="0"
+    ColumnName="PROJ_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="ProjectNumber"
+    IsUnique="true"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="PROJECT_NUMBER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ProjectName"
+    IsNotNull="true"
+    Precision="400"
+    ColumnName="PROJECT_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="400"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ProjectCategory"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="PROJECT_CATEGORY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ProjectType"
+    IsNotNull="true"
+    Precision="10"
+    ColumnName="PROJECT_TYPE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RplId"
+    Precision="15"
+    Scale="0"
+    ColumnName="RPL_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="OunId"
+    Precision="15"
+    Scale="0"
+    ColumnName="OUN_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="InvestmentMethod"
+    Precision="1"
+    ColumnName="INVESTMENT_METHOD"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="InvestmentPurpose"
+    Precision="4000"
+    ColumnName="INVESTMENT_PURPOSE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="4000"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="InvestmentScale"
+    Precision="240"
+    ColumnName="INVESTMENT_SCALE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ProjectManager"
+    Precision="30"
+    ColumnName="PROJECT_MANAGER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CarryingOutOrganization"
+    Precision="100"
+    ColumnName="CARRYING_OUT_ORGANIZATION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ConstructionSite"
+    Precision="100"
+    ColumnName="CONSTRUCTION_SITE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PpeType"
+    IsNotNull="true"
+    Precision="2"
+    ColumnName="PPE_TYPE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ApprovedInvestmentAmount"
+    Precision="20"
+    Scale="2"
+    ColumnName="APPROVED_INVESTMENT_AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="ApprovedBudgetAmount"
+    Precision="20"
+    Scale="2"
+    ColumnName="APPROVED_BUDGET_AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="ApprovedBudgetAccAmount"
+    Precision="20"
+    Scale="2"
+    ColumnName="APPROVED_BUDGET_ACC_AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="ApprovedInvestmentAccAmount"
+    Precision="20"
+    Scale="2"
+    ColumnName="APPROVED_INVESTMENT_ACC_AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="TxnControlFlag"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="TXN_CONTROL_FLAG"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CurCode"
+    Precision="3"
+    ColumnName="CUR_CODE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CpsId"
+    Precision="15"
+    Scale="0"
+    ColumnName="CPS_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="Description"
+    Precision="1000"
+    ColumnName="DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1000"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Status"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="STATUS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ActualStartDate"
+    ColumnName="ACTUAL_START_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="ActualFinishDate"
+    ColumnName="ACTUAL_FINISH_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="ClosedDate"
+    ColumnName="CLOSED_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="ApprovedStartDate"
+    ColumnName="APPROVED_START_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="ApprovedCompletionDate"
+    ColumnName="APPROVED_COMPLETION_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="CapitalizingAmount"
+    Precision="20"
+    Scale="2"
+    ColumnName="CAPITALIZING_AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="CapitalizingAccountedAmount"
+    Precision="20"
+    Scale="2"
+    ColumnName="CAPITALIZING_ACCOUNTED_AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="ApprovedAmount"
+    Precision="20"
+    Scale="2"
+    ColumnName="APPROVED_AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="ApprovedAccountedAmount"
+    Precision="20"
+    Scale="2"
+    ColumnName="APPROVED_ACCOUNTED_AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="ExchangeRateType"
+    Precision="1"
+    ColumnName="EXCHANGE_RATE_TYPE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ExchangeDate"
+    ColumnName="EXCHANGE_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="ExchangeRate"
+    Precision="8"
+    Scale="2"
+    ColumnName="EXCHANGE_RATE"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="Taxable"
+    IsNotNull="true"
+    Precision="1"
+    ColumnName="TAXABLE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CreateDate"
+    IsNotNull="true"
+    ColumnName="CREATE_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="CreatedBy"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="CREATED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ModifiedBy"
+    Precision="30"
+    ColumnName="MODIFIED_BY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ModifyDate"
+    ColumnName="MODIFY_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="PtemId"
+    Precision="15"
+    Scale="0"
+    ColumnName="PTEM_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="TplId"
+    Precision="15"
+    Scale="0"
+    ColumnName="TPL_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="TaxName"
+    Precision="30"
+    ColumnName="TAX_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="UrlId"
+    Precision="15"
+    Scale="0"
+    ColumnName="URL_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="InvestmentAmount"
+    Precision="20"
+    Scale="2"
+    ColumnName="INVESTMENT_AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="InvestmentAccountedAmount"
+    Precision="20"
+    Scale="2"
+    ColumnName="INVESTMENT_ACCOUNTED_AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="InvestmentApproval"
+    Precision="1"
+    ColumnName="INVESTMENT_APPROVAL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ApprovalInvestmentDocNumber"
+    Precision="30"
+    ColumnName="APPROVAL_INVESTMENT_DOC_NUMBER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ApprovalInvestmentDocDate"
+    ColumnName="APPROVAL_INVESTMENT_DOC_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="ApprovalBudgetDocDate"
+    ColumnName="APPROVAL_BUDGET_DOC_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="ApprovalBudgetDocNumber"
+    Precision="30"
+    ColumnName="APPROVAL_BUDGET_DOC_NUMBER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="InveId"
+    Precision="15"
+    Scale="0"
+    ColumnName="INVE_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="ApprovalOrganization"
+    Precision="240"
+    ColumnName="APPROVAL_ORGANIZATION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ActualInvestmentScale"
+    Precision="10"
+    Scale="0"
+    ColumnName="ACTUAL_INVESTMENT_SCALE"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="CapitalizedFlag"
+    Precision="1"
+    ColumnName="CAPITALIZED_FLAG"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CapitalizedDate"
+    ColumnName="CAPITALIZED_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="SubmitedDocDate"
+    ColumnName="SUBMITED_DOC_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="ReceiveDocOrganization"
+    Precision="30"
+    ColumnName="RECEIVE_DOC_ORGANIZATION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute1"
+    Precision="240"
+    ColumnName="ATTRIBUTE1"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute2"
+    Precision="240"
+    ColumnName="ATTRIBUTE2"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute3"
+    Precision="240"
+    ColumnName="ATTRIBUTE3"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute4"
+    Precision="240"
+    ColumnName="ATTRIBUTE4"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute5"
+    Precision="240"
+    ColumnName="ATTRIBUTE5"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute6"
+    Precision="240"
+    ColumnName="ATTRIBUTE6"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute7"
+    Precision="240"
+    ColumnName="ATTRIBUTE7"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute8"
+    Precision="240"
+    ColumnName="ATTRIBUTE8"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute9"
+    Precision="240"
+    ColumnName="ATTRIBUTE9"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Attribute10"
+    Precision="240"
+    ColumnName="ATTRIBUTE10"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="AprovedTimeDescription"
+    Precision="1000"
+    ColumnName="APROVED_TIME_DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1000"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ActualTimeDescription"
+    Precision="1000"
+    ColumnName="ACTUAL_TIME_DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1000"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="InvestmentAmountDescription"
+    Precision="1000"
+    ColumnName="INVESTMENT_AMOUNT_DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1000"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ManagementMethod"
+    Precision="2"
+    ColumnName="MANAGEMENT_METHOD"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="InvestmentNeed"
+    Precision="240"
+    ColumnName="INVESTMENT_NEED"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ApprovedTimes"
+    Precision="10"
+    ColumnName="APPROVED_TIMES"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ApprovedReason"
+    Precision="500"
+    ColumnName="APPROVED_REASON"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ApprovedDocNumber"
+    Precision="30"
+    ColumnName="APPROVED_DOC_NUMBER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ApprovedDocDate"
+    ColumnName="APPROVED_DOC_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="GroundRentAmount"
+    Precision="20"
+    Scale="2"
+    ColumnName="GROUND_RENT_AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="AreaOfLandUse"
+    Precision="240"
+    ColumnName="AREA_OF_LAND_USE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="PlanToBuild"
+    Precision="4000"
+    ColumnName="PLAN_TO_BUILD"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="4000"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ProjectLevel"
+    Precision="240"
+    ColumnName="PROJECT_LEVEL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="EquipmentDescription"
+    Precision="4000"
+    ColumnName="EQUIPMENT_DESCRIPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="4000"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ClearanceResettlementOption"
+    Precision="4000"
+    ColumnName="CLEARANCE_RESETTLEMENT_OPTION"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="4000"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="FirstYearWorkingCapital"
+    Precision="20"
+    Scale="2"
+    ColumnName="FIRST_YEAR_WORKING_CAPITAL"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="FundingSource"
+    Precision="500"
+    ColumnName="FUNDING_SOURCE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SoAwardType"
+    Precision="10"
+    ColumnName="SO_AWARD_TYPE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="RequirementProperty"
+    Precision="10"
+    ColumnName="REQUIREMENT_PROPERTY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Awarded"
+    Precision="1"
+    ColumnName="AWARDED"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="FailureReason"
+    Precision="2000"
+    ColumnName="FAILURE_REASON"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2000"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ScheduledSoSignDate"
+    ColumnName="SCHEDULED_SO_SIGN_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="ScheduledStartDate"
+    ColumnName="SCHEDULED_START_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="ProjectNote"
+    Precision="2000"
+    ColumnName="PROJECT_NOTE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2000"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CusId"
+    Precision="15"
+    Scale="0"
+    ColumnName="CUS_ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="CceId"
+    Precision="3"
+    ColumnName="CCE_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="3"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="BidAmount"
+    Precision="20"
+    Scale="2"
+    ColumnName="BID_AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="AcceptedBidAmount"
+    Precision="20"
+    Scale="2"
+    ColumnName="ACCEPTED_BID_AMOUNT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="AcceptedBidder"
+    Precision="240"
+    ColumnName="ACCEPTED_BIDDER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="240"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="InterfaceTransfered"
+    Precision="1"
+    ColumnName="INTERFACE_TRANSFERED"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="TransferError"
+    Precision="4000"
+    ColumnName="TRANSFER_ERROR"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="4000"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="InterfaceTransferedDate"
+    ColumnName="INTERFACE_TRANSFERED_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="InterfaceTransferedUser"
+    Precision="500"
+    ColumnName="INTERFACE_TRANSFERED_USER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="500"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ProjIdTransferFrom"
+    Precision="15"
+    Scale="0"
+    ColumnName="PROJ_ID_TRANSFER_FROM"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="LocId"
+    Precision="20"
+    ColumnName="LOC_ID"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ProjRoles"
+    Precision="30"
+    ColumnName="PROJ_ROLES"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ProjScope"
+    Precision="30"
+    ColumnName="PROJ_SCOPE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ProjClass"
+    Precision="30"
+    ColumnName="PROJ_CLASS"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ProjTender"
+    Precision="30"
+    ColumnName="PROJ_TENDER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="StatusOld"
+    Precision="1"
+    ColumnName="STATUS_OLD"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="BusinessProject"
+    Precision="1"
+    ColumnName="BUSINESS_PROJECT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="FloorArea"
+    Precision="20"
+    Scale="2"
+    ColumnName="FLOOR_AREA"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="Numfloor"
+    Precision="3"
+    Scale="0"
+    ColumnName="NUMFLOOR"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="Hight"
+    Precision="4"
+    Scale="2"
+    ColumnName="HIGHT"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="Deep"
+    Precision="4"
+    Scale="2"
+    ColumnName="DEEP"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="PROJECTS"/>
+  <Attribute
+    Name="Commander"
+    Precision="100"
+    ColumnName="COMMANDER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="PROJECTS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ScheduledEndDate"
+    ColumnName="SCHEDULED_END_DATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="PROJECTS"/>
+  <AccessorAttribute
+    Name="Tasks"
+    Association="projsystem.model.TasProjFkAssoc"
+    AssociationEnd="projsystem.model.TasProjFkAssoc.Tasks"
+    AssociationOtherEnd="projsystem.model.TasProjFkAssoc.Projects"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="Avcon351116Inves000">
+    <DesignTime>
+      <Attr Name="_checkCondition" Value="INVESTMENT_APPROVAL IN ('Y', 'N')"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="AVCON_351116_INVES_000"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="Avcon351116Taxab000">
+    <DesignTime>
+      <Attr Name="_checkCondition" Value="TAXABLE IN ('Y', 'N')"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="AVCON_351116_TAXAB_000"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="Avcon351116TxnC000">
+    <DesignTime>
+      <Attr Name="_checkCondition" Value="TXN_CONTROL_FLAG IN ('Y', 'N')"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="AVCON_351116_TXN_C_000"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="ProjPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PROJ_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="projsystem.model.Projects.ProjId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProjProjUk">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PROJ_PROJ_UK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="projsystem.model.Projects.ProjectNumber"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProjCceFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="CCE_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PROJ_CCE_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="projsystem.model.Projects.CceId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProjCpsFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="CPS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PROJ_CPS_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="projsystem.model.Projects.CpsId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProjCurFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="CUR_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PROJ_CUR_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="projsystem.model.Projects.CurCode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProjCusFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="CUS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PROJ_CUS_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="projsystem.model.Projects.CusId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProjInveFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="INVE_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PROJ_INVE_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="projsystem.model.Projects.InveId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProjOunFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="OUN_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PROJ_OUN_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="projsystem.model.Projects.OunId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProjPtemFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PTEM_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PROJ_PTEM_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="projsystem.model.Projects.PtemId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProjRplFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="RPL_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PROJ_RPL_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="projsystem.model.Projects.RplId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProjTnaFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="TNA_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PROJ_TNA_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="projsystem.model.Projects.TaxName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProjTplFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="TPL_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PROJ_TPL_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="projsystem.model.Projects.TplId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="ProjUrlFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="URL_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="PROJ_URL_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="projsystem.model.Projects.UrlId"/>
+    </AttrArray>
+  </Key>
+</Entity>

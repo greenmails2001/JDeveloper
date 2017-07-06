@@ -1,0 +1,88 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelSplitter splitterPosition="200" positionedFromEnd="true"
+                    orientation="vertical" id="iwjps1">
+    <f:facet name="first">
+      <af:panelStretchLayout topHeight="25px" id="iwjpsl1">
+        <f:facet name="center">
+          <af:panelCollection id="panelColl1" inlineStyle="width:100%;">
+            <f:facet name="menus"/>
+            <f:facet name="toolbar"/>
+            <f:facet name="statusbar"/>
+            <af:table value="#{bindings.Sasra002aCountries.collectionModel}"
+                      var="row" rows="#{bindings.Sasra002aCountries.rangeSize}"
+                      emptyText="#{bindings.Sasra002aCountries.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                      fetchSize="#{bindings.Sasra002aCountries.rangeSize}"
+                      columnStretching="last"
+                      selectedRowKeys="#{bindings.Sasra002aCountries.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.Sasra002aCountries.collectionModel.makeCurrent}"
+                      rowSelection="single" id="table1"
+                      partialTriggers=":::submit1">
+              <af:column sortProperty="CountryCode" sortable="false"
+                         headerText="#{bindings.Sasra002aCountries.hints.CountryCode.label}"
+                         id="iwjc1">
+                <af:outputText value="#{row.CountryCode}" id="iwjot1"/>
+              </af:column>
+              <af:column sortProperty="Name" sortable="false"
+                         headerText="#{bindings.Sasra002aCountries.hints.Name.label}"
+                         id="iwjc2">
+                <af:outputText value="#{row.Name}" id="iwjot2"/>
+              </af:column>
+            </af:table>
+          </af:panelCollection>
+        </f:facet>
+        <f:facet name="top">
+          <af:panelGroupLayout layout="vertical" id="iwjpgl1">
+            <af:outputLabel value="Countries List" id="iwjol1"/>
+          </af:panelGroupLayout>
+        </f:facet>
+      </af:panelStretchLayout>
+    </f:facet>
+    <f:facet name="second">
+      <af:panelHeader text="Country Info" id="iwjph1">
+        <f:facet name="menuBar"/>
+        <f:facet name="toolbar"/>
+        <f:facet name="legend"/>
+        <f:facet name="info"/>
+        <af:panelFormLayout partialTriggers="panelColl1:table1" id="iwjpfl1">
+          <af:inputText value="#{bindings.CouId.inputValue}"
+                        label="#{bindings.CouId.hints.label}"
+                        required="#{bindings.CouId.hints.mandatory}"
+                        columns="#{bindings.CouId.hints.displayWidth}"
+                        maximumLength="#{bindings.CouId.hints.precision}"
+                        shortDesc="#{bindings.CouId.hints.tooltip}"
+                        readOnly="true" id="iwjit1">
+            <f:validator binding="#{bindings.CouId.validator}"/>
+            <af:convertNumber groupingUsed="false"
+                              pattern="#{bindings.CouId.format}"/>
+          </af:inputText>
+          <af:inputText value="#{bindings.CountryCode.inputValue}"
+                        label="#{bindings.CountryCode.hints.label}"
+                        required="#{bindings.CountryCode.hints.mandatory}"
+                        columns="#{bindings.CountryCode.hints.displayWidth}"
+                        maximumLength="#{bindings.CountryCode.hints.precision}"
+                        shortDesc="#{bindings.CountryCode.hints.tooltip}"
+                        id="iwjit2">
+            <f:validator binding="#{bindings.CountryCode.validator}"/>
+          </af:inputText>
+          <af:inputText value="#{bindings.Name.inputValue}"
+                        label="#{bindings.Name.hints.label}"
+                        required="#{bindings.Name.hints.mandatory}"
+                        columns="100"
+                        maximumLength="#{bindings.Name.hints.precision}"
+                        shortDesc="#{bindings.Name.hints.tooltip}" id="iwjit3">
+            <f:validator binding="#{bindings.Name.validator}"/>
+          </af:inputText>
+          <f:facet name="footer">
+            <af:commandButton text="Submit" partialSubmit="true"
+                              actionListener="#{bindings.Commit.execute}"
+                              id="submit1"/>
+          </f:facet>
+        </af:panelFormLayout>
+        <f:facet name="context"/>
+      </af:panelHeader>
+    </f:facet>
+  </af:panelSplitter>
+</jsp:root>

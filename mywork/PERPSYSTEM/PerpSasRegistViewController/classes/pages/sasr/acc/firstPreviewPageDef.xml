@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="firstPreviewPageDef"
+                Package="pages.sasr.acc">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Name="couId" Type="oracle.jbo.domain.Number"
+                DefaultValue="#{sasrSessionLoginObject.perpSasrAccount.couId}"/>
+      <variable Name="rolId" Type="oracle.jbo.domain.Number"
+                DefaultValue="#{sasrSessionLoginObject.perpSasrAccount.rolId}"/>
+      <variable Name="indId" Type="oracle.jbo.domain.Number"
+                DefaultValue="#{sasrSessionLoginObject.perpSasrAccount.indId}"/>
+      <variable Name="labId" Type="oracle.jbo.domain.Number"
+                DefaultValue="#{sasrSessionLoginObject.perpSasrAccount.labId}"/>
+      <variable Name="mmeId" Type="oracle.jbo.domain.Number"
+                DefaultValue="#{sasrSessionLoginObject.perpSasrAccount.mmeId}"/>
+    </variableIterator>
+    <iterator Binds="SasrmLovCountries" RangeSize="-1"
+              DataControl="PerpSasRegistAppModuleDataControl"
+              id="SasrmLovCountriesIterator"/>
+    <iterator Binds="SasrmLovIndustries" RangeSize="-1"
+              DataControl="PerpSasRegistAppModuleDataControl"
+              id="SasrmLovIndustriesIterator"/>
+    <iterator Binds="SasrmLovLabors" RangeSize="-1"
+              DataControl="PerpSasRegistAppModuleDataControl"
+              id="SasrmLovLaborsIterator"/>
+    <iterator Binds="SasrmLovMarketingMedia" RangeSize="-1"
+              DataControl="PerpSasRegistAppModuleDataControl"
+              id="SasrmLovMarketingMediaIterator"/>
+    <iterator Binds="SasrmLovRoles" RangeSize="-1"
+              DataControl="PerpSasRegistAppModuleDataControl"
+              id="SasrmLovRolesIterator"/>
+  </executables>
+  <bindings>
+    <list IterBinding="variables" id="CouId"
+          DTSupportsMRU="true" StaticList="false"
+          ListIter="SasrmLovCountriesIterator" NullValueFlag="start"
+          NullValueId="CouId_null">
+      <AttrNames>
+        <Item Value="couId"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="CouId"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="CountryName"/>
+      </ListDisplayAttrNames>
+    </list>
+    <list IterBinding="variables" id="IndId"
+          DTSupportsMRU="true" StaticList="false"
+          ListIter="SasrmLovIndustriesIterator" NullValueFlag="start"
+          NullValueId="IndId_null">
+      <AttrNames>
+        <Item Value="indId"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="IndId"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="IndustryName"/>
+      </ListDisplayAttrNames>
+    </list>
+    <list IterBinding="variables" id="LabId" DTSupportsMRU="true"
+          StaticList="false" ListIter="SasrmLovLaborsIterator">
+      <AttrNames>
+        <Item Value="labId"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="LabId"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="LabDescription"/>
+      </ListDisplayAttrNames>
+    </list>
+    <list IterBinding="variables" id="MmeId"
+          DTSupportsMRU="true" StaticList="false"
+          ListIter="SasrmLovMarketingMediaIterator" NullValueFlag="start"
+          NullValueId="MmeId_null">
+      <AttrNames>
+        <Item Value="mmeId"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="MmeId"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="Media"/>
+      </ListDisplayAttrNames>
+    </list>
+    <list IterBinding="variables" id="RolId" DTSupportsMRU="true"
+          StaticList="false" ListIter="SasrmLovRolesIterator"
+          NullValueFlag="start" NullValueId="RolId_null">
+      <AttrNames>
+        <Item Value="rolId"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="RolId"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="RoleName"/>
+      </ListDisplayAttrNames>
+    </list>
+  </bindings>
+  <ResourceBundle>
+    <PropertiesBundle xmlns="http://xmlns.oracle.com/adfm/resourcebundle"
+                      PropertiesFile="com.perp.sasregistviewcontroller.PerpSasRegistViewControllerBundle"/>
+  </ResourceBundle>
+</pageDefinition>

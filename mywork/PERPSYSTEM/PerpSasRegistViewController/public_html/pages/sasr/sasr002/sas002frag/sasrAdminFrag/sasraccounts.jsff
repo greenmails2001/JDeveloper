@@ -1,0 +1,282 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelSplitter id="ps1" orientation="vertical" styleClass="AFStretchWidth" splitterPosition="253">
+    <f:facet name="first">
+      <af:panelStretchLayout id="psl2">
+        <f:facet name="center">
+          <af:panelTabbed id="pt1">
+            <af:showDetailItem id="sdi1" text="Danh sách tài khoản" stretchChildren="first">
+              <af:panelBox text="PanelBox1" id="pb1" showHeader="never">
+                <f:facet name="toolbar"/>
+                <af:panelCollection id="pc1" featuresOff="statusBar">
+                  <f:facet name="menus"/>
+                  <f:facet name="toolbar"/>
+                  <af:table value="#{bindings.Sasa002Acounts.collectionModel}" var="row" rows="#{bindings.Sasa002Acounts.rangeSize}"
+                            emptyText="#{bindings.Sasa002Acounts.viewable ? 'Không có dữ liệu.' : 'Truy cập bị từ chối.'}"
+                            fetchSize="#{bindings.Sasa002Acounts.rangeSize}" rowBandingInterval="0"
+                            filterModel="#{bindings.Sasa002AcountsQuery.queryDescriptor}"
+                            queryListener="#{bindings.Sasa002AcountsQuery.processQuery}" varStatus="vs"
+                            selectedRowKeys="#{bindings.Sasa002Acounts.collectionModel.selectedRow}"
+                            selectionListener="#{bindings.Sasa002Acounts.collectionModel.makeCurrent}" rowSelection="single" id="t1"
+                            columnStretching="column:c5" styleClass="AFStretchWidth" displayRow="selected">
+                    <af:column sortProperty="UserName" sortable="true" headerText="#{bindings.Sasa002Acounts.hints.UserName.label}" id="c1"
+                               width="135" filterable="true">
+                      <af:outputText value="#{row.UserName}" id="ot10"/>
+                    </af:column>
+                    <af:column sortProperty="FullName" sortable="true" headerText="#{bindings.Sasa002Acounts.hints.FullName.label}" id="c11"
+                               width="148" filterable="true">
+                      <af:outputText value="#{row.FullName}" id="ot11"/>
+                    </af:column>
+                    <af:column sortProperty="Address" filterable="true" sortable="true"
+                               headerText="#{bindings.Sasa002Acounts.hints.Address.label}" id="c2" width="156">
+                      <af:outputText value="#{row.Address}" id="ot4"/>
+                    </af:column>
+                    <af:column sortProperty="ContactTelephone" filterable="true" sortable="true"
+                               headerText="#{bindings.Sasa002Acounts.hints.ContactTelephone.label}" id="c9" width="114">
+                      <af:outputText value="#{row.ContactTelephone}" id="ot6"/>
+                    </af:column>
+                    <af:column sortProperty="Email" filterable="true" sortable="true"
+                               headerText="#{bindings.Sasa002Acounts.hints.Email.label}" id="c7" width="126">
+                      <af:outputText value="#{row.Email}" id="ot1"/>
+                    </af:column>
+                    <af:column sortProperty="NumberOfEmployee" filterable="true" sortable="true"
+                               headerText="#{bindings.Sasa002Acounts.hints.NumberOfEmployee.label}" id="c6" width="79">
+                      <af:outputText value="#{row.NumberOfEmployee}" id="ot2">
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.Sasa002Acounts.hints.NumberOfEmployee.format}"/>
+                      </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="OrganizationName" filterable="true" sortable="true"
+                               headerText="#{bindings.Sasa002Acounts.hints.OrganizationName.label}" id="c5" width="150">
+                      <af:outputText value="#{row.OrganizationName}" id="ot7"/>
+                    </af:column>
+                    <af:column sortProperty="ActivatedFlag" sortable="true"
+                               headerText="#{bindings.Sasa002Acounts.hints.ActivatedFlag.label}" id="c12" width="60" align="center">
+                      <af:selectBooleanCheckbox id="sbc1" value="#{row.ActivatedFlag=='Y'}"/>
+                    </af:column>
+                  </af:table>
+                </af:panelCollection>
+              </af:panelBox>
+            </af:showDetailItem>
+          </af:panelTabbed>
+        </f:facet>
+      </af:panelStretchLayout>
+    </f:facet>
+    <f:facet name="second">
+      <af:panelStretchLayout id="psl3">
+        <f:facet name="center">
+          <af:panelTabbed id="pt2">
+            <af:showDetailItem text="Dịch vụ đăng ký &amp; Thuê bao" id="sdi4" stretchChildren="first">
+              <af:panelBox text="PanelBox4" id="pb4" showHeader="never">
+                <f:facet name="toolbar"/>
+                <af:panelCollection id="pc4">
+                  <f:facet name="menus"/>
+                  <f:facet name="toolbar"/>
+                  <f:facet name="statusbar"/>
+                  <af:table value="#{bindings.Sasa002SpaSubs.collectionModel}" var="row" rows="#{bindings.Sasa002SpaSubs.rangeSize}"
+                            emptyText="#{bindings.Sasa002SpaSubs.viewable ? 'No data to display.' : 'Access Denied.'}"
+                            fetchSize="#{bindings.Sasa002SpaSubs.rangeSize}" rowBandingInterval="0"
+                            selectedRowKeys="#{bindings.Sasa002SpaSubs.collectionModel.selectedRow}"
+                            selectionListener="#{bindings.Sasa002SpaSubs.collectionModel.makeCurrent}" rowSelection="single" id="t4"
+                            columnStretching="column:c26">
+                    <af:column sortProperty="PackageCode" sortable="true" headerText="#{bindings.Sasa002SpaSubs.hints.PackageCode.label}"
+                               id="c27" width="125">
+                      <af:outputText value="#{row.PackageCode}" id="ot21"/>
+                    </af:column>
+                    <af:column sortProperty="PackageName" sortable="true" headerText="#{bindings.Sasa002SpaSubs.hints.PackageName.label}"
+                               id="c26" width="148">
+                      <af:outputText value="#{row.PackageName}" id="ot24"/>
+                    </af:column>
+                    <af:column sortProperty="UnitPrice" sortable="true" headerText="#{bindings.Sasa002SpaSubs.hints.UnitPrice.label}"
+                               id="c24" width="130">
+                      <af:outputText value="#{row.UnitPrice}" id="ot27">
+                        <af:convertNumber groupingUsed="true" type="number" pattern="#{bindings.Sasa002SpaSubs.hints.UnitPrice.format}"/>
+                      </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="ActivatedCode" sortable="true"
+                               headerText="#{bindings.Sasa002SpaSubs.hints.ActivatedCode.label}" id="c29" width="127">
+                      <af:outputText value="#{row.ActivatedCode}" id="ot22"/>
+                    </af:column>
+                    <af:column sortProperty="SubscribeDate" sortable="true"
+                               headerText="#{bindings.Sasa002SpaSubs.hints.SubscribeDate.label}" id="c28" width="111">
+                      <af:outputText value="#{row.SubscribeDate}" id="ot26">
+                        <af:convertDateTime pattern="#{bindings.Sasa002SpaSubs.hints.SubscribeDate.format}"/>
+                      </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="StartDate" sortable="true" headerText="#{bindings.Sasa002SpaSubs.hints.StartDate.label}"
+                               id="c22" width="109">
+                      <af:outputText value="#{row.StartDate}" id="ot25">
+                        <af:convertDateTime pattern="#{bindings.Sasa002SpaSubs.hints.StartDate.format}"/>
+                      </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="EndDate" sortable="true" headerText="#{bindings.Sasa002SpaSubs.hints.EndDate.label}" id="c25"
+                               width="95">
+                      <af:outputText value="#{row.EndDate}" id="ot3">
+                        <af:convertDateTime pattern="#{bindings.Sasa002SpaSubs.hints.EndDate.format}"/>
+                      </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="Status" sortable="true" headerText="#{bindings.Sasa002SpaSubs.hints.Status.label}" id="c23"
+                               width="81" align="center">                      
+                       <af:selectBooleanCheckbox id="sbc3" value="#{row.Status=='Y'}"/>
+                    </af:column>
+                  </af:table>
+                </af:panelCollection>
+              </af:panelBox>
+            </af:showDetailItem>
+            <af:showDetailItem text="Lịch sử đăng nhập" id="sdi2" stretchChildren="first">
+              <af:panelBox text="PanelBox2" id="pb2" showHeader="never">
+                <f:facet name="toolbar"/>
+                <af:panelCollection id="pc2" featuresOff="statusBar">
+                  <f:facet name="menus"/>
+                  <f:facet name="toolbar"/>
+                  <af:table value="#{bindings.Sasa002LoginHistories.collectionModel}" var="row"
+                            rows="#{bindings.Sasa002LoginHistories.rangeSize}"
+                            emptyText="#{bindings.Sasa002LoginHistories.viewable ? 'Không có dữ liệu.' : 'Truy cập bị từ chối.'}"
+                            fetchSize="#{bindings.Sasa002LoginHistories.rangeSize}" rowBandingInterval="0"
+                            filterModel="#{bindings.Sasa002LoginHistoriesQuery.queryDescriptor}"
+                            queryListener="#{bindings.Sasa002LoginHistoriesQuery.processQuery}" varStatus="vs"
+                            selectedRowKeys="#{bindings.Sasa002LoginHistories.collectionModel.selectedRow}"
+                            selectionListener="#{bindings.Sasa002LoginHistories.collectionModel.makeCurrent}" rowSelection="single" id="t2"
+                            columnStretching="column:c14" styleClass="AFStretchWidth" displayRow="selected">
+                    <af:column sortProperty="LoginAt" sortable="true" headerText="#{bindings.Sasa002LoginHistories.hints.LoginAt.label}"
+                               id="c16" width="147" filterable="true">
+                      <af:outputText value="#{row.LoginAt}" id="ot19">
+                        <af:convertDateTime pattern="#{bindings.Sasa002LoginHistories.hints.LoginAt.format}"/>
+                      </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="LogoutAt" sortable="true" headerText="#{bindings.Sasa002LoginHistories.hints.LogoutAt.label}"
+                               id="c18" width="157" filterable="true">
+                      <af:outputText value="#{row.LogoutAt}" id="ot16">
+                        <af:convertDateTime pattern="#{bindings.Sasa002LoginHistories.hints.LogoutAt.format}"/>
+                      </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="IpAddress" sortable="true" headerText="#{bindings.Sasa002LoginHistories.hints.IpAddress.label}"
+                               id="c17" width="148" filterable="true">
+                      <af:outputText value="#{row.IpAddress}" id="ot13"/>
+                    </af:column>
+                    <af:column sortProperty="Platform" sortable="true" headerText="#{bindings.Sasa002LoginHistories.hints.Platform.label}"
+                               id="c15" width="120" filterable="true">
+                      <af:outputText value="#{row.Platform}" id="ot14"/>
+                    </af:column>
+                    <af:column sortProperty="Country" filterable="true" sortable="true"
+                               headerText="#{bindings.Sasa002LoginHistories.hints.Country.label}" id="c19" width="120">
+                      <af:outputText value="#{row.Country}" id="ot18"/>
+                    </af:column>
+                    <af:column sortProperty="UserAgent" filterable="true" sortable="true"
+                               headerText="#{bindings.Sasa002LoginHistories.hints.UserAgent.label}" id="c14">
+                      <af:outputText value="#{row.UserAgent}" id="ot15"/>
+                    </af:column>
+                  </af:table>
+                </af:panelCollection>
+              </af:panelBox>
+            </af:showDetailItem>
+            <af:showDetailItem text="Người dùng VBISCloud" id="sdi3" stretchChildren="first">
+              <af:panelBox text="PanelBox3" id="pb3" showHeader="never">
+                <f:facet name="toolbar"/>
+                <af:panelCollection id="pc3" featuresOff="statusBar">
+                  <f:facet name="menus"/>
+                  <f:facet name="toolbar"/>
+                  <f:facet name="statusbar"/>
+                  <af:table value="#{bindings.Sasa002VbisUsers.collectionModel}" var="row" rows="#{bindings.Sasa002VbisUsers.rangeSize}"
+                            emptyText="#{bindings.Sasa002VbisUsers.viewable ? 'No data to display.' : 'Access Denied.'}"
+                            fetchSize="#{bindings.Sasa002VbisUsers.rangeSize}" rowBandingInterval="0"
+                            filterModel="#{bindings.Sasa002VbisUsersQuery.queryDescriptor}"
+                            queryListener="#{bindings.Sasa002VbisUsersQuery.processQuery}" varStatus="vs"
+                            selectedRowKeys="#{bindings.Sasa002VbisUsers.collectionModel.selectedRow}"
+                            selectionListener="#{bindings.Sasa002VbisUsers.collectionModel.makeCurrent}" rowSelection="single" id="t3"
+                            displayRow="selected" columnStretching="column:c10">
+                    <af:column sortProperty="UserName" filterable="true" sortable="true"
+                               headerText="#{bindings.Sasa002VbisUsers.hints.UserName.label}" id="c3" width="115">
+                      <af:outputText value="#{row.UserName}" id="ot17"/>
+                    </af:column>
+                    <af:column sortProperty="FullName" filterable="true" sortable="true"
+                               headerText="#{bindings.Sasa002VbisUsers.hints.FullName.label}" id="c20" width="169">
+                      <af:outputText value="#{row.FullName}" id="ot5"/>
+                    </af:column>
+                    <af:column sortProperty="OrganizationName" filterable="true" sortable="true"
+                               headerText="#{bindings.Sasa002VbisUsers.hints.OrganizationName.label}" id="c13" width="170">
+                      <af:outputText value="#{row.OrganizationName}" id="ot12"/>
+                    </af:column>
+                    <af:column sortProperty="Address" filterable="true" sortable="true"
+                               headerText="#{bindings.Sasa002VbisUsers.hints.Address.label}" id="c10" width="121">
+                      <af:outputText value="#{row.Address}" id="ot20"/>
+                    </af:column>
+                    <af:column sortProperty="ContactTelephone" filterable="true" sortable="true"
+                               headerText="#{bindings.Sasa002VbisUsers.hints.ContactTelephone.label}" id="c21" width="100">
+                      <af:outputText value="#{row.ContactTelephone}" id="ot8"/>
+                    </af:column>
+                    <af:column sortProperty="Email" filterable="true" sortable="true"
+                               headerText="#{bindings.Sasa002VbisUsers.hints.Email.label}" id="c8" width="115">
+                      <af:outputText value="#{row.Email}" id="ot9"/>
+                    </af:column>
+                    <af:column sortProperty="Status" filterable="true" sortable="true"
+                               headerText="#{bindings.Sasa002VbisUsers.hints.Status.label}" id="c4" align="center" width="60">
+                      <af:selectBooleanCheckbox label="Label 1" value="#{row.Status=='Y'}" id="sbc2"/>
+                    </af:column>
+                  </af:table>
+                </af:panelCollection>
+              </af:panelBox>
+            </af:showDetailItem>
+            <af:showDetailItem text="Lịch sử người dùng" id="sdi5" stretchChildren="first">
+              <af:panelBox text="PanelBox5" id="pb5" showHeader="never">
+                <f:facet name="toolbar"/>
+                <af:panelCollection id="pc5">
+                  <f:facet name="menus"/>
+                  <f:facet name="toolbar"/>
+                  <f:facet name="statusbar"/>
+                  <af:table value="#{bindings.PerpSasLoginHistories.collectionModel}" var="row"
+                            rows="#{bindings.PerpSasLoginHistories.rangeSize}"
+                            emptyText="#{bindings.PerpSasLoginHistories.viewable ? 'No data to display.' : 'Access Denied.'}"
+                            fetchSize="#{bindings.PerpSasLoginHistories.rangeSize}" rowBandingInterval="0"
+                            filterModel="#{bindings.PerpSasLoginHistoriesQuery.queryDescriptor}"
+                            queryListener="#{bindings.PerpSasLoginHistoriesQuery.processQuery}" varStatus="vs"
+                            selectedRowKeys="#{bindings.PerpSasLoginHistories.collectionModel.selectedRow}"
+                            selectionListener="#{bindings.PerpSasLoginHistories.collectionModel.makeCurrent}" rowSelection="single" id="t5">
+                    <af:column sortProperty="UserName" filterable="true" sortable="true"
+                               headerText="#{bindings.PerpSasLoginHistories.hints.UserName.label}" id="c30" width="135">
+                      <af:outputText value="#{row.UserName}" id="ot23"/>
+                    </af:column>
+                    <af:column sortProperty="LoginAt" filterable="true" sortable="true"
+                               headerText="#{bindings.PerpSasLoginHistories.hints.LoginAt.label}" id="c33" width="158">
+                      <f:facet name="filter">
+                        <af:inputDate value="#{vs.filterCriteria.LoginAt}" id="id1"/>
+                      </f:facet>
+                      <af:outputText value="#{row.LoginAt}" id="ot29">
+                        <af:convertDateTime pattern="#{bindings.PerpSasLoginHistories.hints.LoginAt.format}"/>
+                      </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="LogoutAt" filterable="true" sortable="true"
+                               headerText="#{bindings.PerpSasLoginHistories.hints.LogoutAt.label}" id="c32" width="171">
+                      <f:facet name="filter">
+                        <af:inputDate value="#{vs.filterCriteria.LogoutAt}" id="id2"/>
+                      </f:facet>
+                      <af:outputText value="#{row.LogoutAt}" id="ot28">
+                        <af:convertDateTime pattern="#{bindings.PerpSasLoginHistories.hints.LogoutAt.format}"/>
+                      </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="IpAddress" filterable="true" sortable="true"
+                               headerText="#{bindings.PerpSasLoginHistories.hints.IpAddress.label}" id="c35" width="148">
+                      <af:outputText value="#{row.IpAddress}" id="ot30"/>
+                    </af:column>
+                    <af:column sortProperty="Platform" filterable="true" sortable="true"
+                               headerText="#{bindings.PerpSasLoginHistories.hints.Platform.label}" id="c34" width="113">
+                      <af:outputText value="#{row.Platform}" id="ot31"/>
+                    </af:column>
+                    <af:column sortProperty="Country" filterable="true" sortable="true"
+                               headerText="#{bindings.PerpSasLoginHistories.hints.Country.label}" id="c31" width="131">
+                      <af:outputText value="#{row.Country}" id="ot32"/>
+                    </af:column>
+                    <af:column sortProperty="UserAgent" filterable="true" sortable="true"
+                               headerText="#{bindings.PerpSasLoginHistories.hints.UserAgent.label}" id="c36" width="300">
+                      <af:outputText value="#{row.UserAgent}" id="ot33"/>
+                    </af:column>
+                  </af:table>
+                </af:panelCollection>
+              </af:panelBox>
+            </af:showDetailItem>
+          </af:panelTabbed>
+        </f:facet>
+      </af:panelStretchLayout>
+    </f:facet>
+  </af:panelSplitter>
+</jsp:root>

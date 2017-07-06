@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<data-sources xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://xmlns.oracle.com/oracleas/schema/data-sources-10_1.xsd" xmlns="http://xmlns.oracle.com/oracleas/schema">
+    <connection-pool name="jdev-connection-pool-sas">
+        <connection-factory factory-class="oracle.jdbc.pool.OracleDataSource" user="sas" url="jdbc:oracle:thin:@localhost:1521:db10g"/>
+    </connection-pool>
+    <connection-pool name="jdev-connection-pool-perp">
+        <connection-factory factory-class="oracle.jdbc.pool.OracleDataSource" user="apps" url="jdbc:oracle:thin:@localhost:1521:db10g"/>
+    </connection-pool>
+    <connection-pool name="jdev-connection-pool-SASConnection">
+        <connection-factory factory-class="oracle.jdbc.pool.OracleDataSource" user="sas" url="jdbc:oracle:thin:@localhost:1521:db10g" password="->jdbc:oracle:thin:@localhost:1521:db10g_sas"/>
+    </connection-pool>
+    <connection-pool name="jdev-connection-pool-PERPConnection">
+        <connection-factory factory-class="oracle.jdbc.pool.OracleDataSource" user="apps" url="jdbc:oracle:thin:@localhost:1521:db10g"/>
+    </connection-pool>
+    <managed-data-source name="jdev-connection-managed-SASConnection" jndi-name="jdbc/SASConnectionDS" connection-pool-name="jdev-connection-pool-SASConnection"/>
+    <native-data-source name="jdev-connection-native-SASConnection" jndi-name="jdbc/SASConnectionCoreDS" user="sas" password="->jdbc:oracle:thin:@localhost:1521:db10g_sas" data-source-class="oracle.jdbc.pool.OracleDataSource" url="jdbc:oracle:thin:@localhost:1521:db10g"/>
+    <managed-data-source name="jdev-connection-managed-PERPConnection" jndi-name="jdbc/PERPConnectionDS" connection-pool-name="jdev-connection-pool-PERPConnection"/>
+    <native-data-source name="jdev-connection-native-PERPConnection" jndi-name="jdbc/PERPConnectionCoreDS" user="apps" data-source-class="oracle.jdbc.pool.OracleDataSource" url="jdbc:oracle:thin:@localhost:1521:db10g"/>
+</data-sources>

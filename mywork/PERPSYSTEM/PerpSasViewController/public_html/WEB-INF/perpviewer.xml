@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="perpviewer">
+    <default-activity id="__1">gate</default-activity>
+    <input-parameter-definition id="__23">
+      <name id="__24">outcome</name>
+      <value>#{pageFlowScope.outcome}</value>
+      <class>java.lang.String</class>
+    </input-parameter-definition>
+    <view id="index">
+      <page>/pages/perpviewer/index.jsff</page>
+    </view>
+    <view id="webperp">
+      <page>/pages/perpviewer/webperp.jsff</page>
+    </view>
+    <router id="gate">
+      <case>
+        <expression>#{pageFlowScope.outcome=="webperp"}</expression>
+        <outcome id="__22">webperp</outcome>
+      </case>
+      <default-outcome>default</default-outcome>
+    </router>
+    <control-flow-rule id="__14">
+      <from-activity-id id="__15">gate</from-activity-id>
+      <control-flow-case id="__16">
+        <from-outcome id="__17">webperp</from-outcome>
+        <to-activity-id id="__18">webperp</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__19">
+        <from-outcome id="__20">default</from-outcome>
+        <to-activity-id id="__21">index</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+ 
+  </task-flow-definition>
+</adfc-config>

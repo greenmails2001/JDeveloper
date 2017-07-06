@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="cceviewerPageDef"
+                Package="pages.perpviewer.webperp">
+  <parameters/>
+  <executables>
+    <invokeAction id="call_prepareToShowAdv02OrganizationUnitsP01"
+                  Binds="prepareToShowAdv02OrganizationUnitsP01"
+                  Refresh="ifNeeded"/>
+    <iterator Binds="Adv02OrganizationUnitsP01" RangeSize="25"
+              DataControl="PerpSasAppModuleDataControl"
+              id="Adv02OrganizationUnitsP01Iterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="prepareToShowAdv02OrganizationUnitsP01"
+                  RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="prepareToShowAdv02OrganizationUnitsP01"
+                  IsViewObjectMethod="false"
+                  DataControl="PerpSasAppModuleDataControl"
+                  InstanceName="PerpSasAppModuleDataControl.dataProvider">
+      <NamedData NDName="ounId" NDValue="#{pageFlowScope.ounId}"
+                 NDType="oracle.jbo.domain.Number"/>
+    </methodAction>
+    <tree IterBinding="Adv02OrganizationUnitsP01Iterator"
+          id="Adv02OrganizationUnitsP01">
+      <nodeDefinition DefName="com.perp.sasmodel.views.adv.OrganizationUnitsP01"
+                      Name="Adv02OrganizationUnitsP010">
+        <AttrNames>
+          <Item Value="OunId"/>
+          <Item Value="Name"/>
+          <Item Value="Address"/>
+          <Item Value="OunNumber"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="CostCenters"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="com.perp.sasmodel.views.adv.CostCenters"
+                      Name="Adv02OrganizationUnitsP011">
+        <AttrNames>
+          <Item Value="CceId"/>
+          <Item Value="CceName"/>
+          <Item Value="CceNumber"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="Groups"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="com.perp.sasmodel.views.adv.Groups"
+                      Name="Adv02OrganizationUnitsP012">
+        <AttrNames>
+          <Item Value="GroId"/>
+          <Item Value="GroupName"/>
+          <Item Value="GroupNumber"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

@@ -1,0 +1,62 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<orion-application xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://xmlns.oracle.com/oracleas/schema/orion-application-11_0.xsd" default-data-source="jdbc/PERPConnectionDS">
+    <ejb-module path="file:/E:/Projects/JDeveloper11gr4/SAS/PERPModel/classes/" id="SAS_PERPModel_0"/>
+    <ejb-module path="file:/E:/Projects/JDeveloper11gr4/SAS/SASModel/classes/" id="SAS_SASModel_1"/>
+    <web-module id="sas" path="file:/E:/Projects/JDeveloper11gr4/SAS/ViewController/public_html/"/>
+    <library path="E:\Projects\JDeveloper11gr4\SAS\.adf">jdev-generated</library>
+    <library path="E:\Projects\JDeveloper11gr4\SAS\.adf">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\lib\java\shared\oracle.toplink\11.1.1.0.0\toplink-core.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\lib\java\shared\oracle.toplink.ojdbc\11.1.1.0.0\toplink-ojdbc.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\lib\java\internal\toplink-oc4j.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\lib\java\internal\toplink-agent.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\lib\java\shared\oracle.toplink\11.1.1.0.0\antlr.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\j2ee\home\lib\persistence.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\j2ee\home\lib\ejb.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\j2ee\home\lib\jms.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\rdbms\jlib\aqapi.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\j2ee\home\lib\jta.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\BC4J\lib\adfshare.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\jlib\identitystore.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\BC4J\lib\adfm.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\BC4J\lib\groovy-all-1.0.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\adfdt\lib\adf-dt-at-rt.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\adfdt\lib\adf-transactions-dt.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\adfdt\lib\adfdt_common.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\lib\xmlparserv2.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\BC4J\lib\db-ca.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\jlib\jdev-cm.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\jlib\ojmisc.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\jlib\commons-el.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\jlib\jsp-el-api.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\jlib\oracle-el.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\lib\java\api\jaxb-api.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\lib\java\api\jsr173_api.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\j2ee\home\lib\activation.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\lib\java\shared\sun.jaxb\2.0\jaxb-xjc.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\lib\java\shared\sun.jaxb\2.0\jaxb-impl.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\lib\java\shared\sun.jaxb\2.0\jaxb1-impl.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\BC4J\lib\adf-share-support.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\BC4J\lib\adf-share-ca.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\BC4J\lib\adf-share-base.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\BC4J\jlib\adfui.jar">jdev-generated</library>
+    <library path="E:\Projects\JDeveloper11gr4\SAS\libs\ojdbc14.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\jlib\oracle-page-templates.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\lib\java\shared\oracle.jsf\1.2\jsf-api.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\lib\java\shared\oracle.jsf\1.2\jsf-ri.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\lib\java\shared\oracle.jsf\1.2\sun-commons-beanutils.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\lib\java\shared\oracle.jsf\1.2\sun-commons-collections.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\lib\java\shared\oracle.jsf\1.2\sun-commons-digester.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\lib\java\shared\oracle.jsf\1.2\sun-commons-logging.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\lib\xml.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\mds\lib\mdsrt.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\jlib\trinidad-api.jar">jdev-generated</library>
+    <library path="E:\Programs\jdevstudio11gr4\jlib\trinidad-impl.jar">jdev-generated</library>
+    <library path="E:\Projects\JDeveloper11gr4\SAS\PERPModel\classes">jdev-generated</library>
+    <imported-shared-libraries>
+        <import-shared-library name="adf.oracle.domain"/>
+    </imported-shared-libraries>
+    <log>
+        <file path="SAS-oc4j-app.log"/>
+    </log>
+    <data-sources path="SAS-data-sources.xml"/>
+</orion-application>

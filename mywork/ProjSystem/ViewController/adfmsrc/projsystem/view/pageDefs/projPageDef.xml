@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.12.24" id="projPageDef"
+                Package="projsystem.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="ProjectsView1" RangeSize="25" DataControl="AppModuleDataControl" id="ProjectsView1Iterator"/>
+    <iterator Binds="TasksView3" RangeSize="25" DataControl="AppModuleDataControl" id="TasksView3Iterator"/>
+    <searchRegion Binds="TasksView3Iterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="TasksView3Query"/>
+    <searchRegion Binds="ProjectsView1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer" id="ProjectsView1Query"/>
+  </executables>
+  <bindings>
+    <attributeValues IterBinding="ProjectsView1Iterator" id="ProjId">
+      <AttrNames>
+        <Item Value="ProjId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProjectsView1Iterator" id="ProjectNumber">
+      <AttrNames>
+        <Item Value="ProjectNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProjectsView1Iterator" id="ProjectName">
+      <AttrNames>
+        <Item Value="ProjectName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProjectsView1Iterator" id="ProjectCategory">
+      <AttrNames>
+        <Item Value="ProjectCategory"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProjectsView1Iterator" id="ProjectType">
+      <AttrNames>
+        <Item Value="ProjectType"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProjectsView1Iterator" id="RplId">
+      <AttrNames>
+        <Item Value="RplId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ProjectsView1Iterator" id="OunId">
+      <AttrNames>
+        <Item Value="OunId"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="ProjectsView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="ProjectsView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="ProjectsView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="ProjectsView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <tree IterBinding="TasksView3Iterator" id="TasksView3">
+      <nodeDefinition DefName="projsystem.model.TasksView" Name="TasksView30">
+        <AttrNames>
+          <Item Value="TasId"/>
+          <Item Value="TaskNumber"/>
+          <Item Value="TaskName"/>
+          <Item Value="ProjectPhase"/>
+          <Item Value="TaskType"/>
+          <Item Value="OverBudget"/>
+          <Item Value="ServiceType"/>
+          <Item Value="BudgetFlag"/>
+          <Item Value="InProgressFlag"/>
+          <Item Value="TopTaskNumber"/>
+          <Item Value="WbsLevel"/>
+          <Item Value="TaskProperty"/>
+          <Item Value="CcoId"/>
+          <Item Value="RplId"/>
+          <Item Value="CpsId"/>
+          <Item Value="Description"/>
+          <Item Value="CarryingOutOrganization"/>
+          <Item Value="CarryingOutAddress"/>
+          <Item Value="Status"/>
+          <Item Value="TaskManager"/>
+          <Item Value="TaskQuantity"/>
+          <Item Value="TaskCapacity"/>
+          <Item Value="PercentPerformed"/>
+          <Item Value="Taxable"/>
+          <Item Value="TaxName"/>
+          <Item Value="TaxRate"/>
+          <Item Value="TxnControlFlag"/>
+          <Item Value="ExchangeRateType"/>
+          <Item Value="ExchangeDate"/>
+          <Item Value="ExchangeRate"/>
+          <Item Value="ScheduledStartDate"/>
+          <Item Value="ScheduledFinishDate"/>
+          <Item Value="ActualStartDate"/>
+          <Item Value="ActualFinishDate"/>
+          <Item Value="AcceptedDate"/>
+          <Item Value="Capitalizable"/>
+          <Item Value="CapitalizedCost"/>
+          <Item Value="CapitalizedDate"/>
+          <Item Value="AccidentQuantityAllowed"/>
+          <Item Value="AccidentMinuteAllowed"/>
+          <Item Value="TotalHours"/>
+          <Item Value="ProductName"/>
+          <Item Value="CreateDate"/>
+          <Item Value="CreatedBy"/>
+          <Item Value="ModifyDate"/>
+          <Item Value="ModifiedBy"/>
+          <Item Value="TasIdPartOf"/>
+          <Item Value="TplId"/>
+          <Item Value="TenId"/>
+          <Item Value="ProjId"/>
+          <Item Value="TteId"/>
+          <Item Value="UomCode"/>
+          <Item Value="IsParent"/>
+          <Item Value="DisplayedGanntchart"/>
+          <Item Value="InTending"/>
+          <Item Value="EclId"/>
+          <Item Value="CurCode"/>
+          <Item Value="PerformanceTestFlag"/>
+          <Item Value="IitId"/>
+          <Item Value="PtpId"/>
+          <Item Value="CapitalizedFlag"/>
+          <Item Value="BilledOtFOb"/>
+          <Item Value="ExpertFlag"/>
+          <Item Value="IitIdProductOf"/>
+          <Item Value="Attribute1"/>
+          <Item Value="Attribute2"/>
+          <Item Value="Attribute3"/>
+          <Item Value="Attribute4"/>
+          <Item Value="Attribute5"/>
+          <Item Value="Attribute6"/>
+          <Item Value="Attribute7"/>
+          <Item Value="Attribute8"/>
+          <Item Value="Attribute9"/>
+          <Item Value="Attribute10"/>
+          <Item Value="RevOrg"/>
+          <Item Value="InBidFlag"/>
+          <Item Value="FinancialControl"/>
+          <Item Value="BillableFlag"/>
+          <Item Value="PtgId"/>
+          <Item Value="TaskCode"/>
+          <Item Value="SupplementalFlag"/>
+          <Item Value="InterfaceTransfered"/>
+          <Item Value="TransferError"/>
+          <Item Value="TasIdTransferFrom"/>
+          <Item Value="CsiId"/>
+          <Item Value="CsiExt"/>
+          <Item Value="CsiName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="ProjectsView1Iterator" id="ProjectsView1">
+      <nodeDefinition DefName="projsystem.model.ProjectsView" Name="ProjectsView10">
+        <AttrNames>
+          <Item Value="ProjId"/>
+          <Item Value="ProjectNumber"/>
+          <Item Value="ProjectName"/>
+          <Item Value="ProjectCategory"/>
+          <Item Value="ProjectType"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

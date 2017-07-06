@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core"
+          xmlns:trh="http://myfaces.apache.org/trinidad/html">
+  <c:set var="viewcontrollerBundle" value="#{adfBundle['com.vc.web.ViewControllerBundle']}"/>
+  <af:panelStretchLayout styleClass="AFVisualRoot" endWidth="339px" topHeight="36px" id="zebpsl1">
+    <f:facet name="center">
+      <af:panelStretchLayout topHeight="34px" startWidth="201px" id="zebpsl2">
+        <f:facet name="center">
+          <af:panelGroupLayout layout="scroll" id="zebpgl1">
+            <af:panelBorderLayout inlineStyle="padding:5px;" id="zebpbl1">
+              <f:facet name="top">
+                <af:panelGroupLayout layout="vertical" id="zebpgl2">
+                  <af:panelGroupLayout layout="vertical" id="zebpgl3">
+                    <af:outputLabel value="#{viewcontrollerBundle['pages.fragments.sasAccount.sasLogin.title1']}" inlineStyle="font-size:large;"
+                                    id="zebol1"/>
+                    <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="zebpgl4">
+                      <af:outputText value="#{viewcontrollerBundle['pages.fragments.sasAccount.sasLogin.content1']}"
+                                     id="zebot1"/>
+                    </af:panelGroupLayout>
+                  </af:panelGroupLayout>
+                </af:panelGroupLayout>
+              </f:facet>
+              <f:facet name="bottom">
+                <af:panelGroupLayout layout="vertical" id="zebpgl5">
+                  <af:spacer width="10" height="10" id="zebs1"/>
+                  <af:panelGroupLayout layout="horizontal" valign="top" id="zebpgl6">
+                    <af:panelGroupLayout layout="vertical" valign="top" inlineStyle="padding:3px;" id="zebpgl7">
+                      <af:image shortDesc="successful" source="/resources/images/successful.jpeg" id="zebi1"/>
+                    </af:panelGroupLayout>
+                    <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="zebpgl8">
+                      <af:outputLabel value="#{viewcontrollerBundle['pages.fragments.sasAccount.sasLogin.title2']}" inlineStyle="font-size:larger; font-weight:bold;"
+                                      id="zebol2"/>
+                    </af:panelGroupLayout>
+                  </af:panelGroupLayout>
+                  <af:outputText value="#{viewcontrollerBundle['pages.fragments.sasAccount.sasLogin.content2']}"
+                                 id="zebot2"/>
+                  <af:spacer width="10" height="10" id="zebs2"/>
+                  <af:panelGroupLayout layout="vertical" halign="left" id="zebpgl9">
+                    <af:panelFormLayout rows="5" labelAlignment="start" id="zebpfl1">
+                      <f:facet name="footer">
+                        <af:panelGroupLayout layout="horizontal" inlineStyle="padding:2px;" id="zebpgl10">
+                          <af:commandButton text="#{viewcontrollerBundle['pages.fragments.sasAccount.sasLogin.signin']}" partialSubmit="true"
+                                            action="#{backing_sasAccount_sasLoginHandler.loginAction}" id="zebcb1"/>
+                          <af:spacer width="10" height="10" id="zebs3"/>
+                          <af:commandButton text="#{viewcontrollerBundle['pages.fragments.sasAccount.sasLogin.signup']}" partialSubmit="true" disabled=""
+                                            action="signup" id="zebcb2"/>
+                        </af:panelGroupLayout>
+                      </f:facet>
+                      <af:inputText value="#{ backing_sasAccount_sasLoginHandler.userName}"
+                                    label="#{viewcontrollerBundle['pages.fragments.sasAccount.sasLogin.userName']}" inlineStyle="width:10px;"
+                                    id="zebit1"/>
+                      <af:inputText value="#{ backing_sasAccount_sasLoginHandler.password}"
+                                    label="#{viewcontrollerBundle['pages.fragments.sasAccount.sasLogin.password']}" secret="true"
+                                    id="zebit2"/>
+                      <af:commandLink text="#{viewcontrollerBundle['pages.fragments.sasAccount.sasLogin.editAccount']}"
+                                      action="#{backing_sasAccount_accountCreationHandler.editAccountAction}" partialSubmit="true"
+                                      disabled="#{!backing_sasAccount_accountCreationHandler.editLinkEnabled}"
+                                      id="zebcl1"/>
+                    </af:panelFormLayout>
+                  </af:panelGroupLayout>
+                </af:panelGroupLayout>
+              </f:facet>
+            </af:panelBorderLayout>
+          </af:panelGroupLayout>
+        </f:facet>
+        <f:facet name="top">
+          <af:panelGroupLayout layout="vertical" id="zebpgl11">
+            <af:outputLabel value="TAI KHOAN TRUY NHAP SAS" inlineStyle="font-size:medium;" id="zebol3"/>
+          </af:panelGroupLayout>
+        </f:facet>
+        <f:facet name="start">
+          <af:panelGroupLayout layout="vertical" id="zebpgl12">
+            <af:outputLabel value="#{viewcontrollerBundle['sas.successful']}" inlineStyle="font-size:larger; font-weight:bold;"
+                            id="zebol4"/>
+            <af:spacer width="10" height="10" id="zebs4"/>
+            <af:navigationPane hint="list" id="zebnp1">
+              <af:commandNavigationItem text="#{viewcontrollerBundle['sas.home.nav.appSystem']}" action="appView"
+                                        id="zebcni1"/>
+              <af:commandNavigationItem text="#{viewcontrollerBundle['sas.home.nav.shoppingSystem']}"
+                                        action="#{backing_sasAccount_sasAccountFlowHandler.sasLogin2shoppingSasFlow}"
+                                        disabled='#{!backing_sasAccount_sasAccountFlowHandler.sasLogin}' id="zebcni2"/>
+            </af:navigationPane>
+          </af:panelGroupLayout>
+        </f:facet>
+      </af:panelStretchLayout>
+    </f:facet>
+    <f:facet name="top">
+      <af:toolbox id="zebt1">
+        <trh:tableLayout width="100%" id="zebtl1">
+          <trh:rowLayout id="zebrl1">
+            <trh:cellFormat halign="left" id="zebcf1">
+              <af:panelGroupLayout layout="horizontal" id="zebpgl13">
+                <af:image source="/resources/images/saslogo.gif" id="zebi2"/>
+                <af:image source="/resources/images/mission.gif" id="zebi3"/>
+              </af:panelGroupLayout>
+            </trh:cellFormat>
+            <trh:cellFormat halign="right" id="zebcf2">
+              <af:panelGroupLayout halign="right" layout="horizontal" id="zebpgl14">
+                <af:navigationPane hint="bar" id="zebnp2">
+                  <af:commandNavigationItem text="#{viewcontrollerBundle['pages.fragments.sasAccount.nav.shoppingSas']}"
+                                            action="#{backing_sasAccount_sasAccountFlowHandler.sasLogin2shoppingSasFlow}"
+                                            partialSubmit="true"
+                                            disabled='#{!backing_sasAccount_sasAccountFlowHandler.sasLogin}'
+                                            id="zebcni3"/>
+                </af:navigationPane>
+              </af:panelGroupLayout>
+            </trh:cellFormat>
+          </trh:rowLayout>
+        </trh:tableLayout>
+      </af:toolbox>
+    </f:facet>
+  </af:panelStretchLayout>
+</jsp:root>

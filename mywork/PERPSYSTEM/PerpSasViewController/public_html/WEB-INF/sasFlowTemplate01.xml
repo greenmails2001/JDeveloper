@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-template id="sasFlowTemplate01">
+    <default-activity>backToParent</default-activity>
+    <task-flow-return id="backToParent">
+      <outcome>
+        <name>home</name>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule>
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case>
+        <from-outcome>home</from-outcome>
+        <to-activity-id>backToParent</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-template>
+</adfc-config>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.49.49" id="OunInfo" Package="com.vc.web.perp"
+          BeanClass="com.vc.web.perp.OunInfo" isJavaBased="true">
+  <Attribute Name="countryCode" Type="java.lang.String"/>
+  <Attribute Name="countryName" Type="java.lang.String"/>
+  <Attribute Name="address" Type="java.lang.String"/>
+  <Attribute Name="provinceCode" Type="java.lang.String"/>
+  <Attribute Name="provinceName" Type="java.lang.String"/>
+  <Attribute Name="effectiveDateFrom" Type="java.sql.Timestamp"/>
+  <Attribute Name="effectiveDateTo" Type="java.sql.Timestamp"/>
+  <Attribute Name="ounTypeCode" Type="java.lang.String"/>
+  <Attribute Name="ounTypeName" Type="java.lang.String"/>
+  <Attribute Name="ounId" Type="java.lang.Long"/>
+  <Attribute Name="parentId" Type="java.lang.Long"/>
+  <Attribute Name="ounNumber" Type="java.lang.String"/>
+  <Attribute Name="ounName" Type="java.lang.String"/>
+  <Attribute Name="description" Type="java.lang.String"/>
+  <AccessorAttribute id="childList" IsCollection="true" BeanClass="com.vc.web.perp.OunInfo" CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="false" Type="void" id="addChild" ReturnNodeName="Return">
+    <ParameterInfo id="child" Type="com.vc.web.perp.OunInfo" isStructured="true"/>
+  </MethodAccessor>
+  <ConstructorMethod IsCollection="true" Type="com.vc.web.perp.OunInfo" BeanClass="com.vc.web.perp.OunInfo" id="OunInfo">
+    <ParameterInfo id="ounId" Type="java.lang.Long" isStructured="false"/>
+    <ParameterInfo id="parentId" Type="java.lang.Long" isStructured="false"/>
+    <ParameterInfo id="ounNumber" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="ounName" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="countryCode" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="countryName" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="provinceCode" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="provinceName" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="ounTypeCode" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="ounTypeName" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="address" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="effectiveDateFrom" Type="java.sql.Timestamp" isStructured="false"/>
+    <ParameterInfo id="effectiveDateTo" Type="java.sql.Timestamp" isStructured="false"/>
+    <ParameterInfo id="description" Type="java.lang.String" isStructured="false"/>
+  </ConstructorMethod>
+</JavaBean>

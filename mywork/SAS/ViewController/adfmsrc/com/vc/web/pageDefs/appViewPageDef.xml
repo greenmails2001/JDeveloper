@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.1.51.56" id="appViewPageDef"
+                Package="com.vc.web.pageDefs">
+  <parameters/>
+  <executables>
+    <taskFlow id="appviewflow1" taskFlowId="/WEB-INF/flows/app-view-flow.xml#app-view-flow"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+  </executables>
+  <bindings/>
+</pageDefinition>

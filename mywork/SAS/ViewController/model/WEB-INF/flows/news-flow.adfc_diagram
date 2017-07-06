@@ -1,0 +1,108 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="start">false</property>
+      <property
+         name="realized">true</property>
+      <property
+         name="rawDescription">view - home</property>
+      <property
+         name="status">ok</property>
+      <property
+         name="activityId">home</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">view - home&lt;/p>&lt;/html></property>
+      <property
+         name="y">268.0</property>
+      <property
+         name="binding">data</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="x">158.0</property>
+   </View>
+   <Router
+      id="Router3">
+      <property
+         name="activityId">gateway</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">router - gateway&lt;/p>&lt;/html></property>
+      <property
+         name="rawDescription">router - gateway</property>
+      <property
+         name="y">116.0</property>
+      <property
+         name="status">warning</property>
+      <property
+         name="statusDescription">EL token ''caseFlow'' is unknown</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="x">315.0</property>
+   </Router>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="Router3"
+      to="View2">
+      <property
+         name="sdm:polyPoints">L50,274.0,116.0,158.0,214.0,T50</property>
+      <property
+         name="fromOutcome">home</property>
+      <property
+         name="status">ok</property>
+   </ControlFlowCase>
+   <View
+      id="View5">
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="realized">true</property>
+      <property
+         name="rawDescription">view - news</property>
+      <property
+         name="status">ok</property>
+      <property
+         name="activityId">news</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">view - news&lt;/p>&lt;/html></property>
+      <property
+         name="y">230.0</property>
+      <property
+         name="binding">data</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="x">511.0</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase6"
+      from="Router3"
+      to="View5">
+      <property
+         name="sdm:polyPoints">R50,356.0,116.0,470.0,226.5,L46</property>
+      <property
+         name="fromOutcome">news</property>
+      <property
+         name="status">ok</property>
+   </ControlFlowCase>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase7"
+      from="View2"
+      to="View5">
+      <property
+         name="sdm:polyPoints">R50,199.0,268.0,470.0,233.5,L54</property>
+      <property
+         name="fromOutcome">news</property>
+   </ControlFlowCase>
+</SDM>

@@ -1,0 +1,1165 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="proj.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:pageTemplate viewId="/projtemplate.jsf" id="pt1">
+                <f:facet name="center">
+                    <af:panelSplitter id="ps1" splitterPosition="471" inlineStyle="width:1246px;">
+                        <f:facet name="first">
+                            <af:panelAccordion discloseMany="false" id="pa1">
+                                <af:showDetailItem id="pane1" text="My Function">
+                                    <af:table value="#{bindings.ProjectsView1.collectionModel}" var="row"
+                                              rows="#{bindings.ProjectsView1.rangeSize}"
+                                              emptyText="#{bindings.ProjectsView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                              rowBandingInterval="0"
+                                              selectedRowKeys="#{bindings.ProjectsView1.collectionModel.selectedRow}"
+                                              selectionListener="#{bindings.ProjectsView1.collectionModel.makeCurrent}"
+                                              rowSelection="single" fetchSize="#{bindings.ProjectsView1.rangeSize}"
+                                              filterModel="#{bindings.ProjectsView1Query.queryDescriptor}"
+                                              filterVisible="true"
+                                              queryListener="#{bindings.ProjectsView1Query.processQuery}" varStatus="vs"
+                                              id="t2" partialTriggers="::b1 ::b2 ::b3 ::b4">
+                                        <af:column sortProperty="#{bindings.ProjectsView1.hints.ProjId.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ProjectsView1.hints.ProjId.label}" id="c65">
+                                            <af:outputText value="#{row.ProjId}"
+                                                           shortDesc="#{bindings.ProjectsView1.hints.ProjId.tooltip}"
+                                                           id="ot1">
+                                                <af:convertNumber groupingUsed="false"
+                                                                  pattern="#{bindings.ProjectsView1.hints.ProjId.format}"/>
+                                            </af:outputText>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.ProjectsView1.hints.ProjectNumber.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ProjectsView1.hints.ProjectNumber.label}"
+                                                   id="c66">
+                                            <af:outputText value="#{row.ProjectNumber}"
+                                                           shortDesc="#{bindings.ProjectsView1.hints.ProjectNumber.tooltip}"
+                                                           id="ot2"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.ProjectsView1.hints.ProjectName.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ProjectsView1.hints.ProjectName.label}"
+                                                   id="c67">
+                                            <af:outputText value="#{row.ProjectName}"
+                                                           shortDesc="#{bindings.ProjectsView1.hints.ProjectName.tooltip}"
+                                                           id="ot3"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.ProjectsView1.hints.ProjectCategory.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ProjectsView1.hints.ProjectCategory.label}"
+                                                   id="c68">
+                                            <af:outputText value="#{row.ProjectCategory}"
+                                                           shortDesc="#{bindings.ProjectsView1.hints.ProjectCategory.tooltip}"
+                                                           id="ot4"/>
+                                        </af:column>
+                                        <af:column sortProperty="#{bindings.ProjectsView1.hints.ProjectType.name}"
+                                                   filterable="true" sortable="true"
+                                                   headerText="#{bindings.ProjectsView1.hints.ProjectType.label}"
+                                                   id="c69">
+                                            <af:outputText value="#{row.ProjectType}"
+                                                           shortDesc="#{bindings.ProjectsView1.hints.ProjectType.tooltip}"
+                                                           id="ot5"/>
+                                        </af:column>
+                                    </af:table>
+                                </af:showDetailItem>
+                                <af:showDetailItem id="pane2" text="Proj Function">
+                                    <af:panelFormLayout id="pfl1" inlineStyle="color:Fuchsia;">
+                                        <af:inputText value="#{bindings.ProjId.inputValue}"
+                                                      label="#{bindings.ProjId.hints.label}"
+                                                      required="#{bindings.ProjId.hints.mandatory}"
+                                                      columns="#{bindings.ProjId.hints.displayWidth}"
+                                                      maximumLength="#{bindings.ProjId.hints.precision}"
+                                                      shortDesc="#{bindings.ProjId.hints.tooltip}" id="it1">
+                                            <f:validator binding="#{bindings.ProjId.validator}"/>
+                                            <af:convertNumber groupingUsed="false" pattern="#{bindings.ProjId.format}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.ProjectNumber.inputValue}"
+                                                      label="#{bindings.ProjectNumber.hints.label}"
+                                                      required="#{bindings.ProjectNumber.hints.mandatory}"
+                                                      columns="#{bindings.ProjectNumber.hints.displayWidth}"
+                                                      maximumLength="#{bindings.ProjectNumber.hints.precision}"
+                                                      shortDesc="#{bindings.ProjectNumber.hints.tooltip}" id="it2">
+                                            <f:validator binding="#{bindings.ProjectNumber.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.ProjectName.inputValue}"
+                                                      label="#{bindings.ProjectName.hints.label}"
+                                                      required="#{bindings.ProjectName.hints.mandatory}"
+                                                      columns="#{bindings.ProjectName.hints.displayWidth}"
+                                                      maximumLength="#{bindings.ProjectName.hints.precision}"
+                                                      shortDesc="#{bindings.ProjectName.hints.tooltip}" id="it3"
+                                                      inlineStyle="font-size:small; alignment-adjust:central;">
+                                            <f:validator binding="#{bindings.ProjectName.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.ProjectCategory.inputValue}"
+                                                      label="#{bindings.ProjectCategory.hints.label}"
+                                                      required="#{bindings.ProjectCategory.hints.mandatory}"
+                                                      columns="#{bindings.ProjectCategory.hints.displayWidth}"
+                                                      maximumLength="#{bindings.ProjectCategory.hints.precision}"
+                                                      shortDesc="#{bindings.ProjectCategory.hints.tooltip}" id="it4">
+                                            <f:validator binding="#{bindings.ProjectCategory.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.ProjectType.inputValue}"
+                                                      label="#{bindings.ProjectType.hints.label}"
+                                                      required="#{bindings.ProjectType.hints.mandatory}"
+                                                      columns="#{bindings.ProjectType.hints.displayWidth}"
+                                                      maximumLength="#{bindings.ProjectType.hints.precision}"
+                                                      shortDesc="#{bindings.ProjectType.hints.tooltip}" id="it5">
+                                            <f:validator binding="#{bindings.ProjectType.validator}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.RplId.inputValue}"
+                                                      label="#{bindings.RplId.hints.label}"
+                                                      required="#{bindings.RplId.hints.mandatory}"
+                                                      columns="#{bindings.RplId.hints.displayWidth}"
+                                                      maximumLength="#{bindings.RplId.hints.precision}"
+                                                      shortDesc="#{bindings.RplId.hints.tooltip}" id="it6">
+                                            <f:validator binding="#{bindings.RplId.validator}"/>
+                                            <af:convertNumber groupingUsed="false" pattern="#{bindings.RplId.format}"/>
+                                        </af:inputText>
+                                        <af:inputText value="#{bindings.OunId.inputValue}"
+                                                      label="#{bindings.OunId.hints.label}"
+                                                      required="#{bindings.OunId.hints.mandatory}"
+                                                      columns="#{bindings.OunId.hints.displayWidth}"
+                                                      maximumLength="#{bindings.OunId.hints.precision}"
+                                                      shortDesc="#{bindings.OunId.hints.tooltip}" id="it7">
+                                            <f:validator binding="#{bindings.OunId.validator}"/>
+                                            <af:convertNumber groupingUsed="false" pattern="#{bindings.OunId.format}"/>
+                                        </af:inputText>
+                                        <f:facet name="footer">
+                                            <af:panelGroupLayout layout="vertical" id="pgl1">
+                                                <af:panelGroupLayout layout="horizontal" id="pgl2">
+                                                    <af:button actionListener="#{bindings.First.execute}" text="First"
+                                                               disabled="#{!bindings.First.enabled}"
+                                                               partialSubmit="true" id="b1"/>
+                                                    <af:button actionListener="#{bindings.Previous.execute}"
+                                                               text="Previous" disabled="#{!bindings.Previous.enabled}"
+                                                               partialSubmit="true" id="b2"/>
+                                                    <af:button actionListener="#{bindings.Next.execute}" text="Next"
+                                                               disabled="#{!bindings.Next.enabled}" partialSubmit="true"
+                                                               id="b3"/>
+                                                    <af:button actionListener="#{bindings.Last.execute}" text="Last"
+                                                               disabled="#{!bindings.Last.enabled}" partialSubmit="true"
+                                                               id="b4"/>
+                                                </af:panelGroupLayout>
+                                                <af:button text="Submit" id="b5"/>
+                                            </af:panelGroupLayout>
+                                        </f:facet>
+                                    </af:panelFormLayout>
+                                </af:showDetailItem>
+                            </af:panelAccordion>
+                        </f:facet>
+                        <f:facet name="second">
+                            <af:panelSplitter id="ps2" orientation="vertical">
+                                <f:facet name="first">
+                                    <af:panelCollection id="pc1">
+                                        <f:facet name="menus"/>
+                                        <f:facet name="toolbar"/>
+                                        <af:table value="#{bindings.TasksView3.collectionModel}" var="row"
+                                                  rows="#{bindings.TasksView3.rangeSize}"
+                                                  emptyText="#{bindings.TasksView3.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                                  rowBandingInterval="0"
+                                                  selectedRowKeys="#{bindings.TasksView3.collectionModel.selectedRow}"
+                                                  selectionListener="#{bindings.TasksView3.collectionModel.makeCurrent}"
+                                                  rowSelection="single" fetchSize="#{bindings.TasksView3.rangeSize}"
+                                                  filterModel="#{bindings.TasksView3Query.queryDescriptor}"
+                                                  filterVisible="true"
+                                                  queryListener="#{bindings.TasksView3Query.processQuery}"
+                                                  varStatus="vs" id="t1">
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.TasId.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.TasId.label}" id="c1">
+                                                <af:inputText value="#{row.bindings.TasId.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.TasId.label}"
+                                                              required="#{bindings.TasksView3.hints.TasId.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.TasId.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.TasId.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.TasId.tooltip}"
+                                                              id="it8">
+                                                    <f:validator binding="#{row.bindings.TasId.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TasksView3.hints.TasId.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.TaskNumber.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.TaskNumber.label}"
+                                                       id="c2">
+                                                <af:inputText value="#{row.bindings.TaskNumber.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.TaskNumber.label}"
+                                                              required="#{bindings.TasksView3.hints.TaskNumber.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.TaskNumber.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.TaskNumber.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.TaskNumber.tooltip}"
+                                                              id="it9">
+                                                    <f:validator binding="#{row.bindings.TaskNumber.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.TaskName.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.TaskName.label}" id="c3">
+                                                <af:inputText value="#{row.bindings.TaskName.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.TaskName.label}"
+                                                              required="#{bindings.TasksView3.hints.TaskName.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.TaskName.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.TaskName.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.TaskName.tooltip}"
+                                                              id="it10">
+                                                    <f:validator binding="#{row.bindings.TaskName.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.ProjectPhase.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.ProjectPhase.label}"
+                                                       id="c4">
+                                                <af:inputText value="#{row.bindings.ProjectPhase.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.ProjectPhase.label}"
+                                                              required="#{bindings.TasksView3.hints.ProjectPhase.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.ProjectPhase.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.ProjectPhase.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.ProjectPhase.tooltip}"
+                                                              id="it11">
+                                                    <f:validator binding="#{row.bindings.ProjectPhase.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.TaskType.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.TaskType.label}" id="c5">
+                                                <af:inputText value="#{row.bindings.TaskType.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.TaskType.label}"
+                                                              required="#{bindings.TasksView3.hints.TaskType.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.TaskType.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.TaskType.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.TaskType.tooltip}"
+                                                              id="it12">
+                                                    <f:validator binding="#{row.bindings.TaskType.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.OverBudget.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.OverBudget.label}"
+                                                       id="c6">
+                                                <af:inputText value="#{row.bindings.OverBudget.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.OverBudget.label}"
+                                                              required="#{bindings.TasksView3.hints.OverBudget.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.OverBudget.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.OverBudget.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.OverBudget.tooltip}"
+                                                              id="it13">
+                                                    <f:validator binding="#{row.bindings.OverBudget.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.ServiceType.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.ServiceType.label}"
+                                                       id="c7">
+                                                <af:inputText value="#{row.bindings.ServiceType.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.ServiceType.label}"
+                                                              required="#{bindings.TasksView3.hints.ServiceType.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.ServiceType.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.ServiceType.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.ServiceType.tooltip}"
+                                                              id="it14">
+                                                    <f:validator binding="#{row.bindings.ServiceType.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.BudgetFlag.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.BudgetFlag.label}"
+                                                       id="c8">
+                                                <af:inputText value="#{row.bindings.BudgetFlag.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.BudgetFlag.label}"
+                                                              required="#{bindings.TasksView3.hints.BudgetFlag.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.BudgetFlag.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.BudgetFlag.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.BudgetFlag.tooltip}"
+                                                              id="it15">
+                                                    <f:validator binding="#{row.bindings.BudgetFlag.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.InProgressFlag.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.InProgressFlag.label}"
+                                                       id="c9">
+                                                <af:inputText value="#{row.bindings.InProgressFlag.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.InProgressFlag.label}"
+                                                              required="#{bindings.TasksView3.hints.InProgressFlag.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.InProgressFlag.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.InProgressFlag.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.InProgressFlag.tooltip}"
+                                                              id="it16">
+                                                    <f:validator binding="#{row.bindings.InProgressFlag.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.TopTaskNumber.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.TopTaskNumber.label}"
+                                                       id="c10">
+                                                <af:inputText value="#{row.bindings.TopTaskNumber.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.TopTaskNumber.label}"
+                                                              required="#{bindings.TasksView3.hints.TopTaskNumber.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.TopTaskNumber.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.TopTaskNumber.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.TopTaskNumber.tooltip}"
+                                                              id="it17">
+                                                    <f:validator binding="#{row.bindings.TopTaskNumber.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.WbsLevel.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.WbsLevel.label}"
+                                                       id="c11">
+                                                <af:inputText value="#{row.bindings.WbsLevel.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.WbsLevel.label}"
+                                                              required="#{bindings.TasksView3.hints.WbsLevel.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.WbsLevel.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.WbsLevel.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.WbsLevel.tooltip}"
+                                                              id="it18">
+                                                    <f:validator binding="#{row.bindings.WbsLevel.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TasksView3.hints.WbsLevel.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.TaskProperty.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.TaskProperty.label}"
+                                                       id="c12">
+                                                <af:inputText value="#{row.bindings.TaskProperty.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.TaskProperty.label}"
+                                                              required="#{bindings.TasksView3.hints.TaskProperty.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.TaskProperty.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.TaskProperty.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.TaskProperty.tooltip}"
+                                                              id="it19">
+                                                    <f:validator binding="#{row.bindings.TaskProperty.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.CcoId.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.CcoId.label}" id="c13">
+                                                <af:inputText value="#{row.bindings.CcoId.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.CcoId.label}"
+                                                              required="#{bindings.TasksView3.hints.CcoId.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.CcoId.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.CcoId.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.CcoId.tooltip}"
+                                                              id="it20">
+                                                    <f:validator binding="#{row.bindings.CcoId.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TasksView3.hints.CcoId.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.RplId.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.RplId.label}" id="c14">
+                                                <af:inputText value="#{row.bindings.RplId.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.RplId.label}"
+                                                              required="#{bindings.TasksView3.hints.RplId.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.RplId.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.RplId.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.RplId.tooltip}"
+                                                              id="it21">
+                                                    <f:validator binding="#{row.bindings.RplId.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TasksView3.hints.RplId.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.CpsId.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.CpsId.label}" id="c15">
+                                                <af:inputText value="#{row.bindings.CpsId.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.CpsId.label}"
+                                                              required="#{bindings.TasksView3.hints.CpsId.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.CpsId.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.CpsId.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.CpsId.tooltip}"
+                                                              id="it22">
+                                                    <f:validator binding="#{row.bindings.CpsId.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TasksView3.hints.CpsId.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.Description.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.Description.label}"
+                                                       id="c16">
+                                                <af:inputText value="#{row.bindings.Description.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.Description.label}"
+                                                              required="#{bindings.TasksView3.hints.Description.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.Description.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.Description.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.Description.tooltip}"
+                                                              id="it23">
+                                                    <f:validator binding="#{row.bindings.Description.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.CarryingOutOrganization.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.CarryingOutOrganization.label}"
+                                                       id="c17">
+                                                <af:inputText value="#{row.bindings.CarryingOutOrganization.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.CarryingOutOrganization.label}"
+                                                              required="#{bindings.TasksView3.hints.CarryingOutOrganization.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.CarryingOutOrganization.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.CarryingOutOrganization.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.CarryingOutOrganization.tooltip}"
+                                                              id="it24">
+                                                    <f:validator binding="#{row.bindings.CarryingOutOrganization.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.CarryingOutAddress.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.CarryingOutAddress.label}"
+                                                       id="c18">
+                                                <af:inputText value="#{row.bindings.CarryingOutAddress.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.CarryingOutAddress.label}"
+                                                              required="#{bindings.TasksView3.hints.CarryingOutAddress.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.CarryingOutAddress.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.CarryingOutAddress.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.CarryingOutAddress.tooltip}"
+                                                              id="it25">
+                                                    <f:validator binding="#{row.bindings.CarryingOutAddress.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.Status.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.Status.label}" id="c19">
+                                                <af:inputText value="#{row.bindings.Status.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.Status.label}"
+                                                              required="#{bindings.TasksView3.hints.Status.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.Status.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.Status.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.Status.tooltip}"
+                                                              id="it26">
+                                                    <f:validator binding="#{row.bindings.Status.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.TaskManager.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.TaskManager.label}"
+                                                       id="c20">
+                                                <af:inputText value="#{row.bindings.TaskManager.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.TaskManager.label}"
+                                                              required="#{bindings.TasksView3.hints.TaskManager.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.TaskManager.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.TaskManager.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.TaskManager.tooltip}"
+                                                              id="it27">
+                                                    <f:validator binding="#{row.bindings.TaskManager.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.TaskQuantity.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.TaskQuantity.label}"
+                                                       id="c21">
+                                                <af:inputText value="#{row.bindings.TaskQuantity.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.TaskQuantity.label}"
+                                                              required="#{bindings.TasksView3.hints.TaskQuantity.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.TaskQuantity.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.TaskQuantity.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.TaskQuantity.tooltip}"
+                                                              id="it28">
+                                                    <f:validator binding="#{row.bindings.TaskQuantity.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TasksView3.hints.TaskQuantity.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.TaskCapacity.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.TaskCapacity.label}"
+                                                       id="c22">
+                                                <af:inputText value="#{row.bindings.TaskCapacity.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.TaskCapacity.label}"
+                                                              required="#{bindings.TasksView3.hints.TaskCapacity.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.TaskCapacity.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.TaskCapacity.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.TaskCapacity.tooltip}"
+                                                              id="it29">
+                                                    <f:validator binding="#{row.bindings.TaskCapacity.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TasksView3.hints.TaskCapacity.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.PercentPerformed.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.PercentPerformed.label}"
+                                                       id="c23">
+                                                <af:inputText value="#{row.bindings.PercentPerformed.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.PercentPerformed.label}"
+                                                              required="#{bindings.TasksView3.hints.PercentPerformed.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.PercentPerformed.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.PercentPerformed.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.PercentPerformed.tooltip}"
+                                                              id="it30">
+                                                    <f:validator binding="#{row.bindings.PercentPerformed.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TasksView3.hints.PercentPerformed.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.Taxable.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.Taxable.label}" id="c24">
+                                                <af:inputText value="#{row.bindings.Taxable.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.Taxable.label}"
+                                                              required="#{bindings.TasksView3.hints.Taxable.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.Taxable.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.Taxable.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.Taxable.tooltip}"
+                                                              id="it31">
+                                                    <f:validator binding="#{row.bindings.Taxable.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.TaxName.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.TaxName.label}" id="c25">
+                                                <af:inputText value="#{row.bindings.TaxName.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.TaxName.label}"
+                                                              required="#{bindings.TasksView3.hints.TaxName.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.TaxName.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.TaxName.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.TaxName.tooltip}"
+                                                              id="it32">
+                                                    <f:validator binding="#{row.bindings.TaxName.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.TaxRate.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.TaxRate.label}" id="c26">
+                                                <af:inputText value="#{row.bindings.TaxRate.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.TaxRate.label}"
+                                                              required="#{bindings.TasksView3.hints.TaxRate.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.TaxRate.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.TaxRate.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.TaxRate.tooltip}"
+                                                              id="it33">
+                                                    <f:validator binding="#{row.bindings.TaxRate.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TasksView3.hints.TaxRate.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.TxnControlFlag.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.TxnControlFlag.label}"
+                                                       id="c27">
+                                                <af:inputText value="#{row.bindings.TxnControlFlag.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.TxnControlFlag.label}"
+                                                              required="#{bindings.TasksView3.hints.TxnControlFlag.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.TxnControlFlag.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.TxnControlFlag.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.TxnControlFlag.tooltip}"
+                                                              id="it34">
+                                                    <f:validator binding="#{row.bindings.TxnControlFlag.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.ExchangeRateType.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.ExchangeRateType.label}"
+                                                       id="c28">
+                                                <af:inputText value="#{row.bindings.ExchangeRateType.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.ExchangeRateType.label}"
+                                                              required="#{bindings.TasksView3.hints.ExchangeRateType.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.ExchangeRateType.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.ExchangeRateType.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.ExchangeRateType.tooltip}"
+                                                              id="it35">
+                                                    <f:validator binding="#{row.bindings.ExchangeRateType.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.ExchangeDate.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.ExchangeDate.label}"
+                                                       id="c29">
+                                                <f:facet name="filter">
+                                                    <af:inputDate value="#{bindings.TasksView3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.ExchangeDate.value}"
+                                                                  id="id1">
+                                                        <af:convertDateTime pattern="#{bindings.TasksView3.hints.ExchangeDate.format}"/>
+                                                    </af:inputDate>
+                                                </f:facet>
+                                                <af:inputDate value="#{row.bindings.ExchangeDate.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.ExchangeDate.label}"
+                                                              required="#{bindings.TasksView3.hints.ExchangeDate.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.ExchangeDate.displayWidth}"
+                                                              shortDesc="#{bindings.TasksView3.hints.ExchangeDate.tooltip}"
+                                                              id="id2">
+                                                    <f:validator binding="#{row.bindings.ExchangeDate.validator}"/>
+                                                    <af:convertDateTime pattern="#{bindings.TasksView3.hints.ExchangeDate.format}"/>
+                                                </af:inputDate>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.ExchangeRate.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.ExchangeRate.label}"
+                                                       id="c30">
+                                                <af:inputText value="#{row.bindings.ExchangeRate.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.ExchangeRate.label}"
+                                                              required="#{bindings.TasksView3.hints.ExchangeRate.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.ExchangeRate.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.ExchangeRate.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.ExchangeRate.tooltip}"
+                                                              id="it36">
+                                                    <f:validator binding="#{row.bindings.ExchangeRate.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TasksView3.hints.ExchangeRate.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.ScheduledStartDate.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.ScheduledStartDate.label}"
+                                                       id="c31">
+                                                <f:facet name="filter">
+                                                    <af:inputDate value="#{bindings.TasksView3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.ScheduledStartDate.value}"
+                                                                  id="id3">
+                                                        <af:convertDateTime pattern="#{bindings.TasksView3.hints.ScheduledStartDate.format}"/>
+                                                    </af:inputDate>
+                                                </f:facet>
+                                                <af:inputDate value="#{row.bindings.ScheduledStartDate.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.ScheduledStartDate.label}"
+                                                              required="#{bindings.TasksView3.hints.ScheduledStartDate.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.ScheduledStartDate.displayWidth}"
+                                                              shortDesc="#{bindings.TasksView3.hints.ScheduledStartDate.tooltip}"
+                                                              id="id4">
+                                                    <f:validator binding="#{row.bindings.ScheduledStartDate.validator}"/>
+                                                    <af:convertDateTime pattern="#{bindings.TasksView3.hints.ScheduledStartDate.format}"/>
+                                                </af:inputDate>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.ScheduledFinishDate.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.ScheduledFinishDate.label}"
+                                                       id="c32">
+                                                <f:facet name="filter">
+                                                    <af:inputDate value="#{bindings.TasksView3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.ScheduledFinishDate.value}"
+                                                                  id="id5">
+                                                        <af:convertDateTime pattern="#{bindings.TasksView3.hints.ScheduledFinishDate.format}"/>
+                                                    </af:inputDate>
+                                                </f:facet>
+                                                <af:inputDate value="#{row.bindings.ScheduledFinishDate.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.ScheduledFinishDate.label}"
+                                                              required="#{bindings.TasksView3.hints.ScheduledFinishDate.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.ScheduledFinishDate.displayWidth}"
+                                                              shortDesc="#{bindings.TasksView3.hints.ScheduledFinishDate.tooltip}"
+                                                              id="id6">
+                                                    <f:validator binding="#{row.bindings.ScheduledFinishDate.validator}"/>
+                                                    <af:convertDateTime pattern="#{bindings.TasksView3.hints.ScheduledFinishDate.format}"/>
+                                                </af:inputDate>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.ActualStartDate.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.ActualStartDate.label}"
+                                                       id="c33">
+                                                <f:facet name="filter">
+                                                    <af:inputDate value="#{bindings.TasksView3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.ActualStartDate.value}"
+                                                                  id="id7">
+                                                        <af:convertDateTime pattern="#{bindings.TasksView3.hints.ActualStartDate.format}"/>
+                                                    </af:inputDate>
+                                                </f:facet>
+                                                <af:inputDate value="#{row.bindings.ActualStartDate.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.ActualStartDate.label}"
+                                                              required="#{bindings.TasksView3.hints.ActualStartDate.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.ActualStartDate.displayWidth}"
+                                                              shortDesc="#{bindings.TasksView3.hints.ActualStartDate.tooltip}"
+                                                              id="id8">
+                                                    <f:validator binding="#{row.bindings.ActualStartDate.validator}"/>
+                                                    <af:convertDateTime pattern="#{bindings.TasksView3.hints.ActualStartDate.format}"/>
+                                                </af:inputDate>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.ActualFinishDate.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.ActualFinishDate.label}"
+                                                       id="c34">
+                                                <f:facet name="filter">
+                                                    <af:inputDate value="#{bindings.TasksView3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.ActualFinishDate.value}"
+                                                                  id="id9">
+                                                        <af:convertDateTime pattern="#{bindings.TasksView3.hints.ActualFinishDate.format}"/>
+                                                    </af:inputDate>
+                                                </f:facet>
+                                                <af:inputDate value="#{row.bindings.ActualFinishDate.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.ActualFinishDate.label}"
+                                                              required="#{bindings.TasksView3.hints.ActualFinishDate.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.ActualFinishDate.displayWidth}"
+                                                              shortDesc="#{bindings.TasksView3.hints.ActualFinishDate.tooltip}"
+                                                              id="id10">
+                                                    <f:validator binding="#{row.bindings.ActualFinishDate.validator}"/>
+                                                    <af:convertDateTime pattern="#{bindings.TasksView3.hints.ActualFinishDate.format}"/>
+                                                </af:inputDate>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.AcceptedDate.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.AcceptedDate.label}"
+                                                       id="c35">
+                                                <f:facet name="filter">
+                                                    <af:inputDate value="#{bindings.TasksView3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.AcceptedDate.value}"
+                                                                  id="id11">
+                                                        <af:convertDateTime pattern="#{bindings.TasksView3.hints.AcceptedDate.format}"/>
+                                                    </af:inputDate>
+                                                </f:facet>
+                                                <af:inputDate value="#{row.bindings.AcceptedDate.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.AcceptedDate.label}"
+                                                              required="#{bindings.TasksView3.hints.AcceptedDate.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.AcceptedDate.displayWidth}"
+                                                              shortDesc="#{bindings.TasksView3.hints.AcceptedDate.tooltip}"
+                                                              id="id12">
+                                                    <f:validator binding="#{row.bindings.AcceptedDate.validator}"/>
+                                                    <af:convertDateTime pattern="#{bindings.TasksView3.hints.AcceptedDate.format}"/>
+                                                </af:inputDate>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.Capitalizable.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.Capitalizable.label}"
+                                                       id="c36">
+                                                <af:inputText value="#{row.bindings.Capitalizable.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.Capitalizable.label}"
+                                                              required="#{bindings.TasksView3.hints.Capitalizable.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.Capitalizable.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.Capitalizable.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.Capitalizable.tooltip}"
+                                                              id="it37">
+                                                    <f:validator binding="#{row.bindings.Capitalizable.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.CapitalizedCost.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.CapitalizedCost.label}"
+                                                       id="c37">
+                                                <af:inputText value="#{row.bindings.CapitalizedCost.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.CapitalizedCost.label}"
+                                                              required="#{bindings.TasksView3.hints.CapitalizedCost.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.CapitalizedCost.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.CapitalizedCost.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.CapitalizedCost.tooltip}"
+                                                              id="it38">
+                                                    <f:validator binding="#{row.bindings.CapitalizedCost.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TasksView3.hints.CapitalizedCost.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.CapitalizedDate.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.CapitalizedDate.label}"
+                                                       id="c38">
+                                                <f:facet name="filter">
+                                                    <af:inputDate value="#{bindings.TasksView3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.CapitalizedDate.value}"
+                                                                  id="id13">
+                                                        <af:convertDateTime pattern="#{bindings.TasksView3.hints.CapitalizedDate.format}"/>
+                                                    </af:inputDate>
+                                                </f:facet>
+                                                <af:inputDate value="#{row.bindings.CapitalizedDate.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.CapitalizedDate.label}"
+                                                              required="#{bindings.TasksView3.hints.CapitalizedDate.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.CapitalizedDate.displayWidth}"
+                                                              shortDesc="#{bindings.TasksView3.hints.CapitalizedDate.tooltip}"
+                                                              id="id14">
+                                                    <f:validator binding="#{row.bindings.CapitalizedDate.validator}"/>
+                                                    <af:convertDateTime pattern="#{bindings.TasksView3.hints.CapitalizedDate.format}"/>
+                                                </af:inputDate>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.AccidentQuantityAllowed.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.AccidentQuantityAllowed.label}"
+                                                       id="c39">
+                                                <af:inputText value="#{row.bindings.AccidentQuantityAllowed.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.AccidentQuantityAllowed.label}"
+                                                              required="#{bindings.TasksView3.hints.AccidentQuantityAllowed.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.AccidentQuantityAllowed.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.AccidentQuantityAllowed.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.AccidentQuantityAllowed.tooltip}"
+                                                              id="it39">
+                                                    <f:validator binding="#{row.bindings.AccidentQuantityAllowed.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TasksView3.hints.AccidentQuantityAllowed.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.AccidentMinuteAllowed.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.AccidentMinuteAllowed.label}"
+                                                       id="c40">
+                                                <af:inputText value="#{row.bindings.AccidentMinuteAllowed.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.AccidentMinuteAllowed.label}"
+                                                              required="#{bindings.TasksView3.hints.AccidentMinuteAllowed.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.AccidentMinuteAllowed.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.AccidentMinuteAllowed.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.AccidentMinuteAllowed.tooltip}"
+                                                              id="it40">
+                                                    <f:validator binding="#{row.bindings.AccidentMinuteAllowed.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TasksView3.hints.AccidentMinuteAllowed.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.TotalHours.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.TotalHours.label}"
+                                                       id="c41">
+                                                <af:inputText value="#{row.bindings.TotalHours.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.TotalHours.label}"
+                                                              required="#{bindings.TasksView3.hints.TotalHours.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.TotalHours.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.TotalHours.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.TotalHours.tooltip}"
+                                                              id="it41">
+                                                    <f:validator binding="#{row.bindings.TotalHours.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TasksView3.hints.TotalHours.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.ProductName.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.ProductName.label}"
+                                                       id="c42">
+                                                <af:inputText value="#{row.bindings.ProductName.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.ProductName.label}"
+                                                              required="#{bindings.TasksView3.hints.ProductName.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.ProductName.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.ProductName.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.ProductName.tooltip}"
+                                                              id="it42">
+                                                    <f:validator binding="#{row.bindings.ProductName.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.CreateDate.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.CreateDate.label}"
+                                                       id="c43">
+                                                <f:facet name="filter">
+                                                    <af:inputDate value="#{bindings.TasksView3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.CreateDate.value}"
+                                                                  id="id15">
+                                                        <af:convertDateTime pattern="#{bindings.TasksView3.hints.CreateDate.format}"/>
+                                                    </af:inputDate>
+                                                </f:facet>
+                                                <af:inputDate value="#{row.bindings.CreateDate.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.CreateDate.label}"
+                                                              required="#{bindings.TasksView3.hints.CreateDate.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.CreateDate.displayWidth}"
+                                                              shortDesc="#{bindings.TasksView3.hints.CreateDate.tooltip}"
+                                                              id="id16">
+                                                    <f:validator binding="#{row.bindings.CreateDate.validator}"/>
+                                                    <af:convertDateTime pattern="#{bindings.TasksView3.hints.CreateDate.format}"/>
+                                                </af:inputDate>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.CreatedBy.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.CreatedBy.label}"
+                                                       id="c44">
+                                                <af:inputText value="#{row.bindings.CreatedBy.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.CreatedBy.label}"
+                                                              required="#{bindings.TasksView3.hints.CreatedBy.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.CreatedBy.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.CreatedBy.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.CreatedBy.tooltip}"
+                                                              id="it43">
+                                                    <f:validator binding="#{row.bindings.CreatedBy.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.ModifyDate.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.ModifyDate.label}"
+                                                       id="c45">
+                                                <f:facet name="filter">
+                                                    <af:inputDate value="#{bindings.TasksView3Query.queryDescriptor.filterConjunctionCriterion.criterionMap.ModifyDate.value}"
+                                                                  id="id17">
+                                                        <af:convertDateTime pattern="#{bindings.TasksView3.hints.ModifyDate.format}"/>
+                                                    </af:inputDate>
+                                                </f:facet>
+                                                <af:inputDate value="#{row.bindings.ModifyDate.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.ModifyDate.label}"
+                                                              required="#{bindings.TasksView3.hints.ModifyDate.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.ModifyDate.displayWidth}"
+                                                              shortDesc="#{bindings.TasksView3.hints.ModifyDate.tooltip}"
+                                                              id="id18">
+                                                    <f:validator binding="#{row.bindings.ModifyDate.validator}"/>
+                                                    <af:convertDateTime pattern="#{bindings.TasksView3.hints.ModifyDate.format}"/>
+                                                </af:inputDate>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.ModifiedBy.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.ModifiedBy.label}"
+                                                       id="c46">
+                                                <af:inputText value="#{row.bindings.ModifiedBy.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.ModifiedBy.label}"
+                                                              required="#{bindings.TasksView3.hints.ModifiedBy.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.ModifiedBy.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.ModifiedBy.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.ModifiedBy.tooltip}"
+                                                              id="it44">
+                                                    <f:validator binding="#{row.bindings.ModifiedBy.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.TasIdPartOf.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.TasIdPartOf.label}"
+                                                       id="c47">
+                                                <af:inputText value="#{row.bindings.TasIdPartOf.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.TasIdPartOf.label}"
+                                                              required="#{bindings.TasksView3.hints.TasIdPartOf.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.TasIdPartOf.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.TasIdPartOf.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.TasIdPartOf.tooltip}"
+                                                              id="it45">
+                                                    <f:validator binding="#{row.bindings.TasIdPartOf.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TasksView3.hints.TasIdPartOf.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.TplId.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.TplId.label}" id="c48">
+                                                <af:inputText value="#{row.bindings.TplId.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.TplId.label}"
+                                                              required="#{bindings.TasksView3.hints.TplId.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.TplId.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.TplId.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.TplId.tooltip}"
+                                                              id="it46">
+                                                    <f:validator binding="#{row.bindings.TplId.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TasksView3.hints.TplId.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.TenId.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.TenId.label}" id="c49">
+                                                <af:inputText value="#{row.bindings.TenId.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.TenId.label}"
+                                                              required="#{bindings.TasksView3.hints.TenId.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.TenId.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.TenId.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.TenId.tooltip}"
+                                                              id="it47">
+                                                    <f:validator binding="#{row.bindings.TenId.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TasksView3.hints.TenId.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.ProjId.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.ProjId.label}" id="c50">
+                                                <af:inputText value="#{row.bindings.ProjId.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.ProjId.label}"
+                                                              required="#{bindings.TasksView3.hints.ProjId.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.ProjId.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.ProjId.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.ProjId.tooltip}"
+                                                              id="it48">
+                                                    <f:validator binding="#{row.bindings.ProjId.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TasksView3.hints.ProjId.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.TteId.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.TteId.label}" id="c51">
+                                                <af:inputText value="#{row.bindings.TteId.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.TteId.label}"
+                                                              required="#{bindings.TasksView3.hints.TteId.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.TteId.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.TteId.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.TteId.tooltip}"
+                                                              id="it49">
+                                                    <f:validator binding="#{row.bindings.TteId.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TasksView3.hints.TteId.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.UomCode.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.UomCode.label}" id="c52">
+                                                <af:inputText value="#{row.bindings.UomCode.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.UomCode.label}"
+                                                              required="#{bindings.TasksView3.hints.UomCode.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.UomCode.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.UomCode.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.UomCode.tooltip}"
+                                                              id="it50">
+                                                    <f:validator binding="#{row.bindings.UomCode.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.IsParent.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.IsParent.label}"
+                                                       id="c53">
+                                                <af:inputText value="#{row.bindings.IsParent.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.IsParent.label}"
+                                                              required="#{bindings.TasksView3.hints.IsParent.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.IsParent.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.IsParent.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.IsParent.tooltip}"
+                                                              id="it51">
+                                                    <f:validator binding="#{row.bindings.IsParent.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.DisplayedGanntchart.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.DisplayedGanntchart.label}"
+                                                       id="c54">
+                                                <af:inputText value="#{row.bindings.DisplayedGanntchart.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.DisplayedGanntchart.label}"
+                                                              required="#{bindings.TasksView3.hints.DisplayedGanntchart.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.DisplayedGanntchart.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.DisplayedGanntchart.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.DisplayedGanntchart.tooltip}"
+                                                              id="it52">
+                                                    <f:validator binding="#{row.bindings.DisplayedGanntchart.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.InTending.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.InTending.label}"
+                                                       id="c55">
+                                                <af:inputText value="#{row.bindings.InTending.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.InTending.label}"
+                                                              required="#{bindings.TasksView3.hints.InTending.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.InTending.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.InTending.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.InTending.tooltip}"
+                                                              id="it53">
+                                                    <f:validator binding="#{row.bindings.InTending.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.EclId.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.EclId.label}" id="c56">
+                                                <af:inputText value="#{row.bindings.EclId.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.EclId.label}"
+                                                              required="#{bindings.TasksView3.hints.EclId.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.EclId.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.EclId.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.EclId.tooltip}"
+                                                              id="it54">
+                                                    <f:validator binding="#{row.bindings.EclId.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TasksView3.hints.EclId.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.CurCode.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.CurCode.label}" id="c57">
+                                                <af:inputText value="#{row.bindings.CurCode.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.CurCode.label}"
+                                                              required="#{bindings.TasksView3.hints.CurCode.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.CurCode.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.CurCode.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.CurCode.tooltip}"
+                                                              id="it55">
+                                                    <f:validator binding="#{row.bindings.CurCode.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.PerformanceTestFlag.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.PerformanceTestFlag.label}"
+                                                       id="c58">
+                                                <af:inputText value="#{row.bindings.PerformanceTestFlag.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.PerformanceTestFlag.label}"
+                                                              required="#{bindings.TasksView3.hints.PerformanceTestFlag.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.PerformanceTestFlag.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.PerformanceTestFlag.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.PerformanceTestFlag.tooltip}"
+                                                              id="it56">
+                                                    <f:validator binding="#{row.bindings.PerformanceTestFlag.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.IitId.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.IitId.label}" id="c59">
+                                                <af:inputText value="#{row.bindings.IitId.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.IitId.label}"
+                                                              required="#{bindings.TasksView3.hints.IitId.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.IitId.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.IitId.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.IitId.tooltip}"
+                                                              id="it57">
+                                                    <f:validator binding="#{row.bindings.IitId.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TasksView3.hints.IitId.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.PtpId.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.PtpId.label}" id="c60">
+                                                <af:inputText value="#{row.bindings.PtpId.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.PtpId.label}"
+                                                              required="#{bindings.TasksView3.hints.PtpId.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.PtpId.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.PtpId.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.PtpId.tooltip}"
+                                                              id="it58">
+                                                    <f:validator binding="#{row.bindings.PtpId.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TasksView3.hints.PtpId.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.CapitalizedFlag.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.CapitalizedFlag.label}"
+                                                       id="c61">
+                                                <af:inputText value="#{row.bindings.CapitalizedFlag.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.CapitalizedFlag.label}"
+                                                              required="#{bindings.TasksView3.hints.CapitalizedFlag.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.CapitalizedFlag.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.CapitalizedFlag.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.CapitalizedFlag.tooltip}"
+                                                              id="it59">
+                                                    <f:validator binding="#{row.bindings.CapitalizedFlag.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.BilledOtFOb.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.BilledOtFOb.label}"
+                                                       id="c62">
+                                                <af:inputText value="#{row.bindings.BilledOtFOb.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.BilledOtFOb.label}"
+                                                              required="#{bindings.TasksView3.hints.BilledOtFOb.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.BilledOtFOb.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.BilledOtFOb.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.BilledOtFOb.tooltip}"
+                                                              id="it60">
+                                                    <f:validator binding="#{row.bindings.BilledOtFOb.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.ExpertFlag.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.ExpertFlag.label}"
+                                                       id="c63">
+                                                <af:inputText value="#{row.bindings.ExpertFlag.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.ExpertFlag.label}"
+                                                              required="#{bindings.TasksView3.hints.ExpertFlag.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.ExpertFlag.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.ExpertFlag.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.ExpertFlag.tooltip}"
+                                                              id="it61">
+                                                    <f:validator binding="#{row.bindings.ExpertFlag.validator}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                            <af:column sortProperty="#{bindings.TasksView3.hints.IitIdProductOf.name}"
+                                                       filterable="true" sortable="true"
+                                                       headerText="#{bindings.TasksView3.hints.IitIdProductOf.label}"
+                                                       id="c64">
+                                                <af:inputText value="#{row.bindings.IitIdProductOf.inputValue}"
+                                                              label="#{bindings.TasksView3.hints.IitIdProductOf.label}"
+                                                              required="#{bindings.TasksView3.hints.IitIdProductOf.mandatory}"
+                                                              columns="#{bindings.TasksView3.hints.IitIdProductOf.displayWidth}"
+                                                              maximumLength="#{bindings.TasksView3.hints.IitIdProductOf.precision}"
+                                                              shortDesc="#{bindings.TasksView3.hints.IitIdProductOf.tooltip}"
+                                                              id="it62">
+                                                    <f:validator binding="#{row.bindings.IitIdProductOf.validator}"/>
+                                                    <af:convertNumber groupingUsed="false"
+                                                                      pattern="#{bindings.TasksView3.hints.IitIdProductOf.format}"/>
+                                                </af:inputText>
+                                            </af:column>
+                                        </af:table>
+                                        <f:facet name="statusbar"/>
+                                    </af:panelCollection>
+                                </f:facet>
+                                <f:facet name="second">
+                                    <af:panelTabbed position="above" id="pt2">
+                                        <af:showDetailItem id="tab1" text="Project Detail 1"/>
+                                        <af:showDetailItem text="Project Detail 2" id="sdi1"/>
+                                    </af:panelTabbed>
+                                </f:facet>
+                            </af:panelSplitter>
+                        </f:facet>
+                    </af:panelSplitter>
+                </f:facet>
+                <f:attribute name="title" value="Project System"/>
+            </af:pageTemplate>
+        </af:form>
+    </af:document>
+</f:view>

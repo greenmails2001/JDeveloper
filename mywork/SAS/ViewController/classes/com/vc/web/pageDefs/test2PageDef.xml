@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.1.49.49" id="test2PageDef" Package="com.vc.web.pageDefs">
+  <parameters/>
+  <executables>
+    <methodIterator Binds="queryAccountsFindAll.result" DataControl="SASFacadeLocal" RangeSize="25"
+                    BeanClass="com.vc.web.ejb.sas.entities.Accounts" id="queryAccountsFindAllIterator"/>
+    <methodIterator Binds="queryCountriesFindAll.result" DataControl="SASFacadeLocal" RangeSize="-1"
+                    BeanClass="com.vc.web.ejb.sas.entities.Countries" id="queryCountriesFindAllIterator"/>
+    <accessorIterator MasterBinding="queryCountriesFindAllIterator" Binds="accountsList" RangeSize="10" DataControl="SASFacadeLocal"
+                      BeanClass="com.vc.web.ejb.sas.entities.Accounts" id="accountsListIterator"/>
+    <accessorIterator MasterBinding="queryAccountsFindAllIterator" Binds="countries" RangeSize="25" DataControl="SASFacadeLocal"
+                      BeanClass="com.vc.web.ejb.sas.entities.Countries" id="countriesIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="queryAccountsFindAll" RequiresUpdateModel="true" Action="invokeMethod" MethodName="queryAccountsFindAll"
+                  IsViewObjectMethod="false" DataControl="SASFacadeLocal" InstanceName="SASFacadeLocal.dataProvider"
+                  ReturnName="SASFacadeLocal.methodResults.queryAccountsFindAll_SASFacadeLocal_dataProvider_queryAccountsFindAll_result"/>
+    <attributeValues IterBinding="queryAccountsFindAllIterator" id="email">
+      <AttrNames>
+        <Item Value="email"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="queryAccountsFindAllIterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="queryAccountsFindAllIterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="queryAccountsFindAllIterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="queryAccountsFindAllIterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <methodAction id="queryCountriesFindAll" RequiresUpdateModel="true" Action="invokeMethod" MethodName="queryCountriesFindAll"
+                  IsViewObjectMethod="false" DataControl="SASFacadeLocal" InstanceName="SASFacadeLocal.dataProvider"
+                  ReturnName="SASFacadeLocal.methodResults.queryCountriesFindAll_SASFacadeLocal_dataProvider_queryCountriesFindAll_result"/>
+    <action IterBinding="queryAccountsFindAllIterator" id="Create" RequiresUpdateModel="true" Action="createRow"/>
+    <list IterBinding="countriesIterator" id="countries" DTSupportsMRU="true" StaticList="false" ListIter="queryCountriesFindAllIterator"
+          ListOperMode="navigation">
+      <AttrNames>
+        <Item Value="couId"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="couId"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="name"/>
+      </ListDisplayAttrNames>
+    </list>
+  </bindings>
+  <ResourceBundle>
+    <PropertiesBundle xmlns="http://xmlns.oracle.com/adfm/resourcebundle" PropertiesFile="com.vc.web.ViewControllerBundle"/>
+  </ResourceBundle>
+</pageDefinition>

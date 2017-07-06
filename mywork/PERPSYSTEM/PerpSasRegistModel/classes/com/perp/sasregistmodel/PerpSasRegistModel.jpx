@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+<!---->
+
+<JboProject
+   xmlns="http://xmlns.oracle.com/bc4j"
+   Name="PerpSasRegistModel"
+   Version="11.1.1.56.60"
+   SeparateXMLFiles="true"
+   PackageName="com.perp.sasregistmodel">
+   <DesignTime>
+      <Attr Name="_jprName" Value="../../../../PerpSasRegistModel.jpr"/>
+      <Attr Name="_appModuleNames0"
+         Value="com.perp.sasregistmodel.PerpSasRegistAppModule"/>
+      <Attr Name="_NamedConnection" Value="PerpSasRegistConnection"/>
+   </DesignTime>
+   <Containee
+      Name="entities"
+      PackageName="com.perp.sasregistmodel.entities"
+      ObjectType="JboPackage">
+      <DesignTime>
+         <Attr Name="_EO" Value="true"/>
+         <Attr Name="_AS" Value="true"/>
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="sasregistmodel"
+      PackageName="com.perp.sasregistmodel"
+      ObjectType="JboPackage">
+      <DesignTime>
+         <Attr Name="_AM" Value="true"/>
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="lovs"
+      PackageName="com.perp.sasregistmodel.views.lovs"
+      ObjectType="JboPackage">
+      <DesignTime>
+         <Attr Name="_VO" Value="true"/>
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="sasr002"
+      PackageName="com.perp.sasregistmodel.views.sasr002"
+      ObjectType="JboPackage">
+      <DesignTime>
+         <Attr Name="_VO" Value="true"/>
+         <Attr Name="_VL" Value="true"/>
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="sasra001"
+      PackageName="com.perp.sasregistmodel.views.sasra001"
+      ObjectType="JboPackage">
+      <DesignTime>
+         <Attr Name="_VO" Value="true"/>
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="sasra002"
+      PackageName="com.perp.sasregistmodel.views.sasra002"
+      ObjectType="JboPackage">
+      <DesignTime>
+         <Attr Name="_VO" Value="true"/>
+         <Attr Name="_VL" Value="true"/>
+      </DesignTime>
+   </Containee>
+   <Containee
+      Name="views"
+      PackageName="com.perp.sasregistmodel.views"
+      ObjectType="JboPackage">
+      <DesignTime>
+         <Attr Name="_VO" Value="true"/>
+      </DesignTime>
+   </Containee>
+</JboProject>

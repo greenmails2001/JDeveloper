@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1" title="User Profile">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:pageTemplate viewId="/templates/sasTemplate.jspx" id="pt1">
+          <f:facet name="status"/>
+          <f:facet name="globalLinks">
+            <af:navigationPane hint="buttons" id="pt_np1">
+              <af:commandNavigationItem text="Home" action="home" id="pt_cni1"/>
+              <af:commandNavigationItem text="Login" action="home"
+                                        id="pt_cni2"/>
+              <af:commandNavigationItem text="Help" action="helpCenter"
+                                        disabled="true" id="pt_cni3"/>
+            </af:navigationPane>
+          </f:facet>
+          <f:facet name="about">
+            <af:outputText value="vinhcuu" id="ot2"/>
+          </f:facet>
+          <f:facet name="copyright">
+            <af:outputText value="@Copyright vinhcuu 2010" id="outputText1"/>
+          </f:facet>
+          <f:facet name="globalSearch">
+            <af:panelGroupLayout id="pgl1" layout="horizontal">
+              <af:menuBar id="mb1">
+                <af:menu text="Help" id="m2">
+                  <af:commandMenuItem text="User Profile" id="cmi3"
+                                      action="viewUserProfile"/>
+                  <af:commandMenuItem text="About" id="cmi1"
+                                      partialSubmit="true"/>
+                </af:menu>
+              </af:menuBar>
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="globalToolbar">
+            <af:group id="g1">
+              <af:outputText value="Xin chào: " id="ot1"/>
+              <af:outputFormatted value="#{sessionLoginObject.perpAccount.userName}" id="of1"/>
+              <af:spacer width="50" height="10" id="s1"/>
+              <af:commandButton text="Trở về" id="cb1" action="back"/>
+            </af:group>
+          </f:facet>
+          <f:facet name="center">
+            <af:decorativeBox id="db1">
+              <f:facet name="center">
+                <af:region value="#{bindings.userprofile1.regionModel}" id="r1"
+                           partialTriggers="::np1:cni1 ::np1:cni2"/>
+              </f:facet>
+            </af:decorativeBox>
+          </f:facet>
+          <f:facet name="globalTabs">
+            <af:navigationPane id="np1">
+              <af:commandNavigationItem text="Thông tin chung" id="cni1"
+                                        actionListener="#{userprofileFlowBacking.setOutcomeActionListener}"
+                                        partialSubmit="true">
+                <f:attribute name="outcome" value="default"/>
+              </af:commandNavigationItem>
+              <af:commandNavigationItem text="Lịch sử đăng nhập" id="cni2"
+                                        actionListener="#{userprofileFlowBacking.setOutcomeActionListener}"
+                                        partialSubmit="true">
+                <f:attribute name="outcome" value="history"/>
+              </af:commandNavigationItem>
+            </af:navigationPane>
+          </f:facet>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

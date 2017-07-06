@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="sasr-admin">
+    <default-activity id="__1">gate</default-activity>
+    <router id="gate">
+      <case>
+        <expression>#{sasrAdminCaseFlowManager.caseFlow=='sasr-accounts'}</expression>
+        <outcome id="__10">sasr-accounts</outcome>
+      </case>
+      <case>
+        <expression>#{sasrAdminCaseFlowManager.caseFlow=='service-packages'}</expression>
+        <outcome id="__11">service-packages</outcome>
+      </case>
+      <default-outcome>sasr-accounts</default-outcome>
+    </router>
+    <view id="sasraccounts">
+      <page>/pages/sasr/sasr002/sas002frag/sasrAdminFrag/sasraccounts.jsff</page>
+    </view>
+    <view id="servicepackages">
+      <page>/pages/sasr/sasr002/sas002frag/sasrAdminFrag/servicepackages.jsff</page>
+    </view>
+    <control-flow-rule id="__2">
+      <from-activity-id id="__3">gate</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome id="__6">sasr-accounts</from-outcome>
+        <to-activity-id id="__4">sasraccounts</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__7">
+        <from-outcome id="__9">service-packages</from-outcome>
+        <to-activity-id id="__8">servicepackages</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

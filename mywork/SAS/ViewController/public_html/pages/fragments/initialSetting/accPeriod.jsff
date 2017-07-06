@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:pageTemplate viewId="/templates/initialSettingTemplate.jspx" id="rxcpt1">
+    <f:facet name="center">
+      <af:panelStretchLayout styleClass="AFVisualRoot" topHeight="29px" id="rxcpsl1">
+        <f:facet name="center">
+          <af:panelStretchLayout endWidth="237px" id="rxcpsl2">
+            <f:facet name="center">
+              <af:panelGroupLayout layout="vertical" id="rxcpgl1">
+                <af:panelGroupLayout layout="horizontal" inlineStyle="width:100%; padding:3px;" halign="left" valign="top"
+                                     id="rxcpgl2">
+                  <af:panelGroupLayout layout="vertical" id="rxcpgl3">
+                    <af:image shortDesc="Accounting Period" source="/resources/images/acc-period2.jpeg" id="rxci1"/>
+                  </af:panelGroupLayout>
+                  <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="rxcpgl4">
+                    <af:outputLabel value="KY KE TOAN" inlineStyle="font-size:large;" id="rxcol1"/>
+                    <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="rxcpgl5">
+                      <af:outputText value="Ky ke toan la khoang thoi gian (chu ky) cho viec ghi nhan hach toan ke toan . Trong PERP su dung khoang thoi gian 1 thang . Chuc nang set dat co y nghia trong lan dau tien su dung phan mem . Set dat ngay dau tien cua thang la ngay bat dau ky  va ngay cuoi thang la ngay cuoi ky . He thong tu dong mo cac ky ke toan cua mot vai thang "
+                                     id="rxcot1"/>
+                    </af:panelGroupLayout>
+                  </af:panelGroupLayout>
+                </af:panelGroupLayout>
+                <af:panelGroupLayout layout="vertical" id="rxcpgl6">
+                  <af:panelStretchLayout styleClass="AFVisualRoot" startWidth="208px" inlineStyle="padding:2px;"
+                                         id="rxcpsl3">
+                    <f:facet name="center">
+                      <af:panelGroupLayout layout="scroll" inlineStyle="padding:3px;" id="rxcpgl7">
+                        <af:panelGroupLayout layout="vertical"
+                                             inlineStyle="padding:3px; border-width:1px; border-style:outset; height:40px;"
+                                             id="rxcpgl8">
+                          <af:outputLabel value="THONG TIN KY KE TOAN DANG SU DUNG" inlineStyle="font-size:larger;"
+                                          id="rxcol2"/>
+                        </af:panelGroupLayout>
+                        <af:spacer width="10" height="10" id="rxcs1"/>
+                        <af:panelGroupLayout layout="horizontal" halign="left" valign="top" id="rxcpgl9">
+                          <af:panelGroupLayout layout="horizontal" halign="left" inlineStyle="padding:3px;"
+                                               id="rxcpgl10">
+                            <af:image source="/resources/images/acc-period.jpeg" id="rxci2"/>
+                          </af:panelGroupLayout>
+                          <af:panelGroupLayout layout="vertical" halign="left" inlineStyle="padding:3px; width:100%;"
+                                               id="rxcpgl11">
+                            <af:outputText value="He thong dang su dung ky ke toan la duoc tinh la 1 thang "
+                                           id="rxcot2"/>
+                            <af:panelFormLayout id="rxcpfl1">
+                              <af:inputDate label="Thang bat dau" disabledDays="true" id="rxcid1"/>
+                              <af:inputText label="Ngay dau ky" value="1" readOnly="true" id="rxcit1"/>
+                              <af:inputText label="Ngay cuoi ky" value="31" readOnly="true" id="rxcit2"/>
+                            </af:panelFormLayout>
+                            <af:spacer width="10" height="10" id="rxcs2"/>
+                            <af:panelGroupLayout layout="vertical" halign="right" id="rxcpgl12">
+                              <af:commandLink text="Kiem tra kich hoat ky toan cho lan su dung dau tien" id="rxccl1"/>
+                            </af:panelGroupLayout>
+                          </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout layout="vertical" id="rxcpgl13"/>
+                      </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="start">
+                      <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="rxcpgl14">
+                        <af:panelGroupLayout layout="vertical" id="rxcpgl15">
+                          <af:outputLabel value="NAVIGATION" inlineStyle="font-weight:bold;" id="rxcol3"/>
+                        </af:panelGroupLayout>
+                        <af:spacer width="10" height="10" id="rxcs3"/>
+                        <af:panelGroupLayout layout="vertical" id="rxcpgl16">
+                          <af:navigationPane hint="list" id="rxcnp1">
+                            <af:commandNavigationItem text="Navigation 1" id="rxccni1"/>
+                            <af:commandNavigationItem text="Navigation 2" id="rxccni2"/>
+                          </af:navigationPane>
+                        </af:panelGroupLayout>
+                      </af:panelGroupLayout>
+                    </f:facet>
+                  </af:panelStretchLayout>
+                </af:panelGroupLayout>
+              </af:panelGroupLayout>
+            </f:facet>
+            <f:facet name="end">
+              <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="rxcpgl17">
+                <af:panelGroupLayout layout="vertical" halign="left" inlineStyle="padding:2px;" id="rxcpgl18">
+                  <af:image source="/resources/images/help2.jpg" shortDesc="help" id="rxci3"/>
+                </af:panelGroupLayout>
+                <af:spacer width="10" height="10" id="rxcs4"/>
+                <af:panelGroupLayout layout="vertical" id="rxcpgl19">
+                  <af:outputLabel value="#{viewcontrollerBundle['sas.quickHelp']}" inlineStyle="font-weight:bold;"
+                                  id="rxcol4"/>
+                  <af:spacer width="10" height="10" id="rxcs5"/>
+                  <af:navigationPane hint="list" id="rxcnp2">
+                    <af:commandNavigationItem text="#{viewcontrollerBundle['sas.quickHelp.viewSampleUse']}"
+                                              id="rxccni3"/>
+                    <af:commandNavigationItem text="#{viewcontrollerBundle['sas.quickHelp.viewHelp']}" id="rxccni4"/>
+                  </af:navigationPane>
+                </af:panelGroupLayout>
+              </af:panelGroupLayout>
+            </f:facet>
+          </af:panelStretchLayout>
+        </f:facet>
+      </af:panelStretchLayout>
+    </f:facet>
+    <f:facet name="navFacet"/>
+  </af:pageTemplate>
+</jsp:root>

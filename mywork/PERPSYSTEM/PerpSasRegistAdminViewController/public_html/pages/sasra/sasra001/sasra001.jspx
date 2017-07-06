@@ -1,0 +1,160 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:pageTemplate viewId="/templates/sasraTemplate001.jspx" id="pt1">
+          <f:facet name="center">
+            <af:panelSplitter splitterPosition="387" positionedFromEnd="true"
+                              id="ps1">
+              <f:facet name="first">
+                <af:panelCollection id="panelColl1">
+                  <f:facet name="menus"/>
+                  <f:facet name="toolbar"/>
+                  <f:facet name="statusbar"/>
+                  <af:table value="#{bindings.Sasra001ServicePackages.collectionModel}"
+                            var="row" columnStretching="last"
+                            rows="#{bindings.Sasra001ServicePackages.rangeSize}"
+                            emptyText="#{bindings.Sasra001ServicePackages.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                            fetchSize="#{bindings.Sasra001ServicePackages.rangeSize}"
+                            selectedRowKeys="#{bindings.Sasra001ServicePackages.collectionModel.selectedRow}"
+                            selectionListener="#{bindings.Sasra001ServicePackages.collectionModel.makeCurrent}"
+                            rowSelection="single" id="table1"
+                            partialTriggers=":::button2">
+                    <af:column sortProperty="PackageCode" sortable="true"
+                               headerText="#{bindings.Sasra001ServicePackages.hints.PackageCode.label}"
+                               id="c1">
+                      <af:outputText value="#{row.PackageCode}" id="ot1"/>
+                    </af:column>
+                    <af:column sortProperty="PackageName" sortable="true"
+                               headerText="#{bindings.Sasra001ServicePackages.hints.PackageName.label}"
+                               id="c2">
+                      <af:outputText value="#{row.PackageName}" id="ot2"/>
+                    </af:column>
+                    <af:column sortProperty="ServiceType" sortable="true"
+                               headerText="#{bindings.Sasra001ServicePackages.hints.ServiceType.label}"
+                               id="c3">
+                      <af:outputText value="#{row.ServiceType}" id="ot3"/>
+                    </af:column>
+                    <af:column sortProperty="Description" sortable="true"
+                               headerText="#{bindings.Sasra001ServicePackages.hints.Description.label}"
+                               id="c4">
+                      <af:outputText value="#{row.Description}" id="ot4"/>
+                    </af:column>
+                  </af:table>
+                </af:panelCollection>
+              </f:facet>
+              <f:facet name="second">
+                <af:panelHeader text="Detail info" id="panelHeader2">
+                  <f:facet name="legend"/>
+                  <f:facet name="info"/>
+                  <af:panelFormLayout partialTriggers="panelColl1:table1"
+                                      id="panelForm2">
+                    <af:inputText value="#{bindings.SpaId.inputValue}"
+                                  label="#{bindings.SpaId.hints.label}"
+                                  required="#{bindings.SpaId.hints.mandatory}"
+                                  columns="#{bindings.SpaId.hints.displayWidth}"
+                                  maximumLength="#{bindings.SpaId.hints.precision}"
+                                  shortDesc="#{bindings.SpaId.hints.tooltip}"
+                                  readOnly="true" id="it1">
+                      <f:validator binding="#{bindings.SpaId.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.SpaId.format}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.PackageCode.inputValue}"
+                                  label="#{bindings.PackageCode.hints.label}"
+                                  required="#{bindings.PackageCode.hints.mandatory}"
+                                  columns="#{bindings.PackageCode.hints.displayWidth}"
+                                  maximumLength="#{bindings.PackageCode.hints.precision}"
+                                  shortDesc="#{bindings.PackageCode.hints.tooltip}"
+                                  id="it2">
+                      <f:validator binding="#{bindings.PackageCode.validator}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.PackageName.inputValue}"
+                                  label="#{bindings.PackageName.hints.label}"
+                                  required="#{bindings.PackageName.hints.mandatory}"
+                                  columns="50"
+                                  maximumLength="#{bindings.PackageName.hints.precision}"
+                                  shortDesc="#{bindings.PackageName.hints.tooltip}"
+                                  id="it3">
+                      <f:validator binding="#{bindings.PackageName.validator}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.ServiceType.inputValue}"
+                                  label="#{bindings.ServiceType.hints.label}"
+                                  required="#{bindings.ServiceType.hints.mandatory}"
+                                  columns="50"
+                                  maximumLength="#{bindings.ServiceType.hints.precision}"
+                                  shortDesc="#{bindings.ServiceType.hints.tooltip}"
+                                  id="it4">
+                      <f:validator binding="#{bindings.ServiceType.validator}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.SeriveTime.inputValue}"
+                                  label="#{bindings.SeriveTime.hints.label}"
+                                  required="#{bindings.SeriveTime.hints.mandatory}"
+                                  columns="50"
+                                  maximumLength="#{bindings.SeriveTime.hints.precision}"
+                                  shortDesc="#{bindings.SeriveTime.hints.tooltip}"
+                                  id="it5">
+                      <f:validator binding="#{bindings.SeriveTime.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.SeriveTime.format}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.NumOfServers.inputValue}"
+                                  label="#{bindings.NumOfServers.hints.label}"
+                                  required="#{bindings.NumOfServers.hints.mandatory}"
+                                  columns="50"
+                                  maximumLength="#{bindings.NumOfServers.hints.precision}"
+                                  shortDesc="#{bindings.NumOfServers.hints.tooltip}"
+                                  id="it6">
+                      <f:validator binding="#{bindings.NumOfServers.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.NumOfServers.format}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.UnitPrice.inputValue}"
+                                  label="#{bindings.UnitPrice.hints.label}"
+                                  required="#{bindings.UnitPrice.hints.mandatory}"
+                                  columns="50"
+                                  maximumLength="#{bindings.UnitPrice.hints.precision}"
+                                  shortDesc="#{bindings.UnitPrice.hints.tooltip}"
+                                  id="it7">
+                      <f:validator binding="#{bindings.UnitPrice.validator}"/>
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.UnitPrice.format}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.Description.inputValue}"
+                                  label="#{bindings.Description.hints.label}"
+                                  required="#{bindings.Description.hints.mandatory}"
+                                  columns="50"
+                                  shortDesc="#{bindings.Description.hints.tooltip}"
+                                  maximumLength="300" id="it8">
+                      <f:validator binding="#{bindings.Description.validator}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.Enabled.inputValue}"
+                                  label="#{bindings.Enabled.hints.label}"
+                                  required="#{bindings.Enabled.hints.mandatory}"
+                                  columns="#{bindings.Enabled.hints.displayWidth}"
+                                  maximumLength="#{bindings.Enabled.hints.precision}"
+                                  shortDesc="#{bindings.Enabled.hints.tooltip}"
+                                  id="it9">
+                      <f:validator binding="#{bindings.Enabled.validator}"/>
+                    </af:inputText>
+                    <f:facet name="footer">
+                      <af:commandButton text="Submit" id="button2"
+                                        actionListener="#{bindings.Commit.execute}"
+                                        disabled="#{!bindings.Commit.enabled}"/>
+                    </f:facet>
+                  </af:panelFormLayout>
+                </af:panelHeader>
+              </f:facet>
+            </af:panelSplitter>
+          </f:facet>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

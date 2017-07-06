@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.12.24" id="createSubscriptionPageDef"
+                Package="pages.fragments.shoppingSas">
+  <parameters/>
+  <executables>
+    <methodIterator Binds="queryServicePackagesFindToOrder.result" DataControl="SASFacadeLocal" RangeSize="25"
+                    BeanClass="com.vc.web.ejb.sas.entities.ServicePackages" id="queryServicePackagesFindToOrderIterator"
+                    CacheResults="false"/>
+  </executables>
+  <bindings>
+    <methodAction id="queryServicePackagesFindToOrder" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="queryServicePackagesFindToOrder" IsViewObjectMethod="false" DataControl="SASFacadeLocal"
+                  InstanceName="SASFacadeLocal.dataProvider"
+                  ReturnName="SASFacadeLocal.methodResults.queryServicePackagesFindToOrder_SASFacadeLocal_dataProvider_queryServicePackagesFindToOrder_result">
+      <NamedData NDName="accId" NDValue="${backing_sasSessionLogin.accId}" NDType="java.lang.Long"/>
+    </methodAction>
+    <tree IterBinding="queryServicePackagesFindToOrderIterator" id="ServicePackages">
+      <nodeDefinition DefName="com.vc.web.ejb.sas.entities.ServicePackages" Name="ServicePackages0">
+        <AttrNames>
+          <Item Value="spaId"/>
+          <Item Value="packageCode"/>
+          <Item Value="packageName"/>
+          <Item Value="numOfServers"/>
+          <Item Value="seriveTime"/>
+          <Item Value="serviceType"/>
+          <Item Value="unitPrice"/>
+          <Item Value="description"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="querySubscriptionsFindByAccId" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="querySubscriptionsFindByAccId" IsViewObjectMethod="false" DataControl="SASFacadeLocal"
+                  InstanceName="SASFacadeLocal.dataProvider"
+                  ReturnName="SASFacadeLocal.methodResults.querySubscriptionsFindByAccId_SASFacadeLocal_dataProvider_querySubscriptionsFindByAccId_result">
+      <NamedData NDName="accId" NDValue="${backing_sasSessionLogin.accId}" NDType="java.lang.Long"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

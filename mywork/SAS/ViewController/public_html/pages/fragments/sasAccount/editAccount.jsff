@@ -1,0 +1,203 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core"
+          xmlns:trh="http://myfaces.apache.org/trinidad/html">
+ 
+ <c:set var="viewcontrollerBundle" value="#{adfBundle['com.vc.web.ViewControllerBundle']}"/>
+  <af:panelStretchLayout styleClass="AFVisualRoot" endWidth="339px" topHeight="36px" id="rjzpsl1">
+    <f:facet name="center">
+      <af:panelStretchLayout topHeight="34px" id="rjzpsl2">
+        <f:facet name="center">
+          <af:decorativeBox id="rjzdb1">
+            <f:facet name="center">
+              <af:panelStretchLayout endWidth="232px" topHeight="101px" id="rjzpsl3">
+                <f:facet name="center">
+                  <af:panelGroupLayout layout="scroll" id="rjzpgl1">
+                    <af:panelBorderLayout id="rjzpbl1">
+                      <f:facet name="top">
+                        <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="rjzpgl2">
+                          <af:outputLabel value="#{viewcontrollerBundle['pages.fragments.sasAccount.editAccount.title1']}" inlineStyle="font-size:large;"
+                                          id="rjzol1"/>
+                          <af:panelGroupLayout layout="horizontal" inlineStyle="width:100%; padding:3px;" halign="left" valign="top"
+                                               id="rjzpgl3">
+                            <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="rjzpgl4">
+                              <af:image source="/resources/images/saslogo.gif" shortDesc="sas" id="rjzi1"/>
+                            </af:panelGroupLayout>
+                            <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="rjzpgl5">
+                              <af:outputText value="#{viewcontrollerBundle['pages.fragments.sasAccount.editAccount.content1']}"
+                                             id="rjzot1"/>
+                            </af:panelGroupLayout>
+                          </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                      </f:facet>
+                      <f:facet name="bottom">
+                        <af:panelGroupLayout layout="vertical" id="rjzpgl6">
+                          <af:outputLabel value="#{viewcontrollerBundle['sas.createAccount.orgInfo']}"
+                                          inlineStyle="font-size:large; " id="rjzol2"/>
+                          <af:panelGroupLayout layout="vertical" id="rjzpgl7">
+                            <af:panelFormLayout maxColumns="2" rows="3" fieldWidth="150" labelWidth="200" id="rjzpfl1">
+                              <af:inputText value="#{bindings.organizationName.inputValue}"
+                                            label="#{viewcontrollerBundle['field.perp.organizationUnits.name']}"
+                                            columns="#{bindings.organizationName.hints.displayWidth}"
+                                            maximumLength="#{bindings.organizationName.hints.precision}"
+                                            shortDesc="#{bindings.organizationName.hints.tooltip}" required="true"
+                                            id="rjzit1">
+                                <f:validator binding="#{bindings.organizationName.validator}"/>
+                              </af:inputText>
+                              <af:inputText value="#{bindings.numberOfEmployee.inputValue}"
+                                            label="#{viewcontrollerBundle['field.accounts.numberOfEmployee']}"
+                                            columns="#{bindings.numberOfEmployee.hints.displayWidth}"
+                                            maximumLength="#{bindings.numberOfEmployee.hints.precision}"
+                                            shortDesc="#{bindings.numberOfEmployee.hints.tooltip}" required="true"
+                                            id="rjzit2">
+                                <f:validator binding="#{bindings.numberOfEmployee.validator}"/>
+                                <af:convertNumber groupingUsed="false" pattern="#{bindings.numberOfEmployee.format}"/>
+                              </af:inputText>
+                              <af:selectOneChoice value="#{bindings.industries.inputValue}"
+                                                  label="#{viewcontrollerBundle['field.industries.name']}"
+                                                  shortDesc="#{bindings.industries.hints.tooltip}" required="true"
+                                                  id="rjzsoc1">
+                                <f:selectItems value="#{bindings.industries.items}" id="rjzsi1"/>
+                              </af:selectOneChoice>
+                              <af:inputText value="#{bindings.taxCode.inputValue}" label="#{viewcontrollerBundle['field.accounts.taxCode']}" columns="#{bindings.taxCode.hints.displayWidth}"
+                                            maximumLength="#{bindings.taxCode.hints.precision}"
+                                            shortDesc="#{bindings.taxCode.hints.tooltip}" required="true" id="rjzit3">
+                                <f:validator binding="#{bindings.taxCode.validator}"/>
+                              </af:inputText>
+                              <af:inputText value="#{bindings.address.inputValue}" label="#{viewcontrollerBundle['field.accounts.adress']}" columns="#{bindings.address.hints.displayWidth}"
+                                            maximumLength="#{bindings.address.hints.precision}"
+                                            shortDesc="#{bindings.address.hints.tooltip}" required="true" id="rjzit4">
+                                <f:validator binding="#{bindings.address.validator}"/>
+                              </af:inputText>
+                              <af:inputText value="#{bindings.customerApproach.inputValue}"
+                                            label="#{viewcontrollerBundle['field.accounts.customerApproach']}"
+                                            columns="#{bindings.customerApproach.hints.displayWidth}"
+                                            maximumLength="#{bindings.customerApproach.hints.precision}"
+                                            shortDesc="#{bindings.customerApproach.hints.tooltip}" required="true"
+                                            id="rjzit5">
+                                <f:validator binding="#{bindings.customerApproach.validator}"/>
+                              </af:inputText>
+                              <af:selectOneChoice value="#{bindings.countries.inputValue}"
+                                                  label="#{viewcontrollerBundle['field.countries.name']}"
+                                                  shortDesc="#{bindings.countries.hints.tooltip}" required="true"
+                                                  id="rjzsoc2">
+                                <f:selectItems value="#{bindings.countries.items}" id="rjzsi2"/>
+                              </af:selectOneChoice>
+                              <af:selectOneChoice value="#{bindings.provinces.inputValue}"
+                                                  label="#{viewcontrollerBundle['field.provinces.name']}"
+                                                  shortDesc="#{bindings.provinces.hints.tooltip}" id="rjzsoc3">
+                                <f:selectItems value="#{bindings.provinces.items}" id="rjzsi3"/>
+                              </af:selectOneChoice>
+                            </af:panelFormLayout>
+                          </af:panelGroupLayout>
+                          <af:outputLabel value="#{viewcontrollerBundle['sas.createAccount.userInfo']}"
+                                          inlineStyle="font-size:large;" id="rjzol3"/>
+                          <af:panelGroupLayout layout="vertical" id="rjzpgl8">
+                            <af:panelFormLayout maxColumns="2" rows="3" fieldWidth="150" labelWidth="200" id="rjzpfl2">
+                              <af:inputText value="#{bindings.userName.inputValue}"
+                                            label="#{viewcontrollerBundle['field.accounts.userName']}"
+                                            columns="#{bindings.userName.hints.displayWidth}"
+                                            maximumLength="#{bindings.userName.hints.precision}"
+                                            shortDesc="#{bindings.userName.hints.tooltip}" required="true" id="rjzit6">
+                                <f:validator binding="#{bindings.userName.validator}"/>
+                              </af:inputText>
+                              <af:inputText value="#{bindings.email.inputValue}" label="#{viewcontrollerBundle['field.accounts.email']}" columns="#{bindings.email.hints.displayWidth}"
+                                            maximumLength="#{bindings.email.hints.precision}" shortDesc="#{bindings.email.hints.tooltip}"
+                                            required="true" id="rjzit7">
+                                <f:validator binding="#{bindings.email.validator}"/>
+                              </af:inputText>
+                              <af:inputText value="#{bindings.fullName.inputValue}"
+                                            label="#{viewcontrollerBundle['field.accounts.fullName']}"
+                                            columns="#{bindings.fullName.hints.displayWidth}"
+                                            maximumLength="#{bindings.fullName.hints.precision}"
+                                            shortDesc="#{bindings.fullName.hints.tooltip}" required="true" id="rjzit8">
+                                <f:validator binding="#{bindings.fullName.validator}"/>
+                              </af:inputText>
+                              <af:inputText value="#{bindings.contactTelephone.inputValue}"
+                                            label="#{viewcontrollerBundle['field.accounts.contactTelephone']}"
+                                            columns="#{bindings.contactTelephone.hints.displayWidth}"
+                                            maximumLength="#{bindings.contactTelephone.hints.precision}"
+                                            shortDesc="#{bindings.contactTelephone.hints.tooltip}" required="true"
+                                            id="rjzit9">
+                                <f:validator binding="#{bindings.contactTelephone.validator}"/>
+                              </af:inputText>
+                              <af:selectOneChoice value="#{bindings.roles.inputValue}" label="#{viewcontrollerBundle['field.roles.name']}"
+                                                  shortDesc="#{bindings.roles.hints.tooltip}" required="true"
+                                                  id="rjzsoc4">
+                                <f:selectItems value="#{bindings.roles.items}" id="rjzsi4"/>
+                              </af:selectOneChoice>
+                            </af:panelFormLayout>
+                          </af:panelGroupLayout>
+                          <af:panelGroupLayout layout="horizontal" inlineStyle="padding:2px;" id="rjzpgl9">
+                            <af:spacer width="450" height="10" id="rjzs1"/>
+                            <af:commandButton text="#{viewcontrollerBundle['adf.action.save']}" disabled="#{!bindings.mergeEntity.enabled}"
+                                              actionListener="#{bindings.mergeEntity.execute}" action="save" partialSubmit="true"
+                                              id="rjzcb1"/>
+                            <af:spacer width="10" height="10" id="rjzs2"/>
+                            <af:commandButton text="#{viewcontrollerBundle['adf.navigation.home']}" action="login" partialSubmit="true"
+                                              id="rjzcb2"/>
+                          </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                      </f:facet>
+                    </af:panelBorderLayout>
+                  </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="end">
+                  <af:panelGroupLayout layout="vertical" inlineStyle="padding:2%;" id="rjzpgl10">
+                    <af:image source="/resources/images/help1.jpg" shortDesc="help image" id="rjzi2"/>
+                    <af:spacer width="10" height="10" id="rjzs3"/>
+                    <af:panelGroupLayout layout="vertical" inlineStyle="padding:1%;" id="rjzpgl11">
+                      <af:outputLabel value="Huong dan dang ky tai khoan" inlineStyle="font-weight:bold;" id="rjzol4"/>
+                      <af:spacer width="10" height="10" id="rjzs4"/>
+                      <af:outputText value="De dang ky tai khoan sas ban lam theo huong dan duoi day . Hoac co the vao xem chi tiet hon "
+                                     id="rjzot2"/>
+                      <af:commandLink text="Tai day ..." id="rjzcl1"/>
+                      <af:spacer width="10" height="10" id="rjzs5"/>
+                      <af:outputLabel value="Giup do nhanh" inlineStyle="font-weight:bold;" id="rjzol5"/>
+                      <af:spacer width="10" height="10" id="rjzs6"/>
+                      <af:panelList id="rjzpl1">
+                        <af:outputText value="Thong tin cong ty to chuc cua ban" id="rjzot3"/>
+                        <af:outputText value="Thong tin ca nhan nguoi dung ra lien he , mua san pham PERP ."
+                                       id="rjzot4"/>
+                        <af:outputText value="Cac thong tin bao mat , trong truong hop ban quen tai khoan truy nhap"
+                                       id="rjzot5"/>
+                      </af:panelList>
+                    </af:panelGroupLayout>
+                  </af:panelGroupLayout>
+                </f:facet>
+              </af:panelStretchLayout>
+            </f:facet>
+          </af:decorativeBox>
+        </f:facet>
+        <f:facet name="top">
+          <af:panelGroupLayout layout="vertical" id="rjzpgl12">
+            <af:outputLabel value="HE THONG QUAN TRI DOANH NGHIEP PERP" inlineStyle="font-size:medium;" id="rjzol6"/>
+          </af:panelGroupLayout>
+        </f:facet>
+      </af:panelStretchLayout>
+    </f:facet>
+    <f:facet name="top">
+      <af:toolbox id="rjzt1">
+        <trh:tableLayout width="100%" id="rjztl1">
+          <trh:rowLayout id="rjzrl1">
+            <trh:cellFormat halign="left" id="rjzcf1">
+              <af:panelGroupLayout halign="left" layout="horizontal" id="rjzpgl13"/>
+            </trh:cellFormat>
+            <trh:cellFormat halign="right" id="rjzcf2">
+              <af:panelGroupLayout halign="right" layout="horizontal" id="rjzpgl14">
+                <af:navigationPane hint="bar" id="rjznp1">
+                  <af:commandNavigationItem text="Sas Login" action="login" id="rjzcni1"/>
+                  <af:commandNavigationItem text="Review Account" disabled="#{!backing_sasAccount_sasAccountFlowHandler.sasLogin}"
+                                            id="rjzcni2"/>
+                  <af:commandNavigationItem text="Shopping" action="shoppingSas"
+                                            disabled="#{!backing_sasAccount_sasAccountFlowHandler.sasLogin}"
+                                            id="rjzcni3"/>
+                </af:navigationPane>
+              </af:panelGroupLayout>
+            </trh:cellFormat>
+          </trh:rowLayout>
+        </trh:tableLayout>
+      </af:toolbox>
+    </f:facet>
+  </af:panelStretchLayout>
+</jsp:root>

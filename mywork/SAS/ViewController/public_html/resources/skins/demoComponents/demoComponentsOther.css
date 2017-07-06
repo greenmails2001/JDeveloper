@@ -1,0 +1,1700 @@
+/* demoComponentsOther skin extends demoComponents skin which extends the blafplus-rich skin.
+It is used to demo the components skinning hooks.
+The .jspx demo files that this skin is for are in the skinningKeys directory. */
+/* If you are writing your own skin, you don't need to add the ".DemoWrapper-foo" parts shown
+   before the selectors in this file.  These are only present here in order to maximize the
+   usability of the demo pages--so that you can turn on and off each selector individually. */
+/* Demo ALL your public skinning keys */
+/* This file has all the components EXCEPT input and select components.
+The skins are broken up so that we do not hit the IE 4096 selector limit */
+
+/* aliases */
+/* change all access-keys to purple, unless overridden by the individual component's
+::access-key pseudo-element */
+.AFFormAccessKeyStyle:alias { color: purple; font-weight: bold; font-size: 14px}
+
+.AFChangedIcon:alias {content:"C"; color: Aqua; font-weight: bold; padding: 3px}
+
+/* af|breadCrumbs */
+.DemoWrapper-breadCrumbs af|breadCrumbs { background-color: yellow }
+.DemoWrapper-breadCrumbs_access-key af|breadCrumbs::access-key { color: aqua; }
+.DemoWrapper-breadCrumbs_icon-style af|breadCrumbs::icon-style {border: 1px solid red;}
+.DemoWrapper-breadCrumbs_overflow_indicator af|breadCrumbs::overflow-indicator { background-color: red}
+.DemoWrapper-breadCrumbs_content af|breadCrumbs::content { border:solid green 1px }
+.DemoWrapper-breadCrumbs_body af|breadCrumbs::body { border:solid orange 4px }
+.DemoWrapper-breadCrumbs_separator af|breadCrumbs::separator { color: red; }
+.DemoWrapper-breadCrumbs_step af|breadCrumbs::step { color: blue }
+.DemoWrapper-breadCrumbs_step_hover af|breadCrumbs::step:hover {font-style:italic;}
+.DemoWrapper-breadCrumbs_step_selected af|breadCrumbs::step:selected { font-weight: bold;}
+.DemoWrapper-breadCrumbs_step_disabled af|breadCrumbs::step:disabled { color: Lime;}
+af|breadCrumbs::overflow-container { background-color:yellow }
+af|breadCrumbs::separator-icon {content: '-->'}
+af|breadCrumbs {-tr-show-last-item: true}
+af|breadCrumbs::overflow-icon{content: url('/images/greenArrowRight.png')}
+
+/** af|chooseColor */
+.DemoWrapper-chooseColor af|chooseColor {border: 1px dashed blue}
+.DemoWrapper-chooseColor_button af|chooseColor::button {background-image: none;font-size:14px}
+.DemoWrapper-chooseColor_button_hover af|chooseColor::button:hover {background-image: none;background-color: purple;}
+.DemoWrapper-chooseColor_button-swatch af|chooseColor::button-swatch {width: 14px; height: 14px}
+.DemoWrapper-chooseColor_button-swatch_empty af|chooseColor::button-swatch:empty {border: 2px purple solid}
+.DemoWrapper-chooseColor_swatch af|chooseColor::swatch {width:20px; height:20px;border-color:purple}
+.DemoWrapper-chooseColor_swatch-cell_selected af|chooseColor::swatch-cell:selected {background-color:pink}
+.DemoWrapper-chooseColor_swatch-cell_hover af|chooseColor::swatch-cell:hover {border-color:aqua; border-width:3px}
+.DemoWrapper-chooseColor_swatch-cell_disabled_hover af|chooseColor::swatch-cell:disabled:hover { border:1px solid white; background-color:transparent}
+
+/* af|chooseDate */
+/* Example to demo how the text within chooseDate can be skinned. In this example,
+   all keys controlling text within chooseDate will reference this key and have
+   a larger font. This is NOT a public key.*/
+.AFChooseDateLargeFont:alias{font-size: 12pt;}
+af|chooseDate::prev-month-arrow-icon { content: "<"}
+af|chooseDate::next-month-arrow-icon { content: ">"}
+af|chooseDate::prev-month-arrow {-tr-inhibit: background-image;}
+af|chooseDate::next-month-arrow {-tr-inhibit: background-image;}
+af|chooseDate::spinbox-incrementor-icon-style,
+af|chooseDate::spinbox-incrementor-icon-style:hover,
+af|chooseDate::spinbox-incrementor-icon-style:active {
+  -tr-inhibit: background-image;
+}
+af|chooseDate::spinbox-incrementor-icon{ content: 'UP';}
+.DemoWrapper-chooseDate_prev-month-arrow af|chooseDate::prev-month-arrow {-tr-inhibit: background-image;background-color: blue;}
+.DemoWrapper-chooseDate_next-month-arrow af|chooseDate::next-month-arrow {-tr-inhibit: background-image;background-color: blue;}
+.DemoWrapper-chooseDate_spinbox af|chooseDate::spinbox {background-color:blue}
+.DemoWrapper-chooseDate_spinbox-content af|chooseDate::spinbox-content {background-color:yellow;}
+.DemoWrapper-chooseDate_spinbox-incrementor-icon-style af|chooseDate::spinbox-incrementor-icon-style { background-image:url('/afr/go_dwn.png');}
+.DemoWrapper-chooseDate_spinbox-decrementor-icon-style af|chooseDate::spinbox-decrementor-icon-style { background-image:url('/afr/go_dwn_rtl.png');}
+.DemoWrapper-chooseDate_ampm af|chooseDate::ampm {background-color:blue}
+.DemoWrapper-chooseDate_ampm-content af|chooseDate::ampm-content {-tr-rule-ref: selector(".AFChooseDateLargeFont:alias");}
+.DemoWrapper-chooseDate_week-header-row  af|chooseDate::week-header-row {-tr-rule-ref: selector(".AFChooseDateLargeFont:alias"); background-color: lime;}
+.DemoWrapper-chooseDate_week-header-cell  af|chooseDate::week-header-cell {border: 1px solid #000000;}
+.DemoWrapper-chooseDate_days-row  af|chooseDate::days-row {-tr-rule-ref: selector(".AFChooseDateLargeFont:alias"); font-weight: bolder; background-color:yellow;}
+.DemoWrapper-chooseDate_regular-day  af|chooseDate::regular-day {font-style:italic;}
+.DemoWrapper-chooseDate_regular-day_hover  af|chooseDate::regular-day:hover {background-color: pink;}
+.DemoWrapper-chooseDate_regular-day_disabled  af|chooseDate::regular-day:disabled {background-color:grey; font-style:italic;}
+.DemoWrapper-chooseDate_selected  af|chooseDate::prev-month-day:selected, af|chooseDate::regular-day:selected, af|chooseDate::today:selected {background-color: green;}
+.DemoWrapper-chooseDate_regular-day_selected_hover  af|chooseDate::regular-day:selected:hover {background-color: pink;}
+.DemoWrapper-chooseDate_regular-day_selected_disabled  af|chooseDate::regular-day:selected:disabled {background-color:grey; font-style:italic}
+.DemoWrapper-chooseDate_prev-month-day  af|chooseDate::prev-month-day {background-color: aqua;}
+.DemoWrapper-chooseDate_prev-month-day_hover  af|chooseDate::prev-month-day:hover {background-color: pink;}
+.DemoWrapper-chooseDate_prev-month-day_disabled  af|chooseDate::prev-month-day:disabled {background-color:grey; font-style:italic;}
+.DemoWrapper-chooseDate_prev-month-day_selected  af|chooseDate::prev-month-day:selected {background-color: green;}
+.DemoWrapper-chooseDate_prev-month-day_selected_hover  af|chooseDate::prev-month-day:selected:hover {background-color: pink;}
+.DemoWrapper-chooseDate_prev-month-day_selected_disabled  af|chooseDate::prev-month-day:selected:disabled {background-color:grey; font-style:italic;}
+.DemoWrapper-chooseDate_today  af|chooseDate::today {background-color: orange; border-width: thick ; border-style: dotted;}
+.DemoWrapper-chooseDate_today_hover  af|chooseDate::today:hover {background-color: pink;}
+.DemoWrapper-chooseDate_today_disabled  af|chooseDate::today:disabled {background-color:purple; font-style:italic;}
+.DemoWrapper-chooseDate_grid-spacer  af|chooseDate::grid-spacer {height: 15px;}
+.DemoWrapper-chooseDate_choice-list-content af|chooseDate::choice-list-content {-tr-rule-ref: selector('.AFChooseDateLargeFont:alias');  background-color:orange}
+.DemoWrapper-chooseDate_choice-list_dropdown af|chooseDate::choice-list-dropdown {border: 1px solid green}
+.DemoWrapper-chooseDate_choice-list-dropdown-icon-style af|chooseDate::choice-list-dropdown-icon-style {background-image: url('/afr/scrollDown_n.png')}
+
+/* af|commandButton */
+.DemoWrapper-commandButton af|commandButton {color: orange; background-image: none;background-color:green;}
+.DemoWrapper-commandButton_hover af|commandButton:hover {color: red;}
+.DemoWrapper-commandButton_focus af|commandButton:focus {color: pink;font-weight: bold}
+.DemoWrapper-commandButton_active af|commandButton:active {color: yellow;}
+.DemoWrapper-commandButton_access-key af|commandButton::access-key {color: red;}
+.DemoWrapper-commandButton_disabled af|commandButton:disabled {color: purple; background-color: gray}
+.DemoWrapper-commandButton_icon-style af|commandButton::icon-style {border: 1px solid black;}
+
+/* af|commandImageLink */
+.DemoWrapper-commandImageLink af|commandImageLink {background-color:PaleGoldenRod}
+.DemoWrapper-commandImageLink_hover af|commandImageLink:hover {background-image: none; background-color: PaleTurquoise;}
+.DemoWrapper-commandImageLink_active af|commandImageLink:active {background-image: none; background-color: PeachPuff;}
+.DemoWrapper-commandImageLink_disabled af|commandImageLink:disabled {background-color: Tan;}
+.DemoWrapper-commandImageLink_disabled_hover af|commandImageLink:disabled:hover {background-color: Thistle;}
+.DemoWrapper-commandImageLink_access-key af|commandImageLink::access-key {color: red;}
+.DemoWrapper-commandImageLink_text af|commandImageLink::text {color: blue; font-weight: bold;}
+.DemoWrapper-commandImageLink_disabled_text af|commandImageLink:disabled::text {color:Red;}
+.DemoWrapper-commandImageLink_image af|commandImageLink::image {vertical-align: baseline}
+
+/* af|commandLink*/
+.DemoWrapper-commandLink af|commandLink {background-color: Aqua;}
+.DemoWrapper-commandLink_hover af|commandLink:hover {background-color: #7FFFD4; /* Aquamarine */}
+.DemoWrapper-commandLink_focus af|commandLink:focus {background-color: #FF1493;} /* Hot Pink */
+.DemoWrapper-commandLink_active af|commandLink:active {background-color: #FFCCFF;}  /* Pink */
+.DemoWrapper-commandLink_disabled af|commandLink:disabled {background-color: purple;}
+.DemoWrapper-commandLink_disabled_hover af|commandLink:disabled:hover {
+  text-decoration: line-through; background-color: purple;}
+.DemoWrapper-commandLink_access-key af|commandLink::access-key { color: red;}
+
+/* af|commandNavigationItem*/
+.DemoWrapper-commandNavigationItem af|commandNavigationItem {background-color: cyan;}
+.DemoWrapper-commandNavigationItem_access-key af|commandNavigationItem::access-key { color: red;}
+.DemoWrapper-commandNavigationItem_icon-style af|commandNavigationItem::icon-style { border: 1px solid red;}
+
+/* af|commandToolbarButton */
+.DemoWrapper-commandToolbarButton af|commandToolbarButton {background-color:PaleGoldenRod}
+.DemoWrapper-commandToolbarButton_hover af|commandToolbarButton:hover {background-image: none; background-color: PaleTurquoise;}
+.DemoWrapper-commandToolbarButton_active af|commandToolbarButton:active {background-image: none; background-color: PeachPuff;}
+.DemoWrapper-commandToolbarButton_active_hover af|commandToolbarButton:active:hover {background-image: none; background-color: Red;}
+.DemoWrapper-commandToolbarButton_disabled af|commandToolbarButton:disabled {background-color: Tan;}
+.DemoWrapper-commandToolbarButton_disabled_hover af|commandToolbarButton:disabled:hover {background-color: Thistle;}
+.DemoWrapper-commandToolbarButton_access-key af|commandToolbarButton::access-key {color: red;}
+.DemoWrapper-commandToolbarButton_link af|commandToolbarButton::link {border: 2px solid;}
+.DemoWrapper-commandToolbarButton_text af|commandToolbarButton::text {color: blue; font-weight: bold;}
+.DemoWrapper-commandToolbarButton_disabled_text af|commandToolbarButton:disabled::text {color:Red;}
+.DemoWrapper-commandToolbarButton_selected af|commandToolbarButton:selected {background-image: none; border-color: Red; border-width: 3px;}
+.DemoWrapper-commandToolbarButton_selected_hover af|commandToolbarButton:selected:hover {background-image: none; border-color: blue; border-width: 3px;}
+.DemoWrapper-commandToolbarButton_selected_active af|commandToolbarButton:selected:active {background-image: none; border-color: green; border-width: 3px;}
+.DemoWrapper-commandToolbarButton_selected_active_hover af|commandToolbarButton:selected:active:hover {background-image: none; border-color: purple; border-width: 3px;}
+.DemoWrapper-commandToolbarButton_dropdown-cell af|commandToolbarButton::dropdown-cell {background-color: Cyan;}
+.DemoWrapper-commandToolbarButton_actionDisabled af|commandToolbarButton:action-disabled::link {font-weight: bold;}
+
+af|commandToolbarButton::dropdown-icon-style {-tr-inhibit: background-image;}
+af|commandToolbarButton::dropdown-icon {content: url('/images/bullet.gif'); margin-left: 3px;}
+af|commandToolbarButton:hover::dropdown-icon-style {background-image: url('/images/dropdown_line_mo.gif');}
+
+/* af|decorativeBox */
+/* start hacks for odd sizing of decorative box that the dark theme doesn't like */
+af|decorativeBox::top-start:dark,
+af|decorativeBox::top-end:dark,
+af|decorativeBox::bottom-start:dark,
+af|decorativeBox::bottom-end:dark {
+  background-repeat: no-repeat;
+}
+af|decorativeBox::top-end:dark,
+af|decorativeBox::end:dark
+af|decorativeBox::bottom-end:dark {
+  background-repeat: no-repeat;
+}
+af|decorativeBox::top-end:dark,af|decorativeBox::end:dark { background-position: top left; }
+af|decorativeBox::top-end:dark { background-position: bottom left; }
+af|decorativeBox::bottom-end:dark { background-position: top left; }
+af|decorativeBox::end:dark { background-color: transparent; background-image: none; }
+/* end hacks for odd sizing of decorative box that the dark theme doesn't like */
+
+.DemoWrapper-decorativeBox_lightcenter af|decorativeBox::center:light {font-style: italic; font-size: 2em;}
+.DemoWrapper-decorativeBox_lighttop af|decorativeBox::top:light {font-weight: bold; color: Red;}
+.DemoWrapper-decorativeBox_darkcenter af|decorativeBox::center:dark {background-color: #c200ba; color: black; font-size: 2em; background-image: none;}
+.DemoWrapper-decorativeBox_darkts af|decorativeBox::top-start:dark {background-image: url('/images/decorativebox_ts.png');}
+.DemoWrapper-decorativeBox_darkt af|decorativeBox::top:dark {background-image: url('/images/decorativebox_t.png');}
+.DemoWrapper-decorativeBox_darkte af|decorativeBox::top-end:dark {background-image: url('/images/decorativebox_te.png');}
+.DemoWrapper-decorativeBox_darks af|decorativeBox::start:dark {background-image: url('/images/decorativebox_s.png'); background-repeat: repeat-y;}
+.DemoWrapper-decorativeBox_darke af|decorativeBox::end:dark {background-image: url('/images/decorativebox_e.png'); background-repeat: repeat-y;}
+.DemoWrapper-decorativeBox_darkbs af|decorativeBox::bottom-start:dark {background-image: url('/images/decorativebox_bs.png');}
+.DemoWrapper-decorativeBox_darkb af|decorativeBox::bottom:dark {background-image: url('/images/decorativebox_b.png');}
+.DemoWrapper-decorativeBox_darkbe af|decorativeBox::bottom-end:dark {background-image: url('/images/decorativebox_be.png');}
+
+af|decorativeBox::top:dark, af|decorativeBox::bottom:dark {-tr-height: 20px;}
+af|decorativeBox::bottom-start:dark {-tr-width: 16px;}
+af|decorativeBox::top-start:dark {-tr-width: 20px;}
+af|decorativeBox::bottom-end:dark {-tr-width: 19px;}
+af|decorativeBox::top-end:dark {-tr-width: 20px;}
+af|decorativeBox::start:dark {-tr-width: 16px;}
+af|decorativeBox::end:dark {-tr-width: 15px;}
+
+/* af|document, af|document:maximized, af|document::messages */
+/* The demo sets DemoWrapper-document, and DemoWrapper-document-maximized
+   style classes directly on the document component, so we use composite
+   selectors for af|document and af|doucment:maximized. For af|document::messages
+   we use a contextual selector, since the class is applied to the contents
+   of the popup for global messages
+ */
+.DemoWrapper-document.af|document{
+  padding: 100px;
+}
+
+.DemoWrapper-document-maximized.af|document:maximized{
+  position: absolute;
+  padding: 100px;
+  margin: 0px;
+  border-style: none;
+  width: 50%;
+  height: 50%;
+  top: 0px;
+  left: 0px;
+}
+
+.DemoWrapper-document-messages af|document::messages {
+  background-color: pink;
+  overflow: auto;
+  width: 340px;
+  height: 125px;
+}
+
+/* af|goButton */
+.DemoWrapper-goButton af|goButton {color: orange;background-image: none;background-color:yellow;}
+.DemoWrapper-goButton_hover af|goButton:hover {color: red;}
+.DemoWrapper-goButton_focus af|goButton:focus {color: pink;font-weight: bold}
+.DemoWrapper-goButton_active af|goButton:active {color: yellow;}
+.DemoWrapper-goButton_access-key af|goButton::access-key {color: red;}
+.DemoWrapper-goButton_disabled af|goButton:disabled {color: purple; background-color: tan}
+.DemoWrapper-goButton_icon-style af|goButton::icon-style {border: 1px solid black;}
+
+/* af|goLink */
+.DemoWrapper-goLink af|goLink {background-color: Aqua;}
+.DemoWrapper-goLink_hover af|goLink:hover {background-color: #7FFFD4; /* Aquamarine */}
+.DemoWrapper-goLink_focus af|goLink:focus {background-color: #FF1493;} /* Hot Pink */
+.DemoWrapper-goLink_active af|goLink:active {background-color: #FFCCFF;}  /* Pink */
+.DemoWrapper-goLink_visited af|goLink:visited {background-color: #CCFFFF;} /* Light Blue */
+.DemoWrapper-goLink_visited_hover af|goLink:visited:hover {background-color: #CC99FF;}  /* Lavender */
+.DemoWrapper-goLink_visited_focus af|goLink:visited:focus {background-color: #999933;} /* Khaki */
+.DemoWrapper-goLink_visited_active af|goLink:visited:active {background-color: #99FF66;} /* Lime Green */
+.DemoWrapper-goLink_disabled af|goLink:disabled {background-color: purple;}
+.DemoWrapper-goLink_disabled_hover af|goLink:disabled:hover {text-decoration: line-through; background-color: purple;}
+.DemoWrapper-goLink_access-key af|goLink::access-key { color: red;}
+
+
+/* af|icon */
+.DemoWrapper-icon_ChangedIconStyle .AFChangedIconStyle {color:white;background-color:cyan;}
+.DemoWrapper-icon_ErrorIconStyle .AFErrorIconStyle {color:white;background-color:red;}
+.DemoWrapper-icon_ErrorIcon_alias .AFErrorIcon:alias {content:url("/adf/images/error.png")}
+.DemoWrapper-icon_InfoIconStyle .AFInfoIconStyle {color:white;background-color:green;}
+.DemoWrapper-icon_LogoIconStyle .AFLogoIconStyle {color:white;background-color:red;}
+.DemoWrapper-icon_WarningIconStyle .AFWarningIconStyle {color:black;background-color:purple;}
+.DemoWrapper-icon_RequiredIconStyle .AFRequiredIconStyle {color:white;background-color:blue;}
+
+/* af|image */
+.DemoWrapper-image af|image {border:2px inset red; height:150px; width:150px;}
+
+/* af|inlineFrame */
+.DemoWrapper-inlineFrame af|inlineFrame {background-color:purple;border:blue 2px solid;}
+
+
+/* af|message */
+/* Not using the .DemoWrapper system because messages are seen in note windows,
+   which are not in the same layer, so the containment skinning doesn't work */
+af|message::fatal-icon {content: url(/images/demoSkin/fatal.png); width: 16px; height: 16px;}
+af|message::error-icon {content: url(/images/demoSkin/error.png); width: 16px; height: 16px;}
+af|message::warning-icon {content: url(/images/demoSkin/warning.png); width: 16px; height: 16px;}
+af|message::info-icon {content: '[I]'; width: 16px; height: 16px;}
+af|message::confirmation-icon {content: url(/images/demoSkin/confirmation.png); width: 16px; height: 16px;}
+
+/* af|messages */
+/* Not using the .DemoWrapper system because messages are seen in dialog,
+   which are not in the same layer, so the containment skinning doesn't work */
+af|messages::fatal-icon {content: url(/images/demoSkin/fatal2.png); width: 16px; height: 16px;}
+af|messages::error-icon {content: url(/images/demoSkin/error2.png); width: 16px; height: 16px;}
+af|messages::warning-icon {content: url(/images/demoSkin/warning2.png); width: 16px; height: 16px;}
+af|messages::info-icon {content: '[i]'; width: 16px; height: 16px;}
+af|messages::confirmation-icon {content: url(/images/demoSkin/confirmation2.png); width: 16px; height: 16px;}
+
+/* af|panelSplitter */
+.DemoWrapper-panelSplitter af|panelSplitter {background-color:purple;}
+.DemoWrapper-panelSplitter_pane af|panelSplitter::pane {background-color:green;}
+.DemoWrapper-panelSplitter_horizontal-icon-style af|panelSplitter::horizontal-icon-style {
+  background-image:url("/afr/mTrain_visited_md.png");background-color:pink;}
+.DemoWrapper-panelSplitter_horizontal-icon-style_hover af|panelSplitter::horizontal-icon-style:hover {
+  background-image:url("/afr/mTrain_visited_mo.png");background-color:yellow;}
+.DemoWrapper-panelSplitter_horizontal-divider af|panelSplitter::horizontal-divider {
+  background-color:pink;}
+.DemoWrapper-panelSplitter_horizontal-highlighter af|panelSplitter::horizontal-highlighter {
+  left:2px;width:3px;background-color:yellow;}
+af|panelSplitter::horizontal-collapse-icon {content: url('/afr/splitterhr.png');}
+af|panelSplitter::horizontal-restore-icon {content: url('/afr/splitterhc.png');}
+.DemoWrapper-panelSplitter_vertical-icon-style af|panelSplitter::vertical-icon-style {
+  background-image:url("/afr/mTrain_visited_md.png");background-color:pink;}
+.DemoWrapper-panelSplitter_vertical-icon-style_hover af|panelSplitter::vertical-icon-style:hover {
+  background-image:url("/afr/mTrain_visited_mo.png");background-color:yellow;}
+.DemoWrapper-panelSplitter_vertical-divider af|panelSplitter::vertical-divider {
+  background-color:pink;}
+.DemoWrapper-panelSplitter_vertical-highlighter af|panelSplitter::vertical-highlighter {
+  top:2px;height:3px;background-color:yellow;}
+af|panelSplitter::vertical-collapse-icon {content: url('/afr/splittervr.png');}
+af|panelSplitter::vertical-restore-icon {content: url('/afr/splittervc.png');}
+
+/* af|panelStretchLayout */
+.DemoWrapper-panelStretchLayout af|panelStretchLayout {width: 100%; height: 200px;}
+
+
+/* media */
+.DemoWrapper-media af|media {padding:4px;}
+
+
+/* menuBar */
+.DemoWrapper-menuBar af|menuBar:default { background-color: pink; }.DemoWrapper-menuBar_separator af|menuBar::separator {background-color:red; border-style: groove; }
+
+
+/* menu */
+/* menu - bar item */
+.DemoWrapper-menu_bar-item af|menu::bar-item { border: 1px dashed; background-color: lightYellow; }
+.DemoWrapper-menu_highlighted_bar-item af|menu::bar-item:highlighted { border: 1px dashed; background-color: paleGoldenRod; background-image: none; padding: 1px 5px;}
+.DemoWrapper-menu_depressed_bar-item af|menu::bar-item:depressed { border: 1px dashed; background-color: goldenRod; background-image: none; padding: 1px 5px;}
+.DemoWrapper-menu_bar-item-icon-style af|menu::bar-item-icon-style { border: 1px solid; }
+.DemoWrapper-menu_bar-item-text af|menu::bar-item-text { font-weight: bold; }
+.DemoWrapper-menu_disabled_bar-item-text af|menu:disabled::bar-item-text { font-weight: normal; color: red; }
+.DemoWrapper-menu_highlighted_bar-item-text af|menu:highlighted::bar-item-text { font-weight: bold; color: green; }
+.DemoWrapper-menu_bar-item-access-key af|menu::bar-item-access-key { color: blue; font-size: 12px; }
+/* menu - submenus */
+.DemoWrapper-menu_child-container af|menu::child-container { background-color: thistle; }
+.DemoWrapper-menu_submenu af|menu::submenu { height: 30px; }
+.DemoWrapper-menu_submenu-icon-style af|menu::submenu-icon-style { background-color: thistle; border: thistle; }
+.DemoWrapper-menu_submenu-text af|menu::submenu-text { font-weight: bold; background-color: thistle; border: thistle; }
+.DemoWrapper-menu_disabled_submenu-text af|menu:disabled::submenu-text { font-weight: normal; color: red; }
+.DemoWrapper-menu_highlighted_submenu-text af|menu:highlighted::submenu-text { color: green; }
+.DemoWrapper-menu_submenu-access-key af|menu::submenu-access-key { color: blue; font-size: 12px; }
+.DemoWrapper-menu_submenu-accelerator af|menu::submenu-accelerator { background-color: thistle; border: thistle; }
+.DemoWrapper-menu_submenu-open-indicator af|menu::submenu-open-indicator { background-color: thistle; border: thistle; }
+/* menu - submenu separator */
+.DemoWrapper-menu_separator-row af|menu::separator-row { background-color: thistle; border: thistle; }
+.DemoWrapper-menu_separator af|menu::separator { height: 5px; }
+/* menu - detachable submenus */
+.DemoWrapper-menu_detach-handle af|menu::detach-handle { background-image: none; background-color: paleGoldenRod;  }
+.DemoWrapper-menu_detach-handle_hover af|menu::detach-handle:hover{ background-image: none; }
+.DemoWrapper-menu_detach-handle_depressed af|menu::detach-handle:depressed { background-image: none; }
+.DemoWrapper-menu_detach-grip af|menu::detach-grip { background-image: url("/images/bullet.gif"); }
+.DemoWrapper-menu_detach-grip_hover af|menu::detach-handle:hover af|menu::detach-grip { background-image: url("/images/bullet.gif"); }
+.DemoWrapper-menu_detach-grip_depressed af|menu::detach-handle:depressed af|menu::detach-grip { background-image: url("/images/bullet.gif"); }
+/* menu properties */
+af|menu { -tr-visible-items: 8; }
+/* menu skinned icons */
+af|menu::bar-item-open-icon-style:default {background-image: none; width: 15px; height: 13px;}af|menu::bar-item-open-icon {content: url('/images/menu_arrow_down.png'); padding-left: 5px;}
+af|menu::scroll-up-icon-style, af|menu::scroll-up-icon-style:hover,
+af|menu::scroll-up-icon-style:active, af|menu::scroll-up-icon-style:disabled,
+af|menu::scroll-down-icon-style, af|menu::scroll-down-icon-style:hover,
+af|menu::scroll-down-icon-style:active, af|menu::scroll-down-icon-style:disabled {background-image: none;}
+af|menu::scroll-up-icon {content: url('/images/menu_arrow_up.png'); }
+af|menu::scroll-down-icon {content: url('/images/menu_arrow_down.png'); }
+af|menu::submenu-open-icon-style {background-image: none; width: 16px;}
+af|menu::submenu-open-icon {content: url('/images/icon_forward_button.gif'); }
+
+
+/* commandMenuItem */
+/* commandMenuItem - bar item */
+.DemoWrapper-commandMenuItem_bar-item af|commandMenuItem::bar-item { border: 1px dashed; background-color: lightYellow; }
+.DemoWrapper-commandMenuItem_highlighted_bar-item af|commandMenuItem::bar-item:highlighted { border: 1px dashed; background-color: paleGoldenRod; background-image: none; padding: 1px 5px;}
+.DemoWrapper-commandMenuItem_depressed_bar-item af|commandMenuItem::bar-item:depressed { border: 1px dashed; background-color: goldenRod; background-image: none; padding: 1px 5px;}
+.DemoWrapper-commandMenuItem_bar-item-icon-style af|commandMenuItem::bar-item-icon-style { border: 1px solid; }
+.DemoWrapper-commandMenuItem_bar-item-text af|commandMenuItem::bar-item-text { font-weight: bold; }
+.DemoWrapper-commandMenuItem_disabled_bar-item-text af|commandMenuItem:disabled::bar-item-text { font-weight: normal; color: red; }
+.DemoWrapper-commandMenuItem_highlighted_bar-item-text af|commandMenuItem:highlighted::bar-item-text { font-weight: bold; color: green; }
+.DemoWrapper-commandMenuItem_bar-item-access-key af|commandMenuItem::bar-item-access-key { color: blue; font-size: 12px; }
+/* commandMenuItem - menu item */
+.DemoWrapper-commandMenuItem_menu-item af|commandMenuItem::menu-item { height: 30px; }
+.DemoWrapper-commandMenuItem_menu-item-icon-style af|commandMenuItem::menu-item-icon-style { background-color: thistle; border: thistle;}
+.DemoWrapper-commandMenuItem_menu-item-access-key af|commandMenuItem::menu-item-access-key { color: blue; font-size: 12px; }
+.DemoWrapper-commandMenuItem_menu-item-text af|commandMenuItem::menu-item-text { font-weight: bold; background-color: thistle; border: thistle; }
+.DemoWrapper-commandMenuItem_disabled_menu-item-text af|commandMenuItem:disabled::menu-item-text { font-weight: normal; color: red; }
+.DemoWrapper-commandMenuItem_highlighted_menu-item-text af|commandMenuItem:highlighted::menu-item-text { color: green; }
+.DemoWrapper-commandMenuItem_menu-item-antonym-text-default af|commandMenuItem::menu-item-antonym-text-default { background-color: thistle; color: black;}
+.DemoWrapper-commandMenuItem_selected_menu-item-antonym-text-selected af|commandMenuItem:selected::menu-item-antonym-text-selected { background-color: black; color: thistle;}
+.DemoWrapper-commandMenuItem_menu-item-accelerator af|commandMenuItem::menu-item-accelerator { color: navy; background-color: thistle; border: thistle; }
+.DemoWrapper-commandMenuItem_menu-item-open-indicator af|commandMenuItem::menu-item-open-indicator { background-color: thistle; border: thistle; }
+/* commandMenuItem skinned icons */
+af|commandMenuItem::menu-item-radio-icon-style {background-image: none; background-color: transparent; }
+af|commandMenuItem::menu-item-check-icon-style {background-image: none; background-color: transparent; }
+af|commandMenuItem::menu-item-radio-icon {content: url('/images/smily-normal.gif'); }
+af|commandMenuItem::menu-item-check-icon {content: url('/images/update.gif'); }
+
+
+/* navigationPane */
+.DemoWrapper-navigationPane af|navigationPane {border: solid 1px orange;}
+
+/* navigationPane hint=bar */
+.DemoWrapper-navigationPane-bar af|navigationPane-bar {background-color:yellow}
+.DemoWrapper-navigationPane-bar_link af|navigationPane-bar::link {font-size:14px}
+.DemoWrapper-navigationPane-bar_link_selected af|navigationPane-bar::link:selected {color:red}
+.DemoWrapper-navigationPane-bar_link_hover af|navigationPane-bar::link:hover {color:pink}
+.DemoWrapper-navigationPane-bar_link_disabled af|navigationPane-bar::link:disabled {background-color: gray;}
+.DemoWrapper-navigationPane-bar_link_disabled_hover af|navigationPane-bar::link:disabled:hover {color:brown}
+.DemoWrapper-navigationPane-bar_icon-style af|navigationPane-bar::icon-style {border: 1px solid green;}
+.DemoWrapper-navigationPane-bar_access-key af|navigationPane-bar::access-key {color: green;font-weight:bold;}
+af|navigationPane-bar::separator-icon {content: url('/images/demo_gSeparator.png'); width: 2px; padding-left: 6px; padding-right: 6px;}
+af|navigationPane-bar::start-overflow-icon {content: url('/images/greenArrowLeft.png')}
+af|navigationPane-bar::end-overflow-icon {content: url('/images/greenArrowRight.png')}
+.DemoWrapper-navigationPane-bar_body af|navigationPane-bar::body {border : solid 2px green}
+.DemoWrapper-navigationPane-bar_content af|navigationPane-bar::content {font-family : arial, "lucida console", sans-serif;}
+.DemoWrapper-navigationPane-bar_start-overflow-indicator af|navigationPane-bar::start-overflow-indicator {background-image: none; background-color: Steelblue;}
+.DemoWrapper-navigationPane-bar_end-overflow-indicator af|navigationPane-bar::end-overflow-indicator {background-image: none; background-color: Tan;}
+.DemoWrapper-navigationPane-bar_start-overflow-indicator_hover af|navigationPane-bar::start-overflow-indicator:hover:dark {background-image: none; background-color: Teal;}.DemoWrapper-navigationPane-bar_start-overflow-indicator_active af|navigationPane-bar::start-overflow-indicator:active:dark {background-image: none; background-color: Thistle;}.DemoWrapper-navigationPane-bar_end-overflow-indicator_hover af|navigationPane-bar::end-overflow-indicator:hover:dark {background-image: none; background-color: Turquoise;}.DemoWrapper-navigationPane-bar_end-overflow-indicator_active af|navigationPane-bar::end-overflow-indicator:active:dark {background-image: none; background-color: Wheat;}
+/* navigationPane hint=buttons */
+.DemoWrapper-navigationPane-buttons  af|navigationPane-buttons {background-color:purple}
+.DemoWrapper-navigationPane-buttons_link af|navigationPane-buttons::link {font-size:14px}
+.DemoWrapper-navigationPane-buttons_link_selected af|navigationPane-buttons::link:selected:dark {color:orange;}.DemoWrapper-navigationPane-buttons_link_hover af|navigationPane-buttons::link:hover {font-style:italic}
+.DemoWrapper-navigationPane-buttons_link_disabled af|navigationPane-buttons::link:disabled {background-color: gray;}
+.DemoWrapper-navigationPane-buttons_link_disabled_hover af|navigationPane-buttons::link:disabled:hover {font-size:18px}
+.DemoWrapper-navigationPane-buttons_icon-style af|navigationPane-buttons::icon-style {border: 1px solid white;}
+.DemoWrapper-navigationPane-buttons_access-key af|navigationPane-buttons::access-key {color: white;font-weight:bold;}
+af|navigationPane-buttons::separator-icon {content: url('/images/demo_gSeparator.png'); width: 2px; padding-left: 6px; padding-right: 6px;}
+
+/* navigationPane hint=choice */
+.DemoWrapper-navigationPane-choice af|navigationPane-choice {background-color:yellow}
+.DemoWrapper-navigationPane-choice_label af|navigationPane-choice::label {font-size:16px}
+.DemoWrapper-navigationPane-choice_dropdown-icon-style af|navigationPane-choice::dropdown-icon-style {background-color:lime;}
+.DemoWrapper-navigationPane-choice_dropdown-icon-style_active af|navigationPane-choice::dropdown-icon-style:active {background-color:green;}
+.DemoWrapper-navigationPane-choice_dropdown-icon-style_hover af|navigationPane-choice::dropdown-icon-style:hover {background-color:navy;}
+.DemoWrapper-navigationPane-choice_dropdown-cell af|navigationPane-choice::dropdown-cell {border: 1px solid red;}
+af|navigationPane-choice::link {font-size:14px}
+af|navigationPane-choice::link:selected {color:red}
+af|navigationPane-choice::link:hover {color:pink}
+af|navigationPane-choice::link:focus {color:pink}
+af|navigationPane-choice::link:disabled {background-color: gray;}
+af|navigationPane-choice::link:disabled:hover {color:brown}
+af|navigationPane-choice::icon-style {border: 1px solid yellow;}
+af|navigationPane-choice::access-key {color: yellow;}
+af|navigationPane-choice::dropdown-icon-style {-tr-inhibit: background-image; padding-left: 4px; padding-right: 4px;}
+af|navigationPane-choice::dropdown-icon-style:active {-tr-inhibit: background-image;}
+af|navigationPane-choice::dropdown-icon-style:hover {-tr-inhibit: background-image;}
+af|navigationPane-choice::dropdown-icon {content: "v"; font-weight: bold;}
+@agent gecko {
+  af|navigationPane-choice::dropdown-icon-style {
+  padding-right: 4px;
+  }
+}
+/* navigationPane hint=list */
+.DemoWrapper-navigationPane-list af|navigationPane-list {background-color:yellow}
+.DemoWrapper-navigationPane-list_link af|navigationPane-list::link {font-size:14px}
+.DemoWrapper-navigationPane-list_link_selected af|navigationPane-list::link:selected:dark {font-size:12px; color: orange;}.DemoWrapper-navigationPane-list_link_hover af|navigationPane-list::link:hover {font-style:italic}
+.DemoWrapper-navigationPane-list_link_disabled af|navigationPane-list::link:disabled {background-color: black;}
+.DemoWrapper-navigationPane-list_link_disabled_hover af|navigationPane-list::link:disabled:hover {font-size:18px}
+.DemoWrapper-navigationPane-list_icon-style af|navigationPane-list::icon-style {border: 1px solid cyan;}
+.DemoWrapper-navigationPane-list_access-key af|navigationPane-list::access-key {color: cyan; font-weight:bold;}
+.DemoWrapper-navigationPane-list_bullet af|navigationPane-list::bullet {background-image: url('/images/bullet.gif');width: 7px; height: 7px;}
+/* navigationPane hint=tabs */
+.DemoWrapper-navigationPane-tabs af|navigationPane-tabs {background-color: yellow;}
+.DemoWrapper-navigationPane-tabs_icon-style af|navigationPane-tabs::icon-style {border: 1px solid fuchsia;}
+.DemoWrapper-navigationPane-tabs_access-key af|navigationPane-tabs::access-key {color: fuchsia;}
+.DemoWrapper-navigationPane-tabs_header af|navigationPane-tabs::header {border: 1px solid blue;}
+.DemoWrapper-navigationPane-tabs_tab af|navigationPane-tabs::tab {margin-right: 4px; background-image: none;}
+.DemoWrapper-navigationPane-tabs_tab-link af|navigationPane-tabs::tab-link {color: Darkgreen;}
+.DemoWrapper-navigationPane-tabs_tab-link_hover af|navigationPane-tabs::tab-link:hover {text-decoration: none; font-weight: bold;}
+.DemoWrapper-navigationPane-tabs_tab_selected_tab-link af|navigationPane-tabs::tab:selected af|navigationPane-tabs::tab-link {color: Purple;}
+.DemoWrapper-navigationPane-tabs_tab_selected_tab-link_hover af|navigationPane-tabs::tab:selected af|navigationPane-tabs::tab-link:hover {font-style: italic;}
+af|navigationPane-tabs::start-overflow-icon {content: url('/images/greenArrowLeft.png')}
+af|navigationPane-tabs::end-overflow-icon {content: url('/images/greenArrowRight.png')}
+.DemoWrapper-navigationPane-tabs_body af|navigationPane-tabs::body {border : solid 2px green; height : 20px;}
+.DemoWrapper-navigationPane-tabs_content af|navigationPane-tabs::content {border : solid 1px brown; height : 18px;}
+/* replacement tab graphics - top black */
+.DemoWrapper-navigationPane-tabs_tab-start af|navigationPane-tabs::tab-start {width: 10px; background-image:url("/images/tab_top_left_black.png");}
+.DemoWrapper-navigationPane-tabs_tab-end af|navigationPane-tabs::tab-end {width: 10px; background-image:url("/images/tab_top_right_black.png");}
+.DemoWrapper-navigationPane-tabs_tab-content af|navigationPane-tabs::tab-content {background-image:url("/images/tab_top_middle_black.png");}
+/* replacement tab graphics - disabled top red */
+.DemoWrapper-navigationPane-tabs_tab_disabled_tab-start af|navigationPane-tabs::tab:disabled af|navigationPane-tabs::tab-start {background-image:url("/images/tab_top_left_red.png");}
+.DemoWrapper-navigationPane-tabs_tab_disabled_tab-end af|navigationPane-tabs::tab:disabled af|navigationPane-tabs::tab-end {background-image:url("/images/tab_top_right_red.png");}
+.DemoWrapper-navigationPane-tabs_tab_disabled_tab-content af|navigationPane-tabs::tab:disabled af|navigationPane-tabs::tab-content {background-image:url("/images/tab_top_middle_red.png");}
+/* replacement tab graphics - disabled hover top red */
+.DemoWrapper-navigationPane-tabs_tab_disabled_hover_tab-start af|navigationPane-tabs::tab:disabled:hover af|navigationPane-tabs::tab-start {background-image:url("/images/tab_top_left_red.png");}
+.DemoWrapper-navigationPane-tabs_tab_disabled_hover_tab-end af|navigationPane-tabs::tab:disabled:hover af|navigationPane-tabs::tab-end {background-image:url("/images/tab_top_right_red.png");}
+.DemoWrapper-navigationPane-tabs_tab_disabled_hover_tab-content af|navigationPane-tabs::tab:disabled:hover af|navigationPane-tabs::tab-content {background-image:url("/images/tab_top_middle_red.png");}
+/* replacement tab graphics - hover top green */
+.DemoWrapper-navigationPane-tabs_tab_hover_tab-start af|navigationPane-tabs::tab:hover af|navigationPane-tabs::tab-start {background-image:url("/images/tab_top_left_green.png");}
+.DemoWrapper-navigationPane-tabs_tab_hover_tab-end af|navigationPane-tabs::tab:hover af|navigationPane-tabs::tab-end {background-image:url("/images/tab_top_right_green.png");}
+.DemoWrapper-navigationPane-tabs_tab_hover_tab-content af|navigationPane-tabs::tab:hover af|navigationPane-tabs::tab-content {background-image:url("/images/tab_top_middle_green.png");}
+/* replacement tab graphics - selected top blue */
+.DemoWrapper-navigationPane-tabs_tab_selected_tab-start af|navigationPane-tabs::tab:selected af|navigationPane-tabs::tab-start {background-image:url("/images/tab_top_left_blue.png");}
+.DemoWrapper-navigationPane-tabs_tab_selected_tab-end af|navigationPane-tabs::tab:selected af|navigationPane-tabs::tab-end {background-image:url("/images/tab_top_right_blue.png");}
+.DemoWrapper-navigationPane-tabs_tab_selected_tab-content af|navigationPane-tabs::tab:selected af|navigationPane-tabs::tab-content {background-image:url("/images/tab_top_middle_blue.png");}
+/* replacement tab graphics - selected hover top green */
+.DemoWrapper-navigationPane-tabs_tab_selected_hover_tab-start af|navigationPane-tabs::tab:selected:hover af|navigationPane-tabs::tab-start {background-image:url("/images/tab_top_left_green.png");}
+.DemoWrapper-navigationPane-tabs_tab_selected_hover_tab-end af|navigationPane-tabs::tab:selected:hover af|navigationPane-tabs::tab-end {background-image:url("/images/tab_top_right_green.png");}
+.DemoWrapper-navigationPane-tabs_tab_selected_hover_tab-content af|navigationPane-tabs::tab:selected:hover af|navigationPane-tabs::tab-content {background-image:url("/images/tab_top_middle_green.png");}
+.DemoWrapper-navigationPane-tabs_start-overflow-indicator af|navigationPane-tabs::start-overflow-indicator:dark {background-image: none; background-color: Steelblue;}.DemoWrapper-navigationPane-tabs_end-overflow-indicator af|navigationPane-tabs::end-overflow-indicator:dark {background-image: none; background-color: Tan;}.DemoWrapper-navigationPane-tabs_start-overflow-indicator_hover af|navigationPane-tabs::start-overflow-indicator:hover:dark {background-image: none; background-color: Teal;}.DemoWrapper-navigationPane-tabs_start-overflow-indicator_active af|navigationPane-tabs::start-overflow-indicator:active:dark {background-image: none; background-color: Thistle;}.DemoWrapper-navigationPane-tabs_end-overflow-indicator_hover af|navigationPane-tabs::end-overflow-indicator:hover:dark {background-image: none; background-color: Turquoise;}.DemoWrapper-navigationPane-tabs_end-overflow-indicator_active af|navigationPane-tabs::end-overflow-indicator:active:dark {background-image: none; background-color: Wheat;}
+/* af|panelAccordion */
+af|panelAccordion {-tr-header-height:30; -tr-overflow-height: 30;}
+.DemoWrapper-panelAccordion af|panelAccordion {width: 100%;}
+.DemoWrapper-panelAccordion_access-key af|panelAccordion::access-key {color: Red;}
+/* panelAccordion first header */
+.DemoWrapper-panelAccordion_header af|panelAccordion::header {font-style: italic;}
+.DemoWrapper-panelAccordion_header-start af|panelAccordion::header-start {background-image: url("/images/accordion_left_corner.png"); background-color: Paleturquoise; width: 30px;}
+.DemoWrapper-panelAccordion_header-disclose af|panelAccordion::header-disclose {background-image: none; background-color: Paleturquoise;}
+.DemoWrapper-panelAccordion_icon-style af|panelAccordion::icon-style {border: 1px solid;}
+.DemoWrapper-panelAccordion_header-title af|panelAccordion::header-title {background-image: none; background-color: Paleturquoise;}
+.DemoWrapper-panelAccordion_header-toolbar af|panelAccordion::header-toolbar {background-image: none; background-color: Paleturquoise;}
+.DemoWrapper-panelAccordion_header-end af|panelAccordion::header-end {background-image: url("/images/accordion_right_corner.png"); background-color: Paleturquoise; width: 30px;}
+/* panelAccordion subsequent header */
+.DemoWrapper-panelAccordion_header-subsequent af|panelAccordion::header-subsequent {border-left: 1px solid; border-right: 1px solid;}
+.DemoWrapper-panelAccordion_header-subsequent_header-start af|panelAccordion::header-subsequent af|panelAccordion::header-start:dark { background-image: none;}.DemoWrapper-panelAccordion_header-subsequent_header-disclose af|panelAccordion::header-subsequent af|panelAccordion::header-disclose:dark {background-image: none;}.DemoWrapper-panelAccordion_header-subsequent_header-title af|panelAccordion::header-subsequent af|panelAccordion::header-title:dark { background-image: none;}.DemoWrapper-panelAccordion_header-subsequent_header-toolbar af|panelAccordion::header-subsequent af|panelAccordion::header-toolbar:dark { background-image: none;}.DemoWrapper-panelAccordion_header-subsequent_header-end af|panelAccordion::header-subsequent af|panelAccordion::header-end:dark { background-image: none;}/* panelAccordion body */
+.DemoWrapper-panelAccordion_body-content af|panelAccordion::body-content {background-color: Mistyrose; border-bottom: 1px solid orange; border-left: 1px solid orange; border-right: 1px solid orange}
+/* panelAccordion skinned icons */
+af|panelAccordion::undisclosed-icon-style {-tr-inhibit: background-image;}
+af|panelAccordion::undisclosed-icon {content: url('/images/accordion_arrow_down.png');}
+af|panelAccordion::disclosed-icon-style {-tr-inhibit: background-image;}
+af|panelAccordion::disclosed-icon {content: url('/images/accordion_arrow_up.png');}
+af|panelAccordion::top-overflow-indicator:light {background-image: none;}af|panelAccordion::bottom-overflow-indicator:light {background-image: none;}af|panelAccordion::overflow-top-icon {content: url('/images/greenArrowUp.png');}
+af|panelAccordion::overflow-bottom-icon {content: url('/images/greenArrowDown.png');}
+/* used for testing text icons
+af|panelAccordion::overflow-top-icon {content: '^';}
+af|panelAccordion::overflow-bottom-icon {content: 'v';}
+*/
+
+/* af|panelBorderLayout */
+.DemoWrapper-panelBorderLayout af|panelBorderLayout {background-color: Cornsilk;}
+.DemoWrapper-panelBorderLayout_hover af|panelBorderLayout:hover {background-color: Aquamarine;}
+
+/* af|panelBox */
+.DemoWrapper-panelBox         af|panelBox          { width: 80%;}
+.DemoWrapper-panelBox_content af|panelBox::content { height: 200px; }
+.DemoWrapper-panelBox_header-text af|panelBox::header-text {background-color:Fuchsia;}
+.DemoWrapper-panelBox_header-element af|panelBox::header-element{background-color:Lime;}
+
+
+/* panelBox Core Default */
+.DemoWrapper-panelBox_header-start_core_default   af|panelBox::header-start:core:default
+{background-image: url("/images/demoSkin/ccont_p_header_start.png");}
+.DemoWrapper-panelBox_header-center_core_default  af|panelBox::header-center:core:default
+{background-image: url("/images/demoSkin/ccont_p_header_bg.png");}
+.DemoWrapper-panelBox_header-end_core_default     af|panelBox::header-end:core:default
+{background-image: url("/images/demoSkin/ccont_p_header_end.png");}
+.DemoWrapper-panelBox_content_core_default af|panelBox::content:core:default
+{background-color:pink;}
+/* panelBox Core Light */
+.DemoWrapper-panelBox_header-start_core_light   af|panelBox::header-start:core:light
+{background-image: url("/images/demoSkin/ccont_pl_header_start.png");}
+.DemoWrapper-panelBox_header-center_core_light  af|panelBox::header-center:core:light
+{background-image: url("/images/demoSkin/ccont_pl_header_bg.png");}
+.DemoWrapper-panelBox_header-end_core_light     af|panelBox::header-end:core:light
+{background-image: url("/images/demoSkin/ccont_pl_header_end.png");}
+.DemoWrapper-panelBox_content_core_light af|panelBox::content:core:light
+{background-color:#E8D5F3;}
+/* panelBox Core Medium */
+.DemoWrapper-panelBox_header-start_core_medium   af|panelBox::header-start:core:medium
+{background-image: url("/images/demoSkin/ccont_pm_header_start.png");}
+.DemoWrapper-panelBox_header-center_core_medium  af|panelBox::header-center:core:medium
+{background-image: url("/images/demoSkin/ccont_pm_header_bg.png");}
+.DemoWrapper-panelBox_header-end_core_medium     af|panelBox::header-end:core:medium
+{background-image: url("/images/demoSkin/ccont_pm_header_end.png");}
+.DemoWrapper-panelBox_content_core_medium af|panelBox::content:core:medium
+{background-color:#EFDCF5;}
+/* panelBox Core Dark */
+.DemoWrapper-panelBox_header-start_core_dark   af|panelBox::header-start:core:dark
+{background-image: url("/images/demoSkin/ccont_pd_header_start.png");}
+.DemoWrapper-panelBox_header-center_core_dark  af|panelBox::header-center:core:dark
+{background-image: url("/images/demoSkin/ccont_pd_header_bg.png");}
+.DemoWrapper-panelBox_header-end_core_dark     af|panelBox::header-end:core:dark
+{background-image: url("/images/demoSkin/ccont_pd_header_end.png");}
+.DemoWrapper-panelBox_content_core_dark af|panelBox::content:core:dark
+{background-color:#9C628E;}
+/* panelBo highlight Default */
+.DemoWrapper-panelBox_header-start_highlight_default   af|panelBox::header-start:highlight:default
+{background-image: none; background-color:#DDFAE6; border-top: 1px solid #849489; border-left: 1px solid #849489;}
+.DemoWrapper-panelBox_header-center_highlight_default  af|panelBox::header-center:highlight:default
+{background-image: none; background-color:#DDFAE6; border-top: 1px solid #849489;}
+.DemoWrapper-panelBox_header-end_highlight_default     af|panelBox::header-end:highlight:default
+{background-image: none; background-color:#DDFAE6; border-top: 1px solid #849489; border-right: 1px solid #849489;}
+.DemoWrapper-panelBox_content_highlight_default af|panelBox::content:highlight:default
+{background-color:#DDFAE6; border: 1px solid #849489;}
+/* panelBox highlight light */
+.DemoWrapper-panelBox_header-start_highlight_light   af|panelBox::header-start:highlight:light
+{background-image: none; background-color:#BCF6CE; border-top: 1px solid #836A90; border-left: 1px solid #836A90;}
+.DemoWrapper-panelBox_header-center_highlight_light  af|panelBox::header-center:highlight:light
+{background-image: none; background-color:#BCF6CE; border-top: 1px solid #836A90;}
+.DemoWrapper-panelBox_header-end_highlight_light     af|panelBox::header-end:highlight:light
+{background-image: none; background-color:#BCF6CE; border-top: 1px solid #836A90; border-right: 1px solid #836A90;}
+.DemoWrapper-panelBox_content_highlight_light af|panelBox::content:highlight:light
+{background-color:#BCF6CE; border: 1px solid #836A90;}
+/* panelBox Highlight Medium */
+.DemoWrapper-panelBox_header-start_highlight_medium   af|panelBox::header-start:highlight:medium
+{background-image: none; background-color:#78F79F; border-top: 1px solid #2F5A3C; border-left: 1px solid #2F5A3C;}
+.DemoWrapper-panelBox_header-center_highlight_medium  af|panelBox::header-center:highlight:medium
+{background-image: none; background-color:#78F79F; border-top: 1px solid #2F5A3C;}
+.DemoWrapper-panelBox_header-end_highlight_medium     af|panelBox::header-end:highlight:medium
+{background-image: none; background-color:#78F79F; border-top: 1px solid #2F5A3C; border-right: 1px solid #2F5A3C;}
+.DemoWrapper-panelBox_content_highlight_medium af|panelBox::content:highlight:medium
+{background-color:#78F79F; border: 1px solid #2F5A3C;}
+/* panelBox Highlight Dark */
+.DemoWrapper-panelBox_header-start_highlight_dark   af|panelBox::header-start:highlight:dark
+{background-image: none; background-color:#0CF754; border-top: 1px solid #044C1A; border-left: 1px solid #044C1A;}
+.DemoWrapper-panelBox_header-center_highlight_dark  af|panelBox::header-center:highlight:dark
+{background-image: none; background-color:#0CF754; border-top: 1px solid #044C1A;}
+.DemoWrapper-panelBox_header-end_highlight_dark     af|panelBox::header-end:highlight:dark
+{background-image: none; background-color:#0CF754; border-top: 1px solid #044C1A; border-right: 1px solid #044C1A;}
+.DemoWrapper-panelBox_content_highlight_dark af|panelBox::content:highlight:dark
+{background-color:#0CF754; border: 1px solid #044C1A;}
+
+/* panelChoice */
+af|panelChoice { background-color:#979991 }
+af|panelChoice::label { background-color:orange }
+af|panelChoice::selector { background-color:green }
+af|panelChoice::body { background-color:blue; border: 2px dotted red }
+
+.DemoWrapper-panelHeader af|panelHeader {border: 1px groove; background-color:Fuchsia;}
+.DemoWrapper-panelHeader_content0 af|panelHeader::content0 {border: 1px groove; background-color:Green;}
+.DemoWrapper-panelHeader_context-container af|panelHeader::context-container {border: 1px groove; background-color:Red;}
+
+.DemoWrapper-panelHeader_dynamic-help-icon-container af|panelHeader::dynamic-help-icon-container {border: 1px groove; background-color: Gray; }
+.DemoWrapper-panelHeader_icon-style af|panelHeader::icon-style {border: 1px groove; background-color:Aqua;}
+.DemoWrapper-panelHeader_info af|panelHeader::info {border: 1px groove; background-color:Blue};
+.DemoWrapper-panelHeader_title0 af|panelHeader::title0 {border: 1px groove; background-color:Silver;}
+.DemoWrapper-panelHeader_title-end0 af|panelHeader::title-end0 {border: 1px groove; width:3px; background-color:Teal;}
+.DemoWrapper-panelHeader_title-start0 af|panelHeader::title-start0 {border: 1px groove; width:3px; background-color:Maroon;}
+.DemoWrapper-panelHeader_title-text0 af|panelHeader::title-text0 {color:Olive;}
+.DemoWrapper-panelHeader_title-text0-error af|panelHeader::title-text0:error {color:Red; font-style: italic;}
+.DemoWrapper-panelHeader_title-text0-warning af|panelHeader::title-text0:warning {color:Orange; font-style: italic;}
+.DemoWrapper-panelHeader_title-text0-info af|panelHeader::title-text0:info {color:Blue; font-style: italic;}
+.DemoWrapper-panelHeader_title-text0-confirmation af|panelHeader::title-text0:confirmation {color:Maroon; font-style: italic;}
+.DemoWrapper-panelHeader_toolbar af|panelHeader::toolbar {color:Navy; font-style:italic;}
+af|panelHeader::error-icon {content: '?'; color: red; font-weight: bold; padding: 5px}
+af|panelHeader::info-icon {content: 'i'; font-style: italic; padding: 2px}
+af|panelHeader::dynamic-help-icon {content: '?'; color: black; padding: 3px}
+af|panelHeader::dynamic-help-icon-style {-tr-inhibit: all}
+af|panelHeader::dynamic-help-icon-style:hover {-tr-inhibit: all}
+af|panelHeader::dynamic-help-icon-style:active {-tr-inhibit: all}
+.DemoWrapper-panelHeader_dynamic-help-icon-style af|panelHeader::dynamic-help-icon-style {background-color: red}
+.DemoWrapper-panelHeader_dynamic-help-icon-style-hover af|panelHeader::dynamic-help-icon-style:hover {background-color: green}
+.DemoWrapper-panelHeader_dynamic-help-icon-style-active af|panelHeader::dynamic-help-icon-style:active {background-color: blue}
+
+
+/* af|outputLabel */
+.DemoWrapper-outputLabel af|outputLabel {background-color:green}
+.DemoWrapper-outputLabel_access-key af|outputLabel::access-key {color:aqua;}
+
+/* af|panelFormLayout */
+.DemoWrapper-panelFormLayout af|panelFormLayout {border: 1px dashed Gray;}
+.DemoWrapper-panelFormLayout_column af|panelFormLayout::column {vertical-align: middle;}
+.DemoWrapper-panelFormLayout_separator af|panelFormLayout::separator {background-image: url('/images/wavy-divider.png'); height:11px;}
+.DemoWrapper-panelFormLayout_label-cell af|panelFormLayout::label-cell {text-align: left;}
+.DemoWrapper-panelFormLayout_label-stacked-cell af|panelFormLayout::label-stacked-cell {text-align: center;}
+.DemoWrapper-AFPanelFormLayoutContentCell .AFPanelFormLayoutContentCell {padding-bottom: 10px;}
+
+/* af|panelGroupLayout */
+.DemoWrapper-panelGroupLayout af|panelGroupLayout {background-color: gray;}
+
+/* af|panelLabelAndMessage */
+.DemoWrapper-panelLabelAndMessage af|panelLabelAndMessage {border: 1px dashed Gray;}
+.DemoWrapper-panelLabelAndMessage_access-key af|panelLabelAndMessage::access-key {color: red;}
+.DemoWrapper-panelLabelAndMessage_content-cell af|panelLabelAndMessage::content-cell {border: solid 1px;}
+.DemoWrapper-panelLabelAndMessage_label af|panelLabelAndMessage::label {vertical-align: top;}
+.DemoWrapper-panelLabelAndMessage_end-facet af|panelLabelAndMessage::end-facet {vertical-align: top;}
+af|panelLabelAndMessage::dynamic-help-icon {content: '?'; color: black; padding: 3px}
+af|panelLabelAndMessage::dynamic-help-icon-style {-tr-inhibit: all}
+af|panelLabelAndMessage::dynamic-help-icon-style:hover {-tr-inhibit: all}
+af|panelLabelAndMessage::dynamic-help-icon-style:active {-tr-inhibit: all}
+.DemoWrapper-panelLabelAndMessage_dynamic-help-icon-style af|panelLabelAndMessage::dynamic-help-icon-style {background-color: red}
+.DemoWrapper-panelLabelAndMessage_dynamic-help-icon-style-hover af|panelLabelAndMessage::dynamic-help-icon-style:hover {background-color: green}
+.DemoWrapper-panelLabelAndMessage_dynamic-help-icon-style-active af|panelLabelAndMessage::dynamic-help-icon-style:active {background-color: blue}
+
+/* panelList has only one skin hook -- the one that goes on the root dom element */
+.DemoWrapper-panelList af|panelList {background-color: pink}
+
+/* panelRadio */
+af|panelRadio { background-color:#979991 }
+af|panelRadio::label { background-color:orange }
+af|panelRadio::selector { background-color:green }
+af|panelRadio::body { background-color:blue; border: 4px outset red }
+
+/* panelTabbed */
+af|panelTabbed{-tr-tab-bar-height:24; -tr-empty-bar-height: 0; }
+.DemoWrapper-panelTabbed af|panelTabbed {width: 100%;}
+.DemoWrapper-panelTabbed_access-key af|panelTabbed::access-key {color: Red;}
+.DemoWrapper-panelTabbed_header af|panelTabbed::header {background-image:url("/images/tab_top_line.png");}
+.DemoWrapper-panelTabbed_footer af|panelTabbed::footer {background-image:url("/images/tab_bottom_line.png");}
+.DemoWrapper-panelTabbed_body af|panelTabbed::body {background-color: Mistyrose;}
+.DemoWrapper-panelTabbed_tab af|panelTabbed::tab {margin-right: 4px; background-image: none;}
+.DemoWrapper-panelTabbed_tab-text-link af|panelTabbed::tab-text-link {color: Darkgreen;}
+.DemoWrapper-panelTabbed_tab-text-link_hover af|panelTabbed::tab-text-link:hover {text-decoration: none; color: Orange;}
+.DemoWrapper-panelTabbed_tab_selected_tab-text-link af|panelTabbed::tab-text-link:selected {color: Purple;}
+.DemoWrapper-panelTabbed_tab_selected_tab-text-link_hover af|panelTabbed::tab-text-link:selected:hover {font-style: italic;}
+.DemoWrapper-panelTabbed_icon-style af|panelTabbed::icon-style {border: solid 1px;}
+/* replacement tab graphics - top black */
+.DemoWrapper-panelTabbed_header_tab-start af|panelTabbed::header af|panelTabbed::tab-start {width: 10px; background-image:url("/images/tab_top_left_black.png");}
+.DemoWrapper-panelTabbed_header_tab-end af|panelTabbed::header af|panelTabbed::tab-end {width: 10px; background-image:url("/images/tab_top_right_black.png");}
+.DemoWrapper-panelTabbed_header_tab-content af|panelTabbed::header af|panelTabbed::tab-content {background-image:url("/images/tab_top_middle_black.png");}
+/* replacement tab graphics - bottom black */
+.DemoWrapper-panelTabbed_footer_tab-start af|panelTabbed::footer af|panelTabbed::tab-start {width: 10px; background-image:url("/images/tab_bottom_left_black.png");}
+.DemoWrapper-panelTabbed_footer_tab-end af|panelTabbed::footer af|panelTabbed::tab-end {width: 10px; background-image:url("/images/tab_bottom_right_black.png");}
+.DemoWrapper-panelTabbed_footer_tab-content af|panelTabbed::footer af|panelTabbed::tab-content {background-image:url("/images/tab_bottom_middle_black.png");}
+/* replacement tab graphics - disabled top red */
+.DemoWrapper-panelTabbed_header_tab_disabled_tab-start af|panelTabbed::header af|panelTabbed::tab:disabled af|panelTabbed::tab-start {background-image:url("/images/tab_top_left_red.png");}
+.DemoWrapper-panelTabbed_header_tab_disabled_tab-end af|panelTabbed::header af|panelTabbed::tab:disabled af|panelTabbed::tab-end {background-image:url("/images/tab_top_right_red.png");}
+.DemoWrapper-panelTabbed_header_tab_disabled_tab-content af|panelTabbed::header af|panelTabbed::tab:disabled af|panelTabbed::tab-content {background-image:url("/images/tab_top_middle_red.png");}
+/* replacement tab graphics - disabled hover top red */
+.DemoWrapper-panelTabbed_header_tab_disabled_hover_tab-start af|panelTabbed::header af|panelTabbed::tab:disabled:hover af|panelTabbed::tab-start {background-image:url("/images/tab_top_left_red.png");}
+.DemoWrapper-panelTabbed_header_tab_disabled_hover_tab-end af|panelTabbed::header af|panelTabbed::tab:disabled:hover af|panelTabbed::tab-end {background-image:url("/images/tab_top_right_red.png");}
+.DemoWrapper-panelTabbed_header_tab_disabled_hover_tab-content af|panelTabbed::header af|panelTabbed::tab:disabled:hover af|panelTabbed::tab-content {background-image:url("/images/tab_top_middle_red.png");}
+/* replacement tab graphics - disabled bottom red */
+.DemoWrapper-panelTabbed_footer_tab_disabled_tab-start af|panelTabbed::footer af|panelTabbed::tab:disabled af|panelTabbed::tab-start {background-image:url("/images/tab_bottom_left_red.png");}
+.DemoWrapper-panelTabbed_footer_tab_disabled_tab-end af|panelTabbed::footer af|panelTabbed::tab:disabled af|panelTabbed::tab-end {background-image:url("/images/tab_bottom_right_red.png");}
+.DemoWrapper-panelTabbed_footer_tab_disabled_tab-content af|panelTabbed::footer af|panelTabbed::tab:disabled af|panelTabbed::tab-content {background-image:url("/images/tab_bottom_middle_red.png");}
+/* replacement tab graphics - disabled hover bottom red */
+.DemoWrapper-panelTabbed_footer_tab_disabled_hover_tab-start af|panelTabbed::footer af|panelTabbed::tab:disabled:hover af|panelTabbed::tab-start {background-image:url("/images/tab_bottom_left_red.png");}
+.DemoWrapper-panelTabbed_footer_tab_disabled_hover_tab-end af|panelTabbed::footer af|panelTabbed::tab:disabled:hover af|panelTabbed::tab-end {background-image:url("/images/tab_bottom_right_red.png");}
+.DemoWrapper-panelTabbed_footer_tab_disabled_hover_tab-content af|panelTabbed::footer af|panelTabbed::tab:disabled:hover af|panelTabbed::tab-content {background-image:url("/images/tab_bottom_middle_red.png");}
+/* replacement tab graphics - hover top green */
+.DemoWrapper-panelTabbed_tab_header_hover_tab-start af|panelTabbed::header af|panelTabbed::tab:hover af|panelTabbed::tab-start {background-image:url("/images/tab_top_left_green.png");}
+.DemoWrapper-panelTabbed_tab_header_hover_tab-end af|panelTabbed::header af|panelTabbed::tab:hover af|panelTabbed::tab-end {background-image:url("/images/tab_top_right_green.png");}
+.DemoWrapper-panelTabbed_tab_header_hover_tab-content af|panelTabbed::header af|panelTabbed::tab:hover af|panelTabbed::tab-content {background-image:url("/images/tab_top_middle_green.png");}
+/* replacement tab graphics - hover bottom green */
+.DemoWrapper-panelTabbed_footer_tab_hover_tab-start af|panelTabbed::footer af|panelTabbed::tab:hover af|panelTabbed::tab-start {background-image:url("/images/tab_bottom_left_green.png");}
+.DemoWrapper-panelTabbed_footer_tab_hover_tab-end af|panelTabbed::footer af|panelTabbed::tab:hover af|panelTabbed::tab-end {background-image:url("/images/tab_bottom_right_green.png");}
+.DemoWrapper-panelTabbed_footer_tab_hover_tab-content af|panelTabbed::footer af|panelTabbed::tab:hover af|panelTabbed::tab-content {background-image:url("/images/tab_bottom_middle_green.png");}
+/* replacement tab graphics - selected top blue */
+.DemoWrapper-panelTabbed_tab_header_selected_tab-start af|panelTabbed::header af|panelTabbed::tab:selected af|panelTabbed::tab-start {background-image:url("/images/tab_top_left_blue.png");}
+.DemoWrapper-panelTabbed_tab_header_selected_tab-end af|panelTabbed::header af|panelTabbed::tab:selected af|panelTabbed::tab-end {background-image:url("/images/tab_top_right_blue.png");}
+.DemoWrapper-panelTabbed_tab_header_selected_tab-content af|panelTabbed::header af|panelTabbed::tab:selected af|panelTabbed::tab-content {background-image:url("/images/tab_top_middle_blue.png");}
+/* replacement tab graphics - selected bottom blue */
+.DemoWrapper-panelTabbed_footer_tab_selected_tab-start af|panelTabbed::footer af|panelTabbed::tab:selected af|panelTabbed::tab-start {background-image:url("/images/tab_bottom_left_blue.png");}
+.DemoWrapper-panelTabbed_footer_tab_selected_tab-end af|panelTabbed::footer af|panelTabbed::tab:selected af|panelTabbed::tab-end {background-image:url("/images/tab_bottom_right_blue.png");}
+.DemoWrapper-panelTabbed_footer_tab_selected_tab-content af|panelTabbed::footer af|panelTabbed::tab:selected af|panelTabbed::tab-content {background-image:url("/images/tab_bottom_middle_blue.png");}
+/* replacement tab graphics - selected hover top green */
+.DemoWrapper-panelTabbed_tab_header_selected_hover_tab-start af|panelTabbed::header af|panelTabbed::tab:selected:hover af|panelTabbed::tab-start {background-image:url("/images/tab_top_left_green.png");}
+.DemoWrapper-panelTabbed_tab_header_selected_hover_tab-end af|panelTabbed::header af|panelTabbed::tab:selected:hover af|panelTabbed::tab-end {background-image:url("/images/tab_top_right_green.png");}
+.DemoWrapper-panelTabbed_tab_header_selected_hover_tab-content af|panelTabbed::header af|panelTabbed::tab:selected:hover af|panelTabbed::tab-content {background-image:url("/images/tab_top_middle_green.png");}
+/* replacement tab graphics - selected hover bottom green */
+.DemoWrapper-panelTabbed_footer_tab_selected_hover_tab-start af|panelTabbed::footer af|panelTabbed::tab:selected:hover af|panelTabbed::tab-start {background-image:url("/images/tab_bottom_left_green.png");}
+.DemoWrapper-panelTabbed_footer_tab_selected_hover_tab-end af|panelTabbed::footer af|panelTabbed::tab:selected:hover af|panelTabbed::tab-end {background-image:url("/images/tab_bottom_right_green.png");}
+.DemoWrapper-panelTabbed_footer_tab_selected_hover_tab-content af|panelTabbed::footer af|panelTabbed::tab:selected:hover af|panelTabbed::tab-content {background-image:url("/images/tab_bottom_middle_green.png");}
+/* panelTabbed overflow - additional tones added where needed to force specificity */
+af|panelTabbed::start-overflow-indicator:light,af|panelTabbed::start-overflow-indicator:hover:light,af|panelTabbed::start-overflow-indicator:active:light {background-image: none;}af|panelTabbed::start-overflow-icon {content: url('/images/greenArrowLeft.png');}
+af|panelTabbed::end-overflow-indicator:light,af|panelTabbed::end-overflow-indicator:hover:light,af|panelTabbed::end-overflow-indicator:active:light {background-image: none;}af|panelTabbed::end-overflow-icon {content: url('/images/greenArrowRight.png');}
+/* used for testing text icons
+af|panelTabbed::start-overflow-icon {content: '<';}
+af|panelTabbed::end-overflow-icon {content: '>';}
+*/
+
+/* query */
+.DemoWrapper-query af|query {border: 1px groove;}
+.DemoWrapper-query_button af|query::button {background-color: PowderBlue; background-image:none;}
+.DemoWrapper-query_button-access-key af|query::button-access-key {color: red; }
+.DemoWrapper-query_button-hover af|query::button:hover {background-color: LightSkyBlue; background-image:none;}
+.DemoWrapper-query_button-active af|query::button:active {background-color: DeepSkyBlue; background-image:none;}
+
+.DemoWrapper-query_title1 af|query::title1 {border: 1px groove; background-color:pink;background-image:none;}
+.DemoWrapper-query_title-end1 af|query::title-end1 {border: 1px groove; width:3px; background-color:red;background-image:none;}
+.DemoWrapper-query_title-start1 af|query::title-start1 {border: 1px groove; width:3px; background-color:red;background-image:none;}
+.DemoWrapper-query_title-text1 af|query::title-text1 {color:MediumVioletRed;}
+
+.DemoWrapper-query_disclosure-icon-container af|query::disclosure-icon-container {background-color:indigo;padding:0px 2px 0px 2px;}
+
+.DemoWrapper-query_dynamic-help-icon-container af|query::dynamic-help-icon-container {border: 1px groove; background-color: Gray; }
+
+.DemoWrapper-query_content1 af|query::content1 {border: 1px groove; background-color:Beige;}
+.DemoWrapper-query_content-footer af|query::content-footer {background-color: pink;}
+
+.DemoWrapper-query_criteria af|query::criteria {background-color:#333333}
+.DemoWrapper-query_criteria-column af|query::criteria-column {background-color:Lime;}
+.DemoWrapper-query_criterion af|query::criterion {
+  font-family: arial, "lucida console", sans-serif;
+  font-style: italic;}
+.DemoWrapper-query_criterion-label af|query::criterion-label {color:white;}
+.DemoWrapper-query_criterion-label-top af|query::criterion-label-top {color:yellow;}
+.DemoWrapper-query_criterion-content af|query::criterion-content {background-color:violet}
+.DemoWrapper-query_criterion-delete-icon-cell af|query::criterion-delete-icon-cell{background-color:pink}
+.DemoWrapper-query_criterion-delete-icon-style af|query::criterion-delete-icon-style {background-image:url("/images/go_demo_ena.png")}
+.DemoWrapper-query_criterion-delete-icon-style_hover af|query::criterion-delete-icon-style:hover {background-image:url("/images/go_demo_ovr.png")}
+.DemoWrapper-query_criterion-delete-icon-style_active af|query::criterion-delete-icon-style:active {background-image:url("/images/go_demo_dwn.png")}
+
+.DemoWrapper-query_icon-container af|query::icon-container {border: 1px groove ;background-color: Blue;}
+.DemoWrapper-query_icon-style af|query::icon-style {border: 1px groove; background-color:Aqua;}
+.DemoWrapper-query_info af|query::info {border: 1px groove; background-color:Blue};
+af|query::disclosed-icon {content: "O"; font-weight: bold; font-size: 14px;text-decoration:none;}
+af|query::undisclosed-icon {content: "C"; font-weight: bold; color: red; font-size: 14px;text-decoration:none;}
+.AFIndexedIcon:alias {content: "##"; color: orange}
+.DemoWrapper-query_criterion-indexed-icon-style af|query::criterion-indexed-icon-style {border: red 1px solid}
+
+af|query::dynamic-help-icon {content: '?'; color: black; padding: 3px}
+af|query::dynamic-help-icon-style {-tr-inhibit: all}
+af|query::dynamic-help-icon-style:hover {-tr-inhibit: all}
+af|query::dynamic-help-icon-style:active {-tr-inhibit: all}
+.DemoWrapper-query_dynamic-help-icon-style af|query::dynamic-help-icon-style {background-color: red}
+.DemoWrapper-query_dynamic-help-icon-style-hover af|query::dynamic-help-icon-style:hover {background-color: green}
+.DemoWrapper-query_dynamic-help-icon-style-active af|query::dynamic-help-icon-style:active {background-color: blue}
+
+/* af|quickQuery */
+.DemoWrapper-quickQuery af|quickQuery {background-color: brown}
+.DemoWrapper-quickQuery_vertical af|quickQuery:vertical {background-color: yellow}
+.DemoWrapper-quickQuery_label af|quickQuery::label {font-size: 14px}
+.DemoWrapper-quickQuery_vertical_label af|quickQuery:vertical::label {font-style: italic}
+.DemoWrapper-quickQuery_criteria-items af|quickQuery::criteria-items {background-color: green}
+.DemoWrapper-quickQuery_value af|quickQuery::value {background-color: cyan}
+.DemoWrapper-quickQuery_end af|quickQuery::end {background-color: black}
+.DemoWrapper-quickQuery_search-icon-cell af|quickQuery::search-icon-cell {background-color: pink;}
+.DemoWrapper-quickQuery_search-icon-style af|quickQuery::search-icon-style {background-color: gray;}
+.DemoWrapper-quickQuery_search-icon-style_hover af|quickQuery::search-icon-style:hover {background-color: orange;}
+.DemoWrapper-quickQuery_search-icon-style_active af|quickQuery::search-icon-style:active {background-color: brown;}
+af|quickQuery::search-icon-cell {vertical-align: middle}
+af|quickQuery::search-icon-style {-tr-inhibit: background-image; padding-right: 1px;}
+af|quickQuery::search-icon {content: url('/images/go_demo_ena.png')}
+af|quickQuery::search-icon-style:hover {-tr-inhibit: background-image}
+af|quickQuery::search-icon-style:active {-tr-inhibit: background-image}
+af|quickQuery::dynamic-help-icon {content: '?'; color: black; padding: 3px}
+af|quickQuery::dynamic-help-icon-style {-tr-inhibit: all}
+af|quickQuery::dynamic-help-icon-style:hover {-tr-inhibit: all}
+af|quickQuery::dynamic-help-icon-style:active {-tr-inhibit: all}
+.DemoWrapper-quickQuery_dynamic-help-icon-style af|quickQuery::dynamic-help-icon-style {background-color: red}
+.DemoWrapper-quickQuery_dynamic-help-icon-style-hover af|quickQuery::dynamic-help-icon-style:hover {background-color: green}
+.DemoWrapper-quickQuery_dynamic-help-icon-style-active af|quickQuery::dynamic-help-icon-style:active {background-color: blue}
+
+/* region */
+.DemoWrapper-region af|region { border: 2px solid red; }
+.DemoWrapper-region_hover af|region:hover { border: 2px solid cyan; }
+.DemoWrapper-region_header-text af|region::header-text { background-color:Fuchsia; }
+.DemoWrapper-region_header-element af|region::header-element{ background-color:Lime; }
+.DemoWrapper-region_header-start_core_default   af|region::header-start:core:default
+{background-image: url("/images/demoSkin/ccont_p_header_start.png");}
+.DemoWrapper-region_header-center_core_default  af|region::header-center:core:default
+{background-image: url("/images/demoSkin/ccont_p_header_bg.png");}
+.DemoWrapper-region_header-end_core_default     af|region::header-end:core:default
+{background-image: url("/images/demoSkin/ccont_p_header_end.png");}
+.DemoWrapper-region_content_core_default af|region::content:core:default
+{background-color:pink;}
+
+/* af|resetButton */
+.DemoWrapper-resetButton af|resetButton {color: orange;background-image: none;background-color:yellow;}
+.DemoWrapper-resetButton af|resetButton:hover {color: red;}
+.DemoWrapper-resetButton_focus af|resetButton:focus {color: pink;font-weight: bold}
+.DemoWrapper-resetButton_active af|resetButton:active {color: yellow;}
+.DemoWrapper-resetButton_access-key af|resetButton::access-key {color: red;}
+.DemoWrapper-resetButton_disabled af|resetButton:disabled {color: purple; background-color: tan}
+
+/* richTextEditor styles */
+.DemoWrapper-richTextEditor af|richTextEditor {border: 1px solid blue;}
+.DemoWrapper-richTextEditor_label af|richTextEditor::label {color: red;}
+.DemoWrapper-richTextEditor_content af|richTextEditor::content {border: 1px solid green;}
+.DemoWrapper-richTextEditor_content-input af|richTextEditor::content-input {background: purple;}
+.DemoWrapper-richTextEditor_content-input-container af|richTextEditor::content-input-container {border: 2px solid orange;}
+.DemoWrapper-richTextEditor_read-only_content af|richTextEditor:read-only::content {background: yellow;}
+af|richTextEditor::dynamic-help-icon {content: '?'; color: black; padding: 3px}
+af|richTextEditor::dynamic-help-icon-style {-tr-inhibit: all}
+af|richTextEditor::dynamic-help-icon-style:hover {-tr-inhibit: all}
+af|richTextEditor::dynamic-help-icon-style:active {-tr-inhibit: all}
+.DemoWrapper-richTextEditor_dynamic-help-icon-style af|richTextEditor::dynamic-help-icon-style {background-color: red}
+.DemoWrapper-richTextEditor_dynamic-help-icon-style-hover af|richTextEditor::dynamic-help-icon-style:hover {background-color: green}
+.DemoWrapper-richTextEditor_dynamic-help-icon-style-active af|richTextEditor::dynamic-help-icon-style:active {background-color: blue}
+
+/* af|separator */
+.DemoWrapper-separator af|separator { color: Red; background-color: Red; height: 5px; width: 80%;}
+.DemoWrapper-separator_hover af|separator:hover { color: Cyan; background-color: Cyan;}
+
+/* af|showDetailHeader */
+.DemoWrapper-showDetailHeader af|showDetailHeader {border: 1px groove; background-color:Fuchsia;}
+.DemoWrapper-showDetailHeader_content0 af|showDetailHeader::content0 {border: 1px groove; background-color:Green;}
+.DemoWrapper-showDetailHeader_context-container af|showDetailHeader::context-container {border: 1px groove; background-color:Red;}
+.DemoWrapper-showDetailHeader_disclosure-icon-container af|showDetailHeader::disclosure-icon-container {border: 1px groove ;background-color: Blue;}
+.DemoWrapper-showDetailHeader_icon-style af|showDetailHeader::icon-style {border: 1px groove; background-color:Aqua;}
+.DemoWrapper-showDetailHeader_info af|showDetailHeader::info {border: 1px groove; background-color:Blue};
+.DemoWrapper-showDetailHeader_title0 af|showDetailHeader::title0 {border: 1px groove; background-color:Silver;}
+.DemoWrapper-showDetailHeader_title-end0 af|showDetailHeader::title-end0 {border: 1px groove; width:3px; background-color:Teal;}
+.DemoWrapper-showDetailHeader_title-start0 af|showDetailHeader::title-start0 {border: 1px groove; width:3px; background-color:Maroon;}
+.DemoWrapper-showDetailHeader_title-text0 af|showDetailHeader::title-text0 {color:Olive;}
+.DemoWrapper-showDetailHeader_title-text0-error af|showDetailHeader::title-text0:error {color:Red; font-style: italic;}
+.DemoWrapper-showDetailHeader_title-text0-warning af|showDetailHeader::title-text0:warning {color:Orange; font-style: italic;}
+.DemoWrapper-showDetailHeader_title-text0-info af|showDetailHeader::title-text0:info {color:Blue; font-style: italic;}
+.DemoWrapper-showDetailHeader_title-text0-confirmation af|showDetailHeader::title-text0:confirmation {color:Maroon; font-style: italic;}
+.DemoWrapper-showDetailHeader_toolbar af|showDetailHeader::toolbar {color:Navy; font-style:italic;}
+af|showDetailHeader::confirmation-icon { content: "C"; font-weight: bold; font-size: 14px}
+af|showDetailHeader::warning-icon {content: "!"; font-weight: bold; color: red}
+af|showDetailHeader::dynamic-help-icon {content: '?'; color: black; padding: 3px}
+af|showDetailHeader::dynamic-help-icon-style {-tr-inhibit: all}
+af|showDetailHeader::dynamic-help-icon-style:hover {-tr-inhibit: all}
+af|showDetailHeader::dynamic-help-icon-style:active {-tr-inhibit: all}
+.DemoWrapper-showDetailHeader_dynamic-help-icon-style af|showDetailHeader::dynamic-help-icon-style {background-color: red}
+.DemoWrapper-showDetailHeader_dynamic-help-icon-style-hover af|showDetailHeader::dynamic-help-icon-style:hover {background-color: green}
+.DemoWrapper-showDetailHeader_dynamic-help-icon-style-active af|showDetailHeader::dynamic-help-icon-style:active {background-color: blue}
+
+
+ /* af|resetButton */
+af|resetButton{color: black;}
+af|resetButton:hover{color: red;border-style: outset;}
+af|resetButton:active{color: blue;border-style: inset;}
+af|resetButton:disabled {color: purple;border-style: groove;}
+
+/* af|toolBar */
+.DemoWrapper-toolbar af|toolbar:default {background-color: pink;}.DemoWrapper-toolbar_body  af|toolbar::body {background-color: lightGreen;}
+.DemoWrapper-toolbar_item af|toolbar::item {background-color: cyan;}
+.DemoWrapper-toolbar_separator af|toolbar::separator {background-color:red; border-style: groove;}
+.DemoWrapper-toolbar_overflow-indicator af|toolbar::overflow-indicator {background-color: lime;}
+/* toolbar overflow - additional tones added where needed to force specificity */
+af|toolbar::overflow-indicator:light,af|toolbar::overflow-indicator:hover:light,af|toolbar::overflow-indicator:active:light {background-image: none;}af|toolbar::overflow-icon {content: url('/images/greenArrowRight.png');}
+/* used for testing text icons
+af|toolbar::overflow-icon {content: '>';}
+*/
+
+/* af|toolBox */
+.DemoWrapper-toolbox af|toolbox {width: 300px; background-color: lightBlue;}
+.DemoWrapper-toolbox-body af|toolbox::body {border: 5px solid yellow;}
+.DemoWrapper-toolbox-row af|toolbox::row {border: 1px dashed blue;}
+
+/* af|train */
+.DemoWrapper-train af|train {background-color:Linen;}
+.DemoWrapper-train_body af|train::body {background-color: pink;}
+.DemoWrapper-train_content af|train::content {background-color: Salmon;}
+
+.DemoWrapper-train_parent-start af|train::parent-start {background-color:PaleTurquoise;}
+.DemoWrapper-train_parent-end af|train::parent-end {background-color:PaleTurquoise;}
+.DemoWrapper-train_parent-start-icon-cell af|train::parent-start-icon-cell {background-color:LightSkyBlue;}
+.DemoWrapper-train_parent-end-icon-cell af|train::parent-end-icon-cell {background-color:LightSkyBlue;}
+.DemoWrapper-train_parent-start-content af|train::parent-start-content {color:Navy;}
+.DemoWrapper-train_parent-end-content af|train::parent-end-content {color:Navy;}
+
+.DemoWrapper-train_stop af|train::stop {background-color:AliceBlue;border:1px dashed blue;}
+
+.DemoWrapper-train_stop-icon-cell af|train::stop-icon-cell {background-color:red; padding:3px;}
+.DemoWrapper-train_stop-icon-selected af|train::stop-icon-selected {background-image: url('/images/rTrain_active.png');}
+.DemoWrapper-train_stop-icon-disabled af|train::stop-icon-disabled {background-image: url('/images/rTrain_disabled.png');}
+.DemoWrapper-train_stop-icon-visited af|train::stop-icon-visited {background-image: url('/images/rTrain_visited_n.png');}
+.DemoWrapper-train_stop-icon-visited_hover af|train::stop-icon-visited:hover {background-image: url('/images/rTrain_visited_mo.png');}
+.DemoWrapper-train_stop-icon-visited_active af|train::stop-icon-visited:active {background-image: url('/images/rTrain_visited_md.png');}
+.DemoWrapper-train_stop-icon-unvisited af|train::stop-icon-unvisited {background-image: url('/images/rTrain_unvisited_n.png');}
+.DemoWrapper-train_stop-icon-unvisited_hover af|train::stop-icon-unvisited:hover {background-image: url('/images/rTrain_unvisited_mo.png');}
+.DemoWrapper-train_stop-icon-unvisited_active af|train::stop-icon-unvisited:active {background-image: url('/images/rTrain_unvisited_md.png');}
+
+.DemoWrapper-train_stop-content af|train::stop-content {background-color:LightYellow; }
+.DemoWrapper-train_stop-content_selected af|train::stop-content:selected {background-color:Yellow;font-style:italic;}
+.DemoWrapper-train_stop-content_required af|train::stop-content:required {background-color:Gold;}
+
+.DemoWrapper-train_stop-link_selected af|train::stop-link:selected {color:blue;}
+.DemoWrapper-train_stop-link_train-visited af|train::stop-link:train-visited {color:green;font-style:italic;}
+.DemoWrapper-train_stop-link_unvisited af|train::stop-link:unvisited {color:gold;font-style:italic;}
+.DemoWrapper-train_stop-link_disabled af|train::stop-link:disabled {color:red;}
+
+.DemoWrapper-train_join af|train::join{height:2px;}
+.DemoWrapper-train_join_train-visited af|train::join:train-visited {background-color:green;}
+.DemoWrapper-train_join_unvisited af|train::join:unvisited {background-color:red;}
+.DemoWrapper-train_join_disabled af|train::join:disabled {background-color:gray;}
+
+.DemoWrapper-train_overflow-container n af|train::overflow-container {border: 3px dotted purple;background-color: black;}
+af|train::end-overflow-indicator:light {background-image: none; background-color: Tan;}af|train::end-overflow-indicator:hover:light {background-image: none; background-color: Turquoise;}af|train::end-overflow-indicator:active:light {background-image: none; background-color: Wheat;}af|train::start-overflow-indicator:light {background-image: none; background-color: Steelblue;}af|train::start-overflow-indicator:hover:light {background-image: none; background-color: Teal;}af|train::start-overflow-indicator:active:light {background-image: none; background-color: Thistle;}
+af|train::start-overflow-icon { content: url('/images/greenArrowLeft.png')}
+af|train::end-overflow-icon { content: url('/images/greenArrowRight.png')}
+af|train::parent-start-icon {content: '^'; font-weight: bold; font-size: 13px; color: Green;}
+af|train::parent-end-icon {content: 'v'; font-weight: bold; font-size: 13px; color:red;}
+af|train-vertical::parent-start-icon {content: '^'; font-weight: bold; font-size: 13px; color: Green;}
+af|train-vertical::parent-end-icon {content: 'v'; font-weight: bold; font-size: 13px; color:red;}
+
+.DemoWrapper-train-vertical af|train-vertical {background-color:Linen;}
+
+.DemoWrapper-train-vertical_parent-start-icon-cell af|train-vertical::parent-start-icon-cell {background-color:LightSkyBlue;}
+.DemoWrapper-train-vertical_parent-end-icon-cell af|train-vertical::parent-end-icon-cell {background-color:LightSkyBlue;}
+.DemoWrapper-train-vertical_parent-start-content af|train-vertical::parent-start-content {color:Navy;}
+.DemoWrapper-train-vertical_parent-end-content af|train-vertical::parent-end-content {color:Navy;}
+
+.DemoWrapper-train-vertical_stop af|train-vertical::stop {background-color:AliceBlue;}
+
+.DemoWrapper-train-vertical_stop-icon-cell af|train-vertical::stop-icon-cell {background-color:red; padding:3px;}
+.DemoWrapper-train-vertical_stop-icon-selected af|train-vertical::stop-icon-selected {background-image: url('/images/rTrain_active.png');}
+.DemoWrapper-train-vertical_stop-icon-disabled af|train-vertical::stop-icon-disabled {background-image: url('/images/rTrain_disabled.png');}
+.DemoWrapper-train-vertical_stop-icon-visited af|train-vertical::stop-icon-visited {background-image: url('/images/rTrain_visited_n.png');}
+.DemoWrapper-train-vertical_stop-icon-visited_hover af|train-vertical::stop-icon-visited:hover {background-image: url('/images/rTrain_visited_mo.png');}
+.DemoWrapper-train-vertical_stop-icon-visited_active af|train-vertical::stop-icon-visited:active {background-image: url('/images/rTrain_visited_md.png');}
+.DemoWrapper-train-vertical_stop-icon-unvisited af|train-vertical::stop-icon-unvisited {background-image: url('/images/rTrain_unvisited_n.png');}
+.DemoWrapper-train-vertical_stop-icon-unvisited_hover af|train-vertical::stop-icon-unvisited:hover {background-image: url('/images/rTrain_unvisited_mo.png');}
+.DemoWrapper-train-vertical_stop-icon-unvisited_active af|train-vertical::stop-icon-unvisited:active {background-image: url('/images/rTrain_unvisited_md.png');}
+
+.DemoWrapper-train-vertical_stop-content af|train-vertical::stop-content {background-color:LightYellow; }
+.DemoWrapper-train-vertical_stop-content_selected af|train-vertical::stop-content:selected {background-color:Yellow;font-style:italic;}
+.DemoWrapper-train-vertical_stop-content_required af|train-vertical::stop-content:required {background-color:Gold;}
+
+.DemoWrapper-train-vertical_stop-link_selected af|train-vertical::stop-link:selected {color:blue;}
+.DemoWrapper-train-vertical_stop-link_train-visited af|train-vertical::stop-link:train-visited {color:green;font-style:italic;}
+.DemoWrapper-train-vertical_stop-link_unvisited af|train-vertical::stop-link:unvisited {color:gold;font-style:italic;}
+.DemoWrapper-train-vertical_stop-link_disabled af|train-vertical::stop-link:disabled {color:red;}
+
+.DemoWrapper-train-vertical_join af|train-vertical::join{width:2px;max-width:2px;}
+.DemoWrapper-train-vertical_join_train-visited af|train-vertical::join:train-visited {background-color:green;}
+.DemoWrapper-train-vertical_join_unvisited af|train-vertical::join:unvisited {background-color:red;}
+.DemoWrapper-train-vertical_join_disabled af|train-vertical::join:disabled {background-color:gray;}
+
+
+/* af|trainButtonBar */
+.DemoWrapper-trainButtonBar af|trainButtonBar {background-color:pink;padding:10px;}
+.DemoWrapper-trainButtonBar_button-cell af|trainButtonBar::button-cell {background-color:Gray;padding-left:5px; padding-right: 5px;}
+.DemoWrapper-trainButtonBar_back-button af|trainButtonBar::back-button {background-color:green;border:0px;background-image:none;}
+.DemoWrapper-trainButtonBar_next-button af|trainButtonBar::next-button {background-color:red;border:0px;background-image:none;}
+.DemoWrapper-trainButtonBar_back-button_hover af|trainButtonBar::back-button:hover {background-color:Lime;border:0px;background-image:none;}
+.DemoWrapper-trainButtonBar_next-button_hover af|trainButtonBar::next-button:hover {background-color:Orange;border:0px;background-image:none;}
+.DemoWrapper-trainButtonBar_back-button_active af|trainButtonBar::back-button:active {background-color:Olive;border:0px;background-image:none;}
+.DemoWrapper-trainButtonBar_next-button_active af|trainButtonBar::next-button:active {background-color:Maroon;border:0px;background-image:none;}
+.DemoWrapper-trainButtonBar_back-button_disabled af|trainButtonBar::back-button:disabled {background-color:white;}
+.DemoWrapper-trainButtonBar_next-button_disabled af|trainButtonBar::next-button:disabled {background-color:white;}
+
+/* af|statusIndicator */
+/* The idle-icon is generally a non-animated icon used to indicate that
+ * no server processing is taking place
+ */
+af|statusIndicator::idle-icon
+{
+  content: "O";
+  font-weight: bold;
+  background-color: green;
+}
+
+/* the processing-icon is generally an animated icon used to indicate that
+ * server processing is taking place, and has not completed.
+ */
+af|statusIndicator::processing-icon
+{
+  content: "(//)";
+  font-weight: bold;
+  background-color: yellow;
+}
+
+af|statusIndicator::connecting-icon {
+  content: "(//)";
+  font-weight: bold;
+  background-color: yellow;
+}
+
+af|statusIndicator::connected-icon {
+  content: "O";
+  font-weight: bold;
+  background-color: green;
+}
+
+af|statusIndicator::reconnecting-icon {
+  content: "(//)";
+  font-weight: bold;
+  color: brown;
+  background-color: orange;
+}
+
+af|statusIndicator::disconnected-icon {
+  content: "(X)";
+  font-weight: bold;
+  color: red;
+  background-color: black;
+}
+
+.DemoWrapper-progressIndicator af|progressIndicator {background-color: Cornsilk;}
+.DemoWrapper-progressIndicator_hover af|progressIndicator:hover {background-color: Aquamarine;}
+.DemoWrapper-progressIndicator_content af|progressIndicator::content {border: 2px solid;}
+.DemoWrapper-progressIndicator_indeterminate-running af|progressIndicator::indeterminate:running {background-color:green}
+.DemoWrapper-progressIndicator_indeterminate-finished af|progressIndicator::indeterminate:finished {background-color:yellow}
+.DemoWrapper-progressIndicator_determinate af|progressIndicator::determinate {border:1px solid}
+.DemoWrapper-progressIndicator_determinate-start-label af|progressIndicator::determinate-start-label {color:blue}
+.DemoWrapper-progressIndicator_determinate-end-label af|progressIndicator::determinate-end-label {color:green}
+.DemoWrapper-progressIndicator_determinate-filled-icon-style af|progressIndicator::determinate-filled-icon-style {background-image:none;background-color:blue;}
+.DemoWrapper-progressIndicator_determinate-empty-icon-style af|progressIndicator::determinate-empty-icon-style {background-image:none;background-color:white;}
+.DemoWrapper-progressIndicator_determinate-filled-icon-style_high-contrast af|progressIndicator::determinate-filled-icon-style {background-image:none;border: solid 2px;}
+af|progressIndicator::indeterminate:running {-tr-inhibit: background-image}
+af|progressIndicator::indeterminate:finished {-tr-inhibit: background-image}
+af|progressIndicator::indeterminate-running-icon {content:url('/images/animated_search.gif'); height:70px; width:75px;}
+af|progressIndicator::indeterminate-finished-icon {content:url('/images/happy_computer.gif'); height:47px; width:55px;}
+
+/* table */
+/* demo a few aliases for column and table*/
+.AFTableCellDataVHGridBorder:alias { border-bottom-color: Lime; border-right-color: Silver;}
+.AFTableCellDataVHGridBorder:alias:rtl {border-left-color: Silver; border-right: none;}
+
+.AFTableCellFrozenBorder:alias { border-right: 1px solid Fuchsia;}
+.AFTableCellFrozenBorder:alias:rtl { border-left: 1px solid Fuchsia; border-right: none;}
+
+.DemoWrapper-table af|table {border: solid green 2px;}
+.DemoWrapper-table-data-row af|table::data-row:selected af|column::data-cell {
+  border-top: 2px solid purple; border-bottom: 2px solid purple;}
+.DemoWrapper-table-data-row-banded af|table::data-row:selected af|column::banded-data-cell {
+  border-top: 2px solid silver; border-bottom: 2px solid silver;}
+.DemoWrapper-table-data-row-focused af|table::data-row:selected:focused af|column::data-cell {
+  border-top: 2px dotted purple; border-bottom: 2px dotted purple;}
+.DemoWrapper-table-data-row-banded-focused af|table::data-row:selected:focused af|column::banded-data-cell {
+  border-top: 2px dotted silver; border-bottom: 2px dotted silver;}
+
+.DemoWrapper-table-data-row-inactive af|table::data-row:selected:inactive af|column::data-cell {
+  border-top: 2px solid pink; border-bottom: 2px solid pink;}
+.DemoWrapper-table-data-row-banded-inactive af|table::data-row:selected:inactive af|column::banded-data-cell {
+  border-top: 1px solid gray; border-bottom: 1px solid gray;}
+.DemoWrapper-table-status-message af|table::status-message {
+  background-color: lime;border: 3px black inset ;}
+.DemoWrapper-table-column-resize-indicator af|table::column-resize-indicator {
+  border-right: 2px dotted purple;}
+
+.DemoWrapper-table-detail-area-cell af|table::detail-area-cell {
+  background-color: silver;background-image:none;}
+
+/* Table Customizations */
+
+af|table {-tr-detail-column-width: 20;}
+af|table::disclosed-icon {content: "--";}
+af|table::undisclosed-icon {content: "++";}
+
+/* for testing table icon override
+af|table::disclosed-icon {content: url('/images/greenArrowUp.png');}
+af|table::undisclosed-icon {content: url('/images/greenArrowDown.png');}
+*/
+
+af|table::disclosed-icon-style {
+  -tr-inhibit: background-image;
+  -tr-inhibit: display;
+  -tr-inhibit: height;
+}
+
+af|table::undisclosed-icon-style {
+  -tr-inhibit: background-image;
+  -tr-inhibit: display;
+  -tr-inhibit: height;
+}
+
+
+/* column */
+.DemoWrapper-column-data-cell af|column::data-cell {
+  background-color: silver;
+}
+
+.DemoWrapper-column-banded-data-cell af|column::banded-data-cell {
+  background-color: pink;
+}
+.DemoWrapper-table-data-row-selected-column-data-cell af|table::data-row:selected af|column::data-cell {
+  background-color: blue;
+}
+/* This is the banded row that is selected */
+.DemoWrapper-table-data-row-selected-column-banded-data-cell af|table::data-row:selected af|column::banded-data-cell {
+  background-color: Aqua;
+}
+/* This is the banded column that is selected */
+.DemoWrapper-column-banded-data-cell-selected af|column::banded-data-cell:selected,
+.DemoWrapper-column-data-cell-selected  af|column::data-cell:selected {
+  background-color: aqua;
+}
+
+.DemoWrapper-column-column-header-cell af|column::column-header-cell {
+  color: yellow;
+  font-weight: bold;
+  background-image: none;
+  background-color: Green;
+}
+
+.DemoWrapper-column-column-header-cell-focused af|column::column-header-cell:focused {
+  background-image: none;
+  background-color: purple;
+}
+
+.DemoWrapper-column-column-header-cell-drag af|column::column-header-cell:drag {
+  background-color: Olive;
+  background-image: none;
+  color: white;
+  font-style:italic;
+  border: 2px dashed aqua;
+}
+
+.DemoWrapper-column-row-header-cell af|column::row-header-cell {
+  font-style: italic;
+  font-weight: bold;
+  background-image: none;
+  background-color: Green;
+  color: lime;
+}
+
+.DemoWrapper-column-row-header-cell-focused af|column::row-header-cell:focused {
+  font-style: normal;
+}
+
+
+.DemoWrapper-column-column-filter-cell af|column::column-filter-cell {
+  background-color: orange;
+}
+
+.DemoWrapper-column-AFColumnDropTarget .AFColumnDropTarget {
+  background-color: yellow;
+  border: 1px solid green;
+}
+
+.DemoWrapper-column-detail-cell af|column::detail-cell {
+  background-color: green;
+  color: yellow;
+  background-image: none;
+}
+
+.DemoWrapper-column-detail-column-header-cell af|column::detail-column-header-cell {
+  background-color: green;
+  background-image: none;
+}
+
+af|column::dynamic-help-icon {content: '?'; color: black; padding: 3px}
+/* Something is causing a base style definition, without the specificity, to fail (11/16/07) */
+af|column::dynamic-help-icon-style:default {background-image: none}af|column::dynamic-help-icon-style:hover {-tr-inhibit: all}
+af|column::dynamic-help-icon-style:active {-tr-inhibit: all}
+
+.DemoWrapper-column_dynamic-help-icon-style af|column::dynamic-help-icon-style {background-color: red}
+.DemoWrapper-column_dynamic-help-icon-style-hover af|column::dynamic-help-icon-style:hover {background-color: green}
+.DemoWrapper-column_dynamic-help-icon-style-active af|column::dynamic-help-icon-style:active {background-color: blue}
+
+af|column::sort-ascending-icon-style,
+af|column::sort-descending-icon-style,
+af|column::sorted-ascending-icon-style,
+af|column::sorted-descending-icon-style,
+af|column::sort-ascending-icon-style:hover,
+af|column::sort-ascending-icon-style:active,
+af|column::sort-descending-icon-style:hover,
+af|column::sort-descending-icon-style:active {
+  -tr-inhibit: background-image;
+}
+
+af|column::sort-ascending-icon {
+  content: url("/images/demoSkin/sort_asc_n.png");
+}
+
+af|column::sorted-ascending-icon {
+  content: url("/images/demoSkin/sort_asc_s.png");
+}
+
+af|column::sort-descending-icon {
+  content: url("/images/demoSkin/sort_des_n.png");
+}
+
+af|column::sorted-descending-icon {
+  content: url("/images/demoSkin/sort_des_s.png");
+}
+
+/* TreeTable customizations */
+af|treeTable::collapsed-icon-style {
+  -tr-inhibit: background-image;
+  padding-right: 0px;
+}
+af|treeTable::expanded-icon-style {
+  -tr-inhibit: background-image;
+  padding-right: 0px;
+}
+af|treeTable::leaf-icon-style {
+  -tr-inhibit: background-image;
+  padding-right: 0px;
+}
+af|treeTable::node-anim-icon-style {
+  -tr-inhibit: background-image;
+  padding-right: 0px;
+}
+af|treeTable::selector-icon-style {
+  -tr-inhibit: background-image;
+  font-size:9px;
+  text-decoration: none;
+}
+af|treeTable::selector-icon-style:hover {
+  -tr-inhibit: background-image;
+  font-size:9px;
+  color:red;
+}
+af|treeTable::selector-icon-style:active {
+  -tr-inhibit: background-image;
+  font-size:9px;
+  color:blue;
+}
+
+af|treeTable::expanded-icon {
+  content: "--";
+  cursor : pointer;
+}
+af|treeTable::collapsed-icon {
+  content: "++";
+  cursor : pointer;
+}
+af|treeTable::selector-icon {
+  content: "sel";
+  cursor : pointer;
+}
+af|treeTable::node-anim-icon {
+  content: "oo";
+  cursor : pointer;
+}
+af|treeTable::leaf-icon {
+  content: url('/images/demoSkin/leaf.png');
+  width: 9px;
+  height: 9px;
+}
+
+
+/* Tree customization */
+af|tree::collapsed-icon-style {
+  -tr-inhibit: background-image;
+  padding-right: 0px;
+}
+af|tree::expanded-icon-style {
+  -tr-inhibit: background-image;
+  padding-right: 0px;
+}
+af|tree::leaf-icon-style {
+  -tr-inhibit: background-image;
+  padding-right: 0px;
+}
+af|tree::node-anim-icon-style {
+  -tr-inhibit: background-image;
+  padding-right: 0px;
+}
+af|tree::selector-icon-style {
+  -tr-inhibit: background-image;
+  font-size:9px;
+  text-decoration: none;
+}
+af|tree::selector-icon-style:hover {
+  -tr-inhibit: background-image;
+  font-size:9px;
+  color:red;
+}
+af|tree::selector-icon-style:active {
+  -tr-inhibit: background-image;
+  font-size:9px;
+  color:blue;
+}
+
+af|tree::expanded-icon {
+  content: "V";
+  color:blue;
+  cursor : default;
+}
+af|tree::collapsed-icon {
+  content: ">";
+  color:blue;
+  cursor : default;
+}
+af|tree::selector-icon {
+  content: "*";
+  cursor : default;
+}
+af|tree::node-anim-icon {
+  content: "*";
+  color:red;
+  cursor : default;
+}
+af|tree::leaf-icon {
+  content: url('/images/demoSkin/leaf.png');
+  width: 9px;
+  height: 9px;
+}
+
+
+.DemoWrapper-tree af|tree {
+  width: 800px;
+  height: 200px;
+  background-color: tan;
+  border: 2px solid blue;
+  font-size: 14px;
+}
+
+.DemoWrapper-tree-node-stamp-text af|tree::node-stamp-text {
+  color: blue;
+  background-color: pink;
+  border-width: 0px;
+}
+
+.DemoWrapper-tree-data-row-selected af|tree::data-row:selected af|tree::node-stamp-text,
+.DemoWrapper-tree-data-row-selected af|tree::data-row:selected:focused af|tree::node-stamp-text{
+  border-width: 2px;
+  border-style: solid;
+  border-color: red;
+  background-color: blue;
+  color: lime;
+}
+
+.DemoWrapper-tree-data-row-selected-inactive af|tree::data-row:selected:inactive af|tree::node-stamp-text {
+  font-weight:bold;
+  font-style: italic;
+  color: black;
+}
+/* To get focus without getting selected, select a node, and use CTRL+arrow to move focus */
+.DemoWrapper-tree-data-row-focused af|tree::data-row:focused af|tree::node-stamp-text {
+  border: 1px dotted lime;
+  background-color: silver;
+}
+
+.DemoWrapper-tree-status-message af|tree::status-message {
+  background-color: lime;border: 3px black inset ;}
+
+/* Style class for panelCollection */
+.DemoWrapper-panelCollection af|panelCollection {
+  border: 2px solid red;
+  height: 300px;
+}
+/* -tr- skin property. Does not work with descendent selector */
+af|panelCollection {
+  -tr-toolbar-height: 5em;
+  -tr-statusbar-height: 8em;
+}
+/* panelCollection skinned icons. NOTE: The icons must be URIIcons, not contextIcons to work.
+ It's because in PanelCollectionRenderer we pass the url to the commandToolbarButton. */
+
+af|panelCollection::qbe-icon {content: url('//images/find_ena.png');}
+af|panelCollection::freeze-icon {content: url('//images/smily-glasses.gif');}
+af|panelCollection::freeze-disabled-icon {content: url('//images/smily-normal.gif');}
+af|panelCollection::maximize-icon {content: url('//images/maximize.gif');}
+af|panelCollection::wrap-icon {content: url('//images/guy.gif');}
+af|panelCollection::wrap-disabled-icon {content: url('//images/wrap_ena.png');}
+af|panelCollection::go-up-icon {content: url('//images/backarrow.gif');}
+af|panelCollection::go-to-top-icon {content: url('//images/greenArrowUp.png');}
+af|panelCollection::show-as-top-icon {content: url('//images/demoSkin/sort_asc_mo.png');}
+
+
+/* Style class for popup selector */
+.DemoWrapper-popup-header .AFPopupSelectorHeader {
+  border-top:solid #54016C 1px;
+  background-color:purple;
+}
+
+.DemoWrapper-popup-header-start .AFPopupSelectorHeaderStart {
+  background-image:url("/images/demoSkin/popup_tl.png");
+}
+
+.DemoWrapper-popup-header-end .AFPopupSelectorHeaderEnd {
+  background-image:url("/images/demoSkin/popup_tr.png");
+}
+
+.DemoWrapper-popup-content .AFPopupSelectorContent {
+  background-color:#E9DCED;
+  font-size: 12pt;
+  color: #F1EF40;
+  background-image:url("/images/demoSkin/popup_bg.png");
+  background-position: bottom;
+  background-repeat: repeat-x;
+}
+
+.DemoWrapper-popup-content-start .AFPopupSelectorContentStart {
+  border-left:solid #54016C 1px;
+  background-color:purple;
+}
+
+.DemoWrapper-popup-content-end  .AFPopupSelectorContentEnd {
+  border-right:solid #54016C 1px;
+  background-color:purple;
+}
+
+.DemoWrapper-popup-footer .AFPopupSelectorFooter {
+  background-image:url("/images/demoSkin/popup_bl.png");
+}
+
+.DemoWrapper-popup-footer-start .AFPopupSelectorFooterStart {
+  background-image:url("/images/demoSkin/popup_bl.png");
+}
+
+.DemoWrapper-popup-footer-end .AFPopupSelectorFooterEnd {
+  background-image:url("/images/demoSkin/popup_br.png");
+}
+
+/* Style class for panelWindow selector */
+.DemoWrapper-panelWindowCorners af|panelWindow::header-start{
+  background-image:url("/images/demoSkin/window-header-left.png");
+}
+
+.DemoWrapper-panelWindowCorners af|panelWindow::header{
+  background-image:url("/images/demoSkin/window-header-middle.png");
+}
+
+.DemoWrapper-panelWindowCorners af|panelWindow::header-end{
+  background-image:url("/images/demoSkin/window-header-right.png");
+}
+
+.DemoWrapper-panelWindowCorners af|panelWindow::footer-start {
+  background-image:url("/images/demoSkin/window-footer-left.png");
+}
+
+.DemoWrapper-panelWindowCorners af|panelWindow::footer {
+  background-image:url("/images/demoSkin/window-footer-middle.png");
+}
+
+.DemoWrapper-panelWindowCorners af|panelWindow::footer-end {
+  background-image:url("/images/demoSkin/window-footer-right.png");
+}
+
+.DemoWrapper-panelWindowCorners af|panelWindow::content-start{
+  border-left: solid #773A89 1px;
+  border-right: none;
+  background-color:#E9DCED;
+  background-image:url("/images/demoSkin/popup_bg.png");
+  background-position: bottom;
+  background-repeat: repeat-x;
+}
+
+.DemoWrapper-panelWindowCorners af|panelWindow::content{
+  background-color:#E9DCED;
+  color: #F1EF40;
+  background-image:url("/images/demoSkin/popup_bg.png");
+  background-position: bottom;
+  background-repeat: repeat-x;
+}
+
+.DemoWrapper-panelWindowCorners af|panelWindow::content-end{
+  border-left: none;
+  border-right: solid #773A89 1px;
+  background-color:#E9DCED;
+  background-image:url("/images/demoSkin/popup_bg.png");
+  background-position: bottom;
+  background-repeat: repeat-x;
+}
+
+.DemoWrapper-panelWindow_header-start af|panelWindow::header-start{
+  background-image:url("/images/demoSkin/window-header-left.png");
+}
+
+.DemoWrapper-panelWindow_header af|panelWindow::header{
+  background-image:url("/images/demoSkin/window-header-middle.png");
+}
+
+.DemoWrapper-panelWindow_header-end af|panelWindow::header-end{
+  background-image:url("/images/demoSkin/window-header-right.png");
+}
+
+.DemoWrapper-panelWindow_footer-start af|panelWindow::footer-start {
+  background-image:url("/images/demoSkin/window-footer-left.png");
+}
+
+.DemoWrapper-panelWindow_footer af|panelWindow::footer {
+  background-image:url("/images/demoSkin/window-footer-middle.png");
+}
+
+.DemoWrapper-panelWindow_footer-end af|panelWindow::footer-end {
+  background-image:url("/images/demoSkin/window-footer-right.png");
+}
+
+.DemoWrapper-panelWindow_content-start af|panelWindow::content-start{
+  border-left: solid #773A89 1px;
+  border-right: none;
+  background-color:#E9DCED;
+  background-image:url("/images/demoSkin/popup_bg.png");
+  background-position: bottom;
+  background-repeat: repeat-x;
+}
+
+.DemoWrapper-panelWindow_content af|panelWindow::content{
+  background-color:#E9DCED;
+  color: #F1EF40;
+  background-image:url("/images/demoSkin/popup_bg.png");
+  background-position: bottom;
+  background-repeat: repeat-x;
+}
+
+.DemoWrapper-panelWindow_content-end af|panelWindow::content-end{
+  border-left: none;
+  border-right: solid #773A89 1px;
+  background-color:#E9DCED;
+  background-image:url("/images/demoSkin/popup_bg.png");
+  background-position: bottom;
+  background-repeat: repeat-x;
+}
+
+.DemoWrapper-panelWindowTitle af|panelWindow::title{
+  color: #F1EF40;
+  font-size: 9pt;
+}
+
+.DemoWrapper-panelWindowIconWrapper af|panelWindow::icon-region{
+  margin-top:1px;
+  margin-right:20px;
+  margin-left:20px;
+}
+
+.DemoWrapper-panelWindowDragState af|panelWindow:drag af|panelWindow::main{
+  opacity:0.15;
+}
+
+@agent ie {
+  .DemoWrapper-panelWindowDragState af|panelWindow:drag af|panelWindow::main{
+    filter:alpha(opacity:15);
+  }
+}
+
+.DemoWrapper-panelWindowInactiveState af|panelWindow::inactive-background{
+  background-color:#000000;
+}
+
+.DemoWrapper-panelWindowInactiveState af|panelWindow:inactive af|panelWindow::main{
+  opacity:0.5;
+}
+
+@agent ie {
+  .DemoWrapper-panelWindowInactiveState af|panelWindow:inactive af|panelWindow::main{
+    filter:alpha(opacity:50);
+  }
+}
+
+.DemoWrapper-panelWindow_inactive-background af|panelWindow::inactive-background{
+  background-color:#000000;
+}
+
+.DemoWrapper-panelWindow_inactive af|panelWindow:inactive af|panelWindow::main{
+  opacity:0.5;
+}
+
+@agent ie {
+  .DemoWrapper-panelWindow_inactive af|panelWindow:inactive af|panelWindow::main{
+    filter:alpha(opacity:50);
+  }
+}
+
+/* panelWindow skinned icons */
+af|panelWindow::close-icon-style {-tr-inhibit: background-image;}
+af|panelWindow::close-icon {content: url('/images/demoSkin/closeWindow_n.png');}
+
+
+/* Style class for dialog selector */
+.DemoWrapper-dialogCorners af|dialog::header-start{
+  background-image:url('/images/demoSkin/dialog-header-left.png');
+}
+
+.DemoWrapper-dialogCorners af|dialog::header{
+  background-image:url('/images/demoSkin/dialog-header-middle.png');
+}
+
+.DemoWrapper-dialogCorners af|dialog::header-end{
+  background-image:url('/images/demoSkin/dialog-header-right.png');
+}
+
+.DemoWrapper-dialogCorners af|dialog::footer-start {
+  background-image:url('/images/demoSkin/dialog-footer-left.png');
+}
+
+.DemoWrapper-dialogCorners af|dialog::footer {
+  background-image:url('/images/demoSkin/dialog-footer-middle.png');
+}
+
+.DemoWrapper-dialogCorners af|dialog::footer-end {
+  background-image:url('/images/demoSkin/dialog-footer-right.png');
+}
+
+.DemoWrapper-dialogCorners af|dialog::content-start{
+  border-left: solid #807F96 1px;
+  border-right: none;
+  background-color:#DCDCDC;
+  background-image:url('/images/demoSkin/dialog_bg.png');
+  background-position: bottom;
+  background-repeat: repeat-x;
+}
+
+.DemoWrapper-dialogCorners af|dialog::content{
+  background-color:#DCDCDC;
+  color: #000000;
+  background-image:url('/images/demoSkin/dialog_bg.png');
+  background-position: bottom;
+  background-repeat: repeat-x;
+}
+
+.DemoWrapper-dialogCorners af|dialog::content-end{
+  border-left: none;
+  border-right: solid #807F96 1px;
+  background-color:#DCDCDC;
+  background-image:url('/images/demoSkin/dialog_bg.png');
+  background-position: bottom;
+  background-repeat: repeat-x;
+}
+
+.DemoWrapper-dialogTitle af|dialog::title{
+  color: #000000;
+  font-size: 11pt;
+}
+
+.DemoWrapper-dialogIconWrapper af|dialog::icon-region{
+  margin-top:1px;
+  margin-right:20px;
+  margin-left:20px;
+}
+
+.DemoWrapper-dialogDragState af|dialog:drag af|dialog::main{
+  opacity:0.80;
+}
+
+@agent ie {
+  .DemoWrapper-dialogDragState af|dialog:drag af|dialog::main{
+    filter:alpha(opacity:80);
+  }
+}
+
+.DemoWrapper-dialogInactiveState af|dialog::inactive-background{
+  background-color:#FED4A4;
+}
+
+.DemoWrapper-dialogInactiveState af|dialog:inactive af|dialog::main{
+  opacity:0.3;
+}
+
+@agent ie {
+  .DemoWrapper-dialogInactiveState af|dialog:inactive af|dialog::main{
+    filter:alpha(opacity:30);
+  }
+}
+
+.DemoWrapper-dialogFooterButton af|dialog::footer-button{
+  background-image: url('/images/demoSkin/dialog_button_bg_n.png');
+  margin-left:1px;
+}
+
+.DemoWrapper-dialogFooterButton af|dialog::footer-button:hover{
+  background-image: url('/images/demoSkin/dialog_button_bg_mo.png');
+}
+
+.DemoWrapper-dialogFooterButton af|dialog::footer-button:active{
+  background-image: url('/images/demoSkin/dialog_button_bg_md.png');
+}
+
+.DemoWrapper-dialogFooterButton af|dialog::footer-button:focus{
+  background-image: url('/images/demoSkin/dialog_button_bg_n.png');
+}
+
+/* dialog skinned icons */
+af|dialog::close-icon-style {-tr-inhibit: background-image;}
+af|dialog::close-icon {content: url('/images/demoSkin/closeDialog_n.png');}

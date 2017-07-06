@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.12.24" id="saleAdminPageDef"
+                Package="com.vc.web.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Type="java.lang.Long" Name="queryAccountsFindCustome_indId" IsQueriable="false"/>
+      <variable Type="java.lang.Long" Name="queryAccountsFindCustome_couId" IsQueriable="false"/>
+      <variable Type="java.lang.Long" Name="queryAccountsFindCustome_proId" IsQueriable="false"/>
+      <variable Type="java.lang.Integer" Name="queryAccountsFindCustome_empCount" IsQueriable="false"/>
+    </variableIterator>
+    <methodIterator Binds="queryAccountsFindCustome.result" DataControl="SASFacadeLocal" RangeSize="25"
+                    BeanClass="com.vc.web.ejb.sas.entities.Accounts" id="queryAccountsFindCustomeIterator"/>
+    <accessorIterator MasterBinding="queryAccountsFindCustomeIterator" Binds="subscriptionsList" RangeSize="25"
+                      DataControl="SASFacadeLocal" BeanClass="com.vc.web.ejb.sas.entities.Subscriptions"
+                      id="subscriptionsListIterator"/>
+    <methodIterator Binds="queryIndustriesFindAll.result" DataControl="SASFacadeLocal" RangeSize="-1"
+                    BeanClass="com.vc.web.ejb.sas.entities.Industries" id="queryIndustriesFindAllIterator"/>
+    <methodIterator Binds="queryCountriesFindAll.result" DataControl="SASFacadeLocal" RangeSize="-1"
+                    BeanClass="com.vc.web.ejb.sas.entities.Countries" id="queryCountriesFindAllIterator"/>
+    <methodIterator Binds="queryProvincesFindAll.result" DataControl="SASFacadeLocal" RangeSize="-1"
+                    BeanClass="com.vc.web.ejb.sas.entities.Provinces" id="queryProvincesFindAllIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="queryAccountsFindCustome" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="queryAccountsFindCustome" IsViewObjectMethod="false" DataControl="SASFacadeLocal"
+                  InstanceName="SASFacadeLocal.dataProvider"
+                  ReturnName="SASFacadeLocal.methodResults.queryAccountsFindCustome_SASFacadeLocal_dataProvider_queryAccountsFindCustome_result">
+      <NamedData NDName="indId" NDType="java.lang.Long" NDValue="${queryAccountsFindCustome_indId}"/>
+      <NamedData NDName="couId" NDType="java.lang.Long" NDValue="${queryAccountsFindCustome_couId}"/>
+      <NamedData NDName="proId" NDType="java.lang.Long" NDValue="${queryAccountsFindCustome_proId}"/>
+      <NamedData NDName="empCount" NDType="java.lang.Integer" NDValue="${queryAccountsFindCustome_empCount}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="empCount">
+      <AttrNames>
+        <Item Value="queryAccountsFindCustome_empCount"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="queryAccountsFindCustomeIterator" id="Accounts">
+      <nodeDefinition DefName="com.vc.web.ejb.sas.entities.Accounts" Name="Accounts0">
+        <AttrNames>
+          <Item Value="accId"/>
+          <Item Value="activedCode"/>
+          <Item Value="address"/>
+          <Item Value="contactTelephone"/>
+          <Item Value="customerApproach"/>
+          <Item Value="email"/>
+          <Item Value="fullName"/>
+          <Item Value="numberOfEmployee"/>
+          <Item Value="organizationName"/>
+          <Item Value="password"/>
+          <Item Value="status"/>
+          <Item Value="taxCode"/>
+          <Item Value="userName"/>
+          <Item Value="confirmPassword"/>
+          <Item Value="securityAnswer"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="industries"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="com.vc.web.ejb.sas.entities.Industries" Name="Accounts1">
+        <AttrNames>
+          <Item Value="indId"/>
+          <Item Value="name"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="subscriptionsListIterator" id="subscriptionsList">
+      <nodeDefinition DefName="com.vc.web.ejb.sas.entities.Subscriptions" Name="subscriptionsList0">
+        <AttrNames>
+          <Item Value="appUrl"/>
+          <Item Value="endDate"/>
+          <Item Value="quantity"/>
+          <Item Value="startDate"/>
+          <Item Value="status"/>
+          <Item Value="subscribeDate"/>
+          <Item Value="subId"/>
+          <Item Value="activatedCode"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="servicePackages"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="com.vc.web.ejb.sas.entities.ServicePackages" Name="subscriptionsList1">
+        <AttrNames>
+          <Item Value="packageCode"/>
+          <Item Value="packageName"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="queryIndustriesFindAll" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="queryIndustriesFindAll" IsViewObjectMethod="false" DataControl="SASFacadeLocal"
+                  InstanceName="SASFacadeLocal.dataProvider"
+                  ReturnName="SASFacadeLocal.methodResults.queryIndustriesFindAll_SASFacadeLocal_dataProvider_queryIndustriesFindAll_result"/>
+    <list IterBinding="variables" id="indId" DTSupportsMRU="true" StaticList="false"
+          ListIter="queryIndustriesFindAllIterator" NullValueFlag="start" NullValueId="indId_null">
+      <AttrNames>
+        <Item Value="queryAccountsFindCustome_indId"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="indId"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="name"/>
+      </ListDisplayAttrNames>
+    </list>
+    <methodAction id="queryCountriesFindAll" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="queryCountriesFindAll" IsViewObjectMethod="false" DataControl="SASFacadeLocal"
+                  InstanceName="SASFacadeLocal.dataProvider"
+                  ReturnName="SASFacadeLocal.methodResults.queryCountriesFindAll_SASFacadeLocal_dataProvider_queryCountriesFindAll_result"/>
+    <list IterBinding="variables" id="couId" DTSupportsMRU="true" StaticList="false"
+          ListIter="queryCountriesFindAllIterator" NullValueFlag="start" NullValueId="couId_null">
+      <AttrNames>
+        <Item Value="queryAccountsFindCustome_couId"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="couId"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="name"/>
+      </ListDisplayAttrNames>
+    </list>
+    <methodAction id="queryProvincesFindAll" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="queryProvincesFindAll" IsViewObjectMethod="false" DataControl="SASFacadeLocal"
+                  InstanceName="SASFacadeLocal.dataProvider"
+                  ReturnName="SASFacadeLocal.methodResults.queryProvincesFindAll_SASFacadeLocal_dataProvider_queryProvincesFindAll_result"/>
+    <list IterBinding="variables" id="proId" DTSupportsMRU="true" StaticList="false"
+          ListIter="queryProvincesFindAllIterator" NullValueFlag="start" NullValueId="proId_null">
+      <AttrNames>
+        <Item Value="queryAccountsFindCustome_proId"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="proId"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="name"/>
+      </ListDisplayAttrNames>
+    </list>
+  </bindings>
+  <ResourceBundle>
+    <PropertiesBundle xmlns="http://xmlns.oracle.com/adfm/resourcebundle"
+                      PropertiesFile="com.vc.web.view.ViewControllerBundle"/>
+  </ResourceBundle>
+</pageDefinition>

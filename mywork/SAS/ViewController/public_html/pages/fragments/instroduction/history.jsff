@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:panelGroupLayout layout="scroll" id="zozpgl1">
+    <af:panelGroupLayout layout="vertical" id="zozpgl2">
+      <af:panelGroupLayout layout="vertical" id="zozpgl3">
+        <af:outputLabel value="#{backing_newsViewerHandler.news.title}" inlineStyle="font-size:medium;"
+                        binding="#{backing_newsViewerHandler.afNewsTitle}" id="zozol1"/>
+      </af:panelGroupLayout>
+      <af:panelGroupLayout layout="vertical" halign="left" id="zozpgl4">
+        <af:spacer width="10" height="10" id="zozs1"/>
+      </af:panelGroupLayout>
+    </af:panelGroupLayout>
+    <af:panelGroupLayout layout="vertical" id="zozpgl5">
+      <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="zozpgl6">
+        <af:richTextEditor readOnly="true" binding="#{backing_newsViewerHandler.afNewsContent}"
+                           value="#{backing_newsViewerHandler.news.content}" id="zozrte1"/>
+      </af:panelGroupLayout>
+    </af:panelGroupLayout>
+  </af:panelGroupLayout>
+</jsp:root>

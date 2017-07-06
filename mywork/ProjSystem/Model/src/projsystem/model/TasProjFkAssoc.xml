@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TasProjFkAssoc"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Projects"
+    Cardinality="1"
+    Source="true"
+    Owner="projsystem.model.Projects">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Projects"/>
+      <Attr Name="_foreignKey" Value="projsystem.model.Projects.ProjPk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="projsystem.model.Projects.ProjId"/>
+    </AttrArray>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Tasks"
+    Cardinality="-1"
+    Owner="projsystem.model.Tasks">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Tasks"/>
+      <Attr Name="_foreignKey" Value="projsystem.model.Tasks.TasProjFk"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="projsystem.model.Tasks.ProjId"/>
+    </AttrArray>
+  </AssociationEnd>
+</Association>

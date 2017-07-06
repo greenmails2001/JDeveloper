@@ -1,0 +1,122 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1">
+      <property
+         name="y">83.5</property>
+      <property
+         name="x">88.01758</property>
+   </OverallProperties>
+   <View
+      id="View2">
+      <property
+         name="status">ok</property>
+      <property
+         name="activityId">login</property>
+      <property
+         name="page">/pages/sasra/login/login.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>login&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="binding">data</property>
+      <property
+         name="rawDescription">view - login</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">83.5</property>
+      <property
+         name="x">246.53516</property>
+      <property
+         name="realized">true</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="status">ok</property>
+      <property
+         name="activityId">testting</property>
+      <property
+         name="page">/pages/sasra/testting/testting.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>testting&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="binding">data</property>
+      <property
+         name="rawDescription">view - testting</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">83.5</property>
+      <property
+         name="x">387.53516</property>
+      <property
+         name="realized">true</property>
+   </View>
+   <View
+      id="View4">
+      <property
+         name="status">ok</property>
+      <property
+         name="activityId">sasra001</property>
+      <property
+         name="page">/pages/sasra/sasra001/sasra001.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>sasra001&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="binding">data</property>
+      <property
+         name="rawDescription">view - sasra001</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">250.5</property>
+      <property
+         name="x">319.53516</property>
+      <property
+         name="realized">true</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase5"
+      from="View2"
+      to="View4">
+      <property
+         name="fromOutcome">sasra002</property>
+      <property
+         name="sdm:polyPoints">B56,250.03516,137.14941,319.53516,196.14941,T50</property>
+   </ControlFlowCase>
+   <View
+      id="View6">
+      <property
+         name="status">ok</property>
+      <property
+         name="activityId">sasra002</property>
+      <property
+         name="page">/pages/sasra/sasra002/sasra002.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>sasra002&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="binding">data</property>
+      <property
+         name="rawDescription">view - sasra002</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">250.5</property>
+      <property
+         name="x">173.53516</property>
+      <property
+         name="realized">true</property>
+   </View>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase7"
+      from="View2"
+      to="View6">
+      <property
+         name="fromOutcome">sasra001</property>
+      <property
+         name="sdm:polyPoints">B44,243.03516,137.14941,173.53516,196.14941,T50</property>
+   </ControlFlowCase>
+</SDM>

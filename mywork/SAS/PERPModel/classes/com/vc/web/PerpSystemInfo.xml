@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.49.49"
+          id="PerpSystemInfo" Package="com.vc.web"
+          BeanClass="com.vc.web.PerpSystemInfo" isJavaBased="true">
+  <Attribute Name="connectionString" IsUpdateable="0" Type="java.lang.String"/>
+  <Attribute Name="activatedCode" Type="java.lang.String"/>
+  <Attribute Name="setupDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="currentNumOfAppUser" Type="java.lang.Long"/>
+  <Attribute Name="description" Type="java.lang.String"/>
+  <Attribute Name="appPort" Type="java.lang.Integer"/>
+  <Attribute Name="appHost" Type="java.lang.String"/>
+  <Attribute Name="dbHost" Type="java.lang.String"/>
+  <Attribute Name="sid" Type="java.lang.String"/>
+  <Attribute Name="dbUser" Type="java.lang.String"/>
+  <Attribute Name="dbPwd" Type="java.lang.String"/>
+  <Attribute Name="dbPort" Type="java.lang.Integer"/>
+  <Attribute Name="subId" Type="java.lang.Long"/>
+  <Attribute Name="envId" Type="java.lang.Long"/>
+  <Attribute Name="removedDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="dsJndi" Type="java.lang.String"/>
+  <MethodAccessor IsCollection="false" Type="int" id="compareTo" ReturnNodeName="Return">
+    <ParameterInfo id="o" Type="com.vc.web.PerpSystemInfo" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.String" id="toString" ReturnNodeName="Return"/>
+  <ConstructorMethod IsCollection="true" Type="com.vc.web.PerpSystemInfo"
+                     BeanClass="com.vc.web.PerpSystemInfo" id="PerpSystemInfo"/>
+</JavaBean>

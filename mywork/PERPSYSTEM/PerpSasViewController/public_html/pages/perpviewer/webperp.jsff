@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelSplitter id="ps1" splitterPosition="270" styleClass="AFVisualRoot">
+    <f:facet name="first">
+      <af:panelAccordion id="pa1" visible="false">
+        <af:showDetailItem text="Bieu do" id="sdi1">
+          <af:panelBox text="PanelBox1" id="pb1" showHeader="never">
+            <f:facet name="toolbar"/>
+          </af:panelBox>
+        </af:showDetailItem>
+        <af:showDetailItem text="Bao cao" id="showDetailItem1">
+          <af:panelBox text="PanelBox2" id="pb2" showHeader="never">
+            <f:facet name="toolbar"/>
+          </af:panelBox>
+        </af:showDetailItem>
+      </af:panelAccordion>
+    </f:facet>
+    <f:facet name="second">
+      <af:decorativeBox id="db1" topHeight="32px" theme="light">
+        <f:facet name="center">
+          <af:region value="#{bindings.perp1.regionModel}" id="r1"/>
+        </f:facet>
+        <f:facet name="top">
+          <af:navigationPane id="np1">
+            <af:commandNavigationItem text="Biểu đồ công ty" id="cni1"
+                                      partialSubmit="true"/>
+            <af:commandNavigationItem text="Báo cáo" id="cni2"
+                                      partialSubmit="true"/>
+            <af:commandNavigationItem text="Thông tin khác" id="cni3"
+                                      partialSubmit="true"/>
+          </af:navigationPane>
+        </f:facet>
+      </af:decorativeBox>
+    </f:facet>
+  </af:panelSplitter>
+</jsp:root>

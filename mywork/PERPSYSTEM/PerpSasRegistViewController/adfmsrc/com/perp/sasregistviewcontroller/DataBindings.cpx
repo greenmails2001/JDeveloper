@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.51.88" id="DataBindings" SeparateXMLFiles="false"
+             Package="com.perp.sasregistviewcontroller" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/pages/sasr/sasr001/sasr001.jspx"
+          usageId="com_perp_sasregistviewcontroller_sasr001PageDef"/>
+    <page path="/pages/sasr/sasr001/sasr001frag/sasr001v01.jsff"
+          usageId="com_perp_sasregistviewcontroller_sasr001v01PageDef"/>
+    <page path="/pages/sasr/sasr001/sasr001frag/createAccount.jsff"
+          usageId="com_perp_sasregistviewcontroller_createAccountPageDef"/>
+    <page path="/pages/sasr/sasr001/sasr001frag/firstPreview.jsff"
+          usageId="com_perp_sasregistviewcontroller_firstPreviewPageDef"/>
+    <page path="/pages/sasr/login/login.jspx"
+          usageId="com_perp_sasregistviewcontroller_loginPageDef"/>
+    <page path="/pages/sasr/sasr002/sasr002.jspx"
+          usageId="com_perp_sasregistviewcontroller_sasr002PageDef"/>
+    <page path="/pages/sasr/sasr002/sas002frag/podm.jsff"
+          usageId="com_perp_sasregistviewcontroller_podmPageDef"/>
+    <page path="/testting.jspx"
+          usageId="com_perp_sasregistviewcontroller_testtingPageDef"/>
+    <page path="/pages/sasr/acc/firstPreview.jsff"
+          usageId="com_perp_sasregistviewcontroller_firstPreviewPageDef1"/>
+    <page path="/pages/sasr/acc/accountInfo.jsff"
+          usageId="com_perp_sasregistviewcontroller_accountInfoPageDef"/>
+    <page path="/pages/sasr/sasr002/sas002frag/vbisusers.jsff" usageId="com_perp_sasregistviewcontroller_vbisusersPageDef"/>
+    <page path="/pages/sasr/sasr002/sas002frag/vbisuserfrag/create.jsff" usageId="com_perp_sasregistviewcontroller_createPageDef"/>
+    <page path="/pages/sasr/sasr002/sas002frag/vbisuserfrag/edituser.jsff" usageId="com_perp_sasregistviewcontroller_edituserPageDef"/>
+    <page path="/WEB-INF/insert-vbis-user.xml#insert-vbis-user@Create"
+          usageId="com_perp_sasregistviewcontroller_insert_vbis_user_insert_vbis_user_CreatePageDef"/>
+    <page path="/pages/sasr/sasr002/sas002frag/editVbisUser.jsff" usageId="com_perp_sasregistviewcontroller_editVbisUserPageDef"/>
+    <page path="/WEB-INF/vbisuser-crud.xml#vbisuser-crud@CreateInsert"
+          usageId="com_perp_sasregistviewcontroller_vbisuser_crud_vbisuser_crud_CreateInsertPageDef"/>
+    <page path="/pages/sasr/sasr002/sas002frag/editUser.jspx" usageId="com_perp_sasregistviewcontroller_editUserPageDef"/>
+    <page path="/WEB-INF/vbisuser-crud.xml#vbisuser-crud@SetCurrentRowWithKey"
+          usageId="com_perp_sasregistviewcontroller_vbisuser_crud_vbisuser_crud_SetCurrentRowWithKeyPageDef"/>
+    <page path="/WEB-INF/vbis-user.xml#vbis-user@CreateInsert"
+          usageId="com_perp_sasregistviewcontroller_vbis_user_vbis_user_CreateInsertPageDef"/>
+    <page path="/WEB-INF/vbis-user.xml#vbis-user@SetCurrentRowWithKey"
+          usageId="com_perp_sasregistviewcontroller_vbis_user_vbis_user_SetCurrentRowWithKeyPageDef"/>
+    <page path="/pages/sasr/sasr002/sas002frag/vbisuserfrag/editVbisUser.jsff"
+          usageId="com_perp_sasregistviewcontroller_editVbisUserPageDef1"/>
+    <page path="/WEB-INF/vbis-user.xml#vbis-user@CreateInsert1"
+          usageId="com_perp_sasregistviewcontroller_vbis_user_vbis_user_CreateInsert1PageDef"/>
+    <page path="/pages/sasr/sasr002/sas002frag/sasrAdmin.jsff" usageId="com_perp_sasregistviewcontroller_sasrAdminPageDef"/>
+    <page path="/pages/sasr/sasr002/sas002frag/sasrAdminFrag/sasraccounts.jsff"
+          usageId="com_perp_sasregistviewcontroller_sasraccountsPageDef"/>
+    <page path="/pages/sasr/sasr002/sas002frag/sasrAdminFrag/servicepackages.jsff"
+          usageId="com_perp_sasregistviewcontroller_servicepackagesPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_perp_sasregistviewcontroller_sasr001PageDef"
+          path="pages.sasr.sasr001.sasr001PageDef"/>
+    <page id="com_perp_sasregistviewcontroller_sasr001v01PageDef"
+          path="pages.sasr.sasr001.sasr001frag.sasr001v01PageDef"/>
+    <page id="com_perp_sasregistviewcontroller_createAccountPageDef"
+          path="pages.sasr.sasr001.sasr001frag.createAccountPageDef"/>
+    <page id="com_perp_sasregistviewcontroller_firstPreviewPageDef"
+          path="pages.sasr.sasr001.sasr001frag.firstPreviewPageDef"/>
+    <page id="com_perp_sasregistviewcontroller_loginPageDef"
+          path="pages.sasr.login.loginPageDef"/>
+    <page id="com_perp_sasregistviewcontroller_sasr002PageDef"
+          path="pages.sasr.sasr002.sasr002PageDef"/>
+    <page id="com_perp_sasregistviewcontroller_podmPageDef"
+          path="pages.sasr.sasr002.sas002frag.podmPageDef"/>
+    <page id="com_perp_sasregistviewcontroller_testtingPageDef"
+          path="com.perp.sasregistviewcontroller.pageDefs.testtingPageDef"/>
+    <page id="com_perp_sasregistviewcontroller_firstPreviewPageDef1"
+          path="pages.sasr.acc.firstPreviewPageDef"/>
+    <page id="com_perp_sasregistviewcontroller_accountInfoPageDef"
+          path="pages.sasr.acc.accountInfoPageDef"/>
+    <page id="com_perp_sasregistviewcontroller_vbisusersPageDef" path="pages.sasr.sasr002.sas002frag.vbisusersPageDef"/>
+    <page id="com_perp_sasregistviewcontroller_createPageDef" path="pages.sasr.sasr002.sas002frag.vbisuserfrag.createPageDef"/>
+    <page id="com_perp_sasregistviewcontroller_edituserPageDef" path="pages.sasr.sasr002.sas002frag.vbisuserfrag.edituserPageDef"/>
+    <page id="com_perp_sasregistviewcontroller_insert_vbis_user_insert_vbis_user_CreatePageDef"
+          path="com.perp.sasregistviewcontroller.pageDefs.insert_vbis_user_insert_vbis_user_CreatePageDef"/>
+    <page id="com_perp_sasregistviewcontroller_editVbisUserPageDef" path="pages.sasr.sasr002.sas002frag.editVbisUserPageDef"/>
+    <page id="com_perp_sasregistviewcontroller_vbisuser_crud_vbisuser_crud_CreateInsertPageDef"
+          path="com.perp.sasregistviewcontroller.pageDefs.vbisuser_crud_vbisuser_crud_CreateInsertPageDef"/>
+    <page id="com_perp_sasregistviewcontroller_editUserPageDef" path="pages.sasr.sasr002.sas002frag.editUserPageDef"/>
+    <page id="com_perp_sasregistviewcontroller_vbisuser_crud_vbisuser_crud_SetCurrentRowWithKeyPageDef"
+          path="com.perp.sasregistviewcontroller.pageDefs.vbisuser_crud_vbisuser_crud_SetCurrentRowWithKeyPageDef"/>
+    <page id="com_perp_sasregistviewcontroller_vbis_user_vbis_user_CreateInsertPageDef"
+          path="com.perp.sasregistviewcontroller.pageDefs.vbis_user_vbis_user_CreateInsertPageDef"/>
+    <page id="com_perp_sasregistviewcontroller_vbis_user_vbis_user_SetCurrentRowWithKeyPageDef"
+          path="com.perp.sasregistviewcontroller.pageDefs.vbis_user_vbis_user_SetCurrentRowWithKeyPageDef"/>
+    <page id="com_perp_sasregistviewcontroller_editVbisUserPageDef1" path="pages.sasr.sasr002.sas002frag.vbisuserfrag.editVbisUserPageDef"/>
+    <page id="com_perp_sasregistviewcontroller_vbis_user_vbis_user_CreateInsert1PageDef"
+          path="com.perp.sasregistviewcontroller.pageDefs.vbis_user_vbis_user_CreateInsert1PageDef"/>
+    <page id="com_perp_sasregistviewcontroller_sasrAdminPageDef" path="pages.sasr.sasr002.sas002frag.sasrAdminPageDef"/>
+    <page id="com_perp_sasregistviewcontroller_sasraccountsPageDef" path="pages.sasr.sasr002.sas002frag.sasrAdminFrag.sasraccountsPageDef"/>
+    <page id="com_perp_sasregistviewcontroller_servicepackagesPageDef"
+          path="pages.sasr.sasr002.sas002frag.sasrAdminFrag.servicepackagesPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="PerpSasRegistAppModuleDataControl"
+                     Package="com.perp.sasregistmodel"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="PerpSasRegistAppModuleLocal"
+                     syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

@@ -1,0 +1,30 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="start">true</property>
+      <property
+         name="realized">true</property>
+      <property
+         name="rawDescription">view - helpViewer</property>
+      <property
+         name="status">ok</property>
+      <property
+         name="activityId">helpViewer</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">view - helpViewer&lt;/p>&lt;/html></property>
+      <property
+         name="y">231.0</property>
+      <property
+         name="binding">data</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="x">157.0</property>
+   </View>
+</SDM>

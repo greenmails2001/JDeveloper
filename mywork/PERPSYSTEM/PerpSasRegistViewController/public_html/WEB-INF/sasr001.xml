@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+<task-flow-definition id="sasr001">
+    <default-activity>router</default-activity>
+    <managed-bean>
+      <managed-bean-name>sasrCreateAccount</managed-bean-name>
+      <managed-bean-class>pages.sasr.sasr001.sasr001frag.SasrCreateAccount</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+      <managed-bean-name>createAccountEmailValidator</managed-bean-name>
+      <managed-bean-class>com.perp.sasregistviewcontroller.backing.SasrCreateAccountEmailValidator</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+      <managed-bean-name>sasrCreateAccountUserValidator</managed-bean-name>
+      <managed-bean-class>com.perp.sasregistviewcontroller.backing.SasrCreateAccountUserValidator</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean>
+      <managed-bean-name>sasr001SasrLoginRouter2</managed-bean-name>
+      <managed-bean-class>pages.sasr.sasr001.sasr001frag.SasrLoginRouter2</managed-bean-class>
+      <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__3">
+      <managed-bean-name id="__4">sasr001ActiveAccountValidator</managed-bean-name>
+      <managed-bean-class id="__2">com.perp.sasregistviewcontroller.backing.ActiveAccountValidator</managed-bean-class>
+      <managed-bean-scope id="__1">request</managed-bean-scope>
+    </managed-bean>
+    <managed-bean id="__8">
+      <managed-bean-name id="__6">sasrCreateAccountPasswordValidator</managed-bean-name>
+      <managed-bean-class id="__5">com.perp.sasregistviewcontroller.backing.SasrCreateAccountPasswordValidate</managed-bean-class>
+      <managed-bean-scope id="__7">request</managed-bean-scope>
+    </managed-bean>
+    <view id="createAccount">
+      <page>/pages/sasr/sasr001/sasr001frag/createAccount.jsff</page>
+    </view>
+    <view id="firstPreview">
+      <page>/pages/sasr/sasr001/sasr001frag/firstPreview.jsff</page>
+    </view>
+    <router id="router">
+      <case>
+        <expression>#{sasr001SasrLoginRouter2.caseFlow=='active'}</expression>
+        <outcome>active</outcome>
+      </case>
+      <case>
+        <expression>#{sasr001SasrLoginRouter2.caseFlow=='create'}</expression>
+        <outcome>create</outcome>
+      </case>
+      <default-outcome>create</default-outcome>
+    </router>
+    <parent-action id="login">
+      <parent-outcome>login</parent-outcome>
+    </parent-action>
+    <parent-action id="toSasr002">
+      <parent-outcome>sasr002</parent-outcome>
+    </parent-action>
+    <control-flow-rule>
+      <from-activity-id>router</from-activity-id>
+      <control-flow-case id="__14">
+        <from-outcome id="__16">create</from-outcome>
+        <to-activity-id id="__15">createAccount</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__9">
+        <from-outcome id="__11">active</from-outcome>
+        <to-activity-id id="__10">toSasr002</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule>
+      <from-activity-id>createAccount</from-activity-id>
+      <control-flow-case>
+        <from-outcome>preview</from-outcome>
+        <to-activity-id>toSasr002</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>cancel</from-outcome>
+        <to-activity-id>login</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

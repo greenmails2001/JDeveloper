@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.49.49"
+          id="Employees" Package="com.vc.web.ejb.perp.entities"
+          BeanClass="com.vc.web.ejb.perp.entities.Employees" isJavaBased="true">
+  <Attribute Name="address" Type="java.lang.String"/>
+  <Attribute Name="aliasName" Type="java.lang.String"/>
+  <Attribute Name="aliId" Type="java.lang.Long"/>
+  <Attribute Name="attribute1" Type="java.lang.String"/>
+  <Attribute Name="attribute10" Type="java.lang.String"/>
+  <Attribute Name="attribute2" Type="java.lang.String"/>
+  <Attribute Name="attribute3" Type="java.lang.String"/>
+  <Attribute Name="attribute4" Type="java.lang.String"/>
+  <Attribute Name="attribute5" Type="java.lang.String"/>
+  <Attribute Name="attribute6" Type="java.lang.String"/>
+  <Attribute Name="attribute7" Type="java.lang.String"/>
+  <Attribute Name="attribute8" Type="java.lang.String"/>
+  <Attribute Name="attribute9" Type="java.lang.String"/>
+  <Attribute Name="bank" Type="java.lang.String"/>
+  <Attribute Name="beginningType" Type="java.lang.String"/>
+  <Attribute Name="bloodType" Type="java.lang.String"/>
+  <Attribute Name="brotherNum" Type="java.lang.Long"/>
+  <Attribute Name="class_" Type="java.lang.String"/>
+  <Attribute Name="collector" Type="java.lang.String"/>
+  <Attribute Name="computerLevel" Type="java.lang.String"/>
+  <Attribute Name="createdBy" Type="java.lang.String"/>
+  <Attribute Name="createDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="dateOfBirth" Type="java.sql.Timestamp"/>
+  <Attribute Name="dateOfIssue" Type="java.sql.Timestamp"/>
+  <Attribute Name="disabled" Type="java.lang.String"/>
+  <Attribute Name="email" Type="java.lang.String"/>
+  <Attribute Name="emailAddress" Type="java.lang.String"/>
+  <Attribute Name="empId" Type="java.lang.String"/>
+  <Attribute Name="empIdCheck" Type="java.lang.String"/>
+  <Attribute Name="empNumber" Type="java.lang.String"/>
+  <Attribute Name="empPosition" Type="java.lang.String"/>
+  <Attribute Name="enteringDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="eunId" Type="java.lang.Long"/>
+  <Attribute Name="fax" Type="java.lang.String"/>
+  <Attribute Name="firstName" Type="java.lang.String"/>
+  <Attribute Name="fullName" Type="java.lang.String"/>
+  <Attribute Name="homeAddress" Type="java.lang.String"/>
+  <Attribute Name="idCard" Type="java.lang.String"/>
+  <Attribute Name="image" Type="java.lang.String"/>
+  <Attribute Name="imagePath" Type="java.lang.String"/>
+  <Attribute Name="labourNumber" Type="java.lang.String"/>
+  <Attribute Name="labourType" Type="java.lang.String"/>
+  <Attribute Name="language" Type="java.lang.String"/>
+  <Attribute Name="languageLevel" Type="java.lang.String"/>
+  <Attribute Name="lastName" Type="java.lang.String"/>
+  <Attribute Name="levelOfEducation" Type="java.lang.String"/>
+  <Attribute Name="levelOfInstruction" Type="java.lang.String"/>
+  <Attribute Name="mailAddress" Type="java.lang.String"/>
+  <Attribute Name="maritalStatus" Type="java.lang.String"/>
+  <Attribute Name="medicalCertificate" Type="java.lang.String"/>
+  <Attribute Name="memberFamily" Type="java.lang.String"/>
+  <Attribute Name="middleName" Type="java.lang.String"/>
+  <Attribute Name="mobile" Type="java.lang.String"/>
+  <Attribute Name="modifiedBy" Type="java.lang.String"/>
+  <Attribute Name="modifyDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="name" Type="java.lang.String"/>
+  <Attribute Name="nation" Type="java.lang.String"/>
+  <Attribute Name="nationality" Type="java.lang.String"/>
+  <Attribute Name="noteMedicalCertificate" Type="java.lang.String"/>
+  <Attribute Name="otherMemberDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="otherMemberPlace" Type="java.lang.String"/>
+  <Attribute Name="partyMemberDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="partyMemberPlace" Type="java.lang.String"/>
+  <Attribute Name="partyNumber" Type="java.lang.String"/>
+  <Attribute Name="partyOfficialDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="partyPayApe" Type="java.lang.String"/>
+  <Attribute Name="passportDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="passportNumber" Type="java.lang.String"/>
+  <Attribute Name="personalAccount" Type="java.lang.String"/>
+  <Attribute Name="personalId" Type="java.lang.String"/>
+  <Attribute Name="phone" Type="java.lang.String"/>
+  <Attribute Name="placeOfBirth" Type="java.lang.String"/>
+  <Attribute Name="placeOfIssue" Type="java.lang.String"/>
+  <Attribute Name="placeOfOrigin" Type="java.lang.String"/>
+  <Attribute Name="policyType" Type="java.lang.String"/>
+  <Attribute Name="politicalLevel" Type="java.lang.String"/>
+  <Attribute Name="professional" Type="java.lang.String"/>
+  <Attribute Name="professional2" Type="java.lang.String"/>
+  <Attribute Name="profId" Type="java.lang.Long"/>
+  <Attribute Name="publicSectorDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="religion" Type="java.lang.String"/>
+  <Attribute Name="retiredDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="retiredReason" Type="java.lang.String"/>
+  <Attribute Name="returneeDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="returneeReason" Type="java.lang.String"/>
+  <Attribute Name="revMartyrFamily" Type="java.lang.String"/>
+  <Attribute Name="risidence" Type="java.lang.String"/>
+  <Attribute Name="salemanFlag" Type="java.lang.String"/>
+  <Attribute Name="sex" Type="java.lang.String"/>
+  <Attribute Name="shipmanFlag" Type="java.lang.String"/>
+  <Attribute Name="soldierNumber" Type="java.lang.String"/>
+  <Attribute Name="status" Type="java.lang.String"/>
+  <Attribute Name="subject" Type="java.lang.String"/>
+  <Attribute Name="suitable" Type="java.lang.String"/>
+  <Attribute Name="taxId" Type="java.lang.String"/>
+  <Attribute Name="telephone" Type="java.lang.String"/>
+  <Attribute Name="title" Type="java.lang.String"/>
+  <Attribute Name="typeOfInstruction" Type="java.lang.String"/>
+  <Attribute Name="typeSchoolFinal" Type="java.lang.String"/>
+  <Attribute Name="unionMemberDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="unionMemberPlace" Type="java.lang.String"/>
+  <Attribute Name="unionNumber" Type="java.lang.String"/>
+  <Attribute Name="unionPayApe" Type="java.lang.String"/>
+  <Attribute Name="yearSchoolFinal" Type="java.sql.Timestamp"/>
+  <AccessorAttribute id="organizationUnitsList" IsCollection="true"
+                     RemoveMethod="removeOrganizationUnits"
+                     AddMethod="addOrganizationUnits"
+                     BeanClass="com.vc.web.ejb.perp.entities.OrganizationUnits"
+                     CollectionBeanClass="UpdateableCollection">
+    <Properties>
+      <Property Name="RemoveMethod" Value="removeOrganizationUnits"/>
+      <Property Name="AddMethod" Value="addOrganizationUnits"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="employees" IsCollection="false"
+                     BeanClass="com.vc.web.ejb.perp.entities.Employees"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="employeesList" IsCollection="true"
+                     RemoveMethod="removeEmployees" AddMethod="addEmployees"
+                     BeanClass="com.vc.web.ejb.perp.entities.Employees"
+                     CollectionBeanClass="UpdateableCollection">
+    <Properties>
+      <Property Name="RemoveMethod" Value="removeEmployees"/>
+      <Property Name="AddMethod" Value="addEmployees"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="costCentersList" IsCollection="true"
+                     RemoveMethod="removeCostCenters" AddMethod="addCostCenters"
+                     BeanClass="com.vc.web.ejb.perp.entities.CostCenters"
+                     CollectionBeanClass="UpdateableCollection">
+    <Properties>
+      <Property Name="RemoveMethod" Value="removeCostCenters"/>
+      <Property Name="AddMethod" Value="addCostCenters"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="appUsersList" IsCollection="true"
+                     RemoveMethod="removeAppUsers" AddMethod="addAppUsers"
+                     BeanClass="com.vc.web.ejb.perp.entities.AppUsers"
+                     CollectionBeanClass="UpdateableCollection">
+    <Properties>
+      <Property Name="RemoveMethod" Value="removeAppUsers"/>
+      <Property Name="AddMethod" Value="addAppUsers"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="costCenters" IsCollection="false"
+                     BeanClass="com.vc.web.ejb.perp.entities.CostCenters"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="groups" IsCollection="false"
+                     BeanClass="com.vc.web.ejb.perp.entities.Groups"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <MethodAccessor IsCollection="false"
+                  Type="com.vc.web.ejb.perp.entities.OrganizationUnits"
+                  BeanClass="com.vc.web.ejb.perp.entities.OrganizationUnits"
+                  id="addOrganizationUnits" ReturnNodeName="OrganizationUnits">
+    <ParameterInfo id="organizationUnits"
+                   Type="com.vc.web.ejb.perp.entities.OrganizationUnits"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="com.vc.web.ejb.perp.entities.OrganizationUnits"
+                  BeanClass="com.vc.web.ejb.perp.entities.OrganizationUnits"
+                  id="removeOrganizationUnits"
+                  ReturnNodeName="OrganizationUnits">
+    <ParameterInfo id="organizationUnits"
+                   Type="com.vc.web.ejb.perp.entities.OrganizationUnits"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="com.vc.web.ejb.perp.entities.Employees"
+                  BeanClass="com.vc.web.ejb.perp.entities.Employees"
+                  id="addEmployees" ReturnNodeName="Employees">
+    <ParameterInfo id="employees" Type="com.vc.web.ejb.perp.entities.Employees"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="com.vc.web.ejb.perp.entities.Employees"
+                  BeanClass="com.vc.web.ejb.perp.entities.Employees"
+                  id="removeEmployees" ReturnNodeName="Employees">
+    <ParameterInfo id="employees" Type="com.vc.web.ejb.perp.entities.Employees"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="com.vc.web.ejb.perp.entities.CostCenters"
+                  BeanClass="com.vc.web.ejb.perp.entities.CostCenters"
+                  id="addCostCenters" ReturnNodeName="CostCenters">
+    <ParameterInfo id="costCenters"
+                   Type="com.vc.web.ejb.perp.entities.CostCenters"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="com.vc.web.ejb.perp.entities.CostCenters"
+                  BeanClass="com.vc.web.ejb.perp.entities.CostCenters"
+                  id="removeCostCenters" ReturnNodeName="CostCenters">
+    <ParameterInfo id="costCenters"
+                   Type="com.vc.web.ejb.perp.entities.CostCenters"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="com.vc.web.ejb.perp.entities.AppUsers"
+                  BeanClass="com.vc.web.ejb.perp.entities.AppUsers"
+                  id="addAppUsers" ReturnNodeName="AppUsers">
+    <ParameterInfo id="appUsers" Type="com.vc.web.ejb.perp.entities.AppUsers"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="com.vc.web.ejb.perp.entities.AppUsers"
+                  BeanClass="com.vc.web.ejb.perp.entities.AppUsers"
+                  id="removeAppUsers" ReturnNodeName="AppUsers">
+    <ParameterInfo id="appUsers" Type="com.vc.web.ejb.perp.entities.AppUsers"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <ConstructorMethod IsCollection="true"
+                     Type="com.vc.web.ejb.perp.entities.Employees"
+                     BeanClass="com.vc.web.ejb.perp.entities.Employees"
+                     id="Employees"/>
+</JavaBean>

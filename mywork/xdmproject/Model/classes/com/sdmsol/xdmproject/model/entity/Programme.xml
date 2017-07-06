@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Programme"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="XDM_PROGRAMMES"
+  AliasName="Programme"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="ProgId"
+    IsUpdateable="while_insert"
+    DefaultValue="@0"
+    Precision="12"
+    Scale="0"
+    Domain="oracle.jbo.domain.DBSequence"
+    ColumnName="PROG_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.DBSequence"
+    ColumnType="NUMBER"
+    TableName="XDM_PROGRAMMES"
+    PrimaryKey="true"
+    RetrievedOnInsert="true"/>
+  <Attribute
+    Name="EvKey"
+    Precision="30"
+    ColumnName="EV_KEY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="XDM_PROGRAMMES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Name"
+    Precision="250"
+    ColumnName="NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="XDM_PROGRAMMES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="250"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Owner"
+    Precision="12"
+    Scale="0"
+    ColumnName="OWNER"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="XDM_PROGRAMMES"/>
+  <AccessorAttribute
+    Name="Person"
+    Association="com.sdmsol.xdmproject.model.entity.assoc.XdmProgPersFkAssoc"
+    AssociationEnd="com.sdmsol.xdmproject.model.entity.assoc.XdmProgPersFkAssoc.Person"
+    AssociationOtherEnd="com.sdmsol.xdmproject.model.entity.assoc.XdmProgPersFkAssoc.Programme"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="Task"
+    Association="com.sdmsol.xdmproject.model.entity.assoc.XdmProgTaskFkAssoc"
+    AssociationEnd="com.sdmsol.xdmproject.model.entity.assoc.XdmProgTaskFkAssoc.Task"
+    AssociationOtherEnd="com.sdmsol.xdmproject.model.entity.assoc.XdmProgTaskFkAssoc.Programme"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="XdmProgrammesPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="XDM_PROGRAMMES_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.sdmsol.xdmproject.model.entity.Programme.ProgId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="XdmProgPersFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="XDM_PERSONS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="XDM_PROG_PERS_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.sdmsol.xdmproject.model.entity.Programme.Owner"/>
+    </AttrArray>
+  </Key>
+</Entity>

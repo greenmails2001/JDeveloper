@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout styleClass="AFVisualRoot" id="lfqpsl1">
+    <f:facet name="bottom"/>
+    <f:facet name="center">
+      <af:treeTable value="#{backing_initialSetting_ounSpaManager.treeTableModel}" var="row" id="lfqtt1">
+        <f:facet name="nodeStamp">
+          <af:column sortable="false" headerText="Node Stamp" id="lfqc1">
+            <af:outputText value="#{row.ounNumber}" id="lfqot1"/>
+          </af:column>
+        </f:facet>
+        <af:column sortable="false" headerText="Oun Number" id="lfqc2">
+          <af:outputText value="#{row.ounNumber}" id="lfqot2"/>
+        </af:column>
+        <af:column sortable="false" headerText="Oun Name" id="lfqc3">
+          <af:outputText value="#{row.ounName}" id="lfqot3"/>
+        </af:column>
+      </af:treeTable>
+    </f:facet>
+    <f:facet name="top"/>
+    <f:facet name="start"/>
+    <f:facet name="end"/>
+  </af:panelStretchLayout>
+</jsp:root>

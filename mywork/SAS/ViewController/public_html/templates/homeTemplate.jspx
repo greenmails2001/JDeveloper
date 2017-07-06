@@ -1,0 +1,146 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:trh="http://myfaces.apache.org/trinidad/html">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <af:pageTemplateDef var="attrs">
+    <af:xmlContent>
+      <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+        <display-name>
+          homeTemplate
+        </display-name>
+        <facet>
+          <facet-name>
+            center
+          </facet-name>
+        </facet>
+        <facet>
+          <facet-name>
+            popupFacet
+          </facet-name>
+        </facet>
+        <facet>
+          <facet-name>
+            topFacet
+          </facet-name>
+        </facet>
+        <attribute>
+          <attribute-name>
+            topFacetHeight
+          </attribute-name>
+          <attribute-class>
+            int
+          </attribute-class>
+          <default-value>
+            70
+          </default-value>
+        </attribute>
+      </component>
+    </af:xmlContent>
+    <af:form usesUpload="true" id="pt_f1">
+      <af:facetRef facetName="popupFacet"/>
+      <af:panelStretchLayout styleClass="AFVisualRoot" bottomHeight="22px" theme="dark" id="pt_psl1">
+        <f:facet name="bottom">
+          <af:panelGroupLayout layout="vertical" id="pt_pgl1">
+            <trh:tableLayout width="100%" id="pt_tl1">
+              <trh:rowLayout id="pt_rl1">
+                <trh:cellFormat id="pt_cf1">
+                  <af:outputText value="@Copyright vinhcuu.com.vn" id="pt_ot1"/>
+                </trh:cellFormat>
+                <trh:cellFormat styleClass="PanelPagePrivacy" width="200" id="pt_cf2">
+                  <af:outputText value="2007-2008" id="pt_ot2"/>
+                  <af:spacer width="10" id="pt_s1"/>
+                  <af:outputText value="|" id="pt_ot3"/>
+                  <af:spacer width="10" id="pt_s2"/>
+                  <af:outputText value="Perp Service System" id="pt_ot4"/>
+                </trh:cellFormat>
+              </trh:rowLayout>
+            </trh:tableLayout>
+          </af:panelGroupLayout>
+        </f:facet>
+        <f:facet name="center">
+          <af:panelSplitter orientation="vertical" id="pt_ps1">
+            <f:facet name="first">
+              <af:panelGroupLayout layout="vertical" id="pt_pgl2">
+                <trh:tableLayout width="100%" id="pt_tl2">
+                  <trh:rowLayout id="pt_rl2">
+                    <trh:cellFormat rowSpan="3" valign="bottom" id="pt_cf3">
+                      <af:panelGroupLayout halign="left" valign="bottom" id="pt_pgl3">
+                        <af:image source="/resources/images/top1.gif" id="pt_i1"/>
+                      </af:panelGroupLayout>
+                    </trh:cellFormat>
+                    <trh:cellFormat columnSpan="2" valign="top" halign="right" id="pt_cf4">
+                      <af:panelGroupLayout layout="vertical" halign="right" inlineStyle="padding:2px;" id="pt_pgl4">
+                        <af:navigationPane hint="buttons" id="pt_np1">
+                          <af:commandNavigationItem text="#{viewcontrollerBundle['sas.global.navigator.home']}" action="home"
+                                                    id="pt_cni1"/>
+                          <af:commandNavigationItem text="#{viewcontrollerBundle['sas.global.navigator.helpCenter']}" action="helpCenter"
+                                                    id="pt_cni2"/>
+                          <af:commandNavigationItem text="#{viewcontrollerBundle['sas.global.navigator.download']}" action="download"
+                                                    id="pt_cni3"/>
+                          <af:commandNavigationItem text="#{viewcontrollerBundle['sas.global.navigator.forum']}" action="forum"
+                                                    id="pt_cni4"/>
+                          <af:commandNavigationItem text="#{viewcontrollerBundle['sas.global.navigator.contact']}" action="contact"
+                                                    id="pt_cni5"/>
+                          <af:commandNavigationItem text="#{viewcontrollerBundle['sas.global.navigator.admin']}" action="admin"
+                                                    id="pt_cni6"/>
+                        </af:navigationPane>
+                      </af:panelGroupLayout>
+                    </trh:cellFormat>
+                  </trh:rowLayout>
+                  <trh:rowLayout id="pt_rl3">
+                    <trh:cellFormat columnSpan="2" halign="right" valign="bottom" id="pt_cf5">
+                      <af:panelGroupLayout layout="vertical" halign="right" valign="bottom" inlineStyle="padding:2px;"
+                                           id="pt_pgl5">
+                        <af:navigationPane hint="buttons" inlineStyle="font-size:medium;" id="pt_np2">
+                          <af:commandNavigationItem text="#{viewcontrollerBundle['sas.home.navigator.introduction']}" partialSubmit="true" action="introduction" id="ncaId_4"
+                                                    actionListener="#{backing_commonNewsHandler.viewNewsCategoriesActionListener}"/>
+                          <af:commandNavigationItem text="#{viewcontrollerBundle['sas.home.navigator.product']}" partialSubmit="true" action="product" id="ncaId_2"
+                                                    actionListener="#{backing_commonNewsHandler.viewNewsCategoriesActionListener}"/>
+                          <af:commandNavigationItem text="#{viewcontrollerBundle['sas.home.navigator.service']}" action="service" id="ncaId_3"
+                                                    actionListener="#{backing_commonNewsHandler.viewNewsCategoriesActionListener}"/>
+                          <af:commandNavigationItem text="#{viewcontrollerBundle['sas.home.navigator.partner']}" action="partner" id="ncaId_5"
+                                                    actionListener="#{backing_commonNewsHandler.viewNewsCategoriesActionListener}"/>
+                          <af:commandNavigationItem text="#{viewcontrollerBundle['sas.home.navigator.customer']}" partialSubmit="true" action="customer"
+                                                    id="pt_cni7"/>
+                          <af:commandNavigationItem text="#{viewcontrollerBundle['sas.home.navigator.news']}" action="news" id="ncaId_0"
+                                                    actionListener="#{backing_commonNewsHandler.viewNewsCategoriesActionListener}"
+                                                    partialSubmit="true"/>
+                          <af:commandNavigationItem text="#{viewcontrollerBundle['sas.home.navigator.consultant']}" action="consultant" id="ncaId_21"
+                                                    actionListener="#{backing_commonNewsHandler.viewNewsCategoriesActionListener}"
+                                                    partialSubmit="true"/>
+                        </af:navigationPane>
+                      </af:panelGroupLayout>
+                    </trh:cellFormat>
+                  </trh:rowLayout>
+                  <trh:rowLayout id="pt_rl4">
+                    <trh:cellFormat width="90%" inlineStyle='background-image:url("../resources/images/top2.gif");'
+                                    id="pt_cf6">
+                      <af:spacer width="10" height="10" id="pt_s3"/>
+                    </trh:cellFormat>
+                    <trh:cellFormat id="pt_cf7">
+                      <af:panelGroupLayout layout="vertical" id="pt_pgl6">
+                        <af:image source="/resources/images/top3.gif" id="pt_i2"/>
+                      </af:panelGroupLayout>
+                    </trh:cellFormat>
+                  </trh:rowLayout>
+                </trh:tableLayout>
+              </af:panelGroupLayout>
+            </f:facet>
+            <f:facet name="second">
+              <af:panelStretchLayout id="pt_psl2">
+                <f:facet name="center">
+                  <af:decorativeBox theme="none" id="pt_db1">
+                    <f:facet name="center">
+                      <af:facetRef facetName="center"/>
+                    </f:facet>
+                  </af:decorativeBox>
+                </f:facet>
+              </af:panelStretchLayout>
+            </f:facet>
+          </af:panelSplitter>
+        </f:facet>
+      </af:panelStretchLayout>
+    </af:form>
+  </af:pageTemplateDef>
+</jsp:root>

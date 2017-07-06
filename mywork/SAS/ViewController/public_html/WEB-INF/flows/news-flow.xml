@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="news-flow">
+    <default-activity>gateway</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+ 
+    <view id="home">
+      <page>/pages/fragments/news/home.jsff</page>
+    </view>
+    <router id="gateway">
+      <case>
+        <expression>#{backing_newsManager.caseFlow=='news'}</expression>
+        <outcome>news</outcome>
+      </case>
+      <default-outcome>home</default-outcome>
+    </router>
+    <view id="news">
+      <page>/pages/fragments/news/news.jsff</page>
+    </view>
+    <control-flow-rule>
+      <from-activity-id>gateway</from-activity-id>
+      <control-flow-case>
+        <from-outcome>home</from-outcome>
+        <to-activity-id>home</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>news</from-outcome>
+        <to-activity-id>news</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule>
+      <from-activity-id>home</from-activity-id>
+      <control-flow-case>
+        <from-outcome>news</from-outcome>
+        <to-activity-id>news</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="forum-flow">
+    <default-activity>home</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <view id="home">
+      <page>/pages/fragments/forum/home.jsff</page>
+    </view>
+    <view id="msgListViewer">
+      <page>/pages/fragments/forum/msgListViewer.jsff</page>
+    </view>
+    <view id="createMessage">
+      <page>/pages/fragments/forum/createMessage.jsff</page>
+    </view>
+    <control-flow-rule>
+      <from-activity-id>*</from-activity-id>
+      <control-flow-case>
+        <from-outcome>msgList</from-outcome>
+        <to-activity-id>msgListViewer</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>create</from-outcome>
+        <to-activity-id>createMessage</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

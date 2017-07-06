@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.49.49" id="HelpDeskRelations"
+          Package="com.vc.web.ejb.sas.entities" BeanClass="com.vc.web.ejb.sas.entities.HelpDeskRelations" isJavaBased="true">
+  <Attribute Name="description" Type="java.lang.String"/>
+  <Attribute Name="hdrId" Type="java.lang.Long"/>
+  <AccessorAttribute id="helpDesks" IsCollection="false" BeanClass="com.vc.web.ejb.sas.entities.HelpDesks"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="helpDesks1" IsCollection="false" BeanClass="com.vc.web.ejb.sas.entities.HelpDesks"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <ConstructorMethod IsCollection="true" Type="com.vc.web.ejb.sas.entities.HelpDeskRelations"
+                     BeanClass="com.vc.web.ejb.sas.entities.HelpDeskRelations" id="HelpDeskRelations"/>
+</JavaBean>

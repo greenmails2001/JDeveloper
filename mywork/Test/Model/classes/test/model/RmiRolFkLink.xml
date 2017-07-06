@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="RmiRolFkLink"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  EntityAssociation="test.model.RmiRolFkAssoc">
+  <ViewLinkDefEnd
+    Name="RolesView"
+    Cardinality="1"
+    Source="true"
+    Owner="test.model.RolesView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_finderName" Value="RolesView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="test.model.RolesView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="RoleMenuItemsView"
+    Cardinality="-1"
+    Owner="test.model.RoleMenuItemsView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="RoleMenuItemsView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="test.model.RoleMenuItemsView.RolId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

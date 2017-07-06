@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelSplitter splitterPosition="339" id="jhlps1">
+    <f:facet name="first">
+      <af:panelCollection id="panelColl1">
+        <f:facet name="menus"/>
+        <f:facet name="toolbar"/>
+        <f:facet name="statusbar"/>
+        <af:table value="#{bindings.Sasra002aCountries.collectionModel}"
+                  var="row" rows="#{bindings.Sasra002aCountries.rangeSize}"
+                  emptyText="#{bindings.Sasra002aCountries.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                  fetchSize="#{bindings.Sasra002aCountries.rangeSize}"
+                  columnStretching="last"
+                  selectedRowKeys="#{bindings.Sasra002aCountries.collectionModel.selectedRow}"
+                  selectionListener="#{bindings.Sasra002aCountries.collectionModel.makeCurrent}"
+                  rowSelection="single" id="table1">
+          <af:column sortProperty="CountryCode" sortable="false"
+                     headerText="#{bindings.Sasra002aCountries.hints.CountryCode.label}"
+                     id="jhlc1">
+            <af:outputText value="#{row.CountryCode}" id="jhlot1"/>
+          </af:column>
+          <af:column sortProperty="Name" sortable="false"
+                     headerText="#{bindings.Sasra002aCountries.hints.Name.label}"
+                     id="jhlc2">
+            <af:outputText value="#{row.Name}" id="jhlot2"/>
+          </af:column>
+        </af:table>
+      </af:panelCollection>
+    </f:facet>
+    <f:facet name="second">
+      <af:panelSplitter positionedFromEnd="true" orientation="vertical"
+                        splitterPosition="153" id="jhlps2">
+        <f:facet name="first">
+          <af:panelCollection id="panelColl2">
+            <f:facet name="menus"/>
+            <f:facet name="toolbar"/>
+            <f:facet name="statusbar"/>
+            <af:table value="#{bindings.Sasra002aProvincesX1.collectionModel}"
+                      var="row"
+                      columnStretching="last"
+                      rows="#{bindings.Sasra002aProvincesX1.rangeSize}"
+                      emptyText="#{bindings.Sasra002aProvincesX1.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                      fetchSize="#{bindings.Sasra002aProvincesX1.rangeSize}"
+                      selectedRowKeys="#{bindings.Sasra002aProvincesX1.collectionModel.selectedRow}"
+                      selectionListener="#{bindings.Sasra002aProvincesX1.collectionModel.makeCurrent}"
+                      rowSelection="single" id="table2"
+                      partialTriggers=":::panelColl1:table1 :::submit3">
+              <af:column sortProperty="ProId" sortable="false"
+                         headerText="#{bindings.Sasra002aProvincesX1.hints.ProId.label}"
+                         width="128" id="jhlc3">
+                <af:outputText value="#{row.ProId}" id="jhlot3">
+                  <af:convertNumber groupingUsed="false"
+                                    pattern="#{bindings.Sasra002aProvincesX1.hints.ProId.format}"/>
+                </af:outputText>
+              </af:column>
+              <af:column sortProperty="Name" sortable="false"
+                         headerText="#{bindings.Sasra002aProvincesX1.hints.Name.label}"
+                         width="424" id="jhlc4">
+                <af:outputText value="#{row.Name}" id="jhlot4"/>
+              </af:column>
+            </af:table>
+          </af:panelCollection>
+        </f:facet>
+        <f:facet name="second">
+          <af:panelStretchLayout endWidth="378px" id="jhlpsl1">
+            <f:facet name="center"/>
+            <f:facet name="end">
+              <af:panelHeader text="Province details" id="panelHeader3">
+                <f:facet name="context"/>
+                <f:facet name="menuBar"/>
+                <f:facet name="toolbar"/>
+                <f:facet name="legend"/>
+                <f:facet name="info"/>
+                <af:panelFormLayout partialTriggers="panelColl2:table2"
+                                    labelWidth="100" id="jhlpfl1">
+                  <af:inputText value="#{bindings.ProId.inputValue}"
+                                label="#{bindings.ProId.hints.label}"
+                                required="#{bindings.ProId.hints.mandatory}"
+                                columns="#{bindings.ProId.hints.displayWidth}"
+                                maximumLength="#{bindings.ProId.hints.precision}"
+                                shortDesc="#{bindings.ProId.hints.tooltip}"
+                                readOnly="true" id="jhlit1">
+                    <f:validator binding="#{bindings.ProId.validator}"/>
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.ProId.format}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.Name.inputValue}"
+                                label="#{bindings.Name.hints.label}"
+                                required="#{bindings.Name.hints.mandatory}"
+                                columns="50"
+                                maximumLength="#{bindings.Name.hints.precision}"
+                                shortDesc="#{bindings.Name.hints.tooltip}"
+                                id="jhlit2">
+                    <f:validator binding="#{bindings.Name.validator}"/>
+                  </af:inputText>
+                  <af:inputText value="#{bindings.CouId.inputValue}"
+                                label="#{bindings.CouId.hints.label}"
+                                required="#{bindings.CouId.hints.mandatory}"
+                                columns="#{bindings.CouId.hints.displayWidth}"
+                                maximumLength="#{bindings.CouId.hints.precision}"
+                                shortDesc="#{bindings.CouId.hints.tooltip}"
+                                readOnly="true" id="jhlit3">
+                    <f:validator binding="#{bindings.CouId.validator}"/>
+                    <af:convertNumber groupingUsed="false"
+                                      pattern="#{bindings.CouId.format}"/>
+                  </af:inputText>
+                  <f:facet name="footer">
+                    <af:commandButton text="Submit"
+                                      actionListener="#{bindings.Commit.execute}"
+                                      partialSubmit="true" id="submit3"/>
+                  </f:facet>
+                </af:panelFormLayout>
+              </af:panelHeader>
+            </f:facet>
+          </af:panelStretchLayout>
+        </f:facet>
+      </af:panelSplitter>
+    </f:facet>
+  </af:panelSplitter>
+</jsp:root>

@@ -1,0 +1,168 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="perpsasregistviewcontrollerBundle"
+         value="#{adfBundle['com.perp.sasregistviewcontroller.PerpSasRegistViewControllerBundle']}"/>
+  <af:panelBox text="PanelBox1" id="pb1" showHeader="never"
+               showDisclosure="false">
+    <af:panelGroupLayout id="pgl3" layout="scroll">
+      <af:panelBorderLayout id="pbl1">
+        <f:facet name="start">
+          <af:panelGroupLayout inlineStyle="padding:10px; text-align:justify; width:250px;"
+                               layout="vertical" id="ccxpgl2">
+            <af:outputText value="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.welcomeTitle']}"
+                           id="ot1" inlineStyle="font-size:large;"/>
+            <af:image shortDesc="key successful"
+                      source="/images/about_sas_image.jpg" id="ccxi1"
+                      inlineStyle="width:243px;"/>
+            <af:spacer width="10" height="10" id="s4"/>
+            <af:outputText value="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.welcomeContent']}"
+                           id="ccxot1"/>
+          </af:panelGroupLayout>
+        </f:facet>
+        <af:panelGroupLayout id="pgl4" layout="vertical"
+                             inlineStyle="padding:5px;">
+          <af:outputText value="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.signupTitle']}"
+                         id="ot2" inlineStyle="font-size:large;"/>
+          <af:panelGroupLayout id="pgl5" layout="vertical"
+                               inlineStyle="padding:3px;">
+            <af:activeOutputText value="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.welcomeContent']}"
+                                 id="aot1"/>
+          </af:panelGroupLayout>
+          <af:spacer width="10" height="10" id="s3"/>
+          <af:panelBox id="pb2" showHeader="always" showDisclosure="false"
+                       text=" " inlineStyle="width:850.0px;">
+            <af:panelGroupLayout id="pgl1" layout="vertical"
+                                 inlineStyle="padding:5px;">
+              <af:panelGroupLayout id="pgl6" layout="vertical"
+                                   inlineStyle="padding:3px;">
+                <af:outputText value="Thông tin nhập chưa đầy đủ" id="ot3"
+                               inlineStyle="color:Red; font-weight:bold;"
+                               visible="#{sasrCreateAccount.requiredError}"
+                               partialTriggers="submitButton"/>
+                <af:outputText value="Thông tin mật khẩu và xác nhận mật khẩu không khớp nhau"
+                               id="outputText1"
+                               inlineStyle="color:Red; font-weight:bold;"
+                               visible="#{sasrCreateAccount.noMatch}"
+                               partialTriggers="submitButton"/>
+                <af:spacer width="10" height="5" id="s2"/>
+              </af:panelGroupLayout>
+              <af:outputLabel value="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.organizationUnitInfoTitle']}"
+                              id="ol1" inlineStyle="padding:3px;"/>
+              <af:spacer width="10" height="5" id="spacer1"/>
+              <af:panelFormLayout maxColumns="2" rows="2" fieldWidth="250"
+                                  labelWidth="150" id="ccxpfl1">
+                <af:inputText value="#{sasrCreateAccount.organizationName}"
+                              label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.orgName']}"
+                              showRequired="true" id="ccxit1" wrap="off"
+                              required="true"></af:inputText>
+                <af:selectOneChoice value="#{bindings.IndId.inputValue}"
+                                    label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.industry']}"
+                                    shortDesc="#{bindings.IndId.hints.tooltip}"
+                                    id="soc1" showRequired="true"
+                                    required="true">
+                  <f:selectItems value="#{bindings.IndId.items}" id="si1"/>
+                </af:selectOneChoice>
+                <af:inputText value="#{sasrCreateAccount.taxCode}"
+                              label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.taxCode']}"
+                              showRequired="true" id="ccxit2" required="true"></af:inputText>
+                <af:inputText label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.province']}"
+                              disabled="true" id="ccxit3"></af:inputText>
+                <af:inputText value="#{sasrCreateAccount.address}"
+                              label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.address']}"
+                              columns="30" id="ccxit4" showRequired="true"
+                              required="true"></af:inputText>
+                <af:selectOneChoice value="#{bindings.CouId.inputValue}"
+                                    label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.country']}"
+                                    shortDesc="#{bindings.CouId.hints.tooltip}"
+                                    id="soc2" required="true">
+                  <f:selectItems value="#{bindings.CouId.items}" id="si2"/>
+                </af:selectOneChoice>
+                <af:selectOneChoice value="#{bindings.LabId.inputValue}"
+                                    label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.labor']}"
+                                    shortDesc="#{bindings.LabId.hints.tooltip}"
+                                    id="soc3" required="true">
+                  <f:selectItems value="#{bindings.LabId.items}" id="si3"/>
+                </af:selectOneChoice>
+              </af:panelFormLayout>
+              <af:spacer width="10" height="10" id="spacer2"/>
+              <af:outputLabel value="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.personalInfoTitle']}"
+                              id="outputLabel1" inlineStyle="padding:3px;"/>
+              <af:spacer width="10" height="10" id="spacer3"/>
+              <af:panelFormLayout maxColumns="2" rows="3" labelWidth="150"
+                                  fieldWidth="250" id="ccxpfl2">
+                <af:inputText label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.fullName']}"
+                              columns="20" id="ccxit5"
+                              value="#{sasrCreateAccount.fullName}"
+                              required="true"></af:inputText>
+                <af:inputText value="#{sasrCreateAccount.email}"
+                              label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.email']}"
+                              columns="20" id="ccxit6" required="true">
+                  <f:validator binding="#{createAccountEmailValidator}"/>
+                  <af:validateRegExp pattern=".+@.+\\.[a-z]+"
+                                     messageDetailNoMatch="Errorx : Định dạnh email không chính xác"/>
+                </af:inputText>
+                <af:inputText value="#{sasrCreateAccount.contactTelephone}"
+                              label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.contactTelephone']}"
+                              columns="20" id="ccxit7" required="true"></af:inputText>
+                <af:selectOneChoice value="#{bindings.RolId.inputValue}"
+                                    label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.role']}"
+                                    shortDesc="#{bindings.RolId.hints.tooltip}"
+                                    id="soc4" required="true">
+                  <f:selectItems value="#{bindings.RolId.items}" id="si4"/>
+                </af:selectOneChoice>
+                <af:selectOneChoice value="#{bindings.MmeId.inputValue}"
+                                    label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.knownUsFrom']}"
+                                    shortDesc="#{bindings.MmeId.hints.tooltip}"
+                                    id="soc5" required="true">
+                  <f:selectItems value="#{bindings.MmeId.items}" id="si5"/>
+                </af:selectOneChoice>
+              </af:panelFormLayout>
+              <af:spacer width="10" height="10" id="spacer4"/>
+              <af:outputLabel value="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.securityInfoTitle']}"
+                              id="outputLabel2" inlineStyle="padding:3px;"/>
+              <af:spacer width="10" height="10" id="spacer5"/>
+              <af:panelFormLayout maxColumns="2" rows="2" fieldWidth="250"
+                                  labelWidth="150" id="ccxpfl3">
+                <af:inputText value="#{sasrCreateAccount.userName}"
+                              label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.userName']}"
+                              id="ccxit8" columns="20" required="true">
+                  <f:validator binding="#{sasrCreateAccountUserValidator}"/>
+                </af:inputText>
+                <af:inputText value="#{sasrCreateAccount.password}"
+                              label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.password']}"
+                              secret="true" id="ccxit9" columns="20"
+                              required="true">
+                  <f:validator binding="#{sasrCreateAccountPasswordValidator}"/>
+                </af:inputText>
+                <f:facet name="footer">
+                  <af:panelGroupLayout id="pgl2" layout="vertical"
+                                       halign="center">
+                    <af:panelGroupLayout layout="horizontal" id="ccxpgl4">
+                      <af:commandButton text="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.submit']}"
+                                        actionListener="#{sasrCreateAccount.createAccountActionListener}"
+                                        partialSubmit="true" id="submitButton"
+                                        action="#{sasrCreateAccount.getOutCome}"/>
+                      <af:spacer width="10" height="10" id="s1"/>
+                      <af:commandButton text="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.cancel']}"
+                                        immediate="true" partialSubmit="true"
+                                        id="ccxcb2" action="cancel">
+                        <af:resetActionListener/>
+                      </af:commandButton>
+                    </af:panelGroupLayout>
+                  </af:panelGroupLayout>
+                </f:facet>
+                <af:inputText value="#{sasrCreateAccount.confirmPassword}"
+                              label="#{perpsasregistviewcontrollerBundle['sasr.sasr001.createAccount.confirmPassword']}"
+                              secret="true" id="ccxit10" columns="20"
+                              required="true"></af:inputText>
+              </af:panelFormLayout>
+            </af:panelGroupLayout>
+          </af:panelBox>
+        </af:panelGroupLayout>
+      </af:panelBorderLayout>
+    </af:panelGroupLayout>
+  </af:panelBox>
+</jsp:root>

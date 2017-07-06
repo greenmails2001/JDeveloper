@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="11.1.1.51.56" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.vc.web" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/pages/fragments/sasAccount/createAccount.jsff" usageId="com_vc_web_createAccountPageDef"/>
+    <page path="/pages/fragments/sasAccount/sasLogin.jsff" usageId="com_vc_web_sasLoginPageDef"/>
+    <page path="/pages/fragments/sasAccount/reviewAccount.jsff" usageId="com_vc_web_reviewAccountPageDef"/>
+    <page path="/pages/fragments/sasAccount/editAccount.jsff" usageId="com_vc_web_editAccountPageDef"/>
+    <page path="/sasAccount.jspx" usageId="com_vc_web_sasAccountPageDef"/>
+    <page path="/pages/fragments/initialSetting/systemParaList.jsff" usageId="com_vc_web_systemParaListPageDef"/>
+    <page path="/pages/fragments/initialSetting/editSystemPara.jsff" usageId="com_vc_web_editSystemParaPageDef"/>
+    <page path="/pages/fragments/initialSetting/ounSystemPara.jsff" usageId="com_vc_web_ounSystemParaPageDef"/>
+    <page path="/pages/fragments/shoppingSas/subscriptionList.jsff" usageId="com_vc_web_subscriptionListPageDef"/>
+    <page path="/pages/fragments/shoppingSas/createSubscription.jsff" usageId="com_vc_web_createSubscriptionPageDef"/>
+    <page path="/pages/fragments/shoppingSas/editSubscription.jsff" usageId="com_vc_web_editSubscriptionPageDef"/>
+    <page path="/saleAdmin.jspx" usageId="com_vc_web_saleAdminPageDef"/>
+    <page path="/appView.jspx" usageId="com_vc_web_appViewPageDef"/>
+    <page path="/initialSetting.jspx" usageId="com_vc_web_initialSettingPageDef"/>
+    <page path="/pages/fragments/test/view2.jsff" usageId="com_vc_web_view2PageDef"/>
+    <page path="/pages/fragments/test/view1.jsff" usageId="com_vc_web_view1PageDef"/>
+    <page path="/nothing.jspx" usageId="com_vc_web_nothingPageDef"/>
+    <page path="/test.jspx" usageId="com_vc_web_testPageDef"/>
+    <page path="/shoppingSas.jspx" usageId="com_vc_web_shoppingSasPageDef"/>
+    <page path="/templates/appTemplate.jspx" usageId="com_vc_web_appTemplatePageDef"/>
+    <page path="/helpAdmin.jspx" usageId="com_vc_web_helpAdminPageDef"/>
+    <page path="/test2.jspx" usageId="com_vc_web_test2PageDef"/>
+    <page path="/pages/fragments/helpAdmin/helpDesk.jsff" usageId="com_vc_web_helpDeskPageDef"/>
+    <page path="/customers.jspx" usageId="com_vc_web_customersPageDef"/>
+    <page path="/forum.jspx" usageId="com_vc_web_forumPageDef"/>
+    <page path="/news.jspx" usageId="com_vc_web_newsPageDef"/>
+    <page path="/home1.jspx" usageId="com_vc_web_home1PageDef"/>
+    <page path="/home2.jspx" usageId="com_vc_web_home2PageDef"/>
+    <page path="/introductions.jspx" usageId="com_vc_web_introductionsPageDef"/>
+    <page path="/newsAdmin.jspx" usageId="com_vc_web_newsAdminPageDef"/>
+    <page path="/pages/fragments/newsAdmin/home.jsff" usageId="com_vc_web_homePageDef"/>
+    <page path="/pages/fragments/newsAdmin/creationFlow/index.jsff" usageId="com_vc_web_indexPageDef"/>
+    <page path="/pages/fragments/newsAdmin/creationFlow/createNews.jsff" usageId="com_vc_web_createNewsPageDef"/>
+    <page path="/pages/fragments/newsAdmin/creationFlow/editNews.jsff" usageId="com_vc_web_editNewsPageDef"/>
+    <page path="/product.jspx" usageId="com_vc_web_productPageDef"/>
+    <page path="/service.jspx" usageId="com_vc_web_servicePageDef"/>
+    <page path="/questionAnswer.jspx" usageId="com_vc_web_questionAnswerPageDef"/>
+    <page path="/partner.jspx" usageId="com_vc_web_partnerPageDef"/>
+    <page path="/commonNews.jspx" usageId="com_vc_web_commonNewsPageDef"/>
+    <page path="/helpCenter.jspx" usageId="com_vc_web_helpCenterPageDef"/>
+    <page path="/pages/fragments/helpCenter/helpViewer.jsff" usageId="com_vc_web_helpViewerPageDef"/>
+    <page path="/pages/fragments/forum/home.jsff" usageId="com_vc_web_homePageDef1"/>
+    <page path="/pages/fragments/forum/msgListViewer.jsff" usageId="com_vc_web_msgListViewerPageDef"/>
+    <page path="/pages/fragments/news/news.jsff" usageId="com_vc_web_newsPageDef1"/>
+    <page path="/pages/fragments/news/home.jsff" usageId="com_vc_web_homePageDef2"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_vc_web_createAccountPageDef" path="pages.fragments.sasAccount.createAccountPageDef"/>
+    <page id="com_vc_web_sasLoginPageDef" path="pages.fragments.sasAccount.sasLoginPageDef"/>
+    <page id="com_vc_web_reviewAccountPageDef" path="pages.fragments.sasAccount.reviewAccountPageDef"/>
+    <page id="com_vc_web_editAccountPageDef" path="pages.fragments.sasAccount.editAccountPageDef"/>
+    <page id="com_vc_web_sasAccountPageDef" path="com.vc.web.pageDefs.sasAccountPageDef"/>
+    <page id="com_vc_web_systemParaListPageDef" path="pages.fragments.initialSetting.systemParaListPageDef"/>
+    <page id="com_vc_web_editSystemParaPageDef" path="pages.fragments.initialSetting.editSystemParaPageDef"/>
+    <page id="com_vc_web_ounSystemParaPageDef" path="pages.fragments.initialSetting.ounSystemParaPageDef"/>
+    <page id="com_vc_web_subscriptionListPageDef" path="pages.fragments.shoppingSas.subscriptionListPageDef"/>
+    <page id="com_vc_web_createSubscriptionPageDef" path="pages.fragments.shoppingSas.createSubscriptionPageDef"/>
+    <page id="com_vc_web_editSubscriptionPageDef" path="pages.fragments.shoppingSas.editSubscriptionPageDef"/>
+    <page id="com_vc_web_saleAdminPageDef" path="com.vc.web.pageDefs.saleAdminPageDef"/>
+    <page id="com_vc_web_appViewPageDef" path="com.vc.web.pageDefs.appViewPageDef"/>
+    <page id="com_vc_web_initialSettingPageDef" path="com.vc.web.pageDefs.initialSettingPageDef"/>
+    <page id="com_vc_web_view2PageDef" path="pages.fragments.test.view2PageDef"/>
+    <page id="com_vc_web_view1PageDef" path="pages.fragments.test.view1PageDef"/>
+    <page id="com_vc_web_nothingPageDef" path="com.vc.web.pageDefs.nothingPageDef"/>
+    <page id="com_vc_web_testPageDef" path="com.vc.web.pageDefs.testPageDef"/>
+    <page id="com_vc_web_shoppingSasPageDef" path="com.vc.web.pageDefs.shoppingSasPageDef"/>
+    <page id="com_vc_web_appTemplatePageDef" path="templates.appTemplatePageDef"/>
+    <page id="com_vc_web_helpAdminPageDef" path="com.vc.web.pageDefs.helpAdminPageDef"/>
+    <page id="com_vc_web_test2PageDef" path="com.vc.web.pageDefs.test2PageDef"/>
+    <page id="com_vc_web_helpDeskPageDef" path="pages.fragments.helpAdmin.helpDeskPageDef"/>
+    <page id="com_vc_web_customersPageDef" path="com.vc.web.pageDefs.customersPageDef"/>
+    <page id="com_vc_web_forumPageDef" path="com.vc.web.pageDefs.forumPageDef"/>
+    <page id="com_vc_web_newsPageDef" path="com.vc.web.pageDefs.newsPageDef"/>
+    <page id="com_vc_web_home1PageDef" path="com.vc.web.pageDefs.home1PageDef"/>
+    <page id="com_vc_web_home2PageDef" path="com.vc.web.pageDefs.home2PageDef"/>
+    <page id="com_vc_web_introductionsPageDef" path="com.vc.web.pageDefs.introductionsPageDef"/>
+    <page id="com_vc_web_newsAdminPageDef" path="com.vc.web.pageDefs.newsAdminPageDef"/>
+    <page id="com_vc_web_homePageDef" path="pages.fragments.newsAdmin.homePageDef"/>
+    <page id="com_vc_web_indexPageDef" path="pages.fragments.newsAdmin.creationFlow.indexPageDef"/>
+    <page id="com_vc_web_createNewsPageDef" path="pages.fragments.newsAdmin.creationFlow.createNewsPageDef"/>
+    <page id="com_vc_web_editNewsPageDef" path="pages.fragments.newsAdmin.creationFlow.editNewsPageDef"/>
+    <page id="com_vc_web_productPageDef" path="com.vc.web.pageDefs.productPageDef"/>
+    <page id="com_vc_web_servicePageDef" path="com.vc.web.pageDefs.servicePageDef"/>
+    <page id="com_vc_web_questionAnswerPageDef" path="com.vc.web.pageDefs.questionAnswerPageDef"/>
+    <page id="com_vc_web_partnerPageDef" path="com.vc.web.pageDefs.partnerPageDef"/>
+    <page id="com_vc_web_commonNewsPageDef" path="com.vc.web.pageDefs.commonNewsPageDef"/>
+    <page id="com_vc_web_helpCenterPageDef" path="com.vc.web.pageDefs.helpCenterPageDef"/>
+    <page id="com_vc_web_helpViewerPageDef" path="pages.fragments.helpCenter.helpViewerPageDef"/>
+    <page id="com_vc_web_homePageDef1" path="pages.fragments.forum.homePageDef"/>
+    <page id="com_vc_web_msgListViewerPageDef" path="pages.fragments.forum.msgListViewerPageDef"/>
+    <page id="com_vc_web_newsPageDef1" path="pages.fragments.news.newsPageDef"/>
+    <page id="com_vc_web_homePageDef2" path="pages.fragments.news.homePageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="DynamicPERPFacadeLocal" path="com.vc.web.ejb.perp.DynamicPERPFacadeLocal"/>
+    <dc id="SASFacadeLocal" path="com.vc.web.ejb.sas.SASFacadeLocal"/>
+  </dataControlUsages>
+</Application>

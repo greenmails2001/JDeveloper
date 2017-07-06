@@ -1,0 +1,417 @@
+<?xml version = '1.0' encoding = 'ISO-8859-1'?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         version="2.5">
+  <description>ADF RichClient Demo</description>
+  <!-- 
+    The following parameter instructs the servlet on how to provide
+    the javascript library. If this parameter is set to true, the 
+    full library will be provided. This is useful for debugging, but
+    it uses quite a bit more bandwidth. If this parameter is set to false,
+    a smaller version of the javascript library - with names shortened, 
+    and extra whitespace removed - will be provided.
+    This parameter should be set to false in a production environment.
+  -->
+  <context-param>
+    <param-name>org.apache.myfaces.trinidad.DEBUG_JAVASCRIPT</param-name>
+    <param-value>false</param-value>
+  </context-param>
+  <!--
+    The following context parameter turns on the automated
+    profiler instrumentation code.  This code is generating
+    by parsing the xml file specified in the
+    oracle.adf.view.rich.profiler.ROOT_FILE property or
+    "/WEB-INF/profiler.xml" if the above property does not
+    exist.  Please note that the Profiler classes are ALWAYS
+    included with the RichClient bundle, this just turns on
+    the automatic instrumentation.
+  -->
+  <context-param>
+    <param-name>oracle.adf.view.rich.profiler.ENABLED</param-name>
+    <param-value>false</param-value>
+  </context-param>
+  <!--
+    Once the tonal styles are no longer used (converted to themes). It defaults to true
+    to preserve backwards compatibility. Only one can be in use at a time
+  -->
+  <context-param>
+    <param-name>oracle.adf.view.rich.tonalstyles.ENABLED</param-name>
+    <param-value>false</param-value>
+  </context-param>
+  <context-param>
+    <param-name>org.apache.myfaces.trinidad.DISABLE_CONTENT_COMPRESSION</param-name>
+    <param-value>true</param-value>
+  </context-param>
+  <!--
+    The following context parameter turns on the session change 
+    persistence.
+   -->
+  <context-param>
+    <param-name>org.apache.myfaces.trinidad.CHANGE_PERSISTENCE</param-name>
+    <param-value>session</param-value>
+  </context-param>
+  <context-param>
+    <param-name>org.apache.myfaces.trinidad.ALTERNATE_VIEW_HANDLER</param-name>
+    <param-value>com.sun.facelets.FaceletViewHandler</param-value>
+  </context-param>
+  <context-param>
+    <param-name>facelets.DEVELOPMENT</param-name>
+    <param-value>true</param-value>
+  </context-param>
+  <context-param>
+    <param-name>facelets.SKIP_COMMENTS</param-name>
+    <param-value>true</param-value>
+  </context-param>
+  <context-param>
+    <param-name>facelets.VIEW_MAPPINGS</param-name>
+    <param-value>*.xhtml</param-value>
+  </context-param>
+  <!-- By turning this caching off, you can expose a class of potential
+       bugs where the processSaveState()/processRestoreState() cycle
+       fails -->
+  <context-param>
+    <param-name>org.apache.myfaces.trinidad.CACHE_VIEW_ROOT</param-name>
+    <param-value>true</param-value>
+  </context-param>
+  <!-- Enable this flag to turn on super-optimized Facelets state saving mode;
+  note that this will break JSP pages (for now, though it's fixable), and
+  only works with Facelets 1.1
+  <context-param>
+    <param-name>facelets.BUILD_BEFORE_RESTORE</param-name>
+    <param-value>true</param-value>
+  </context-param>
+  -->
+  <!--
+    The followig context parameter overrides the default location for
+    the profilers automated instrumentation config file.  By default
+    the profiler will look for /WEB-INF/profiler.xml.  This property
+    will only be used if oracle.adf.view.rich.profiler.ENABLED is
+    set to true.
+  -->
+  <!--
+  <context-param>
+    <param-name>oracle.adf.view.rich.profiler.ROOT_FILE</param-name>
+    <param-value>/WEB-INF/profiler.xml</param-value>
+  </context-param>
+  -->
+  <!--
+    The following context parameter turns on resource debug
+    mode.  When resource debug mode is enabled, we don't set
+    cache headers for resources such as our JavaScript libraries.
+    After turning on resource debug mode, be sure to clear your
+    browser cache to force the browser to download the latest
+    versions of the resources.
+  -->
+  <context-param>
+    <param-name>org.apache.myfaces.trinidad.resource.DEBUG</param-name>
+    <param-value>false</param-value>
+  </context-param>
+  <!--
+    If this parameter is enabled, ADF Faces will automatically
+    check the modification date of your JSPs, and discard saved
+    state when they change;  this makes development easier,
+    but adds overhead that should be avoided when your application
+    is deployed
+  -->
+  <!--
+  <context-param>
+    <param-name>org.apache.myfaces.trinidad.CHECK_FILE_MODIFICATION</param-name>
+    <param-value>false</param-value>
+  </context-param>
+  -->
+  <!--
+    The following context parameter enables the Asserts
+    within ADF Faces.  If the parameter is true, asserts
+    will be turned on.  If the parameter is false or not
+    present then Asserts will be turned off.
+  -->
+  <context-param>
+    <param-name>oracle.adf.view.rich.ASSERT_ENABLED</param-name>
+    <param-value>false</param-value>
+  </context-param>
+  <!--
+    The following context parameter sets the default logging
+    level.  The valid values for this parameter are: OFF, SEVERE,
+    WARNING, INFO, CONFIG, FINE, FINER, FINEST, and ALL.  If this
+    property is not present, the logger will be set to OFF.
+  -->
+  <context-param>
+    <param-name>oracle.adf.view.rich.LOGGER_LEVEL</param-name>
+    <param-value>WARNING</param-value>
+  </context-param>
+  <!-- 
+    Faces API parameter - for Portal environments, this should be set to server
+  -->
+  <context-param>
+    <param-name>javax.faces.STATE_SAVING_METHOD</param-name>
+    <param-value>client</param-value>
+  </context-param>
+  <context-param>
+    <param-name>javax.faces.DEFAULT_SUFFIX</param-name>
+    <param-value>.jspx</param-value>
+  </context-param>
+  <!-- Tell ADF Faces to use a token on the client (this is actually -->
+  <!-- the default;  "all" can be used to force all state to be -->
+  <!-- moved to the client)  -->
+  <!--
+  <context-param>
+    <param-name>org.apache.myfaces.trinidad.CLIENT_STATE_METHOD</param-name>
+    <param-value>all</param-value>
+  </context-param>
+  -->
+  <!-- 
+    The following context param enables the (currently internal) shared library
+    functionality.  This functionality is not yet supported and is only
+    here for testing purposes.
+
+  <context-param> 
+    <param-name>oracle.adfinternal.view.rich.librarySharing.ENABLED</param-name> 
+    <param-value>true</param-value>
+  </context-param>
+  -->
+  <!-- 
+    The following context param disables table data streaming  This functionality 
+    is here temporarily in case enabling data streaming causes an app regression.
+  <context-param> 
+    <param-name>oracle.adfinternal.view.rich.tableStreaming.DISABLED</param-name> 
+    <param-value>true</param-value>
+  </context-param>
+  -->
+  <!-- Faces Filters -->
+  <context-param>
+    <param-name>org.apache.myfaces.trinidad.CHECK_FILE_MODIFICATION</param-name>
+    <param-value>false</param-value>
+  </context-param>
+  <context-param>
+    <param-name>org.apache.myfaces.trinidad.USE_APPLICATION_VIEW_CACHE</param-name>
+    <param-value>true</param-value>
+  </context-param>
+  <context-param>
+    <param-name>javax.faces.PARTIAL_STATE_SAVING</param-name>
+    <param-value>false</param-value>
+  </context-param>
+  <context-param>
+    <description>Whether the 'Generated by...' comment at the bottom of ADF Faces HTML pages should contain version number information.</description>
+    <param-name>oracle.adf.view.rich.versionString.HIDDEN</param-name>
+    <param-value>true</param-value>
+  </context-param>
+  <context-param>
+    <description>Security precaution to prevent clickjacking: bust frames if the ancestor window domain(protocol, host, and port) and the frame domain are different. Another options for this parameter are always and never.</description>
+    <param-name>org.apache.myfaces.trinidad.security.FRAME_BUSTING</param-name>
+    <param-value>differentOrigin</param-value>
+  </context-param>
+  <context-param>
+    <param-name>javax.faces.VALIDATE_EMPTY_FIELDS</param-name>
+    <param-value>true</param-value>
+  </context-param>
+  <context-param>
+    <param-name>oracle.adf.view.rich.geometry.DEFAULT_DIMENSIONS</param-name>
+    <param-value>auto</param-value>
+  </context-param>
+  <context-param>
+    <param-name>oracle.adf.view.rich.SYNCROWS</param-name>
+    <param-value>enable</param-value>
+  </context-param>
+  <context-param>
+    <param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
+    <param-value>true</param-value>
+  </context-param>
+  <context-param>
+    <param-name>javax.faces.FACELETS_DECORATORS</param-name>
+    <param-value>oracle.adfinternal.view.faces.facelets.rich.AdfTagDecorator</param-value>
+  </context-param>
+  <context-param>
+    <param-name>javax.faces.FACELETS_RESOURCE_RESOLVER</param-name>
+    <param-value>oracle.adfinternal.view.faces.facelets.rich.AdfFaceletsResourceResolver</param-value>
+  </context-param>
+  <filter>
+    <filter-name>JpsFilter</filter-name>
+    <filter-class>oracle.security.jps.ee.http.JpsFilter</filter-class>
+    <init-param>
+      <param-name>enable.anonymous</param-name>
+      <param-value>true</param-value>
+    </init-param>
+  </filter>
+  <filter>
+    <filter-name>adfFaces</filter-name>
+    <filter-class>org.apache.myfaces.trinidad.webapp.TrinidadFilter</filter-class>
+  </filter>
+  <!-- Faces Filter Mappings -->
+  <filter>
+    <filter-name>adfBindings</filter-name>
+    <filter-class>oracle.adf.model.servlet.ADFBindingFilter</filter-class>
+  </filter>
+  <filter>
+    <filter-name>PCF</filter-name>
+    <filter-class>oracle.webcache.adf.filter.AFCFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>JpsFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+    <dispatcher>FORWARD</dispatcher>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>INCLUDE</dispatcher>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>adfFaces</filter-name>
+    <servlet-name>faces</servlet-name>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>adfBindings</filter-name>
+    <servlet-name>faces</servlet-name>
+    <dispatcher>FORWARD</dispatcher>
+    <dispatcher>REQUEST</dispatcher>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>PCF</filter-name>
+    <url-pattern>/*.jspx</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+  </filter-mapping>
+  <filter-mapping>
+    <filter-name>PCF</filter-name>
+    <url-pattern>/*.jsp</url-pattern>
+    <dispatcher>REQUEST</dispatcher>
+    <dispatcher>FORWARD</dispatcher>
+  </filter-mapping>
+  <servlet>
+    <servlet-name>faces</servlet-name>
+    <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>resources</servlet-name>
+    <servlet-class>org.apache.myfaces.trinidad.webapp.ResourceServlet</servlet-class>
+  </servlet>
+  <!-- Faces Servlet Mappings -->
+  <servlet>
+    <servlet-name>BIGRAPHSERVLET</servlet-name>
+    <servlet-class>oracle.adfinternal.view.faces.bi.renderkit.graph.GraphServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>BIGAUGESERVLET</servlet-name>
+    <servlet-class>oracle.adfinternal.view.faces.bi.renderkit.gauge.GaugeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>MapProxyServlet</servlet-name>
+    <servlet-class>oracle.adfinternal.view.faces.bi.renderkit.geoMap.servlet.MapProxyServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>GatewayServlet</servlet-name>
+    <servlet-class>oracle.adfinternal.view.faces.bi.renderkit.graph.FlashBridgeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AFCStatsServlet</servlet-name>
+    <servlet-class>oracle.webcache.adf.servlet.AFCStatsServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>faces</servlet-name>
+    <url-pattern>/faces/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>resources</servlet-name>
+    <url-pattern>/afr/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>resources</servlet-name>
+    <url-pattern>/adf/*</url-pattern>
+  </servlet-mapping>
+  <!-- Route demo resources through ResourceServlet as well 
+       so that cache headers will be set -->
+  <servlet-mapping>
+    <servlet-name>resources</servlet-name>
+    <url-pattern>/jsLibs/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>resources</servlet-name>
+    <url-pattern>/images/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>resources</servlet-name>
+    <url-pattern>/styles/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>source</servlet-name>
+    <url-pattern>*.source</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>BIGRAPHSERVLET</servlet-name>
+    <url-pattern>/servlet/GraphServlet/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>BIGAUGESERVLET</servlet-name>
+    <url-pattern>/servlet/GaugeServlet/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MapProxyServlet</servlet-name>
+    <url-pattern>/mapproxy/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>resources</servlet-name>
+    <url-pattern>/bi/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>GatewayServlet</servlet-name>
+    <url-pattern>/flashbridge/*</url-pattern>
+  </servlet-mapping>
+  <session-config>
+    <session-timeout>35</session-timeout>
+  </session-config>
+  <mime-mapping>
+    <extension>html</extension>
+    <mime-type>text/html</mime-type>
+  </mime-mapping>
+  <mime-mapping>
+    <extension>txt</extension>
+    <mime-type>text/plain</mime-type>
+  </mime-mapping>
+  <mime-mapping>
+    <extension>css</extension>
+    <mime-type>text/css</mime-type>
+  </mime-mapping>
+  <mime-mapping>
+    <extension>swf</extension>
+    <mime-type>application/x-shockwave-flash</mime-type>
+  </mime-mapping>
+  <mime-mapping>
+    <extension>amf</extension>
+    <mime-type>application/x-amf</mime-type>
+  </mime-mapping>
+  <!-- Welcome Files -->
+  <welcome-file-list>
+    <welcome-file>index.jspx</welcome-file>
+  </welcome-file-list>
+  <jsp-config>
+    <jsp-property-group>
+      <url-pattern>*.jsff</url-pattern>
+      <is-xml>true</is-xml>
+    </jsp-property-group>
+  </jsp-config>
+  <!-- EJBConfig -->
+  <ejb-local-ref>
+    <ejb-ref-name>ejb/local/SASFacade</ejb-ref-name>
+    <ejb-ref-type>Session</ejb-ref-type>
+    <local>com.vc.web.ejb.sas.SASFacadeLocal</local>
+    <ejb-link>SASFacade</ejb-link>
+  </ejb-local-ref>
+  <ejb-local-ref>
+    <ejb-ref-name>ejb/local/PERPFacade</ejb-ref-name>
+    <ejb-ref-type>Session</ejb-ref-type>
+    <local>com.vc.web.ejb.perp.PERPFacadeLocal</local>
+    <ejb-link>PERPFacade</ejb-link>
+  </ejb-local-ref>
+  <ejb-local-ref>
+    <ejb-ref-name>ejb/local/DynamicPERPFacade</ejb-ref-name>
+    <ejb-ref-type>Session</ejb-ref-type>
+    <local>com.vc.web.ejb.perp.DynamicPERPFacadeLocal</local>
+    <ejb-link>DynamicPERPFacade</ejb-link>
+  </ejb-local-ref>
+  <listener>
+    <listener-class>oracle.adf.mbean.share.connection.ADFConnectionLifeCycleCallBack</listener-class>
+  </listener>
+  <listener>
+    <listener-class>oracle.adf.mbean.share.config.ADFConfigLifeCycleCallBack</listener-class>
+  </listener>
+</web-app>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.1.51.56" id="testPageDef"
+                Package="com.vc.web.pageDefs">
+  <parameters/>
+  <executables>
+    <accessorIterator MasterBinding="queryAccountsFindAllIterator" Binds="countries" RangeSize="25" DataControl="SASFacadeLocal"
+                      BeanClass="com.vc.web.ejb.sas.entities.Countries" id="countriesIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="queryAccountsFindAll" RequiresUpdateModel="true" Action="invokeMethod" MethodName="queryAccountsFindAll"
+                  IsViewObjectMethod="false" DataControl="SASFacadeLocal" InstanceName="SASFacadeLocal.dataProvider"
+                  ReturnName="SASFacadeLocal.methodResults.queryAccountsFindAll_SASFacadeLocal_dataProvider_queryAccountsFindAll_result"/>
+    <methodAction id="queryCountriesFindAll" RequiresUpdateModel="true" Action="invokeMethod" MethodName="queryCountriesFindAll"
+                  IsViewObjectMethod="false" DataControl="SASFacadeLocal" InstanceName="SASFacadeLocal.dataProvider"
+                  ReturnName="SASFacadeLocal.methodResults.queryCountriesFindAll_SASFacadeLocal_dataProvider_queryCountriesFindAll_result"/>
+  </bindings>
+  <ResourceBundle>
+    <PropertiesBundle xmlns="http://xmlns.oracle.com/adfm/resourcebundle" PropertiesFile="com.vc.web.ViewControllerBundle"/>
+  </ResourceBundle>
+</pageDefinition>

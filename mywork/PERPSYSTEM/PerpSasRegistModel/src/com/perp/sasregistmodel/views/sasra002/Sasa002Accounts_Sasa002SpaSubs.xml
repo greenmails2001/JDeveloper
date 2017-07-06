@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Sasa002Accounts_Sasa002SpaSubs"
+  Version="11.1.1.56.60">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <ViewLinkDefEnd
+    Name="Sasa002Acounts"
+    Cardinality="1"
+    Owner="com.perp.sasregistmodel.views.sasra002.Sasa002Acounts"
+    Source="true">
+    <DesignTime>
+      <Attr Name="_finderName" Value="Sasa002Acounts"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.perp.sasregistmodel.views.sasra002.Sasa002Acounts.AccId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="Sasa002SpaSubs"
+    Cardinality="-1"
+    Owner="com.perp.sasregistmodel.views.sasra002.Sasa002SpaSubs">
+    <DesignTime>
+      <Attr Name="_finderName" Value="Sasa002SpaSubs"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.perp.sasregistmodel.views.sasra002.Sasa002SpaSubs.AccId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

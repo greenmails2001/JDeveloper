@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:panelGroupLayout id="pgl2" layout="vertical" halign="right">
+    <af:commandLink text="Tro lai " id="cl1" action="back"/>
+  </af:panelGroupLayout>
+  <dvt:hierarchyViewer id="hierarchyViewer1" layout="hier_vert_top"
+                       inlineStyle="width:100%;height:600px;"
+                       value="#{bindings.Adv02OrganizationUnitsP01.treeModel}"
+                       var="node">
+    <dvt:link linkType="orthogonalRounded" id="l1"/>
+    <dvt:node width="233" height="330" id="n1">
+      <f:facet name="zoom100">
+        <af:panelGroupLayout layout="vertical"
+                             inlineStyle="padding:5px"
+                             id="pgl1" styleClass="AFStretchWidth">
+          <af:panelGroupLayout layout="vertical" id="pgl4"
+                               rendered="#{node.OunId != null and node.CceId == null}">
+            <af:outputText value="#{node.Name}"
+                           inlineStyle="font-weight:bold;font-size:20px;color:#383A47"
+                           id="ot3"/>
+            <af:outputText value="#{node.OunNumber}"
+                           inlineStyle="font-size:20px;color:#383A47" id="ot2"/>
+            <af:outputText value="#{node.Address}"
+                           inlineStyle="font-size:11px;font-style:italic;color:#383A47"
+                           id="ot1"/>
+          </af:panelGroupLayout>
+          <af:panelGroupLayout layout="vertical" id="panelGroupLayout1"
+                               rendered="#{node.CceId != null and node.GroId == null}">
+            <af:outputText value="#{node.CceName}"
+                           inlineStyle="font-weight:bold;font-size:20px;color:#383A47"
+                           id="outputText1"/>
+            <af:outputText value="#{node.CceNumber}"
+                           inlineStyle="font-size:20px;color:#383A47"
+                           id="outputText2"/>
+          </af:panelGroupLayout>
+          <af:panelGroupLayout layout="vertical" id="panelGroupLayout2"
+                               rendered="#{node.GroId != null}">
+            <af:outputText value="#{node.GroupName}"
+                           inlineStyle="font-weight:bold;font-size:20px;color:#383A47"
+                           id="outputText3"/>
+            <af:outputText value="#{node.GroupNumber}"
+                           inlineStyle="font-size:20px;color:#383A47"
+                           id="outputText4"/>
+          </af:panelGroupLayout>
+        </af:panelGroupLayout>
+      </f:facet>
+    </dvt:node>
+  </dvt:hierarchyViewer>
+</jsp:root>

@@ -1,0 +1,283 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:trh="http://myfaces.apache.org/trinidad/html">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:pageTemplate viewId="/templates/commonNewsTemplate.jspx" value="#{bindings.pageTemplateBinding}" id="pt1">
+        <f:facet name="left">
+          <af:panelGroupLayout layout="vertical" inlineStyle="padding:10px;" id="pgl1">
+            <f:verbatim>
+              <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
+                      codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0" width="315"
+                      height="315">
+                <param name="movie" value="resources/images/mohinh_perpondemand.swf"/>
+                <param name="quality" value="high"/>
+                <embed src="resources/images/mohinh_perpondemand.swf" quality="high"
+                       pluginspage="http://www.macromedia.com/go/getflashplayer" type="application/x-shockwave-flash" width="315"
+                       height="315"/>
+              </object>
+            </f:verbatim>
+            <af:panelGroupLayout layout="horizontal" id="pgl2"/>
+          </af:panelGroupLayout>
+        </f:facet>
+        <f:facet name="center">
+          <af:panelGroupLayout layout="vertical" inlineStyle="padding:5px;" id="pgl3">
+            <af:panelGroupLayout layout="vertical" id="pgl4">
+              <af:spacer width="10" height="10" id="s1"/>
+            </af:panelGroupLayout>
+            <trh:tableLayout id="tl1">
+              <trh:rowLayout id="rl1">
+                <trh:cellFormat id="cf1">
+                  <af:image source="/resources/images/product_bullet_t.gif" id="i1"/>
+                </trh:cellFormat>
+                <trh:cellFormat width="80" id="cf2">
+                  <af:outputLabel value="BasicFinance" id="outputLabel2" inlineStyle="font-weight:bold;"/>
+                </trh:cellFormat>
+                <trh:cellFormat width="95%" inlineStyle='background-image:url("../resources/images/product_bg_t10.gif");'
+                                id="cf3">
+                  <af:spacer width="10" height="10" id="s2"/>
+                </trh:cellFormat>
+                <trh:cellFormat id="cf4">
+                  <af:image source="/resources/images/product_bullet_r01.gif" id="i2"/>
+                </trh:cellFormat>
+              </trh:rowLayout>
+              <trh:rowLayout id="rl2">
+                <trh:cellFormat inlineStyle='background-image:url("../resources/images/product_bg_l.gif");' id="cf5">
+                  <af:spacer width="10" height="10" id="s3"/>
+                </trh:cellFormat>
+                <trh:cellFormat columnSpan="2" id="cf6">
+                  <af:panelGroupLayout id="panelGroupLayout5" layout="vertical" inlineStyle="padding:4px; margin:2px;">
+                    <af:outputText value="#{viewcontrollerBundle['perpOndemand.introduction.servicePackage.basicFinance']}"
+                                   id="outputText1"/>
+                  </af:panelGroupLayout>
+                </trh:cellFormat>
+                <trh:cellFormat inlineStyle='background-image:url("../resources/images/product_bg_r.gif");' id="cf7">
+                  <af:spacer width="10" height="10" id="s4"/>
+                </trh:cellFormat>
+              </trh:rowLayout>
+              <trh:rowLayout id="rl3">
+                <trh:cellFormat inlineStyle='background-image:url("../resources/images/product_bg_l.gif");' id="cf8">
+                  <af:image source="/resources/images/product_bullet.gif" id="i3"/>
+                </trh:cellFormat>
+                <trh:cellFormat width="80" id="cf9">
+                  <af:outputLabel value="StandardFinance" id="outputLabel3" inlineStyle="font-weight:bold;"/>
+                </trh:cellFormat>
+                <trh:cellFormat width="95%" inlineStyle='background-image:url("../resources/images/product_bg_t10.gif");'
+                                id="cf10">
+                  <af:spacer width="10" height="10" id="s5"/>
+                </trh:cellFormat>
+                <trh:cellFormat id="cf11">
+                  <af:image source="/resources/images/product_bullet_r02.gif" id="i4"/>
+                </trh:cellFormat>
+              </trh:rowLayout>
+              <trh:rowLayout id="rl4">
+                <trh:cellFormat inlineStyle='background-image:url("../resources/images/product_bg_l.gif");' id="cf12">
+                  <af:spacer width="10" height="10" id="s6"/>
+                </trh:cellFormat>
+                <trh:cellFormat columnSpan="2" id="cf13">
+                  <af:panelGroupLayout id="panelGroupLayout1" layout="vertical" inlineStyle="padding:4px; margin:2px;">
+                    <af:outputText value="#{viewcontrollerBundle['perpOndemand.introduction.servicePackage.standardFinance']}"
+                                   id="outputText2" inlineStyle="padding:2px; margin:2px;"/>
+                  </af:panelGroupLayout>
+                </trh:cellFormat>
+                <trh:cellFormat inlineStyle='background-image:url("../resources/images/product_bg_r.gif");' id="cf14">
+                  <af:spacer width="10" height="10" id="s7"/>
+                </trh:cellFormat>
+              </trh:rowLayout>
+              <trh:rowLayout id="rl5">
+                <trh:cellFormat inlineStyle='background-image:url("../resources/images/product_bg_l.gif");' id="cf15">
+                  <af:image source="/resources/images/product_bullet.gif" id="i5"/>
+                </trh:cellFormat>
+                <trh:cellFormat width="80" id="cf16">
+                  <af:outputLabel value="Distribution" id="outputLabel4" inlineStyle="font-weight:bold;"/>
+                </trh:cellFormat>
+                <trh:cellFormat width="95%" inlineStyle='background-image:url("../resources/images/product_bg_t10.gif");'
+                                id="cf17">
+                  <af:spacer width="10" height="10" id="s8"/>
+                </trh:cellFormat>
+                <trh:cellFormat id="cf18">
+                  <af:image source="/resources/images/product_bullet_r02.gif" id="i6"/>
+                </trh:cellFormat>
+              </trh:rowLayout>
+              <trh:rowLayout id="rl6">
+                <trh:cellFormat inlineStyle='background-image:url("../resources/images/product_bg_l.gif");' id="cf19">
+                  <af:spacer width="10" height="10" id="s9"/>
+                </trh:cellFormat>
+                <trh:cellFormat columnSpan="2" id="cf20">
+                  <af:panelGroupLayout id="panelGroupLayout2" layout="vertical" inlineStyle="padding:4px; margin:2px;">
+                    <af:outputText value="#{viewcontrollerBundle['perpOndemand.introduction.servicePackage.distribution']}"
+                                   id="outputText3"/>
+                  </af:panelGroupLayout>
+                </trh:cellFormat>
+                <trh:cellFormat inlineStyle='background-image:url("../resources/images/product_bg_r.gif");' id="cf21">
+                  <af:spacer width="10" height="10" id="s10"/>
+                </trh:cellFormat>
+              </trh:rowLayout>
+              <trh:rowLayout id="rl7">
+                <trh:cellFormat inlineStyle='background-image:url("../resources/images/product_bg_l.gif");' id="cf22">
+                  <af:image source="/resources/images/product_bullet.gif" id="i7"/>
+                </trh:cellFormat>
+                <trh:cellFormat width="80" id="cf23">
+                  <af:outputLabel value="Enterprise" id="outputLabel6" inlineStyle="font-weight:bold;"/>
+                </trh:cellFormat>
+                <trh:cellFormat width="95%" inlineStyle='background-image:url("../resources/images/product_bg_t10.gif");'
+                                id="cf24">
+                  <af:spacer width="10" height="10" id="s11"/>
+                </trh:cellFormat>
+                <trh:cellFormat id="cf25">
+                  <af:image source="/resources/images/product_bullet_r02.gif" id="i8"/>
+                </trh:cellFormat>
+              </trh:rowLayout>
+              <trh:rowLayout id="rl8">
+                <trh:cellFormat inlineStyle='background-image:url("../resources/images/product_bg_l.gif");' id="cf26">
+                  <af:spacer width="10" height="10" id="s12"/>
+                </trh:cellFormat>
+                <trh:cellFormat columnSpan="2" id="cf27">
+                  <af:panelGroupLayout id="panelGroupLayout3" layout="vertical" inlineStyle="padding:4px; margin:2px;">
+                    <af:outputText value="#{viewcontrollerBundle['perpOndemand.introduction.servicePackage.enterprise']}" id="outputText5"/>
+                  </af:panelGroupLayout>
+                </trh:cellFormat>
+                <trh:cellFormat inlineStyle='background-image:url("../resources/images/product_bg_r.gif");' id="cf28">
+                  <af:spacer width="10" height="10" id="s13"/>
+                </trh:cellFormat>
+              </trh:rowLayout>
+              <trh:rowLayout id="rl9">
+                <trh:cellFormat id="cf29">
+                  <af:image source="/resources/images/product_bullet_lb.gif" id="i9"/>
+                </trh:cellFormat>
+                <trh:cellFormat columnSpan="2" inlineStyle='background-image:url("../resources/images/product_bg_t11.gif");'
+                                id="cf30">
+                  <af:spacer width="10" height="10" id="s14"/>
+                </trh:cellFormat>
+                <trh:cellFormat id="cf31">
+                  <af:image source="/resources/images/product_bullet_rb.gif" id="i10"/>
+                </trh:cellFormat>
+              </trh:rowLayout>
+            </trh:tableLayout>
+          </af:panelGroupLayout>
+        </f:facet>
+        <f:facet name="right">
+          <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px; width:250px;" id="pgl5">
+            <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="pgl6">
+              <af:spacer width="10" height="10" id="s15"/>
+            </af:panelGroupLayout>
+            <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="pgl7">
+              <trh:tableLayout width="100%" id="tl2">
+                <trh:rowLayout id="rl10">
+                  <trh:cellFormat id="cf32">
+                    <af:image source="/resources/images/frame_lt.gif" id="i11"/>
+                  </trh:cellFormat>
+                  <trh:cellFormat inlineStyle='background-image:url("../resources/images/frame_bg_t.gif");' width="100%"
+                                  id="cf33">
+                    <af:outputLabel value="#{viewcontrollerBundle['sas.home.nav.tryUse']}" inlineStyle="font-size:larger;"
+                                    id="ol1"/>
+                  </trh:cellFormat>
+                  <trh:cellFormat id="cf34">
+                    <af:image source="/resources/images/frame_rt.gif" id="i12"/>
+                  </trh:cellFormat>
+                </trh:rowLayout>
+                <trh:rowLayout id="rl11">
+                  <trh:cellFormat inlineStyle='background-image:url("../resources/images/frame_bg_l.gif");' id="cf35"/>
+                  <trh:cellFormat width="100%" id="cf36">
+                    <af:navigationPane hint="list" id="np1">
+                      <af:commandNavigationItem text="#{viewcontrollerBundle['sas.home.nav.onlineDemo']}" id="cni1"/>
+                      <af:commandNavigationItem text="#{viewcontrollerBundle['sas.home.nav.viewDashboard']}" id="cni2"/>
+                      <af:commandNavigationItem text="#{viewcontrollerBundle['sas.home.nav.shoppingSystem']}" action="sasAccount"
+                                                id="cni3"/>
+                      <af:commandNavigationItem text="#{viewcontrollerBundle['sas.home.nav.appSystem']}" action="appView"
+                                                id="cni4"/>
+                    </af:navigationPane>
+                  </trh:cellFormat>
+                  <trh:cellFormat onkeydown='background-image:url("../resources/images/frame_bg_l.gif");'
+                                  inlineStyle='background-image:url("../resources/images/frame_bg_r.gif");' id="cf37"/>
+                </trh:rowLayout>
+                <trh:rowLayout id="rl12">
+                  <trh:cellFormat id="cf38">
+                    <af:image source="/resources/images/frame_lb.gif" id="i13"/>
+                  </trh:cellFormat>
+                  <trh:cellFormat inlineStyle='background-image:url("../resources/images/frame_bg_b.gif");' width="100%"
+                                  id="cf39">
+                    <af:spacer width="10" height="10" id="s16"/>
+                  </trh:cellFormat>
+                  <trh:cellFormat id="cf40">
+                    <af:image source="/resources/images/frame_rb.gif" id="i14"/>
+                  </trh:cellFormat>
+                </trh:rowLayout>
+                <trh:rowLayout id="rl13">
+                  <trh:cellFormat columnSpan="3" halign="right" id="cf41">
+                    <af:image source="/resources/images/frame_corner_b.gif" id="i15"/>
+                  </trh:cellFormat>
+                </trh:rowLayout>
+              </trh:tableLayout>
+            </af:panelGroupLayout>
+            <af:panelGroupLayout layout="vertical" inlineStyle="padding:3%;" id="pgl8">
+              <trh:tableLayout inlineStyle="background-color: #f7f7f6;" cellPadding="2" width="100%" id="tl3">
+                <trh:rowLayout id="rl14">
+                  <trh:cellFormat id="cf42">
+                    <af:outputLabel value="#{viewcontrollerBundle['sas.home.nav.topNews']}" inlineStyle="font-weight:bold;"
+                                    id="ol2"/>
+                  </trh:cellFormat>
+                </trh:rowLayout>
+                <trh:rowLayout id="rl15">
+                  <trh:cellFormat id="cf43">
+                    <af:outputText value="14/07/2008: PYTHIS l?p hattrick trong “Top 5 và Huy ch??ng vàng CNTT-TT Vi?t Nam 2008”.  Xem chi ti?t"
+                                   id="ot1"/>
+                  </trh:cellFormat>
+                </trh:rowLayout>
+                <trh:rowLayout id="rl16">
+                  <trh:cellFormat inlineStyle='background-image:url("../resources/images/function_line_c.gif");'
+                                  id="cf44">
+                    <af:spacer width="10" height="16" id="s17"/>
+                  </trh:cellFormat>
+                </trh:rowLayout>
+                <trh:rowLayout id="rl17">
+                  <trh:cellFormat id="cf45">
+                    <af:outputText value="25/06/2008: Trung Tâm Công ngh? Ph?n M?m C?n Th? tr? thành ??i tác chi?n l??c c?a PERP...  Xem chi ti?t"
+                                   id="ot2"/>
+                  </trh:cellFormat>
+                </trh:rowLayout>
+                <trh:rowLayout id="rl18">
+                  <trh:cellFormat inlineStyle='background-image:url("../resources/images/function_line_c.gif");'
+                                  id="cf46">
+                    <af:spacer width="10" height="16" id="s18"/>
+                  </trh:cellFormat>
+                </trh:rowLayout>
+                <trh:rowLayout id="rl19">
+                  <trh:cellFormat id="cf47">
+                    <af:outputText value="25/06/2008: Trung Tâm Công ngh? Ph?n M?m C?n Th? tr? thành ??i tác chi?n l??c c?a PERP...  Xem chi ti?t"
+                                   id="ot3"/>
+                  </trh:cellFormat>
+                </trh:rowLayout>
+                <trh:rowLayout id="rl20">
+                  <trh:cellFormat halign="right" id="cf48">
+                    <af:image source="/resources/images/function_line_b.gif" id="i16"/>
+                  </trh:cellFormat>
+                </trh:rowLayout>
+              </trh:tableLayout>
+            </af:panelGroupLayout>
+          </af:panelGroupLayout>
+        </f:facet>
+        <f:facet name="bottomLeft">
+          <af:panelGroupLayout layout="horizontal" inlineStyle="padding:3px; width:250px;" id="pgl9">
+            <af:image source="/resources/images/pythis-logo2.gif" id="i17"/>
+            <af:image source="/resources/images/vinhcuu-logo2.gif" id="i18"/>
+          </af:panelGroupLayout>
+        </f:facet>
+        <f:facet name="bottomCenter">
+          <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px; " id="pgl10">
+            <af:image source="/resources/images/customer-successful.png" id="i19"/>
+          </af:panelGroupLayout>
+        </f:facet>
+        <f:facet name="bottomRight">
+          <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px; width:250px;" id="pgl11">
+            <af:image source="/resources/images/online-support.png" id="i20"/>
+          </af:panelGroupLayout>
+        </f:facet>
+        <f:facet name="popupFacet"/>
+      </af:pageTemplate>
+    </af:document>
+  </f:view>
+</jsp:root>

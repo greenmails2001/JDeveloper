@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelSplitter id="ps1" splitterPosition="209">
+    <f:facet name="first">
+      <af:panelHeader text="Danh mục" id="ph1">
+        <f:facet name="context"/>
+        <f:facet name="menuBar"/>
+        <f:facet name="toolbar"/>
+        <f:facet name="legend"/>
+        <f:facet name="info"/>
+        <af:panelBox text="PanelBox1" id="pb1" showHeader="never">
+          <f:facet name="toolbar"/>
+          <af:panelList id="pl1">
+            <af:commandImageLink text="Quản lý người dùng" id="cil1" actionListener="#{sasrAdminCaseFlowManager.setCaseFlowActionListener}"
+                                 partialSubmit="true">
+              <f:attribute name="caseFlow" value="sasr-accounts"/>
+            </af:commandImageLink>
+            <af:commandImageLink text="Quản lý gói dịch vụ" id="cil2" actionListener="#{sasrAdminCaseFlowManager.setCaseFlowActionListener}"
+                                 partialSubmit="true">
+              <f:attribute name="caseFlow" value="service-packages"/>
+            </af:commandImageLink>
+          </af:panelList>
+        </af:panelBox>
+      </af:panelHeader>
+    </f:facet>
+    <f:facet name="second">
+      <af:panelHeader text="Chi tiết" id="ph2">
+        <f:facet name="context"/>
+        <f:facet name="menuBar"/>
+        <f:facet name="toolbar"/>
+        <f:facet name="legend"/>
+        <f:facet name="info"/>
+        <af:region value="#{bindings.sasradmin1.regionModel}" id="r1" binding="#{sasrAdminCaseFlowManager.region}"/>
+      </af:panelHeader>
+    </f:facet>
+  </af:panelSplitter>
+</jsp:root>

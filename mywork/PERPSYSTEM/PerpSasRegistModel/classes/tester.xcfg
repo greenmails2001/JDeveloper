@@ -1,0 +1,10 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="com.perp.sasregistmodel.PerpSasRegistAppModule">
+      <AppModuleConfig name="1452BC454FE" IsLazyLoadingTrue="true" BC4JConfigName="PerpSasRegistAppModuleLocal" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" JDBCName="PerpSasRegistConnection" jbo.project="com.perp.sasregistmodel.PerpSasRegistModel" ApplicationName="com.perp.sasregistmodel.PerpSasRegistAppModule" DeployPlatform="LOCAL">
+         <Database jbo.SQLBuilder="Oracle" jbo.TypeMapEntries="Oracle"/>
+         <Security AppModuleJndiName="com.perp.sasregistmodel.PerpSasRegistAppModule"/>
+         <Tester FullProxyInterfaceName="com.perp.sasregistmodel.common.PerpSasRegistAppModule"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

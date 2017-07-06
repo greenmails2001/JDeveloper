@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:off="http://commit-consulting.com/OraFormsFaces/tags">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:form id="f1">
+        <af:pageTemplate viewId="/pages/login/loginTemplate.jspx" id="pt1">
+          <f:facet name="center">
+            <af:panelTabbed id="pt2">
+              <af:showDetailItem text="Ora Form Faces" id="sdi1"
+                                 stretchChildren="first">
+                <af:panelBox text="PanelBox1" id="pb1" showHeader="never">
+                  <f:facet name="toolbar"/>
+                  <af:panelGroupLayout id="pgl1" layout="vertical">
+                    <off:form id="f2" width="1260"
+                              height="700" autoSize="true"/>
+                  </af:panelGroupLayout>
+                </af:panelBox>
+              </af:showDetailItem>
+            </af:panelTabbed>
+          </f:facet>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

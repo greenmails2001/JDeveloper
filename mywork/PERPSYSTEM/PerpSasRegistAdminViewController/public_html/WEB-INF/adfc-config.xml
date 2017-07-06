@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="login">
+    <page>/pages/sasra/login/login.jspx</page>
+  </view>
+  <view id="testting">
+    <page>/pages/sasra/testting/testting.jspx</page>
+  </view>
+  <view id="sasra001">
+    <page>/pages/sasra/sasra001/sasra001.jspx</page>
+  </view>
+  <view id="sasra002">
+    <page>/pages/sasra/sasra002/sasra002.jspx</page>
+  </view>
+  <control-flow-rule>
+    <from-activity-id>login</from-activity-id>
+    <control-flow-case>
+      <from-outcome>sasra002</from-outcome>
+      <to-activity-id>sasra001</to-activity-id>
+    </control-flow-case>
+    <control-flow-case>
+      <from-outcome>sasra001</from-outcome>
+      <to-activity-id>sasra002</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean>
+    <managed-bean-name>sasra002aTaskFlowBacking</managed-bean-name>
+    <managed-bean-class>com.perp.sasraviewcontroller.backing.Sasra002aTaskFlowBacking</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

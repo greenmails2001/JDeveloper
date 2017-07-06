@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:pageTemplate viewId="/templates/initialSettingTemplate.jspx" id="ubhpt1">
+    <f:facet name="center"/>
+    <f:facet name="navFacet"/>
+  </af:pageTemplate>
+</jsp:root>

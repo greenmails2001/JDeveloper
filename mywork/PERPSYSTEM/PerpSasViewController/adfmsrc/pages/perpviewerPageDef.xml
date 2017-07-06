@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.56.60" id="perpviewerPageDef" Package="pages">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Type="java.lang.String"
+                Name="prepareToShowSasMenusSearch_appCode" IsQueriable="false"
+                DefaultValue="#{sessionLoginObject.subscriptionInfo.packageCode}"/>
+      <variable Type="java.lang.Long" Name="prepareToShowSasMenusSearch_ausId"
+                IsQueriable="false"
+                DefaultValue="#{sessionLoginObject.perpAccount.ausId}"/>
+      <variable Type="java.lang.String"
+                Name="prepareToShowSasMenusSearch_searchText"
+                IsQueriable="false"/>
+      <variable Type="java.lang.String"
+                Name="prepareToShowSasMenusSearch_findIn" IsQueriable="false"/>
+      <variableUsage DataControl="PerpSasAppModuleDataControl"
+                     Binds="AppLogins1.variablesMap.p_Username"
+                     Name="ExecuteWithParams_p_Username" IsQueriable="false"/>
+      <variableUsage DataControl="PerpSasAppModuleDataControl"
+                     Binds="AppLogins1.variablesMap.p_EnvId"
+                     Name="ExecuteWithParams_p_EnvId" IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="prepareToShowAppLogins_userName"
+                IsQueriable="false"/>
+    </variableIterator>
+    <taskFlow id="perpviewer1" taskFlowId="/WEB-INF/perpviewer.xml#perpviewer"
+              activation="immediate"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"
+              Refresh="ifNeeded">
+      <parameters>
+        <parameter id="outcome" xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                   value="${perpviewerFlowBacking.outcome}"/>
+      </parameters>
+    </taskFlow>
+    <iterator Binds="SasMenusSearch" RangeSize="25"
+              DataControl="PerpSasAppModuleDataControl"
+              id="SasMenusSearchIterator"/>
+    <iterator Binds="AppLogins1" RangeSize="25"
+              DataControl="PerpSasAppModuleDataControl"
+              id="AppLogins1Iterator"/>
+    <searchRegion Binds="AppLogins1Iterator" Criteria=""
+                  Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="AppLogins1Query"/>
+    <invokeAction id="invokeShowAppLogin" Binds="prepareToShowAppLogins"
+                  Refresh="renderModelIfNeeded"
+                  RefreshCondition="${!adfFacesContext.postback}"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="SasMenusSearchIterator" id="SasMenusSearch">
+      <nodeDefinition DefName="com.perp.sasmodel.views.sas.SasMenusSearch"
+                      Name="SasMenusSearch0">
+        <AttrNames>
+          <Item Value="GusName"/>
+          <Item Value="MenId"/>
+          <Item Value="MenuName"/>
+          <Item Value="MenuLable"/>
+          <Item Value="MenuDescription"/>
+          <Item Value="ModuleName"/>
+          <Item Value="MenIdChildOf"/>
+          <Item Value="MenuNumber"/>
+          <Item Value="WbsLevel"/>
+          <Item Value="IsParent"/>
+          <Item Value="AppCode"/>
+          <Item Value="GusId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="prepareToShowSasMenusSearch"
+                  Action="invokeMethod" MethodName="prepareToShowSasMenusSearch"
+                  IsViewObjectMethod="false"
+                  DataControl="PerpSasAppModuleDataControl"
+                  InstanceName="PerpSasAppModuleDataControl.dataProvider"
+                  CacheReturnDefinition="false" RequiresUpdateModel="false">
+      <NamedData NDName="appCode" NDType="java.lang.String"
+                 NDValue="${bindings.prepareToShowSasMenusSearch_appCode}"/>
+      <NamedData NDName="ausId" NDType="java.lang.Long"
+                 NDValue="${bindings.prepareToShowSasMenusSearch_ausId}"/>
+      <NamedData NDName="searchText" NDType="java.lang.String"
+                 NDValue="${bindings.prepareToShowSasMenusSearch_searchText}"/>
+      <NamedData NDName="findIn" NDType="java.lang.String"
+                 NDValue="${bindings.prepareToShowSasMenusSearch_findIn}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="searchText">
+      <AttrNames>
+        <Item Value="prepareToShowSasMenusSearch_searchText"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="findIn">
+      <AttrNames>
+        <Item Value="prepareToShowSasMenusSearch_findIn"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="AppLogins1Iterator" id="AppLogins1">
+      <nodeDefinition DefName="com.perp.sasmodel.views.sas.AppLogins"
+                      Name="AppLogins10">
+        <AttrNames>
+          <Item Value="UserName"/>
+          <Item Value="LoginAt"/>
+          <Item Value="IpAddress"/>
+          <Item Value="Country"/>
+          <Item Value="Browser"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="prepareToShowAppLogins" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="prepareToShowAppLogins"
+                  IsViewObjectMethod="false"
+                  DataControl="PerpSasAppModuleDataControl"
+                  InstanceName="PerpSasAppModuleDataControl.dataProvider"/>
+  </bindings>
+</pageDefinition>

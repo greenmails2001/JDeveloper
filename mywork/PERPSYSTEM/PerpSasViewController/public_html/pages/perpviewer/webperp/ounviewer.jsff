@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:dvt="http://xmlns.oracle.com/dss/adf/faces">
+  <dvt:hierarchyViewer id="hierarchyViewer1" layout="hier_horz_left"
+                       inlineStyle="width:100%;height:600px;"
+                       value="#{bindings.Adv01OrganizationUnitsRoot.treeModel}"
+                       var="node" contentDelivery="immediate">
+    <dvt:link linkType="orthogonalRounded" id="l1"/>
+    <dvt:node width="233" height="330" id="n1">
+      <f:facet name="zoom100">
+        <af:panelGroupLayout layout="vertical"
+                             inlineStyle="padding:5px"
+                             id="pgl2" styleClass="AFStretchWidth">
+          <af:panelGroupLayout layout="vertical" id="pgl4">
+            <af:outputText inlineStyle="font-weight:bold;font-size:20px;color:#383A47"
+                           id="ot4" value="#{node.Name}"/>
+            <af:outputText value="#{node.Address}"
+                           inlineStyle="font-size:20px;color:#383A47" id="ot3"/>
+            <af:outputText value="#{node.OunNumber}"
+                           inlineStyle="font-size:11px;font-style:italic;color:#383A47"
+                           id="ot2"/>
+            <af:panelGroupLayout id="pgl1" layout="vertical"
+                                 inlineStyle="padding:5px;">
+              <af:commandLink text="Phong ban" id="cl1" action="cceviewer"
+                              partialSubmit="true">
+                <af:setActionListener from="#{node.OunId}"
+                                      to="#{cceviewer.ounId}"/>
+              </af:commandLink>
+            </af:panelGroupLayout>
+          </af:panelGroupLayout>
+        </af:panelGroupLayout>
+      </f:facet>
+    </dvt:node>
+  </dvt:hierarchyViewer>
+</jsp:root>

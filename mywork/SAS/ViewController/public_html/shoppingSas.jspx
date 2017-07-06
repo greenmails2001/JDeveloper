@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document binding="#{backing_sasAccount.document1}" id="document1"
+                 title="Software And Service : Shopping Sas">
+      <af:pageTemplate viewId="/templates/appTemplate.jspx" id="pt1">
+        <f:facet name="center">
+          <af:region value="#{bindings.shoppingsasflow2.regionModel}" id="shopp1"
+                     binding="#{backing_sasAccount.shopp1}"/>
+        </f:facet>
+      </af:pageTemplate>
+    </af:document>
+  </f:view>
+  <!--oracle-jdev-comment:auto-binding-backing-bean-name:backing_sasAccount-->
+</jsp:root>

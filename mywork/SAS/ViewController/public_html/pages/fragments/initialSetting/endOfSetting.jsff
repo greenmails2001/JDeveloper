@@ -1,0 +1,120 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core" xmlns:trh="http://myfaces.apache.org/trinidad/html">
+  <af:pageTemplate viewId="/templates/initialSettingTemplate.jspx" id="wpypt1">
+ 
+    <f:facet name="center">
+      <af:panelStretchLayout styleClass="AFVisualRoot" id="wpypsl1">
+        <f:facet name="center">
+          <af:panelGroupLayout layout="scroll" id="wpypgl1">
+            <af:panelStretchLayout endWidth="237px" inlineStyle="height:500px;width:100%" id="wpypsl2">
+              <f:facet name="center">
+                <af:panelGroupLayout layout="vertical" id="wpypgl2">
+                  <af:panelGroupLayout layout="horizontal" inlineStyle="width:100%; padding:3px;" halign="left" valign="top"
+                                       id="wpypgl3">
+                    <af:panelGroupLayout layout="vertical" id="wpypgl4">
+                      <af:image shortDesc="Accounting Period" source="/resources/images/acc-period2.jpeg" id="wpyi1"/>
+                    </af:panelGroupLayout>
+                    <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="wpypgl5">
+                      <af:outputLabel value="#{viewcontrollerBundle['sas.page.initialSetting.endOfSetting.setupJInit']}" inlineStyle="font-size:large;"
+                                      id="wpyol1"/>
+                      <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="wpypgl6">
+                        <af:outputText value="#{viewcontrollerBundle['sas.page.initialSetting.endOfSetting.setupJInit.introduction']}"
+                                       id="wpyot1"/>
+                      </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                  </af:panelGroupLayout>
+                  <af:panelGroupLayout layout="vertical" id="wpypgl7">
+                    <af:panelStretchLayout styleClass="AFVisualRoot" startWidth="208px" inlineStyle="padding:2px;"
+                                           id="wpypsl3">
+                      <f:facet name="center">
+                        <af:panelGroupLayout layout="scroll" inlineStyle="padding:3px;" id="wpypgl8">
+                          <af:panelGroupLayout layout="vertical"
+                                               inlineStyle="padding:3px; border-width:1px; border-style:outset; height:40px;"
+                                               id="wpypgl9">
+                            <af:outputLabel value="#{viewcontrollerBundle['sas.page.initialSetting.endOfSetting.setupJInit.test']}" inlineStyle="font-size:larger;"
+                                            id="wpyol2"/>
+                          </af:panelGroupLayout>
+                          <af:spacer width="10" height="10" id="wpys1"/>
+                          <af:panelGroupLayout layout="horizontal" halign="left" valign="top" id="wpypgl10">
+                            <af:panelGroupLayout layout="horizontal" halign="left" inlineStyle="padding:3px;"
+                                                 id="wpypgl11">
+                              <af:image source="/resources/images/test-applet.jpeg" shortDesc="test oracle form"
+                                        id="wpyi2"/>
+                            </af:panelGroupLayout>
+                            <af:panelGroupLayout layout="vertical" halign="left" inlineStyle="padding:3px; width:100%;"
+                                                 id="wpypgl12">
+                              <af:outputText value="#{viewcontrollerBundle['sas.page.initialSetting.endOfSetting.setupJInit.suggest']}"
+                                             id="wpyot2"/>
+                              <af:spacer width="10" height="10" id="wpys2"/>
+                              <af:commandLink text="#{viewcontrollerBundle['sas.page.initialSetting.endOfSetting.setupJInit.check']}"
+                                              id="wpycl1">
+                                <af:clientListener type="action" method="window.open('http://192.168.0.123/forms/frmservlet','winname')"/>
+                              </af:commandLink>
+                              <af:spacer width="10" height="10" id="wpys3"/>
+                              <af:commandButton text="Ket thuc thiet lap" partialSubmit="true" id="wpycb1"/>
+                            </af:panelGroupLayout>
+                          </af:panelGroupLayout>
+                          <af:panelGroupLayout layout="vertical" id="wpypgl13">
+                            <af:panelGroupLayout inlineStyle="height:40px;" layout="vertical" id="wpypgl14">
+                              <af:outputLabel value="#{viewcontrollerBundle['sas.page.initialSetting.endOfSetting.setupJInit.osSystemNote']}"
+                                              id="wpyol3"/>
+                            </af:panelGroupLayout>
+                            <af:activeOutputText value="#{viewcontrollerBundle['sas.page.initialSetting.endOfSetting.setupJInit.osSystemNote.introduction']}"
+                                                 id="wpyaot1"/>
+                            <af:spacer width="10" height="10" id="wpys4"/>
+                            <af:navigationPane hint="list" id="wpynp1">
+                              <af:commandNavigationItem text="#{viewcontrollerBundle['sas.page.initialSetting.endOfSetting.setupJInit.osSystemNote.xp']}"
+                                                        id="wpycni1"/>
+                              <af:commandNavigationItem text="#{viewcontrollerBundle['sas.page.initialSetting.endOfSetting.setupJInit.osSystemNote.vista']}"
+                                                        id="wpycni2"/>
+                            </af:navigationPane>
+                          </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                      </f:facet>
+                      <f:facet name="start">
+                        <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="wpypgl15">
+                          <af:panelGroupLayout layout="vertical" id="wpypgl16">
+                            <af:outputLabel value="NAVIGATION" inlineStyle="font-weight:bold;" id="wpyol4"/>
+                          </af:panelGroupLayout>
+                          <af:spacer width="10" height="10" id="wpys5"/>
+                          <af:panelGroupLayout layout="vertical" id="wpypgl17">
+                            <af:navigationPane hint="list" id="wpynp2">
+                              <af:commandNavigationItem text="#{viewcontrollerBundle['sas.nav.appSystem']}"
+                                                        id="wpycni3"/>
+                            </af:navigationPane>
+                          </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                      </f:facet>
+                    </af:panelStretchLayout>
+                  </af:panelGroupLayout>
+                </af:panelGroupLayout>
+              </f:facet>
+              <f:facet name="end">
+                <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="wpypgl18">
+                  <af:panelGroupLayout layout="vertical" halign="left" inlineStyle="padding:2px;" id="wpypgl19">
+                    <af:image source="/resources/images/help2.jpg" shortDesc="help" id="wpyi3"/>
+                  </af:panelGroupLayout>
+                  <af:spacer width="10" height="10" id="wpys6"/>
+                  <af:panelGroupLayout layout="vertical" id="wpypgl20">
+                    <af:outputLabel value="#{viewcontrollerBundle['sas.quickHelp']}" inlineStyle="font-weight:bold;"
+                                    id="wpyol5"/>
+                    <af:spacer width="10" height="10" id="wpys7"/>
+                    <af:navigationPane hint="list" id="wpynp3">
+                      <af:commandNavigationItem text="#{viewcontrollerBundle['sas.quickHelp.viewSampleUse']}"
+                                                actionListener="#{backing_quickHelpManager.showQuickHelpActionListener}"
+                                                id="wpycni4"/>
+                      <af:commandNavigationItem text="#{viewcontrollerBundle['sas.quickHelp.viewHelp']}"
+                                                actionListener="#{backing_quickHelpManager.showQuickHelpActionListener}"
+                                                id="wpycni5"/>
+                    </af:navigationPane>
+                  </af:panelGroupLayout>
+                </af:panelGroupLayout>
+              </f:facet>
+            </af:panelStretchLayout>
+          </af:panelGroupLayout>
+        </f:facet>
+      </af:panelStretchLayout>
+    </f:facet>
+  </af:pageTemplate>
+</jsp:root>

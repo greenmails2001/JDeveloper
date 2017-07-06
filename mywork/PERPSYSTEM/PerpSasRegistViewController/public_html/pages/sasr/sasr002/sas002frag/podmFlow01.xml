@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="podmFlow01">
+    <default-activity>r</default-activity>
+    <view id="r"></view>
+    <view id="podmReadyUsing">
+      <page>/pages/sasr/sasr002/sas002frag/podmFlow01Frag/podmReadyUsing.jsff</page>
+    </view>
+    <view id="podmReadyRegist">
+      <page>/pages/sasr/sasr002/sas002frag/podmFlow01Frag/podmReadyRegist.jsff</page>
+    </view>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

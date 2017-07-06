@@ -1,0 +1,184 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:pageTemplate viewId="/templates/initialSettingTemplate.jspx" id="jxypt1">
+    <f:facet name="center">
+      <af:panelGroupLayout layout="scroll" id="jxypgl1">
+        <af:panelStretchLayout startWidth="274px" endWidth="225px" styleClass="AFVisualRoot" id="jxypsl1">
+          <f:facet name="center">
+            <af:panelStretchLayout startWidth="264px" topHeight="110px" id="jxypsl2">
+              <f:facet name="center">
+                <af:panelSplitter orientation="vertical" splitterPosition="46" inlineStyle="padding:3px;" id="jxyps1">
+                  <f:facet name="first">
+                    <af:panelGroupLayout layout="vertical"
+                                         inlineStyle="padding:3px; border-width:1px; border-color:Gray; border-style:outset;"
+                                         id="jxypgl2">
+                      <af:outputLabel value="#{viewcontrollerBundle['sas.initialSetting.ounStructure']}" inlineStyle="font-size:large;"
+                                      id="jxyol1"/>
+                    </af:panelGroupLayout>
+                  </f:facet>
+                  <f:facet name="second">
+                    <af:panelCollection id="jxypc1">
+                      <f:facet name="menus"/>
+                      <f:facet name="toolbar">
+                        <af:toolbar id="jxyt1">
+                          <af:popup id="ounPopup" contentDelivery="immediate">
+                            <af:dialog title="Thong tin cong ty chi nhanh" type="none" id="jxyd1">
+                              <af:panelGroupLayout layout="vertical" id="jxypgl3">
+                                <af:panelGroupLayout layout="vertical" inlineStyle="width:100%;" halign="left" valign="top"
+                                                     id="jxypgl4">
+                                  <af:panelGroupLayout layout="vertical" id="jxypgl5">
+                                    <af:outputLabel value="NHAP THONG TIN CONG TY / CHI NHANH " inlineStyle="font-weight:bold;"
+                                                    id="jxyol2"/>
+                                  </af:panelGroupLayout>
+                                  <af:panelGroupLayout layout="vertical" id="jxypgl6">
+                                    <af:panelFormLayout labelAlignment="top" rows="21" id="jxypfl1">
+                                      <af:inputText label="Ten cong ty / chi nhanh" columns="100"
+                                                    binding="#{backing_initialSetting_ounStructureManager.afOunName}"
+                                                    value="#{backing_initialSetting_ounStructureManager.ounInfoPopup.ounName}"
+                                                    id="jxyit1"/>
+                                      <af:inputText label="Dia chi" columns="100"
+                                                    binding="#{backing_initialSetting_ounStructureManager.afOunAddress}"
+                                                    value="#{backing_initialSetting_ounStructureManager.ounInfoPopup.address}"
+                                                    id="jxyit2"/>
+                                    </af:panelFormLayout>
+                                    <af:panelFormLayout maxColumns="2" rows="2" fieldWidth="150" labelWidth="150"
+                                                        id="jxypfl2">
+                                      <af:inputText label="Ma so cong ty"
+                                                    binding="#{backing_initialSetting_ounStructureManager.afOunNumber}"
+                                                    value="#{backing_initialSetting_ounStructureManager.ounInfoPopup.ounNumber}"
+                                                    id="jxyit3"/>
+                                      <af:inputDate label="Ngay thanh lap"
+                                                    binding="#{backing_initialSetting_ounStructureManager.afEffectiveDateFrom}"
+                                                    value="#{backing_initialSetting_ounStructureManager.ounInfoPopup.effectiveDateFrom}"
+                                                    id="jxyid1"/>
+                                      <af:inputDate label="Ngay ket thuc hoat dong"
+                                                    binding="#{backing_initialSetting_ounStructureManager.afEffectiveDateTo}"
+                                                    value="#{backing_initialSetting_ounStructureManager.ounInfoPopup.effectiveDateTo}"
+                                                    id="jxyid2"/>
+                                      <af:inputText label="Quoc gia" id="jxyit4"/>
+                                      <af:inputText label="Thanh pho" id="jxyit5"/>
+                                      <af:inputText label="Kieu cong ty" id="jxyit6"/>
+                                    </af:panelFormLayout>
+                                    <af:panelFormLayout labelAlignment="top" id="jxypfl3">
+                                      <af:inputText label="Mo ta" columns="100" rows="3"
+                                                    binding="#{backing_initialSetting_ounStructureManager.afOunDescription}"
+                                                    value="#{backing_initialSetting_ounStructureManager.ounInfoPopup.description}"
+                                                    id="jxyit7"/>
+                                    </af:panelFormLayout>
+                                  </af:panelGroupLayout>
+                                </af:panelGroupLayout>
+                                <af:panelGroupLayout layout="vertical" halign="right" id="jxypgl7">
+                                  <af:panelGroupLayout layout="horizontal" id="jxypgl8">
+                                    <af:commandButton text="OK" partialSubmit="true" id="jxycb1"/>
+                                    <af:spacer width="10" height="10" id="jxys1"/>
+                                    <af:commandButton text="Close" partialSubmit="true" id="jxycb2"/>
+                                  </af:panelGroupLayout>
+                                </af:panelGroupLayout>
+                              </af:panelGroupLayout>
+                            </af:dialog>
+                          </af:popup>
+                          <af:activeCommandToolbarButton text="Refresh"
+                                                         action="#{backing_initialSetting_ounStructureManager.refreshTreeTableAction}"
+                                                         id="jxyactb1"/>
+                          <af:activeCommandToolbarButton text="Them moi"
+                                                         action="#{backing_initialSetting_ounStructureManager.createOrganizationUnitAction}"
+                                                         id="jxyactb2"/>
+                          <af:activeCommandToolbarButton text="Xoa"
+                                                         action="#{backing_initialSetting_ounStructureManager.removeOrganizationUnitAction}"
+                                                         id="jxyactb3"/>
+                          <af:activeCommandToolbarButton text="Hieu chinh"
+                                                         immediate="true" id="jxyactb4">
+                            <af:showPopupBehavior popupId="ounPopup"/>
+                          </af:activeCommandToolbarButton>
+                        </af:toolbar>
+                      </f:facet>
+                      <f:facet name="statusbar"/>
+                      <af:treeTable value="#{backing_initialSetting_ounStructureManager.treeTableModel}" var="row" rowSelection="single" contentDelivery="immediate"
+                                    selectionListener="#{backing_initialSetting_ounStructureManager.treeTableSelectionListener}"
+                                    binding="#{backing_initialSetting_ounStructureManager.treeTable}" id="treeTable">
+                        <f:facet name="nodeStamp">
+                          <af:column sortable="false" headerText="#{viewcontrollerBundle['field.perp.organizationUnits.ounNumber']}"
+                                     id="jxyc1">
+                            <af:outputText value="#{row.ounNumber}" id="jxyot1"/>
+                          </af:column>
+                        </f:facet>
+                        <af:column sortable="false" headerText="#{viewcontrollerBundle['field.perp.organizationUnits.name']}" width="200"
+                                   id="jxyc2">
+                          <af:outputText value="#{row.ounName}" id="jxyot2"/>
+                        </af:column>
+                        <af:column sortable="false" headerText="#{viewcontrollerBundle['field.countries.name']}"
+                                   id="jxyc3">
+                          <af:outputText value="#{row.countryName}" id="jxyot3"/>
+                        </af:column>
+                        <af:column sortable="false" headerText="#{viewcontrollerBundle['field.provinces.name']}"
+                                   id="jxyc4">
+                          <af:outputText value="#{row.provinceName}" id="jxyot4"/>
+                        </af:column>
+                        <af:column sortable="false" headerText="#{viewcontrollerBundle['field.perp.organizationUnits.ounType']}"
+                                   id="jxyc5">
+                          <af:outputText value="#{row.ounTypeName}" id="jxyot5"/>
+                        </af:column>
+                        <af:column sortable="false" headerText="#{viewcontrollerBundle['field.perp.organizationUnits.effectiveDateFrom']}"
+                                   id="jxyc6">
+                          <af:outputText value="#{row.effectiveDateFrom}" id="jxyot6"/>
+                        </af:column>
+                        <af:column sortable="false" headerText="#{viewcontrollerBundle['field.perp.organizationUnits.effectiveDateTo']}"
+                                   id="jxyc7">
+                          <af:outputText value="#{row.effectiveDateTo}" id="jxyot7"/>
+                        </af:column>
+                        <af:column sortable="false" headerText="#{viewcontrollerBundle['field.perp.organizationUnits.address']}" width="250"
+                                   id="jxyc8">
+                          <af:outputText value="#{row.address}" id="jxyot8"/>
+                        </af:column>
+                      </af:treeTable>
+                    </af:panelCollection>
+                  </f:facet>
+                </af:panelSplitter>
+              </f:facet>
+              <f:facet name="top">
+                <af:panelStretchLayout startWidth="131px" id="jxypsl3">
+                  <f:facet name="center">
+                    <af:panelGroupLayout layout="vertical" id="jxypgl9">
+                      <af:outputLabel value="TRO GIUP" inlineStyle="font-size:large; " id="jxyol3"/>
+                      <af:panelGroupLayout inlineStyle="padding:4px; height:50px;" layout="vertical" id="jxypgl10">
+                        <af:outputText value="#{viewcontrollerBundle['sas.page.initialSetting.ounStructure.introduction.content']}"
+                                       id="jxyot9"/>
+                      </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                  </f:facet>
+                  <f:facet name="start">
+                    <af:panelGroupLayout layout="vertical" halign="left" inlineStyle="padding:2px;" id="jxypgl11">
+                      <af:image source="/resources/images/com-struct.jpeg" shortDesc="Company Structure" id="jxyi1"/>
+                    </af:panelGroupLayout>
+                  </f:facet>
+                </af:panelStretchLayout>
+              </f:facet>
+            </af:panelStretchLayout>
+          </f:facet>
+          <f:facet name="end">
+            <af:panelGroupLayout layout="vertical" id="jxypgl12">
+              <af:panelGroupLayout layout="vertical" halign="left" inlineStyle="padding:2px;" id="jxypgl13">
+                <af:image source="/resources/images/help2.jpg" shortDesc="help" id="jxyi2"/>
+              </af:panelGroupLayout>
+              <af:spacer width="10" height="10" id="jxys2"/>
+              <af:panelGroupLayout layout="vertical" id="jxypgl14">
+                <af:outputLabel value="#{viewcontrollerBundle['sas.quickHelp']}" inlineStyle="font-weight:bold;"
+                                id="jxyol4"/>
+                <af:spacer width="10" height="10" id="jxys3"/>
+                <af:navigationPane hint="list" id="jxynp1">
+                  <af:commandNavigationItem text="#{viewcontrollerBundle['sas.quickHelp.viewSampleUse']}"
+                                            actionListener="#{backing_quickHelpManager.showQuickHelpActionListener}"
+                                            id="jxycni1"/>
+                  <af:commandNavigationItem text="#{viewcontrollerBundle['sas.quickHelp.viewHelp']}"
+                                            actionListener="#{backing_quickHelpManager.showQuickHelpActionListener}"
+                                            id="jxycni2"/>
+                </af:navigationPane>
+              </af:panelGroupLayout>
+            </af:panelGroupLayout>
+          </f:facet>
+        </af:panelStretchLayout>
+      </af:panelGroupLayout>
+    </f:facet>
+  </af:pageTemplate>
+</jsp:root>

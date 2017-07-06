@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.12.24" id="untitled1PageDef"
+                Package="test.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="MenuItemsView1" RangeSize="25" DataControl="AppModuleDataControl" id="MenuItemsView1Iterator"/>
+    <iterator Binds="MenuView1" RangeSize="25" DataControl="AppModuleDataControl" id="MenuView1Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="MenuItemsView1Iterator" id="MenuItemsView1">
+      <nodeDefinition DefName="test.model.MenuItemsView" Name="MenuItemsView10">
+        <AttrNames>
+          <Item Value="Id"/>
+          <Item Value="Name"/>
+          <Item Value="MenId"/>
+          <Item Value="Icon"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="MenuItemsView1Iterator" id="Id">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MenuItemsView1Iterator" id="Name">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MenuItemsView1Iterator" id="Shortcut">
+      <AttrNames>
+        <Item Value="Shortcut"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MenuItemsView1Iterator" id="DisplaySequence">
+      <AttrNames>
+        <Item Value="DisplaySequence"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MenuItemsView1Iterator" id="Action">
+      <AttrNames>
+        <Item Value="Action"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MenuItemsView1Iterator" id="MenId">
+      <AttrNames>
+        <Item Value="MenId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MenuItemsView1Iterator" id="Icon">
+      <AttrNames>
+        <Item Value="Icon"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="MenuItemsView1Iterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="MenuItemsView1Iterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="MenuItemsView1Iterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="MenuItemsView1Iterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+    <attributeValues IterBinding="MenuView1Iterator" id="Id1">
+      <AttrNames>
+        <Item Value="Id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MenuView1Iterator" id="Name1">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MenuView1Iterator" id="DisplaySequence1">
+      <AttrNames>
+        <Item Value="DisplaySequence"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MenuView1Iterator" id="Shortcut1">
+      <AttrNames>
+        <Item Value="Shortcut"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="MenuView1Iterator" id="Icon1">
+      <AttrNames>
+        <Item Value="Icon"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

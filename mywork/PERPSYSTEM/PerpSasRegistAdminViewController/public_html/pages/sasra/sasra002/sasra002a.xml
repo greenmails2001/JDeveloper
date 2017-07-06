@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="sasra002a">
+    <default-activity>router</default-activity>
+    <input-parameter-definition>
+      <name>inputValue</name>
+      <value>#{pageFlowScope.inputValue}</value>
+      <class>java.lang.String</class>
+    </input-parameter-definition>
+    <view id="countries">
+      <page>/pages/sasra/sasra002/sasra002a/countries.jsff</page>
+    </view>
+    <router id="router">
+      <case>
+        <expression>#{pageFlowScope.inputValue=='countries'}</expression>
+        <outcome>countries</outcome>
+      </case>
+      <case>
+        <expression>#{pageFlowScope.inputValue=='provinces'}</expression>
+        <outcome>provinces</outcome>
+      </case>
+      <case>
+        <expression>#{pageFlowScope.inputValue=='industries'}</expression>
+        <outcome>industries</outcome>
+      </case>
+      <case>
+        <expression>#{pageFlowScope.inputValue=='securityQuestions'}</expression>
+        <outcome>securityQuestions</outcome>
+      </case>
+      <case>
+        <expression>#{pageFlowScope.inputValue=='roles'}</expression>
+        <outcome>roles</outcome>
+      </case>
+      <default-outcome>countries</default-outcome>
+    </router>
+    <view id="industries">
+      <page>/pages/sasra/sasra002/sasra002a/industries.jsff</page>
+    </view>
+    <view id="provinces">
+      <page>/pages/sasra/sasra002/sasra002a/provinces.jsff</page>
+    </view>
+    <view id="roles">
+      <page>/pages/sasra/sasra002/sasra002a/roles.jsff</page>
+    </view>
+    <view id="securityQuestions">
+      <page>/pages/sasra/sasra002/sasra002a/securityQuestions.jsff</page>
+    </view>
+    <control-flow-rule>
+      <from-activity-id>router</from-activity-id>
+      <control-flow-case>
+        <from-outcome>countries</from-outcome>
+        <to-activity-id>countries</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>industries</from-outcome>
+        <to-activity-id>industries</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>provinces</from-outcome>
+        <to-activity-id>provinces</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>roles</from-outcome>
+        <to-activity-id>roles</to-activity-id>
+      </control-flow-case>
+      <control-flow-case>
+        <from-outcome>securityQuestions</from-outcome>
+        <to-activity-id>securityQuestions</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

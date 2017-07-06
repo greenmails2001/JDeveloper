@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="viewcontrollerBundle" value="#{adfBundle['com.vc.web.ViewControllerBundle']}"/>
+  <af:pageTemplate viewId="/templates/initialSettingTemplate.jspx" id="hfbpt1">
+    <f:facet name="center">
+      <af:panelStretchLayout topHeight="30px" styleClass="AFVisualRoot" endWidth="226px" id="hfbpsl1">
+        <f:facet name="center">
+          <af:panelStretchLayout startWidth="244px" endWidth="182px" topHeight="31px" id="hfbpsl2">
+            <f:facet name="center">
+              <af:panelStretchLayout startWidth="215px" topHeight="67px" id="hfbpsl3">
+                <f:facet name="center">
+                  <af:panelGroupLayout layout="vertical" inlineStyle="padding:3%;" id="hfbpgl1">
+                    <af:spacer width="10" height="15" id="hfbs1"/>
+                    <af:outputLabel value="Hieu chinh gia tri tham so he thong"
+                                    inlineStyle="font-size:larger; font-weight:bold;" id="hfbol1"/>
+                    <af:spacer width="10" height="10" id="hfbs2"/>
+                    <af:panelGroupLayout layout="vertical" halign="center" id="hfbpgl2">
+                      <af:panelFormLayout maxColumns="1" rows="2" fieldWidth="400" labelWidth="180"
+                                          inlineStyle="padding:2px;" id="hfbpfl1">
+                        <af:panelLabelAndMessage label="Y nghia su dung cua tham so"
+                                                 shortDesc="#{bindings.description.hints.tooltip}" id="hfbplam1">
+                          <af:outputFormatted value="#{bindings.description.inputValue}" id="hfbof1"/>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="Ma tham so he thong" id="hfbplam2">
+                          <af:outputFormatted value="#{bindings.code.inputValue}" id="hfbof2"/>
+                        </af:panelLabelAndMessage>
+                        <af:inputText value="#{bindings.value.inputValue}" label="Gia tri tham so"
+                                      required="#{bindings.value.hints.mandatory}"
+                                      columns="#{bindings.value.hints.displayWidth}"
+                                      maximumLength="#{bindings.value.hints.precision}"
+                                      shortDesc="#{bindings.value.hints.tooltip}" id="hfbit1">
+                          <f:validator binding="#{bindings.value.validator}"/>
+                        </af:inputText>
+                      </af:panelFormLayout>
+                      <af:panelGroupLayout layout="horizontal" inlineStyle="padding:4px;" id="hfbpgl3">
+                        <af:spacer width="30" height="10" id="hfbs3"/>
+                        <af:commandButton actionListener="#{bindings.First.execute}" text="|&lt;&lt;"
+                                          disabled="#{!bindings.First.enabled}" id="hfbcb1"/>
+                        <af:spacer width="10" height="10" id="hfbs4"/>
+                        <af:commandButton actionListener="#{bindings.Previous.execute}" text="&lt;"
+                                          disabled="#{!bindings.Previous.enabled}" id="hfbcb2"/>
+                        <af:spacer width="10" height="10" id="hfbs5"/>
+                        <af:commandButton actionListener="#{bindings.Next.execute}" text=">"
+                                          disabled="#{!bindings.Next.enabled}" id="hfbcb3"/>
+                        <af:spacer width="10" height="10" id="hfbs6"/>
+                        <af:commandButton actionListener="#{bindings.Last.execute}" text=">>|"
+                                          disabled="#{!bindings.Last.enabled}" id="hfbcb4"/>
+                        <af:spacer width="10" height="10" id="hfbs7"/>
+                        <af:commandButton text="#{viewcontrollerBundle['adf.action.save']}" partialSubmit="true"
+                                          action="#{backing_initialSetting_systemParaHandler.saveEditSystemParaAction}"
+                                          id="hfbcb5"/>
+                        <af:spacer width="10" height="10" id="hfbs8"/>
+                        <af:commandButton text="#{viewcontrollerBundle['adf.action.back']}" action="cancel"
+                                          id="hfbcb6"/>
+                      </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                  </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="top">
+                  <af:panelGroupLayout layout="vertical" inlineStyle="padding:5px;" id="hfbpgl4">
+                    <af:outputLabel value="THAY DOI THAM SO HE THONG" inlineStyle="font-weight:bold;" id="hfbol2"/>
+                    <af:spacer width="10" height="10" id="hfbs9"/>
+                    <af:outputText value="De thay doi gia tri cho cac tham so he thong ban nhan nut chuyen de tim tham so he thong can thay doi . Sau moi lan thay doi 1 tham so he thong , nhan nut ghi lai cac thay doi do . De ro hon ve tham so hien tai ban co the su dung tro giup . Sau khi da thay doi cac tham so he thong ban co the nhan nut tro lai de chuyen ve trang hien thi danh sach cac tham so he thong"
+                                   id="hfbot1"/>
+                  </af:panelGroupLayout>
+                </f:facet>
+              </af:panelStretchLayout>
+            </f:facet>
+            <f:facet name="top">
+              <af:panelGroupLayout inlineStyle="padding:2px;" id="hfbpgl5">
+                <af:outputLabel value="SUA CHUA THAM SO SU DUNG TRONG HE THONG" inlineStyle="font-size:large;"
+                                id="hfbol3"/>
+              </af:panelGroupLayout>
+            </f:facet>
+            <f:facet name="start">
+              <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="hfbpgl6">
+                <af:image source="/resources/images/rob_splash.gif" id="hfbi1"/>
+                <af:spacer width="10" height="10" id="hfbs10"/>
+                <af:outputLabel value="Navigation" inlineStyle="font-weight:bold;" id="hfbol4"/>
+                <af:spacer width="10" height="10" id="hfbs11"/>
+                <af:navigationPane hint="list" id="hfbnp1">
+                  <af:commandNavigationItem text="He thong ung dung" action="appView" id="hfbcni1"/>
+                  <af:commandNavigationItem text="Trang chu" id="hfbcni2"/>
+                </af:navigationPane>
+              </af:panelGroupLayout>
+            </f:facet>
+          </af:panelStretchLayout>
+        </f:facet>
+        <f:facet name="end">
+          <af:panelGroupLayout layout="vertical" inlineStyle="padding:3%;" id="hfbpgl7">
+            <af:image shortDesc="help" source="/resources/images/help1.jpg" id="hfbi2"/>
+            <af:spacer width="10" height="10" id="hfbs12"/>
+            <af:panelGroupLayout layout="vertical" inlineStyle="padding:2%;" id="hfbpgl8">
+              <af:outputLabel value="Tham so he thong" inlineStyle="font-weight:bold;" id="hfbol5"/>
+              <af:spacer width="10" height="10" id="hfbs13"/>
+              <af:navigationPane hint="list" id="hfbnp2">
+                <af:commandNavigationItem text="Tham so he thong la gi ?" id="hfbcni3"/>
+                <af:commandNavigationItem text="Pham vi cac tham so he thong ?" id="hfbcni4"/>
+                <af:commandNavigationItem text="Cac vi du su dung tham so he thong" id="hfbcni5"/>
+              </af:navigationPane>
+            </af:panelGroupLayout>
+          </af:panelGroupLayout>
+        </f:facet>
+      </af:panelStretchLayout>
+    </f:facet>
+    <f:facet name="navFacet"/>
+  </af:pageTemplate>
+</jsp:root>

@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core" xmlns:trh="http://myfaces.apache.org/trinidad/html"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="viewcontrollerBundle" value="#{adfBundle['com.vc.web.ViewControllerBundle']}"/>
+  <af:panelStretchLayout styleClass="AFVisualRoot" topHeight="124px" id="soepsl1">
+    <f:facet name="center">
+      <af:panelSplitter splitterPosition="212" id="soeps1">
+        <f:facet name="first">
+          <af:panelAccordion id="soepa1">
+            <af:showDetailItem text="#{viewcontrollerBundle['sas.order.helpOrder']}" id="soesdi1">
+              <af:panelList id="soepl1">
+                <af:outputText value="Mo gio hang cua ban" id="soeot1"/>
+                <af:outputText value="Keo bieu tuong ung dung perp tha vao gio hang" id="soeot2"/>
+                <af:outputText value="Nhan nut mua hang de mua cac ung dung co trong gio hang cua ban" id="soeot3"/>
+                <af:outputText value="Cac thoi han su dung cua cac ung dung trong dieu khoan mua cua ban co the sua doi sau khi ban chap nhan mua"
+                               id="soeot4"/>
+              </af:panelList>
+            </af:showDetailItem>
+            <af:showDetailItem text="#{viewcontrollerBundle['sas.order.yourShoppingCart']}" id="soesdi2">
+              <af:toolbar id="soet1">
+                <af:commandButton text="#{viewcontrollerBundle['pages.fragments.sasAccount.shoppingSas.createSubscription.acceptShoppingCart']}" partialSubmit="true" id="acceptShoppingCart"
+                                  action="#{backing_shoppingSas_shoppingCartHandler.acceptShoppingCartAction}"/>
+                <af:commandButton text="#{viewcontrollerBundle['pages.fragments.sasAccount.shoppingSas.createSubscription.cancelAllShoppingCart']}" partialSubmit="true" id="clearShoppingCart"
+                                  action="#{backing_shoppingSas_shoppingCartHandler.clearShoppingCartAction}"/>
+              </af:toolbar>
+              <af:table value="#{backing_shoppingSas_shoppingCartHandler.spaOrderList}" var="row"
+                        columnStretching="last" width="100%" partialTriggers="clearShoppingCart acceptShoppingCart"
+                        binding="#{backing_shoppingSas_shoppingCartHandler.shoppingCartTable}" id="soet2">
+                <af:column sortable="false" headerText="#{viewcontrollerBundle['field.servicePackages.packageCode']}" width="66"
+                           id="soec1">
+                  <af:image source="/resources/images/product.jpg" id="soei1"/>
+                </af:column>
+                <af:column sortable="false" headerText="#{viewcontrollerBundle['field.servicePackages.packageName']}" noWrap="false" width="123"
+                           id="soec2">
+                  <af:outputText value="#{row.packageName}" id="soeot5"/>
+                </af:column>
+              </af:table>
+              <af:dropTarget dropListener="#{backing_shoppingSas_shoppingCartHandler.shoppingCartDropListener}">
+                <af:dataFlavor flavorClass="java.lang.String"/>
+              </af:dropTarget>
+            </af:showDetailItem>
+          </af:panelAccordion>
+        </f:facet>
+        <f:facet name="second">
+          <af:panelTabbed id="soept1">
+            <af:showDetailItem text="#{viewcontrollerBundle['sas.order.packageListTitle']}" id="soesdi3">
+              <af:panelCollection inlineStyle="width:100%; height:100%;" id="soepc1">
+                <f:facet name="menus"/>
+                <f:facet name="statusbar"/>
+                <af:table value="#{bindings.ServicePackages.collectionModel}" var="row"
+                          rows="#{bindings.ServicePackages.rangeSize}"
+                          emptyText="#{bindings.ServicePackages.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                          fetchSize="#{bindings.ServicePackages.rangeSize}"
+                          selectedRowKeys="#{bindings.ServicePackages.collectionModel.selectedRow}"
+                          selectionListener="#{bindings.ServicePackages.collectionModel.makeCurrent}"
+                          rowSelection="single" binding="#{backing_shoppingSas_shoppingCartHandler.table}" id="soet3">
+                  <af:column sortProperty="spaId" sortable="true"
+                             headerText="#{viewcontrollerBundle['pages.fragments.sasAccount.shoppingSas.createSubscription.select']}"
+                             align="center" id="soec3">
+                    <af:selectBooleanCheckbox valueChangeListener="#{backing_shoppingSas_shoppingCartHandler.selectProductCheckChangeListener}"
+                                              id="soesbc1"/>
+                  </af:column>
+                  <af:column sortProperty="spaId" sortable="true" headerText="#{viewcontrollerBundle['field.servicePackages.spaId']}"
+                             width="77" id="soec4">
+                    <af:image source="/resources/images/product.jpg" id="soei2">
+                      <af:clientAttribute name="packageCode" value="#{row.packageCode}"/>
+                      <af:attributeDragSource attribute="packageCode"/>
+                    </af:image>
+                  </af:column>
+                  <af:column sortProperty="packageCode" sortable="true"
+                             headerText="#{viewcontrollerBundle['field.servicePackages.packageCode']}" width="148"
+                             id="soec5">
+                    <af:outputText value="#{row.packageCode}" id="soeot6"/>
+                  </af:column>
+                  <af:column sortProperty="packageName" sortable="true"
+                             headerText="#{viewcontrollerBundle['field.servicePackages.packageName']}" width="106"
+                             id="soec6">
+                    <af:outputText value="#{row.packageName}" id="soeot7"/>
+                  </af:column>
+                  <af:column sortProperty="seriveTime" sortable="true"
+                             headerText="#{viewcontrollerBundle['field.servicePackages.serviceTime']}" width="106"
+                             id="soec7">
+                    <af:outputText value="#{row.seriveTime}" id="soeot8">
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.ServicePackages.hints.seriveTime.format}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column sortProperty="serviceType" sortable="true"
+                             headerText="#{viewcontrollerBundle['field.servicePackages.serviceType']}" width="106"
+                             id="soec8">
+                    <af:outputText value="#{row.serviceType}" id="soeot9"/>
+                  </af:column>
+                  <af:column sortProperty="unitPrice" sortable="true"
+                             headerText="#{viewcontrollerBundle['field.servicePackages.unitPrice']}" width="106"
+                             id="soec9">
+                    <af:outputText value="#{row.unitPrice}" id="soeot10">
+                      <af:convertNumber groupingUsed="false"
+                                        pattern="#{bindings.ServicePackages.hints.unitPrice.format}"/>
+                    </af:outputText>
+                  </af:column>
+                  <af:column sortProperty="description" sortable="true" 
+                             headerText="#{viewcontrollerBundle['field.servicePackages.description']}" width="250" align="left"
+                             id="soec10">
+                    <af:outputText value="#{row.description}" id="soeot11"/>
+                  </af:column>
+                </af:table>
+                <f:facet name="toolbar"/>
+              </af:panelCollection>
+            </af:showDetailItem>
+          </af:panelTabbed>
+        </f:facet>
+      </af:panelSplitter>
+    </f:facet>
+    <f:facet name="top">
+      <af:panelGroupLayout layout="vertical" valign="top" id="soepgl1">
+        <af:toolbox id="header2ToolBox" inlineStyle="padding:2px;">
+          <trh:tableLayout width="100%" id="soetl1">
+            <trh:rowLayout id="soerl1">
+              <trh:cellFormat halign="left" id="soecf1">
+                <af:panelGroupLayout layout="horizontal" id="soepgl2">
+                  <af:image source="/resources/images/erp.gif" id="soei3"/>
+                  <af:spacer width="10" height="10" id="soes1"/>
+                  <af:image source="/resources/images/shopping.gif" id="soei4"/>
+                </af:panelGroupLayout>
+              </trh:cellFormat>
+              <trh:cellFormat halign="right" valign="top" id="soecf2">
+                <af:panelGroupLayout halign="right" layout="horizontal" inlineStyle="padding:2px;" id="soepgl3">
+                  <af:navigationPane hint="bar" id="soenp1">
+                    <af:commandNavigationItem text="#{viewcontrollerBundle['pages.fragments.sasAccount.shoppingSas.nav.signin']}" action="login"
+                                              id="soecni1"/>
+                    <af:commandNavigationItem text="#{viewcontrollerBundle['pages.fragments.sasAccount.shoppingSas.nav.myProduct']}" action="subscriptionList"
+                                              id="soecni2"/>
+                  </af:navigationPane>
+                </af:panelGroupLayout>
+              </trh:cellFormat>
+            </trh:rowLayout>
+          </trh:tableLayout>
+        </af:toolbox>
+        <af:outputLabel value="#{viewcontrollerBundle['pages.fragments.sasAccount.shoppingSas.createSubscription.title1']}" inlineStyle="font-size:large;"
+                        id="soeol1"/>
+        <af:panelGroupLayout layout="horizontal" inlineStyle="padding:2px;" id="soepgl4">
+          <af:outputLabel value="#{viewcontrollerBundle['pages.fragments.sasAccount.shoppingSas.createSubscription.currentAccount']}"
+                          inlineStyle="font-size:medium;" id="soeol2"/>
+          <af:outputLabel id="soeol3"/>
+          <af:outputLabel value="#{backing_sasSessionLogin.userName}" inlineStyle="font-size:medium;" id="soeol4"/>
+        </af:panelGroupLayout>
+      </af:panelGroupLayout>
+    </f:facet>
+  </af:panelStretchLayout>
+</jsp:root>

@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core" xmlns:trh="http://myfaces.apache.org/trinidad/html"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="viewcontrollerBundle" value="#{adfBundle['com.vc.web.ViewControllerBundle']}"/>
+  <af:panelStretchLayout styleClass="AFVisualRoot" topHeight="42px" id="kdmpsl1">
+    <f:facet name="center">
+      <af:panelGroupLayout layout="scroll" id="kdmpgl1">
+        <af:panelBorderLayout id="kdmpbl1">
+          <f:facet name="top">
+            <af:panelGroupLayout layout="vertical" inlineStyle="padding:4px;" id="kdmpgl2">
+              <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="kdmpgl3">
+                <af:outputLabel value="#{viewcontrollerBundle['pages.fragments.sasAccount.shoppingSas.subscriptionList.title1']}"
+                                inlineStyle="font-size:large;" id="kdmol1"/>
+              </af:panelGroupLayout>
+              <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="kdmpgl4">
+                <af:panelGroupLayout layout="horizontal" inlineStyle="font-size:medium;" id="kdmpgl5">
+                  <af:activeOutputText value="#{viewcontrollerBundle['field.accounts.organizationName']}" id="kdmaot1"/>
+                  <af:activeOutputText value=":" id="kdmaot2"/>
+                  <af:activeOutputText value="#{bindings.organizationName.inputValue}" id="kdmaot3"/>
+                </af:panelGroupLayout>
+                <af:panelGroupLayout layout="horizontal" inlineStyle="font-size:medium;" id="kdmpgl6">
+                  <af:activeOutputText value="#{viewcontrollerBundle['field.accounts.fullName']}" id="kdmaot4"/>
+                  <af:activeOutputText value=":" id="kdmaot5"/>
+                  <af:activeOutputText value="#{bindings.email.inputValue}" id="kdmaot6"/>
+                </af:panelGroupLayout>
+                <af:panelGroupLayout layout="horizontal" inlineStyle="font-size:medium;" id="kdmpgl7">
+                  <af:activeOutputText value="#{viewcontrollerBundle['field.accounts.userName']}" id="kdmaot7"/>
+                  <af:activeOutputText value=":" id="kdmaot8"/>
+                  <af:activeOutputText value="#{bindings.userName.inputValue}" id="kdmaot9"/>
+                </af:panelGroupLayout>
+                <af:panelGroupLayout layout="horizontal" inlineStyle="font-size:medium;" id="kdmpgl8">
+                  <af:activeOutputText value="Email" id="kdmaot10"/>
+                  <af:activeOutputText value=":" id="kdmaot11"/>
+                  <af:activeOutputText value="#{bindings.email.inputValue}" id="kdmaot12"/>
+                </af:panelGroupLayout>
+              </af:panelGroupLayout>
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="bottom"/>
+        </af:panelBorderLayout>
+      </af:panelGroupLayout>
+    </f:facet>
+    <f:facet name="top">
+      <af:toolbox id="header2ToolBox" inlineStyle="padding:2px;">
+        <trh:tableLayout width="100%" id="kdmtl1">
+          <trh:rowLayout id="kdmrl1">
+            <trh:cellFormat halign="left" id="kdmcf1">
+              <af:panelGroupLayout layout="horizontal" id="kdmpgl9">
+                <af:image source="/resources/images/my-service.gif" id="kdmi1"/>
+              </af:panelGroupLayout>
+            </trh:cellFormat>
+            <trh:cellFormat halign="right" id="kdmcf2">
+              <af:panelGroupLayout halign="right" layout="horizontal" id="kdmpgl10">
+                <af:navigationPane hint="bar" id="kdmnp1">
+                  <af:commandNavigationItem text="#{viewcontrollerBundle['pages.fragments.sasAccount.shoppingSas.nav.signin']}" action="login"
+                                            id="kdmcni1"/>
+                  <af:commandNavigationItem text="#{viewcontrollerBundle['pages.fragments.sasAccount.shoppingSas.nav.proceducts']}" action="subscriptionList"
+                                            id="kdmcni2"/>
+                </af:navigationPane>
+              </af:panelGroupLayout>
+            </trh:cellFormat>
+          </trh:rowLayout>
+        </trh:tableLayout>
+      </af:toolbox>
+    </f:facet>
+    <f:facet name="bottom">
+      <af:panelStretchLayout topHeight="191px" id="kdmpsl2">
+        <f:facet name="center">
+          <af:panelGroupLayout layout="vertical" inlineStyle="height:81px; padding:3px;" id="kdmpgl11">
+            <trh:tableLayout borderWidth="1" width="100%" id="kdmtl2">
+              <trh:rowLayout id="kdmrl2">
+                <trh:cellFormat id="kdmcf3"/>
+              </trh:rowLayout>
+              <trh:rowLayout id="kdmrl3">
+                <trh:cellFormat id="kdmcf4">
+                  <af:spacer width="10" height="10" id="kdms1"/>
+                </trh:cellFormat>
+              </trh:rowLayout>
+              <trh:rowLayout id="kdmrl4">
+                <trh:cellFormat id="kdmcf5">
+                  <af:panelGroupLayout layout="horizontal" inlineStyle="font-size:medium;" id="kdmpgl12"/>
+                </trh:cellFormat>
+              </trh:rowLayout>
+              <trh:rowLayout id="kdmrl5">
+                <trh:cellFormat id="kdmcf6">
+                  <af:panelGroupLayout layout="horizontal" inlineStyle="font-size:medium;" id="kdmpgl13">
+                    <af:activeOutputText value="#{viewcontrollerBundle['field.accounts.organizationName']}"
+                                         id="kdmaot13"/>
+                    <af:activeOutputText value="#{bindings.organizationName.inputValue}" id="kdmaot14"/>
+                  </af:panelGroupLayout>
+                </trh:cellFormat>
+              </trh:rowLayout>
+            </trh:tableLayout>
+            <af:panelGroupLayout layout="vertical" id="kdmpgl14"/>
+            <af:panelGroupLayout layout="vertical" id="kdmpgl15">
+              <af:panelFormLayout rows="2" fieldWidth="180" labelWidth="150" labelAlignment="start" id="kdmpfl1">
+                <af:panelLabelAndMessage label="#{viewcontrollerBundle['field.accounts.organizationName']}"
+                                         id="kdmplam1">
+                  <af:outputText value="#{bindings.organizationName.inputValue}" id="kdmot1"/>
+                </af:panelLabelAndMessage>
+                <af:panelLabelAndMessage label="#{viewcontrollerBundle['field.accounts.userName']}" id="kdmplam2">
+                  <af:outputText value="#{bindings.userName.inputValue}" id="kdmot2"/>
+                </af:panelLabelAndMessage>
+                <af:panelLabelAndMessage label="#{viewcontrollerBundle['field.accounts.fullName']}" id="kdmplam3">
+                  <af:outputText value="#{bindings.fullName.inputValue}" id="kdmot3"/>
+                </af:panelLabelAndMessage>
+                <af:panelLabelAndMessage label="Email" id="kdmplam4">
+                  <af:outputText value="#{bindings.email.inputValue}" id="kdmot4"/>
+                </af:panelLabelAndMessage>
+              </af:panelFormLayout>
+            </af:panelGroupLayout>
+          </af:panelGroupLayout>
+        </f:facet>
+      </af:panelStretchLayout>
+    </f:facet>
+  </af:panelStretchLayout>
+</jsp:root>

@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<task-flow-registry xmlns="http://xmlns.oracle.com/adf/controller/rc">
+   <task-flow-descriptor path="META-INF/adfc-config.xml" id="" type="" uses-page-fragments="false" library-internal="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/sasr-admin.xml" id="sasr-admin" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false"/>
+   <task-flow-descriptor path="pages/sasr/sasr002/sas002frag/podmFlow01.xml" id="podmFlow01" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/sasr001.xml" id="sasr001" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false"/>
+   <task-flow-descriptor path="WEB-INF/vbis-user.xml" id="vbis-user" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false">
+      <input-parameter name="rowKey"/>
+   </task-flow-descriptor>
+   <task-flow-descriptor path="WEB-INF/sasr002.xml" id="sasr002" type="task-flow-definition" uses-page-fragments="true" library-internal="false" train="false">
+      <input-parameter name="rowKey"/>
+   </task-flow-descriptor>
+</task-flow-registry>

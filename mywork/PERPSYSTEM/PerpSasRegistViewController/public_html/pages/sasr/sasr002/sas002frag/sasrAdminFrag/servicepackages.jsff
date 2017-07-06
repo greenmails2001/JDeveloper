@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout id="psl1">
+    <f:facet name="center">
+      <af:panelSplitter id="ps1" orientation="vertical" splitterPosition="281">
+        <f:facet name="first">
+          <af:panelBox text="PanelBox1" id="pb1" showHeader="never">
+            <f:facet name="toolbar"/>
+            <af:panelCollection id="pc1">
+              <f:facet name="menus"/>
+              <f:facet name="toolbar"/>
+              <f:facet name="statusbar"/>
+              <af:table value="#{bindings.Sasr002A4ServicePackages.collectionModel}" var="row"
+                        rows="#{bindings.Sasr002A4ServicePackages.rangeSize}"
+                        emptyText="#{bindings.Sasr002A4ServicePackages.viewable ? 'No data to display.' : 'Access Denied.'}"
+                        fetchSize="#{bindings.Sasr002A4ServicePackages.rangeSize}" rowBandingInterval="0" id="t1" displayRow="selected"
+                        rowSelection="single" columnStretching="column:c7" varStatus="var"
+                        selectedRowKeys="#{bindings.Sasr002A4ServicePackages.collectionModel.selectedRow}"
+                        selectionListener="#{bindings.Sasr002A4ServicePackages.collectionModel.makeCurrent}">
+                <af:column sortProperty="PackageCode" sortable="false"
+                           headerText="#{bindings.Sasr002A4ServicePackages.hints.PackageCode.label}" id="c1" width="129">
+                  <af:group id="g1">
+                    <af:image source="/images/PODM_#{row.PackageCode}.png" id="i1"/>
+                    <af:spacer width="10" height="5" id="s1"/>
+                    <af:outputText value="#{row.PackageCode}" id="ot5"
+                                   inlineStyle="color:#FFFFFF;font-size: 16px;padding: 2px 5px;background-color:#0D4988;font-weight: bold;"/>
+                  </af:group>
+                </af:column>
+                <af:column sortProperty="PackageName" sortable="false"
+                           headerText="#{bindings.Sasr002A4ServicePackages.hints.PackageName.label}" id="c2" width="131">
+                  <af:outputText value="#{row.PackageName}" id="ot8"/>
+                </af:column>
+                <af:column sortProperty="Description" sortable="false"
+                           headerText="#{bindings.Sasr002A4ServicePackages.hints.Description.label}" id="c7" noWrap="false" width="570">
+                  <af:outputText value="#{row.Description}" id="ot3" truncateAt="500"/>
+                </af:column>
+                <af:column sortProperty="Enabled" sortable="false" headerText="#{bindings.Sasr002A4ServicePackages.hints.Enabled.label}"
+                           id="c3" align="center" width="90">
+                  <af:selectBooleanCheckbox label="Label 1" id="sbc1" value="#{row.Enabled=='Y'}"/>
+                </af:column>
+              </af:table>
+            </af:panelCollection>
+          </af:panelBox>
+        </f:facet>
+        <f:facet name="second">
+          <af:panelBox text="PanelBox2" id="pb2" showHeader="never" partialTriggers="pc1:t1">
+            <af:spacer width="10" height="10" id="s2"/>            
+            <af:panelGroupLayout id="pgl1" layout="scroll">
+              <af:panelBorderLayout id="pbl1">
+                <af:panelGroupLayout id="pgl2" layout="horizontal" valign="top">
+                  <af:panelFormLayout id="pfl1">
+                    <af:inputText value="#{bindings.PackageCode.inputValue}" label="#{bindings.PackageCode.hints.label}"
+                                  required="#{bindings.PackageCode.hints.mandatory}" columns="#{bindings.PackageCode.hints.displayWidth}"
+                                  maximumLength="#{bindings.PackageCode.hints.precision}" shortDesc="#{bindings.PackageCode.hints.tooltip}"
+                                  id="it7">
+                      <f:validator binding="#{bindings.PackageCode.validator}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.PackageName.inputValue}" label="#{bindings.PackageName.hints.label}"
+                                  required="#{bindings.PackageName.hints.mandatory}" maximumLength="#{bindings.PackageName.hints.precision}"
+                                  shortDesc="#{bindings.PackageName.hints.tooltip}" id="it6" columns="50">
+                      <f:validator binding="#{bindings.PackageName.validator}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.ServiceType.inputValue}" label="#{bindings.ServiceType.hints.label}"
+                                  required="#{bindings.ServiceType.hints.mandatory}" maximumLength="#{bindings.ServiceType.hints.precision}"
+                                  shortDesc="#{bindings.ServiceType.hints.tooltip}" id="it8" rows="1" columns="20">
+                      <f:validator binding="#{bindings.ServiceType.validator}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.UnitPrice.inputValue}" label="#{bindings.UnitPrice.hints.label}"
+                                  required="#{bindings.UnitPrice.hints.mandatory}" columns="#{bindings.UnitPrice.hints.displayWidth}"
+                                  maximumLength="#{bindings.UnitPrice.hints.precision}" shortDesc="#{bindings.UnitPrice.hints.tooltip}"
+                                  id="it3">
+                      <f:validator binding="#{bindings.UnitPrice.validator}"/>
+                      <af:convertNumber groupingUsed="true" type="number" pattern="#{bindings.UnitPrice.format}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.NumOfServers.inputValue}" label="#{bindings.NumOfServers.hints.label}"
+                                  required="#{bindings.NumOfServers.hints.mandatory}" columns="#{bindings.NumOfServers.hints.displayWidth}"
+                                  maximumLength="#{bindings.NumOfServers.hints.precision}"
+                                  shortDesc="#{bindings.NumOfServers.hints.tooltip}" id="it5">
+                      <f:validator binding="#{bindings.NumOfServers.validator}"/>
+                      <af:convertNumber groupingUsed="true" type="number" pattern="#{bindings.NumOfServers.format}"/>
+                    </af:inputText>
+                    <af:inputText value="#{bindings.SeriveTime.inputValue}" label="#{bindings.SeriveTime.hints.label}"
+                                  required="#{bindings.SeriveTime.hints.mandatory}" columns="#{bindings.SeriveTime.hints.displayWidth}"
+                                  maximumLength="#{bindings.SeriveTime.hints.precision}" shortDesc="#{bindings.SeriveTime.hints.tooltip}"
+                                  id="it4">
+                      <f:validator binding="#{bindings.SeriveTime.validator}"/>
+                      <af:convertNumber groupingUsed="true" type="number"  pattern="#{bindings.SeriveTime.format}"/>
+                    </af:inputText>
+                    <af:selectOneChoice value="#{bindings.Enabled.inputValue}" label="#{bindings.Enabled.label}"
+                                        required="#{bindings.Enabled.hints.mandatory}" shortDesc="#{bindings.Enabled.hints.tooltip}"
+                                        id="soc1">
+                      <f:selectItems value="#{bindings.Enabled.items}" id="si1"/>
+                    </af:selectOneChoice>
+                  </af:panelFormLayout>
+                  <af:spacer width="10" height="10" id="s3"/>
+                  <af:panelFormLayout id="pfl2">                   
+                    <af:richTextEditor value="#{bindings.Description.inputValue}"
+                                       required="#{bindings.Description.hints.mandatory}" columns="85"
+                                       shortDesc="#{bindings.Description.hints.tooltip}" id="it2"
+                                       inlineStyle="font-family:Verdana, Arial, Helvetica, sans-serif; font-size:small;" rows="6" label="#{bindings.Description.hints.label}" editMode="source"
+                                       toolboxLayout="custom"/>
+                  </af:panelFormLayout>
+                </af:panelGroupLayout>
+                <f:facet name="bottom">
+                  <af:group id="g2">
+                    <af:separator id="s4"/>
+                    <af:commandButton text="Cập nhật" id="cb1"/>
+                    <af:spacer width="10" height="10" id="s6"/>
+                    <af:commandButton actionListener="#{bindings.Commit.execute}" text=" Lưu " disabled="#{!bindings.Commit.enabled}"
+                                      id="cb4"/>
+                    <af:spacer width="10" height="10" id="s7"/>
+                    <af:commandButton actionListener="#{bindings.Rollback.execute}" text="Hủy bỏ" disabled="#{!bindings.Rollback.enabled}"
+                                      immediate="true" id="cb5">
+                      <af:resetActionListener/>
+                    </af:commandButton>
+                  </af:group>
+                </f:facet>
+              </af:panelBorderLayout>
+            </af:panelGroupLayout>
+          </af:panelBox>
+        </f:facet>
+      </af:panelSplitter>
+    </f:facet>
+  </af:panelStretchLayout>
+</jsp:root>

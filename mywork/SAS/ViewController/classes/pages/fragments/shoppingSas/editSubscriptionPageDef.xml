@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.1.51.56" id="editSubscriptionPageDef"
+                Package="pages.fragments.shoppingSas">
+  <parameters/>
+  <executables>
+    <methodIterator Binds="querySubscriptionsFindByAccId.result"
+                    DataControl="SASFacadeLocal" RangeSize="25"
+                    BeanClass="com.vc.web.ejb.sas.entities.Subscriptions"
+                    id="querySubscriptionsFindByAccIdIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="querySubscriptionsFindByAccId" RequiresUpdateModel="true"
+                  Action="invokeMethod"
+                  MethodName="querySubscriptionsFindByAccId"
+                  IsViewObjectMethod="false" DataControl="SASFacadeLocal"
+                  InstanceName="SASFacadeLocal.dataProvider"
+                  ReturnName="SASFacadeLocal.methodResults.querySubscriptionsFindByAccId_SASFacadeLocal_dataProvider_querySubscriptionsFindByAccId_result">
+      <NamedData NDName="accId"
+                 NDValue="${backing_sasSessionLogin.accId}"
+                 NDType="java.lang.Long"/>
+    </methodAction>
+    <attributeValues IterBinding="querySubscriptionsFindByAccIdIterator"
+                     id="subscribeDate">
+      <AttrNames>
+        <Item Value="subscribeDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="querySubscriptionsFindByAccIdIterator"
+                     id="startDate">
+      <AttrNames>
+        <Item Value="startDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="querySubscriptionsFindByAccIdIterator"
+                     id="endDate">
+      <AttrNames>
+        <Item Value="endDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="querySubscriptionsFindByAccIdIterator"
+                     id="quantity">
+      <AttrNames>
+        <Item Value="quantity"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="querySubscriptionsFindByAccIdIterator"
+                     id="status">
+      <AttrNames>
+        <Item Value="status"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="querySubscriptionsFindByAccIdIterator"
+                     id="appUrl">
+      <AttrNames>
+        <Item Value="appUrl"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

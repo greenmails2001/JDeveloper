@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelCollection id="pc1">
+    <f:facet name="menus"/>
+    <f:facet name="toolbar">
+      <af:toolbar id="t2"/>
+    </f:facet>
+    <f:facet name="statusbar"/>
+    <af:table value="#{bindings.AppLogins1.collectionModel}" var="row"
+              rows="#{bindings.AppLogins1.rangeSize}"
+              emptyText="#{bindings.AppLogins1.viewable ? 'No data to display.' : 'Access Denied.'}"
+              fetchSize="#{bindings.AppLogins1.rangeSize}"
+              rowBandingInterval="0"
+              selectedRowKeys="#{bindings.AppLogins1.collectionModel.selectedRow}"
+              selectionListener="#{bindings.AppLogins1.collectionModel.makeCurrent}"
+              rowSelection="single" id="t1" columnStretching="last">
+      <af:column sortProperty="UserName" sortable="true"
+                 headerText="#{bindings.AppLogins1.hints.UserName.label}"
+                 id="c6" width="115">
+        <af:outputText value="#{row.UserName}" id="ot2"/>
+      </af:column>
+      <af:column sortProperty="LoginAt" sortable="true"
+                 headerText="#{bindings.AppLogins1.hints.LoginAt.label}"
+                 id="c7" width="160">
+        <af:outputText value="#{row.LoginAt}" id="ot6">
+          <af:convertDateTime pattern="#{bindings.AppLogins1.hints.LoginAt.format}"/>
+        </af:outputText>
+      </af:column>
+      <af:column sortProperty="IpAddress" sortable="true"
+                 headerText="#{bindings.AppLogins1.hints.IpAddress.label}"
+                 id="c4" width="144">
+        <af:outputText value="#{row.IpAddress}" id="ot4"/>
+      </af:column>
+      <af:column sortProperty="Country" sortable="true"
+                 headerText="#{bindings.AppLogins1.hints.Country.label}"
+                 id="c5" width="139">
+        <af:outputText value="#{row.Country}" id="ot7"/>
+      </af:column>
+      <af:column sortProperty="Browser" sortable="true"
+                 headerText="#{bindings.AppLogins1.hints.Browser.label}"
+                 id="c1" width="465">
+        <af:outputText value="#{row.Browser}" id="ot3"/>
+      </af:column>
+    </af:table>
+  </af:panelCollection>
+</jsp:root>

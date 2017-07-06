@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.1.51.56" id="ounSystemParaPageDef"
+                Package="pages.fragments.initialSetting">
+  <parameters/>
+  <executables>
+    <methodIterator Binds="getSpaOunList.result"
+                    DataControl="DynamicPERPFacadeLocal" RangeSize="25"
+                    BeanClass="com.vc.web.SpaOun" id="getSpaOunListIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="getSpaOunList" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="getSpaOunList"
+                  IsViewObjectMethod="false"
+                  DataControl="DynamicPERPFacadeLocal"
+                  InstanceName="DynamicPERPFacadeLocal.dataProvider"
+                  ReturnName="DynamicPERPFacadeLocal.methodResults.getSpaOunList_DynamicPERPFacadeLocal_dataProvider_getSpaOunList_result">
+      <NamedData NDName="psi"
+                 NDValue="${backing_perpSessionLogin.appUserInfo.perpSystemInfo}"
+                 NDType="com.vc.web.PerpSystemInfo"/>
+    </methodAction>
+    <attributeValues IterBinding="getSpaOunListIterator" id="coName">
+      <AttrNames>
+        <Item Value="coName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="getSpaOunListIterator" id="spaIdCoLogo">
+      <AttrNames>
+        <Item Value="spaIdCoLogo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="getSpaOunListIterator" id="coAddress">
+      <AttrNames>
+        <Item Value="coAddress"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="getSpaOunListIterator" id="coLogo">
+      <AttrNames>
+        <Item Value="coLogo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="getSpaOunListIterator" id="coTaxNo">
+      <AttrNames>
+        <Item Value="coTaxNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="getSpaOunListIterator" id="coTaxForm">
+      <AttrNames>
+        <Item Value="coTaxForm"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="getSpaOunListIterator" id="coTelNo">
+      <AttrNames>
+        <Item Value="coTelNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="getSpaOunListIterator" id="coFaxNo">
+      <AttrNames>
+        <Item Value="coFaxNo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="getSpaOunListIterator" id="coLogoDesc">
+      <AttrNames>
+        <Item Value="coLogoDesc"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="getSpaOunListIterator" id="coTaxFormDesc">
+      <AttrNames>
+        <Item Value="coTaxFormDesc"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="getSpaOunListIterator" id="coTelNoDesc">
+      <AttrNames>
+        <Item Value="coTelNoDesc"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="getSpaOunListIterator" id="ounOunNumber">
+      <AttrNames>
+        <Item Value="ounOunNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="getSpaOunListIterator" id="ounOunName">
+      <AttrNames>
+        <Item Value="ounOunName"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

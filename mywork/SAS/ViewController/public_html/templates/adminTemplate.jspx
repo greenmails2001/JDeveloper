@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:trh="http://myfaces.apache.org/trinidad/html">
+  <jsp:directive.page contentType="text/html;charset=windows-1252"/>
+  <af:pageTemplateDef var="attrs">
+    <af:xmlContent>
+      <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+        <display-name>
+          adminTemplate
+        </display-name>
+        <facet>
+          <facet-name>
+            center
+          </facet-name>
+        </facet>
+        <facet>
+          <facet-name>
+            popupFacet
+          </facet-name>
+        </facet>
+        <attribute>
+          <attribute-name>
+            topFacetHeight
+          </attribute-name>
+          <attribute-class>
+            int
+          </attribute-class>
+          <default-value>
+            70
+          </default-value>
+        </attribute>
+      </component>
+    </af:xmlContent>
+    <af:form usesUpload="true" id="pt_f1">
+      <af:facetRef facetName="popupFacet"/>
+      <af:panelStretchLayout styleClass="AFVisualRoot" theme="dark" bottomHeight="22px" id="pt_psl1">
+        <f:facet name="bottom">
+          <af:panelGroupLayout layout="vertical" id="pt_pgl1">
+            <trh:tableLayout width="100%" id="pt_tl1">
+              <trh:rowLayout id="pt_rl1">
+                <trh:cellFormat id="pt_cf1">
+                  <af:outputText value="@Copyright vinhcuu.com.vn" id="pt_ot1"/>
+                  <af:popup binding="#{backing_quickHelpManager.quickHelpPopup}" id="quickHelpPopup" contentDelivery="immediate">
+                    <af:dialog id="sampleDialog" title="Quick Help" type="ok" binding="#{backing_quickHelpManager.quickHelpDialog}">
+                      <af:panelSplitter splitterPosition="231" inlineStyle="width:750px;" id="pt_ps1">
+                        <f:facet name="first">
+                          <af:panelAccordion id="pt_pa1">
+                            <af:showDetailItem text="Help Index" id="pt_sdi1">
+                              <af:panelCollection binding="#{backing_quickHelpManager.treePanelCollection}" id="pt_pc1">
+                                <f:facet name="menus"/>
+                                <f:facet name="toolbar"/>
+                                <f:facet name="statusbar"/>
+                                <af:tree value="#{bindings.HelpDesks.treeModel}" var="node"
+                                         selectionListener="#{bindings.HelpDesks.treeModel.makeCurrent}" rowSelection="single"
+                                         id="pt_t1">
+                                  <f:facet name="nodeStamp">
+                                    <af:outputText value="#{node.title}" id="pt_ot2"/>
+                                  </f:facet>
+                                </af:tree>
+                              </af:panelCollection>
+                            </af:showDetailItem>
+                            <af:showDetailItem text="Sample View" id="pt_sdi2"/>
+                          </af:panelAccordion>
+                        </f:facet>
+                        <f:facet name="second">
+                          <af:group id="pt_g1">
+                            <af:image source="/resources/images/perpOverview.gif" id="pt_i1"/>
+                          </af:group>
+                        </f:facet>
+                      </af:panelSplitter>
+                    </af:dialog>
+                  </af:popup>
+                </trh:cellFormat>
+                <trh:cellFormat styleClass="PanelPagePrivacy" width="200" id="pt_cf2">
+                  <af:outputText value="2007-2008" id="pt_ot3"/>
+                  <af:spacer width="10" id="pt_s1"/>
+                  <af:outputText value="|" id="pt_ot4"/>
+                  <af:spacer width="10" id="pt_s2"/>
+                  <af:outputText value="Perp Service System" id="pt_ot5"/>
+                </trh:cellFormat>
+              </trh:rowLayout>
+            </trh:tableLayout>
+          </af:panelGroupLayout>
+        </f:facet>
+        <f:facet name="center">
+          <af:panelSplitter orientation="vertical" splitterPosition="28" id="pt_ps2">
+            <f:facet name="first">
+              <af:panelGroupLayout layout="vertical" id="pt_pgl2">
+                <trh:tableLayout width="100%" id="pt_tl2">
+                  <trh:rowLayout id="pt_rl2">
+                    <trh:cellFormat styleClass="AFBranding" id="pt_cf3">
+                      <af:panelGroupLayout layout="horizontal" shortDesc="branding" id="pt_pgl3">
+                        <af:image shortDesc="vinh cuu icon" source="/resources/images/icon.gif" id="pt_i2"/>
+                        <af:outputText value="Perp System" id="pt_ot6"/>
+                      </af:panelGroupLayout>
+                    </trh:cellFormat>
+                    <trh:cellFormat id="pt_cf4">
+                      <af:outputText value=" " id="pt_ot7"/>
+                    </trh:cellFormat>
+                    <trh:cellFormat styleClass="DemoIndexNavigationGlobal" halign="right" id="pt_cf5">
+                      <af:navigationPane hint="buttons" id="pt_np1">
+                        <af:commandNavigationItem text="#{viewcontrollerBundle['sas.global.navigator.home']}" action="home"
+                                                  id="pt_cni1"/>
+                        <af:commandNavigationItem text="#{viewcontrollerBundle['sas.global.navigator.adminHome']}" action="adminHome"
+                                                  id="pt_cni2"/>
+                        <af:commandNavigationItem text="#{viewcontrollerBundle['sas.global.navigator.saleAdmin']}" action="saleAdmin"
+                                                  id="pt_cni3"/>
+                        <af:commandNavigationItem text="#{viewcontrollerBundle['sas.global.navigator.helpAdmin']}" action="helpAdmin"
+                                                  id="pt_cni4"/>
+                        <af:commandNavigationItem text="#{viewcontrollerBundle['sas.global.navigator.newsAdmin']}" action="newsAdmin"
+                                                  id="pt_cni5"/>
+                      </af:navigationPane>
+                    </trh:cellFormat>
+                    <trh:cellFormat width="30" id="pt_cf6">
+                      <af:panelGroupLayout layout="vertical" id="pt_pgl4">
+                        <af:spacer height="3" id="pt_s3"/>
+                        <af:statusIndicator id="pt_si1"/>
+                      </af:panelGroupLayout>
+                    </trh:cellFormat>
+                  </trh:rowLayout>
+                </trh:tableLayout>
+              </af:panelGroupLayout>
+            </f:facet>
+            <f:facet name="second">
+              <af:decorativeBox theme="light" id="pt_db1">
+                <f:facet name="center">
+                  <af:panelStretchLayout id="pt_psl2">
+                    <f:facet name="center">
+                      <af:facetRef facetName="center"/>
+                    </f:facet>
+                  </af:panelStretchLayout>
+                </f:facet>
+              </af:decorativeBox>
+            </f:facet>
+          </af:panelSplitter>
+        </f:facet>
+      </af:panelStretchLayout>
+    </af:form>
+  </af:pageTemplateDef>
+</jsp:root>

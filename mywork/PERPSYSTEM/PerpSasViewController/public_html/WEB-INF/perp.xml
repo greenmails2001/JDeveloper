@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="perp">
+    <default-activity id="__19">router1</default-activity>
+    <input-parameter-definition id="__12">
+      <name id="__13">ounId</name>
+      <value>#{pageFlowScope.ounId}</value>
+      <class>oracle.jbo.number.Number</class>
+    </input-parameter-definition>
+    <view id="ounviewer">
+      <page>/pages/perpviewer/webperp/ounviewer.jsff</page>
+    </view>
+    <view id="cceviewer">
+      <page>/pages/perpviewer/webperp/cceviewer.jsff</page>
+      <input-page-parameter>
+        <from-value>#{cceviewer.ounId}</from-value>
+        <to-value>#{pageFlowScope.ounId}</to-value>
+      </input-page-parameter>
+    </view>
+    <router id="router1">
+      <default-outcome>default</default-outcome>
+    </router>
+    <control-flow-rule id="__2">
+      <from-activity-id id="__3">ounviewer</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome id="__6">cceviewer</from-outcome>
+        <to-activity-id id="__5">cceviewer</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__7">
+      <from-activity-id id="__8">cceviewer</from-activity-id>
+      <control-flow-case id="__10">
+        <from-outcome id="__11">back</from-outcome>
+        <to-activity-id id="__9">ounviewer</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__14">
+      <from-activity-id id="__15">router1</from-activity-id>
+      <control-flow-case id="__17">
+        <from-outcome id="__18">default</from-outcome>
+        <to-activity-id id="__16">ounviewer</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

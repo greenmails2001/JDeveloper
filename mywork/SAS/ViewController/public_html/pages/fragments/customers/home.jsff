@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core"
+          xmlns:trh="http://myfaces.apache.org/trinidad/html">
+  <c:set var="viewcontrollerBundle" value="#{adfBundle['com.vc.web.ViewControllerBundle']}"/>
+  <af:panelStretchLayout styleClass="AFVisualRoot" endWidth="339px" topHeight="36px" id="rwxpsl1">
+    <f:facet name="center">
+      <af:panelStretchLayout topHeight="34px" startWidth="201px" id="rwxpsl2">
+        <f:facet name="center">
+          <af:decorativeBox id="rwxdb1">
+            <f:facet name="center">
+              <af:panelStretchLayout topHeight="160px" id="rwxpsl3">
+                <f:facet name="center">
+                  <af:panelStretchLayout endWidth="269px" topHeight="58px" id="rwxpsl4">
+                    <f:facet name="center">
+                      <af:panelGroupLayout layout="horizontal" valign="top" id="rwxpgl1">
+                        <af:panelGroupLayout layout="vertical" inlineStyle="padding:3%; width:250px;" id="rwxpgl2">
+                          <af:outputLabel value="Kinh doanh ban hang" inlineStyle="font-weight:bold;" id="rwxol1"/>
+                          <af:navigationPane hint="list" id="rwxnp1">
+                            <af:commandNavigationItem text="Sfone" action="review" id="rwxcni1"/>
+                            <af:commandNavigationItem text="Vien thong A" id="rwxcni2"/>
+                            <af:commandNavigationItem text="Cong ty xi mang Tafico" id="rwxcni3"/>
+                            <af:commandNavigationItem text="Xi mang Nghi son" id="rwxcni4"/>
+                          </af:navigationPane>
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout layout="vertical" inlineStyle="padding:3%; width:250px;" id="rwxpgl3">
+                          <af:outputLabel value="Thuong mai dien tu" inlineStyle="font-weight:bold;" id="rwxol2"/>
+                          <af:navigationPane hint="list" id="rwxnp2">
+                            <af:commandNavigationItem text="Viettel" id="rwxcni5"/>
+                          </af:navigationPane>
+                          <af:outputLabel value="Phan mem" inlineStyle="font-weight:bold;" id="rwxol3"/>
+                          <af:navigationPane hint="list" id="rwxnp3">
+                            <af:commandNavigationItem text="Vien thong A" id="rwxcni6"/>
+                          </af:navigationPane>
+                        </af:panelGroupLayout>
+                      </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="end">
+                      <af:panelStretchLayout endWidth="13px" id="rwxpsl5">
+                        <f:facet name="center">
+                          <af:panelGroupLayout layout="vertical" id="rwxpgl4">
+                            <af:spacer width="10" height="10" id="rwxs1"/>
+                            <af:panelGroupLayout layout="vertical" id="rwxpgl5">
+                              <af:outputLabel value="PERP THE GIOI CUA THANH CONG" inlineStyle="font-size:larger; font-weight:bold;"
+                                              id="rwxol4"/>
+                            </af:panelGroupLayout>
+                            <af:outputText value="Khach hang cua Pythis hau het danh gia PERP la co tinh doi moi va thanh cong cung cac doanh nghiep su dung ."
+                                           id="rwxot1"/>
+                            <af:spacer width="10" height="10" id="rwxs2"/>
+                            <af:panelGroupLayout layout="vertical" halign="left" id="rwxpgl6"/>
+                            <af:spacer width="10" height="10" id="rwxs3"/>
+                            <af:panelGroupLayout layout="vertical" halign="right" inlineStyle="padding-right:8px;"
+                                                 id="rwxpgl7">
+                              <af:commandLink text="Sua chua thong tin tai khoan"
+                                              action="#{backing_sasAccount_accountCreationHandler.editAccountAction}" partialSubmit="true"
+                                              rendered="#{!backing_sasAccount_sasAccountFlowHandler.sasLogin}"
+                                              id="rwxcl1"/>
+                            </af:panelGroupLayout>
+                          </af:panelGroupLayout>
+                        </f:facet>
+                        <f:facet name="end">
+                          <af:spacer width="10" height="10" id="rwxs4"/>
+                        </f:facet>
+                      </af:panelStretchLayout>
+                    </f:facet>
+                    <f:facet name="top">
+                      <af:decorativeBox id="rwxdb2">
+                        <f:facet name="center">
+                          <af:panelGroupLayout layout="vertical" id="rwxpgl8">
+                            <af:panelGroupLayout layout="vertical" id="rwxpgl9">
+                              <af:outputLabel value="Tim kiem khach hang" inlineStyle="font-size:large;" id="rwxol5"/>
+                            </af:panelGroupLayout>
+                            <af:panelFormLayout maxColumns="4" rows="1" labelWidth="100" id="rwxpfl1">
+                              <f:facet name="footer"/>
+                              <af:inputText label="Nganh nghe" id="rwxit1"/>
+                              <af:inputText label="Giai phap" id="rwxit2"/>
+                              <af:inputText label="Cong nghe" id="rwxit3"/>
+                            </af:panelFormLayout>
+                          </af:panelGroupLayout>
+                        </f:facet>
+                      </af:decorativeBox>
+                    </f:facet>
+                  </af:panelStretchLayout>
+                </f:facet>
+                <f:facet name="top">
+                  <af:panelStretchLayout startWidth="387px" inlineStyle="padding:2px;" id="rwxpsl6">
+                    <f:facet name="start">
+                      <af:panelStretchLayout startWidth="152px" inlineStyle="padding:2%;" id="rwxpsl7">
+                        <f:facet name="center">
+                          <af:panelGroupLayout layout="vertical" id="rwxpgl10">
+                            <af:image source="/resources/images/healthways_logo.gif" id="rwxi1"/>
+                            <af:outputLabel value="Chuan ERP tuong thich voi cac doanh nghiep" inlineStyle="font-weight:bold;"
+                                            id="rwxol6"/>
+                            <af:outputText value="PERP dua doanh nghiep den voi the gioi cua ERP , phu hop voi cac nghiep vu doanh nghiep Viet Nam "
+                                           id="rwxot2"/>
+                            <af:commandLink text="More ..." id="rwxcl2"/>
+                          </af:panelGroupLayout>
+                        </f:facet>
+                        <f:facet name="start">
+                          <af:image source="/resources/images/customer1.png" id="rwxi2"/>
+                        </f:facet>
+                      </af:panelStretchLayout>
+                    </f:facet>
+                    <f:facet name="center">
+                      <af:panelStretchLayout startWidth="156px" inlineStyle="padding:2%;" id="rwxpsl8">
+                        <f:facet name="center">
+                          <af:panelGroupLayout layout="vertical" id="rwxpgl11">
+                            <af:image source="/resources/images/creditdunord_logo.gif" id="rwxi3"/>
+                            <af:outputLabel value="Ho tro toi da tu nha cung cap dich vu"
+                                            inlineStyle="font-weight:bold;" id="rwxol7"/>
+                            <af:outputText value="Vinh cuu cam ket ho tro toi da khach hang su dung dich vu PERP "
+                                           id="rwxot3"/>
+                            <af:commandLink text="More ..." id="rwxcl3"/>
+                          </af:panelGroupLayout>
+                        </f:facet>
+                        <f:facet name="start">
+                          <af:image source="/resources/images/customer2.png" id="rwxi4"/>
+                        </f:facet>
+                      </af:panelStretchLayout>
+                    </f:facet>
+                  </af:panelStretchLayout>
+                </f:facet>
+              </af:panelStretchLayout>
+            </f:facet>
+          </af:decorativeBox>
+        </f:facet>
+        <f:facet name="top">
+          <af:panelGroupLayout layout="vertical" id="rwxpgl12">
+            <af:outputLabel value="TAI KHOAN TRUY NHAP SAS" inlineStyle="font-size:medium;" id="rwxol8"/>
+          </af:panelGroupLayout>
+        </f:facet>
+        <f:facet name="start">
+          <af:panelGroupLayout layout="vertical" id="rwxpgl13">
+            <af:outputLabel value="THANH CONG CUNG ERP" inlineStyle="font-size:larger; font-weight:bold;" id="rwxol9"/>
+            <af:spacer width="10" height="10" id="rwxs5"/>
+            <af:navigationPane hint="list" id="rwxnp4">
+              <af:commandNavigationItem text="Link1" action="appView" id="rwxcni7"/>
+              <af:commandNavigationItem text="Link2"
+                                        action="#{backing_sasAccount_sasAccountFlowHandler.sasLogin2shoppingSasFlow}"
+                                        disabled='#{!backing_sasAccount_sasAccountFlowHandler.sasLogin}' id="rwxcni8"/>
+              <af:commandNavigationItem text="Link 3" id="rwxcni9"/>
+            </af:navigationPane>
+          </af:panelGroupLayout>
+        </f:facet>
+      </af:panelStretchLayout>
+    </f:facet>
+    <f:facet name="top">
+      <af:toolbox id="rwxt1">
+        <trh:tableLayout width="100%" id="rwxtl1">
+          <trh:rowLayout id="rwxrl1">
+            <trh:cellFormat halign="left" id="rwxcf1">
+              <af:panelGroupLayout layout="horizontal" id="rwxpgl14">
+                <af:image source="/resources/images/saslogo.gif" id="rwxi5"/>
+                <af:image source="/resources/images/mission.gif" id="rwxi6"/>
+              </af:panelGroupLayout>
+            </trh:cellFormat>
+            <trh:cellFormat halign="right" id="rwxcf2">
+              <af:panelGroupLayout halign="right" layout="horizontal" id="rwxpgl15">
+                <af:navigationPane hint="bar" id="rwxnp5">
+                  <af:commandNavigationItem text="San pham phan men"
+                                            action="#{backing_sasAccount_sasAccountFlowHandler.sasLogin2shoppingSasFlow}"
+                                            partialSubmit="true"
+                                            disabled='#{!backing_sasAccount_sasAccountFlowHandler.sasLogin}'
+                                            id="rwxcni10"/>
+                </af:navigationPane>
+              </af:panelGroupLayout>
+            </trh:cellFormat>
+          </trh:rowLayout>
+        </trh:tableLayout>
+      </af:toolbox>
+    </f:facet>
+  </af:panelStretchLayout>
+</jsp:root>

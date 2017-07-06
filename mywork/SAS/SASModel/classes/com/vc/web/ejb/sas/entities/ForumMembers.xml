@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.49.49" id="ForumMembers" Package="com.vc.web.ejb.sas.entities"
+          BeanClass="com.vc.web.ejb.sas.entities.ForumMembers" isJavaBased="true">
+  <Attribute Name="email" Type="java.lang.String"/>
+  <Attribute Name="introduction" Type="java.lang.String"/>
+  <Attribute Name="joinDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="locked" Type="java.lang.String"/>
+  <Attribute Name="memberId" Type="java.lang.Long"/>
+  <Attribute Name="password" Type="java.lang.String"/>
+  <Attribute Name="userName" Type="java.lang.String"/>
+  <AccessorAttribute id="image" IsCollection="true" Type="byte[]" CollectionBeanClass="UpdateableCollection">
+    <Attribute Name="element" Type="byte"/>
+  </AccessorAttribute>
+  <AccessorAttribute id="forumMessagesList" IsCollection="true" RemoveMethod="removeForumMessages" AddMethod="addForumMessages"
+                     BeanClass="com.vc.web.ejb.sas.entities.ForumMessages" CollectionBeanClass="UpdateableCollection">
+    <Properties>
+      <Property Name="RemoveMethod" Value="removeForumMessages"/>
+      <Property Name="AddMethod" Value="addForumMessages"/>
+    </Properties>
+  </AccessorAttribute>
+  <MethodAccessor IsCollection="false" Type="com.vc.web.ejb.sas.entities.ForumMessages"
+                  BeanClass="com.vc.web.ejb.sas.entities.ForumMessages" id="addForumMessages" ReturnNodeName="ForumMessages">
+    <ParameterInfo id="forumMessages" Type="com.vc.web.ejb.sas.entities.ForumMessages" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="com.vc.web.ejb.sas.entities.ForumMessages"
+                  BeanClass="com.vc.web.ejb.sas.entities.ForumMessages" id="removeForumMessages" ReturnNodeName="ForumMessages">
+    <ParameterInfo id="forumMessages" Type="com.vc.web.ejb.sas.entities.ForumMessages" isStructured="true"/>
+  </MethodAccessor>
+  <ConstructorMethod IsCollection="true" Type="com.vc.web.ejb.sas.entities.ForumMembers"
+                     BeanClass="com.vc.web.ejb.sas.entities.ForumMembers" id="ForumMembers"/>
+</JavaBean>

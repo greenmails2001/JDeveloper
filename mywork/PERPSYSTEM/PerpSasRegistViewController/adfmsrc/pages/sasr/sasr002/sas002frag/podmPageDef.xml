@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.54.7" id="podmPageDef"
+                Package="pages.sasr.sasr002.sas002frag">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="Sasr002A1ServicePackages" RangeSize="25"
+              DataControl="PerpSasRegistAppModuleDataControl"
+              id="Sasr002A1ServicePackagesIterator"/>
+    <iterator Binds="Sasr002A2Subscriptions" RangeSize="25"
+              DataControl="PerpSasRegistAppModuleDataControl"
+              id="Sasr002A2SubscriptionsIterator"/>
+    <iterator Binds="Sasr002A2ServicePackages" RangeSize="25"
+              DataControl="PerpSasRegistAppModuleDataControl"
+              id="Sasr002A2ServicePackagesIterator"/>
+    <iterator Binds="Sasr002A3ServicePackages" RangeSize="25"
+              DataControl="PerpSasRegistAppModuleDataControl"
+              id="Sasr002A3ServicePackagesIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="Sasr002A1ServicePackagesIterator"
+          id="Sasr002A1ServicePackages">
+      <nodeDefinition DefName="com.perp.sasregistmodel.views.sasr002.Sasr002A1ServicePackages"
+                      Name="Sasr002A1ServicePackages0">
+        <AttrNames>
+          <Item Value="SpaId"/>
+          <Item Value="PackageCode"/>
+          <Item Value="PackageName"/>
+          <Item Value="ServiceType"/>
+          <Item Value="SeriveTime"/>
+          <Item Value="NumOfServers"/>
+          <Item Value="UnitPrice"/>
+          <Item Value="Description"/>
+          <Item Value="Enabled"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="Sasr002A1ServicePackagesIterator"
+            id="setCurrentRowWithKey" RequiresUpdateModel="false"
+            Action="setCurrentRowWithKey">
+      <NamedData NDName="rowKey" NDValue="#{row.rowKeyStr}"
+                 NDType="java.lang.String"/>
+    </action>
+    <attributeValues IterBinding="Sasr002A2SubscriptionsIterator"
+                     id="SubscribeDate">
+      <AttrNames>
+        <Item Value="SubscribeDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Sasr002A2ServicePackagesIterator"
+                     id="PackageCode">
+      <AttrNames>
+        <Item Value="PackageCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Sasr002A3ServicePackagesIterator"
+                     id="PackageName">
+      <AttrNames>
+        <Item Value="PackageName"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

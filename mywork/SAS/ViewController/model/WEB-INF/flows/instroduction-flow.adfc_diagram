@@ -1,0 +1,33 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1">
+      <property
+         name="y">83.5</property>
+      <property
+         name="x">88.01758</property>
+   </OverallProperties>
+   <View
+      id="View2">
+      <property
+         name="pageFragment">true</property>
+      <property
+         name="start">true</property>
+      <property
+         name="realized">true</property>
+      <property
+         name="rawDescription">view - history</property>
+      <property
+         name="status">ok</property>
+      <property
+         name="activityId">history</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">view - history&lt;/p>&lt;/html></property>
+      <property
+         name="y">88.5</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="x">126.53516</property>
+   </View>
+</SDM>

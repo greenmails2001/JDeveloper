@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.49.49" id="HelpDesks" Package="com.vc.web.ejb.sas.entities"
+          BeanClass="com.vc.web.ejb.sas.entities.HelpDesks" isJavaBased="true">
+  <Attribute Name="content" Type="java.lang.String"/>
+  <Attribute Name="description" Type="java.lang.String"/>
+  <Attribute Name="helpCode" Type="java.lang.String"/>
+  <Attribute Name="helpId" Type="java.lang.Long"/>
+  <Attribute Name="title" Type="java.lang.String"/>
+  <AccessorAttribute id="helpDesks" IsCollection="false" BeanClass="com.vc.web.ejb.sas.entities.HelpDesks"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="helpDesksList" IsCollection="true" RemoveMethod="removeHelpDesks" AddMethod="addHelpDesks"
+                     BeanClass="com.vc.web.ejb.sas.entities.HelpDesks" CollectionBeanClass="UpdateableCollection">
+    <Properties>
+      <Property Name="RemoveMethod" Value="removeHelpDesks"/>
+      <Property Name="AddMethod" Value="addHelpDesks"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="helpDeskRelationsList" IsCollection="true" RemoveMethod="removeHelpDeskRelations" AddMethod="addHelpDeskRelations"
+                     BeanClass="com.vc.web.ejb.sas.entities.HelpDeskRelations" CollectionBeanClass="UpdateableCollection">
+    <Properties>
+      <Property Name="RemoveMethod" Value="removeHelpDeskRelations"/>
+      <Property Name="AddMethod" Value="addHelpDeskRelations"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="helpDeskRelationsList1" IsCollection="true" RemoveMethod="removeHelpDeskRelations" AddMethod="addHelpDeskRelations"
+                     BeanClass="com.vc.web.ejb.sas.entities.HelpDeskRelations" CollectionBeanClass="UpdateableCollection">
+    <Properties>
+      <Property Name="RemoveMethod" Value="removeHelpDeskRelations"/>
+      <Property Name="AddMethod" Value="addHelpDeskRelations"/>
+    </Properties>
+  </AccessorAttribute>
+  <MethodAccessor IsCollection="false" Type="com.vc.web.ejb.sas.entities.HelpDesks" BeanClass="com.vc.web.ejb.sas.entities.HelpDesks"
+                  id="addHelpDesks" ReturnNodeName="HelpDesks">
+    <ParameterInfo id="helpDesks" Type="com.vc.web.ejb.sas.entities.HelpDesks" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="com.vc.web.ejb.sas.entities.HelpDesks" BeanClass="com.vc.web.ejb.sas.entities.HelpDesks"
+                  id="removeHelpDesks" ReturnNodeName="HelpDesks">
+    <ParameterInfo id="helpDesks" Type="com.vc.web.ejb.sas.entities.HelpDesks" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="com.vc.web.ejb.sas.entities.HelpDeskRelations"
+                  BeanClass="com.vc.web.ejb.sas.entities.HelpDeskRelations" id="addHelpDeskRelations" ReturnNodeName="HelpDeskRelations">
+    <ParameterInfo id="helpDeskRelations" Type="com.vc.web.ejb.sas.entities.HelpDeskRelations" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="com.vc.web.ejb.sas.entities.HelpDeskRelations"
+                  BeanClass="com.vc.web.ejb.sas.entities.HelpDeskRelations" id="removeHelpDeskRelations" ReturnNodeName="HelpDeskRelations">
+    <ParameterInfo id="helpDeskRelations" Type="com.vc.web.ejb.sas.entities.HelpDeskRelations" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="com.vc.web.ejb.sas.entities.HelpDeskRelations"
+                  BeanClass="com.vc.web.ejb.sas.entities.HelpDeskRelations" id="addHelpDeskRelations1" ReturnNodeName="HelpDeskRelations">
+    <ParameterInfo id="helpDeskRelations" Type="com.vc.web.ejb.sas.entities.HelpDeskRelations" isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="com.vc.web.ejb.sas.entities.HelpDeskRelations"
+                  BeanClass="com.vc.web.ejb.sas.entities.HelpDeskRelations" id="removeHelpDeskRelations1"
+                  ReturnNodeName="HelpDeskRelations">
+    <ParameterInfo id="helpDeskRelations" Type="com.vc.web.ejb.sas.entities.HelpDeskRelations" isStructured="true"/>
+  </MethodAccessor>
+  <ConstructorMethod IsCollection="true" Type="com.vc.web.ejb.sas.entities.HelpDesks" BeanClass="com.vc.web.ejb.sas.entities.HelpDesks"
+                     id="HelpDesks"/>
+</JavaBean>

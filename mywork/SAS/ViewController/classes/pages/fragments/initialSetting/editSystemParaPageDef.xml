@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.1.51.56" id="editSystemParaPageDef"
+                Package="pages.fragments.initialSetting">
+  <parameters/>
+  <executables>
+    <methodIterator Binds="querySystemParasFindByUserPrivilegeChangable.result" DataControl="DynamicPERPFacadeLocal"
+                    RangeSize="25" BeanClass="com.vc.web.ejb.perp.entities.SystemParas"
+                    id="querySystemParasFindByUserPrivilegeChangableIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="querySystemParasFindByUserPrivilegeChangable" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="querySystemParasFindByUserPrivilegeChangable" IsViewObjectMethod="false"
+                  DataControl="DynamicPERPFacadeLocal" InstanceName="DynamicPERPFacadeLocal.dataProvider"
+                  ReturnName="DynamicPERPFacadeLocal.methodResults.querySystemParasFindByUserPrivilegeChangable_DynamicPERPFacadeLocal_dataProvider_querySystemParasFindByUserPrivilegeChangable_result">
+      <NamedData NDName="psi" NDValue="${backing_perpSessionLogin.appUserInfo.perpSystemInfo}"
+                 NDType="com.vc.web.PerpSystemInfo"/>
+    </methodAction>
+    <attributeValues IterBinding="querySystemParasFindByUserPrivilegeChangableIterator" id="code">
+      <AttrNames>
+        <Item Value="code"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="querySystemParasFindByUserPrivilegeChangableIterator" id="value">
+      <AttrNames>
+        <Item Value="value"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="querySystemParasFindByUserPrivilegeChangableIterator" id="description">
+      <AttrNames>
+        <Item Value="description"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="querySystemParasFindByUserPrivilegeChangableIterator" id="First" RequiresUpdateModel="true"
+            Action="first"/>
+    <action IterBinding="querySystemParasFindByUserPrivilegeChangableIterator" id="Previous" RequiresUpdateModel="true"
+            Action="previous"/>
+    <action IterBinding="querySystemParasFindByUserPrivilegeChangableIterator" id="Next" RequiresUpdateModel="true"
+            Action="next"/>
+    <action IterBinding="querySystemParasFindByUserPrivilegeChangableIterator" id="Last" RequiresUpdateModel="true"
+            Action="last"/>
+  </bindings>
+</pageDefinition>

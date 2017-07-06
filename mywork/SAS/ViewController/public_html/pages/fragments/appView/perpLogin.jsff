@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core"
+          xmlns:trh="http://myfaces.apache.org/trinidad/html">
+  <c:set var="viewcontrollerBundle" value="#{adfBundle['com.vc.web.ViewControllerBundle']}"/>
+  <af:panelStretchLayout styleClass="AFVisualRoot" endWidth="339px"
+                         topHeight="36px" id="bkgpsl1">
+    <f:facet name="center">
+      <af:panelStretchLayout topHeight="34px" id="bkgpsl2">
+        <f:facet name="center">
+          <af:decorativeBox id="bkgdb1">
+            <f:facet name="center">
+              <af:panelStretchLayout endWidth="354px" startWidth="234px" id="bkgpsl3">
+                <f:facet name="center">
+                  <af:panelGroupLayout layout="vertical" id="bkgpgl1">
+                    <af:panelGroupLayout layout="vertical" inlineStyle="padding:2%;" id="bkgpgl2">
+                      <af:outputLabel value="#{viewcontrollerBundle['sas.besterWithPerp']}" inlineStyle="font-size:large;"
+                                      id="bkgol1"/>
+                      <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="bkgpgl3">
+                        <af:outputText value="#{viewcontrollerBundle['sas.besterWithPerp.text.content']}" id="bkgot1"/>
+                      </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                    <af:spacer width="10" height="10" id="bkgs1"/>
+                    <af:panelGroupLayout layout="vertical" halign="right" id="bkgpgl4">
+                      <af:message id="loginMessage"/>
+                      <af:panelGroupLayout inlineStyle="padding:3%;" id="bkgpgl5">
+                        <af:panelFormLayout id="bkgpfl1">
+                          <f:facet name="footer">
+                            <af:panelGroupLayout layout="vertical" halign="right" id="bkgpgl6">
+                              <af:commandButton text="#{viewcontrollerBundle['perp.login.signin']}" partialSubmit="true"
+                                                action="#{backing_appView_perpLoginHandler.perpLoginAction}"
+                                                actionListener="#{backing_appView_perpLoginHandler.perpLoginListener}"
+                                                id="bkgcb1"/>
+                            </af:panelGroupLayout>
+                          </f:facet>
+                          <af:inputText value="#{ backing_appView_perpLoginHandler.userName}"
+                                        label="#{viewcontrollerBundle['perp.login.userName']}" autoSubmit="true"
+                                        id="bkgit1"/>
+                          <af:inputText value="#{backing_appView_perpLoginHandler.password}"
+                                        label="#{viewcontrollerBundle['perp.login.password']}" secret="true" autoSubmit="true"
+                                        id="bkgit2"/>
+                          <af:inputText value="#{backing_appView_perpLoginHandler.activatedCode}"
+                                        label="#{viewcontrollerBundle['perp.login.activedCode']}" autoSubmit="true"
+                                        id="bkgit3"/>
+                        </af:panelFormLayout>
+                      </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                    <af:panelGroupLayout layout="horizontal" halign="left" valign="top" inlineStyle="padding:2%; width:100%;"
+                                         id="bkgpgl7">
+                      <af:panelGroupLayout layout="vertical" id="bkgpgl8">
+                        <af:outputLabel value="#{viewcontrollerBundle['sas.technology.text.title']}" inlineStyle="font-weight:bold;"
+                                        id="bkgol2"/>
+                        <af:panelList id="bkgpl1">
+                          <af:outputText value="Oracle Database 11g" id="bkgot2"/>
+                          <af:outputText value="Oracle form" id="bkgot3"/>
+                          <af:outputText value="Oracle Report &amp; Discovery" id="bkgot4"/>
+                          <af:outputText value="Oracle Fusion Middleware" id="bkgot5"/>
+                        </af:panelList>
+                      </af:panelGroupLayout>
+                      <af:panelGroupLayout layout="vertical" inlineStyle="padding:2%;" id="bkgpgl9">
+                        <af:outputLabel value="#{viewcontrollerBundle['sas.hardware.text.title']}" inlineStyle="font-weight:bold;"
+                                        id="bkgol3"/>
+                        <af:panelList id="bkgpl2">
+                          <af:outputText value="Sun server" id="bkgot6"/>
+                          <af:outputText value="Cable ADSL" id="bkgot7"/>
+                        </af:panelList>
+                      </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                  </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="end">
+                  <af:panelGroupLayout layout="vertical" id="bkgpgl10">
+                    <af:panelGroupLayout layout="horizontal" inlineStyle="padding:2px;" id="bkgpgl11">
+                      <af:image source="/resources/images/struct.jpeg" id="bkgi1"/>
+                      <af:spacer width="10" height="10" id="bkgs2"/>
+                      <af:image source="/resources/images/help1.jpg" id="bkgi2"/>
+                    </af:panelGroupLayout>
+                    <af:spacer width="10" height="10" id="bkgs3"/>
+                    <af:panelGroupLayout layout="vertical" inlineStyle="padding:2%;" id="bkgpgl12">
+                      <af:outputLabel value="#{viewcontrollerBundle['sas.helpCenter.text.title']}" inlineStyle="font-weight:bold;"
+                                      id="bkgol4"/>
+                      <af:outputText value="#{viewcontrollerBundle['sas.helpCenter.text.content']}" id="bkgot8"/>
+                    </af:panelGroupLayout>
+                    <af:panelGroupLayout layout="vertical" inlineStyle="padding:2%;" id="bkgpgl13">
+                      <af:outputLabel value="#{viewcontrollerBundle['sas.resourceCenter.text.title']}" inlineStyle="font-weight:bold;"
+                                      id="bkgol5"/>
+                      <af:outputText value="#{viewcontrollerBundle['sas.resourceCenter.text.content']}" id="bkgot9"/>
+                    </af:panelGroupLayout>
+                    <af:panelGroupLayout layout="vertical" inlineStyle="padding:2%;" id="bkgpgl14">
+                      <af:outputLabel value="#{viewcontrollerBundle['sas.onlineStudy.text.title']}" inlineStyle="font-weight:bold;"
+                                      id="bkgol6"/>
+                      <af:outputText value="#{viewcontrollerBundle['sas.onlineStudy.text.content']}" id="bkgot10"/>
+                    </af:panelGroupLayout>
+                  </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="start">
+                  <af:panelGroupLayout layout="vertical" id="bkgpgl15">
+                    <af:outputLabel value="#{viewcontrollerBundle['sas.successful']}" inlineStyle="font-size:larger; font-weight:bold;"
+                                    id="bkgol7"/>
+                    <af:spacer width="10" height="10" id="bkgs4"/>
+                    <af:navigationPane hint="list" id="bkgnp1">
+                      <af:commandNavigationItem text="#{viewcontrollerBundle['sas.nav.appSystem']}" action="appView"
+                                                id="bkgcni1"/>
+                      <af:commandNavigationItem text="#{viewcontrollerBundle['sas.nav.solutionTechnology']}"
+                                                id="bkgcni2"/>
+                    </af:navigationPane>
+                  </af:panelGroupLayout>
+                </f:facet>
+              </af:panelStretchLayout>
+            </f:facet>
+          </af:decorativeBox>
+        </f:facet>
+        <f:facet name="top">
+          <af:panelGroupLayout layout="vertical" id="bkgpgl16">
+            <af:outputLabel value="#{viewcontrollerBundle['sas.perp']}"
+                            inlineStyle="font-size:medium;" id="bkgol8"/>
+          </af:panelGroupLayout>
+        </f:facet>
+      </af:panelStretchLayout>
+    </f:facet>
+    <f:facet name="top">
+      <af:toolbox id="bkgt1">
+        <trh:tableLayout width="100%" id="bkgtl1">
+          <trh:rowLayout id="bkgrl1">
+            <trh:cellFormat halign="left" id="bkgcf1">
+              <af:panelGroupLayout layout="horizontal" id="bkgpgl17"/>
+            </trh:cellFormat>
+            <trh:cellFormat halign="right" id="bkgcf2">
+              <af:panelGroupLayout halign="right" layout="horizontal" id="bkgpgl18">
+                <af:navigationPane hint="bar" id="bkgnp2">
+                  <af:commandNavigationItem text="#{viewcontrollerBundle['sas.nav.appSystem']}" action="appView"
+                                            id="bkgcni3"/>
+                </af:navigationPane>
+              </af:panelGroupLayout>
+            </trh:cellFormat>
+          </trh:rowLayout>
+        </trh:tableLayout>
+      </af:toolbox>
+    </f:facet>
+  </af:panelStretchLayout>
+</jsp:root>

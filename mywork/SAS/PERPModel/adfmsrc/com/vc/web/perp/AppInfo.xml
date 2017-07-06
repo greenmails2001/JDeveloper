@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.49.49"
+          id="AppInfo" Package="com.vc.web.perp"
+          BeanClass="com.vc.web.perp.AppInfo" isJavaBased="true">
+  <Attribute Name="appCode" Type="java.lang.String"/>
+  <Attribute Name="appName" Type="java.lang.String"/>
+  <ConstructorMethod IsCollection="true" Type="com.vc.web.perp.AppInfo"
+                     BeanClass="com.vc.web.perp.AppInfo" id="AppInfo">
+    <ParameterInfo id="appCode" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="appName" Type="java.lang.String" isStructured="false"/>
+  </ConstructorMethod>
+  <ConstructorMethod IsCollection="true" Type="com.vc.web.perp.AppInfo"
+                     BeanClass="com.vc.web.perp.AppInfo" id="AppInfo"/>
+</JavaBean>

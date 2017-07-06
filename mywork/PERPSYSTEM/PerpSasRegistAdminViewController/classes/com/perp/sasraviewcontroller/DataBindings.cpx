@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.51.88" id="DataBindings" SeparateXMLFiles="false"
+             Package="com.perp.sasraviewcontroller" ClientType="Generic">
+  <definitionFactories>
+    <factory nameSpace="http://xmlns.oracle.com/adf/controller/binding"
+             className="oracle.adf.controller.internal.binding.TaskFlowBindingDefFactoryImpl"/>
+    <dtfactory className="oracle.adf.controller.internal.dtrt.binding.BindingDTObjectFactory"/>
+  </definitionFactories>
+  <pageMap>
+    <page path="/pages/sasra/login/login.jspx"
+          usageId="com_perp_sasraviewcontroller_loginPageDef"/>
+    <page path="/pages/sasra/testting/testting.jspx"
+          usageId="com_perp_sasraviewcontroller_testtingPageDef"/>
+    <page path="/pages/sasra/sasra001/sasra001.jspx"
+          usageId="com_perp_sasraviewcontroller_sasra001PageDef"/>
+    <page path="/pages/sasra/sasra002/sasra002.jspx"
+          usageId="com_perp_sasraviewcontroller_sasra002PageDef"/>
+    <page path="/pages/sasra/sasra002/sasra002a/countries.jsff"
+          usageId="com_perp_sasraviewcontroller_countriesPageDef"/>
+    <page path="/pages/sasra/sasra002/sasra002a/provinces.jsff"
+          usageId="com_perp_sasraviewcontroller_provincesPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_perp_sasraviewcontroller_loginPageDef"
+          path="pages.sasra.login.loginPageDef"/>
+    <page id="com_perp_sasraviewcontroller_testtingPageDef"
+          path="pages.sasra.testting.testtingPageDef"/>
+    <page id="com_perp_sasraviewcontroller_sasra001PageDef"
+          path="pages.sasra.sasra001.sasra001PageDef"/>
+    <page id="com_perp_sasraviewcontroller_sasra002PageDef"
+          path="pages.sasra.sasra002.sasra002PageDef"/>
+    <page id="com_perp_sasraviewcontroller_countriesPageDef"
+          path="pages.sasra.sasra002.sasra002a.countriesPageDef"/>
+    <page id="com_perp_sasraviewcontroller_provincesPageDef"
+          path="pages.sasra.sasra002.sasra002a.provincesPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="PerpSasRegistAppModuleDataControl"
+                     Package="com.perp.sasregistmodel"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="PerpSasRegistAppModuleLocal"
+                     syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

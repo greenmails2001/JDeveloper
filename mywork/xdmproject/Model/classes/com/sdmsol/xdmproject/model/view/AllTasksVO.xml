@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AllTasksVO"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  SelectList="Task.START_DATE, 
+       Task.TEXT, 
+       Task.START_WHERE, 
+       Task.FLIGHT_NO, 
+       Task.PAX, 
+       Task.ELEM_KEY, 
+       Task.TASK_ID"
+  FromList="XDM_TASKS Task"
+  Where="(:pResponsible is null or PERS_ID = :pResponsible)   
+and (:pProgramme is null or PROG_ID = :pProgramme)   
+and (:pText is null or upper(TEXT) like '%' || upper(:pText) ||   
+'%')"
+  OrderBy="Task.START_DATE"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full">
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="com.sdmsol.xdmproject.model.view.AllTasksVO_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <Variable
+    Name="pResponsible"
+    Kind="where"
+    Type="java.lang.String"/>
+  <Variable
+    Name="pProgramme"
+    Kind="where"
+    Type="java.lang.String"/>
+  <Variable
+    Name="pText"
+    Kind="where"
+    Type="java.lang.String"/>
+  <ViewAccessor
+    Name="ServiceLOV1"
+    ViewObjectName="com.sdmsol.xdmproject.model.view.ServiceLOV"
+    RowLevelBinds="true"/>
+  <ListBinding
+    Name="LOV_ElemKey"
+    ListVOName="ServiceLOV1"
+    NullValueFlag="none"
+    MRUCount="0">
+    <AttrArray Name="AttrNames">
+      <Item Value="ElemKey"/>
+    </AttrArray>
+    <AttrArray Name="AttrExpressions"/>
+    <AttrArray Name="ListAttrNames">
+      <Item Value="ElemKey"/>
+    </AttrArray>
+    <AttrArray Name="ListDisplayAttrNames">
+      <Item Value="Description"/>
+    </AttrArray>
+    <DisplayCriteria/>
+  </ListBinding>
+  <EntityUsage
+    Name="Task"
+    Entity="com.sdmsol.xdmproject.model.entity.Task"/>
+  <ViewAttribute
+    Name="StartDate"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="StartDate"
+    EntityUsage="Task"
+    AliasName="START_DATE">
+    <Properties>
+      <SchemaBasedProperties>
+        <LABEL
+          ResId="com.sdmsol.xdmproject.model.view.AllTasksVO.StartDate_LABEL"/>
+        <FMT_FORMAT
+          ResId="com.sdmsol.xdmproject.model.view.AllTasksVO.StartDate_FMT_FORMAT"/>
+        <FMT_FORMATTER
+          ResId="com.sdmsol.xdmproject.model.view.AllTasksVO.StartDate_FMT_FORMATTER"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="Text"
+    PrecisionRule="true"
+    EntityAttrName="Text"
+    EntityUsage="Task"
+    AliasName="TEXT"/>
+  <ViewAttribute
+    Name="StartWhere"
+    PrecisionRule="true"
+    EntityAttrName="StartWhere"
+    EntityUsage="Task"
+    AliasName="START_WHERE"/>
+  <ViewAttribute
+    Name="FlightNo"
+    PrecisionRule="true"
+    EntityAttrName="FlightNo"
+    EntityUsage="Task"
+    AliasName="FLIGHT_NO"/>
+  <ViewAttribute
+    Name="Pax"
+    PrecisionRule="true"
+    EntityAttrName="Pax"
+    EntityUsage="Task"
+    AliasName="PAX"/>
+  <ViewAttribute
+    Name="ElemKey"
+    PrecisionRule="true"
+    EntityAttrName="ElemKey"
+    EntityUsage="Task"
+    AliasName="ELEM_KEY"
+    LOVName="LOV_ElemKey">
+    <Properties>
+      <SchemaBasedProperties>
+        <CONTROLTYPE
+          Value="choice"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="TaskId"
+    IsUpdateable="while_insert"
+    PrecisionRule="true"
+    EntityAttrName="TaskId"
+    EntityUsage="Task"
+    AliasName="TASK_ID"/>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="com.sdmsol.xdmproject.model.ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

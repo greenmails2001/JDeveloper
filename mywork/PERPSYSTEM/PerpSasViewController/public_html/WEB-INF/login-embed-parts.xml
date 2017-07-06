@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="login-embed-parts">
+    <default-activity id="__1">default</default-activity>
+    <data-control-scope id="__24">
+      <isolated/>
+    </data-control-scope>
+    <router id="default">
+      <case>
+        <expression>false</expression>
+        <outcome id="__23">accChecking</outcome>
+      </case>
+      <default-outcome>envChecking</default-outcome>
+    </router>
+    <view id="perpEnvChecking">
+      <page>/pages/login/embedparts/perpEnvChecking.jsff</page>
+    </view>
+    <view id="perpAccountChecking">
+      <page>/pages/login/embedparts/perpAccountChecking.jsff</page>
+    </view>
+    <parent-action id="loginSuccessful">
+      <parent-outcome>success</parent-outcome>
+    </parent-action>
+    <control-flow-rule id="__2">
+      <from-activity-id id="__3">default</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome id="__6">envChecking</from-outcome>
+        <to-activity-id id="__4">perpEnvChecking</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__20">
+        <from-outcome id="__22">accChecking</from-outcome>
+        <to-activity-id id="__21">perpAccountChecking</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__7">
+      <from-activity-id id="__8">perpEnvChecking</from-activity-id>
+      <control-flow-case id="__9">
+        <from-outcome id="__11">login</from-outcome>
+        <to-activity-id id="__10">perpAccountChecking</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__26">
+        <from-outcome id="__27">loginSuccess</from-outcome>
+        <to-activity-id id="__25">loginSuccessful</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__12">
+      <from-activity-id id="__13">perpAccountChecking</from-activity-id>
+      <control-flow-case id="__14">
+        <from-outcome id="__16">changeEnv</from-outcome>
+        <to-activity-id id="__15">perpEnvChecking</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__17">
+        <from-outcome id="__19">success</from-outcome>
+        <to-activity-id id="__18">loginSuccessful</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:trh="http://myfaces.apache.org/trinidad/html">
+  <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="yfapgl1">
+    <trh:tableLayout width="100%" id="yfatl1">
+      <af:forEach items="#{backing_newsManager.ncaAndLastestNewsChildOfSKTN}" var="row">
+        <trh:rowLayout id="yfarl1">
+          <trh:cellFormat inlineStyle='background-image:url("../resources/images/news-cat-line.gif");background-repeat: no-repeat'
+                          id="yfacf1">
+            <af:panelGroupLayout layout="horizontal" inlineStyle="padding:1px;" id="yfapgl2">
+              <af:spacer width="10" height="10" id="yfas1"/>
+              <af:commandLink text="#{row.newsCategories.title}" inlineStyle="font-size:medium; color:Scrollbar;"
+                              id="yfacl1"/>
+            </af:panelGroupLayout>
+          </trh:cellFormat>
+        </trh:rowLayout>
+        <trh:rowLayout id="yfarl2">
+          <trh:cellFormat id="yfacf2">
+            <af:spacer width="10" height="10" id="yfas2"/>
+          </trh:cellFormat>
+        </trh:rowLayout>
+        <trh:rowLayout id="yfarl3">
+          <trh:cellFormat id="yfacf3">
+            <af:forEach var="row2" items="#{row.lastestNewsList}">
+              <trh:tableLayout width="100%" id="yfatl2">
+                <trh:rowLayout id="yfarl4">
+                  <trh:cellFormat columnSpan="2" id="yfacf4">
+                    <af:commandLink text="#{row2.title}" inlineStyle="font-size:medium;"
+                                    actionListener="#{backing_newsManager.selectNewsActionListener}" action="news"
+                                    id="yfacl2"/>
+                  </trh:cellFormat>
+                </trh:rowLayout>
+                <trh:rowLayout id="yfarl5">
+                  <trh:cellFormat width="1%" id="yfacf5">
+                    <af:image source="/resources/images/erp2.jpg" id="yfai1"/>
+                  </trh:cellFormat>
+                  <trh:cellFormat width="99%" valign="top" id="yfacf6">
+                    <af:activeOutputText value="#{row2.shortContent}" id="yfaaot1"/>
+                  </trh:cellFormat>
+                </trh:rowLayout>
+              </trh:tableLayout>
+            </af:forEach>
+          </trh:cellFormat>
+        </trh:rowLayout>
+      </af:forEach>
+    </trh:tableLayout>
+  </af:panelGroupLayout>
+  <af:panelFormLayout id="yfapfl1"/>
+</jsp:root>

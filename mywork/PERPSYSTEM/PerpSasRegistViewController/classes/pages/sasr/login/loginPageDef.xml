@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.51.88" id="loginPageDef"
+                Package="pages.sasr.login">
+  <parameters/>
+  <executables>
+    <methodIterator Binds="doPerpSasrAccountChecking.result"
+                    DataControl="PerpSasRegistAppModuleDataControl"
+                    RangeSize="25" id="doPerpSasrAccountCheckingIterator"/>
+    <variableIterator id="variables">
+      <variable Type="java.lang.String"
+                Name="doPerpSasrAccountChecking_userName" IsQueriable="false"/>
+      <variable Type="java.lang.String"
+                Name="doPerpSasrAccountChecking_password" IsQueriable="false"/>
+    </variableIterator>
+  </executables>
+  <bindings>
+    <methodAction id="doPerpSasrAccountChecking" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="doPerpSasrAccountChecking"
+                  IsViewObjectMethod="false"
+                  DataControl="PerpSasRegistAppModuleDataControl"
+                  InstanceName="PerpSasRegistAppModuleDataControl.dataProvider"
+                  ReturnName="PerpSasRegistAppModuleDataControl.methodResults.doPerpSasrAccountChecking_PerpSasRegistAppModuleDataControl_dataProvider_doPerpSasrAccountChecking_result">
+      <NamedData NDName="userName" NDType="java.lang.String"
+                 NDValue="${bindings.doPerpSasrAccountChecking_userName}"/>
+      <NamedData NDName="password" NDType="java.lang.String"
+                 NDValue="${bindings.doPerpSasrAccountChecking_password}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="userName">
+      <AttrNames>
+        <Item Value="doPerpSasrAccountChecking_userName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="password">
+      <AttrNames>
+        <Item Value="doPerpSasrAccountChecking_password"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

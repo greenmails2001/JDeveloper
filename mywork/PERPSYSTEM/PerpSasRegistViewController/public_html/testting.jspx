@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:decorativeBox id="db2">
+          <f:facet name="center">
+            <af:panelAccordion id="pa1">
+              <af:showDetailItem text="PERP ONDEMAND" id="perpOndemandId"
+                                 stretchChildren="first">
+                <af:panelBox text="PanelBox1" id="pb2" showHeader="never">
+                  <f:facet name="toolbar"/>
+                  <af:panelGroupLayout id="pgl1" layout="scroll">
+                    <af:panelGroupLayout id="pgl5" layout="vertical">
+                      <af:outputText value="#{bindings.SubscribeDate.inputValue}"
+                                     id="outputText1" rendered="false">
+                        <af:convertDateTime pattern="#{bindings.SubscribeDate.format}"/>
+                      </af:outputText>
+                      <af:spacer width="10" height="10" id="s3"/>
+                    </af:panelGroupLayout>
+                    <af:panelGroupLayout id="panelGroupLayout11"
+                                         layout="vertical"
+                                         inlineStyle="padding:3px;">
+                      <af:outputText value="#{perpsasregistviewcontrollerBundle['sasr.sasr002.podmBuyNote']}"
+                                     id="ot1" inlineStyle="font-size:larger;"/>
+                    </af:panelGroupLayout>
+                    <af:spacer width="10" height="10" id="s1"/>
+                    <af:outputLabel id="ol1"
+                                    value="#{perpsasregistviewcontrollerBundle['sasr.sasr002.registedServicePackage']}"
+                                    inlineStyle="font-weight:bold;"/>
+                    <af:spacer width="10" height="10" id="s2"/>
+                    <af:panelBox text="#{bindings.PackageCode.inputValue}:#{bindings.PackageName.inputValue}"
+                                 titleHalign="center" id="pb1"
+                                 binding="#{sasr002Podm.podmRegistedPanelBox}"
+                                 showDisclosure="false" showHeader="always">
+                      <af:panelGroupLayout layout="vertical" halign="center"
+                                           id="pgl38">
+                        <af:spacer width="10" height="10" id="s17"/>
+                        <af:image source="/images/#{bindings.PackageCode.inputValue}2.png"
+                                  id="i14"/>
+                        <af:spacer width="10" height="10" id="s18"/>
+                        <af:panelLabelAndMessage label="#{perpsasregistviewcontrollerBundle['sasr.sasr002.subscribeDate']}"
+                                                 id="plam20">
+                          <af:outputText value="#{bindings.SubscribeDate.inputValue}"
+                                         id="ot49"/>
+                        </af:panelLabelAndMessage>
+                        <af:panelLabelAndMessage label="#{perpsasregistviewcontrollerBundle['sasr.sasr002.packageCode']}"
+                                                 id="panelLabelAndMessage1">
+                          <af:outputText value="#{bindings.PackageCode.inputValue}"
+                                         id="outputText2"/>
+                        </af:panelLabelAndMessage>
+                      </af:panelGroupLayout>
+                    </af:panelBox>
+                  </af:panelGroupLayout>
+                </af:panelBox>
+              </af:showDetailItem>
+              <af:showDetailItem text="#{perpsasregistviewcontrollerBundle['sasr.sasr002.otherProductService']}"
+                                 id="sdi2" stretchChildren="first">
+                <af:panelBox text="PanelBox2" id="pb3" showHeader="never"
+                             showDisclosure="false">
+                  <f:facet name="toolbar"/>
+                </af:panelBox>
+              </af:showDetailItem>
+            </af:panelAccordion>
+          </f:facet>
+        </af:decorativeBox>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

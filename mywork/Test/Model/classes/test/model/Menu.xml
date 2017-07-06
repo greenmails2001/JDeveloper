@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Menu"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="MENU"
+  AliasName="Menu"
+  BindingStyle="OracleName"
+  RowClass="test.model.MenuImpl">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Init"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Attribute
+    Name="Id"
+    IsNotNull="true"
+    Precision="10"
+    Scale="0"
+    ColumnName="ID"
+    SQLType="NUMERIC"
+    Type="java.lang.Long"
+    ColumnType="NUMBER"
+    TableName="MENU"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Name"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MENU"
+    Domain="test.model.PropertySet">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DisplaySequence"
+    Precision="2"
+    Scale="0"
+    ColumnName="DISPLAY_SEQUENCE"
+    SQLType="NUMERIC"
+    Type="java.lang.Integer"
+    ColumnType="NUMBER"
+    TableName="MENU"/>
+  <Attribute
+    Name="Shortcut"
+    Precision="30"
+    ColumnName="SHORTCUT"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MENU">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Icon"
+    Precision="60"
+    ColumnName="ICON"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="MENU">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="60"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="MenuItems"
+    Association="test.model.MitMenFkAssoc"
+    AssociationEnd="test.model.MitMenFkAssoc.MenuItems"
+    AssociationOtherEnd="test.model.MitMenFkAssoc.Menu"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="MenPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="MEN_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="test.model.Menu.Id"/>
+    </AttrArray>
+  </Key>
+</Entity>

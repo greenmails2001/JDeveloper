@@ -1,0 +1,28 @@
+/*.sas-f15*/ /** sas-h1 */ 
+/*{
+  font-size :15pt;
+}
+
+.sas-f14 
+{
+  font-size :14pt;
+}
+
+.sas-h2 {
+  font-weight :bold;
+}*/
+
+/** su dung trong tieu de */
+/*.sas-f-title {
+  font-size :11pt;  
+}
+
+.sas-panellist-link {
+  text-decoration:none;
+  color:Fuchsia;
+}*/
+
+af|panelCollection::statusbar{
+  display: none;
+}
+

@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelSplitter inlineStyle="width:792px;" splitterPosition="363"
+                          id="ps1">
+          <f:facet name="first">
+            <af:panelAccordion id="pa1">
+              <af:showDetailItem text="showDetailItem 1" id="sdi1">
+                <af:panelCollection id="panel1">
+                  <f:facet name="menus"/>
+                  <f:facet name="toolbar"/>
+                  <f:facet name="statusbar"/>
+                  <af:table value="#{bindings.SasUserRoles.collectionModel}"
+                            var="row"
+                            rows="#{bindings.SasUserRoles.rangeSize}"
+                            emptyText="#{bindings.SasUserRoles.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                            fetchSize="#{bindings.SasUserRoles.rangeSize}"
+                            selectedRowKeys="#{bindings.SasUserRoles.collectionModel.selectedRow}"
+                            selectionListener="#{bindings.SasUserRoles.collectionModel.makeCurrent}"
+                            rowSelection="single" id="table1">
+                    <af:column sortProperty="GusId" sortable="false"
+                               headerText="#{bindings.SasUserRoles.hints.GusId.label}"
+                               id="c1">
+                      <af:outputText value="#{row.GusId}" id="ot1">
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.SasUserRoles.hints.GusId.format}"/>
+                      </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="AusId" sortable="false"
+                               headerText="#{bindings.SasUserRoles.hints.AusId.label}"
+                               id="c2">
+                      <af:outputText value="#{row.AusId}" id="ot2">
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.SasUserRoles.hints.AusId.format}"/>
+                      </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="Name" sortable="false"
+                               headerText="#{bindings.SasUserRoles.hints.Name.label}"
+                               id="c3">
+                      <af:outputText value="#{row.Name}" id="ot3"/>
+                    </af:column>
+                    <af:column sortProperty="Description" sortable="false"
+                               headerText="#{bindings.SasUserRoles.hints.Description.label}"
+                               id="c4">
+                      <af:outputText value="#{row.Description}" id="ot4"/>
+                    </af:column>
+                  </af:table>
+                </af:panelCollection>
+              </af:showDetailItem>
+            </af:panelAccordion>
+          </f:facet>
+          <f:facet name="second">
+            <af:panelGroupLayout layout="scroll"
+                                 xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                                 id="pgl1">
+              <af:panelTabbed id="pt1">
+                <af:showDetailItem text="showDetailItem 2" id="sdi2">
+                  <af:panelCollection id="panel2">
+                    <f:facet name="menus"/>
+                    <f:facet name="toolbar"/>
+                    <f:facet name="statusbar"/>
+                    <af:tree value="#{bindings.SasMenusRootX1.treeModel}"
+                             var="node"
+                             selectionListener="#{bindings.SasMenusRootX1.treeModel.makeCurrent}"
+                             rowSelection="single"
+                             partialTriggers=":::panel1:table1" id="t1">
+                      <f:facet name="nodeStamp">
+                        <af:outputText value="#{node}" id="ot5"/>
+                      </f:facet>
+                    </af:tree>
+                  </af:panelCollection>
+                </af:showDetailItem>
+              </af:panelTabbed>
+            </af:panelGroupLayout>
+          </f:facet>
+        </af:panelSplitter>
+        <af:commandButton actionListener="#{bindings.prepareToShowSasUserRoles.execute}"
+                          text="prepareToShowSasUserRoles"
+                          disabled="#{!bindings.prepareToShowSasUserRoles.enabled}"
+                          id="cb1"/>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

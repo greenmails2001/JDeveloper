@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<pageTemplateDefs xmlns="http://xmlns.oracle.com/adf/faces/rich/pagetemplate">
+  <pagetemplate-jsp-ui-def>
+    /templates/commonNewsTemplate.jspx
+  </pagetemplate-jsp-ui-def>
+  <pagetemplate-jsp-ui-def>
+    /templates/newsTemplate.jspx
+  </pagetemplate-jsp-ui-def>
+  <pagetemplate-jsp-ui-def>
+    /templates/homeTemplate.jspx
+  </pagetemplate-jsp-ui-def>
+  <pagetemplate-jsp-ui-def>
+    /templates/adminTemplate.jspx
+  </pagetemplate-jsp-ui-def>
+  <pagetemplate-jsp-ui-def>
+    /pages/fragments/sasAccount/accountTemplate1.jspx
+  </pagetemplate-jsp-ui-def>
+  <pagetemplate-jsp-ui-def>/templates/sasTemplate.jspx</pagetemplate-jsp-ui-def>
+  <pagetemplate-jsp-ui-def>/templates/initialSettingTemplate.jspx</pagetemplate-jsp-ui-def>
+  <pagetemplate-jsp-ui-def>/templates/appTemplate.jspx</pagetemplate-jsp-ui-def>
+</pageTemplateDefs>

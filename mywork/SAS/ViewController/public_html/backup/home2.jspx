@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:trh="http://myfaces.apache.org/trinidad/html">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="document1" title="Software And Service Home">
+      <af:pageTemplate viewId="/templates/appTemplate.jspx" id="pt1">
+        <f:facet name="center">
+          <af:panelStretchLayout id="panelStretchLayout1" endWidth="256px" startWidth="408px" topHeight="94px">
+            <f:facet name="center">
+              <af:decorativeBox id="decorativeBox1">
+                <f:facet name="center">
+                  <af:panelStretchLayout id="panelStretchLayout21" endWidth="309px" startWidth="341px">
+                    <f:facet name="center">
+                      <af:panelGroupLayout layout="scroll" id="pgl1">
+                        <af:panelBorderLayout id="pbl1">
+                          <f:facet name="start">
+                            <af:panelGroupLayout id="panelGroupLayout8" layout="vertical" halign="center" inlineStyle="padding:2%;">
+                              <af:panelGroupLayout id="panelGroupLayout15" layout="horizontal" inlineStyle="width:100%;" halign="left">
+                                <af:image source="/resources/images/saslogo.gif" id="image6"/>
+                                <af:image source="/resources/images/mission.gif" id="image7"/>
+                              </af:panelGroupLayout>
+                              <af:image source="/resources/images/home/perpOverview1.gif" id="image1"/>
+                            </af:panelGroupLayout>
+                          </f:facet>
+                          <f:facet name="end">
+                            <af:panelGroupLayout id="panelGroupLayout3" layout="vertical" inlineStyle="padding:4px; margin:3px;">
+                              <af:panelGroupLayout id="panelGroupLayout4" layout="vertical" inlineStyle="padding:3px;">
+                                <af:outputLabel value="#{viewcontrollerBundle['perpOndemand.home.introduction.product']}" id="outputLabel1"
+                                                inlineStyle="font-size:medium;"/>
+                              </af:panelGroupLayout>
+                              <af:panelGroupLayout id="panelGroupLayout17" layout="vertical" inlineStyle="padding:3px;">
+                                <af:outputLabel value="Basic Finance" id="outputLabel2" inlineStyle="font-weight:bold;"/>
+                                <af:panelGroupLayout id="panelGroupLayout5" layout="vertical" inlineStyle="padding:4px; margin:2px;">
+                                  <af:outputText value="#{viewcontrollerBundle['perpOndemand.introduction.servicePackage.basicFinance']}"
+                                                 id="outputText1"/>
+                                </af:panelGroupLayout>
+                                <af:outputLabel value="Standard Finance" id="outputLabel3" inlineStyle="font-weight:bold;"/>
+                                <af:panelGroupLayout id="panelGroupLayout6" layout="vertical" inlineStyle="padding:4px; margin:2px;">
+                                  <af:outputText value="#{viewcontrollerBundle['perpOndemand.introduction.servicePackage.standardFinance']}"
+                                                 id="outputText2" inlineStyle="padding:2px; margin:2px;"/>
+                                </af:panelGroupLayout>
+                                <af:outputLabel value="Distribution" id="outputLabel4" inlineStyle="font-weight:bold;"/>
+                                <af:panelGroupLayout id="panelGroupLayout7" layout="vertical" inlineStyle="padding:4px; margin:2px;">
+                                  <af:outputText value="#{viewcontrollerBundle['perpOndemand.introduction.servicePackage.distribution']}"
+                                                 id="outputText3"/>
+                                </af:panelGroupLayout>
+                                <af:outputLabel value="Enterprise" id="outputLabel6" inlineStyle="font-weight:bold;"/>
+                                <af:panelGroupLayout id="panelGroupLayout18" layout="vertical" inlineStyle="padding:4px; margin:2px;">
+                                  <af:outputText value="#{viewcontrollerBundle['perpOndemand.introduction.servicePackage.enterprise']}"
+                                                 id="outputText5"/>
+                                </af:panelGroupLayout>
+                              </af:panelGroupLayout>
+                            </af:panelGroupLayout>
+                          </f:facet>
+                        </af:panelBorderLayout>
+                      </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="end">
+                      <af:panelGroupLayout id="panelGroupLayout1" layout="vertical" inlineStyle="padding:2px; margin:3px;">
+                        <af:panelGroupLayout id="panelGroupLayout9" inlineStyle="padding:2px; margin:2%;">
+                          <af:image source="/resources/images/sologan.png" id="image2"/>
+                        </af:panelGroupLayout>
+                        <af:spacer width="10" height="10" id="spacer1"/>
+                        <af:panelGroupLayout id="panelGroupLayout14" inlineStyle="padding:2px;">
+                          <af:navigationPane id="navigationPane1" hint="list">
+                            <af:commandNavigationItem text="#{viewcontrollerBundle['sas.home.nav.shoppingSystem']}"
+                                                      id="commandNavigationItem1" action="shoppingSas"/>
+                            <af:commandNavigationItem text="#{viewcontrollerBundle['sas.home.nav.appSystem']}" id="commandNavigationItem2"
+                                                      action="appView"/>
+                          </af:navigationPane>
+                        </af:panelGroupLayout>
+                      </af:panelGroupLayout>
+                    </f:facet>
+                  </af:panelStretchLayout>
+                </f:facet>
+              </af:decorativeBox>
+            </f:facet>
+            <f:facet name="top">
+              <af:panelGroupLayout id="panelGroupLayout19" layout="vertical">
+                <trh:tableLayout id="tableLayout1" width="100%">
+                  <trh:rowLayout id="rowLayout1">
+                    <trh:cellFormat id="cellFormat1" halign="left">
+                      <af:image source="/resources/images/vclogo.gif" id="image3"/>
+                    </trh:cellFormat>
+                    <trh:cellFormat id="cellFormat2" halign="center">
+                      <af:image source="/resources/images/vctitle.gif" id="image8"/>
+                    </trh:cellFormat>
+                    <trh:cellFormat id="cellFormat3" halign="right">
+                      <af:image source="/resources/images/pythis-logo1.gif" id="image4"/>
+                    </trh:cellFormat>
+                  </trh:rowLayout>
+                </trh:tableLayout>
+              </af:panelGroupLayout>
+            </f:facet>
+          </af:panelStretchLayout>
+        </f:facet>
+      </af:pageTemplate>
+    </af:document>
+  </f:view>
+</jsp:root>

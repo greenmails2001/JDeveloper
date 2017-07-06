@@ -1,0 +1,225 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:trh="http://myfaces.apache.org/trinidad/html"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="perpsasregistviewcontrollerBundle"
+         value="#{adfBundle['com.perp.sasregistviewcontroller.PerpSasRegistViewControllerBundle']}"/>
+  <c:set var="sasr001" value="#{adfBundle['pages.sasr.sasr001.sasr001']}"/>
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <f:loadBundle basename="pages.sasr.sasr001.sasr001" var="sasr001"/>
+    <af:document id="d1" title="Sign In">
+      <af:resource type="javascript">
+        function gosasnew() {
+            hostname = window.location.hostname;
+            port = window.location.port;
+            window.open("http://" + hostname + ":" + port + "/sasn/faces/index", "_blank");
+        }
+        var registerDisableBackButton = function () {
+            disableBackButton();
+            window.onload = disableBackButton();
+            window.onpageshow = function (event) {
+                if (event.persisted) {
+                    disableBackButton()
+                }
+            }
+            window.onunload = function () {
+                void(0);
+            }
+        }
+        var disableBackButton = function () {
+            window.history.forward();
+        }
+        var onLoadEvent = function (event) {
+            registerDisableBackButton();
+        }
+      </af:resource>
+      <af:clientListener method="onLoadEvent" type="load"/>
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:popup id="forgetPasswordPopup">
+          <af:dialog inlineStyle="width:350px; height:80px;" type="cancel" id="d2" title=" ">
+            <af:panelStretchLayout topHeight="42px" inlineStyle="width:350px; height:80px;" id="psl3">
+              <f:facet name="center">
+                <af:panelFormLayout labelWidth="100%" id="pfl2">
+                  <af:inputText label="Email" id="it3" value="#{loginForgotPassword.email}"/>
+                  <af:commandLink text="Send email" partialSubmit="true" actionListener="#{loginForgotPassword.sendEmailActionListener}"
+                                  id="cl3"/>
+                </af:panelFormLayout>
+              </f:facet>
+              <f:facet name="top">
+                <af:panelGroupLayout layout="vertical" xmlns:af="http://xmlns.oracle.com/adf/faces/rich" id="pgl9">
+                  <af:outputText value="Nhập vào thông tin email đã đăng ký tài khoản , để nhận mail chứa thông tin password mới" id="ot3"/>
+                </af:panelGroupLayout>
+              </f:facet>
+            </af:panelStretchLayout>
+          </af:dialog>
+        </af:popup>
+        <af:pageTemplate viewId="/templates/sasrTemplate2.jspx" id="pt1">
+          <f:facet name="center">
+            <af:panelBox text="PanelBox1" id="pb1" showHeader="never">
+              <f:facet name="toolbar"/>
+              <af:panelGroupLayout id="pgl11" layout="scroll">
+                <af:panelBorderLayout id="pbl1">
+                  <f:facet name="start">
+                    <af:panelGroupLayout layout="vertical" inlineStyle="padding:7px;" id="panelGroupLayout001">
+                      <af:panelHeader text="#{perpsasregistviewcontrollerBundle['sasr.login.aboutSasTitle']}" inlineStyle="padding:5.0px;"
+                                      id="panelHeader001">
+                        <af:panelGroupLayout layout="vertical" id="panelGroupLayout002" inlineStyle="padding:1.0px;">
+                          <af:panelGroupLayout layout="vertical" halign="center" id="panelGroupLayout003">
+                            <af:image shortDesc="about sas image" source="/images/about_sas_image.jpg" id="img001"
+                                      inlineStyle="width:217px;"/>
+                          </af:panelGroupLayout>
+                          <af:spacer width="10" height="10" id="s2"/>
+                          <af:panelGroupLayout layout="vertical" inlineStyle="text-align:justify;" id="pgl8">
+                            <af:outputText value="#{perpsasregistviewcontrollerBundle['sasr.login.aboutSasContent']}" id="ot2"/>
+                          </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                      </af:panelHeader>
+                    </af:panelGroupLayout>
+                  </f:facet>
+                  <f:facet name="end">
+                    <af:panelGroupLayout id="panelGroupLayout11" layout="vertical" inlineStyle="padding:5px;">
+                      <af:image source="/images/globals/help1.jpg" id="i1" shortDesc="help"/>
+                      <af:panelGroupLayout layout="vertical" id="panelGroupLayout2">
+                        <af:panelHeader text="Các website liên quan" id="panelHeader1">
+                          <af:panelList id="pl3">
+                            <af:goLink text="Website công ty Perp" destination="http://perp.vn/" styleClass="sas-panellist-link" id="gl1"
+                                       targetFrame="_blank"/>
+                            <af:goLink text="Website tin tức VBISCloud" destination="#" styleClass="sas-panellist-link" id="gl2">
+                              <af:clientListener method="gosasnew" type="click"/>
+                            </af:goLink>
+                            <af:goLink text="Website giới thiệu về Perp" styleClass="sas-panellist-link" destination="http://www.perp.vn/"
+                                       id="gl3" targetFrame="_blank"/>
+                          </af:panelList>
+                        </af:panelHeader>
+                        <af:panelHeader text="Trung tâm hỗ trợ" id="ph2">
+                          <af:panelList id="pl4">
+                            <af:goLink text="Trung tâm hỗ trợ" styleClass="sas-panellist-link" id="gl4" targetFrame="_blank"/>
+                          </af:panelList>
+                        </af:panelHeader>
+                      </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                  </f:facet>
+                  <af:panelGroupLayout id="pgl12" layout="vertical" inlineStyle="padding:5px;">
+                    <af:panelGroupLayout id="pgl13" layout="vertical">
+                      <af:panelHeader text="#{perpsasregistviewcontrollerBundle['sasr.login.welcomeSasTitle']}" inlineStyle="padding:7px; "
+                                      id="topPanelHeader" styleClass="AFStretchWidth">
+                        <af:panelGroupLayout inlineStyle="padding:3px;" layout="vertical" id="pgl6">
+                          <af:panelGroupLayout layout="horizontal" id="pgl7" inlineStyle="text-align:justify;">
+                            <af:outputText value="#{perpsasregistviewcontrollerBundle['sasr.login.welcomeSasContent']}" id="id001"/>
+                          </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                      </af:panelHeader>
+                    </af:panelGroupLayout>
+                    <af:panelGroupLayout layout="vertical" id="pgl001">
+                      <af:panelGroupLayout layout="horizontal" inlineStyle="padding:10px; width:700px;" id="pgl002">
+                        <trh:tableLayout width="100%" cellPadding="2" cellSpacing="2" id="tl1">
+                          <trh:rowLayout id="rl1">
+                            <trh:cellFormat rowSpan="2" halign="left" valign="top" id="cf1">
+                              <af:image shortDesc="successful" source="/images/successful.jpeg" id="img002"/>
+                            </trh:cellFormat>
+                            <trh:cellFormat halign="left" valign="top" id="cf2">
+                              <af:panelGroupLayout layout="vertical" inlineStyle="padding:2px; text-align:justify;" id="pgl1">
+                                <af:outputText value="#{perpsasregistviewcontrollerBundle['sasr.login.suggest']}" id="ot1"/>
+                              </af:panelGroupLayout>
+                            </trh:cellFormat>
+                          </trh:rowLayout>
+                          <trh:rowLayout id="rl2">
+                            <trh:cellFormat halign="left" valign="top" id="cf3">
+                              <af:panelGroupLayout layout="horizontal" inlineStyle="padding:10px; width:350px;" halign="right" id="pgl2">
+                                <af:panelHeader text="#{perpsasregistviewcontrollerBundle['sasr.login.loginTitle']}"
+                                                inlineStyle="width:300px;" id="ph1">
+                                  <f:facet name="menuBar">
+                                    <af:menuBar id="mb1">
+                                      <af:commandMenuItem text="#{perpsasregistviewcontrollerBundle['sasr.login.helpLogin']}" id="cmi1"/>
+                                    </af:menuBar>
+                                  </f:facet>
+                                  <af:panelFormLayout labelWidth="100%" id="pfl1">
+                                    <af:inputText value="#{bindings.userName.inputValue}"
+                                                  label="#{perpsasregistviewcontrollerBundle['sasr.login.username']}"
+                                                  required="#{bindings.userName.hints.mandatory}"
+                                                  columns="#{bindings.userName.hints.displayWidth}"
+                                                  maximumLength="#{bindings.userName.hints.precision}"
+                                                  shortDesc="#{bindings.userName.hints.tooltip}" id="it1">
+                                      <f:validator binding="#{bindings.userName.validator}"/>
+                                    </af:inputText>
+                                    <af:inputText value="#{bindings.password.inputValue}"
+                                                  label="#{perpsasregistviewcontrollerBundle['sasr.login.password']}"
+                                                  required="#{bindings.password.hints.mandatory}"
+                                                  columns="#{bindings.password.hints.displayWidth}"
+                                                  maximumLength="#{bindings.password.hints.precision}"
+                                                  shortDesc="#{bindings.password.hints.tooltip}" id="it2" secret="true">
+                                      <f:validator binding="#{bindings.password.validator}"/>
+                                    </af:inputText>
+                                    <f:facet name="footer">
+                                      <af:panelGroupLayout layout="vertical" inlineStyle="width:275px;" halign="right" id="pgl3">
+                                        <af:panelGroupLayout layout="horizontal" id="pgl4">
+                                          <af:commandLink text="#{perpsasregistviewcontrollerBundle['sasr.login.forgotPassword']}"
+                                                          partialSubmit="true" id="cl1">
+                                            <af:showPopupBehavior popupId="::forgetPasswordPopup" triggerType="action" align="startAfter"/>
+                                          </af:commandLink>
+                                          <af:spacer width="10" height="10" id="s1"/>
+                                          <af:commandLink text="#{perpsasregistviewcontrollerBundle['sasr.login.signup']}"
+                                                          partialSubmit="true" action="regist" id="cl2"
+                                                          actionListener="#{sasrLogout.logoutActionListener}"/>
+                                        </af:panelGroupLayout>
+                                        <af:panelGroupLayout layout="vertical" halign="center" id="pgl5">
+                                          <af:commandButton actionListener="#{bindings.doPerpSasrAccountChecking.execute}"
+                                                            text="#{perpsasregistviewcontrollerBundle['sasr.login.submit']}"
+                                                            disabled="#{!bindings.doPerpSasrAccountChecking.enabled}"
+                                                            action="#{sasrLogin.perpSasrLoginAction}" partialSubmit="true" id="cb1"/>
+                                        </af:panelGroupLayout>
+                                      </af:panelGroupLayout>
+                                    </f:facet>
+                                  </af:panelFormLayout>
+                                </af:panelHeader>
+                              </af:panelGroupLayout>
+                            </trh:cellFormat>
+                          </trh:rowLayout>
+                        </trh:tableLayout>
+                      </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                  </af:panelGroupLayout>
+                </af:panelBorderLayout>
+              </af:panelGroupLayout>
+            </af:panelBox>
+          </f:facet>
+          <f:facet name="globalTabs">
+            <af:navigationPane id="np1">
+              <af:commandNavigationItem text="Hệ thống đăng ký" id="cni1" partialSubmit="true"/>
+            </af:navigationPane>
+          </f:facet>
+          <f:facet name="copyright">
+            <af:outputText value="@Copyright vinhcuu 2010" id="ot4"/>
+          </f:facet>
+          <f:facet name="about">
+            <af:outputText value="vinhcuu" id="outputText1"/>
+          </f:facet>
+          <f:facet name="globalSearch">
+            <af:panelGroupLayout id="pgl10" layout="horizontal">
+              <af:inputText label="Search" id="it4" rendered="false"/>
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="globalLinks">
+            <af:group id="g2">
+              <af:panelGroupLayout id="pgl14" layout="vertical">
+                <af:spacer width="10" height="5" id="s3"/>
+                <af:group id="g1">
+                  <af:outputText value="Người dùng: " id="ot5" inlineStyle="font-size:13.0px;"/>
+                  <af:outputText value="#{sasrSessionLoginObject.perpSasrAccount.userName != null? sasrSessionLoginObject.perpSasrAccount.userName: 'Guest'}"
+                                 id="cl4" inlineStyle="font-size:13.0px;"/>
+                  <af:spacer width="5" height="5" id="s4"/>
+                  <af:outputText value="|" id="ot6"/>
+                  <af:spacer width="5" height="5" id="s5"/>
+                  <af:commandLink text="Sign In" id="cl5" inlineStyle="font-size:13.0px;"
+                                  actionListener="#{sasrLogout.logoutActionListener}" action="login"/>
+                </af:group>
+              </af:panelGroupLayout>
+            </af:group>
+          </f:facet>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

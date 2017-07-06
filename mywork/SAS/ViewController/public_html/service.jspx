@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:trh="http://myfaces.apache.org/trinidad/html">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:pageTemplate viewId="/templates/commonNewsTemplate.jspx" value="#{bindings.pageTemplateBinding}" id="pt1">
+        <f:facet name="left">
+          <af:panelGroupLayout layout="vertical" id="pgl1">
+            <jsp:include page="/pages/fragments/commonNews/nav.jsff"/>
+          </af:panelGroupLayout>
+        </f:facet>
+        <f:facet name="center">
+          <af:panelGroupLayout layout="vertical" id="pgl2">
+            <jsp:include page="/pages/fragments/commonNews/newsViewer.jsff"/>
+          </af:panelGroupLayout>
+        </f:facet>
+        <f:facet name="right">
+          <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="pgl3">
+            <af:image source="/resources/images/home/vc-icon.png" id="i1"/>
+          </af:panelGroupLayout>
+        </f:facet>
+        <f:facet name="popupFacet"/>
+      </af:pageTemplate>
+    </af:document>
+  </f:view>
+</jsp:root>

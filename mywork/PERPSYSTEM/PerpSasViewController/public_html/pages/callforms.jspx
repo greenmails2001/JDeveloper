@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <html>
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    </head>
+    <body onload="document.getElementById('form1').submit();">
+      <form action="http://${sessionLoginObject.envChecking.perpSasEnv.appHost}:${sessionLoginObject.envChecking.perpSasEnv.appPort}/forms/frmservlet"
+            method="POST" id="form1" accept-charset="UTF-8">
+        <c:forEach var="entry" items="${sessionScope.callFormMap}">
+          <input type="hidden" name="${entry.key}" value="${entry.value}" size="100"/>
+          <br/>
+        </c:forEach>
+      </form>
+    </body>
+  </html>
+</jsp:root>

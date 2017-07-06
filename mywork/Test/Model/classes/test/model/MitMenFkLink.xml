@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="MitMenFkLink"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  EntityAssociation="test.model.MitMenFkAssoc">
+  <ViewLinkDefEnd
+    Name="MenuView"
+    Cardinality="1"
+    Source="true"
+    Owner="test.model.MenuView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_finderName" Value="MenuView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="test.model.MenuView.Id"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="MenuItemsView"
+    Cardinality="-1"
+    Owner="test.model.MenuItemsView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="MenuItemsView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="test.model.MenuItemsView.MenId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

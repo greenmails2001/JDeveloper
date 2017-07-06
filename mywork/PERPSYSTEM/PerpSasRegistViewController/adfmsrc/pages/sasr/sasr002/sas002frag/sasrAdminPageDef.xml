@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.1.56.60" id="sasrAdminPageDef"
+                Package="pages.sasr.sasr002.sas002frag">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <taskFlow id="sasradmin1" taskFlowId="/WEB-INF/sasr-admin.xml#sasr-admin" activation="deferred"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding"/>
+  </executables>
+  <bindings/>
+</pageDefinition>

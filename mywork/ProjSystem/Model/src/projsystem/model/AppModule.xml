@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AppModule"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  ClearCacheOnRollback="true">
+  <ViewUsage
+    Name="ProjectsView1"
+    ViewObjectName="projsystem.model.ProjectsView"/>
+  <ViewUsage
+    Name="TasksView1"
+    ViewObjectName="projsystem.model.TasksView"/>
+  <ViewUsage
+    Name="TasksView2"
+    ViewObjectName="projsystem.model.TasksView"/>
+  <ViewUsage
+    Name="TasksView3"
+    ViewObjectName="projsystem.model.TasksView"/>
+  <ViewLinkUsage
+    Name="TasTasFkLink1"
+    ViewLinkObjectName="projsystem.model.TasTasFkLink"
+    SrcViewUsageName="projsystem.model.AppModule.TasksView1"
+    DstViewUsageName="projsystem.model.AppModule.TasksView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="TasProjFkLink1"
+    ViewLinkObjectName="projsystem.model.TasProjFkLink"
+    SrcViewUsageName="projsystem.model.AppModule.ProjectsView1"
+    DstViewUsageName="projsystem.model.AppModule.TasksView3"
+    Reversed="false"/>
+</AppModule>

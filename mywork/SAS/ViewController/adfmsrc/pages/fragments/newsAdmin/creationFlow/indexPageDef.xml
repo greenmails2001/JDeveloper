@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.1.49.49" id="indexPageDef"
+                Package="pages.fragments.newsAdmin.creationFlow">
+  <parameters/>
+  <executables>
+    <methodIterator Binds="queryNewsFindByNcaId.result" DataControl="SASFacadeLocal" RangeSize="25"
+                    BeanClass="com.vc.web.ejb.sas.entities.News" id="queryNewsFindByNcaIdIterator" Refresh="always" CacheResults="true"/>
+  </executables>
+  <bindings>
+    <methodAction id="queryNewsFindByNcaId" RequiresUpdateModel="true" Action="invokeMethod" MethodName="queryNewsFindByNcaId"
+                  IsViewObjectMethod="false" DataControl="SASFacadeLocal" InstanceName="SASFacadeLocal.dataProvider"
+                  ReturnName="SASFacadeLocal.methodResults.queryNewsFindByNcaId_SASFacadeLocal_dataProvider_queryNewsFindByNcaId_result">
+      <NamedData NDName="ncaId" NDValue="${backing_newsAdmin_newsAdminManager.currentNcaId}" NDType="java.lang.Long"/>
+    </methodAction>
+    <attributeValues IterBinding="queryNewsFindByNcaIdIterator" id="createdBy">
+      <AttrNames>
+        <Item Value="createdBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryNewsFindByNcaIdIterator" id="createDate">
+      <AttrNames>
+        <Item Value="createDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryNewsFindByNcaIdIterator" id="modifiedBy">
+      <AttrNames>
+        <Item Value="modifiedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryNewsFindByNcaIdIterator" id="modifyDate">
+      <AttrNames>
+        <Item Value="modifyDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryNewsFindByNcaIdIterator" id="newsId">
+      <AttrNames>
+        <Item Value="newsId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryNewsFindByNcaIdIterator" id="priorityLevel">
+      <AttrNames>
+        <Item Value="priorityLevel"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryNewsFindByNcaIdIterator" id="title">
+      <AttrNames>
+        <Item Value="title"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryNewsFindByNcaIdIterator" id="content">
+      <AttrNames>
+        <Item Value="content"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="queryNewsFindByNcaIdIterator" id="First" RequiresUpdateModel="true" Action="first"/>
+    <action IterBinding="queryNewsFindByNcaIdIterator" id="Previous" RequiresUpdateModel="true" Action="previous"/>
+    <action IterBinding="queryNewsFindByNcaIdIterator" id="Next" RequiresUpdateModel="true" Action="next"/>
+    <action IterBinding="queryNewsFindByNcaIdIterator" id="Last" RequiresUpdateModel="true" Action="last"/>
+  </bindings>
+</pageDefinition>

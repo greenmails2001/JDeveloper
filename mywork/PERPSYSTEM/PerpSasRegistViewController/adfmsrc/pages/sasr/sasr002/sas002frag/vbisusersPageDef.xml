@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.1.56.60" id="vbisusersPageDef"
+                Package="pages.sasr.sasr002.sas002frag">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <invokeAction Binds="prepareToShowVbisUser" id="showVbisUser" Refresh="ifNeeded"/>
+    <iterator Binds="VbisUsersView1" RangeSize="25" DataControl="PerpSasRegistAppModuleDataControl" id="VbisUsersView1Iterator"/>
+    <searchRegion Binds="VbisUsersView1Iterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="VbisUsersView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="VbisUsersView1Iterator" id="VbisUsersView1">
+      <nodeDefinition DefName="com.perp.sasregistmodel.views.sasr002.VbisUsersView" Name="VbisUsersView10">
+        <AttrNames>
+          <Item Value="UserName"/>
+          <Item Value="Password"/>
+          <Item Value="FullName"/>
+          <Item Value="ContactTelephone"/>
+          <Item Value="Email"/>
+          <Item Value="OrganizationName"/>
+          <Item Value="Address"/>
+          <Item Value="TaxCode"/>
+          <Item Value="VusId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <methodAction id="prepareToShowVbisUser" InstanceName="PerpSasRegistAppModuleDataControl.dataProvider"
+                  DataControl="PerpSasRegistAppModuleDataControl" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="prepareToShowVbisUser" IsViewObjectMethod="false">
+      <NamedData NDName="accId" NDValue="#{sasrSessionLoginObject.perpSasrAccount.accId}" NDType="oracle.jbo.domain.Number"/>
+    </methodAction>
+    <action IterBinding="VbisUsersView1Iterator" id="removeRowWithKey" InstanceName="PerpSasRegistAppModuleDataControl.VbisUsersView1"
+            DataControl="PerpSasRegistAppModuleDataControl" RequiresUpdateModel="false" Action="removeRowWithKey">
+      <NamedData NDName="rowKey" NDValue="#{row.rowKeyStr}" NDType="java.lang.String"/>
+    </action>
+    <action IterBinding="VbisUsersView1Iterator" id="CreateInsert" InstanceName="PerpSasRegistAppModuleDataControl.VbisUsersView1"
+            DataControl="PerpSasRegistAppModuleDataControl" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction" DataControl="PerpSasRegistAppModuleDataControl"/>
+    <action id="Rollback" RequiresUpdateModel="false" Action="rollbackTransaction" DataControl="PerpSasRegistAppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

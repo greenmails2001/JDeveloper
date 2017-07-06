@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core" xmlns:trh="http://myfaces.apache.org/trinidad/html">
+  <af:panelStretchLayout styleClass="AFVisualRoot" theme="none" id="zsfpsl1">
+    <f:facet name="center">
+      <af:panelSplitter orientation="vertical" splitterPosition="106" id="zsfps1">
+        <f:facet name="second">
+          <af:panelSplitter splitterPosition="265" id="zsfps2">
+            <f:facet name="first">
+              <af:panelAccordion id="zsfpa1">
+                <af:showDetailItem text="#{viewcontrollerBundle['pages.fragments.newsAdmin.home.categoryList']}" stretchChildren="first"
+                                   id="zsfsdi1">
+                  <af:panelCollection id="zsfpc1">
+                    <f:facet name="menus"/>
+                    <f:facet name="toolbar"/>
+                    <f:facet name="statusbar"/>
+                    <af:tree var="node" rowSelection="single" value="#{backing_newsAdmin_newsAdminManager.categoriesTreeModel}"
+                             selectionListener="#{backing_newsAdmin_newsAdminManager.newsCategoriesTreeSelectionListener}"
+                             id="zsft1">
+                      <f:facet name="nodeStamp">
+                        <af:outputText value="#{node.title}" id="zsfot1"/>
+                      </f:facet>
+                    </af:tree>
+                  </af:panelCollection>
+                </af:showDetailItem>
+              </af:panelAccordion>
+            </f:facet>
+            <f:facet name="second">
+              <af:panelSplitter orientation="vertical" splitterPosition="84" id="zsfps3">
+                <f:facet name="first">
+                  <af:decorativeBox id="zsfdb1">
+                    <f:facet name="center">
+                      <af:panelGroupLayout layout="vertical" id="zsfpgl1">
+                        <af:panelGroupLayout layout="vertical" id="zsfpgl2">
+                          <trh:tableLayout width="100%" id="zsftl1">
+                            <trh:rowLayout id="zsfrl1">
+                              <trh:cellFormat id="zsfcf1">
+                                <af:panelGroupLayout layout="horizontal" id="zsfpgl3">
+                                  <af:inputText label="#{viewcontrollerBundle['pages.fragments.newsAdmin.home.searchNews']}"
+                                                id="zsfit1"/>
+                                  <af:commandButton text="#{viewcontrollerBundle['pages.fragments.newsAdmin.home.search']}" partialSubmit="true"
+                                                    id="zsfcb1"/>
+                                </af:panelGroupLayout>
+                              </trh:cellFormat>
+                              <trh:cellFormat halign="right" id="zsfcf2">
+                                <af:panelGroupLayout id="zsfpgl4">
+                                  <af:commandButton text="Xoa tin" partialSubmit="true" id="zsfcb2"/>
+                                  <af:spacer width="10" height="10" id="zsfs1"/>
+                                  <af:commandButton text="Viet tin moi" partialSubmit="true" id="zsfcb3"/>
+                                </af:panelGroupLayout>
+                              </trh:cellFormat>
+                            </trh:rowLayout>
+                          </trh:tableLayout>
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout id="zsfpgl5">
+                          <af:inputText label="#{viewcontrollerBundle['pages.fragments.newsAdmin.home.newsCategory']}" readOnly="true"
+                                        value="#{backing_newsAdmin_newsAdminManager.currentNewsCategoriesTitle}"
+                                        inlineStyle="font-size:larger;" binding="#{backing_newsAdmin_newsAdminManager.afCurrentNcaTitle}"
+                                        id="zsfit2"/>
+                        </af:panelGroupLayout>
+                      </af:panelGroupLayout>
+                    </f:facet>
+                  </af:decorativeBox>
+                </f:facet>
+                <f:facet name="second">
+                  <af:region value="#{bindings.newsadmincreateflow1.regionModel}" id="newsadmincreateflow1"
+                             binding="#{backing_newsAdmin_newsAdminManager.region1}"/>
+                </f:facet>
+              </af:panelSplitter>
+            </f:facet>
+          </af:panelSplitter>
+        </f:facet>
+      </af:panelSplitter>
+    </f:facet>
+  </af:panelStretchLayout>
+</jsp:root>

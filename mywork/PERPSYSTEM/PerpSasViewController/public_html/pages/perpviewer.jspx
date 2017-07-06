@@ -1,0 +1,324 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="perpsasviewcontrollerBundle"
+         value="#{adfBundle['com.perp.sasviewcontroller.PerpSasViewControllerBundle']}"/>
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1" title="Hệ thống Perp">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:popup id="findPopup2" contentDelivery="lazyUncached">
+          <af:panelWindow inlineStyle="width:700px; height:450px;"
+                          title="#{perpsasviewcontrollerBundle['perpsas.sas001.perpviewer.searchFormTitle']}"
+                          modal="true" id="pw2">
+            <af:panelStretchLayout inlineStyle="width:680px; height:400px;"
+                                   topHeight="55px" id="panelStretchLayout1">
+              <f:facet name="center">
+                <af:panelCollection id="panelCollection1">
+                  <af:table value="#{bindings.SasMenusSearch.collectionModel}"
+                            var="row"
+                            rows="#{bindings.SasMenusSearch.rangeSize}"
+                            emptyText="#{bindings.SasMenusSearch.viewable ? 'No rows yet.' : 'Access Denied.'}"
+                            fetchSize="#{bindings.SasMenusSearch.rangeSize}"
+                            selectedRowKeys="#{bindings.SasMenusSearch.collectionModel.selectedRow}"
+                            selectionListener="#{bindings.SasMenusSearch.collectionModel.makeCurrent}"
+                            rowSelection="single" id="searchTable3"
+                            partialTriggers=":::findSubmit3">
+                    <af:column sortProperty="GusName" sortable="true"
+                               headerText="#{perpsasviewcontrollerBundle['perpsas.sas001.perpviewer.gusName']}"
+                               width="166" id="c1">
+                      <af:outputText value="#{row.GusName}" id="outputText1"/>
+                    </af:column>
+                    <af:column sortProperty="MenuName" sortable="true"
+                               headerText="#{perpsasviewcontrollerBundle['perpsas.sas001.perpviewer.menuName']}"
+                               width="164" id="c2">
+                      <af:outputText value="#{row.MenuName}" id="outputText2"/>
+                    </af:column>
+                    <af:column sortProperty="MenuLable" sortable="true"
+                               headerText="#{perpsasviewcontrollerBundle['perpsas.sas001.perpviewer.menuLabel']}"
+                               width="300" id="c3">
+                      <af:goLink text="#{row.MenuLable}" id="gl2"
+                                 targetFrame="_blank"
+                                 destination="/faces/perpLauchServlet?gusId=#{row.GusId}&amp;menuName=#{row.MenuName}&amp;menId=#{row.MenId}"/>
+                    </af:column>
+                    <af:column sortProperty="MenuDescription" sortable="true"
+                               headerText="#{perpsasviewcontrollerBundle['perpsas.sas001.perpviewer.menuDescription']}"
+                               width="310" id="column1">
+                      <af:outputText value="#{row.MenuDescription}"
+                                     id="outputText3"/>
+                    </af:column>
+                    <af:column sortProperty="AppCode" sortable="true"
+                               headerText="#{perpsasviewcontrollerBundle['perpsas.sas001.perpviewer.appCode']}"
+                               width="80" id="c6">
+                      <af:outputText value="#{row.AppCode}" id="ot6"/>
+                    </af:column>
+                  </af:table>
+                </af:panelCollection>
+              </f:facet>
+              <f:facet name="top">
+                <af:panelFormLayout rows="1" maxColumns="2" labelWidth="100"
+                                    id="pfl3">
+                  <af:inputText value="#{bindings.searchText.inputValue}"
+                                label="#{perpsasviewcontrollerBundle['perpsas.sas001.perpviewer.searchText']}"
+                                required="#{bindings.searchText.hints.mandatory}"
+                                columns="#{bindings.searchText.hints.displayWidth}"
+                                maximumLength="#{bindings.searchText.hints.precision}"
+                                shortDesc="#{bindings.searchText.hints.tooltip}"
+                                id="it7" clientComponent="true">
+                    <f:validator binding="#{bindings.searchText.validator}"/>
+                  </af:inputText>
+                  <af:selectOneChoice label="#{perpsasviewcontrollerBundle['perpsas.sas001.perpviewer.findIn']}"
+                                      value="#{bindings.findIn.inputValue}"
+                                      id="soc1">
+                    <af:selectItem label="All" value="all" id="si1"/>
+                    <af:selectItem label="Name" value="name" id="si2"/>
+                    <af:selectItem label="Label" value="label" id="si3"/>
+                    <af:selectItem label="Description" value="description"
+                                   id="si4"/>
+                  </af:selectOneChoice>
+                  <f:facet name="footer">
+                    <af:commandButton actionListener="#{bindings.prepareToShowSasMenusSearch.execute}"
+                                      text="#{perpsasviewcontrollerBundle['perpsas.sas001.perpviewer.searchButton']}"
+                                      disabled="#{!bindings.prepareToShowSasMenusSearch.enabled}"
+                                      partialSubmit="true" id="findSubmit3"/>
+                  </f:facet>
+                </af:panelFormLayout>
+              </f:facet>
+            </af:panelStretchLayout>
+          </af:panelWindow>
+        </af:popup>
+        <af:popup id="history">
+          <af:dialog inlineStyle="width:800px; height:450px;"
+                     title="Login History" modal="true" id="pw3" type="ok">
+            <af:panelStretchLayout inlineStyle="width:780px; height:400px;"
+                                   topHeight="55px" id="panelStretchLayout2">
+              <f:facet name="center">
+                <af:panelCollection id="pc1">
+                  <f:facet name="menus"/>
+                  <f:facet name="toolbar"/>
+                  <f:facet name="statusbar"/>
+                  <af:table value="#{bindings.AppLogins1.collectionModel}"
+                            var="row" rows="#{bindings.AppLogins1.rangeSize}"
+                            emptyText="#{bindings.AppLogins1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                            fetchSize="#{bindings.AppLogins1.rangeSize}"
+                            rowBandingInterval="0"
+                            filterModel="#{bindings.AppLogins1Query.queryDescriptor}"
+                            queryListener="#{bindings.AppLogins1Query.processQuery}"
+                            filterVisible="false" varStatus="vs"
+                            selectedRowKeys="#{bindings.AppLogins1.collectionModel.selectedRow}"
+                            selectionListener="#{bindings.AppLogins1.collectionModel.makeCurrent}"
+                            rowSelection="single" id="t1">
+                    <af:column sortProperty="UserName" filterable="true"
+                               sortable="true"
+                               headerText="#{bindings.AppLogins1.hints.UserName.label}"
+                               id="c5" width="115" visible="false">
+                      <af:outputText value="#{row.UserName}" id="ot7"/>
+                    </af:column>
+                    <af:column sortProperty="LoginAt" filterable="true"
+                               sortable="true"
+                               headerText="#{bindings.AppLogins1.hints.LoginAt.label}"
+                               id="c8" width="150">
+                      <f:facet name="filter">
+                        <af:inputDate value="#{vs.filterCriteria.LoginAt}"
+                                      id="id1"/>
+                      </f:facet>
+                      <af:outputText value="#{row.LoginAt}" id="ot5">
+                        <af:convertDateTime pattern="#{bindings.AppLogins1.hints.LoginAt.format}"/>
+                      </af:outputText>
+                    </af:column>
+                    <af:column sortProperty="IpAddress" filterable="true"
+                               sortable="true"
+                               headerText="#{bindings.AppLogins1.hints.IpAddress.label}"
+                               id="c9" width="116">
+                      <af:outputText value="#{row.IpAddress}" id="ot4"/>
+                    </af:column>
+                    <af:column sortProperty="Country" filterable="true"
+                               sortable="true"
+                               headerText="#{bindings.AppLogins1.hints.Country.label}"
+                               id="c4" width="115">
+                      <af:outputText value="#{row.Country}" id="ot3"/>
+                    </af:column>
+                    <af:column sortProperty="Browser" filterable="true"
+                               sortable="true"
+                               headerText="#{bindings.AppLogins1.hints.Browser.label}"
+                               id="c7" width="500">
+                      <af:outputText value="#{row.Browser}" id="ot8"/>
+                    </af:column>
+                  </af:table>
+                </af:panelCollection>
+              </f:facet>
+            </af:panelStretchLayout>
+          </af:dialog>
+        </af:popup>
+        <af:popup id="about">
+          <af:dialog inlineStyle="width:600px; height:350px;" title="About"
+                     modal="true" id="pw4" type="ok">
+            <af:panelStretchLayout inlineStyle="width:580px; height:300px;"
+                                   topHeight="55px" id="panelStretchLayout3">
+              <f:facet name="center">
+                <af:panelGroupLayout id="panelGroupLayout16" layout="vertical"
+                                     inlineStyle="padding:10px;">
+                  <af:panelGroupLayout id="panelGroupLayout17" layout="vertical"
+                                       halign="left" valign="top">
+                    <af:panelGroupLayout id="panelGroupLayout18" 
+                                         layout="horizontal" valign="top">
+                      <af:image source="/images/globals/vinhcuu-logo2.gif" 
+                                shortDesc="logo" id="image2">
+                        <img height="25" width="121"
+                             src="../images/globals/toplogo.gif"/>
+                      </af:image>
+                      <af:panelGroupLayout id="panelGroupLayout19"
+                                           layout="vertical">
+                        <af:outputText value="CÔNG TY CP GIẢI PHÁP CÔNG NGHỆ		VĨNH CỬU"
+                                       id="outputText10"
+                                       inlineStyle="font-size:larger;"/>
+                        <af:outputText value="PERPETUITY TECHNOLOGY SOLUTIONS JOINT STOCK COMPANY - PERP JSC"
+                                       id="outputText5"
+                                       inlineStyle="font-size:small;"/>
+                      </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                  </af:panelGroupLayout>
+                  <af:spacer width="10" height="10" id="spacer1"/>
+                  <af:panelGroupLayout id="panelGroupLayout20" layout="vertical"
+                                       inlineStyle="padding:5px;">
+                    <af:panelGroupLayout id="panelGroupLayout21"
+                                         layout="vertical">
+                      <af:showDetail disclosed="true" id="showDetail2"
+                                     disclosedText="Header Office">
+                        <af:panelGroupLayout id="panelGroupLayout22"
+                                             layout="vertical">
+                          <af:outputText value="123 Truong Dinh Str, Ward 7, Dist 3, Ho Chi Minh City"
+                                         id="outputText11"
+                                         inlineStyle="font-size:larger;"/>
+                          <af:outputText value="Tel : (08) 38481882 - Fax : (08) 38481882"
+                                         id="outputText12"
+                                         inlineStyle="font-size:larger;"/>
+                        </af:panelGroupLayout>
+                      </af:showDetail>
+                    </af:panelGroupLayout>
+                    <af:panelGroupLayout id="panelGroupLayout23"
+                                         layout="vertical">
+                      <af:showDetail disclosed="true" id="showDetail3"
+                                     disclosedText="Branch">
+                        <af:panelGroupLayout id="panelGroupLayout24"
+                                             layout="vertical">
+                          <af:outputText value="Room P602 - Dinh Le Building"
+                                         id="outputText13"
+                                         inlineStyle="font-size:larger;"/>
+                          <af:outputText value="No. 123B Tran Dang Ninh Str, Dich Vong Ward, Cau Giay Dist, Ha Noi City"
+                                         id="outputText14"
+                                         inlineStyle="font-size:larger;"/>
+                          <af:outputText value="Tel : (04) 363 8629"
+                                         id="outputText15"
+                                         inlineStyle="font-size:larger;"/>
+                        </af:panelGroupLayout>
+                      </af:showDetail>
+                    </af:panelGroupLayout>
+                  </af:panelGroupLayout>
+                  <af:spacer width="10" height="10" id="spacer3"/>
+                </af:panelGroupLayout>
+              </f:facet>
+            </af:panelStretchLayout>
+          </af:dialog>
+        </af:popup>
+        <af:pageTemplate viewId="/templates/sasTemplate.jspx" id="pt1">
+          <f:facet name="status"/>
+          <f:facet name="globalLinks">
+            <af:navigationPane hint="buttons" id="pt_np1">
+              <af:commandNavigationItem text="Home" action="gosasnew"
+                                        id="pt_cni1" targetFrame="_blank"/>
+              <af:commandNavigationItem text="Register" action="gosasregist"
+                                        id="pt_cni3" targetFrame="_blank"/>
+              <af:commandNavigationItem text="Sign Out" action="back"
+                                        id="pt_cni2" actionListener="#{perpSasLogOut.logoutActionListener}"/>
+            </af:navigationPane>
+          </f:facet>
+          <f:facet name="about">
+            <af:outputText value="vinhcuu" id="ot2"/>
+          </f:facet>
+          <f:facet name="copyright">
+            <af:outputText value="Vinh Cuu 2014, all rights reserved."
+                           id="ot1"/>
+          </f:facet>
+          <f:facet name="globalSearch">
+            <af:panelGroupLayout id="pgl1" layout="horizontal">
+              <af:inputText label="Search" id="it1"
+                            value="#{bindings.searchText.inputValue}"
+                            visible="false">
+                <af:showPopupBehavior popupId=""/>
+              </af:inputText>
+              <af:commandButton text="Find" id="cb1" partialSubmit="true"
+                                actionListener="#{bindings.prepareToShowSasMenusSearch.execute}"
+                                visible="false">
+                <af:showPopupBehavior triggerType="action"
+                                      popupId="::findPopup2"/>
+              </af:commandButton>
+              <af:menuBar id="mb1">
+                <af:menu text="Help" id="m2">
+                  <af:commandMenuItem text="Login History" id="cmi2"
+                                      actionListener="#{bindings.prepareToShowAppLogins.execute}"
+                                      disabled="#{!bindings.prepareToShowAppLogins.enabled}"
+                                      partialSubmit="true">
+                    <af:showPopupBehavior popupId="::history"
+                                          triggerType="action"/>
+                  </af:commandMenuItem>
+                  <af:commandMenuItem text="Change Password" id="cmi3">
+                    <af:showPopupBehavior popupId="changePassword"
+                                          triggerType="action"/>
+                  </af:commandMenuItem>
+                  <af:commandMenuItem text="About" id="cmi1"
+                                      partialSubmit="true">
+                    <af:showPopupBehavior popupId="::about"
+                                          triggerType="action"/>
+                  </af:commandMenuItem>
+                </af:menu>
+              </af:menuBar>
+            </af:panelGroupLayout>
+          </f:facet>
+          <f:facet name="globalToolbar">
+            <af:group id="g1">
+              <af:outputText value="Người dùng: " id="outputText4"/>
+              <af:outputFormatted value="#{sessionLoginObject.perpAccount.userName}"
+                                  id="of1"/>
+              <af:spacer width="20" height="10" id="s1"/>
+              <af:outputText value="Số thuê bao: " id="ot9"/>              
+              <af:outputFormatted id="of2" value="#{sessionLoginObject.subscriptionInfo.subscriptionCode}"
+                                  inlineStyle="color:Red; font-size:medium;"/>
+            </af:group>
+          </f:facet>
+          <f:facet name="center">
+            <af:decorativeBox id="db1">
+              <f:facet name="center">
+                <af:region value="#{bindings.perpviewer1.regionModel}" id="r1"
+                           partialTriggers="::np1:tab01 ::np1:tab02"/>
+              </f:facet>
+            </af:decorativeBox>
+          </f:facet>
+          <f:facet name="globalTabs">
+            <af:navigationPane id="np1">
+              <af:commandNavigationItem text="VBISCloud" id="tab01"
+                                        partialSubmit="true"
+                                        actionListener="#{perpviewerFlowBacking.setOutcomeActionListener}">
+                <f:attribute name="outcome" value="default"/>
+              </af:commandNavigationItem>
+              <af:commandNavigationItem text="Thông tin điều hành" id="tab02"
+                                        partialSubmit="true"
+                                        destination="http://183.91.31.24:9708/analytics"
+                                        targetFrame="_blank"></af:commandNavigationItem>
+              <af:commandNavigationItem text="Thông tin khác" id="tab03"
+                                        partialSubmit="true"
+                                        actionListener="#{perpviewerFlowBacking.setOutcomeActionListener}"
+                                        visible="false">
+                <f:attribute name="outcome" value="webperp"/>
+              </af:commandNavigationItem>
+            </af:navigationPane>
+          </f:facet>
+        </af:pageTemplate>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

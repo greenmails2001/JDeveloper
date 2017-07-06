@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.49.49"
+          id="PERPFacadeLocal" Package="com.vc.web.ejb.perp"
+          BeanClass="com.vc.web.ejb.perp.PERPFacadeLocal" isJavaBased="true">
+  <MethodAccessor IsCollection="false" Type="java.lang.Object" id="mergeEntity"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="entity" Type="java.lang.Object" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Object"
+                  id="persistEntity" ReturnNodeName="Return">
+    <ParameterInfo id="entity" Type="java.lang.Object" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true"
+                  Type="com.vc.web.ejb.perp.entities.SystemParas"
+                  BeanClass="com.vc.web.ejb.perp.entities.SystemParas"
+                  id="querySystemParasFindAll" ReturnNodeName="SystemParas"
+                  CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="true"
+                  Type="com.vc.web.ejb.perp.entities.SystemParas"
+                  BeanClass="com.vc.web.ejb.perp.entities.SystemParas"
+                  id="querySystemParasFindAllByRange"
+                  ReturnNodeName="SystemParas"
+                  CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="firstResult" Type="int" isStructured="false"/>
+    <ParameterInfo id="maxResults" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true"
+                  Type="com.vc.web.ejb.perp.entities.SystemParas"
+                  BeanClass="com.vc.web.ejb.perp.entities.SystemParas"
+                  id="querySystemParasFindByUserPrivilege"
+                  ReturnNodeName="SystemParas"
+                  CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="userPrivilege" Type="java.lang.Object"
+                   isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true"
+                  Type="com.vc.web.ejb.perp.entities.SystemParas"
+                  BeanClass="com.vc.web.ejb.perp.entities.SystemParas"
+                  id="querySystemParasFindByUserPrivilegeByRange"
+                  ReturnNodeName="SystemParas"
+                  CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="userPrivilege" Type="java.lang.Object"
+                   isStructured="false"/>
+    <ParameterInfo id="firstResult" Type="int" isStructured="false"/>
+    <ParameterInfo id="maxResults" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true"
+                  Type="com.vc.web.ejb.perp.entities.SystemParas"
+                  BeanClass="com.vc.web.ejb.perp.entities.SystemParas"
+                  id="querySystemParasFindByUserPrivilegeChangable"
+                  ReturnNodeName="SystemParas"
+                  CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="true"
+                  Type="com.vc.web.ejb.perp.entities.SystemParas"
+                  BeanClass="com.vc.web.ejb.perp.entities.SystemParas"
+                  id="querySystemParasFindByUserPrivilegeChangableByRange"
+                  ReturnNodeName="SystemParas"
+                  CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="firstResult" Type="int" isStructured="false"/>
+    <ParameterInfo id="maxResults" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Number"
+                  id="querySystemParasFindAllSize" ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="void" id="removeSystemParas"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="systemParas"
+                   Type="com.vc.web.ejb.perp.entities.SystemParas"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true"
+                  Type="com.vc.web.ejb.perp.entities.AppUsers"
+                  BeanClass="com.vc.web.ejb.perp.entities.AppUsers"
+                  id="queryAppUsersFindAll" ReturnNodeName="AppUsers"
+                  CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="true"
+                  Type="com.vc.web.ejb.perp.entities.AppUsers"
+                  BeanClass="com.vc.web.ejb.perp.entities.AppUsers"
+                  id="queryAppUsersFindAllByRange" ReturnNodeName="AppUsers"
+                  CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="firstResult" Type="int" isStructured="false"/>
+    <ParameterInfo id="maxResults" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Number"
+                  id="queryAppUsersFindAllSize" ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="void" id="removeAppUsers"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="appUsers" Type="com.vc.web.ejb.perp.entities.AppUsers"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true"
+                  Type="com.vc.web.ejb.perp.entities.CostCenters"
+                  BeanClass="com.vc.web.ejb.perp.entities.CostCenters"
+                  id="queryCostCentersFindAll" ReturnNodeName="CostCenters"
+                  CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="true"
+                  Type="com.vc.web.ejb.perp.entities.CostCenters"
+                  BeanClass="com.vc.web.ejb.perp.entities.CostCenters"
+                  id="queryCostCentersFindAllByRange"
+                  ReturnNodeName="CostCenters"
+                  CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="firstResult" Type="int" isStructured="false"/>
+    <ParameterInfo id="maxResults" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Number"
+                  id="queryCostCentersFindAllSize" ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="void" id="removeCostCenters"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="costCenters"
+                   Type="com.vc.web.ejb.perp.entities.CostCenters"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true"
+                  Type="com.vc.web.ejb.perp.entities.Employees"
+                  BeanClass="com.vc.web.ejb.perp.entities.Employees"
+                  id="queryEmployeesFindAll" ReturnNodeName="Employees"
+                  CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="true"
+                  Type="com.vc.web.ejb.perp.entities.Employees"
+                  BeanClass="com.vc.web.ejb.perp.entities.Employees"
+                  id="queryEmployeesFindAllByRange" ReturnNodeName="Employees"
+                  CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="firstResult" Type="int" isStructured="false"/>
+    <ParameterInfo id="maxResults" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Number"
+                  id="queryEmployeesFindAllSize" ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="void" id="removeEmployees"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="employees" Type="com.vc.web.ejb.perp.entities.Employees"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true"
+                  Type="com.vc.web.ejb.perp.entities.OrganizationUnits"
+                  BeanClass="com.vc.web.ejb.perp.entities.OrganizationUnits"
+                  id="queryOrganizationUnitsFindAll"
+                  ReturnNodeName="OrganizationUnits"
+                  CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="true"
+                  Type="com.vc.web.ejb.perp.entities.OrganizationUnits"
+                  BeanClass="com.vc.web.ejb.perp.entities.OrganizationUnits"
+                  id="queryOrganizationUnitsFindAllByRange"
+                  ReturnNodeName="OrganizationUnits"
+                  CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="firstResult" Type="int" isStructured="false"/>
+    <ParameterInfo id="maxResults" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Number"
+                  id="queryOrganizationUnitsFindAllSize"
+                  ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="void" id="removeOrganizationUnits"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="organizationUnits"
+                   Type="com.vc.web.ejb.perp.entities.OrganizationUnits"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.perp.entities.Groups"
+                  BeanClass="com.vc.web.ejb.perp.entities.Groups"
+                  id="queryGroupsFindAll" ReturnNodeName="Groups"
+                  CollectionBeanClass="UpdateableCollection"/>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.ejb.perp.entities.Groups"
+                  BeanClass="com.vc.web.ejb.perp.entities.Groups"
+                  id="queryGroupsFindAllByRange" ReturnNodeName="Groups"
+                  CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="firstResult" Type="int" isStructured="false"/>
+    <ParameterInfo id="maxResults" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.Number"
+                  id="queryGroupsFindAllSize" ReturnNodeName="Return"/>
+  <MethodAccessor IsCollection="false" Type="void" id="removeGroups"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="groups" Type="com.vc.web.ejb.perp.entities.Groups"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="void" id="setupAccPeriod"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="beginUsing" Type="java.util.Date" isStructured="false"/>
+    <ParameterInfo id="firstDay" Type="int" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.perp.ModuleInfo"
+                  BeanClass="com.vc.web.perp.ModuleInfo" id="getModuleInfoList"
+                  ReturnNodeName="ModuleInfo"
+                  CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="ausId" Type="java.lang.Long" isStructured="false"/>
+    <ParameterInfo id="appCode" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="true" Type="com.vc.web.perp.AppInfo"
+                  BeanClass="com.vc.web.perp.AppInfo" id="getAppInfoList"
+                  ReturnNodeName="AppInfo"
+                  CollectionBeanClass="UpdateableCollection">
+    <ParameterInfo id="ausId" Type="java.lang.Long" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="com.vc.web.ejb.perp.entities.AppUsers"
+                  BeanClass="com.vc.web.ejb.perp.entities.AppUsers"
+                  id="queryAppUsersFindByUserNameEncrytPassword"
+                  ReturnNodeName="AppUsers">
+    <ParameterInfo id="userName" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="encrytPassword" Type="java.lang.String"
+                   isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="com.vc.web.ejb.perp.entities.AppUsers"
+                  BeanClass="com.vc.web.ejb.perp.entities.AppUsers"
+                  id="queryAppUsersFindByUserNamePassword"
+                  ReturnNodeName="AppUsers">
+    <ParameterInfo id="userName" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="password" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.String"
+                  id="getEncrytPassword" ReturnNodeName="Return">
+    <ParameterInfo id="userName" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="password" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+</JavaBean>

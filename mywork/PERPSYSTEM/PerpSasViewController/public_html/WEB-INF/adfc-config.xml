@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="oraformsfaces">
+    <page>/pages/oraformsfaces.jspx</page>
+  </view>
+  <view id="perpviewer">
+    <page>/pages/perpviewer.jspx</page>
+  </view>
+  <view id="perpviewer_">
+    <page>/pages/sas001/perpviewer_.jspx</page>
+  </view>
+  <view id="login">
+    <page>/pages/login/login.jspx</page>
+  </view>
+  <view id="userprofile">
+    <page>/pages/userprofile.jspx</page>
+  </view>
+  <url-view id="sasn">
+    <url>/sasn/faces/index</url>
+  </url-view>
+  <url-view id="sasr">
+    <url>/sasr</url>
+  </url-view>
+  <view id="callforms">
+    <page>/pages/callforms.jspx</page>
+  </view>
+  <control-flow-rule id="__10">
+    <from-activity-id id="__11">login</from-activity-id>
+    <control-flow-case id="__12">
+      <from-outcome id="__14">success</from-outcome>
+      <to-activity-id id="__13">perpviewer</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__46">
+      <from-outcome id="__47">gosasnew</from-outcome>
+      <to-activity-id id="__45">sasn</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__48">
+      <from-outcome id="__50">gosasregist</from-outcome>
+      <to-activity-id id="__49">sasr</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__18">
+    <from-activity-id id="__19">perpviewer</from-activity-id>
+    <control-flow-case id="__20">
+      <from-outcome id="__22">viewUserProfile</from-outcome>
+      <to-activity-id id="__21">userprofile</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__36">
+      <from-outcome id="__38">back</from-outcome>
+      <to-activity-id id="__37">login</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__40">
+      <from-outcome id="__41">gosasregist</from-outcome>
+      <to-activity-id id="__39">sasr</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__42">
+      <from-outcome id="__44">gosasnew</from-outcome>
+      <to-activity-id id="__43">sasn</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__23">
+    <from-activity-id id="__24">userprofile</from-activity-id>
+    <control-flow-case id="__25">
+      <from-outcome id="__27">back</from-outcome>
+      <to-activity-id id="__26">perpviewer</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean>
+    <managed-bean-name>perpSasLogin</managed-bean-name>
+    <managed-bean-class>com.perp.sasviewcontroller.backing.PerpSasLogin</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean>
+    <managed-bean-name>sessionLoginObject</managed-bean-name>
+    <managed-bean-class>com.perp.beans.SessionLoginObject</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+  <managed-bean>
+    <managed-bean-name>testObject</managed-bean-name>
+    <managed-bean-class>com.perp.beans.TestObject</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__9">
+    <managed-bean-name id="__6">perpviewer</managed-bean-name>
+    <managed-bean-class id="__7">com.perp.sasviewcontroller.backing.PerpViewerBacking</managed-bean-class>
+    <managed-bean-scope id="__8">session</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__4">
+    <managed-bean-name id="__3">cceviewer</managed-bean-name>
+    <managed-bean-class id="__2">com.perp.sasviewcontroller.backing.CceViewerBacking</managed-bean-class>
+    <managed-bean-scope id="__1">request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__16">
+    <managed-bean-name id="__5">perpviewerFlowBacking</managed-bean-name>
+    <managed-bean-class id="__15">com.perp.sasviewcontroller.backing.PerpViewerFlowBacking</managed-bean-class>
+    <managed-bean-scope id="__17">request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__30">
+    <managed-bean-name id="__29">userprofileFlowBacking</managed-bean-name>
+    <managed-bean-class id="__28">com.perp.sasviewcontroller.backing.UserProfileFlowBacking</managed-bean-class>
+    <managed-bean-scope id="__31">request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__53">
+    <managed-bean-name id="__52">perpSasSignOn</managed-bean-name>
+    <managed-bean-class id="__51">pages.login.PerpSasSignOn</managed-bean-class>
+    <managed-bean-scope id="__54">request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__57">
+    <managed-bean-name id="__55">changePassword</managed-bean-name>
+    <managed-bean-class id="__56">pages.userprofile.ChangePassword</managed-bean-class>
+    <managed-bean-scope id="__58">request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__35">
+    <managed-bean-name id="__33">perpSasLogOut</managed-bean-name>
+    <managed-bean-class id="__34">com.perp.sasviewcontroller.backing.PerpSasLogOut</managed-bean-class>
+    <managed-bean-scope id="__32">request</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

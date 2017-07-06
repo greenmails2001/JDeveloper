@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelStretchLayout styleClass="AFVisualRoot" topHeight="67px" id="ynkpsl1">
+    <f:facet name="center">
+      <af:panelSplitter splitterPosition="243" id="ynkps1">
+        <f:facet name="first">
+          <af:panelAccordion discloseMany="true" id="ynkpa1">
+            <af:showDetailItem text="Tree Help" disclosed="true" stretchChildren="first" id="ynksdi1">
+              <af:panelCollection id="ynkpc1">
+                <f:facet name="menus">
+                  <af:menu text="Files" id="ynkm1">
+                    <af:commandMenuItem text="Create Child  Help"
+                                        actionListener="#{backing_helpAdmin_helpAdminManager.createHelpDeskActionListener}"
+                                        partialTriggers="helpTree" id="ynkcmi1"/>
+                    <af:commandMenuItem text="Refresh tree"
+                                        actionListener="#{backing_helpAdmin_helpAdminManager.refreshTreeHelpActionListener}"
+                                        id="ynkcmi2"/>
+                  </af:menu>
+                </f:facet>
+                <f:facet name="toolbar"/>
+                <f:facet name="statusbar"/>
+                <af:tree value="#{backing_helpAdmin_helpAdminManager.treeMode}" var="node" rowSelection="single"
+                         binding="#{backing_helpAdmin_helpAdminManager.tree}"
+                         focusRowKey="#{backing_helpAdmin_helpAdminManager.focusRowKey}"
+                         selectionListener="#{backing_helpAdmin_helpAdminManager.treeHelpSelectionListener}" id="helpTree" immediate="true"
+                         contentDelivery="immediate" clientComponent="false">
+                  <f:facet name="nodeStamp">
+                    <af:outputText value="#{node.title}" id="ynkot1"/>
+                  </f:facet>
+                </af:tree>
+              </af:panelCollection>
+            </af:showDetailItem>
+            <af:showDetailItem text="Search" disclosed="true" id="ynksdi2">
+              <af:panelSplitter orientation="vertical" inlineStyle="height:100%;" positionedFromEnd="true" splitterPosition="150"
+                                id="ynkps2">
+                <f:facet name="first">
+                  <af:panelGroupLayout layout="vertical" id="ynkpgl1">
+                    <af:panelFormLayout labelAlignment="top" id="ynkpfl1">
+                      <af:inputText label="Search Text :" id="ynkit1"/>
+                    </af:panelFormLayout>
+                    <af:panelFormLayout labelAlignment="top" id="ynkpfl2">
+                      <af:selectOneRadio label="Search Condition :" id="ynksor1">
+                        <af:selectItem label="All of words" value="all" id="ynksi1"/>
+                        <af:selectItem label="At lest of words" value="one" id="ynksi2"/>
+                      </af:selectOneRadio>
+                    </af:panelFormLayout>
+                    <hr style="width:200px;" align="left"/>
+                    <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="ynkpgl2">
+                      <af:commandButton text="Search" inlineStyle="padding-right:3px;" id="ynkcb1"/>
+                    </af:panelGroupLayout>
+                  </af:panelGroupLayout>
+                </f:facet>
+                <f:facet name="second"/>
+              </af:panelSplitter>
+            </af:showDetailItem>
+          </af:panelAccordion>
+        </f:facet>
+        <f:facet name="second">
+          <af:panelTabbed id="ynkpt1">
+            <af:showDetailItem text="#{viewcontrollerBundle['pages.fragments.helpAdmin.helpDesk.editMode']}" stretchChildren="first"
+                               id="ynksdi3">
+              <af:panelGroupLayout layout="scroll" inlineStyle="height:500px; padding:3px;" id="ynkpgl3">
+                <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="ynkpgl4">
+                  <af:outputLabel value="#{viewcontrollerBundle['pages.fragments.helpAdmin.helpDesk.introduction.title']}"
+                                  id="ynkol1"/>
+                </af:panelGroupLayout>
+                <af:panelFormLayout rows="1" maxColumns="3" id="ynkpfl3">
+                  <af:inputText label="#{viewcontrollerBundle['field.helpDesks.helpCode']}" value="#{backing_helpAdmin_helpAdminManager.editHelp.helpCode}"
+                                binding="#{backing_helpAdmin_helpAdminManager.afHelpCode1}" id="ynkit2"/>
+                  <af:inputText label="#{viewcontrollerBundle['field.helpDesks.author']}" id="ynkit3"/>
+                  <af:commandButton text="Save" partialSubmit="true" action="#{backing_helpAdmin_helpAdminManager.saveHelpDeskAction}"
+                                    id="ynkcb2"/>
+                </af:panelFormLayout>
+                <af:panelFormLayout labelAlignment="top" id="ynkpfl4">
+                  <af:inputText label="#{viewcontrollerBundle['field.helpDesks.title']}" columns="100" value="#{backing_helpAdmin_helpAdminManager.editHelp.title}"
+                                binding="#{backing_helpAdmin_helpAdminManager.afHelpTitle1}" id="ynkit4"/>
+                </af:panelFormLayout>
+                <af:panelFormLayout labelAlignment="top" inlineStyle="width:100%;" id="ynkpfl5">
+                  <af:richTextEditor rows="10" columns="150" inlineStyle="width:100%;"
+                                     value="#{backing_helpAdmin_helpAdminManager.editHelp.content}"
+                                     binding="#{backing_helpAdmin_helpAdminManager.afHelpContent1}" id="ynkrte1"/>
+                </af:panelFormLayout>
+              </af:panelGroupLayout>
+            </af:showDetailItem>
+            <af:showDetailItem text="#{viewcontrollerBundle['pages.fragments.helpAdmin.helpDesk.reviewMode']}" stretchChildren="first"
+                               id="ynksdi4">
+              <af:panelGroupLayout layout="scroll" inlineStyle="height:500px; padding:3px;" id="ynkpgl5">
+                <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="ynkpgl6">
+                  <af:outputLabel value="READONLY MODE HELP EDITOR" id="ynkol2"/>
+                </af:panelGroupLayout>
+                <af:panelFormLayout rows="1" maxColumns="3" id="ynkpfl6">
+                  <af:inputText label="Help Code :" value="#{backing_helpAdmin_helpAdminManager.editHelp.helpCode}"
+                                binding="#{backing_helpAdmin_helpAdminManager.afHelpCode2}" readOnly="true"
+                                id="ynkit5"/>
+                  <af:inputText label="Author" id="ynkit6"/>
+                </af:panelFormLayout>
+                <af:spacer width="10" height="10" id="ynks1"/>
+                <af:panelGroupLayout layout="vertical" inlineStyle="border-width:1px; border-style:outset; height:40px;"
+                                     id="ynkpgl7">
+                  <af:activeOutputText value="#{backing_helpAdmin_helpAdminManager.editHelp.title}"
+                                       binding="#{backing_helpAdmin_helpAdminManager.afHelpTitle2}" inlineStyle="font-size:large;"
+                                       id="ynkaot1"/>
+                </af:panelGroupLayout>
+                <af:panelGroupLayout layout="vertical" inlineStyle="padding:4px;" id="ynkpgl8">
+                  <af:richTextEditor rows="10" columns="150" inlineStyle="width:100%;"
+                                     value="#{backing_helpAdmin_helpAdminManager.editHelp.content}"
+                                     binding="#{backing_helpAdmin_helpAdminManager.afHelpContent2}" readOnly="true"
+                                     id="ynkrte2"/>
+                </af:panelGroupLayout>
+              </af:panelGroupLayout>
+            </af:showDetailItem>
+          </af:panelTabbed>
+        </f:facet>
+      </af:panelSplitter>
+    </f:facet>
+    <f:facet name="top">
+      <af:panelGroupLayout layout="vertical" id="ynkpgl9">
+        <af:menuBar id="ynkmb1">
+          <af:menu text="Files" id="ynkm2"/>
+          <af:menu text="Help" id="ynkm3"/>
+        </af:menuBar>
+        <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="ynkpgl10">
+          <af:panelGroupLayout layout="horizontal" id="ynkpgl11">
+            <af:inputText label="Nothing" id="ynkit7"/>
+            <af:commandButton text="Button" id="ynkcb3"/>
+            <af:separator id="ynks2"/>
+            <af:inputText id="ynkit8"/>
+            <af:inputText id="ynkit9"/>
+            <af:commandButton text="Button" id="ynkcb4"/>
+          </af:panelGroupLayout>
+        </af:panelGroupLayout>
+      </af:panelGroupLayout>
+    </f:facet>
+  </af:panelStretchLayout>
+</jsp:root>

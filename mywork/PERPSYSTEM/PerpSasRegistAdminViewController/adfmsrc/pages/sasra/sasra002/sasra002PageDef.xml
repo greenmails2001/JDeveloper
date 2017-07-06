@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.51.88" id="sasra002PageDef"
+                Package="pages.sasra.sasra002">
+  <parameters/>
+  <executables>
+    <taskFlow id="sasra002a1"
+              taskFlowId="/pages/sasra/sasra002/sasra002a.xml#sasra002a"
+              xmlns="http://xmlns.oracle.com/adf/controller/binding">
+      <parameters>
+        <parameter id="inputValue"
+                   value="#{ sasra002aTaskFlowBacking.inputValue}"
+                   xmlns="http://xmlns.oracle.com/adfm/uimodel"/>
+      </parameters>
+    </taskFlow>
+  </executables>
+  <bindings/>
+</pageDefinition>

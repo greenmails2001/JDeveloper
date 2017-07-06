@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.54.7" id="countriesPageDef"
+                Package="pages.sasra.sasra002.sasra002a">
+  <parameters/>
+  <executables>
+    <iterator Binds="Sasra002aCountries" RangeSize="25"
+              DataControl="PerpSasRegistAppModuleDataControl"
+              id="Sasra002aCountriesIterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="Sasra002aCountriesIterator" id="Sasra002aCountries">
+      <nodeDefinition DefName="com.perp.sasregistmodel.views.sasra002.Sasra002aCountries"
+                      Name="Sasra002aCountries0">
+        <AttrNames>
+          <Item Value="CountryCode"/>
+          <Item Value="Name"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="Sasra002aCountriesIterator" id="CouId">
+      <AttrNames>
+        <Item Value="CouId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Sasra002aCountriesIterator" id="CountryCode">
+      <AttrNames>
+        <Item Value="CountryCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="Sasra002aCountriesIterator" id="Name">
+      <AttrNames>
+        <Item Value="Name"/>
+      </AttrNames>
+    </attributeValues>
+    <action id="Commit" RequiresUpdateModel="true" Action="commitTransaction"
+            DataControl="PerpSasRegistAppModuleDataControl"/>
+  </bindings>
+</pageDefinition>

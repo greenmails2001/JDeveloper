@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Subscriptions"
+  Version="11.1.1.56.60"
+  DBObjectType="table"
+  DBObjectName="SUBSCRIPTIONS"
+  AliasName="Subscriptions"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="SubId"
+    IsNotNull="true"
+    ColumnName="SUB_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="SUBSCRIPTIONS"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SubscribeDate"
+    ColumnName="SUBSCRIBE_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="TIMESTAMP"
+    TableName="SUBSCRIPTIONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Status"
+    Precision="1"
+    ColumnName="STATUS"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="SUBSCRIPTIONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="1"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="StartDate"
+    ColumnName="START_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="TIMESTAMP"
+    TableName="SUBSCRIPTIONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="EndDate"
+    ColumnName="END_DATE"
+    Type="oracle.jbo.domain.Date"
+    ColumnType="DATE"
+    SQLType="TIMESTAMP"
+    TableName="SUBSCRIPTIONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="7"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Quantity"
+    Precision="20"
+    Scale="3"
+    ColumnName="QUANTITY"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="SUBSCRIPTIONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="AppUrl"
+    Precision="200"
+    ColumnName="APP_URL"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="SUBSCRIPTIONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="200"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="AccId"
+    IsNotNull="true"
+    ColumnName="ACC_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="SUBSCRIPTIONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ActivatedCode"
+    IsUnique="true"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="ACTIVATED_CODE"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    SQLType="VARCHAR"
+    TableName="SUBSCRIPTIONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SpaId"
+    ColumnName="SPA_ID"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    SQLType="NUMERIC"
+    TableName="SUBSCRIPTIONS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="Accounts"
+    Association="com.perp.sasregistmodel.entities.SubAccFkAssoc"
+    AssociationEnd="com.perp.sasregistmodel.entities.SubAccFkAssoc.Accounts"
+    AssociationOtherEnd="com.perp.sasregistmodel.entities.SubAccFkAssoc.Subscriptions"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="ServicePackages"
+    Association="com.perp.sasregistmodel.entities.SubSpaFkAssoc"
+    AssociationEnd="com.perp.sasregistmodel.entities.SubSpaFkAssoc.ServicePackages"
+    AssociationOtherEnd="com.perp.sasregistmodel.entities.SubSpaFkAssoc.Subscriptions"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="VbisUsers"
+    Association="com.perp.sasregistmodel.entities.VbisUsersFk1Assoc"
+    AssociationEnd="com.perp.sasregistmodel.entities.VbisUsersFk1Assoc.VbisUsers"
+    AssociationOtherEnd="com.perp.sasregistmodel.entities.VbisUsersFk1Assoc.Subscriptions"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="SubPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SUB_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.perp.sasregistmodel.entities.Subscriptions.SubId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SubUk1">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="SUB_UK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="com.perp.sasregistmodel.entities.Subscriptions.ActivatedCode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0051355">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0051355"/>
+      <Attr Name="_checkCondition" Value='"SUB_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.perp.sasregistmodel.entities.Subscriptions.SubId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0051356">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0051356"/>
+      <Attr Name="_checkCondition" Value='"ACC_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.perp.sasregistmodel.entities.Subscriptions.AccId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC0051357">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C0051357"/>
+      <Attr Name="_checkCondition" Value='"ACTIVATED_CODE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="com.perp.sasregistmodel.entities.Subscriptions.ActivatedCode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SubAccFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="ACC_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="SUB_ACC_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.perp.sasregistmodel.entities.Subscriptions.AccId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SubSpaFk">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SPA_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="SUB_SPA_FK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="com.perp.sasregistmodel.entities.Subscriptions.SpaId"/>
+    </AttrArray>
+  </Key>
+</Entity>

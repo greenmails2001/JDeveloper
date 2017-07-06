@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Association SYSTEM "jbo_03_01.dtd">
+<!---->
+<Association
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AccCouFkAssoc"
+  Version="11.1.1.51.88">
+  <DesignTime>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <AssociationEnd
+    Name="Countries"
+    Cardinality="1"
+    Source="true"
+    Owner="com.perp.sasregistmodel.entities.Countries">
+    <AttrArray Name="Attributes">
+      <Item Value="com.perp.sasregistmodel.entities.Countries.CouId"/>
+    </AttrArray>
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Countries"/>
+      <Attr Name="_foreignKey"
+        Value="com.perp.sasregistmodel.entities.Countries.CouPk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+  </AssociationEnd>
+  <AssociationEnd
+    Name="Accounts"
+    Cardinality="-1"
+    Owner="com.perp.sasregistmodel.entities.Accounts">
+    <AttrArray Name="Attributes">
+      <Item Value="com.perp.sasregistmodel.entities.Accounts.CouId"/>
+    </AttrArray>
+    <DesignTime>
+      <Attr Name="_aggregation" Value="0"/>
+      <Attr Name="_finderName" Value="Accounts"/>
+      <Attr Name="_foreignKey"
+        Value="com.perp.sasregistmodel.entities.Accounts.AccCouFk"/>
+      <Attr Name="_isUpdateable" Value="true"/>
+    </DesignTime>
+  </AssociationEnd>
+</Association>

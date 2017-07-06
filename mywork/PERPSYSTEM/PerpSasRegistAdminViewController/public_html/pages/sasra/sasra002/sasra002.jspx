@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:form id="f1">
+        <af:pageTemplate viewId="/templates/sasraTemplate001.jspx" id="pt1">
+          <f:facet name="center">
+            <af:panelSplitter splitterPosition="258" id="ps1">
+              <f:facet name="first">
+                <af:panelHeader text="Setting menu" id="panelHeader1">
+                  <af:navigationPane hint="list" id="nav1">
+                    <af:commandNavigationItem text="Countries" id="countries"
+                                              actionListener="#{sasra002aTaskFlowBacking.navItemActionListener}"
+                                              partialSubmit="true"/>
+                    <af:commandNavigationItem text="Industries" id="industries"
+                                              partialSubmit="true"
+                                              actionListener="#{sasra002aTaskFlowBacking.navItemActionListener}"/>
+                    <af:commandNavigationItem text="Provinces" id="provinces"
+                                              partialSubmit="true"
+                                              actionListener="#{sasra002aTaskFlowBacking.navItemActionListener}"/>
+                    <af:commandNavigationItem text="Sercurity Question"
+                                              id="securityQuestions"
+                                              partialSubmit="true"
+                                              actionListener="#{sasra002aTaskFlowBacking.navItemActionListener}"/>
+                    <af:commandNavigationItem text="Labours" id="labours"
+                                              partialSubmit="true"
+                                              actionListener="#{sasra002aTaskFlowBacking.navItemActionListener}"/>
+                    <af:commandNavigationItem text="Marketing media"
+                                              id="marketingMedia"
+                                              partialSubmit="true"
+                                              actionListener="#{sasra002aTaskFlowBacking.navItemActionListener}"/>
+                  </af:navigationPane>
+                </af:panelHeader>
+              </f:facet>
+              <f:facet name="second">
+                <af:region value="#{bindings.sasra002a1.regionModel}"
+                           id="sasra1"
+                           partialTriggers="::nav1 ::nav1:industries ::nav1:provinces ::nav1:countries"
+                           binding="#{sasra002aTaskFlowBacking.regionSasra002a}"/>
+              </f:facet>
+            </af:panelSplitter>
+          </f:facet>
+        </af:pageTemplate>
+      </af:form>
+      <f:facet name="metaContainer"/>
+    </af:document>
+  </f:view>
+</jsp:root>

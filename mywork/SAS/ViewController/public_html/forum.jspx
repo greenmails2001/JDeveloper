@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:trh="http://myfaces.apache.org/trinidad/html" xmlns:tr="http://myfaces.apache.org/trinidad">
+ <!-- 
+    
+
+<link type="text/css" rel="stylesheet" href="resources/skins/princess/princess.css"/>
+-->
+ <link type="text/css" rel="stylesheet" href="resources/css/extends.css"/> 
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document styleClass="AFVisualRoot" id="d1">      
+      <af:form id="f1">
+        <trh:tableLayout width="100%" styleClass="default-table" id="tl1">
+          <trh:rowLayout id="rl1">
+            <trh:cellFormat id="cf1">
+              <af:panelGroupLayout layout="vertical" id="pgl1">
+                <trh:tableLayout width="100%" id="tl2">
+                  <trh:rowLayout id="rl2">
+                    <trh:cellFormat styleClass="AFBranding" id="cf2">
+                      <af:panelGroupLayout layout="horizontal" shortDesc="branding" id="pgl2">
+                        <af:image shortDesc="vinh cuu icon" source="/resources/images/icon.gif" id="i1"/>
+                        <af:outputText value="Perp System" id="ot1"/>
+                      </af:panelGroupLayout>
+                    </trh:cellFormat>
+                    <trh:cellFormat id="cf3">
+                      <af:outputText value=" " id="ot2"/>
+                    </trh:cellFormat>
+                    <trh:cellFormat styleClass="DemoIndexNavigationGlobal" halign="right" id="cf4">
+                      <af:navigationPane hint="buttons" id="np1">
+                        <af:commandNavigationItem text="#{viewcontrollerBundle['sas.global.navigator.home']}" action="home"
+                                                  id="cni1"/>
+                        <af:commandNavigationItem text="#{viewcontrollerBundle['sas.global.navigator.helpCenter']}" action="helpCenter"
+                                                  id="cni2"/>
+                        <af:commandNavigationItem text="#{viewcontrollerBundle['sas.global.navigator.download']}" action="download"
+                                                  id="cni3"/>
+                        <af:commandNavigationItem text="Support" action="support" id="cni4"/>
+                        <af:commandNavigationItem text="#{viewcontrollerBundle['sas.global.navigator.forum']}" action="forum"
+                                                  id="cni5"/>
+                        <af:commandNavigationItem text="#{viewcontrollerBundle['sas.global.navigator.contact']}" action="contact"
+                                                  id="cni6"/>
+                        <af:commandNavigationItem text="#{viewcontrollerBundle['sas.global.navigator.admin']}" action="admin"
+                                                  id="cni7"/>
+                      </af:navigationPane>
+                    </trh:cellFormat>
+                    <trh:cellFormat width="30" id="cf5">
+                      <af:panelGroupLayout layout="vertical" id="pgl3">
+                        <af:spacer height="3" id="s1"/>
+                        <af:statusIndicator id="si1"/>
+                      </af:panelGroupLayout>
+                    </trh:cellFormat>
+                  </trh:rowLayout>
+                </trh:tableLayout>
+              </af:panelGroupLayout>
+            </trh:cellFormat>
+          </trh:rowLayout>
+          <trh:rowLayout id="rl3">
+            <trh:cellFormat id="cf6">
+              <af:panelGroupLayout layout="vertical" id="pgl4">
+                <af:panelBorderLayout inlineStyle="padding:5px;" id="pbl1">
+                  <f:facet name="top">
+                    <af:panelGroupLayout layout="vertical" id="pgl5">
+                      <af:panelGroupLayout layout="vertical" id="pgl6">
+                        <trh:tableLayout width="100%" id="tl3">
+                          <trh:rowLayout id="rl4">
+                            <trh:cellFormat width="95%" inlineStyle='background-image:url("../resources/images/forum_top_bg.png");'
+                                            id="cf7"/>
+                            <trh:cellFormat id="cf8">
+                              <af:image source="/resources/images/forum_top_bg.png" id="i2"/>
+                            </trh:cellFormat>
+                            <trh:cellFormat width="200" valign="top" id="cf9">
+                              <af:panelGroupLayout layout="vertical" inlineStyle="width:200px; padding:5px;" id="pgl7">
+                                <af:panelGroupLayout layout="horizontal" id="pgl8">
+                                  <af:outputLabel value="Welcome" inlineStyle="font-size:medium;" id="ol1"/>
+                                  <af:outputLabel value="Guest" inlineStyle="font-size:medium;" id="ol2"/>
+                                </af:panelGroupLayout>
+                                <af:panelGroupLayout layout="horizontal" inlineStyle="padding:3px;" id="pgl9">
+                                  <af:commandLink text="Sign In" id="cl1"/>
+                                  <af:outputText value="/" id="ot3"/>
+                                  <af:commandImageLink text="Register" id="cil1"/>
+                                </af:panelGroupLayout>
+                                <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="pgl10">
+                                  <af:commandLink text="Setting" id="cl2"/>
+                                </af:panelGroupLayout>
+                                <af:panelGroupLayout inlineStyle="padding:3px;" layout="vertical" id="pgl11">
+                                  <af:commandLink text="Search Message" id="cl3"/>
+                                </af:panelGroupLayout>
+                              </af:panelGroupLayout>
+                            </trh:cellFormat>
+                          </trh:rowLayout>
+                        </trh:tableLayout>
+                      </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                  </f:facet>
+                  <f:facet name="bottom">
+                    <trh:tableLayout width="100%" id="tl4">
+                      <trh:rowLayout id="rl5">
+                        <trh:cellFormat width="95%" id="cf10">
+                          <af:panelGroupLayout layout="vertical" inlineStyle="padding:5px;" id="pgl12">
+                            <af:region value="#{bindings.forumflow1.regionModel}" id="forumflow1"/>
+                          </af:panelGroupLayout>
+                        </trh:cellFormat>
+                        <trh:cellFormat valign="top" id="cf11">
+                          <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="pgl13">
+                            <af:panelGroupLayout layout="horizontal" id="pgl14">
+                              <af:inputText id="it1"/>
+                              <af:commandButton text="Go" id="cb1"/>
+                            </af:panelGroupLayout>
+                          </af:panelGroupLayout>
+                        </trh:cellFormat>
+                      </trh:rowLayout>
+                      <trh:rowLayout id="rl6">
+                        <trh:cellFormat columnSpan="2" id="cf12">
+                          <af:spacer width="10" height="10" id="s2"/>
+                        </trh:cellFormat>
+                      </trh:rowLayout>
+                      <trh:rowLayout id="rl7">
+                        <trh:cellFormat columnSpan="2" inlineStyle='background-image:url("../resources/images/forum_bottom_bg.png");'
+                                        id="cf13">
+                          <af:spacer width="10" height="10" id="s3"/>
+                        </trh:cellFormat>
+                      </trh:rowLayout>
+                      <trh:rowLayout id="rl8">
+                        <trh:cellFormat columnSpan="2" id="cf14">
+                          <af:panelGroupLayout layout="vertical" halign="center" inlineStyle="padding:3px;" id="pgl15">
+                            <af:outputLabel value="@Copy right vinhcuu.com" id="ol3"/>
+                          </af:panelGroupLayout>
+                        </trh:cellFormat>
+                      </trh:rowLayout>
+                    </trh:tableLayout>
+                  </f:facet>
+                </af:panelBorderLayout>
+              </af:panelGroupLayout>
+            </trh:cellFormat>
+          </trh:rowLayout>
+        </trh:tableLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

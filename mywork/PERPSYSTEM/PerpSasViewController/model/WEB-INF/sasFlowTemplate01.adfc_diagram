@@ -1,0 +1,52 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1">
+      <property
+         name="y">237.60123</property>
+      <property
+         name="x">88.01758</property>
+   </OverallProperties>
+   <WildcardControlFlowRule
+      id="WildcardControlFlowRule2">
+      <property
+         name="activityId">*</property>
+      <property
+         name="status">ok</property>
+      <property
+         name="y">79.1012</property>
+      <property
+         name="x">88.017586</property>
+   </WildcardControlFlowRule>
+   <TaskFlowReturn
+      id="TaskFlowReturn3">
+      <property
+         name="activityId">backToParent</property>
+      <property
+         name="finish">true</property>
+      <property
+         name="status">ok</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p align="left" style="font-family:Tahoma;font-size:11pt">task-flow-return - backToParent&lt;/p>&lt;/html></property>
+      <property
+         name="rawDescription">task-flow-return - backToParent</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">83.5</property>
+      <property
+         name="x">253.38867</property>
+   </TaskFlowReturn>
+   <ControlFlowCase
+      islink="true"
+      id="ControlFlowCase4"
+      from="WildcardControlFlowRule2"
+      to="TaskFlowReturn3">
+      <property
+         name="fromOutcome">home</property>
+      <property
+         name="sdm:polyPoints">R50,115.01757,74.73573,212.38867,83.5,L50</property>
+   </ControlFlowCase>
+</SDM>

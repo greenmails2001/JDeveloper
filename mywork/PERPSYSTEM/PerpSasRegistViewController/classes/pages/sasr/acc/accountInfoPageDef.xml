@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.1.56.60" id="accountInfoPageDef" Package="pages.sasr.acc">
+  <parameters/>
+  <executables>
+    <invokeAction Binds="prepareToShowAccount" id="showAccountInfos" Refresh="ifNeeded"/>
+    <iterator Binds="SasrmAccounts" RangeSize="10" DataControl="PerpSasRegistAppModuleDataControl" id="SasrmAccountsIterator"/>
+    <iterator Binds="SasrmLovCountries" RangeSize="-1" DataControl="PerpSasRegistAppModuleDataControl" id="SasrmLovCountriesIterator"/>
+    <iterator Binds="SasrmLovLabors" RangeSize="-1" DataControl="PerpSasRegistAppModuleDataControl" id="SasrmLovLaborsIterator"/>
+    <iterator Binds="SasrmLovRoles" RangeSize="-1" DataControl="PerpSasRegistAppModuleDataControl" id="SasrmLovRolesIterator"/>
+    <iterator Binds="SasrmLovIndustries" RangeSize="-1" DataControl="PerpSasRegistAppModuleDataControl" id="SasrmLovIndustriesIterator"/>
+    <iterator Binds="SasrmLovMarketingMedia" RangeSize="-1" DataControl="PerpSasRegistAppModuleDataControl"
+              id="SasrmLovMarketingMediaIterator"/>
+    <invokeAction id="showLoginHistories" Binds="prepareToShowLoginHistories" Refresh="ifNeeded"/>
+    <iterator Binds="LoginHistoriesView1" RangeSize="25" DataControl="PerpSasRegistAppModuleDataControl" id="LoginHistoriesView1Iterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="prepareToShowAccount" InstanceName="PerpSasRegistAppModuleDataControl.dataProvider"
+                  DataControl="PerpSasRegistAppModuleDataControl" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="prepareToShowAccount" IsViewObjectMethod="false"/>
+    <attributeValues IterBinding="SasrmAccountsIterator" id="FullName">
+      <AttrNames>
+        <Item Value="FullName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SasrmAccountsIterator" id="ContactTelephone">
+      <AttrNames>
+        <Item Value="ContactTelephone"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SasrmAccountsIterator" id="Email">
+      <AttrNames>
+        <Item Value="Email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SasrmAccountsIterator" id="OrganizationName">
+      <AttrNames>
+        <Item Value="OrganizationName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SasrmAccountsIterator" id="Address">
+      <AttrNames>
+        <Item Value="Address"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SasrmAccountsIterator" id="TaxCode">
+      <AttrNames>
+        <Item Value="TaxCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="SasrmAccountsIterator" id="UserName">
+      <AttrNames>
+        <Item Value="UserName"/>
+      </AttrNames>
+    </attributeValues>
+    <list IterBinding="SasrmAccountsIterator" id="CouId" DTSupportsMRU="true" StaticList="false" ListIter="SasrmLovCountriesIterator">
+      <AttrNames>
+        <Item Value="CouId"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="CouId"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="CountryName"/>
+      </ListDisplayAttrNames>
+    </list>
+    <list IterBinding="SasrmAccountsIterator" id="LabId" DTSupportsMRU="true" StaticList="false" ListIter="SasrmLovLaborsIterator">
+      <AttrNames>
+        <Item Value="LabId"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="LabId"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="LabDescription"/>
+      </ListDisplayAttrNames>
+    </list>
+    <list IterBinding="SasrmAccountsIterator" id="RolId" DTSupportsMRU="true" StaticList="false" ListIter="SasrmLovRolesIterator">
+      <AttrNames>
+        <Item Value="RolId"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="RolId"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="RoleName"/>
+      </ListDisplayAttrNames>
+    </list>
+    <list IterBinding="SasrmAccountsIterator" id="IndId" DTSupportsMRU="true" StaticList="false" ListIter="SasrmLovIndustriesIterator">
+      <AttrNames>
+        <Item Value="IndId"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="IndId"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="IndustryName"/>
+      </ListDisplayAttrNames>
+    </list>
+    <list IterBinding="SasrmAccountsIterator" id="MmeId" DTSupportsMRU="true" StaticList="false" ListIter="SasrmLovMarketingMediaIterator">
+      <AttrNames>
+        <Item Value="MmeId"/>
+      </AttrNames>
+      <ListAttrNames>
+        <Item Value="MmeId"/>
+      </ListAttrNames>
+      <ListDisplayAttrNames>
+        <Item Value="Media"/>
+      </ListDisplayAttrNames>
+    </list>
+    <methodAction id="prepareToShowLoginHistories" InstanceName="PerpSasRegistAppModuleDataControl.dataProvider"
+                  DataControl="PerpSasRegistAppModuleDataControl" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="prepareToShowLoginHistories" IsViewObjectMethod="false">
+      <NamedData NDName="userName" NDValue="#{sasrSessionLoginObject.perpSasrAccount.userName}" NDType="java.lang.String"/>
+    </methodAction>
+    <tree IterBinding="LoginHistoriesView1Iterator" id="LoginHistoriesView1">
+      <nodeDefinition DefName="com.perp.sasregistmodel.views.LoginHistoriesView" Name="LoginHistoriesView10">
+        <AttrNames>
+          <Item Value="LoginAt"/>
+          <Item Value="UserName"/>
+          <Item Value="IpAddress"/>
+          <Item Value="Platform"/>
+          <Item Value="UserAgent"/>
+          <Item Value="Country"/>
+          <Item Value="LhiId"/>
+          <Item Value="EnvId"/>
+          <Item Value="Module"/>
+          <Item Value="LogoutAt"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

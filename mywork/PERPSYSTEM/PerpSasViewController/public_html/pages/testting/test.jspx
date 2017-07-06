@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:panelFormLayout id="pfl1">
+          <af:inputText value="#{bindings.searchText.inputValue}"
+                        label="#{bindings.searchText.hints.label}"
+                        required="#{bindings.searchText.hints.mandatory}"
+                        columns="#{bindings.searchText.hints.displayWidth}"
+                        maximumLength="#{bindings.searchText.hints.precision}"
+                        shortDesc="#{bindings.searchText.hints.tooltip}"
+                        id="it1">
+            <f:validator binding="#{bindings.searchText.validator}"/>
+          </af:inputText>
+          <af:inputText value="#{bindings.findIn.inputValue}"
+                        label="#{bindings.findIn.hints.label}"
+                        required="#{bindings.findIn.hints.mandatory}"
+                        columns="#{bindings.findIn.hints.displayWidth}"
+                        maximumLength="#{bindings.findIn.hints.precision}"
+                        shortDesc="#{bindings.findIn.hints.tooltip}" id="it2">
+            <f:validator binding="#{bindings.findIn.validator}"/>
+          </af:inputText>
+          <af:commandButton actionListener="#{bindings.prepareToShowSasMenusSearch.execute}"
+                            text="prepareToShowSasMenusSearch"
+                            disabled="#{!bindings.prepareToShowSasMenusSearch.enabled}"
+                            id="cb1"/>
+        </af:panelFormLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

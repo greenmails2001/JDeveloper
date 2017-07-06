@@ -1,0 +1,339 @@
+.AFVisualRoot:dark,.AFVisualRoot:dark {
+  background-image:none;
+  background-color: #FF00FF;
+}
+
+af|decorativeBox::center:dark,
+af|decorativeBox::start:dark,
+af|decorativeBox::end:dark,
+af|decorativeBox::center:medium,
+af|decorativeBox::start:medium,
+af|decorativeBox::end:medium {
+  background-color:purple;
+}
+af|decorativeBox::center:light,
+af|decorativeBox::start:light,
+af|decorativeBox::end:light {
+  background-color: #E4B4E4;
+  color: purple;
+}
+af|decorativeBox::center:default,
+af|decorativeBox::start:default,
+af|decorativeBox::end:default {
+  background-color: #CFDFF9;
+  color: purple;
+}
+
+.AFDefaultFontFamily:alias {
+  font-family: "Blackadder ITC", "Monotype Corsiva", fantasy;
+}
+
+.AFDefaultFont:alias {
+  font-size: large;
+  color: #800080;
+}
+
+.AFDefaultBoldFont:alias {
+  color:#800080;
+  font-size: x-large;
+}
+
+.AFButtonBackgroundHover:alias,
+.AFButtonBackground:alias {
+  background-color:purple;
+  border-color: purple;
+  color:white;
+}
+
+.AFButtonForegroundDisabled:alias {
+  color: gray;
+}
+
+af|column::column-header-cell {
+  background-color:#FF00FF;
+  font-weight:bold;
+  font-size:x-large;
+}
+
+af|menuBar,
+af|toolbar::body,
+af|toolbox::body {
+  background-color:purple;
+  border-style:dotted;
+  border-width:2px;
+  border-color:#FF00FF;
+}
+
+af|commandToolbarButton:disabled::text {
+  color: lightGrey;
+}
+
+af|toolbar,
+af|commandToolbarButton::text,
+af|menu::bar-item-text,
+af|menu::bar-item-text:hover,
+af|menu::bar-item-text:visited,
+af|menu::bar-item-text:active {
+  color:white;
+}
+
+af|panelSplitter::pane {
+  border-color: purple;
+  border-style: dashed;
+}
+
+/* splitter overrides */
+af|panelSplitter::pane:dark {  border-color: transparent;
+}
+af|panelSplitter::pane:default {  border-color: purple;
+}
+
+af|panelTabbed {
+  -tr-tab-bar-height: 45; /* height of tab bars that do have tabs */
+  -tr-empty-bar-height: 0; /* height of tab bars that don't have tabs */
+}
+
+af|panelTabbed::header {
+  background-image: none;
+  height: 45px;
+}
+
+af|navigationPane-tabs,
+af|navigationPane-tabs::header {
+  height:45px;
+}
+
+af|navigationPane-tabs::tab-start,
+af|panelTabbed::tab-start,
+af|navigationPane-tabs::tab:selected af|navigationPane-tabs::tab-start,
+af|panelTabbed::tab:selected af|panelTabbed::tab-start,
+af|panelTabbed::footer af|panelTabbed::tab-start,
+af|panelTabbed::footer af|panelTabbed::tab:selected af|panelTabbed::tab-start {
+  background-image:none;
+  border-color:#FF00FF;
+  border-style:dotted;
+  border-left:2px;
+  border-right:0px;
+  border-top:2px;
+  border-bottom:2px;
+  width: 2px;
+  height:38px;
+}
+
+af|navigationPane-tabs::tab-end,
+af|panelTabbed::tab-end,
+af|navigationPane-tabs::tab:selected af|navigationPane-tabs::tab-end,
+af|panelTabbed::tab:selected af|panelTabbed::tab-end,
+af|panelTabbed::footer af|panelTabbed::tab-end,
+af|panelTabbed::footer af|panelTabbed::tab:selected af|panelTabbed::tab-end {
+  background-image:none;
+  border-width:0px;
+  width: 0px;
+  height: 38px;
+}
+
+/* selected tab background color. tab-end does not render anything in the princess skin. */
+af|navigationPane-tabs::tab:selected af|navigationPane-tabs::tab-content,
+af|panelTabbed::tab:selected af|panelTabbed::tab-content,
+af|panelTabbed::footer af|panelTabbed::tab:selected af|panelTabbed::tab-content,
+af|navigationPane-tabs::tab:selected af|navigationPane-tabs::tab-start,
+af|panelTabbed::tab:selected af|panelTabbed::tab-start {
+  background-color:#FF00FF;
+}
+
+/* unselected tab background color. tab-end does not render anything in the princess skin */
+af|navigationPane-tabs::tab-content,
+af|panelTabbed::tab-content,
+af|panelTabbed::footer af|panelTabbed::tab-content,
+af|navigationPane-tabs::tab-start,
+af|panelTabbed::tab-start {
+  background-color:#CFDFF9;
+}
+
+af|navigationPane-tabs::tab:selected af|navigationPane-tabs::tab-content,
+af|panelTabbed::tab:selected af|panelTabbed::tab-content,
+af|navigationPane-tabs::tab-content,
+af|panelTabbed::tab-content,
+af|panelTabbed::footer af|panelTabbed::tab-content,
+af|panelTabbed::footer af|panelTabbed::tab:selected af|panelTabbed::tab-content {
+  background-image:none;
+  border-color:#FF00FF;
+  border-style:dotted;
+  border-left:0px;
+  border-right:2px;
+  border-top:2px;
+  border-bottom:2px;
+  height:38px;
+}
+
+af|navigationPane-tabs::tab:selected af|navigationPane-tabs::tab-link,
+af|panelTabbed::tab-text-link:selected,
+af|navigationPane-tabs af|navigationPane-tabs::tab-link,
+af|panelTabbed af|panelTabbed::tab-text-link,
+af|navigationPane-tabs::tab-link,
+af|panelTabbed::tab-text-link {
+  line-height: 35px;
+  font-size:x-large;
+  color:purple;
+  padding: 0px 10px;
+}
+
+af|navigationPane-list::bullet {
+  background-image:;
+}
+
+af|navigationPane-list::link {
+  color:purple;
+  text-align: center;
+}
+
+af|panelFormLayout,
+af|panelFormLayout::label-cell,
+af|panelFormLayout::content-cell,
+af|panelLabelAndMessage,
+af|panelLabelAndMessage::label,
+af|panelLabelAndMessage::content-cell,
+.AFLabelTextForeground:alias {
+  color: purple;
+  font-size: large;
+}
+
+.AFTextForeground:alias {
+  font-size: large;
+  color: #FF00FF;
+}
+
+af|table {
+  border-style: dashed;
+}
+
+af|popup,
+af|panelBox::table {
+  border-color: #FF00FF;
+  border-style: dotted;
+  border-width: 4px;
+}
+
+af|panelBox::content:core:default,
+af|panelBox::content:core:light ,
+af|panelBox::content:core:medium ,
+af|panelBox::content:core:dark ,
+af|panelBox::content:highlight:default,
+af|panelBox::content:highlight:light ,
+af|panelBox::content:highlight:medium ,
+af|panelBox::content:highlight:dark {
+  background-color:#CFDFF9;
+  border: none;
+}
+
+af|panelBox::header-center:core:default ,
+af|panelBox::header-center:core:light ,
+af|panelBox::header-center:core:medium ,
+af|panelBox::header-center:core:dark,
+af|panelBox::header-center:highlight:default,
+af|panelBox::header-center:highlight:light ,
+af|panelBox::header-center:highlight:medium ,
+af|panelBox::header-center:highlight:dark {
+  background-color:#FF00FF;
+  border: none;
+  font-size: x-large;
+  text-align: center;
+}
+
+af|panelBox::header-start:core:default ,
+af|panelBox::header-start:core:light ,
+af|panelBox::header-start:core:medium ,
+af|panelBox::header-start:core:dark ,
+af|panelBox::header-start:highlight:default ,
+af|panelBox::header-start:highlight:light ,
+af|panelBox::header-start:highlight:medium ,
+af|panelBox::header-start:highlight:dark {
+  background-color:#FF00FF;
+  border: none;
+}
+
+af|panelBox::header-end:core:default ,
+af|panelBox::header-end:core:light ,
+af|panelBox::header-end:core:medium ,
+af|panelBox::header-end:core:dark ,
+af|panelBox::header-end:highlight:default ,
+af|panelBox::header-end:highlight:light ,
+af|panelBox::header-end:highlight:medium ,
+af|panelBox::header-end:highlight:dark {
+  background-color:#FF00FF;
+  border: none;
+}
+
+af|panelAccordion {
+  -tr-header-height: 36;
+}
+
+af|panelAccordion::header-title,
+af|panelAccordion::header-toolbar,
+af|panelAccordion::header-disclose {
+  background-image:none;
+  background-color:#FF00FF;
+  color:purple;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+af|panelAccordion::header-title,
+af|panelAccordion::header-title af|commandLink,
+af|panelAccordion::header-title af|commandLink:active,
+af|panelAccordion::header-title af|commandLink:hover,
+af|panelAccordion::header-title af|commandLink:visited,
+af|panelAccordion::header-title af|goLink,
+af|panelAccordion::header-title af|goLink:active,
+af|panelAccordion::header-title af|goLink:hover,
+af|panelAccordion::header-title af|goLink:visited {
+  color:purple;
+  font-size: x-large;
+  font-weight: bold;
+}
+
+af|panelAccordion::header-start,
+af|panelAccordion::header-start-sizer {
+  background-image:none;
+  background-color:#FF00FF;
+  border:0px;
+}
+
+af|panelAccordion::header-end,
+af|panelAccordion::header-end-sizer {
+  background-color:#FF00FF;
+  background-image:none;
+  border:0px;
+}
+
+af|panelAccordion::body-content {
+  background-color:#CFDFF9;
+  overflow: hidden;
+  width: auto;
+  border-left: 4px dotted #FF00FF;
+  border-right: 4px dotted #FF00FF;
+  border-bottom: 4px dotted #FF00FF;
+  border-top: 4px dotted #FF00FF;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+}
+
+af|tree::node-stamp-text {
+  background-color:#CFDFF9;
+  border-width:0px;
+  color: purple;
+}
+
+.vc-table {
+    width : 100%;
+}
+.vc-table TD, .vc-table TH {
+    padding : 3px;
+}
+.vc-table TD {
+    padding : 3px;
+    border-width : 0px 1px 1px 0px;
+    border-style : solid;
+    border-color : #cccccc;
+}

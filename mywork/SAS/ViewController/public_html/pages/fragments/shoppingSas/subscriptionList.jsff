@@ -1,0 +1,187 @@
+<?xml version='1.0' encoding='windows-1252'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:f="http://java.sun.com/jsf/core" xmlns:trh="http://myfaces.apache.org/trinidad/html"
+          xmlns:c="http://java.sun.com/jsp/jstl/core">
+  <c:set var="viewcontrollerBundle" value="#{adfBundle['com.vc.web.ViewControllerBundle']}"/>
+  <af:panelStretchLayout styleClass="AFVisualRoot" endWidth="339px" topHeight="36px" id="afxpsl1">
+    <f:facet name="center">
+      <af:panelStretchLayout topHeight="34px" startWidth="201px" id="afxpsl2">
+        <f:facet name="center">
+          <af:decorativeBox id="afxdb1">
+            <f:facet name="center">
+              <af:panelStretchLayout topHeight="114px" id="afxpsl3">
+                <f:facet name="center">
+                  <af:panelStretchLayout endWidth="274px" topHeight="47px" id="afxpsl4">
+                    <f:facet name="center">
+                      <af:panelGroupLayout layout="vertical" valign="top" inlineStyle="padding:3px;" id="afxpgl1">
+                        <af:panelFormLayout id="afxpfl1">
+                          <af:panelLabelAndMessage label="#{viewcontrollerBundle['field.subscriptions.url']}"
+                                                   id="afxplam1">
+                            <af:outputText value="#{bindings.appUrl.inputValue}" id="afxot1"/>
+                          </af:panelLabelAndMessage>
+                          <af:panelLabelAndMessage label="#{viewcontrollerBundle['field.subscriptions.activatedCode']}"
+                                                   id="afxplam2">
+                            <af:outputText value="#{bindings.activatedCode.inputValue}" id="afxot2"/>
+                          </af:panelLabelAndMessage>
+                          <af:panelLabelAndMessage label="#{viewcontrollerBundle['field.subscriptions.subscribeDate']}"
+                                                   id="afxplam3">
+                            <af:outputText value="#{bindings.subscribeDate.inputValue}" id="afxot3">
+                              <af:convertDateTime pattern="#{bindings.subscribeDate.format}"/>
+                            </af:outputText>
+                          </af:panelLabelAndMessage>
+                          <af:panelLabelAndMessage label="#{viewcontrollerBundle['field.subscriptions.startDate']}"
+                                                   id="afxplam4">
+                            <af:outputText value="#{bindings.startDate.inputValue}" id="afxot4">
+                              <af:convertDateTime pattern="#{bindings.startDate.format}"/>
+                            </af:outputText>
+                          </af:panelLabelAndMessage>
+                          <af:panelLabelAndMessage label="#{viewcontrollerBundle['field.subscriptions.endDate']}"
+                                                   id="afxplam5">
+                            <af:outputText value="#{bindings.endDate.inputValue}" id="afxot5">
+                              <af:convertDateTime pattern="#{bindings.endDate.format}"/>
+                            </af:outputText>
+                          </af:panelLabelAndMessage>
+                          <af:panelLabelAndMessage label="#{viewcontrollerBundle['field.subscriptions.status']}"
+                                                   id="afxplam6">
+                            <af:outputText value="#{bindings.status.inputValue}" id="afxot6"/>
+                          </af:panelLabelAndMessage>
+                          <f:facet name="footer">
+                            <af:panelGroupLayout layout="horizontal" id="afxpgl2">
+                              <af:spacer width="50" height="10" id="afxs1"/>
+                              <af:commandButton actionListener="#{bindings.First.execute}" text="First"
+                                                disabled="#{!bindings.First.enabled}" id="afxcb1"/>
+                              <af:spacer width="10" height="10" id="afxs2"/>
+                              <af:commandButton actionListener="#{bindings.Previous.execute}" text="Previous"
+                                                disabled="#{!bindings.Previous.enabled}" id="afxcb2"/>
+                              <af:spacer width="10" height="10" id="afxs3"/>
+                              <af:commandButton actionListener="#{bindings.Next.execute}" text="Next" disabled="#{!bindings.Next.enabled}"
+                                                id="afxcb3"/>
+                              <af:spacer width="10" height="10" id="afxs4"/>
+                              <af:commandButton actionListener="#{bindings.Last.execute}" text="Last" disabled="#{!bindings.Last.enabled}"
+                                                id="afxcb4"/>
+                            </af:panelGroupLayout>
+                          </f:facet>
+                        </af:panelFormLayout>
+                      </af:panelGroupLayout>
+                    </f:facet>
+                    <f:facet name="end">
+                      <af:panelStretchLayout endWidth="13px" id="afxpsl5">
+                        <f:facet name="center">
+                          <af:panelGroupLayout layout="vertical" inlineStyle="padding:2px;" id="afxpgl3">
+                            <af:spacer width="10" height="10" id="afxs5"/>
+                            <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="afxpgl4">
+                              <af:outputLabel value="PERP THE GIOI CUA THANH CONG" inlineStyle="font-size:larger; font-weight:bold;"
+                                              id="afxol1"/>
+                            </af:panelGroupLayout>
+                            <af:panelGroupLayout inlineStyle="padding:3px;" layout="vertical" id="afxpgl5">
+                              <af:outputText value="Khach hang cua Pythis hau het danh gia PERP la co tinh doi moi va thanh cong cung cac doanh nghiep su dung ."
+                                             id="afxot7"/>
+                            </af:panelGroupLayout>
+                          </af:panelGroupLayout>
+                        </f:facet>
+                        <f:facet name="end">
+                          <af:spacer width="10" height="10" id="afxs6"/>
+                        </f:facet>
+                      </af:panelStretchLayout>
+                    </f:facet>
+                    <f:facet name="top">
+                      <af:decorativeBox id="afxdb2">
+                        <f:facet name="center">
+                          <af:panelGroupLayout layout="vertical" id="afxpgl6">
+                            <af:panelGroupLayout layout="horizontal" id="afxpgl7">
+                              <af:outputLabel value="DANH SACH DICH VU CUA TAI KHOAN :" inlineStyle="font-size:large;"
+                                              id="afxol2"/>
+                              <af:outputLabel value="#{backing_sasSessionLogin.userName}" inlineStyle="font-size:large;"
+                                              id="afxol3"/>
+                            </af:panelGroupLayout>
+                          </af:panelGroupLayout>
+                        </f:facet>
+                      </af:decorativeBox>
+                    </f:facet>
+                  </af:panelStretchLayout>
+                </f:facet>
+                <f:facet name="top">
+                  <af:panelGroupLayout inlineStyle="padding:3px;" id="afxpgl8">
+                    <trh:tableLayout width="100%" id="afxtl1">
+                      <trh:rowLayout id="afxrl1">
+                        <trh:cellFormat valign="top" id="afxcf1">
+                          <af:image source="/resources/images/customer2.png" id="afxi1"/>
+                        </trh:cellFormat>
+                        <trh:cellFormat valign="top" id="afxcf2">
+                          <af:panelGroupLayout layout="vertical" id="afxpgl9">
+                            <af:image source="/resources/images/creditdunord_logo.gif" id="afxi2"/>
+                            <af:outputLabel value="Ho tro toi da tu nha cung cap dich vu" inlineStyle="font-weight:bold;"
+                                            id="afxol4"/>
+                            <af:outputText value="Vinh cuu cam ket ho tro toi da khach hang su dung dich vu PERP "
+                                           id="afxot8"/>
+                            <af:commandLink text="More ..." id="afxcl1"/>
+                          </af:panelGroupLayout>
+                        </trh:cellFormat>
+                        <trh:cellFormat valign="top" id="afxcf3">
+                          <af:image source="/resources/images/customer1.png" id="afxi3"/>
+                        </trh:cellFormat>
+                        <trh:cellFormat valign="top" id="afxcf4">
+                          <af:panelGroupLayout layout="vertical" id="afxpgl10">
+                            <af:image source="/resources/images/healthways_logo.gif" id="afxi4"/>
+                            <af:outputLabel value="Chuan ERP tuong thich voi cac doanh nghiep" inlineStyle="font-weight:bold;"
+                                            id="afxol5"/>
+                            <af:outputText value="PERP dua doanh nghiep den voi the gioi cua ERP , phu hop voi cac nghiep vu doanh nghiep Viet Nam "
+                                           id="afxot9"/>
+                            <af:commandLink text="More ..." id="afxcl2"/>
+                          </af:panelGroupLayout>
+                        </trh:cellFormat>
+                      </trh:rowLayout>
+                    </trh:tableLayout>
+                  </af:panelGroupLayout>
+                </f:facet>
+              </af:panelStretchLayout>
+            </f:facet>
+          </af:decorativeBox>
+        </f:facet>
+        <f:facet name="top">
+          <af:panelGroupLayout layout="vertical" inlineStyle="padding:2px;" id="afxpgl11">
+            <af:outputLabel value="#{viewcontrollerBundle['pages.fragments.sasAccount.shoppingSas.subscriptionList.title1']}" inlineStyle="font-size:medium;"
+                            id="afxol6"/>
+          </af:panelGroupLayout>
+        </f:facet>
+        <f:facet name="start">
+          <af:panelGroupLayout layout="vertical" id="afxpgl12">
+            <af:panelGroupLayout layout="vertical" inlineStyle="padding:3px;" id="afxpgl13">
+              <af:outputLabel value="MY PRIVATE LINK" inlineStyle="font-size:larger; font-weight:bold;" id="afxol7"/>
+            </af:panelGroupLayout>
+            <af:spacer width="10" height="10" id="afxs7"/>
+            <af:navigationPane hint="list" id="afxnp1">
+              <af:commandNavigationItem text="Thay doi thong tin tai khoan" id="afxcni1"/>
+              <af:commandNavigationItem text="My private forum" action="appView" id="afxcni2"/>
+              <af:commandNavigationItem text="My support" id="afxcni3"/>
+            </af:navigationPane>
+          </af:panelGroupLayout>
+        </f:facet>
+      </af:panelStretchLayout>
+    </f:facet>
+    <f:facet name="top">
+      <af:toolbox id="afxt1">
+        <trh:tableLayout width="100%" id="afxtl2">
+          <trh:rowLayout id="afxrl2">
+            <trh:cellFormat halign="left" id="afxcf5">
+              <af:panelGroupLayout layout="horizontal" id="afxpgl14">
+                <af:image source="/resources/images/saslogo.gif" id="afxi5"/>
+                <af:image source="/resources/images/mission.gif" id="afxi6"/>
+              </af:panelGroupLayout>
+            </trh:cellFormat>
+            <trh:cellFormat halign="right" id="afxcf6">
+              <af:panelGroupLayout halign="right" layout="horizontal" id="afxpgl15">
+                <af:navigationPane hint="bar" id="afxnp2">
+                  <af:commandNavigationItem text="#{viewcontrollerBundle['pages.fragments.sasAccount.shoppingSas.nav.signin']}"
+                                            action="login" id="afxcni4"/>
+                  <af:commandNavigationItem text="#{viewcontrollerBundle['pages.fragments.sasAccount.shoppingSas.nav.proceducts']}"
+                                            action="create" id="afxcni5"/>
+                </af:navigationPane>
+              </af:panelGroupLayout>
+            </trh:cellFormat>
+          </trh:rowLayout>
+        </trh:tableLayout>
+      </af:toolbox>
+    </f:facet>
+  </af:panelStretchLayout>
+</jsp:root>

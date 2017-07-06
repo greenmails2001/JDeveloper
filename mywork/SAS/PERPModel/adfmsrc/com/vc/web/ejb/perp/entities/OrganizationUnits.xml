@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="11.1.1.49.49"
+          id="OrganizationUnits" Package="com.vc.web.ejb.perp.entities"
+          BeanClass="com.vc.web.ejb.perp.entities.OrganizationUnits"
+          isJavaBased="true">
+  <Attribute Name="address" Type="java.lang.String"/>
+  <Attribute Name="attribute1" Type="java.lang.String"/>
+  <Attribute Name="attribute10" Type="java.lang.String"/>
+  <Attribute Name="attribute2" Type="java.lang.String"/>
+  <Attribute Name="attribute3" Type="java.lang.String"/>
+  <Attribute Name="attribute4" Type="java.lang.String"/>
+  <Attribute Name="attribute5" Type="java.lang.String"/>
+  <Attribute Name="attribute6" Type="java.lang.String"/>
+  <Attribute Name="attribute7" Type="java.lang.String"/>
+  <Attribute Name="attribute8" Type="java.lang.String"/>
+  <Attribute Name="attribute9" Type="java.lang.String"/>
+  <Attribute Name="country" Type="java.lang.String"/>
+  <Attribute Name="createdBy" Type="java.lang.String"/>
+  <Attribute Name="createDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="description" Type="java.lang.String"/>
+  <Attribute Name="effectiveDateFrom" Type="java.sql.Timestamp"/>
+  <Attribute Name="effectiveDateTo" Type="java.sql.Timestamp"/>
+  <Attribute Name="externalFlag" Type="java.lang.String"/>
+  <Attribute Name="hnBranch" Type="java.lang.String"/>
+  <Attribute Name="hqFlag" Type="java.lang.String"/>
+  <Attribute Name="modifiedBy" Type="java.lang.String"/>
+  <Attribute Name="modifyDate" Type="java.sql.Timestamp"/>
+  <Attribute Name="name" Type="java.lang.String"/>
+  <Attribute Name="opsFlag" Type="java.lang.String"/>
+  <Attribute Name="ounId" Type="java.lang.Long"/>
+  <Attribute Name="ounNumber" Type="java.lang.String"/>
+  <Attribute Name="ounNumber2" Type="java.lang.String"/>
+  <Attribute Name="ounType" Type="java.lang.String"/>
+  <Attribute Name="province" Type="java.lang.String"/>
+  <Attribute Name="telephone" Type="java.lang.String"/>
+  <AccessorAttribute id="systemParasList" IsCollection="true"
+                     RemoveMethod="removeSystemParas" AddMethod="addSystemParas"
+                     BeanClass="com.vc.web.ejb.perp.entities.SystemParas"
+                     CollectionBeanClass="UpdateableCollection">
+    <Properties>
+      <Property Name="RemoveMethod" Value="removeSystemParas"/>
+      <Property Name="AddMethod" Value="addSystemParas"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="costCentersList" IsCollection="true"
+                     RemoveMethod="removeCostCenters" AddMethod="addCostCenters"
+                     BeanClass="com.vc.web.ejb.perp.entities.CostCenters"
+                     CollectionBeanClass="UpdateableCollection">
+    <Properties>
+      <Property Name="RemoveMethod" Value="removeCostCenters"/>
+      <Property Name="AddMethod" Value="addCostCenters"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="employees" IsCollection="false"
+                     BeanClass="com.vc.web.ejb.perp.entities.Employees"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="organizationUnits" IsCollection="false"
+                     BeanClass="com.vc.web.ejb.perp.entities.OrganizationUnits"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <AccessorAttribute id="organizationUnitsList" IsCollection="true"
+                     RemoveMethod="removeOrganizationUnits"
+                     AddMethod="addOrganizationUnits"
+                     BeanClass="com.vc.web.ejb.perp.entities.OrganizationUnits"
+                     CollectionBeanClass="UpdateableCollection">
+    <Properties>
+      <Property Name="RemoveMethod" Value="removeOrganizationUnits"/>
+      <Property Name="AddMethod" Value="addOrganizationUnits"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="costCenters" IsCollection="false"
+                     BeanClass="com.vc.web.ejb.perp.entities.CostCenters"
+                     CollectionBeanClass="UpdateableSingleValue"/>
+  <MethodAccessor IsCollection="false"
+                  Type="com.vc.web.ejb.perp.entities.SystemParas"
+                  BeanClass="com.vc.web.ejb.perp.entities.SystemParas"
+                  id="addSystemParas" ReturnNodeName="SystemParas">
+    <ParameterInfo id="systemParas"
+                   Type="com.vc.web.ejb.perp.entities.SystemParas"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="com.vc.web.ejb.perp.entities.SystemParas"
+                  BeanClass="com.vc.web.ejb.perp.entities.SystemParas"
+                  id="removeSystemParas" ReturnNodeName="SystemParas">
+    <ParameterInfo id="systemParas"
+                   Type="com.vc.web.ejb.perp.entities.SystemParas"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="com.vc.web.ejb.perp.entities.CostCenters"
+                  BeanClass="com.vc.web.ejb.perp.entities.CostCenters"
+                  id="addCostCenters" ReturnNodeName="CostCenters">
+    <ParameterInfo id="costCenters"
+                   Type="com.vc.web.ejb.perp.entities.CostCenters"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="com.vc.web.ejb.perp.entities.CostCenters"
+                  BeanClass="com.vc.web.ejb.perp.entities.CostCenters"
+                  id="removeCostCenters" ReturnNodeName="CostCenters">
+    <ParameterInfo id="costCenters"
+                   Type="com.vc.web.ejb.perp.entities.CostCenters"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="com.vc.web.ejb.perp.entities.OrganizationUnits"
+                  BeanClass="com.vc.web.ejb.perp.entities.OrganizationUnits"
+                  id="addOrganizationUnits" ReturnNodeName="OrganizationUnits">
+    <ParameterInfo id="organizationUnits"
+                   Type="com.vc.web.ejb.perp.entities.OrganizationUnits"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false"
+                  Type="com.vc.web.ejb.perp.entities.OrganizationUnits"
+                  BeanClass="com.vc.web.ejb.perp.entities.OrganizationUnits"
+                  id="removeOrganizationUnits"
+                  ReturnNodeName="OrganizationUnits">
+    <ParameterInfo id="organizationUnits"
+                   Type="com.vc.web.ejb.perp.entities.OrganizationUnits"
+                   isStructured="true"/>
+  </MethodAccessor>
+  <MethodAccessor IsCollection="false" Type="java.lang.String" id="toString" ReturnNodeName="Return"/>
+  <ConstructorMethod IsCollection="true"
+                     Type="com.vc.web.ejb.perp.entities.OrganizationUnits"
+                     BeanClass="com.vc.web.ejb.perp.entities.OrganizationUnits"
+                     id="OrganizationUnits"/>
+</JavaBean>

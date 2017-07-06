@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="vbis-user">
+    <default-activity id="__1">gate</default-activity>
+    <transaction id="__12">
+      <new-transaction/>
+    </transaction>
+    <input-parameter-definition id="__38">
+      <name id="__37">rowKey</name>
+      <value>#{pageFlowScope.rowKey}</value>
+    </input-parameter-definition>
+    <view id="editVbisUser">
+      <page>/pages/sasr/sasr002/sas002frag/vbisuserfrag/editVbisUser.jsff</page>
+    </view>
+    <task-flow-return id="cancel">
+      <outcome id="__2">
+        <name>cancel</name>
+        <rollback/>
+      </outcome>
+    </task-flow-return>
+    <task-flow-return id="save">
+      <outcome id="__8">
+        <name>save</name>
+        <commit/>
+      </outcome>
+    </task-flow-return>
+    <router id="gate">
+      <case>
+        <expression>#{pageFlowScope.rowKey ==''}</expression>
+        <outcome id="__35">create</outcome>
+      </case>
+      <case>
+        <expression>#{pageFlowScope.rowKey !=''}</expression>
+        <outcome id="__36">edit</outcome>
+      </case>
+      <default-outcome>edit</default-outcome>
+    </router>
+    <method-call id="CreateInsert">
+      <method>#{bindings.CreateInsert.execute}</method>
+      <outcome id="__13">
+        <fixed-outcome>CreateInsert</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="SetCurrentRowWithKey">
+      <method>#{bindings.setCurrentRowWithKey.execute}</method>
+      <outcome id="__14">
+        <fixed-outcome>setCurrentRowWithKey</fixed-outcome>
+      </outcome>
+    </method-call>
+    <method-call id="CreateInsert1">
+      <method>#{bindings.CreateInsert.execute}</method>
+      <outcome id="__33">
+        <fixed-outcome>CreateInsert</fixed-outcome>
+      </outcome>
+    </method-call>
+    <control-flow-rule id="__3">
+      <from-activity-id id="__4">editVbisUser</from-activity-id>
+      <control-flow-case id="__6">
+        <from-outcome id="__7">cancel</from-outcome>
+        <to-activity-id id="__5">cancel</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__10">
+        <from-outcome id="__11">save</from-outcome>
+        <to-activity-id id="__9">save</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__34">
+        <from-outcome id="__40">create2</from-outcome>
+        <to-activity-id id="__39">CreateInsert1</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__15">
+      <from-activity-id id="__16">gate</from-activity-id>
+      <control-flow-case id="__17">
+        <from-outcome id="__19">create</from-outcome>
+        <to-activity-id id="__18">CreateInsert</to-activity-id>
+      </control-flow-case>
+      <control-flow-case id="__20">
+        <from-outcome id="__22">edit</from-outcome>
+        <to-activity-id id="__21">SetCurrentRowWithKey</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__23">
+      <from-activity-id id="__24">SetCurrentRowWithKey</from-activity-id>
+      <control-flow-case id="__26">
+        <from-outcome id="__25">setCurrentRowWithKey</from-outcome>
+        <to-activity-id id="__27">editVbisUser</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__28">
+      <from-activity-id id="__29">CreateInsert</from-activity-id>
+      <control-flow-case id="__32">
+        <from-outcome id="__31">CreateInsert</from-outcome>
+        <to-activity-id id="__30">editVbisUser</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__41">
+      <from-activity-id id="__42">CreateInsert1</from-activity-id>
+      <control-flow-case id="__43">
+        <from-outcome id="__45">CreateInsert</from-outcome>
+        <to-activity-id id="__44">editVbisUser</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <use-page-fragments/>
+  </task-flow-definition>
+</adfc-config>

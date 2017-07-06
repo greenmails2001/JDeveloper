@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="testting">
+    <default-activity>menutree</default-activity>
+    <view id="treetable">
+      <page>/pages/testting/treetable.jspx</page>
+    </view>
+    <view id="menutree">
+      <page>/pages/testting/menutree.jspx</page>
+    </view>
+    <view id="test">
+      <page>/pages/testting/test.jspx</page>
+    </view>
+  </task-flow-definition>
+</adfc-config>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="11.1.1.51.56" id="view2PageDef"
+                Package="pages.fragments.test">
+  <parameters/>
+  <executables>
+    <methodIterator Binds="queryAccountsFindAll.result" DataControl="SASFacadeLocal" RangeSize="25"
+                    BeanClass="com.vc.web.ejb.sas.entities.Accounts" id="queryAccountsFindAllIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="queryAccountsFindAll" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="queryAccountsFindAll" IsViewObjectMethod="false" DataControl="SASFacadeLocal"
+                  InstanceName="SASFacadeLocal.dataProvider"
+                  ReturnName="SASFacadeLocal.methodResults.queryAccountsFindAll_SASFacadeLocal_dataProvider_queryAccountsFindAll_result"/>
+    <attributeValues IterBinding="queryAccountsFindAllIterator" id="accId">
+      <AttrNames>
+        <Item Value="accId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryAccountsFindAllIterator" id="activedCode">
+      <AttrNames>
+        <Item Value="activedCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryAccountsFindAllIterator" id="address">
+      <AttrNames>
+        <Item Value="address"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryAccountsFindAllIterator" id="contactTelephone">
+      <AttrNames>
+        <Item Value="contactTelephone"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryAccountsFindAllIterator" id="customerApproach">
+      <AttrNames>
+        <Item Value="customerApproach"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryAccountsFindAllIterator" id="email">
+      <AttrNames>
+        <Item Value="email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryAccountsFindAllIterator" id="fullName">
+      <AttrNames>
+        <Item Value="fullName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryAccountsFindAllIterator" id="numberOfEmployee">
+      <AttrNames>
+        <Item Value="numberOfEmployee"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryAccountsFindAllIterator" id="organizationName">
+      <AttrNames>
+        <Item Value="organizationName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryAccountsFindAllIterator" id="password">
+      <AttrNames>
+        <Item Value="password"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryAccountsFindAllIterator" id="securityAnswer">
+      <AttrNames>
+        <Item Value="securityAnswer"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryAccountsFindAllIterator" id="status">
+      <AttrNames>
+        <Item Value="status"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryAccountsFindAllIterator" id="taxCode">
+      <AttrNames>
+        <Item Value="taxCode"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="queryAccountsFindAllIterator" id="userName">
+      <AttrNames>
+        <Item Value="userName"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

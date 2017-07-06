@@ -1,0 +1,361 @@
+﻿a=a
+#----------------------------------------------
+industries_null=...
+roles_null=...
+countries_null=...
+provinces_null=...
+securityQuestions_null=...
+
+
+
+#----------------------------------------------
+adf.navigation.home=Trở lại trang chính
+adf.navigation.next=Bản ghi tiếp
+adf.navigation.previous=Bản ghi trước đó
+adf.navigation.first=Bản ghi đầu tiên
+adf.navigation.last=Bản ghi cuối
+#----------------------------------------------
+adf.action.save=Ghi lại
+adf.action.back=Trở lại
+adf.action.cancel=Bỏ qua
+
+#----------------------------------------------
+sas.home.text1=Sử dụng tài khoản SAS để đăng ký mua các phần mềm Quản trị doanh nghiệp PERP (Pythis ERP) . Nếu bạn chưa có tài khoản SAS bạn có thể đăng ký mới một tài khoản 
+#----------------------------------------------
+sas.link.signupSAS=Đăng ký tài khoản SAS
+sas.link.signinSAS=Đăng nhập hệ thống SAS
+#----------------------------------------------
+field.servicePackages.packageCode=Mã số dịch vụ
+field.servicePackages.unitPrice=Chi phí dịch vụ
+field.servicePackages.packageName=Tên dịch vụ
+field.servicePackages.numberOfServices=Số lượng dịch vụ
+field.servicePackages.serviceTime=Thời hạn hợp đồng
+field.servicePackages.serviceType=Loại dịch vụ
+field.servicePackages.description=Mô tả
+field.servicePackages.spaId=Dịch vụ
+#----------------------------------------------
+sas.order.packageListTitle=Danh sách dịch vụ
+sas.order.helpOrder=Hướng dẫn mua hàng
+sas.order.yourShoppingCart=Giỏ hàng của bạn
+sas.order.createSubscription=Mua sản phẩm PERP
+sas.order.deleteSubscription=Bỏ sản phẩm
+sas.order.editSubscription=Sửa chữa thông tin
+#----------------------------------------------
+perp.app.selectRole=Lựa chọn vai trò ứng dụng
+perp.app.formList=Danh sách form ứng dụng
+perp.app.favoritesForms=Các form thường dùng
+perp.app.searchFormResult=Kết quả tìm kiếm
+perp.app.searchButton=Tìm kiếm
+perp.app.searchText=Tìm kiếm tên module
+perp.app.moduleType=Kiểu module
+perp.app.openModule=Mở Form
+#----------------------------------------------
+perp.app.moduleName=Mã module
+perp.app.moduleLabel=Nhãn module
+perp.app.moduleDescription=Mô tả
+#----------------------------------------------
+sas.validation.emailInvalid=Định dạng email không hợp lệ
+#----------------------------------------------
+sas.createAccount.orgInfo=Thông tin cơ quan tổ chức
+sas.createAccount.userInfo=Thông tin cá nhân người đăng ký tài khoản
+sas.createAccount.secretInfo=Thông tin bảo mật
+#----------------------------------------------
+sas.navigation.signuplogin=Đăng ký tài khoản / đăng nhập
+sas.navigation.product=Đăng ký mua phần mềm
+sas.navigation.setting=Sét đặt hệ thống
+sas.navigation.application=Hệ thống
+sas.navigation.download=Download tài liệu
+#----------------------------------------------
+
+sas.setting.spaOun.introduction.01=Trang tin hiện tại cho phép bạn sét đặt các thông tin liên quan đến công ty (chi nhánh) theo mô hình thiết kế ban đầu công ty của bạn sẽ có một tổng công ty và bên dưới là 2 chi nhánh con , các thông tin này bạn có thể sét đặt , viết thêm bớt chi nhánh sẽ được thực hiện trong phần mềm PERP .                                               
+#----------------------------------------------
+sas.setting.spaOun.desc.coTaxNo=Mã số thuế của công ty chi nhánh (sử dụng cho báo cáo)
+sas.setting.spaOun.desc.coTaxForm=Biểu mẫu thuế (sử dụng cho báo cáo)
+sas.setting.spaOun.desc.coName=Tên công ty hiển thị trên các báo cáo
+sas.setting.spaOun.desc.coLogo=Logo hiển thị trên các báo cáo
+sas.setting.spaOun.desc.coAddress=Địa chỉ công ty (chi nhánh) được sử dụng trong báo cáo
+#----------------------------------------------
+sas.setting.spaOun.ounNumber=Mã số công ty (chi nhánh)
+sas.setting.spaOun.coName=Tên công ty 
+sas.setting.spaOun.coLogo=Logo
+sas.setting.spaOun.coAddress=Địa chỉ 
+sas.setting.spaOun.coTelNo=Số điện thoại
+sas.setting.spaOun.coTaxForm=Mẫu thuế
+sas.setting.spaOun.coFax=Fax
+sas.setting.spaOun.coTaxNo=Mã số thuế
+#----------------------------------------------
+sas.sessionUser.subActivatedCode=Mã số ứng dụng
+sas.sessionUser.subStartDate=Ngày bắt đầu ứng dụng
+sas.sessionUser.subEndDate=Ngày kết thúc ứng dụng
+sas.sessionUser.subSubscribeDate=Ngày mua ứng dụng
+#----------------------------------------------
+field.perp.organizationUnits.ounNumber=Mã số công ty
+
+field.perp.organizationUnits.name=Tên công ty
+field.perp.organizationUnits.address=Địa chỉ
+field.perp.organizationUnits.effectiveDateFrom=Ngày bắt đầu hoạt động
+
+field.perp.organizationUnits.effectiveDateTo=Ngày kết thúc
+field.perp.organizationUnits.ounType=Kiểu
+#----------------------------------------------
+sas.forgotPassword.introduce1=Nếu bạn quên mật khẩu truy nhập vào hệ thống SAS bạn có thể nhập thông tin email đã đăng ký tài khoản , hệ thống sẽ gửi mail cho phép bạn lấy lại mật khẩu đã mất
+sas.forgotPassword.introduce2=Gửi email lấy lại thông tin tài khoản , và mật khẩu
+sas.forgotPassword.sendEmail=Gửi email
+sas.forgotPassword.cancel=Trở về
+#----------------------------------------------
+perp.login.loginFormTitle=Truy nhập hệ thống ứng dụng PERP
+perp.login.userName=Tài khoản truy nhập
+perp.login.password=Mật khẩu
+perp.login.activedCode=Mã số ứng dụng
+perp.login.signin=Truy nhập
+#----------------------------------------------
+sas.login.loginFormTitle=Truy nhập hệ thống SAS
+
+
+sas.login.backHome=Trở về
+sas.login.forgotPassword=Quên mật khẩu ?
+#----------------------------------------------
+#----------------------------------------------
+field.systemParas.code=Mã tham số
+field.systemParas.value=Giá trị tham số
+field.systemParas.description=Mô tả
+field.systemParas.userPrivilege=Quyền sét đặt
+field.systemParas.ext.ounNumber=Mã số đơn vị
+field.systemParas.ext.ounName=Tên đơn vị
+#----------------------------------------------
+field.accounts.userName=Tài khoản truy nhập
+field.accounts.password=Mật khẩu
+field.accounts.secretAsnwer=Câu trả lời
+field.accounts.secretQuestion=Câu hỏi bí mật
+field.accounts.confirm=Xác nhận mật khẩu
+field.accounts.fullName=Họ và tên 
+field.accounts.contactTelephone=Điện thoại liên lạc
+field.accounts.adress=Địa chỉ
+field.accounts.email=Email
+field.accounts.taxCode=Mã số thuế
+field.accounts.numberOfEmployee=Số nhân viên
+field.accounts.customerApproach=Bạn đã biết chúng tôi thông qua ?
+field.accounts.organizationName=Tên công ty (tổ chức)
+field.countries.name=Quốc gia
+field.countries.countryCode=Mã quốc gia
+field.provinces.name=Tỉnh (thành phố)
+field.roles.name=Công việc
+field.industries.name=Ngành kinh doanh
+#----------------------------------------------
+field.subscriptions.subId=Mã số
+field.subscriptions.startDate=Ngày bắt đầu sử dụng
+field.subscriptions.endDate=Ngày ngừng sử dụng
+field.subscriptions.subscribeDate=Ngày mua ứng dụng
+field.subscriptions.activatedCode=Mã số truy nhập ứng dụng
+field.subscriptions.quantity=Số lượng
+field.subscriptions.status=Tình trạng
+field.subscriptions.url=Đường dẫn ứng dụng
+#----------------------------------------------
+field.news.createdBy=Người đưa tin
+field.news.createDate=Ngày đưa tin
+field.news.modifiedBy=Người hiệu chỉnh
+field.news.modifyDate=Ngày hiệu chỉnh
+field.news.newsId=Mã số bài viết
+field.news.priorityLevel=Mức độ ưu tiên
+field.news.title=Tiêu đề bài viết
+
+
+
+
+
+
+
+
+
+
+
+#----------------------------------------------
+
+perpOndemand.introduction.servicePackage.basicFinance=Gói sản phẩm đáp ứng yêu cầu cơ bản của các công tác quản lý tài chính kế toán của một công ty với nhiều chi nhánh khác nhau . Cho phép quản lý tài chính hiệu quả theo mô hình ERP .
+perpOndemand.introduction.servicePackage.standardFinance=Gói sản phẩm đáp ứng yêu cầu của công tác quản lý tài chính kế toán của một công ty với nhiều chi nhánh khác nhau . Cho phép quản lý tài chính hiệu quả theo mô hình ERP .
+perpOndemand.introduction.servicePackage.distribution=Gói sản phẩm đáp ứng yêu cầu quản lý chuỗi cung ứng cho một doanh nghiệp phân phối với nhiều cửa hàng , chi nhánh khác nhau cho phép quản lý mua hàng và quản lý bán hàng .
+perpOndemand.introduction.servicePackage.enterprise=Gói sản phẩm ERP lõi đáp ứng yêu cầu quản lý hoạt động SXKD của một doanh nghiệp gồm quản lý tài chính , quản lý mua hàng , quản lý bán hàng , quản lý hàng tồn kho . Giải pháp cho phép quản lý trực tuyến toàn bộ hoạt động của một doanh nghiệp tại văn phòng công ty và các chi nhánh
+
+#----------------------------------------------
+perpOndemand.introduction.service.perpSuite=Bộ ứng dụng quản lý doanh nghiệp tổng thể gồm Quản lý tài chính, Quản lý Mua hàng, Quản lý Bán hàng, Quản lý Hàng tồn kho, Quản lý Nhân sự - Tiền lương, Quản lý dự án đầu tư, Quản lý sản xuất và Thông tin điều hành...
+perpOndemand.introduction.service.perpAllInOne=Giải pháp trọn gói gồm Phần cứng máy chủ, bản quyền phần mềm, chi phí tư vấn triển khai và chi phí bảo trì một năm...
+perpOndemand.introduction.service.perpOnDemand=PERP được cung cấp dưới hình thức dịch vụ theo nhu cầu ứng dụng ERP của từng đơn vị, khách hàng trả tiền theo nhu cầu sử dụng dựa trên gói sản phẩm dịch vụ lựa chọn và số lượng người sử dụng...
+#----------------------------------------------
+perpOndemand.home.introduction.title= MANG ERP ĐẾN VỚI DOANH NGHIỆP . PERP-ONDEMAND DỊCH VỤ LẦN ĐẦU TIÊN CÓ MẶT TẠI VN
+perpOndemand.home.introduction.content =Pythis ERP có quá trình phát triển trong nhiều năm đã triển khai thành công trên môi trường khách hàng . Và giờ đây là phần mềm tiên phong đầu tiên tại Việt Nam cung cấp đến với khách hàng như một dịch vụ . Nguyên tắc của Pythis ERP là mang ERP đến tất cả các doanh nghiệp Việt Nam . 
+perpOndemand.home.introduction.product=SẢN PHẨM
+#----------------------------------------------
+
+
+
+sas.nav.appSystem=Hê thống ứng dụng
+sas.nav.solutionTechnology=Giải pháp công nghệ
+
+#----------------------------------------------
+#Xem trong trang ounStructure.jsff
+sas.initialSetting.ounStructure=MÔ HÌNH CÔNG TY
+
+#----------------------------------------------
+sas.quickHelp=TRỢ GIÚP NHANH
+sas.quickHelp.viewSampleUse= Xem ví dụ sử dụng
+sas.quickHelp.viewHelp= Xem hướng dẫn
+
+#----------------------------------------------
+#Su dung tren trang ounStructure.jsff . Gioi thieu ve set dat cau truc OUN .
+sas.page.initialSetting.ounStructure.introduction.content= Nếu công ty của bạn có nhiều chi nhánh . Trang này cho phép bạn khai báo cấu trúc của công ty bắt đầu từ tổng công ty đến các công ty con , các chi nhánh . Để dễ dàng cho việc khai báo mô hình công ty xin sử dụng trợ giúp
+sas.page.initialSetting.ounSpa.introduction.content= Lựa chọn trên cấu trúc của công ty , bắt đầu từ tổng công ty , sau đó đến các chi nhánh , với mỗi một chi nhánh lựa chọn có thể thiết lập các thông số liên quan như logo, địa chỉ , mã số thuế . Tất cả các thông tin này sẽ được sử dụng trong các báo cáo thuế liên quan đến chi nhánh (đơn vị) đó . Với các chi nhánh (đơn vị) không được sét đặt các tham số này thì trên báo cáo liên quan sẽ in ra thông tin theo thông tin của tổng công ty
+
+
+#----------------------------------------------
+sas.initialSetting=THIẾT LẬP THỐNG SAS
+sas.page.initialSetting.home.introduction.title=THIẾT LẬP THAM SỐ HỆ THỐNG ỨNG DỤNG
+sas.page.initialSetting.home.introduction.content=Không quá phức tạp trong việc sét đặt ban đầu để vận hành hệ thống ERP đó là điểm mạnh của Pythis ERP . Với các khách hàng sự dụng PERP lần đầu tiên vận hành ứng dụng bạn phải thiết lập các thông tin ban đầu . Trong quá trình thiết lập thông tin đó bạn nên tra cứu ý nghĩa cũng như cách sét đặt , phạm vi sử dụng của các thiết lập bằng cách sử dụng trợ giúp bên cạnh
+
+sas.initialSetting.home.summary=TỔNG QUAN VỀ CÁC THÀNH PHẦN SÉT ĐẶT
+sas.initialSetting.home.summary.ounStructure=CẤU TRÚC CÔNG TY
+sas.initialSetting.home.summary.systemParaInReport=THAM SỐ SỬ DỤNG TRONG BÁO CÁO
+sas.initialSetting.home.summary.accPeriod=KỲ KẾ TOÁN
+sas.initialSetting.home.summary.bankSetting=TÀI KHOẢN NGÂN HÀNG - QUỸ TIỀN MẶT
+
+#----------------------------------------------
+sas.page.initialSetting.ounSpa.systemParaInReport=THAM SỐ LIÊN QUAN SỬ DỤNG TRONG BÁO CÁO
+
+#----------------------------------------------
+
+sas.page.initialSetting.endOfSetting.setupJInit=CÀI ĐẶT JINIT
+sas.page.initialSetting.endOfSetting.setupJInit.introduction=Hệ thống PERP sử dụng công nghệ Oracle chạy trên mọi trình duyệt hỗ trợ Applet . Với các máy tính chưa chạy thành công PERP bao giờ lần đầu tiên bạn phải cài đặt JInit . Chức năng này hướng dẫn bạn test hoạt động của hệ thống . Thông qua việc download và cài đăt JInit . Bạn hãy xem trợ giúp để hoàn thành bước cài đặt này
+sas.page.initialSetting.endOfSetting.setupJInit.test=KIỂM TRA / CÀI ĐẶT JINIT
+sas.page.initialSetting.endOfSetting.setupJInit.osSystemNote=CÁC VẤN ĐỀ KHÓ KHĂN VÀ GHI CHÚ KHI CÀI JINIT TRÊN CÁC HỆ ĐIỀU HÀNH KHÁC NHAU
+sas.page.initialSetting.endOfSetting.setupJInit.osSystemNote.introduction=Sau khi cài đặt JInit thành công mà vẫn không thể truy cập được vào hệ thống PERP , hoặc thậm trí không test được theo bước trên , bạn hãy xem cách sử lý các rắc rối gặp phải khi cài đặt trên các hệ điều hành khác nhau
+sas.page.initialSetting.endOfSetting.setupJInit.osSystemNote.xp=Cài JInit trên hệ điều hành XP
+sas.page.initialSetting.endOfSetting.setupJInit.osSystemNote.vista=Cài JInit trên hệ điều hành Vista
+sas.page.initialSetting.endOfSetting.setupJInit.suggest=Để kiểm tra JInit đã sẵn sàng chưa nhấn vào nút 
+sas.page.initialSetting.endOfSetting.setupJInit.check=Kiểm tra
+
+
+#----------------------------------------------
+more=Xem thêm
+sas.besterWithPerp=LÀM VIỆC TỐT VÀ HIỆU QUẢ HƠN VỚI PYTHIS ERP
+sas.besterWithPerp.text.content=Pythis ERP có quá trình phát triển trong nhiều năm đã triển khai thành công trên môi trường khách hàng . Và giờ đây là phần mềm tiên phong đầu tiên tại Việt Nam cung cấp đến với khách hàng như một dịch vụ . Nguyên tắc của Pythis ERP là mang ERP đến tất cả các doanh nghiệp Việt Nam . 
+sas.technology.text.title=CÔNG NGHỆ
+sas.hardware.text.title=PHẦN CỨNG
+sas.perp=HỆ THỐNG QUẢN TRỊ DOANH NGHIỆP PERP
+sas.successful=THÀNH CÔNG CÙNG PERP
+sas.helpCenter.text.title=TRUNG TÂM HỖ TRỢ KHÁCH HÀNG
+sas.helpCenter.text.content=Chuyển đến trang trung tâm hỗ trợ khách hàng để được hướng dẫn , tìm kiếm tài liệu và trả lời các thắc mắc liên quan đến phần mềm .
+sas.resourceCenter.text.title=TRUNG TÂM DỮ LIỆU
+sas.resourceCenter.text.content=Chuyển đến trung tâm dữ liệu dễ dàng xem các điểm phân tích , đánh giá , kỹ năng sử dung thao tác hệ thống phần mềm
+sas.onlineStudy.text.title=TỔNG QUAN PERP
+sas.onlineStudy.text.content=Download tài liệu tổng quan về Pythis ERP (PERP) (PDF 1.34MB)
+
+#----------------------------------------------
+#----------------------------------------------
+
+pages.fragments.sasAccount.nav.shoppingSas=Dịch vụ PERP-ONDEMAND
+pages.fragments.sasAccount.nav.accountInfo=Thông tin tài khoản
+pages.fragments.sasAccount.nav.signin=Truy nhập PERP-ONDEMAND
+#----------------------------------------------
+pages.fragments.sasAccount.editAccount.title1=SỬA CHỮA THÔNG TIN TÀI KHOẢN PERP-ONDEMAND
+pages.fragments.sasAccount.editAccount.content1=Sửa chữa thông tin tài khoản Perp-Ondemand . Bao gồm các thông tin cơ quan tổ chức và các thông tin cá nhân người sử dụng tài khoản sử dung trong việc liên lạc với nhà cung cấp PERP . Các thông tin có dấu * là bắt buộc . Bạn có thể sử dụng trợ giúp bên phải
+pages.fragments.sasAccount.editAccount.sigin=Truy nhập hệ thống PERP-ONDEMAND
+
+#----------------------------------------------
+pages.fragments.sasAccount.createAccount.title1=TẠO TÀI KHOẢN PERP-ONDEMAND
+pages.fragments.sasAccount.createAccount.content1=Tài khoản Perp-Ondemand cho phép bạn truy nhập vào hệ thống sản phẩm phần mềm , cách dịch vụ ERP được cung cấp bởi Vĩnh Cửu (Pythis) . Lựa chọn dịch vụ phần mềm sử dụng thử . Việc tạo tài khoản rất đơn giản bạn cần khai báo thông tin công ty sẽ sử dụng dịch vụ phần mềm , ngành kinh doanh , và các thông tin cá nhân người sử dụng tài khoản , và các thông tin liên lạc khác . Thông tin kích hoạt tài khoản sẽ được gửi đến địa chỉ mail của bạn . Bạn phải kích hoạt tài khoản trước khi sử dụng tài khoản này . Bạn có thể sử dụng trợ giúp bên phải
+
+#----------------------------------------------
+pages.fragments.sasAccount.sasLogin.title1=TRUY NHẬP HỆ THỐNG PERP-ONDEMAND
+pages.fragments.sasAccount.sasLogin.content1=Hệ thống PERP-ONDEMAND cho phép bạn lựa chọn các gói dịch vụ sử dụng thử . Xin đăng nhập các thông tin tài khoản của bạn và mật khẩu . Nếu bạn chưa có tài khoản truy nhập xin hãy nhấn nút 'Đăng ký tài khoản' để tạo một tài khoản .
+pages.fragments.sasAccount.sasLogin.title2=PERP THẾ GIỚI CỦA THÀNH CÔNG
+pages.fragments.sasAccount.sasLogin.content2=Khách hàng của PERP luôn đánh giá PERP là có tính đổi mới và thành công cùng các doanh nghiệp sử dụng
+
+
+pages.fragments.sasAccount.sasLogin.editAccount=Sửa chữa thông tin tài khoản
+pages.fragments.sasAccount.sasLogin.signin=Đăng nhập
+pages.fragments.sasAccount.sasLogin.signup=Đăng ký tài khoản
+pages.fragments.sasAccount.sasLogin.userName=Tài khoản truy nhập
+pages.fragments.sasAccount.sasLogin.password=Mật khẩu
+
+#----------------------------------------------
+pages.fragments.sasAccount.reviewAccount.title1=CÁM ƠN BẠN ĐÃ ĐĂNG KÝ TÀI KHOẢN PERP-ONDEMAND
+pages.fragments.sasAccount.reviewAccount.content1=Tài khoản PERP-ONDEMAND của bạn đã được tạo thành công . Thông tin để kích hoạt tài khoản đã được gửi đến địa chỉ email của bạn . Bạn hãy kiểm tra mail và kích hoạt tài khoản trước khi sử dụng . Sau khi kích hoạt thành công bạn có thể truy nhập vào hệ thống để lựa chọn các gói dịch vụ Pythis ERP để dùng thử . Nếu vì lý do gì đó mail kích hoạt không được gửi đến bạn có thể nhấn 'Gửi mail kích hoạt' để hệ thống gửi lại mail kích hoạt đến địa chỉ mail của bạn .
+pages.fragments.sasAccount.reviewAccount.accountInfo=THÔNG TIN TÀI KHOẢN
+pages.fragments.sasAccount.reviewAccount.edit=Sửa chữa thông tin
+pages.fragments.sasAccount.reviewAccount.sendEmail=Gửi lại mail kích hoạt
+pages.fragments.sasAccount.reviewAccount.signin=Đăng nhập PERP-ONDEMAND
+
+#----------------------------------------------
+#----------------------------------------------
+pages.fragments.sasAccount.shoppingSas.nav.proceducts=Danh sách dịch vụ
+pages.fragments.sasAccount.shoppingSas.nav.signin=Trang truy nhập PERP-ONDEMAND
+pages.fragments.sasAccount.shoppingSas.nav.myProduct=Dịch vụ của tôi
+
+#----------------------------------------------
+pages.fragments.sasAccount.shoppingSas.subscriptionList.title1=DANH SÁCH CÁC DỊCH VỤ ĐÃ ĐĂNG KÝ SỬ DỤNG ( HOẶC DÙNG THỬ )
+
+#----------------------------------------------
+pages.fragments.sasAccount.shoppingSas.createSubscription.title1=LỰA CHỌN DỊCH VỤ DÙNG THỬ
+pages.fragments.sasAccount.shoppingSas.createSubscription.currentAccount=Tài khoản PERP-ONDEMAND 
+pages.fragments.sasAccount.shoppingSas.createSubscription.acceptShoppingCart=Chấp nhận
+pages.fragments.sasAccount.shoppingSas.createSubscription.cancelAllShoppingCart=Xóa hết
+pages.fragments.sasAccount.shoppingSas.createSubscription.select=Chọn
+
+pages.fragments.sasAccount.
+
+#----------------------------------------------
+pages.fragments.newsAdmin.home.categoryList=Loại tin tức
+pages.fragments.newsAdmin.home.searchNews=Tìm kiếm bài viết
+pages.fragments.newsAdmin.home.search=Tìm kiếm
+pages.fragments.newsAdmin.home.newsCategory=Nhóm tin tức
+#----------------------------------------------
+pages.fragments.helpAdmin.helpDesk.introduction.title=SOẠN THẢO THÔNG TIN TRỢ GIÚP
+pages.fragments.helpAdmin.helpDesk.treeHelp=Cấu trúc nội dung trợ giúp
+pages.fragments.helpAdmin.helpDesk.editMode=Khung hiệu chỉnh
+pages.fragments.helpAdmin.helpDesk.reviewMode=Khung xem trước
+
+field.helpDesks.helpCode=Mã số trợ giúp
+field.helpDesks.author=Tác giả
+field.helpDesks.title=Tiêu đề
+
+
+#----------------------------------------------
+sas.global.navigator.home=Trang chủ
+sas.global.navigator.helpCenter=Trợ giúp / Hỗ trợ
+sas.global.navigator.download=Download
+sas.global.navigator.forum=Diễn đàn
+sas.global.navigator.contact=Liên hệ
+sas.global.navigator.admin=Quản trị
+
+
+sas.global.navigator.adminHome=Trang chủ quản trị
+sas.global.navigator.saleAdmin=Bán hàng
+sas.global.navigator.helpAdmin=Trợ giúp
+sas.global.navigator.newsAdmin=Tin tức
+#----------------------------------------------
+sas.home.navigator.introduction=Giới thiệu
+sas.home.navigator.product=Sản phẩm
+sas.home.navigator.service=Dịch vụ
+sas.home.navigator.partner=Đối tác
+sas.home.navigator.customer=Khách hàng
+sas.home.navigator.news=Tin tức sự kiện
+sas.home.navigator.consultant=Tư vấn hỏi đáp
+
+
+sas.home.nav.tryUse=DÙNG THỬ
+sas.home.nav.learnMore=Tìm hiểu thêm
+sas.home.nav.onlineDemo=Demo trực tuyến
+sas.home.nav.viewDashboard=Xem dashboard
+sas.home.nav.shoppingSystem=Hệ thống dịch vụ
+sas.home.nav.appSystem=Hệ thống ứng dụng
+sas.home.nav.topNews=TIN TỨC NỔI BẬT
+#----------------------------------------------
+
+sas.setting.navigation.userStatus=Trạng thái người sét đặt
+sas.setting.navigation.systemPara=Tham số hệ thống
+sas.setting.navigation.ounStructure=Cấu trúc công ty
+sas.setting.navigation.spaOun=Tham số hệ thống oun
+sas.setting.navigation.bankAccount=Tài khoản ngân hàng
+sas.setting.navigation.accPerior=Kỳ kế toán
+sas.setting.navigation.endSetting=Kết thúc sét đặt
+#----------------------------------------------
+

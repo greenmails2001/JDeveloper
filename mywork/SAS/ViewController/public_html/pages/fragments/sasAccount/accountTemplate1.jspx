@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <af:pageTemplateDef var="attrs">
+    <af:xmlContent>
+      <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+        <display-name>
+          accountTemplate1
+        </display-name>
+        <facet>
+          <facet-name>
+            centerFacet
+          </facet-name>
+        </facet>
+      </component>
+    </af:xmlContent>
+    <af:panelStretchLayout styleClass="AFVisualRoot" id="pt_psl1">
+      <f:facet name="center">
+        <af:panelStretchLayout topHeight="34px" id="pt_psl2">
+          <f:facet name="center">
+            <af:decorativeBox id="pt_db1">
+              <f:facet name="center">
+                <af:panelStretchLayout endWidth="229px" startWidth="206px" id="pt_psl3">
+                  <f:facet name="center">
+                    <af:panelStretchLayout topHeight="94px" startWidth="218px" id="pt_psl4">
+                      <f:facet name="center">
+                        <af:facetRef facetName="centerFacet"/>
+                      </f:facet>
+                      <f:facet name="top">
+                        <af:panelGroupLayout layout="vertical" id="pt_pgl1">
+                          <af:image source="/resources/images/signup.jpg" inlineStyle="height:95px;" id="pt_i1"/>
+                        </af:panelGroupLayout>
+                      </f:facet>
+                    </af:panelStretchLayout>
+                  </f:facet>
+                  <f:facet name="end">
+                    <af:panelGroupLayout layout="vertical" inlineStyle="padding:2%;" id="pt_pgl2">
+                      <af:image source="/resources/images/help1.jpg" shortDesc="help image" id="pt_i2"/>
+                      <af:spacer width="10" height="10" id="pt_s1"/>
+                      <af:panelGroupLayout layout="vertical" inlineStyle="padding:1%;" id="pt_pgl3">
+                        <af:outputLabel value="Huong dan dang ky tai khoan" inlineStyle="font-weight:bold;"
+                                        id="pt_ol1"/>
+                        <af:spacer width="10" height="10" id="pt_s2"/>
+                        <af:outputText value="De dang ky tai khoan sas ban lam theo huong dan duoi day . Hoac co the vao xem chi tiet hon "
+                                       id="pt_ot1"/>
+                        <af:commandLink text="Tai day ..." id="pt_cl1"/>
+                        <af:spacer width="10" height="10" id="pt_s3"/>
+                        <af:outputLabel value="Giup do nhanh" inlineStyle="font-weight:bold;" id="pt_ol2"/>
+                        <af:spacer width="10" height="10" id="pt_s4"/>
+                        <af:panelList id="pt_pl1">
+                          <af:outputText value="Thong tin cong ty to chuc cua ban" id="pt_ot2"/>
+                          <af:outputText value="Thong tin ca nhan nguoi dung ra lien he , mua san pham PERP ."
+                                         id="pt_ot3"/>
+                          <af:outputText value="Cac thong tin bao mat , trong truong hop ban quen tai khoan truy nhap"
+                                         id="pt_ot4"/>
+                        </af:panelList>
+                      </af:panelGroupLayout>
+                    </af:panelGroupLayout>
+                  </f:facet>
+                </af:panelStretchLayout>
+              </f:facet>
+            </af:decorativeBox>
+          </f:facet>
+          <f:facet name="top">
+            <af:panelGroupLayout layout="vertical" id="pt_pgl4">
+              <af:outputLabel value="HE THONG QUAN TRI DOANH NGHIEP PERP" inlineStyle="font-size:medium;" id="pt_ol3"/>
+            </af:panelGroupLayout>
+          </f:facet>
+        </af:panelStretchLayout>
+      </f:facet>
+      <f:facet name="top">
+        <af:toolbox inlineStyle="height:34px;" id="pt_t1">
+          <af:panelGroupLayout layout="horizontal" id="pt_pgl5">
+            <af:navigationPane hint="bar" id="pt_np1">
+              <af:commandNavigationItem text="Home" id="pt_cni1"/>
+              <af:commandNavigationItem text="Download" id="pt_cni2"/>
+              <af:commandNavigationItem text="Support" id="pt_cni3"/>
+              <af:commandNavigationItem text="Forum" id="pt_cni4"/>
+              <af:commandNavigationItem text="Lien he" id="pt_cni5"/>
+            </af:navigationPane>
+          </af:panelGroupLayout>
+        </af:toolbox>
+      </f:facet>
+    </af:panelStretchLayout>
+  </af:pageTemplateDef>
+</jsp:root>

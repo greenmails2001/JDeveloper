@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1">
+      <property
+         name="y">83.5</property>
+      <property
+         name="x">88.01758</property>
+   </OverallProperties>
+   <View
+      id="View2">
+      <property
+         name="status">ok</property>
+      <property
+         name="activityId">treetable</property>
+      <property
+         name="page">/pages/testting/treetable.jspx</property>
+      <property
+         name="start">false</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>treetable&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="binding">data</property>
+      <property
+         name="rawDescription">view - treetable</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">-75.5</property>
+      <property
+         name="x">-292.46484</property>
+      <property
+         name="realized">true</property>
+   </View>
+   <View
+      id="View4">
+      <property
+         name="status">ok</property>
+      <property
+         name="id">View4</property>
+      <property
+         name="activityId">menutree</property>
+      <property
+         name="page">/pages/testting/menutree.jspx</property>
+      <property
+         name="start">true</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>menutree&lt;/b> (Default Activity)&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="binding">data</property>
+      <property
+         name="rawDescription">view - menutree</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">-75.5</property>
+      <property
+         name="realized">true</property>
+      <property
+         name="x">-151.46484</property>
+   </View>
+   <View
+      id="View5">
+      <property
+         name="status">ok</property>
+      <property
+         name="activityId">test</property>
+      <property
+         name="page">/pages/testting/test.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>test&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="binding">data</property>
+      <property
+         name="rawDescription">view - test</property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">-75.5</property>
+      <property
+         name="x">-10.464844</property>
+      <property
+         name="realized">true</property>
+   </View>
+</SDM>

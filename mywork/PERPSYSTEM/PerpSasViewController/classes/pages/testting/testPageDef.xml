@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.51.88" id="testPageDef"
+                Package="pages.testting">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables">
+      <variable Type="java.lang.String"
+                Name="prepareToShowSasMenusSearch_searchText"
+                IsQueriable="false"/>
+      <variable Type="java.lang.String" Name="prepareToShowSasMenusSearch_findIn"
+                IsQueriable="false"/>
+    </variableIterator>
+  </executables>
+  <bindings>
+    <methodAction id="prepareToShowSasMenusSearch" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="prepareToShowSasMenusSearch"
+                  IsViewObjectMethod="false"
+                  DataControl="PerpSasAppModuleDataControl"
+                  InstanceName="PerpSasAppModuleDataControl.dataProvider">
+      <NamedData NDName="searchText" NDType="java.lang.String"
+                 NDValue="${bindings.prepareToShowSasMenusSearch_searchText}"/>
+      <NamedData NDName="findIn" NDType="java.lang.String"
+                 NDValue="${bindings.prepareToShowSasMenusSearch_findIn}"/>
+    </methodAction>
+    <attributeValues IterBinding="variables" id="searchText">
+      <AttrNames>
+        <Item Value="prepareToShowSasMenusSearch_searchText"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="variables" id="findIn">
+      <AttrNames>
+        <Item Value="prepareToShowSasMenusSearch_findIn"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

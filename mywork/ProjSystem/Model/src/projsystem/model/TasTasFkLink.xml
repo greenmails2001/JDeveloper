@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TasTasFkLink"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  EntityAssociation="projsystem.model.TasTasFkAssoc">
+  <ViewLinkDefEnd
+    Name="TasIdPartOfTasksView"
+    Cardinality="1"
+    Source="true"
+    Owner="projsystem.model.TasksView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TasIdPartOfTasksView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="projsystem.model.TasksView.TasId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="TasksView"
+    Cardinality="-1"
+    Owner="projsystem.model.TasksView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="TasksView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="projsystem.model.TasksView.TasIdPartOf"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

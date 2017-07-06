@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="login">
+    <page>/pages/sasr/login/login.jspx</page>
+  </view>
+  <view id="sasr001">
+    <description>
+      Trang cho phep dang ky , hoac tiep tuc dang ky , khi tai khoan van chua duoc kich hoat
+    </description>
+    <page>/pages/sasr/sasr001/sasr001.jspx</page>
+  </view>
+  <view id="sasr002">
+    <description>
+      Trang hien thi khi nguoi dung login vao thanh cong , tai khoan cung duoc
+      kich hoat .
+    </description>
+    <page>/pages/sasr/sasr002/sasr002.jspx</page>
+  </view>
+  <view id="home">
+    <page>/pages/sasr/home/home.jspx</page>
+  </view>
+  <view id="testting">
+    <page>/testting.jspx</page>
+  </view>
+  <control-flow-rule>
+    <from-activity-id>login</from-activity-id>
+    <control-flow-case>
+      <from-outcome>regist</from-outcome>
+      <to-activity-id>sasr001</to-activity-id>
+    </control-flow-case>
+    <control-flow-case>
+      <from-outcome>success</from-outcome>
+      <to-activity-id>sasr002</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__18">
+      <from-outcome id="__19">active</from-outcome>
+      <to-activity-id id="__17">sasr002</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule>
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case>
+      <from-outcome>login</from-outcome>
+      <to-activity-id>login</to-activity-id>
+    </control-flow-case>
+    <control-flow-case>
+      <from-outcome>home</from-outcome>
+      <to-activity-id>home</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__7">
+      <from-outcome id="__8">testting</from-outcome>
+      <to-activity-id id="__6">testting</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__1">
+    <from-activity-id id="__2">sasr001</from-activity-id>
+    <control-flow-case id="__3">
+      <from-outcome id="__5">sasr002</from-outcome>
+      <to-activity-id id="__4">sasr002</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__20">
+    <from-activity-id id="__21">sasr002</from-activity-id>
+    <control-flow-case id="__22">
+      <from-outcome id="__24">activesuccess</from-outcome>
+      <to-activity-id id="__23">sasr002</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <managed-bean>
+    <managed-bean-name>sasrLogin</managed-bean-name>
+    <managed-bean-class>com.perp.sasregistviewcontroller.backing.SasrLogin</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean>
+    <managed-bean-name>loginForgotPassword</managed-bean-name>
+    <managed-bean-class>com.perp.sasregistviewcontroller.backing.LoginForgotPassword</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean>
+    <managed-bean-name>sasrSessionLoginObject</managed-bean-name>
+    <managed-bean-class>com.perp.beans.SasrSessionLoginObject</managed-bean-class>
+    <managed-bean-scope>session</managed-bean-scope>
+  </managed-bean>
+  <managed-bean>
+    <managed-bean-name>sasrLogout</managed-bean-name>
+    <managed-bean-class>com.perp.sasregistviewcontroller.backing.SasrLogout</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean>
+    <managed-bean-name>sasr002Podm</managed-bean-name>
+    <managed-bean-class>pages.sasr.sasr002.Sasr002Podm</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean>
+    <managed-bean-name>testting</managed-bean-name>
+    <managed-bean-class>com.perp.sasregistviewcontroller.backing.Testting</managed-bean-class>
+    <managed-bean-scope>request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__10">
+    <managed-bean-name id="__12">sasr002</managed-bean-name>
+    <managed-bean-class id="__9">pages.sasr.sasr002.Sasr002</managed-bean-class>
+    <managed-bean-scope id="__11">request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__16">
+    <managed-bean-name id="__13">sasr002FlowManager</managed-bean-name>
+    <managed-bean-class id="__15">com.perp.sasregistviewcontroller.backing.Sasr002FlowManager</managed-bean-class>
+    <managed-bean-scope id="__14">request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__27">
+    <managed-bean-name id="__25">changePassword</managed-bean-name>
+    <managed-bean-class id="__26">com.perp.sasregistviewcontroller.backing.ChangePassword</managed-bean-class>
+    <managed-bean-scope id="__28">request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__30">
+    <managed-bean-name id="__32">changeNewPasswordValidator</managed-bean-name>
+    <managed-bean-class id="__31">com.perp.sasregistviewcontroller.backing.ChangePasswordValidator</managed-bean-class>
+    <managed-bean-scope id="__29">request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__35">
+    <managed-bean-name id="__34">vbisUserBackingBean</managed-bean-name>
+    <managed-bean-class id="__33">com.perp.sasregistviewcontroller.backing.VBISUserBackingBean</managed-bean-class>
+    <managed-bean-scope id="__36">request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__39">
+    <managed-bean-name id="__40">vbisUserNameValidator</managed-bean-name>
+    <managed-bean-class id="__37">com.perp.sasregistviewcontroller.backing.VbisUserNameValidator</managed-bean-class>
+    <managed-bean-scope id="__38">request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__42">
+    <managed-bean-name id="__41">pageListenerBean</managed-bean-name>
+    <managed-bean-class id="__43">com.perp.sasregistviewcontroller.backing.PageListenerBean</managed-bean-class>
+    <managed-bean-scope id="__44">request</managed-bean-scope>
+  </managed-bean>
+  <managed-bean id="__52">
+    <managed-bean-name id="__51">sasrAdminCaseFlowManager</managed-bean-name>
+    <managed-bean-class id="__49">com.perp.sasregistviewcontroller.backing.SasrAdminCaseFlowManager</managed-bean-class>
+    <managed-bean-scope id="__50">request</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

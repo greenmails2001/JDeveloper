@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.51.88" id="testtingPageDef"
+                Package="pages.sasra.testting">
+  <parameters/>
+  <executables/>
+  <bindings>
+    <methodAction id="doPerpRegistAdminChecking" RequiresUpdateModel="true"
+                  Action="invokeMethod" MethodName="doPerpRegistAdminChecking"
+                  IsViewObjectMethod="false"
+                  DataControl="PerpSasRegistAppModuleDataControl"
+                  InstanceName="PerpSasRegistAppModuleDataControl.dataProvider"
+                  ReturnName="PerpSasRegistAppModuleDataControl.methodResults.doPerpRegistAdminChecking_PerpSasRegistAppModuleDataControl_dataProvider_doPerpRegistAdminChecking_result">
+      <NamedData NDName="userName" NDType="java.lang.String"/>
+      <NamedData NDName="password" NDType="java.lang.String"/>
+    </methodAction>
+  </bindings>
+</pageDefinition>

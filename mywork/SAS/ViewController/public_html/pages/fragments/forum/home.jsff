@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.0" xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+          xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:trh="http://myfaces.apache.org/trinidad/html"
+          xmlns:f="http://java.sun.com/jsf/core">
+  <af:panelFormLayout id="vgcpfl1">
+    <af:outputLabel value="#{bindings.name.inputValue}" id="vgcol1"/>
+  </af:panelFormLayout>
+  <af:panelGroupLayout layout="vertical" styleClass="jive-table" id="vgcpgl1">
+    <trh:tableLayout width="100%" cellPadding="0" cellSpacing="0" borderWidth="0" id="vgctl1">
+      <trh:rowLayout inlineStyle='background-image:url("../resources/images/forum_bg1.png");' id="vgcrl1">
+        <trh:cellFormat columnSpan="2" id="vgccf1">
+          <af:outputLabel value="Forum / Categories" inlineStyle="font-size:medium;" id="vgcol2"/>
+        </trh:cellFormat>
+        <trh:cellFormat id="vgccf2">
+          <af:outputLabel value="View" inlineStyle="font-size:medium;" id="vgcol3"/>
+        </trh:cellFormat>
+        <trh:cellFormat id="vgccf3">
+          <af:outputLabel value="Message" inlineStyle="font-size:medium;" id="vgcol4"/>
+        </trh:cellFormat>
+      </trh:rowLayout>
+      <trh:rowLayout id="vgcrl2"/>
+      <c:forEach items="#{bindings.queryForumsFindByOwnerCodeIterator.allRowsInRange}" var="row">
+        <trh:rowLayout id="vgcrl3">
+          <trh:cellFormat columnSpan="4" id="vgccf4">
+            <af:panelGroupLayout layout="vertical" id="vgcpgl2">
+              <af:activeOutputText value="#{row.dataProvider.title}" inlineStyle="font-size:larger;" id="vgcaot1"/>
+            </af:panelGroupLayout>
+            <af:panelGroupLayout inlineStyle="padding:3px;" id="vgcpgl3">
+              <af:activeOutputText value="#{row.dataProvider.description}" id="vgcaot2"/>
+            </af:panelGroupLayout>
+          </trh:cellFormat>
+        </trh:rowLayout>
+        <c:forEach items="#{row.dataProvider.forumCategoriesList}" var="row2">
+          <trh:rowLayout id="vgcrl4">
+            <trh:cellFormat width="10" id="vgccf5">
+              <af:image source="/resources/images/forum_point16x16.gif" shortDesc="forum point" id="vgci1"/>
+            </trh:cellFormat>
+            <trh:cellFormat id="vgccf6">
+              <af:panelGroupLayout layout="vertical" id="vgcpgl4">
+                <af:panelGroupLayout layout="vertical" id="vgcpgl5">
+                  <af:commandLink text="#{row2.title}" inlineStyle="font-size:larger;" action="msgList"
+                                  id="fcaId_#{row2.fcaId}"/>
+                </af:panelGroupLayout>
+                <af:panelGroupLayout layout="vertical" inlineStyle="padding:4px;" id="vgcpgl6">
+                  <af:activeOutputText value="#{row2.description}" id="vgcaot3"/>
+                </af:panelGroupLayout>
+              </af:panelGroupLayout>
+            </trh:cellFormat>
+            <trh:cellFormat id="vgccf7">
+              <af:spacer width="10" height="10" id="vgcs1"/>
+            </trh:cellFormat>
+            <trh:cellFormat id="vgccf8">
+              <af:spacer width="10" height="10" id="vgcs2"/>
+            </trh:cellFormat>
+          </trh:rowLayout>
+        </c:forEach>
+      </c:forEach>
+    </trh:tableLayout>
+  </af:panelGroupLayout>
+</jsp:root>
