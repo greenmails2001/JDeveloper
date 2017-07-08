@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="xdmproject-flow">
+    <default-activity>TaskPage</default-activity>
+    <data-control-scope>
+      <shared/>
+    </data-control-scope>
+    <view id="TaskPage">
+      <page>/TaskPage.jsf</page>
+    </view>
+    <view id="SchedulePage"></view>
+    <control-flow-rule id="__1">
+      <from-activity-id>TaskPage</from-activity-id>
+      <control-flow-case id="__2">
+        <from-outcome>goSchedule</from-outcome>
+        <to-activity-id>SchedulePage</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__3">
+      <from-activity-id>SchedulePage</from-activity-id>
+      <control-flow-case id="__4">
+        <from-outcome>goTask</from-outcome>
+        <to-activity-id>TaskPage</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

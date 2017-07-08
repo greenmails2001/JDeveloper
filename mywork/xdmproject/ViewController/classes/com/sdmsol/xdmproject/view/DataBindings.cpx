@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.12.24" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.sdmsol.xdmproject.view" ClientType="Generic">
+  <pageMap>
+    <page path="/TaskPage.jsf" usageId="com_sdmsol_xdmproject_view_TaskPagePageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_sdmsol_xdmproject_view_TaskPagePageDef" path="com.sdmsol.xdmproject.view.pageDefs.TaskPagePageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="EditTaskServiceDataControl" Package="com.sdmsol.xdmproject.model.entity.assoc"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="EditTaskServiceLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

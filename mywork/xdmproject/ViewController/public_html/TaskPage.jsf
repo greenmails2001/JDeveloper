@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <af:document title="TaskPage.jsf" id="d1">
+    <af:messages id="m1"/>
+    <af:form id="f1">
+      <af:panelStretchLayout id="psl1" bottomHeight="183px" startWidth="89px" endWidth="173px">
+        <f:facet name="start"/>
+        <f:facet name="end"/>
+        <f:facet name="top">
+          <af:panelGroupLayout id="pgl1" layout="horizontal">
+            <af:selectOneChoice value="#{bindings.pResponsible.inputValue}" label="Responsible"
+                                required="#{bindings.pResponsible.hints.mandatory}"
+                                shortDesc="#{bindings.pResponsible.hints.tooltip}" id="soc2">
+              <f:selectItems value="#{bindings.pResponsible.items}" id="si2"/>
+              <f:validator binding="#{bindings.pResponsible.validator}"/>
+            </af:selectOneChoice>
+            <af:selectOneChoice value="#{bindings.pProgramme.inputValue}" label="Programme"
+                                required="#{bindings.pProgramme.hints.mandatory}"
+                                shortDesc="#{bindings.pProgramme.hints.tooltip}" id="soc3">
+              <f:selectItems value="#{bindings.pProgramme.items}" id="si3"/>
+              <f:validator binding="#{bindings.pProgramme.validator}"/>
+            </af:selectOneChoice>
+            <af:inputText value="#{bindings.pText.inputValue}" label="Text"
+                          required="#{bindings.pText.hints.mandatory}" columns="#{bindings.pText.hints.displayWidth}"
+                          maximumLength="#{bindings.pText.hints.precision}" shortDesc="#{bindings.pText.hints.tooltip}"
+                          id="it5">
+              <f:validator binding="#{bindings.pText.validator}"/>
+            </af:inputText>
+            <af:button actionListener="#{bindings.ExecuteWithParams.execute}" text="Search"
+                       disabled="#{!bindings.ExecuteWithParams.enabled}" id="b1"/>
+          </af:panelGroupLayout>
+        </f:facet>
+        <f:facet name="bottom">
+          <af:panelBorderLayout id="pbl1">
+            <f:facet name="top"/>
+            <f:facet name="bottom"/>
+            <f:facet name="start">
+              <af:panelGroupLayout id="pgl2" layout="horizontal">
+                <af:button actionListener="#{bindings.Commit.execute}" text="OK" id="b2"/>
+                <af:button actionListener="#{bindings.Rollback.execute}" text="Cancel" immediate="true" id="b3">
+                  <af:resetActionListener/>
+                </af:button>
+              </af:panelGroupLayout>
+            </f:facet>
+            <f:facet name="end"/>
+          </af:panelBorderLayout>
+        </f:facet>
+        <f:facet name="center">
+          <af:table value="#{bindings.AllTasksVO1.collectionModel}" var="row" rows="#{bindings.AllTasksVO1.rangeSize}"
+                    emptyText="#{bindings.AllTasksVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                    rowBandingInterval="0" fetchSize="#{bindings.AllTasksVO1.rangeSize}" id="t1"
+                    columnStretching="column:c2" partialTriggers="::b1">
+            <af:column sortProperty="#{bindings.AllTasksVO1.hints.StartDate.name}" sortable="true"
+                       headerText="#{bindings.AllTasksVO1.hints.StartDate.label}" id="c1" width="150">
+              <af:inputDate value="#{row.bindings.StartDate.inputValue}"
+                            label="#{bindings.AllTasksVO1.hints.StartDate.label}"
+                            required="#{bindings.AllTasksVO1.hints.StartDate.mandatory}"
+                            columns="#{bindings.AllTasksVO1.hints.StartDate.displayWidth}"
+                            shortDesc="#{bindings.AllTasksVO1.hints.StartDate.tooltip}" id="id1">
+                <f:validator binding="#{row.bindings.StartDate.validator}"/>
+                <af:convertDateTime pattern="#{bindings.AllTasksVO1.hints.StartDate.format}"/>
+              </af:inputDate>
+            </af:column>
+            <af:column sortProperty="#{bindings.AllTasksVO1.hints.Text.name}" sortable="true"
+                       headerText="#{bindings.AllTasksVO1.hints.Text.label}" id="c2">
+              <af:inputText value="#{row.bindings.Text.inputValue}" label="#{bindings.AllTasksVO1.hints.Text.label}"
+                            required="#{bindings.AllTasksVO1.hints.Text.mandatory}"
+                            columns="#{bindings.AllTasksVO1.hints.Text.displayWidth}"
+                            maximumLength="#{bindings.AllTasksVO1.hints.Text.precision}"
+                            shortDesc="#{bindings.AllTasksVO1.hints.Text.tooltip}" id="it1">
+                <f:validator binding="#{row.bindings.Text.validator}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.AllTasksVO1.hints.StartWhere.name}" sortable="true"
+                       headerText="#{bindings.AllTasksVO1.hints.StartWhere.label}" id="c3">
+              <af:inputText value="#{row.bindings.StartWhere.inputValue}"
+                            label="#{bindings.AllTasksVO1.hints.StartWhere.label}"
+                            required="#{bindings.AllTasksVO1.hints.StartWhere.mandatory}"
+                            columns="#{bindings.AllTasksVO1.hints.StartWhere.displayWidth}"
+                            maximumLength="#{bindings.AllTasksVO1.hints.StartWhere.precision}"
+                            shortDesc="#{bindings.AllTasksVO1.hints.StartWhere.tooltip}" id="it2">
+                <f:validator binding="#{row.bindings.StartWhere.validator}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.AllTasksVO1.hints.FlightNo.name}" sortable="true"
+                       headerText="#{bindings.AllTasksVO1.hints.FlightNo.label}" id="c4">
+              <af:inputText value="#{row.bindings.FlightNo.inputValue}"
+                            label="#{bindings.AllTasksVO1.hints.FlightNo.label}"
+                            required="#{bindings.AllTasksVO1.hints.FlightNo.mandatory}"
+                            columns="#{bindings.AllTasksVO1.hints.FlightNo.displayWidth}"
+                            maximumLength="#{bindings.AllTasksVO1.hints.FlightNo.precision}"
+                            shortDesc="#{bindings.AllTasksVO1.hints.FlightNo.tooltip}" id="it3">
+                <f:validator binding="#{row.bindings.FlightNo.validator}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.AllTasksVO1.hints.Pax.name}" sortable="true"
+                       headerText="#{bindings.AllTasksVO1.hints.Pax.label}" id="c5">
+              <af:inputText value="#{row.bindings.Pax.inputValue}" label="#{bindings.AllTasksVO1.hints.Pax.label}"
+                            required="#{bindings.AllTasksVO1.hints.Pax.mandatory}"
+                            columns="#{bindings.AllTasksVO1.hints.Pax.displayWidth}"
+                            maximumLength="#{bindings.AllTasksVO1.hints.Pax.precision}"
+                            shortDesc="#{bindings.AllTasksVO1.hints.Pax.tooltip}" id="it4">
+                <f:validator binding="#{row.bindings.Pax.validator}"/>
+                <af:convertNumber groupingUsed="false" pattern="#{bindings.AllTasksVO1.hints.Pax.format}"/>
+              </af:inputText>
+            </af:column>
+            <af:column sortProperty="#{bindings.AllTasksVO1.hints.ElemKey.name}" sortable="true"
+                       headerText="#{bindings.AllTasksVO1.hints.ElemKey.label}" id="c6">
+              <af:selectOneChoice value="#{row.bindings.ElemKey.inputValue}" label="#{row.bindings.ElemKey.label}"
+                                  required="#{bindings.AllTasksVO1.hints.ElemKey.mandatory}"
+                                  shortDesc="#{bindings.AllTasksVO1.hints.ElemKey.tooltip}" id="soc1">
+                <f:selectItems value="#{row.bindings.ElemKey.items}" id="si1"/>
+                <f:validator binding="#{row.bindings.ElemKey.validator}"/>
+              </af:selectOneChoice>
+            </af:column>
+          </af:table>
+        </f:facet>
+      </af:panelStretchLayout>
+    </af:form>
+  </af:document>
+</f:view>
