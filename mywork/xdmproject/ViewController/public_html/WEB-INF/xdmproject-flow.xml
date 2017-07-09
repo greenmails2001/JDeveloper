@@ -8,7 +8,9 @@
     <view id="TaskPage">
       <page>/TaskPage.jsf</page>
     </view>
-    <view id="SchedulePage"></view>
+    <view id="SchedulePage">
+      <page>/SchedulePage.jsf</page>
+    </view>
     <control-flow-rule id="__1">
       <from-activity-id>TaskPage</from-activity-id>
       <control-flow-case id="__2">

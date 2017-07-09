@@ -4,7 +4,7 @@
   <af:document title="TaskPage.jsf" id="d1">
     <af:messages id="m1"/>
     <af:form id="f1">
-      <af:panelStretchLayout id="psl1" bottomHeight="183px" startWidth="89px" endWidth="173px">
+      <af:panelStretchLayout id="psl1" bottomHeight="236px" startWidth="89px" endWidth="173px">
         <f:facet name="start"/>
         <f:facet name="end"/>
         <f:facet name="top">
@@ -43,7 +43,10 @@
                 </af:button>
               </af:panelGroupLayout>
             </f:facet>
-            <f:facet name="end"/>
+            <f:facet name="end">
+              <af:button text="TimeLine" id="b4" action="goSchedule"/>
+            </f:facet>
+            <af:spacer width="10" height="10" id="s1"/>
           </af:panelBorderLayout>
         </f:facet>
         <f:facet name="center">

@@ -30,6 +30,8 @@
       <property
          name="y">136.59766</property>
       <property
+         name="page">/SchedulePage.jsf</property>
+      <property
          name="exceptionHandler">false</property>
    </View>
    <ControlFlowCase
