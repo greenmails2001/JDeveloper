@@ -108,6 +108,45 @@
    </hash>
    <hash n="oracle.jdeveloper.deploy.dt.DeploymentProfiles">
       <hash n="profileDefinitions">
+         <hash n="adflibXdmCommonCode">
+            <value n="adflib-connectionDetails" v="true"/>
+            <hash n="archiveOptions">
+               <value n="hasManifest" v="true"/>
+            </hash>
+            <hash n="fileGroups">
+               <list n="groups">
+                  <hash>
+                     <list n="contributors">
+                        <hash>
+                           <value n="type" v="2"/>
+                        </hash>
+                        <hash>
+                           <value n="type" v="5"/>
+                        </hash>
+                     </list>
+                     <value n="displayName" v="Project Output"/>
+                     <hash n="filters">
+                        <list n="rules">
+                           <hash>
+                              <value n="pattern" v="WEB-INF/classes/**"/>
+                              <value n="type" v="1"/>
+                           </hash>
+                           <hash>
+                              <value n="pattern" v="**"/>
+                              <value n="type" v="0"/>
+                           </hash>
+                        </list>
+                     </hash>
+                     <value n="internalName" v="project-output"/>
+                     <value n="type" v="1"/>
+                  </hash>
+               </list>
+            </hash>
+            <url n="jarURL" path="deploy/adflibXdmCommonCode.jar"/>
+            <hash n="LibraryDependencies"/>
+            <value n="profileClass" v="oracle.adfdt.common.deploy.impl.AdfLibraryProfile"/>
+            <value n="profileName" v="adflibXdmCommonCode"/>
+         </hash>
          <hash n="XdmCommon_CommonCode">
             <value n="adflib-connectionDetails" v="true"/>
             <hash n="archiveOptions">
@@ -188,6 +227,7 @@
          </hash>
       </hash>
       <list n="profileList">
+         <string v="adflibXdmCommonCode"/>
          <string v="XdmCommon_CommonCode_adflib"/>
          <string v="XdmCommon_CommonCode"/>
       </list>
