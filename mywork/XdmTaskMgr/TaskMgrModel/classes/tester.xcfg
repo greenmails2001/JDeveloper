@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="com.sdmsol.xdm.taskmgr.model.XdmTaskMgrService">
+      <AppModuleConfig name="15DA91BBD08" JDBCName="Xdm" DeployPlatform="LOCAL" jbo.project="com.sdmsol.xdm.taskmgr.model.TaskMgrModel" IsLazyLoadingTrue="true" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" BC4JConfigName="XdmTaskMgrServiceLocal" ApplicationName="com.sdmsol.xdm.taskmgr.model.XdmTaskMgrService" DBconnection="java:comp/env/jdbc/XdmDS">
+         <Database jbo.locking.mode="optimistic" jbo.TypeMapEntries="OracleApps" JDBCDataSource="java:comp/env/jdbc/XdmDS" jbo.SQLBuilder="Oracle"/>
+         <Security AppModuleJndiName="com.sdmsol.xdm.taskmgr.model.XdmTaskMgrService"/>
+         <Tester FullProxyInterfaceName="com.sdmsol.xdm.taskmgr.model.common.XdmTaskMgrService"/>
+         <Custom ns0:tester_classloader_enabled="true" ns0:_testers_credentials_needed="false" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

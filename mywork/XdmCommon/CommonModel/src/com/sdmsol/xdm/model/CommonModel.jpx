@@ -13,6 +13,7 @@
     <Attr Name="_jbo.TypeMapEntries" Value="OracleApps"/>
     <Attr Name="_NamedConnection" Value="Xdm"/>
     <Attr Name="_appModuleNames0" Value="com.sdmsol.xdm.model.am.AppModule"/>
+    <Attr Name="_appModuleNames1" Value="com.sdmsol.xdm.model.am.XdmLovService"/>
   </DesignTime>
   <Containee
     Name="am"

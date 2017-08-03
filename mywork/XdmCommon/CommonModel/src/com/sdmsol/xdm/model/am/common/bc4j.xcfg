@@ -27,4 +27,17 @@
       <Security AppModuleJndiName="com.sdmsol.xdm.model.am.TestXdmCommonModel"/>
     </AppModuleConfig>
   </AppModuleConfigBag>
+  <AppModuleConfigBag ApplicationName="com.sdmsol.xdm.model.am.XdmLovService">
+    <AppModuleConfig name="XdmLovServiceLocal" jbo.project="com.sdmsol.xdm.model.CommonModel"
+                     ApplicationName="com.sdmsol.xdm.model.am.XdmLovService" DeployPlatform="LOCAL">
+      <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="java:comp/env/jdbc/XdmDS"/>
+      <Security AppModuleJndiName="com.sdmsol.xdm.model.am.XdmLovService"/>
+    </AppModuleConfig>
+    <AppModuleConfig name="XdmLovServiceShared" jbo.project="com.sdmsol.xdm.model.CommonModel"
+                     ApplicationName="com.sdmsol.xdm.model.am.XdmLovService" DeployPlatform="LOCAL">
+      <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+      <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="java:comp/env/jdbc/XdmDS"/>
+      <Security AppModuleJndiName="com.sdmsol.xdm.model.am.XdmLovService"/>
+    </AppModuleConfig>
+  </AppModuleConfigBag>
 </BC4JConfig>

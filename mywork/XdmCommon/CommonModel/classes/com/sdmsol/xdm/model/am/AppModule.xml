@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AppModule"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  ClearCacheOnRollback="true">
+  <ViewUsage
+    Name="PsTxnView1"
+    ViewObjectName="com.sdmsol.xdm.model.view.PsTxnView"/>
+  <ViewUsage
+    Name="XdmElementsView1"
+    ViewObjectName="com.sdmsol.xdm.model.view.XdmElementsView"/>
+  <ViewUsage
+    Name="XdmPersonsView1"
+    ViewObjectName="com.sdmsol.xdm.model.view.XdmPersonsView"/>
+  <ViewUsage
+    Name="XdmProgrammesView1"
+    ViewObjectName="com.sdmsol.xdm.model.view.XdmProgrammesView"/>
+  <ViewUsage
+    Name="XdmTasksView1"
+    ViewObjectName="com.sdmsol.xdm.model.view.XdmTasksView"/>
+  <ViewUsage
+    Name="XdmProgrammesView2"
+    ViewObjectName="com.sdmsol.xdm.model.view.XdmProgrammesView"/>
+  <ViewUsage
+    Name="XdmTasksView2"
+    ViewObjectName="com.sdmsol.xdm.model.view.XdmTasksView"/>
+  <ViewUsage
+    Name="XdmTasksView3"
+    ViewObjectName="com.sdmsol.xdm.model.view.XdmTasksView"/>
+  <ViewUsage
+    Name="XdmTasksView4"
+    ViewObjectName="com.sdmsol.xdm.model.view.XdmTasksView"/>
+  <ViewLinkUsage
+    Name="XdmProgPersFkLink1"
+    ViewLinkObjectName="com.sdmsol.xdm.model.view.link.XdmProgPersFkLink"
+    SrcViewUsageName="com.sdmsol.xdm.model.am.AppModule.XdmPersonsView1"
+    DstViewUsageName="com.sdmsol.xdm.model.am.AppModule.XdmProgrammesView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="XdmElemTaskFkLink1"
+    ViewLinkObjectName="com.sdmsol.xdm.model.view.link.XdmElemTaskFkLink"
+    SrcViewUsageName="com.sdmsol.xdm.model.am.AppModule.XdmElementsView1"
+    DstViewUsageName="com.sdmsol.xdm.model.am.AppModule.XdmTasksView2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="XdmPersTaskFkLink1"
+    ViewLinkObjectName="com.sdmsol.xdm.model.view.link.XdmPersTaskFkLink"
+    SrcViewUsageName="com.sdmsol.xdm.model.am.AppModule.XdmPersonsView1"
+    DstViewUsageName="com.sdmsol.xdm.model.am.AppModule.XdmTasksView3"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="XdmProgTaskFkLink1"
+    ViewLinkObjectName="com.sdmsol.xdm.model.view.link.XdmProgTaskFkLink"
+    SrcViewUsageName="com.sdmsol.xdm.model.am.AppModule.XdmProgrammesView1"
+    DstViewUsageName="com.sdmsol.xdm.model.am.AppModule.XdmTasksView4"
+    Reversed="false"/>
+</AppModule>
