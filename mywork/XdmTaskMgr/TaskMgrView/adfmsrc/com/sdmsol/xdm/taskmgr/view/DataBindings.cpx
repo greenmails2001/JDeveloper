@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.12.24" id="DataBindings"
+             SeparateXMLFiles="false" Package="com.sdmsol.xdm.taskmgr.view" ClientType="Generic">
+  <pageMap>
+    <page path="/taskOverviewEdit.jsff" usageId="com_sdmsol_xdm_taskmgr_view_taskOverviewEditPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="com_sdmsol_xdm_taskmgr_view_taskOverviewEditPageDef"
+          path="com.sdmsol.xdm.taskmgr.view.pageDefs.taskOverviewEditPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="XdmTaskMgrServiceDataControl" Package="com.sdmsol.xdm.taskmgr.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="XdmTaskMgrServiceLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>
