@@ -5,6 +5,30 @@
         <af:gridRow height="50px" id="gr2">
             <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
                 <!-- Header -->
+                <af:panelGroupLayout id="pgl2" layout="horizontal">
+                    <af:selectOneChoice value="#{bindings.pResponsible.inputValue}"
+                                        label="Responsible"
+                                        required="#{bindings.pResponsible.hints.mandatory}"
+                                        shortDesc="#{bindings.pResponsible.hints.tooltip}" id="soc2">
+                        <f:selectItems value="#{bindings.pResponsible.items}" id="si2"/>
+                        <f:validator binding="#{bindings.pResponsible.validator}"/>
+                    </af:selectOneChoice>
+                    <af:selectOneChoice value="#{bindings.pProgramme.inputValue}" label="Programme"
+                                        required="#{bindings.pProgramme.hints.mandatory}"
+                                        shortDesc="#{bindings.pProgramme.hints.tooltip}" id="soc3">
+                        <f:selectItems value="#{bindings.pProgramme.items}" id="si3"/>
+                        <f:validator binding="#{bindings.pProgramme.validator}"/>
+                    </af:selectOneChoice>
+                    <af:inputText value="#{bindings.pText.inputValue}" label="Name"
+                                  required="#{bindings.pText.hints.mandatory}"
+                                  columns="#{bindings.pText.hints.displayWidth}"
+                                  maximumLength="#{bindings.pText.hints.precision}"
+                                  shortDesc="#{bindings.pText.hints.tooltip}" id="it7">
+                        <f:validator binding="#{bindings.pText.validator}"/>
+                    </af:inputText>
+                    <af:button actionListener="#{bindings.ExecuteWithParams.execute}" text="Search"
+                               disabled="#{!bindings.ExecuteWithParams.enabled}" id="b1"/>
+                </af:panelGroupLayout>
             </af:gridCell>
         </af:gridRow>
         <af:gridRow height="100%" id="gr3">
@@ -13,7 +37,7 @@
                 <af:table value="#{bindings.TaskVO1.collectionModel}" var="row" rows="#{bindings.TaskVO1.rangeSize}"
                           emptyText="#{bindings.TaskVO1.viewable ? 'No data to display.' : 'Access Denied.'}"
                           rowBandingInterval="0" fetchSize="#{bindings.TaskVO1.rangeSize}" id="t1"
-                          columnStretching="column:c2">
+                          columnStretching="column:c2" partialTriggers="::b1">
                     <af:column sortProperty="#{bindings.TaskVO1.hints.StartDate.name}" sortable="true"
                                headerText="#{bindings.TaskVO1.hints.StartDate.label}" id="c1">
                         <af:inputDate value="#{row.bindings.StartDate.inputValue}"
