@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewLink SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewLink
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="FkFilmLanguageLink"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  EntityAssociation="vn.pmdata.adfdemo1.model.FkFilmLanguageAssoc">
+  <ViewLinkDefEnd
+    Name="LanguageIdFilmView"
+    Cardinality="1"
+    Source="true"
+    Owner="vn.pmdata.adfdemo1.model.FilmView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_minCardinality" Value="1"/>
+      <Attr Name="_finderName" Value="LanguageIdFilmView"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="vn.pmdata.adfdemo1.model.FilmView.FilmId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+  <ViewLinkDefEnd
+    Name="FilmView1"
+    Cardinality="-1"
+    Owner="vn.pmdata.adfdemo1.model.FilmView">
+    <DesignTime>
+      <Attr Name="_isUpdateable" Value="true"/>
+      <Attr Name="_finderName" Value="FilmView1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="vn.pmdata.adfdemo1.model.FilmView.LanguageId"/>
+    </AttrArray>
+  </ViewLinkDefEnd>
+</ViewLink>

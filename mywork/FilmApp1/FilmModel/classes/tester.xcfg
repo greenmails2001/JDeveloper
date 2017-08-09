@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="vn.pmdata.adfdemo1.model.FilmAppModule">
+      <AppModuleConfig name="15DC7BDC679" DeployPlatform="LOCAL" DBconnection="java:comp/env/jdbc/SakilaDS" JDBCName="Sakila" BC4JConfigName="FilmAppModuleLocal" IsLazyLoadingTrue="true" java.naming.factory.initial="oracle.jbo.common.JboInitialContextFactory" ApplicationName="vn.pmdata.adfdemo1.model.FilmAppModule" jbo.project="vn.pmdata.adfdemo1.model.FilmModel">
+         <Database jbo.TypeMapEntries="Java" jbo.locking.mode="optimistic" jbo.sql92.JdbcDriverClass="com.mysql.jdbc.Driver" JDBCDataSource="java:comp/env/jdbc/SakilaDS" jbo.SQLBuilder="SQL92"/>
+         <Security AppModuleJndiName="vn.pmdata.adfdemo1.model.FilmAppModule"/>
+         <Tester FullProxyInterfaceName="vn.pmdata.adfdemo1.model.common.FilmAppModule"/>
+         <Custom ns0:LastUsedConfiguration="FilmAppModuleLocal" ns0:tester_classloader_enabled="true" ns0:_testers_credentials_needed="false" xmlns:ns0="http://xmlns.oracle.com/bc4j/configuration"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>
