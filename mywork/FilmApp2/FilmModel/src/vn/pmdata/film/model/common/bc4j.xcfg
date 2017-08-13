@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!---->
+<BC4JConfig xmlns="http://xmlns.oracle.com/bc4j/configuration" version="11.1">
+  <AppModuleConfigBag ApplicationName="vn.pmdata.film.model.FilmAppModule">
+    <AppModuleConfig name="FilmAppModuleLocal" jbo.project="vn.pmdata.film.model.FilmModel"
+                     ApplicationName="vn.pmdata.film.model.FilmAppModule" DeployPlatform="LOCAL">
+      <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="java:comp/env/jdbc/sakilaDS"/>
+      <Security AppModuleJndiName="vn.pmdata.film.model.FilmAppModule"/>
+    </AppModuleConfig>
+    <AppModuleConfig name="FilmAppModuleShared" jbo.project="vn.pmdata.film.model.FilmModel"
+                     ApplicationName="vn.pmdata.film.model.FilmAppModule" DeployPlatform="LOCAL">
+      <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+      <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="java:comp/env/jdbc/sakilaDS"/>
+      <Security AppModuleJndiName="vn.pmdata.film.model.FilmAppModule"/>
+    </AppModuleConfig>
+  </AppModuleConfigBag>
+</BC4JConfig>

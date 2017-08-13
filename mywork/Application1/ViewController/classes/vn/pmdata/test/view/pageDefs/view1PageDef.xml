@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.12.24" id="view1PageDef"
+                Package="vn.pmdata.test.view.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="FilmView1" RangeSize="25" DataControl="AppModuleDataControl" id="FilmView1Iterator"/>
+    <searchRegion Binds="FilmView1Iterator" Criteria="" Customizer="oracle.jbo.uicli.binding.JUSearchBindingCustomizer"
+                  id="FilmView1Query"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="FilmView1Iterator" id="FilmView1">
+      <nodeDefinition DefName="vn.pmdata.test.model.FilmView" Name="FilmView10">
+        <AttrNames>
+          <Item Value="FilmId"/>
+          <Item Value="Title"/>
+          <Item Value="Description"/>
+          <Item Value="ReleaseYear"/>
+          <Item Value="LanguageId"/>
+          <Item Value="OriginalLanguageId"/>
+          <Item Value="RentalDuration"/>
+          <Item Value="RentalRate"/>
+          <Item Value="Length"/>
+          <Item Value="ReplacementCost"/>
+          <Item Value="Rating"/>
+          <Item Value="SpecialFeatures"/>
+          <Item Value="LastUpdate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

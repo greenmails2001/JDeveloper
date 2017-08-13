@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.12.24" id="DataBindings"
+             SeparateXMLFiles="false" Package="org.o7planning.adf.view" ClientType="Generic">
+  <pageMap>
+    <page path="/WEB-INF/pages/emp.jsf" usageId="org_o7planning_adf_view_empPageDef"/>
+    <page path="/view1.jsf" usageId="org_o7planning_adf_view_view1PageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="org_o7planning_adf_view_empPageDef" path="pages.empPageDef"/>
+    <page id="org_o7planning_adf_view_view1PageDef" path="org.o7planning.adf.view.pageDefs.view1PageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="AppModuleDataControl" Package="org.o7planning.adf.model.module"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="AppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

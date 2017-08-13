@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.12.24" id="DataBindings"
+             SeparateXMLFiles="false" Package="vn.pmdata.film.view" ClientType="Generic">
+  <pageMap>
+    <page path="/view1.jsf" usageId="vn_pmdata_film_view_view1PageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="vn_pmdata_film_view_view1PageDef" path="vn.pmdata.film.view.pageDefs.view1PageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="FilmAppModuleDataControl" Package="vn.pmdata.film.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="FilmAppModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

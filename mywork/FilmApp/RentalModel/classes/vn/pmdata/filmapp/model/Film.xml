@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="Film"
+  Version="12.2.1.12.24"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="FILM"
+  AliasName="Film"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="FilmId"
+    IsNotNull="true"
+    ColumnName="FILM_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="FILM"
+    PrimaryKey="true"/>
+  <Attribute
+    Name="Title"
+    IsNotNull="true"
+    Precision="255"
+    ColumnName="TITLE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="FILM">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Description"
+    IsQueriable="false"
+    ColumnName="DESCRIPTION"
+    SQLType="CLOB"
+    Type="oracle.jbo.domain.ClobDomain"
+    ColumnType="CLOB"
+    TableName="FILM"/>
+  <Attribute
+    Name="ReleaseYear"
+    Precision="4"
+    ColumnName="RELEASE_YEAR"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="FILM">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="4"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LanguageId"
+    IsNotNull="true"
+    ColumnName="LANGUAGE_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="FILM"/>
+  <Attribute
+    Name="OriginalLanguageId"
+    ColumnName="ORIGINAL_LANGUAGE_ID"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="FILM"/>
+  <Attribute
+    Name="RentalDuration"
+    IsNotNull="true"
+    ColumnName="RENTAL_DURATION"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="FILM"/>
+  <Attribute
+    Name="RentalRate"
+    IsNotNull="true"
+    Precision="4"
+    Scale="2"
+    ColumnName="RENTAL_RATE"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="FILM"/>
+  <Attribute
+    Name="Length"
+    ColumnName="LENGTH"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="FILM"/>
+  <Attribute
+    Name="ReplacementCost"
+    IsNotNull="true"
+    Precision="5"
+    Scale="2"
+    ColumnName="REPLACEMENT_COST"
+    SQLType="NUMERIC"
+    Type="java.math.BigDecimal"
+    ColumnType="NUMBER"
+    TableName="FILM"/>
+  <Attribute
+    Name="Rating"
+    Precision="10"
+    ColumnName="RATING"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="FILM">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="10"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="SpecialFeatures"
+    Precision="100"
+    ColumnName="SPECIAL_FEATURES"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="FILM">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastUpdate"
+    IsNotNull="true"
+    ColumnName="LAST_UPDATE"
+    SQLType="DATE"
+    Type="java.sql.Timestamp"
+    ColumnType="DATE"
+    TableName="FILM"/>
+  <Key
+    Name="CheckSpecialFeatures">
+    <DesignTime>
+      <Attr Name="_checkCondition" Value="special_features is null or
+
+                                                              special_features like '%Trailers%' or
+
+                                                              special_features like '%Commentaries%' or
+
+                                                              special_features like '%Deleted Scenes%' or
+
+                                                              special_features like '%Behind the Scenes%'"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="CHECK_SPECIAL_FEATURES"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="CheckSpecialRating">
+    <DesignTime>
+      <Attr Name="_checkCondition" Value="rating in ('G','PG','PG-13','R','NC-17')"/>
+      <Attr Name="_isCheck" Value="true"/>
+      <Attr Name="_DBObjectName" Value="CHECK_SPECIAL_RATING"/>
+    </DesignTime>
+    <AttrArray Name="Attributes"/>
+  </Key>
+  <Key
+    Name="PkFilm"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="PK_FILM"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="vn.pmdata.filmapp.model.Film.FilmId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkFilmLanguage">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_LANGUAGE"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_FILM_LANGUAGE"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="vn.pmdata.filmapp.model.Film.LanguageId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="FkFilmLanguageOriginal">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="PK_LANGUAGE"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="FK_FILM_LANGUAGE_ORIGINAL"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="vn.pmdata.filmapp.model.Film.OriginalLanguageId"/>
+    </AttrArray>
+  </Key>
+</Entity>

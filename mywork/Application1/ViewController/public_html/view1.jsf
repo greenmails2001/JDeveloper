@@ -1,0 +1,174 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="view1.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:table value="#{bindings.FilmView1.collectionModel}" var="row" rows="#{bindings.FilmView1.rangeSize}"
+                      emptyText="#{bindings.FilmView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                      rowBandingInterval="0" fetchSize="#{bindings.FilmView1.rangeSize}"
+                      filterModel="#{bindings.FilmView1Query.queryDescriptor}" filterVisible="true"
+                      queryListener="#{bindings.FilmView1Query.processQuery}" varStatus="vs" id="t1">
+                <af:column sortProperty="#{bindings.FilmView1.hints.FilmId.name}" filterable="true" sortable="true"
+                           headerText="#{bindings.FilmView1.hints.FilmId.label}" id="c1">
+                    <af:inputText value="#{row.bindings.FilmId.inputValue}"
+                                  label="#{bindings.FilmView1.hints.FilmId.label}"
+                                  required="#{bindings.FilmView1.hints.FilmId.mandatory}"
+                                  columns="#{bindings.FilmView1.hints.FilmId.displayWidth}"
+                                  maximumLength="#{bindings.FilmView1.hints.FilmId.precision}"
+                                  shortDesc="#{bindings.FilmView1.hints.FilmId.tooltip}" id="it1">
+                        <f:validator binding="#{row.bindings.FilmId.validator}"/>
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.FilmView1.hints.FilmId.format}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.FilmView1.hints.Title.name}" filterable="true" sortable="true"
+                           headerText="#{bindings.FilmView1.hints.Title.label}" id="c2">
+                    <af:inputText value="#{row.bindings.Title.inputValue}"
+                                  label="#{bindings.FilmView1.hints.Title.label}"
+                                  required="#{bindings.FilmView1.hints.Title.mandatory}"
+                                  columns="#{bindings.FilmView1.hints.Title.displayWidth}"
+                                  maximumLength="#{bindings.FilmView1.hints.Title.precision}"
+                                  shortDesc="#{bindings.FilmView1.hints.Title.tooltip}" id="it2">
+                        <f:validator binding="#{row.bindings.Title.validator}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.FilmView1.hints.Description.name}" sortable="true"
+                           headerText="#{bindings.FilmView1.hints.Description.label}" filterable="true" id="c3">
+                    <af:inputText value="#{row.bindings.Description.inputValue}"
+                                  label="#{bindings.FilmView1.hints.Description.label}"
+                                  required="#{bindings.FilmView1.hints.Description.mandatory}"
+                                  columns="#{bindings.FilmView1.hints.Description.displayWidth}"
+                                  maximumLength="#{bindings.FilmView1.hints.Description.precision}"
+                                  shortDesc="#{bindings.FilmView1.hints.Description.tooltip}" id="it3">
+                        <f:validator binding="#{row.bindings.Description.validator}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.FilmView1.hints.ReleaseYear.name}" filterable="true" sortable="true"
+                           headerText="#{bindings.FilmView1.hints.ReleaseYear.label}" id="c4">
+                    <af:inputText value="#{row.bindings.ReleaseYear.inputValue}"
+                                  label="#{bindings.FilmView1.hints.ReleaseYear.label}"
+                                  required="#{bindings.FilmView1.hints.ReleaseYear.mandatory}"
+                                  columns="#{bindings.FilmView1.hints.ReleaseYear.displayWidth}"
+                                  maximumLength="#{bindings.FilmView1.hints.ReleaseYear.precision}"
+                                  shortDesc="#{bindings.FilmView1.hints.ReleaseYear.tooltip}" id="it4">
+                        <f:validator binding="#{row.bindings.ReleaseYear.validator}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.FilmView1.hints.LanguageId.name}" filterable="true" sortable="true"
+                           headerText="#{bindings.FilmView1.hints.LanguageId.label}" id="c5">
+                    <af:inputText value="#{row.bindings.LanguageId.inputValue}"
+                                  label="#{bindings.FilmView1.hints.LanguageId.label}"
+                                  required="#{bindings.FilmView1.hints.LanguageId.mandatory}"
+                                  columns="#{bindings.FilmView1.hints.LanguageId.displayWidth}"
+                                  maximumLength="#{bindings.FilmView1.hints.LanguageId.precision}"
+                                  shortDesc="#{bindings.FilmView1.hints.LanguageId.tooltip}" id="it5">
+                        <f:validator binding="#{row.bindings.LanguageId.validator}"/>
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.FilmView1.hints.LanguageId.format}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.FilmView1.hints.OriginalLanguageId.name}" filterable="true"
+                           sortable="true" headerText="#{bindings.FilmView1.hints.OriginalLanguageId.label}" id="c6">
+                    <af:inputText value="#{row.bindings.OriginalLanguageId.inputValue}"
+                                  label="#{bindings.FilmView1.hints.OriginalLanguageId.label}"
+                                  required="#{bindings.FilmView1.hints.OriginalLanguageId.mandatory}"
+                                  columns="#{bindings.FilmView1.hints.OriginalLanguageId.displayWidth}"
+                                  maximumLength="#{bindings.FilmView1.hints.OriginalLanguageId.precision}"
+                                  shortDesc="#{bindings.FilmView1.hints.OriginalLanguageId.tooltip}" id="it6">
+                        <f:validator binding="#{row.bindings.OriginalLanguageId.validator}"/>
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.FilmView1.hints.OriginalLanguageId.format}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.FilmView1.hints.RentalDuration.name}" filterable="true"
+                           sortable="true" headerText="#{bindings.FilmView1.hints.RentalDuration.label}" id="c7">
+                    <af:inputText value="#{row.bindings.RentalDuration.inputValue}"
+                                  label="#{bindings.FilmView1.hints.RentalDuration.label}"
+                                  required="#{bindings.FilmView1.hints.RentalDuration.mandatory}"
+                                  columns="#{bindings.FilmView1.hints.RentalDuration.displayWidth}"
+                                  maximumLength="#{bindings.FilmView1.hints.RentalDuration.precision}"
+                                  shortDesc="#{bindings.FilmView1.hints.RentalDuration.tooltip}" id="it7">
+                        <f:validator binding="#{row.bindings.RentalDuration.validator}"/>
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.FilmView1.hints.RentalDuration.format}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.FilmView1.hints.RentalRate.name}" filterable="true" sortable="true"
+                           headerText="#{bindings.FilmView1.hints.RentalRate.label}" id="c8">
+                    <af:inputText value="#{row.bindings.RentalRate.inputValue}"
+                                  label="#{bindings.FilmView1.hints.RentalRate.label}"
+                                  required="#{bindings.FilmView1.hints.RentalRate.mandatory}"
+                                  columns="#{bindings.FilmView1.hints.RentalRate.displayWidth}"
+                                  maximumLength="#{bindings.FilmView1.hints.RentalRate.precision}"
+                                  shortDesc="#{bindings.FilmView1.hints.RentalRate.tooltip}" id="it8">
+                        <f:validator binding="#{row.bindings.RentalRate.validator}"/>
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.FilmView1.hints.RentalRate.format}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.FilmView1.hints.Length.name}" filterable="true" sortable="true"
+                           headerText="#{bindings.FilmView1.hints.Length.label}" id="c9">
+                    <af:inputText value="#{row.bindings.Length.inputValue}"
+                                  label="#{bindings.FilmView1.hints.Length.label}"
+                                  required="#{bindings.FilmView1.hints.Length.mandatory}"
+                                  columns="#{bindings.FilmView1.hints.Length.displayWidth}"
+                                  maximumLength="#{bindings.FilmView1.hints.Length.precision}"
+                                  shortDesc="#{bindings.FilmView1.hints.Length.tooltip}" id="it9">
+                        <f:validator binding="#{row.bindings.Length.validator}"/>
+                        <af:convertNumber groupingUsed="false" pattern="#{bindings.FilmView1.hints.Length.format}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.FilmView1.hints.ReplacementCost.name}" filterable="true"
+                           sortable="true" headerText="#{bindings.FilmView1.hints.ReplacementCost.label}" id="c10">
+                    <af:inputText value="#{row.bindings.ReplacementCost.inputValue}"
+                                  label="#{bindings.FilmView1.hints.ReplacementCost.label}"
+                                  required="#{bindings.FilmView1.hints.ReplacementCost.mandatory}"
+                                  columns="#{bindings.FilmView1.hints.ReplacementCost.displayWidth}"
+                                  maximumLength="#{bindings.FilmView1.hints.ReplacementCost.precision}"
+                                  shortDesc="#{bindings.FilmView1.hints.ReplacementCost.tooltip}" id="it10">
+                        <f:validator binding="#{row.bindings.ReplacementCost.validator}"/>
+                        <af:convertNumber groupingUsed="false"
+                                          pattern="#{bindings.FilmView1.hints.ReplacementCost.format}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.FilmView1.hints.Rating.name}" filterable="true" sortable="true"
+                           headerText="#{bindings.FilmView1.hints.Rating.label}" id="c11">
+                    <af:inputText value="#{row.bindings.Rating.inputValue}"
+                                  label="#{bindings.FilmView1.hints.Rating.label}"
+                                  required="#{bindings.FilmView1.hints.Rating.mandatory}"
+                                  columns="#{bindings.FilmView1.hints.Rating.displayWidth}"
+                                  maximumLength="#{bindings.FilmView1.hints.Rating.precision}"
+                                  shortDesc="#{bindings.FilmView1.hints.Rating.tooltip}" id="it11">
+                        <f:validator binding="#{row.bindings.Rating.validator}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.FilmView1.hints.SpecialFeatures.name}" filterable="true"
+                           sortable="true" headerText="#{bindings.FilmView1.hints.SpecialFeatures.label}" id="c12">
+                    <af:inputText value="#{row.bindings.SpecialFeatures.inputValue}"
+                                  label="#{bindings.FilmView1.hints.SpecialFeatures.label}"
+                                  required="#{bindings.FilmView1.hints.SpecialFeatures.mandatory}"
+                                  columns="#{bindings.FilmView1.hints.SpecialFeatures.displayWidth}"
+                                  maximumLength="#{bindings.FilmView1.hints.SpecialFeatures.precision}"
+                                  shortDesc="#{bindings.FilmView1.hints.SpecialFeatures.tooltip}" id="it12">
+                        <f:validator binding="#{row.bindings.SpecialFeatures.validator}"/>
+                    </af:inputText>
+                </af:column>
+                <af:column sortProperty="#{bindings.FilmView1.hints.LastUpdate.name}" filterable="true" sortable="true"
+                           headerText="#{bindings.FilmView1.hints.LastUpdate.label}" id="c13">
+                    <f:facet name="filter">
+                        <af:inputDate value="#{bindings.FilmView1Query.queryDescriptor.filterConjunctionCriterion.criterionMap.LastUpdate.value}"
+                                      id="id1">
+                            <af:convertDateTime pattern="#{bindings.FilmView1.hints.LastUpdate.format}"/>
+                        </af:inputDate>
+                    </f:facet>
+                    <af:inputDate value="#{row.bindings.LastUpdate.inputValue}"
+                                  label="#{bindings.FilmView1.hints.LastUpdate.label}"
+                                  required="#{bindings.FilmView1.hints.LastUpdate.mandatory}"
+                                  columns="#{bindings.FilmView1.hints.LastUpdate.displayWidth}"
+                                  shortDesc="#{bindings.FilmView1.hints.LastUpdate.tooltip}" id="id2">
+                        <f:validator binding="#{row.bindings.LastUpdate.validator}"/>
+                        <af:convertDateTime pattern="#{bindings.FilmView1.hints.LastUpdate.format}"/>
+                    </af:inputDate>
+                </af:column>
+            </af:table>
+        </af:form>
+    </af:document>
+</f:view>

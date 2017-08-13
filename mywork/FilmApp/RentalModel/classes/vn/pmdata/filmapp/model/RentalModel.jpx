@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+<!---->
+<JboProject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="RentalModel"
+  Version="12.2.1.12.24"
+  SeparateXMLFiles="true"
+  PackageName="vn.pmdata.filmapp.model">
+  <DesignTime>
+    <Attr Name="_DTExpressionTypeChecking" Value="true"/>
+    <Attr Name="_jbo.TypeMapEntries" Value="OracleApps"/>
+    <Attr Name="_jprName" Value="../../../../../RentalModel.jpr"/>
+    <Attr Name="_NamedConnection" Value="sakila"/>
+    <Attr Name="_appModuleNames0" Value="vn.pmdata.filmapp.model.FilmAppModule"/>
+    <Attr Name="_appModuleNames1" Value="vn.pmdata.filmapp.model.view.AppModule"/>
+  </DesignTime>
+  <Containee
+    Name="assoc"
+    PackageName="vn.pmdata.filmapp.model.entity.assoc"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AS" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="entity"
+    PackageName="vn.pmdata.filmapp.model.entity"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_EO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="model"
+    PackageName="vn.pmdata.filmapp.model"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_EO" Value="true"/>
+      <Attr Name="_VO" Value="true"/>
+      <Attr Name="_AM" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="view"
+    PackageName="vn.pmdata.filmapp.model.view"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AM" Value="true"/>
+    </DesignTime>
+  </Containee>
+</JboProject>
